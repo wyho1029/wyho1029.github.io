@@ -1,0 +1,32 @@
+name: Update MSTR data
+on:
+  schedule:
+    - cron: '30 22 * * *'   # 每日 06:30 HKT
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch Yahoo MSTR
+        run: |
+          for i in 1 2 3; do
+            curl -sf -H "User-Agent: Mozilla/5.0" \
+              "https://query1.finance.yahoo.com/v8/finance/chart/MSTR?period1=1293840000&period2=9999999999&interval=1d" \
+              -o /tmp/mstr_raw.json && break
+            sleep 20
+          done
+          jq -e '.chart.result[0].timestamp | length > 3000' /tmp/mstr_raw.json > /dev/null
+          jq -c '.chart.result[0] as $r
+                 | ($r.indicators.adjclose[0].adjclose // $r.indicators.quote[0].close) as $p
+                 | [$r.timestamp, $p] | transpose
+                 | map(select(.[1] != null) | {(.[0] | strftime("%Y-%m-%d")): ((.[1]*100 | round) / 100)})
+                 | add' /tmp/mstr_raw.json > CBBI/mstr.json
+      - name: Commit if changed
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add CBBI/mstr.json
+          git diff --cached --quiet || (git commit -m "chore: daily MSTR data update" && git push)

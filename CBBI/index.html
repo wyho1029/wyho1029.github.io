@@ -402,32 +402,39 @@ function showError(msg){
   const tg=document.getElementById('gaugeTag'); if(tg) tg.textContent='載入失敗';
 }
 
-/* ===== 攞數據：Apps Script API（有 MSTR）→ 失敗則直接抓 CBBI 源（冇 MSTR）===== */
-const API_URL = 'https://script.google.com/macros/s/AKfycbwXUMsJ2EXvMtCC-YNKQ_jsB3Iz2KKjqw0gXOPGtlYOLbmvqigVEvLwZpiyS1MDXBzK/exec?api=1'; // 出 JSON（含 MSTR）；失敗自動 fallback 直抓 CBBI 源
+/* ===== 攞數據：瀏覽器直抓 CBBI 源 + 同源 mstr.json（GitHub Actions 每日更新，零 Apps Script）===== */
 const CBBI_URL = 'https://colintalkscrypto.com/cbbi/data/latest.json';
 
-function loadDirect(){
-  return fetch(CBBI_URL).then(function(r){ if(!r.ok) throw new Error('CBBI 源 HTTP '+r.status); return r.json(); })
-    .then(function(d){
-      const conf=d.Confidence, price=d.Price;
-      const ts=Object.keys(conf).map(Number).sort(function(a,b){return a-b;});
-      const lastTs=ts[ts.length-1];
-      const SUBKEYS={mvrv:'MVRV',picycle:'PiCycle',puell:'Puell',rupl:'RUPL',reserverisk:'ReserveRisk'};
-      const dates=[],cb=[],pr=[]; const subs={mvrv:[],picycle:[],puell:[],rupl:[],reserverisk:[]};
-      ts.forEach(function(t,i){ if(i%7===0||t===lastTs){
-        dates.push(new Date(t*1000).toISOString().slice(0,10));
-        cb.push(Math.round(conf[t]*1000)/10);
-        pr.push(Math.round(price[t]*100)/100);
-        for(const k in SUBKEYS){ const s=d[SUBKEYS[k]]; const v=s?s[t]:null; subs[k].push(v==null?null:Math.round(v*1000)/10); }
-      }});
-      return {dates:dates,cbbi:cb,price:pr,subs:subs,mstr:null};
-    });
+function alignMstr(map, dates){
+  return dates.map(function(ds){
+    var dt = new Date(ds + 'T00:00:00Z');
+    for (var b = 0; b < 8; b++) {
+      var k = dt.toISOString().slice(0,10);
+      if (map[k] != null) return map[k];
+      dt = new Date(dt.getTime() - 86400000);
+    }
+    return null;
+  });
 }
 
-(API_URL
-  ? fetch(API_URL).then(function(r){ if(!r.ok) throw new Error('API HTTP '+r.status); return r.json(); }).catch(loadDirect)
-  : loadDirect()
-).then(init).catch(function(err){ console.error('load failed:',err); showError((err&&err.message)?err.message:'數據載入失敗'); });
+Promise.all([
+  fetch(CBBI_URL).then(function(r){ if(!r.ok) throw new Error('CBBI 源 HTTP '+r.status); return r.json(); }),
+  fetch('mstr.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+]).then(function(res){
+  const d = res[0], mstrMap = res[1];
+  const conf=d.Confidence, price=d.Price;
+  const ts=Object.keys(conf).map(Number).sort(function(a,b){return a-b;});
+  const lastTs=ts[ts.length-1];
+  const SUBKEYS={mvrv:'MVRV',picycle:'PiCycle',puell:'Puell',rupl:'RUPL',reserverisk:'ReserveRisk'};
+  const dates=[],cb=[],pr=[]; const subs={mvrv:[],picycle:[],puell:[],rupl:[],reserverisk:[]};
+  ts.forEach(function(t,i){ if(i%7===0||t===lastTs){
+    dates.push(new Date(t*1000).toISOString().slice(0,10));
+    cb.push(Math.round(conf[t]*1000)/10);
+    pr.push(Math.round(price[t]*100)/100);
+    for(const k in SUBKEYS){ const s=d[SUBKEYS[k]]; const v=s?s[t]:null; subs[k].push(v==null?null:Math.round(v*1000)/10); }
+  }});
+  return {dates:dates,cbbi:cb,price:pr,subs:subs,mstr: mstrMap ? alignMstr(mstrMap,dates) : null};
+}).then(init).catch(function(err){ console.error('load failed:',err); showError((err&&err.message)?err.message:'數據載入失敗'); });
 </script>
 </body>
 </html>
