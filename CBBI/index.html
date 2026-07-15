@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Bitcoin Cycle Index · CBBI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0a0a0b; --ink:#ece8e1; --muted:#8a857c; --faint:#56524b;
+    --btc:#f7931a; --green:#3fb950; --amber:#e3b341; --red:#f85149;
+    --line:rgba(255,255,255,.07); --panel:rgba(255,255,255,.018);
+    --chip:rgba(255,255,255,.04); --grain:.035;
+  }
+  body.light{
+    --bg:#f3efe7; --ink:#1b1813; --muted:#6b655c; --faint:#a39c90;
+    --line:rgba(0,0,0,.10); --panel:rgba(0,0,0,.015);
+    --chip:rgba(0,0,0,.04); --grain:.022;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink)}
+  body{
+    font-family:"IBM Plex Mono",monospace;min-height:100vh;
+    padding:clamp(16px,4vw,56px);position:relative;overflow-x:hidden;
+    transition:background .5s ease,color .5s ease;
+    background:
+      radial-gradient(900px 600px at 78% -8%, rgba(247,147,26,.10), transparent 60%),
+      radial-gradient(700px 600px at 0% 110%, rgba(63,185,80,.06), transparent 55%),
+      var(--bg);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:var(--grain);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px;
+    border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:30px;
+    animation:rise .8s cubic-bezier(.2,.7,.2,1) both;}
+  .eyebrow{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--btc);margin-bottom:14px;font-weight:500}
+  h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(34px,6.4vw,84px);line-height:.92;letter-spacing:-.015em}
+  h1 em{font-style:italic;font-weight:500;color:var(--btc)}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:16px;letter-spacing:.02em}
+  .gauge{text-align:right;flex-shrink:0}
+  .gauge .lbl{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .gauge .val{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(58px,11vw,108px);line-height:.84;font-variant-numeric:tabular-nums}
+  .gauge .tag{display:inline-block;margin-top:12px;padding:5px 14px;border-radius:999px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border:1px solid currentColor}
+  .top-controls{position:absolute;top:0;right:0;z-index:100;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;align-items:center}
+  .theme-toggle{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--chip)}
+  .theme-toggle button{background:none;border:none;color:var(--muted);font-family:inherit;font-size:11px;letter-spacing:.1em;
+    padding:7px 15px;cursor:pointer;transition:all .25s}
+  .theme-toggle button.on{background:var(--btc);color:#0a0a0b}
+  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);
+    border:1px solid var(--line);margin-bottom:26px;animation:rise .8s .1s cubic-bezier(.2,.7,.2,1) both;min-height:64px}
+  .cell{background:var(--bg);padding:18px 20px;transition:background .5s}
+  .cell .k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+  .cell .v{font-family:"Fraunces",serif;font-size:26px;font-weight:500;font-variant-numeric:tabular-nums}
+  .cell .v small{font-size:13px;color:var(--muted);font-family:"IBM Plex Mono"}
+  .panel{background:var(--panel);border:1px solid var(--line);padding:clamp(14px,2.4vw,28px) clamp(10px,2vw,22px) clamp(12px,2vw,18px);
+    position:relative;animation:rise .9s .2s cubic-bezier(.2,.7,.2,1) both;transition:background .5s}
+  .canvas-box{position:relative;height:clamp(360px,56vh,600px)}
+  .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:13px;letter-spacing:.1em}
+  .controls{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+  .presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .presets button{background:var(--chip);border:1px solid var(--line);color:var(--muted);font-family:inherit;
+    font-size:11px;letter-spacing:.05em;padding:7px 14px;border-radius:6px;cursor:pointer;transition:all .2s}
+  .presets button:hover{color:var(--ink);border-color:var(--btc)}
+  .presets button.on{background:var(--btc);color:#0a0a0b;border-color:var(--btc)}
+  .subrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:18px}
+  .subrow-label{font-size:11px;letter-spacing:.1em;color:var(--muted);margin-right:2px}
+  .sub-chip{background:var(--chip);border:1px solid var(--line);color:var(--muted);font-family:inherit;
+    font-size:11px;letter-spacing:.03em;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all .2s}
+  .sub-chip:hover{color:var(--ink)}
+  .sub-chip:disabled{opacity:.45;cursor:not-allowed}
+  .range-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:11.5px;color:var(--muted)}
+  .range-head b{font-family:"Fraunces",serif;font-size:14px;color:var(--ink);font-weight:500}
+  .range{position:relative;height:30px}
+  .range .track{position:absolute;top:13px;left:0;right:0;height:4px;border-radius:4px;background:var(--line)}
+  .range .sel{position:absolute;top:13px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--amber),var(--red))}
+  .range input{position:absolute;top:0;left:0;width:100%;height:30px;margin:0;background:none;pointer-events:none;-webkit-appearance:none;appearance:none}
+  .range input::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:20px;height:20px;border-radius:50%;
+    background:var(--btc);border:3px solid var(--bg);box-shadow:0 0 0 1px var(--btc),0 2px 8px rgba(0,0,0,.5);cursor:grab}
+  .range input::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.15)}
+  .range input::-moz-range-thumb{pointer-events:auto;width:20px;height:20px;border-radius:50%;
+    background:var(--btc);border:3px solid var(--bg);box-shadow:0 0 0 1px var(--btc);cursor:grab}
+  .legend{display:flex;flex-wrap:wrap;gap:22px 30px;align-items:center;margin-top:22px;padding-top:20px;
+    border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);letter-spacing:.03em}
+  .legend .item{display:flex;align-items:center;gap:9px}
+  .swatch{width:22px;height:3px;border-radius:2px;display:inline-block}
+  .swatch.grad{background:linear-gradient(90deg,var(--green),var(--amber),var(--red))}
+  .swatch.btc{background:var(--btc)}
+  .legend .zone{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+  .zone b{color:var(--ink);font-weight:500}
+  footer{margin-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:10.5px;
+    color:var(--faint);letter-spacing:.06em;animation:rise .9s .3s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @media(max-width:640px){.gauge{text-align:left}header{align-items:flex-start;padding-top:44px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top-controls">
+    <div class="theme-toggle">
+      <button id="thDark" class="on" onclick="applyTheme('dark')">暗色</button>
+      <button id="thLight" onclick="applyTheme('light')">淺色</button>
+    </div>
+  </div>
+
+  <header>
+    <div>
+      <div class="eyebrow">Colin Talks Crypto · Bitcoin Bull Run Index</div>
+      <h1>The Bitcoin<br/><em>Cycle</em> Index</h1>
+      <div class="sub" id="sub">估值熱度 0–100 · 越接近 100 越接近周期頂部 · 即時數據</div>
+    </div>
+    <div class="gauge">
+      <div class="lbl">Latest CBBI</div>
+      <div class="val" id="gaugeVal">…</div>
+      <div class="tag" id="gaugeTag">載入中</div>
+    </div>
+  </header>
+
+  <div class="strip" id="strip"></div>
+
+  <div class="panel">
+    <div class="canvas-box"><canvas id="chart"></canvas><div class="loading" id="loading">⟳ 載入即時數據中…</div></div>
+    <div class="controls">
+      <div class="subrow"><span class="subrow-label">疊加層</span><span id="subChips" style="display:flex;flex-wrap:wrap;gap:8px"></span><button id="mstrToggle" class="sub-chip">MSTR</button><button id="plToggle" class="sub-chip">Power Law</button></div>
+      <div class="presets" id="presets"></div>
+      <div class="range-head"><span>顯示範圍</span><b id="rangeLabel">—</b></div>
+      <div class="range">
+        <div class="track"></div>
+        <div class="sel" id="sel"></div>
+        <input type="range" id="rStart" min="0" value="0" />
+        <input type="range" id="rEnd"   min="0" value="0" />
+      </div>
+    </div>
+    <div class="legend">
+      <div class="item"><span class="swatch grad"></span> CBBI（按熱度變色，左軸）</div>
+      <div class="item"><span class="swatch btc"></span> BTC 價格（對數，右軸）</div>
+      <div class="item" id="mstrLegend" style="display:none"><span class="swatch" style="background:#4da3ff"></span> MSTR（Strategy 股價，右軸）</div>
+      <div class="item" id="plLegend" style="display:none"><span class="swatch" style="background:#a371f7"></span> Power Law 走廊（公平值±支撐阻力）</div>
+      <div class="zone">
+        <span><b style="color:var(--red)">85+</b> 見頂／賣出區</span>
+        <span><b style="color:var(--amber)">40–60</b> 中性</span>
+        <span><b style="color:var(--green)">&lt;15</b> 探底／買入區</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>來源：colintalkscrypto.com（CBBI 原始數據，與 CoinGlass 同源）· 每週取樣</span>
+    <span id="updated"></span>
+  </footer>
+</div>
+
+<script>
+/* ===== 全域：唔依賴數據嘅嘢 ===== */
+let chart=null;
+const STOPS=[[0,[63,185,80]],[25,[120,190,70]],[45,[227,179,65]],[70,[241,142,40]],[88,[248,81,73]],[100,[214,48,49]]];
+const lerp=(a,b,t)=>a+(b-a)*t;
+function cbbiColor(v,a=1){
+  v=Math.max(0,Math.min(100,v));
+  for(let i=0;i<STOPS.length-1;i++){const c0=STOPS[i],c1=STOPS[i+1];
+    if(v<=c1[0]){const t=(v-c0[0])/(c1[0]-c0[0]);
+      return 'rgba('+Math.round(lerp(c0[1][0],c1[1][0],t))+','+Math.round(lerp(c0[1][1],c1[1][1],t))+','+Math.round(lerp(c0[1][2],c1[1][2],t))+','+a+')';}}
+  return 'rgba(214,48,49,'+a+')';
+}
+const THEMES={
+  dark:{grid:'rgba(255,255,255,.05)',tick:'#8a857c',tickX:'#56524b',axis:'rgba(255,255,255,.1)',
+        tipBg:'rgba(12,12,14,.95)',tipBd:'rgba(255,255,255,.12)',tipTx:'#ece8e1'},
+  light:{grid:'rgba(0,0,0,.07)',tick:'#6b655c',tickX:'#9a948a',axis:'rgba(0,0,0,.18)',
+        tipBg:'rgba(250,247,240,.97)',tipBd:'rgba(0,0,0,.12)',tipTx:'#1b1813'}
+};
+function applyTheme(name){
+  document.body.classList.toggle('light',name==='light');
+  document.getElementById('thDark').classList.toggle('on',name==='dark');
+  document.getElementById('thLight').classList.toggle('on',name==='light');
+  if(chart){const t=THEMES[name],o=chart.options.scales;
+    o.yC.grid.color=t.grid;o.yC.ticks.color=t.tick;o.yC.title.color=t.tick;
+    o.x.ticks.color=t.tickX;o.x.border.color=t.axis;
+    const tip=chart.options.plugins.tooltip;
+    tip.backgroundColor=t.tipBg;tip.borderColor=t.tipBd;tip.titleColor=t.tipTx;tip.bodyColor=t.tipTx;
+    chart.update('none');}
+  try{localStorage.setItem('cbbi-theme',name);}catch(e){}
+}
+document.getElementById('thDark').onclick=function(){applyTheme('dark');};
+document.getElementById('thLight').onclick=function(){applyTheme('light');};
+
+/* 先套用主題畀頁面外框（未有數據都得） */
+let savedTheme='dark'; try{savedTheme=localStorage.getItem('cbbi-theme')||'dark';}catch(e){}
+applyTheme(savedTheme);
+
+/* ===== 收到數據後先建圖 ===== */
+function init(D){
+  if(!D||!D.dates||!D.dates.length){ showError('數據格式不正確'); return; }
+  const loading=document.getElementById('loading'); if(loading) loading.style.display='none';
+  const N=D.dates.length, last=N-1, cur=D.cbbi[last], curPrice=D.price[last];
+
+  const gv=document.getElementById('gaugeVal'); gv.textContent=Math.round(cur); gv.style.color=cbbiColor(cur);
+  const tg=document.getElementById('gaugeTag');
+  tg.textContent = cur>=85?'見頂區':cur>=60?'偏熱':cur>=40?'中性':cur>=15?'中偏低':'探底區';
+  tg.style.color=cbbiColor(cur);
+  document.getElementById('updated').textContent='截至 '+D.dates[last];
+  const maxC=Math.max.apply(null,D.cbbi),minC=Math.min.apply(null,D.cbbi),maxP=Math.max.apply(null,D.price);
+  const fmt=function(n){return n>=1000?n.toLocaleString('en-US',{maximumFractionDigits:0}):n.toFixed(2);};
+  document.getElementById('strip').innerHTML=[
+    ['現價 BTC','$'+fmt(curPrice)],['歷史最高 CBBI',Math.round(maxC)+' <small>/100</small>'],
+    ['歷史最低 CBBI',Math.round(minC)+' <small>/100</small>'],['歷史最高價','$'+fmt(maxP)],
+    ['數據點',N+' <small>週</small>']
+  ].map(function(s){return '<div class="cell"><div class="k">'+s[0]+'</div><div class="v">'+s[1]+'</div></div>';}).join('');
+
+  function nearestIdx(target){
+    for(let i=0;i<N;i++){ if(D.dates[i]>=target){
+      return (i>0 && Math.abs(new Date(D.dates[i])-new Date(target))>Math.abs(new Date(D.dates[i-1])-new Date(target)))? i-1:i; }}
+    return N-1;
+  }
+  const MARKERS=[
+    {d:'2013-12-04',t:'2013 頂',top:true},{d:'2015-01-14',t:'2015 底',top:false},
+    {d:'2017-12-17',t:'2017 頂',top:true},{d:'2018-12-15',t:'2018 底',top:false},
+    {d:'2021-11-10',t:'2021 頂',top:true},{d:'2022-11-21',t:'2022 底',top:false}
+  ].map(function(m){m.idx=nearestIdx(m.d);return m;});
+
+  const bgPlugin={
+    id:'bgZones',
+    beforeDraw:function(c){const ctx=c.ctx,a=c.chartArea,y=c.scales.yC;if(!a)return;
+      const band=function(v0,v1,col){const t=y.getPixelForValue(v1),b=y.getPixelForValue(v0);ctx.fillStyle=col;ctx.fillRect(a.left,t,a.right-a.left,b-t);};
+      ctx.save();band(85,100,'rgba(248,81,73,.07)');band(60,85,'rgba(241,142,40,.035)');band(0,15,'rgba(63,185,80,.06)');
+      ctx.font='500 10px "IBM Plex Mono"';ctx.textAlign='right';ctx.textBaseline='middle';
+      ctx.fillStyle='rgba(248,81,73,.55)';ctx.fillText('SELL',a.right-8,y.getPixelForValue(92));
+      ctx.fillStyle='rgba(63,185,80,.55)';ctx.fillText('BUY',a.right-8,y.getPixelForValue(7));ctx.restore();},
+    afterDatasetsDraw:function(c){const ctx=c.ctx,a=c.chartArea,x=c.scales.x;if(!a)return;ctx.save();
+      MARKERS.forEach(function(m){const px=x.getPixelForValue(m.idx);if(px<a.left||px>a.right)return;
+        ctx.beginPath();ctx.setLineDash([2,4]);ctx.strokeStyle=m.top?'rgba(248,81,73,.45)':'rgba(63,185,80,.45)';
+        ctx.lineWidth=1;ctx.moveTo(px,a.top);ctx.lineTo(px,a.bottom);ctx.stroke();ctx.setLineDash([]);
+        ctx.font='500 10px "IBM Plex Mono"';ctx.fillStyle=m.top?'rgba(248,81,73,.9)':'rgba(63,185,80,.9)';
+        ctx.save();ctx.translate(px,m.top?a.top+6:a.bottom-6);ctx.rotate(-Math.PI/2);
+        ctx.textAlign=m.top?'right':'left';ctx.textBaseline='bottom';ctx.fillText(m.t,0,12);ctx.restore();});
+      ctx.restore();}
+  };
+
+  const hasMstr = !!(D.mstr && D.mstr.some(function(x){return x!=null;}));
+  const datasets=[
+    {label:'BTC',data:D.price,yAxisID:'yP',borderColor:'rgba(247,147,26,.55)',borderWidth:1,pointRadius:0,tension:.25,order:2},
+    {label:'CBBI',data:D.cbbi,yAxisID:'yC',borderColor:'#888',borderWidth:2.2,pointRadius:0,pointHoverRadius:4,tension:.3,order:1,
+     segment:{borderColor:function(c){return cbbiColor(c.p1.parsed.y);}}}
+  ];
+  let mIdx=-1;
+  if(hasMstr){ datasets.push({label:'MSTR',data:D.mstr,yAxisID:'yP',borderColor:'#4da3ff',borderWidth:1.5,
+    pointRadius:0,pointHoverRadius:4,tension:.25,order:3,hidden:true,spanGaps:true}); mIdx=datasets.length-1; }
+
+  // ---- Power Law 走廊：用 BTC 數據對「創世日以嚟日數」做 log-log 回歸 ----
+  const GEN = Date.UTC(2009,0,3)/86400000; // 比特幣創世日（以日為單位）
+  const pl = (function(){
+    let sx=0,sy=0,sxy=0,sxx=0,k=0; const lx=[];
+    for(let i=0;i<N;i++){
+      const day=Date.parse(D.dates[i]+'T00:00:00Z')/86400000 - GEN, p=D.price[i];
+      if(day>0 && p>0){ const X=Math.log10(day),Y=Math.log10(p); lx[i]=X; sx+=X;sy+=Y;sxy+=X*Y;sxx+=X*X;k++; }
+      else lx[i]=null;
+    }
+    const n=(k*sxy-sx*sy)/(k*sxx-sx*sx), b=(sy-n*sx)/k;
+    const fair=[],res=[],sup=[],fl=[]; let minR=Infinity,maxR=-Infinity;
+    for(let i=0;i<N;i++){ if(lx[i]==null){fair[i]=null;fl[i]=null;continue;}
+      fl[i]=b+n*lx[i]; fair[i]=Math.pow(10,fl[i]);
+      const r=Math.log10(D.price[i])-fl[i]; if(r<minR)minR=r; if(r>maxR)maxR=r; }
+    for(let i=0;i<N;i++){ if(fl[i]==null){res[i]=null;sup[i]=null;continue;}
+      res[i]=Math.pow(10,fl[i]+maxR); sup[i]=Math.pow(10,fl[i]+minR); }
+    return {fair:fair,res:res,sup:sup};
+  })();
+  const plIdx=[];
+  datasets.push({label:'PL公平值',data:pl.fair,yAxisID:'yP',borderColor:'#a371f7',borderWidth:1.6,pointRadius:0,pointHoverRadius:3,tension:0,order:6,hidden:true,spanGaps:true}); plIdx.push(datasets.length-1);
+  datasets.push({label:'PL阻力',data:pl.res,yAxisID:'yP',borderColor:'rgba(163,113,247,.5)',borderWidth:1,borderDash:[5,4],pointRadius:0,pointHoverRadius:0,tension:0,order:7,hidden:true,spanGaps:true}); plIdx.push(datasets.length-1);
+  datasets.push({label:'PL支撐',data:pl.sup,yAxisID:'yP',borderColor:'rgba(163,113,247,.5)',borderWidth:1,borderDash:[5,4],pointRadius:0,pointHoverRadius:0,tension:0,order:8,hidden:true,spanGaps:true}); plIdx.push(datasets.length-1);
+
+  // ---- 子指標疊加（CBBI 成分，左 0–100 軸）----
+  const SUBS=[
+    {key:'mvrv',label:'MVRV Z',color:'#e84393'},
+    {key:'picycle',label:'Pi Cycle',color:'#0aa2c0'},
+    {key:'puell',label:'Puell',color:'#d4a017'},
+    {key:'rupl',label:'NUPL',color:'#8e7bef'},
+    {key:'reserverisk',label:'Reserve Risk',color:'#2ca58d'}
+  ];
+  const subIdx={};
+  if(D.subs){ SUBS.forEach(function(su){ if(!D.subs[su.key]) return;
+    datasets.push({label:su.label,data:D.subs[su.key],yAxisID:'yC',borderColor:su.color,borderWidth:1.2,pointRadius:0,pointHoverRadius:3,tension:.3,order:4,hidden:true,spanGaps:true});
+    subIdx[su.key]=datasets.length-1; }); }
+  try{
+    chart=new Chart(document.getElementById('chart').getContext('2d'),{
+      type:'line',
+      data:{labels:D.dates,datasets:datasets},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:1200,easing:'easeOutQuart'},
+        interaction:{mode:'index',intersect:false},layout:{padding:{top:6,right:4,bottom:2,left:2}},
+        scales:{
+          x:{type:'category',grid:{display:false},border:{color:THEMES.dark.axis},
+            ticks:{color:THEMES.dark.tickX,font:{family:'IBM Plex Mono',size:10},maxRotation:0,autoSkip:true,maxTicksLimit:9,
+              callback:function(v){const d=D.dates[v];return d?d.slice(0,4):'';}}},
+          yC:{position:'left',min:0,max:100,grid:{color:THEMES.dark.grid},border:{display:false},
+            ticks:{color:THEMES.dark.tick,font:{family:'IBM Plex Mono',size:10},stepSize:20},
+            title:{display:true,text:'CBBI',color:THEMES.dark.tick,font:{family:'IBM Plex Mono',size:10,weight:'500'}}},
+          yP:{position:'right',type:'logarithmic',grid:{display:false},border:{display:false},
+            ticks:{color:'rgba(247,147,26,.6)',font:{family:'IBM Plex Mono',size:10},
+              callback:function(v){return [1,10,100,1000,10000,100000].indexOf(v)>=0?'$'+v.toLocaleString():'';}},
+            title:{display:true,text:'BTC $',color:'rgba(247,147,26,.7)',font:{family:'IBM Plex Mono',size:10,weight:'500'}}}
+        },
+        plugins:{legend:{display:false},
+          tooltip:{backgroundColor:THEMES.dark.tipBg,borderColor:THEMES.dark.tipBd,borderWidth:1,
+            titleColor:THEMES.dark.tipTx,bodyColor:THEMES.dark.tipTx,padding:12,cornerRadius:4,
+            titleFont:{family:'IBM Plex Mono',size:11},bodyFont:{family:'IBM Plex Mono',size:12},
+            displayColors:true,boxWidth:8,boxHeight:8,
+            filter:function(it){return it.dataset.label!=='PL阻力' && it.dataset.label!=='PL支撐';},
+            callbacks:{title:function(it){return it[0].label;},
+              label:function(it){
+                var L=it.dataset.label;
+                if(L==='CBBI') return '  CBBI  '+it.parsed.y.toFixed(1)+' / 100';
+                if(it.dataset.yAxisID==='yC') return '  '+L+'  '+it.parsed.y.toFixed(1);
+                if(L==='MSTR') return '  MSTR  $'+it.parsed.y.toLocaleString('en-US',{maximumFractionDigits:2});
+                if(L==='PL公平值') return '  公平值 $'+it.parsed.y.toLocaleString('en-US',{maximumFractionDigits:0});
+                return '  BTC   $'+it.parsed.y.toLocaleString('en-US',{maximumFractionDigits:0});},
+              labelColor:function(it){var col=it.dataset.label==='CBBI'?cbbiColor(it.parsed.y):(it.dataset.borderColor||'#888');return{borderColor:col,backgroundColor:col};}}}}
+      },
+      plugins:[bgPlugin]
+    });
+  }catch(e){ console.error('Chart init failed:',e); showError('圖表繪製失敗：'+e.message); }
+
+  /* 主題色同步落圖 */
+  applyTheme(document.body.classList.contains('light')?'light':'dark');
+
+  /* 時間範圍滑桿 */
+  const rStart=document.getElementById('rStart'),rEnd=document.getElementById('rEnd'),sel=document.getElementById('sel'),rangeLabel=document.getElementById('rangeLabel');
+  rStart.max=rEnd.max=N-1; rStart.value=0; rEnd.value=N-1;
+  const MIN_GAP=6;
+  function applyRange(s,e){
+    s=Math.max(0,Math.min(s,N-1-MIN_GAP)); e=Math.min(N-1,Math.max(e,s+MIN_GAP));
+    rStart.value=s; rEnd.value=e;
+    sel.style.left=(s/(N-1)*100)+'%'; sel.style.width=((e-s)/(N-1)*100)+'%';
+    rangeLabel.textContent=D.dates[s]+'  →  '+D.dates[e];
+    let pmin=Infinity,pmax=-Infinity;
+    if(chart){ chart.data.datasets.forEach(function(ds,di){
+      if(ds.yAxisID!=='yP' || !chart.isDatasetVisible(di)) return;
+      for(let i=s;i<=e;i++){ const v=ds.data[i]; if(v!=null){ if(v<pmin)pmin=v; if(v>pmax)pmax=v; } }
+    }); }
+    if(!isFinite(pmin)){ for(let i=s;i<=e;i++){ if(D.price[i]<pmin)pmin=D.price[i]; if(D.price[i]>pmax)pmax=D.price[i]; } }
+    if(chart){chart.options.scales.x.min=D.dates[s]; chart.options.scales.x.max=D.dates[e];
+      chart.options.scales.yP.min=pmin*0.8; chart.options.scales.yP.max=pmax*1.2;
+      chart.update('none');}
+    document.querySelectorAll('#presets button').forEach(function(b){b.classList.remove('on');});
+  }
+  rStart.oninput=function(){applyRange(+rStart.value,+rEnd.value);};
+  rEnd.oninput=function(){applyRange(+rStart.value,+rEnd.value);};
+
+  const mstrBtn=document.getElementById('mstrToggle');
+  if(!hasMstr){ mstrBtn.disabled=true; mstrBtn.textContent='MSTR 暫無數據'; }
+  else { mstrBtn.onclick=function(){
+    if(!chart) return;
+    const show=!chart.isDatasetVisible(mIdx);
+    if(show){ chart.show(mIdx); mstrBtn.style.background='#4da3ff'; mstrBtn.style.borderColor='#4da3ff'; mstrBtn.style.color='#0a0a0b'; }
+    else { chart.hide(mIdx); mstrBtn.style.background=''; mstrBtn.style.borderColor=''; mstrBtn.style.color=''; }
+    document.getElementById('mstrLegend').style.display = show?'flex':'none';
+    applyRange(+rStart.value,+rEnd.value);
+  }; }
+
+  const plBtn=document.getElementById('plToggle');
+  plBtn.onclick=function(){
+    if(!chart) return;
+    const show=!chart.isDatasetVisible(plIdx[0]);
+    plIdx.forEach(function(ix){ if(show) chart.show(ix); else chart.hide(ix); });
+    if(show){ plBtn.style.background='#a371f7'; plBtn.style.borderColor='#a371f7'; plBtn.style.color='#fff'; }
+    else { plBtn.style.background=''; plBtn.style.borderColor=''; plBtn.style.color=''; }
+    document.getElementById('plLegend').style.display = show?'flex':'none';
+    applyRange(+rStart.value,+rEnd.value);
+  };
+
+  const subChips=document.getElementById('subChips');
+  SUBS.forEach(function(su){ if(subIdx[su.key]==null) return;
+    const b=document.createElement('button'); b.className='sub-chip'; b.textContent=su.label;
+    b.onclick=function(){ if(!chart) return; const ix=subIdx[su.key], show=!chart.isDatasetVisible(ix);
+      if(show){ chart.show(ix); b.classList.add('on'); b.style.background=su.color; b.style.borderColor=su.color; b.style.color='#fff'; }
+      else { chart.hide(ix); b.classList.remove('on'); b.style.background=''; b.style.borderColor=''; b.style.color=''; } };
+    subChips.appendChild(b); });
+
+  const PRESETS=[
+    ['全部',0,N-1],
+    ['本周期 (2022→)',nearestIdx('2022-11-21'),N-1],
+    ['2018→2022 周期',nearestIdx('2018-12-15'),nearestIdx('2022-11-21')],
+    ['2015→2018 周期',nearestIdx('2015-01-14'),nearestIdx('2018-12-15')],
+    ['近一年',Math.max(0,N-53),N-1]
+  ];
+  const pc=document.getElementById('presets');
+  PRESETS.forEach(function(p,i){const b=document.createElement('button');b.textContent=p[0];
+    b.onclick=function(){applyRange(p[1],p[2]);pc.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');};
+    if(i===0)b.classList.add('on');pc.appendChild(b);});
+
+  sel.style.left='0%'; sel.style.width='100%'; rangeLabel.textContent=D.dates[0]+'  →  '+D.dates[N-1];
+}
+
+function showError(msg){
+  const loading=document.getElementById('loading');
+  if(loading){loading.textContent='⚠ '+msg; loading.style.color='var(--red)';}
+  const gv=document.getElementById('gaugeVal'); if(gv) gv.textContent='✕';
+  const tg=document.getElementById('gaugeTag'); if(tg) tg.textContent='載入失敗';
+}
+
+/* ===== 攞數據：Apps Script API（有 MSTR）→ 失敗則直接抓 CBBI 源（冇 MSTR）===== */
+const API_URL = ''; // 填 Apps Script 嘅 https://script.google.com/macros/s/…/exec?api=1 就有埋 MSTR；留空照行
+const CBBI_URL = 'https://colintalkscrypto.com/cbbi/data/latest.json';
+
+function loadDirect(){
+  return fetch(CBBI_URL).then(function(r){ if(!r.ok) throw new Error('CBBI 源 HTTP '+r.status); return r.json(); })
+    .then(function(d){
+      const conf=d.Confidence, price=d.Price;
+      const ts=Object.keys(conf).map(Number).sort(function(a,b){return a-b;});
+      const lastTs=ts[ts.length-1];
+      const SUBKEYS={mvrv:'MVRV',picycle:'PiCycle',puell:'Puell',rupl:'RUPL',reserverisk:'ReserveRisk'};
+      const dates=[],cb=[],pr=[]; const subs={mvrv:[],picycle:[],puell:[],rupl:[],reserverisk:[]};
+      ts.forEach(function(t,i){ if(i%7===0||t===lastTs){
+        dates.push(new Date(t*1000).toISOString().slice(0,10));
+        cb.push(Math.round(conf[t]*1000)/10);
+        pr.push(Math.round(price[t]*100)/100);
+        for(const k in SUBKEYS){ const s=d[SUBKEYS[k]]; const v=s?s[t]:null; subs[k].push(v==null?null:Math.round(v*1000)/10); }
+      }});
+      return {dates:dates,cbbi:cb,price:pr,subs:subs,mstr:null};
+    });
+}
+
+(API_URL
+  ? fetch(API_URL).then(function(r){ if(!r.ok) throw new Error('API HTTP '+r.status); return r.json(); }).catch(loadDirect)
+  : loadDirect()
+).then(init).catch(function(err){ console.error('load failed:',err); showError((err&&err.message)?err.message:'數據載入失敗'); });
+</script>
+</body>
+</html>
