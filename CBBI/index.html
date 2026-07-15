@@ -403,7 +403,7 @@ function showError(msg){
 }
 
 /* ===== 攞數據：Apps Script API（有 MSTR）→ 失敗則直接抓 CBBI 源（冇 MSTR）===== */
-const API_URL = ''; // 填 Apps Script 嘅 https://script.google.com/macros/s/…/exec?api=1 就有埋 MSTR；留空照行
+const API_URL = 'https://script.google.com/macros/s/AKfycbwXUMsJ2EXvMtCC-YNKQ_jsB3Iz2KKjqw0gXOPGtlYOLbmvqigVEvLwZpiyS1MDXBzK/exec?api=1'; // 出 JSON（含 MSTR）；失敗自動 fallback 直抓 CBBI 源
 const CBBI_URL = 'https://colintalkscrypto.com/cbbi/data/latest.json';
 
 function loadDirect(){
