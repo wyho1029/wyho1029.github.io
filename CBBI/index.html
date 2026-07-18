@@ -103,6 +103,7 @@
 <body>
 <div class="wrap">
   <div class="top-controls">
+    <button id="mstrToggle" class="sub-chip">+ MSTR</button>
     <div class="theme-toggle">
       <button id="thDark" class="on" onclick="applyTheme('dark')">暗色</button>
       <button id="thLight" onclick="applyTheme('light')">淺色</button>
@@ -127,7 +128,7 @@
   <div class="panel">
     <div class="canvas-box"><canvas id="chart"></canvas><div class="loading" id="loading">⟳ 載入即時數據中…</div></div>
     <div class="controls">
-      <div class="subrow"><span class="subrow-label">疊加層</span><span id="subChips" style="display:flex;flex-wrap:wrap;gap:8px"></span><button id="mstrToggle" class="sub-chip">MSTR</button><button id="plToggle" class="sub-chip">Power Law</button></div>
+      <div class="subrow"><span class="subrow-label">疊加層</span><span id="subChips" style="display:flex;flex-wrap:wrap;gap:8px"></span><button id="plToggle" class="sub-chip">Power Law</button></div>
       <div class="presets" id="presets"></div>
       <div class="range-head"><span>顯示範圍</span><b id="rangeLabel">—</b></div>
       <div class="range">
