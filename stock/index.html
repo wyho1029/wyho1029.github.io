@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-HK" data-theme="dark">
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<style>
+  :root, [data-theme="dark"] { --bg:#0e1116; --card:#161b22; --line:#2a313c; --fg:#e6edf3; --mut:#8b949e; --yel:#f5c518; --red:#f85149; }
+  [data-theme="light"] { --bg:#f3eee6; --card:#e9e1d3; --line:#ddd3c2; --fg:#2b2620; --mut:#6b6358; --yel:#8a6d00; --red:#c0392b; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:14px/1.5 -apple-system,"Segoe UI",Roboto,"Microsoft JhengHei",sans-serif;
+         transition:background .2s, color .2s; }
+  header { padding:14px 16px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:1; }
+  h1 { margin:0 0 4px; font-size:18px; }
+  .meta { color:var(--mut); font-size:12px; }
+  .wrap { padding:12px 16px 40px; }
+  h2 { font-size:15px; margin:0; }
+  .sec { border-bottom:1px solid var(--line); }
+  .sec-h { cursor:pointer; user-select:none; padding:14px 4px; display:flex; align-items:center; gap:8px; }
+  .arrow { color:var(--mut); font-size:12px; width:1em; }
+  .sec-b { padding-bottom:14px; }
+  .scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:13px; }
+  th,td { padding:6px 8px; border-bottom:1px solid var(--line); text-align:center; white-space:nowrap; }
+  th { color:var(--mut); font-weight:600; }
+  td.code { text-align:left; font-weight:600; }
+  td.name { text-align:left; max-width:200px; overflow:hidden; text-overflow:ellipsis; }
+  td.score { font-weight:700; color:var(--yel); }
+  .none { color:var(--mut); }
+  button, select, input[type=search] { background:var(--card); color:var(--fg); border:1px solid var(--line);
+           border-radius:8px; padding:6px 12px; font-size:13px; cursor:pointer; }
+  input[type=search] { cursor:text; }
+  select { padding-right:8px; }
+  .err { color:var(--red); padding:16px; }
+  .empty { color:var(--mut); padding:8px; }
+  dl.legend { margin:0; font-size:13px; }
+  dl.legend dt { font-weight:700; margin-top:10px; }
+  dl.legend dd { margin:2px 0 0; color:var(--mut); }
+  td.code { cursor:pointer; color:var(--yel); }
+  td.code:hover { text-decoration:underline; }
+  .dl-btn { margin-left:auto; padding:3px 10px; font-size:12px; }
+  .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:10;
+           align-items:flex-start; justify-content:center; padding:24px 12px; overflow:auto; }
+  .modal-card { background:var(--card); border:1px solid var(--line); border-radius:12px;
+                max-width:560px; width:100%; padding:18px 18px 22px; position:relative; }
+  .modal-x { position:absolute; top:10px; right:10px; padding:2px 9px; }
+  .dhead { font-size:16px; font-weight:700; padding-right:28px; }
+  .dcode { color:var(--yel); }
+  .dmut { color:var(--mut); font-weight:400; }
+  .dwhy { margin:10px 0; padding:8px 10px; background:var(--bg); border-radius:8px; font-size:13px; }
+  dl.dgrid { display:grid; grid-template-columns:1fr 1fr; gap:6px 14px; margin:12px 0 0; }
+  dl.dgrid dt { color:var(--mut); font-size:12px; }
+  dl.dgrid dd { margin:0; font-weight:600; }
+  .dsec { margin-top:14px; }
+  .dsec h4 { margin:0 0 4px; font-size:13px; }
+  .dsec p { margin:0; font-size:13px; line-height:1.6; color:var(--mut); }
+  ul.dnews { margin:0; padding-left:18px; font-size:13px; }
+  ul.dnews li { margin:4px 0; }
+  ul.dnews a { color:var(--fg); }
+  .ai { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--yel);
+        border-radius:8px; padding:10px 12px; margin:4px 0 14px; font-size:13px; line-height:1.7; }
+  td.heat { color:#fff; font-weight:600; text-shadow:0 1px 1px rgba(0,0,0,.4); }
+  tr.hot td.name { color:#3fb950; font-weight:700; }
+  tr.hot td:first-child { box-shadow:inset 3px 0 0 #3fb950; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎯 轉黃掃描</h1>
+  <div class="meta" id="meta">載入中…</div>
+  <div style="margin-top:8px"><button onclick="load()">↻ 重新整理</button>
+    <button id="themeBtn" onclick="toggleTheme()" style="margin-left:6px">☀️ 淺色</button>
+    <select id="histSel" onchange="onHist()" style="margin-left:6px"><option value="">📅 最新</option></select></div>
+  <div style="margin-top:8px">
+    <input id="searchBox" type="search" autocomplete="off" oninput="doSearch()"
+           placeholder="🔍 搜尋代號或全名（睇返歷史出現嘅日子同分數）"
+           style="width:100%;max-width:360px"></div>
+  <div style="margin-top:8px">
+    <span class="dmut" style="font-size:13px">週K 分數 ≥</span>
+    <input id="scoreBox" type="number" min="0" max="200" step="1" autocomplete="off"
+           oninput="doScoreSearch()" placeholder="例：90"
+           style="width:90px;margin-left:4px"></div>
+</header>
+<div class="wrap" id="content"></div>
+<div class="wrap">
+  <div class="sec">
+    <div class="sec-h" onclick="toggleSec('legend')"><span class="arrow" id="arr-legend">▶</span><h2>📖 指標說明</h2></div>
+    <div class="sec-b" id="legend" style="display:none">
+      <dl class="legend">
+        <dt>市值</dt><dd>公司總市值，以「億美元」計（例 <code>34 億</code>、<code>1,000 億</code>）。</dd>
+        <dt>撳代號睇詳情</dt><dd>左鍵撳股票代號 → 彈出公司簡介、市值／PE／分析評級／目標價／業績日、最近新聞，同埋「點解轉強」一句總結。</dd>
+        <dt>趨勢</dt><dd>收市企穩向上嘅週期 MA30／MA40（上升趨勢回調）；收市跌穿 MA40 → 0 分。（已併入詳情視窗，不再單獨列欄）</dd>
+        <dt>主力</dt><dd>HDLY 指標偵測到主力進場／買入訊號。</dd>
+        <dt>放量</dt><dd>當期成交量 ÷ 5日均量。準則：≥1.5× 強、≥1.0× 中、&lt;1.0× 弱（括號為實際倍數）。</dd>
+        <dt>蓄勢</dt><dd>MCDXX 動能死低 ＝ 蓄勢待發（反向獎勵：越低分越高）。</dd>
+        <dt>水上</dt><dd>MACD 嘅 DIF &gt; 0（零軸之上、趨勢偏多）。</dd>
+        <dt>二次轉黃</dt><dd>過去黃K → 升 ≥40% → 回落 → 而家再轉黃（✅P ＝ 命中）。</dd>
+        <dt>✓ ／ ·</dt><dd>該因子有得分 ／ 冇分。</dd>
+        <dt>入圍門檻</dt><dd>日K／月K ≥ 45 分、週K ≥ 70 分。</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal" onclick="if(event.target===this)closeDetail()">
+  <div class="modal-card">
+    <button class="modal-x" onclick="closeDetail()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<script>
+  var LBL = { day:'日K', week:'週K', mon:'月K' };
+  var DETAIL = {};
+  var CURRENT = null;
+  // 富途自選股匯出 CSV 95 欄表頭（跟匯入格式，欄名無逗號可直接 split）
+  var FUTU_HEADER = '代碼,名稱,市場,最新價,漲跌額,漲跌幅,5分鐘漲跌幅,60日漲跌幅,年初至今,買入價,賣出價,買量,賣量,成交量,成交額,股息率TTM,開市,前收,最高,最低,換手率,漲跌速率,振幅,市盈率TTM,市盈率(靜),市淨率,量比,委比,盤前價,盤後價,夜盤價,盤前漲跌幅,盤後漲跌幅,夜盤漲跌幅,盤前額,盤後額,盤前振幅,盤後振幅,盤前漲跌額,盤後漲跌額,夜盤漲跌額,市值,流通值,總股本,流通股,5日漲跌幅,10日漲跌幅,20日漲跌幅,120日漲跌幅,250日漲跌幅,所屬行業,道瓊斯指數相關性,納斯達克100相關性,標普500相關性,羅素2000相關性,費城半導體指數相關性,VIX指數相關性,恒生指數相關性,恒生科技指數相關性,富時中國50指數相關性,滬深300相關性,富時中國A50指數相關性,日經225相關性,TOPIX指數相關性,富時海峽指數相關性,大馬綜合指數相關性,TSX相關性,ASX200相關性,期權總成交,期權總持倉,正股IV,正股HV,正股IV-正股HV,IV等級,IV百分位數,行使價,到期日,未平倉數量,溢價,引伸波幅,Delta,Gamma,Theta,Vega,Rho,距離到期日,內在價值,時間價值,槓桿比率,有效槓桿,盈虧平衡點,達到盈虧平衡,盈利概率'.split(',');
+  function qcsv(v){ return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"'; }
+  function futuCode(c){ var p = (c || '').split('.'); var mkt = p.shift();
+    return p.join('.').replace(/-/g, '.') + '.' + mkt; }   // US.AVNT→AVNT.US、US.GEF-B→GEF.B.US
+  function buildCsv(list){
+    var lines = [FUTU_HEADER.map(qcsv).join(',')];
+    list.forEach(function(s){
+      var m = { '代碼': futuCode(s.code), '名稱': s.name || '', '市場': '美股',
+        '最新價': (s.close != null) ? Number(s.close).toFixed(3) : '',
+        '市值': (s.mktcap != null) ? s.mktcap : '', '所屬行業': s.sector || '' };
+      lines.push(FUTU_HEADER.map(function(c){ return qcsv(c in m ? m[c] : ''); }).join(','));
+    });
+    return lines.join('\r\n');
+  }
+  function downloadCsv(filename, csv){
+    var blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+  }
+  function downloadSection(id){
+    if (!CURRENT){ return; }
+    var TF = { 'sec-day': ['day', '日K'], 'sec-week': ['week', '週K'], 'sec-mon': ['mon', '月K'] };
+    var list, label;
+    if (id === 'sec-vol'){ list = CURRENT.volume_watch || []; label = '爆量觀察'; }
+    else { var m = TF[id]; list = (CURRENT.timeframes || {})[m[0]] || []; label = m[1]; }
+    if (!list.length){ alert('呢個名單冇股票，冇嘢可下載。'); return; }
+    var date = (CURRENT.generated || '').slice(0, 10);
+    downloadCsv('轉黃-' + label + '_' + date + '.csv', buildCsv(list));
+  }
+  function mark(v){ return (v && v > 0) ? '✓' : '<span class="none">·</span>'; }
+  function sy(h){ return h.sy_pattern ? '✅P' : '<span class="none">·</span>'; }
+  function fixed(v){ return (v != null) ? Number(v).toFixed(3) : ''; }
+  function sym(c){ return (c || '').replace(/^US\./, ''); }
+  function mcap(v){ return (v != null) ? Math.round(v / 1e8).toLocaleString('en-US') + ' 億' : '—'; }
+  function rows(list){
+    if (!list || !list.length) return '<div class="empty">（無）</div>';
+    var h = '<div class="scroll"><table><tr>'
+      + '<th>股票</th><th>全名</th><th>板塊</th><th>分數</th><th>市值</th><th>收市價</th><th>主力</th>'
+      + '<th>放量</th><th>蓄勢</th><th>水上</th><th>二次轉黃</th></tr>';
+    list.forEach(function(s){
+      h += '<tr><td class="code" onclick="openDetail(\'' + s.code + '\')">' + sym(s.code) + '</td>'
+        + '<td class="name">' + (s.name || '—') + '</td>'
+        + '<td>' + (s.sector || '—') + '</td>'
+        + '<td class="score">' + s.score + '</td>'
+        + '<td>' + mcap(s.mktcap) + '</td>'
+        + '<td>' + fixed(s.close) + '</td>'
+        + '<td>' + mark(s.hdly) + '</td>'
+        + '<td>' + mark(s.vol) + '(' + (s.vol_ratio != null ? s.vol_ratio : '?') + 'x)</td>'
+        + '<td>' + mark(s.mcdxx) + '</td>'
+        + '<td>' + mark(s.macd) + '</td>'
+        + '<td>' + sy(s) + '</td></tr>';
+    });
+    return h + '</table></div>';
+  }
+  function volRows(list){
+    if (!list || !list.length) return '<div class="empty">（無）</div>';
+    var h = '<div class="scroll"><table><tr><th>股票</th><th>收市</th>'
+      + '<th>巨量倍數</th><th>巨量週</th></tr>';
+    list.forEach(function(s){
+      h += '<tr><td class="code">' + sym(s.code) + '</td><td>' + fixed(s.close) + '</td>'
+        + '<td>' + s.spike_mult + 'x</td><td>' + (s.spike_date || '') + '</td></tr>';
+    });
+    return h + '</table></div>';
+  }
+  function heatColor(pct){            // 回報% → 紅(跌)→黃(平)→綠(升) 色階
+    if (pct == null) return 'transparent';
+    var hue = Math.max(0, Math.min(120, 60 + pct * 6));   // 0=紅 60=黃 120=綠，±10% 封頂
+    return 'hsl(' + hue + ',70%,45%)';
+  }
+  function dirArrow(r){               // 輪動方向：排名躍升=資金流入↑
+    if (r >= 3) return '<span style="color:#3fb950">↑↑</span>';
+    if (r > 0)  return '<span style="color:#3fb950">↑</span>';
+    if (r <= -3) return '<span style="color:#f85149">↓↓</span>';
+    if (r < 0)  return '<span style="color:#f85149">↓</span>';
+    return '<span class="none">→</span>';
+  }
+  function heatCell(pct){
+    if (pct == null) return '<td>—</td>';
+    return '<td class="heat" style="background:' + heatColor(pct) + '">'
+      + (pct > 0 ? '+' : '') + pct + '</td>';
+  }
+  function sectorRows(list){
+    if (!list || !list.length) return '<div class="empty">（無）</div>';
+    var h = '<div class="scroll"><table><tr><th>板塊</th><th>5日</th><th>1月</th>'
+      + '<th>3月</th><th>6月</th><th>1年</th><th>輪動</th><th>量比</th></tr>';
+    list.forEach(function(s){
+      var r = s.ret || {};
+      h += '<tr' + (s.hot ? ' class="hot"' : '') + '>'
+        + '<td class="name">' + (s.hot ? '🔥 ' : '') + s.name + '</td>'
+        + heatCell(r.d5) + heatCell(r.m1) + heatCell(r.m3) + heatCell(r.m6) + heatCell(r.y1)
+        + '<td>' + dirArrow(s.rotate) + '</td>'
+        + '<td>' + (s.vol_ratio != null ? s.vol_ratio + 'x' : '—') + '</td></tr>';
+    });
+    return h + '</table></div>';
+  }
+  function sectorSection(d){
+    var ai = d.sector_ai ? '<div class="ai">🤖 AI 分析：' + d.sector_ai + '</div>' : '';
+    return '<div class="sec"><div class="sec-h" onclick="toggleSec(\'sec-rot\')">'
+      + '<span class="arrow" id="arr-sec-rot">▶</span><h2>🔄 板塊輪動</h2></div>'
+      + '<div class="sec-b" id="sec-rot" style="display:none">'
+      + ai + sectorRows(d.sectors || []) + '</div></div>';
+  }
+  var CBADGE = { yellow:'🟡 黃', green:'🟢 綠', blue:'🔵 藍', red:'🔴 紅', none:'⚪ —' };
+  function tqqqSection(d){
+    var w = d.tqqq_watch || {}, s = w.status || {}, tr = w.triggers || [];
+    var line = s.week_end
+      ? '目前 ' + (CBADGE[s.color] || s.color) + ' · 收 ' + fixed(s.close)
+        + ' · 距52週高 <b>-' + s.drawdown + '%</b>（52週高 ' + fixed(s.high52)
+        + '、週結 ' + s.week_end + '）'
+      : '（未有數據）';
+    var body = '<div class="ai">' + line + '</div>';
+    if (tr.length){
+      body += '<div class="scroll"><table><tr><th>類型</th><th>觸發週(結)</th><th>收市</th>'
+        + '<th>52週高</th><th>回落</th></tr>';
+      tr.forEach(function(t){
+        var ty = (t.type === 'drawdown') ? '📉 跌破30%' : '🟡 轉黃';
+        body += '<tr><td>' + ty + '</td><td>' + t.week_end + '</td><td>' + fixed(t.close)
+          + '</td><td>' + fixed(t.high52) + '</td><td class="score">-' + t.drawdown + '%</td></tr>';
+      });
+      body += '</table></div>';
+    } else {
+      body += '<div class="empty">（暫無觸發：由 52 週高跌 >30%，或再加週K剛轉黃）</div>';
+    }
+    return '<div class="sec"><div class="sec-h" onclick="toggleSec(\'sec-tqqq\')">'
+      + '<span class="arrow" id="arr-sec-tqqq">▶</span><h2>🎯 TQQQ 觀察（' + tr.length + '）</h2></div>'
+      + '<div class="sec-b" id="sec-tqqq" style="display:none">' + body + '</div></div>';
+  }
+  function cycleRows(list, badge){
+    var h = '';
+    list.forEach(function(t){
+      h += '<tr><td>' + badge + '</td><td class="name">' + sym(t.code) + '</td>'
+        + '<td>' + (t.name || '—') + '</td><td>' + (t.sector || '—') + '</td>'
+        + '<td>' + fixed(t.close) + '</td><td class="score">-' + t.drawdown + '%</td>'
+        + '<td>' + t.red_count + '</td><td>' + t.month + '</td></tr>';
+    });
+    return h;
+  }
+  function cycleZone(z, label){
+    var cand = (z && z.candidates) || [], conf = (z && z.confirmed) || [];
+    var h = '<h3 style="margin:10px 0 4px">' + label + '（候選 ' + cand.length
+      + ' · 確認 ' + conf.length + '）</h3>';
+    if (!cand.length && !conf.length) return h + '<div class="empty">（無）</div>';
+    h += '<div class="scroll"><table><tr><th>狀態</th><th>代號</th><th>全名</th>'
+      + '<th>板塊</th><th>收市</th><th>熊底最深</th><th>紅月</th><th>月份</th></tr>'
+      + cycleRows(cand, '⚡候選') + cycleRows(conf, '✅確認') + '</table></div>';
+    return h;
+  }
+  function cycleSection(d){
+    var c = d.cycle_bottom || {};
+    var n = ((c.stocks || {}).candidates || []).length
+          + ((c.etf || {}).candidates || []).length;
+    var body = '<div class="ai">四閘：月K剛轉黃 + 熊段最深回撤>35% + 12月內≥4紅月 + 月MA30/40都向上。'
+      + '⚡候選＝當月未完成、月尾定案；✅確認＝已完成月K、永久記錄。</div>'
+      + cycleZone(c.stocks, '📈 個股') + cycleZone(c.etf, '🧺 ETF');
+    return '<div class="sec"><div class="sec-h" onclick="toggleSec(\'sec-cycle\')">'
+      + '<span class="arrow" id="arr-sec-cycle">▶</span><h2>🌙 月K週期底（' + n + '）</h2></div>'
+      + '<div class="sec-b" id="sec-cycle" style="display:none">' + body + '</div></div>';
+  }
+  function section(title, count, bodyHtml, id){
+    return '<div class="sec">'
+      + '<div class="sec-h" onclick="toggleSec(\'' + id + '\')">'
+      + '<span class="arrow" id="arr-' + id + '">▶</span>'
+      + '<h2>' + title + '（' + count + '）</h2>'
+      + '<button class="dl-btn" onclick="event.stopPropagation();downloadSection(\'' + id + '\')">⬇ CSV</button></div>'
+      + '<div class="sec-b" id="' + id + '" style="display:none">' + bodyHtml + '</div></div>';
+  }
+  function toggleSec(id){
+    var b = document.getElementById(id), a = document.getElementById('arr-' + id);
+    var open = b.style.display !== 'none';
+    b.style.display = open ? 'none' : 'block';
+    a.textContent = open ? '▶' : '▼';
+  }
+  function render(d){
+    var meta = document.getElementById('meta');
+    var content = document.getElementById('content');
+    if (!d || d.error){ meta.textContent = ''; content.innerHTML = '<div class="err">' + ((d && d.error) || '載入失敗') + '</div>'; return; }
+    var t = d.thresholds || {};
+    meta.innerHTML = '最後更新 ' + d.generated + '（' + d.run_type + '）· 掃描 ' + d.scanned
+      + ' · 門檻 日' + t.day + '/週' + t.week + '/月' + t.mon;
+    var html = '';
+    CURRENT = d;
+    DETAIL = {};
+    ['day','week','mon'].forEach(function(tf){
+      var list = (d.timeframes || {})[tf] || [];
+      list.forEach(function(s){ DETAIL[s.code] = s; });
+      html += section(LBL[tf] + ' 轉黃', list.length, rows(list), 'sec-' + tf);
+    });
+    var vw = d.volume_watch || [];
+    html += section('🔥 爆量觀察', vw.length, volRows(vw), 'sec-vol');
+    html += tqqqSection(d);
+    html += cycleSection(d);
+    html += sectorSection(d);
+    html += '<div class="meta" style="margin-top:24px">資訊提示，非投資建議。</div>';
+    content.innerHTML = html;
+  }
+  function showErr(e){ document.getElementById('content').innerHTML = '<div class="err">錯誤：' + e + '</div>'; }
+  function dnum(v, n){ return (v != null) ? Number(v).toFixed(n) : '—'; }
+  function openDetail(code){
+    var s = DETAIL[code]; if (!s) return;
+    var h = '<div class="dhead"><span class="dcode">' + sym(code) + '</span> ' + (s.name || '')
+      + (s.sector ? ' · <span class="dmut">' + s.sector + '</span>' : '') + '</div>';
+    h += '<div class="dwhy">' + (s.why || '') + '</div>';
+    h += '<dl class="dgrid">'
+      + '<div><dt>市值</dt><dd>' + mcap(s.mktcap) + '</dd></div>'
+      + '<div><dt>PE</dt><dd>' + dnum(s.pe, 1) + '</dd></div>'
+      + '<div><dt>分析評級</dt><dd>' + (s.rating || '—') + '</dd></div>'
+      + '<div><dt>目標價</dt><dd>' + dnum(s.target, 2) + '</dd></div>'
+      + '<div><dt>業績日</dt><dd>' + (s.earnings || '—') + '</dd></div>'
+      + '<div><dt>收市</dt><dd>' + fixed(s.close) + '</dd></div>'
+      + '<div><dt>分數</dt><dd>' + s.score + '</dd></div>'
+      + '</dl>';
+    if (s.summary) h += '<div class="dsec"><h4>公司簡介</h4><p>' + s.summary + '</p></div>';
+    var news = s.news || [];
+    if (news.length){
+      h += '<div class="dsec"><h4>最近新聞</h4><ul class="dnews">';
+      news.forEach(function(n){
+        var t = n.link ? '<a href="' + n.link + '" target="_blank" rel="noopener">' + n.title + '</a>' : n.title;
+        var meta = [n.publisher, n.date].filter(Boolean).join(' · ');
+        h += '<li>' + t + (meta ? ' <span class="dmut">' + meta + '</span>' : '') + '</li>';
+      });
+      h += '</ul></div>';
+    }
+    document.getElementById('modalBody').innerHTML = h;
+    document.getElementById('modal').style.display = 'flex';
+  }
+  function closeDetail(){ document.getElementById('modal').style.display = 'none'; }
+  var HIST_CACHE = {};
+  function fetchJson(name, ok, fail){
+    // GitHub Pages 靜態檔：latest / search_index / history_index 喺 data/，歷史快照喺 data/history/
+    var path = !name ? 'data/stock_scan_latest.json'
+      : (name.indexOf('stock_scan_') === 0 ? 'data/history/' : 'data/') + name;
+    fetch(path).then(function(r){
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(ok).catch(fail || function(){});
+  }
+  function fetchData(name){
+    if (name && HIST_CACHE[name]) { render(HIST_CACHE[name]); return; }   // 揀過嘅歷史日期即時顯示
+    document.getElementById('meta').textContent = '載入中…';
+    fetchJson(name, function(d){
+      if (name && d && !d.error) HIST_CACHE[name] = d;   // 歷史檔過去唔變，cache 住免重 fetch
+      render(d);
+    }, showErr);
+  }
+  function onHist(){ fetchData(document.getElementById('histSel').value); }
+  function histLabel(fn){
+    // 只顯示日期（剷走時間同 daily/weekly 尾綴）
+    return fn.replace(/^stock_scan_/, '').replace(/\.json$/, '').split('_')[0];
+  }
+  function fillHist(names){
+    var sel = document.getElementById('histSel');
+    var html = '<option value="">📅 最新</option>';
+    (names || []).forEach(function(fn){ html += '<option value="' + fn + '">' + histLabel(fn) + '</option>'; });
+    sel.innerHTML = html;
+  }
+  var SEARCH_INDEX = null;
+  function loadIndex(){
+    fetchJson('search_index.json', function(d){ SEARCH_INDEX = (d && !d.error) ? d : {}; });
+  }
+  function searchRows(hits){
+    var h = '<div class="scroll"><table><tr><th>日期</th><th>週期</th><th>分數</th><th>收市價</th>'
+      + '<th>主力</th><th>放量</th><th>蓄勢</th><th>水上</th><th>二次轉黃</th></tr>';
+    hits.forEach(function(s){
+      h += '<tr><td>' + s.date + '</td><td>' + (LBL[s.tf] || s.tf) + '</td>'
+        + '<td class="score">' + s.score + '</td><td>' + fixed(s.close) + '</td>'
+        + '<td>' + mark(s.hdly) + '</td>'
+        + '<td>' + mark(s.vol) + '(' + (s.vol_ratio != null ? s.vol_ratio : '?') + 'x)</td>'
+        + '<td>' + mark(s.mcdxx) + '</td><td>' + mark(s.macd) + '</td>'
+        + '<td>' + (s.sy > 0 ? '✅P' : '<span class="none">·</span>') + '</td></tr>';
+    });
+    return h + '</table></div>';
+  }
+  function doSearch(){
+    var q = document.getElementById('searchBox').value.trim().toUpperCase();
+    var content = document.getElementById('content');
+    if (q) document.getElementById('scoreBox').value = '';    // 兩個搜尋框互斥
+    if (!q){ render(CURRENT); return; }                       // 清空 → 返當前掃描結果
+    if (!SEARCH_INDEX){ content.innerHTML = '<div class="empty">索引載入中，再打多次…</div>'; return; }
+    var matches = [];
+    for (var code in SEARCH_INDEX){
+      var e = SEARCH_INDEX[code];
+      if (code.toUpperCase().indexOf(q) >= 0 || (e.name || '').toUpperCase().indexOf(q) >= 0)
+        matches.push([code, e]);
+    }
+    matches.sort(function(a, b){ return b[1].hits.length - a[1].hits.length; });   // 出現次數多排前
+    if (!matches.length){ content.innerHTML = '<div class="empty">搵唔到「' + q + '」</div>'; return; }
+    var html = '<div class="meta" style="margin:4px 0 12px">🔍 搜尋「' + q + '」：' + matches.length + ' 隻股票</div>';
+    matches.forEach(function(m){
+      var code = m[0], e = m[1];
+      html += '<div class="sec"><div class="sec-h" style="cursor:default">'
+        + '<h2>' + sym(code) + ' <span class="dmut" style="font-weight:400">' + (e.name || '')
+        + (e.sector ? ' · ' + e.sector : '') + '</span></h2>'
+        + '<span class="dmut" style="margin-left:auto">' + e.hits.length + ' 次</span></div>'
+        + '<div class="sec-b">' + searchRows(e.hits) + '</div></div>';
+    });
+    content.innerHTML = html;
+  }
+  function doScoreSearch(){
+    var raw = document.getElementById('scoreBox').value.trim();
+    var content = document.getElementById('content');
+    if (raw !== '') document.getElementById('searchBox').value = '';   // 兩個搜尋框互斥
+    if (raw === ''){ render(CURRENT); return; }                 // 清空 → 返當前掃描結果
+    var min = parseFloat(raw);
+    if (isNaN(min)){ return; }
+    if (!SEARCH_INDEX){ content.innerHTML = '<div class="empty">索引載入中，再打多次…</div>'; return; }
+    var matches = [];
+    for (var code in SEARCH_INDEX){
+      var e = SEARCH_INDEX[code];
+      var wk = e.hits.filter(function(s){ return s.tf === 'week' && s.score >= min; });
+      if (wk.length){ matches.push([code, e, wk]); }
+    }
+    matches.sort(function(a, b){ return b[2][0].score - a[2][0].score; });   // 最高週K分排前（hits 已新到舊、同分不影響）
+    if (!matches.length){ content.innerHTML = '<div class="empty">冇股票週K曾經 ≥ ' + min + ' 分</div>'; return; }
+    var html = '<div class="meta" style="margin:4px 0 12px">🔍 週K 分數 ≥ ' + min + '：' + matches.length + ' 隻股票</div>';
+    matches.forEach(function(m){
+      var code = m[0], e = m[1], wk = m[2];
+      var best = Math.max.apply(null, wk.map(function(s){ return s.score; }));
+      html += '<div class="sec"><div class="sec-h" style="cursor:default">'
+        + '<h2>' + sym(code) + ' <span class="dmut" style="font-weight:400">' + (e.name || '')
+        + (e.sector ? ' · ' + e.sector : '') + '</span></h2>'
+        + '<span class="dmut" style="margin-left:auto">最高 ' + best + ' 分 · ' + wk.length + ' 次</span></div>'
+        + '<div class="sec-b">' + searchRows(wk) + '</div></div>';
+    });
+    content.innerHTML = html;
+  }
+  function load(){ fetchData(null);
+    fetchJson('history_index.json', fillHist, function(){ fillHist([]); });
+    loadIndex(); }
+  function applyTheme(t){ document.documentElement.setAttribute('data-theme', t);
+    var b = document.getElementById('themeBtn'); if (b) b.textContent = (t === 'dark') ? '☀️ 淺色' : '🌙 暗色'; }
+  function toggleTheme(){ var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = (cur === 'dark') ? 'light' : 'dark'; localStorage.setItem('theme', next); applyTheme(next); }
+  applyTheme(localStorage.getItem('theme') || 'dark');
+  load();
+</script>
+</body>
+</html>

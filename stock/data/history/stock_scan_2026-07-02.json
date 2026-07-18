@@ -1,0 +1,306 @@
+{
+  "generated": "2026-07-02 06:07",
+  "run_type": "daily",
+  "scanned": 2956,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [],
+    "week": [
+      {
+        "code": "US.NVAX",
+        "name": "Novavax, Inc.",
+        "sector": "Healthcare",
+        "close": 9.460000038146973,
+        "score": 85,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.62,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 1555584512,
+        "pe": null,
+        "rating": "buy · 9位分析師",
+        "target": 14.11333,
+        "earnings": "2026-08-05（估）",
+        "summary": "Novavax, Inc., a biotechnology company, engages in the discovery, development, and commercialization of vaccines to prevent serious infectious diseases in the United States, Europe, and internationally. The company commercializes Nuvaxovid, a COVID-19 vaccine; and R21 Matrix-M adjuvant malaria vaccine. It has license and collaboration agreements with Sanofi, Pfizer Inc., Takeda Pharmaceutical Company Limited, and Serum Life Sciences Limited for the to develop, manufacture, and commercialize the COVID-19 vaccine. The company was incorporated in 1987 and is headquartered in Gaithersburg, Marylan",
+        "news": [
+          {
+            "title": "Novavax (NVAX) Suffers a Larger Drop Than the General Market: Key Insights",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/novavax-nvax-suffers-larger-drop-214503542.html",
+            "date": "2026-06-24",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Investors Heavily Search Novavax, Inc. (NVAX): Here is What You Need to Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-novavax-inc-130006204.html",
+            "date": "2026-06-23",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Novavax (NVAX) Stock Falls Amid Market Uptick: What Investors Need to Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/novavax-nvax-stock-falls-amid-214503763.html",
+            "date": "2026-06-18",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Moderna Is Up 94% This Year: Is It Outperforming Other Vaccine Stocks Like Pfizer and Novavax?",
+            "link": "https://247wallst.com/investing/2026/06/16/moderna-is-up-94-this-year-is-it-outperforming-other-vaccine-stocks-like-pfizer-and-novavax/",
+            "date": "2026-06-16",
+            "publisher": "24/7 Wall St."
+          },
+          {
+            "title": "A Look Back at Therapeutics Stocks’ Q1 Earnings: Novavax (NASDAQ:NVAX) Vs The Rest Of The Pack",
+            "link": "https://finance.yahoo.com/healthcare/articles/look-back-therapeutics-stocks-q1-183304303.html",
+            "date": "2026-06-16",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "周K 轉黃 85分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.TPL",
+        "name": "Texas Pacific Land Corporation",
+        "sector": "Energy",
+        "close": 415.0199890136719,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.85,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 28625768448,
+        "pe": 56.77428,
+        "rating": "",
+        "target": 445.0,
+        "earnings": "2026-08-06（估）",
+        "summary": "Texas Pacific Land Corporation engages in the land and resource management, and water services and operations businesses. The Land and Resource Management segment manages surface acres of land, and oil and gas royalty interest in Permian Basin. This segment also engages in easements, such as transporting oil, gas and related hydrocarbons, power line and utility, and subsurface wellbore easements. In addition, this segment leases its land for processing, storage, and compression facilities and roads; and is involved in sale of materials, such as caliche, sand, and other material, as well as sel",
+        "news": [
+          {
+            "title": "Chevron Corporation (CVX) Secures Texas Pacific Land Support on Microsoft’s Project Kilby",
+            "link": "https://finance.yahoo.com/energy/articles/chevron-corporation-cvx-secures-texas-115410436.html",
+            "date": "2026-06-29",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "The Strangest AI Stock of 2026 Doesn't Make Chips. It Owns Land in Texas.",
+            "link": "https://www.fool.com/investing/2026/06/27/the-strangest-ai-stock-of-2026-doesnt-make-chips-i/",
+            "date": "2026-06-27",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Implied Volatility Surging for Texas Pacific Land Stock Options",
+            "link": "https://finance.yahoo.com/markets/options/articles/implied-volatility-surging-texas-pacific-124000530.html",
+            "date": "2026-06-26",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Q1 Rundown: Texas Pacific Land (NYSE:TPL) Vs Other U.S. Shale E&P Stocks",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/q1-rundown-texas-pacific-land-213750686.html",
+            "date": "2026-06-25",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Microsoft Solves AI’s Biggest Bottleneck With Chevron Deal",
+            "link": "https://www.marketbeat.com/articles/microsoft-solves-ais-biggest-bottleneck-with-chevron-deal/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-06-25",
+            "publisher": "MarketBeat"
+          }
+        ],
+        "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      }
+    ],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.NVCT",
+      "close": 19.520000457763672,
+      "spike_mult": 12.2,
+      "spike_date": "2026-07-03"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": 4.0,
+        "m1": 8.4,
+        "m3": 9.3,
+        "m6": 3.3,
+        "y1": 20.4
+      },
+      "rank_m1": 1,
+      "rotate": 3,
+      "vol_ratio": 0.94,
+      "hot": true
+    },
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 2.0,
+        "m1": 6.9,
+        "m3": 11.3,
+        "m6": -0.1,
+        "y1": 6.2
+      },
+      "rank_m1": 2,
+      "rotate": 1,
+      "vol_ratio": 0.84,
+      "hot": false
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": 1.7,
+        "m1": 6.6,
+        "m3": 13.7,
+        "m6": 17.5,
+        "y1": 25.9
+      },
+      "rank_m1": 3,
+      "rotate": -1,
+      "vol_ratio": 0.76,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": -1.7,
+        "m1": 4.5,
+        "m3": -1.8,
+        "m6": 5.9,
+        "y1": 12.7
+      },
+      "rank_m1": 4,
+      "rotate": 6,
+      "vol_ratio": 0.87,
+      "hot": true
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": -0.7,
+        "m1": 3.0,
+        "m3": 9.2,
+        "m6": 10.4,
+        "y1": 10.3
+      },
+      "rank_m1": 5,
+      "rotate": 0,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": -1.4,
+        "m1": 2.3,
+        "m3": 2.3,
+        "m6": 7.8,
+        "y1": 5.7
+      },
+      "rank_m1": 6,
+      "rotate": 2,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": -0.3,
+        "m1": 0.6,
+        "m3": 2.5,
+        "m6": 12.5,
+        "y1": 18.3
+      },
+      "rank_m1": 7,
+      "rotate": 0,
+      "vol_ratio": 0.83,
+      "hot": false
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": 2.6,
+        "m1": 0.1,
+        "m3": 8.6,
+        "m6": -1.9,
+        "y1": 9.5
+      },
+      "rank_m1": 8,
+      "rotate": -2,
+      "vol_ratio": 0.79,
+      "hot": false
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": 3.0,
+        "m1": -4.8,
+        "m3": -0.8,
+        "m6": -6.4,
+        "y1": 2.4
+      },
+      "rank_m1": 9,
+      "rotate": 0,
+      "vol_ratio": 1.13,
+      "hot": false
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": 1.4,
+        "m1": -5.1,
+        "m3": 39.8,
+        "m6": 27.6,
+        "y1": 47.4
+      },
+      "rank_m1": 10,
+      "rotate": -9,
+      "vol_ratio": 0.91,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": -1.4,
+        "m1": -7.2,
+        "m3": -13.2,
+        "m6": 20.0,
+        "y1": 28.4
+      },
+      "rank_m1": 11,
+      "rotate": 0,
+      "vol_ratio": 0.69,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：醫療（+8.4%）。 資金正流入：醫療、公用（動量加速）。 資金轉弱：非必需消費、科技。 🔥 特別留意 醫療、公用，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。"
+}

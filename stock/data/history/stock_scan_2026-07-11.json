@@ -1,0 +1,394 @@
+{
+  "generated": "2026-07-11 09:14",
+  "run_type": "weekly",
+  "scanned": 2878,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.MLTX",
+        "name": "MoonLake Immunotherapeutics",
+        "sector": "Healthcare",
+        "close": 20.360000610351562,
+        "score": 84,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.38,
+        "mcdxx": 4,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1701315968,
+        "pe": null,
+        "rating": "buy · 13位分析師",
+        "target": 28.0,
+        "earnings": "2026-08-04（估）",
+        "summary": "MoonLake Immunotherapeutics, a clinical-stage biotechnology company, focuses on developing therapies for inflammatory skin and joint diseases. It develops Sonelokimab, a novel tri-specific IL-17A and IL-17F inhibiting Nanobody for the treatment of inflammatory diseases in dermatology and rheumatology, as well as for hidradenitis suppurativa, psoriatic arthritis, axial spondyloarthritis, palmoplantar pustulosis, and psoriasis. The company was founded in 2021 and is headquartered in Zug, Switzerland.",
+        "news": [
+          {
+            "title": "MoonLake Immunotherapeutics' CFO Sells 39K Shares",
+            "link": "https://www.fool.com/coverage/filings/2026/07/03/moonlake-immunotherapeutics-cfo-sells-39k-shares/",
+            "date": "2026-07-03",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "MoonLake Immunotherapeutics (MLTX) Outlook Strengthens as Analysts See Major Opportunity in Hidradenitis Suppurativa",
+            "link": "https://finance.yahoo.com/healthcare/articles/moonlake-immunotherapeutics-mltx-outlook-strengthens-132211625.html",
+            "date": "2026-06-30",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "How Investors May Respond To MoonLake Immunotherapeutics (MLTX) VELA Data And Upsized Follow-On Offering",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-moonlake-immunotherapeutics-120720478.html",
+            "date": "2026-06-25",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Why MoonLake Immunotherapeutics Stock Wilted on Wednesday",
+            "link": "https://www.fool.com/investing/2026/06/24/why-moonlake-immunotherapeutics-stock-wilted-on-we/",
+            "date": "2026-06-25",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Wednesday Amid Easing US-Iran Tensions",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-131740078.html",
+            "date": "2026-06-24",
+            "publisher": "MT Newswires"
+          }
+        ],
+        "why": "日K 轉黃 84分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.38x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      }
+    ],
+    "week": [
+      {
+        "code": "US.UGP",
+        "name": "Ultrapar Participacoes S.A. (New)",
+        "sector": "Energy",
+        "close": 6.0,
+        "score": 87,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.41,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 6412927488,
+        "pe": 10.909091,
+        "rating": "buy · 8位分析師",
+        "target": 6.43262,
+        "earnings": "2026-05-07",
+        "summary": "Ultrapar Participações S.A., through its subsidiaries, operates in the energy, mobility, and logistics infrastructure sectors in Brazil, the rest of Europe, the United States, Canada, other Latin American countries, Oceania, and internationally. It operates through Ultragaz, Ipiranga, Ultracargo, and Hidrovias segments. The company distributes and sells oil-related products, biofuels, gasoline, ethanol, diesel, fuel oil, kerosene, natural gas for vehicles, and additive fuels under the Ipimax brand to carriers, resellers, and retailers; operates service stations under the Ipiranga brand and con",
+        "news": [
+          {
+            "title": "Ultrapar Participações (UGP) Among the Best Undervalued Stocks Under $5",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ultrapar-participa-es-ugp-among-185342036.html",
+            "date": "2026-06-20",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Zacks.com featured highlights include First American Financial, Caleres, Cenovus, Ultrapar and Open Text",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-first-085300663.html",
+            "date": "2026-06-03",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "UGP or WMB: Which Is the Better Value Stock Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ugp-wmb-better-value-stock-154002212.html",
+            "date": "2026-06-02",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Is Ultrapar Participacoes (UGP) Stock Undervalued Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ultrapar-participacoes-ugp-stock-undervalued-134004700.html",
+            "date": "2026-06-02",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Tap These 5 Bargain Stocks With Amazingly Low EV-to-EBITDA Ratios",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tap-5-bargain-stocks-amazingly-121200144.html",
+            "date": "2026-06-02",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、放量 1.41x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.LNG",
+        "name": "Cheniere Energy, Inc.",
+        "sector": "Energy",
+        "close": 258.6400146484375,
+        "score": 85,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.93,
+        "mcdxx": 2,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 54198497280,
+        "pe": 43.76312,
+        "rating": "strong_buy · 22位分析師",
+        "target": 303.22726,
+        "earnings": "2026-08-06",
+        "summary": "Cheniere Energy, Inc., an energy infrastructure company, primarily engages in the liquefied natural gas (LNG) related businesses in the United States. The company owns and operates the Sabine Pass LNG terminal in Cameron Parish, Louisiana; and the Corpus Christi LNG terminal near Corpus Christi, Texas. It also owns and operates the Creole Trail pipeline, a 94-mile natural gas supply pipeline that interconnects the Sabine Pass LNG Terminal with several large interstate and intrastate pipelines; and the Corpus Christi pipeline, a 21-mile natural gas supply pipeline that interconnects the Corpus ",
+        "news": [
+          {
+            "title": "Baker Hughes Wins Cheniere Sabine Pass Awards to Drive LNG Growth",
+            "link": "https://finance.yahoo.com/energy/articles/baker-hughes-wins-cheniere-sabine-141900074.html",
+            "date": "2026-07-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "First U.S. LNG Ships To Asia From Mexico, Avoiding Hormuz Tensions",
+            "link": "https://www.investors.com/news/lng-stocks-u-s-gas-ships-asia-mexico-win-for-trump/?src=A00220&yptr=yahoo",
+            "date": "2026-07-09",
+            "publisher": "Investor's Business Daily"
+          },
+          {
+            "title": "Cheniere Energy (LNG) Benefited from Supply Constraints",
+            "link": "https://finance.yahoo.com/energy/articles/cheniere-energy-lng-benefited-supply-141954401.html",
+            "date": "2026-06-30",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Bernstein Starts Cheniere Energy (LNG) at Outperform, Backs Brownfield Expansion Strategy",
+            "link": "https://finance.yahoo.com/energy/articles/bernstein-starts-cheniere-energy-lng-051625184.html",
+            "date": "2026-06-26",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Market Chatter: US, Qatar Warn EU Methane Rules Could Trigger Gas Supply Shortages",
+            "link": "https://finance.yahoo.com/energy/articles/market-chatter-us-qatar-warn-153243202.html",
+            "date": "2026-06-23",
+            "publisher": "MT Newswires"
+          }
+        ],
+        "why": "周K 轉黃 85分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      }
+    ],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.CLRO",
+      "close": 8.390000343322754,
+      "spike_mult": 2635.6,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.IQMX",
+      "close": 12.4399995803833,
+      "spike_mult": 26.8,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.CRNX",
+      "close": 83.58000183105469,
+      "spike_mult": 23.2,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.RXT",
+      "close": 5.340000152587891,
+      "spike_mult": 18.8,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.ALOY",
+      "close": 12.279999732971191,
+      "spike_mult": 12.6,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.FBRX",
+      "close": 43.91999816894531,
+      "spike_mult": 11.7,
+      "spike_date": "2026-07-10"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 0.2,
+        "m1": 6.6,
+        "m3": 8.9,
+        "m6": 1.0,
+        "y1": 8.0
+      },
+      "rank_m1": 1,
+      "rotate": 1,
+      "vol_ratio": 0.78,
+      "hot": false
+    },
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": -1.8,
+        "m1": 4.5,
+        "m3": 8.2,
+        "m6": 1.6,
+        "y1": 20.8
+      },
+      "rank_m1": 2,
+      "rotate": 1,
+      "vol_ratio": 0.9,
+      "hot": false
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": -1.1,
+        "m1": 3.9,
+        "m3": 5.9,
+        "m6": 15.0,
+        "y1": 22.9
+      },
+      "rank_m1": 3,
+      "rotate": 1,
+      "vol_ratio": 0.74,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": -0.8,
+        "m1": 3.9,
+        "m3": -3.1,
+        "m6": 9.9,
+        "y1": 14.0
+      },
+      "rank_m1": 4,
+      "rotate": 6,
+      "vol_ratio": 0.84,
+      "hot": true
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": 2.9,
+        "m1": 2.9,
+        "m3": 30.9,
+        "m6": 27.1,
+        "y1": 44.9
+      },
+      "rank_m1": 5,
+      "rotate": -4,
+      "vol_ratio": 0.78,
+      "hot": false
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": 0.1,
+        "m1": 1.4,
+        "m3": 4.2,
+        "m6": -2.6,
+        "y1": 7.9
+      },
+      "rank_m1": 6,
+      "rotate": 0,
+      "vol_ratio": 0.89,
+      "hot": false
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": -1.0,
+        "m1": 0.7,
+        "m3": 1.5,
+        "m6": 11.2,
+        "y1": 7.0
+      },
+      "rank_m1": 7,
+      "rotate": 0,
+      "vol_ratio": 0.74,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": -2.2,
+        "m1": 0.6,
+        "m3": -1.1,
+        "m6": 9.9,
+        "y1": 12.9
+      },
+      "rank_m1": 8,
+      "rotate": 0,
+      "vol_ratio": 0.83,
+      "hot": false
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": 1.9,
+        "m1": 0.4,
+        "m3": -2.0,
+        "m6": -4.1,
+        "y1": 5.6
+      },
+      "rank_m1": 9,
+      "rotate": 0,
+      "vol_ratio": 1.12,
+      "hot": false
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": -0.5,
+        "m1": -0.3,
+        "m3": 4.9,
+        "m6": 12.5,
+        "y1": 11.1
+      },
+      "rank_m1": 10,
+      "rotate": -5,
+      "vol_ratio": 0.74,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": 3.5,
+        "m1": -3.3,
+        "m3": -3.2,
+        "m6": 23.7,
+        "y1": 29.0
+      },
+      "rank_m1": 11,
+      "rotate": 0,
+      "vol_ratio": 0.69,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：金融（+6.6%）。 資金正流入：公用（動量加速）。 資金轉弱：房地產。 🔥 特別留意 公用，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。"
+}

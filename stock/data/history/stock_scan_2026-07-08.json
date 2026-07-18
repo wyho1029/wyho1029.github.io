@@ -1,0 +1,319 @@
+{
+  "generated": "2026-07-08 06:05",
+  "run_type": "daily",
+  "scanned": 2920,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.D",
+        "name": "Dominion Energy, Inc.",
+        "sector": "Utilities",
+        "close": 69.83000183105469,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.98,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 61416361984,
+        "pe": 20.59882,
+        "rating": "hold · 12位分析師",
+        "target": 69.58333,
+        "earnings": "2026-07-30（估）",
+        "summary": "Dominion Energy, Inc. provides regulated electricity and natural gas services in the United States. It operates through Dominion Energy Virginia, Dominion Energy South Carolina, and Contracted Energy segments. The Dominion Energy Virginia segment engages in the generation, distribution, and transmission of electricity to approximately 2.8 million residential, commercial, industrial, and governmental customers in Virginia and North Carolina. The Dominion Energy South Carolina segment generates, transmits, and distributes electricity to approximately 0.8 million customers in the central, souther",
+        "news": [
+          {
+            "title": "NextEra Energy Lags Industry in the Past Month: Is It Still a Buy?",
+            "link": "https://finance.yahoo.com/energy/articles/nextera-energy-lags-industry-past-132400529.html",
+            "date": "2026-07-06",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Merger Value Hit a First-Half Record as Deal Sizes Grew",
+            "link": "https://www.barrons.com/articles/record-ma-value-first-half-2026-64882132?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-07-02",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "Can Partnerships and PPAs Continue to Power NextEra's Earnings Growth?",
+            "link": "https://finance.yahoo.com/energy/articles/partnerships-ppas-continue-power-nexteras-142100032.html",
+            "date": "2026-07-02",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Dominion Energy (D) Stock Trades At A Discount Following Its 48% Run",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/dominion-energy-d-stock-trades-140905585.html",
+            "date": "2026-07-02",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "NextEra’s $67 Billion Megamerger Proves Dominion Was the Real AI Infrastructure Prize All Along",
+            "link": "https://247wallst.com/investing/2026/07/01/nexteras-67-billion-megamerger-proves-dominion-was-the-real-ai-infrastructure-prize-all-along/",
+            "date": "2026-07-01",
+            "publisher": "24/7 Wall St."
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.98x、MACD 水上（零軸之上）。"
+      }
+    ],
+    "week": [
+      {
+        "code": "US.LNG",
+        "name": "Cheniere Energy, Inc.",
+        "sector": "Energy",
+        "close": 255.0,
+        "score": 86,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.4,
+        "mcdxx": 3,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 53435727872,
+        "pe": 43.14721,
+        "rating": "strong_buy · 22位分析師",
+        "target": 303.22726,
+        "earnings": "2026-08-06（估）",
+        "summary": "Cheniere Energy, Inc., an energy infrastructure company, primarily engages in the liquefied natural gas (LNG) related businesses in the United States. The company owns and operates the Sabine Pass LNG terminal in Cameron Parish, Louisiana; and the Corpus Christi LNG terminal near Corpus Christi, Texas. It also owns and operates the Creole Trail pipeline, a 94-mile natural gas supply pipeline that interconnects the Sabine Pass LNG Terminal with several large interstate and intrastate pipelines; and the Corpus Christi pipeline, a 21-mile natural gas supply pipeline that interconnects the Corpus ",
+        "news": [
+          {
+            "title": "Cheniere Energy (LNG) Benefited from Supply Constraints",
+            "link": "https://finance.yahoo.com/energy/articles/cheniere-energy-lng-benefited-supply-141954401.html",
+            "date": "2026-06-30",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Bernstein Starts Cheniere Energy (LNG) at Outperform, Backs Brownfield Expansion Strategy",
+            "link": "https://finance.yahoo.com/energy/articles/bernstein-starts-cheniere-energy-lng-051625184.html",
+            "date": "2026-06-26",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Market Chatter: US, Qatar Warn EU Methane Rules Could Trigger Gas Supply Shortages",
+            "link": "https://finance.yahoo.com/energy/articles/market-chatter-us-qatar-warn-153243202.html",
+            "date": "2026-06-23",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Cheniere Energy Up 17% YTD: Time to Buy, Hold or Take Profits?",
+            "link": "https://finance.yahoo.com/energy/articles/cheniere-energy-17-ytd-time-122800353.html",
+            "date": "2026-06-22",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Cheniere Energy (LNG) Closed A Private Offering Of $1.75 Billion In Senior Unsecured Notes",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/cheniere-energy-lng-closed-private-162351782.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "周K 轉黃 86分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      }
+    ],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.SLBT",
+      "close": 4.460000038146973,
+      "spike_mult": 20.2,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.CRNX",
+      "close": 83.52999877929688,
+      "spike_mult": 16.5,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.IQMX",
+      "close": 12.890000343322754,
+      "spike_mult": 15.7,
+      "spike_date": "2026-07-10"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": 2.3,
+        "m1": 8.6,
+        "m3": 12.9,
+        "m6": 6.6,
+        "y1": 23.5
+      },
+      "rank_m1": 1,
+      "rotate": 1,
+      "vol_ratio": 0.96,
+      "hot": false
+    },
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 4.3,
+        "m1": 7.8,
+        "m3": 12.8,
+        "m6": 2.9,
+        "y1": 7.0
+      },
+      "rank_m1": 2,
+      "rotate": 1,
+      "vol_ratio": 0.8,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": -0.7,
+        "m1": 4.7,
+        "m3": -0.4,
+        "m6": 7.3,
+        "y1": 14.8
+      },
+      "rank_m1": 3,
+      "rotate": 6,
+      "vol_ratio": 0.86,
+      "hot": true
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": 0.6,
+        "m1": 4.2,
+        "m3": 3.4,
+        "m6": 10.6,
+        "y1": 6.1
+      },
+      "rank_m1": 4,
+      "rotate": 3,
+      "vol_ratio": 0.75,
+      "hot": true
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": -0.2,
+        "m1": 3.8,
+        "m3": 11.1,
+        "m6": 16.1,
+        "y1": 23.6
+      },
+      "rank_m1": 5,
+      "rotate": -1,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": -0.1,
+        "m1": 2.0,
+        "m3": 8.4,
+        "m6": 12.9,
+        "y1": 11.1
+      },
+      "rank_m1": 6,
+      "rotate": -1,
+      "vol_ratio": 0.76,
+      "hot": false
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": 0.2,
+        "m1": 0.3,
+        "m3": 7.9,
+        "m6": -0.4,
+        "y1": 7.0
+      },
+      "rank_m1": 7,
+      "rotate": -1,
+      "vol_ratio": 0.84,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": 1.7,
+        "m1": 0.2,
+        "m3": 3.0,
+        "m6": 12.6,
+        "y1": 14.8
+      },
+      "rank_m1": 8,
+      "rotate": 0,
+      "vol_ratio": 0.83,
+      "hot": false
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": 2.9,
+        "m1": -1.6,
+        "m3": -0.4,
+        "m6": -4.5,
+        "y1": 4.1
+      },
+      "rank_m1": 9,
+      "rotate": 1,
+      "vol_ratio": 1.16,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": 2.0,
+        "m1": -6.3,
+        "m3": -7.8,
+        "m6": 21.3,
+        "y1": 29.5
+      },
+      "rank_m1": 10,
+      "rotate": 1,
+      "vol_ratio": 0.69,
+      "hot": false
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": -3.4,
+        "m1": -7.1,
+        "m3": 31.2,
+        "m6": 24.5,
+        "y1": 40.2
+      },
+      "rank_m1": 11,
+      "rotate": -10,
+      "vol_ratio": 0.91,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：醫療（+8.6%）。 資金正流入：公用、必需消費（動量加速）。 資金轉弱：科技。 🔥 特別留意 公用、必需消費，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。"
+}

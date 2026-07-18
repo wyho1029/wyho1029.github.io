@@ -1,0 +1,369 @@
+{
+  "generated": "2026-07-07 06:06",
+  "run_type": "daily",
+  "scanned": 2920,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.LOMA",
+        "name": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADS",
+        "sector": "Basic Materials",
+        "close": 11.800000190734863,
+        "score": 87,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.34,
+        "mcdxx": 7,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1377020288,
+        "pe": 56.19048,
+        "rating": "",
+        "target": 14.7,
+        "earnings": "2026-05-05",
+        "summary": "Loma Negra Compañía Industrial Argentina Sociedad Anónima, together with its subsidiaries, manufactures and sells cement and its derivatives in Argentina. It operates through Cement, Masonry Cement, and Lime; Concrete; Railroad; Aggregates; and Others segments. The company offers masonry cement, aggregates, ready-mix concrete, concrete, and lime to wholesale distributors, concrete producers, industrial customers, and others. It also provides rail transportation services; and treats and recycles industrial waste for use as fuel and raw material. It markets its products under the Loma Negra, Pla",
+        "news": [
+          {
+            "title": "Wall Street Analysts Believe Loma Negra Compania Industrial Argentina (LOMA) Could Rally 30.32%: Here's is How to Trade",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-believe-loma-135503397.html",
+            "date": "2026-06-05",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Loma Negra Compania Industrial Argentina Q1 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/loma-negra-compania-industrial-argentina-q1-earnings-call-highlights-2026-05-11/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-11",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "A Look At Loma Negra (NYSE:LOMA) Valuation After Strong First Quarter 2026 Earnings",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/look-loma-negra-nyse-loma-111339894.html",
+            "date": "2026-05-08",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Loma Negra Compañía Industrial Argentina Sociedad Anónima Just Beat Revenue By 14%: Here's What Analysts Think Will Happen Next",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/loma-negra-compa-industrial-argentina-104116014.html",
+            "date": "2026-05-07",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "A Look At Loma Negra (NYSE:LOMA) Valuation After Recent Board And Audit Committee Changes",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/look-loma-negra-nyse-loma-130833320.html",
+            "date": "2026-04-13",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.34x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.SUPV",
+        "name": "Grupo Supervielle S.A.",
+        "sector": "Financial Services",
+        "close": 10.140000343322754,
+        "score": 87,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.05,
+        "mcdxx": 7,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 958313280,
+        "pe": null,
+        "rating": "hold · 5位分析師",
+        "target": 13.06103,
+        "earnings": "2026-08-11",
+        "summary": "Grupo Supervielle S.A., a financial services holding company, provides various banking products and services in Argentina. The company operates through Personal & Business Banking, Corporate Banking, Bank Treasury, Insurance, and Asset Management and Other Services segments. It offers savings and checking accounts, and time deposits; personal, mortgage, unsecured, and car loans; overdrafts; loans with special facilities for project and working capital financing; and leasing, bank guarantees for tenants, salary advances, domestic and international factoring, international guarantees and letters",
+        "news": [
+          {
+            "title": "How The Grupo Supervielle (BASE:SUPV) Investment Story Is Evolving With Cautious Analyst Targets",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/grupo-supervielle-supv-investment-story-100911736.html",
+            "date": "2026-05-03",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "How The Grupo Supervielle (BASE:SUPV) Investment Narrative Is Shifting After Target Cuts",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/grupo-supervielle-supv-investment-narrative-160606932.html",
+            "date": "2026-03-20",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Grupo Supervielle SA (SUPV) Q4 2025 Earnings Call Highlights: Navigating Challenges with ...",
+            "link": "https://finance.yahoo.com/news/grupo-supervielle-sa-supv-q4-010101277.html",
+            "date": "2026-03-12",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "How The Grupo Supervielle (BASE:SUPV) Investment Story Is Shifting With A Lower Target Price",
+            "link": "https://finance.yahoo.com/news/grupo-supervielle-supv-investment-story-081358108.html",
+            "date": "2026-03-06",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Grupo Supervielle Q4 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/grupo-supervielle-q4-earnings-call-highlights-2026-03-03/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-03-04",
+            "publisher": "MarketBeat"
+          }
+        ],
+        "why": "日K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.05x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.STT",
+        "name": "State Street Corporation",
+        "sector": "Financial Services",
+        "close": 175.9600067138672,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.64,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 48699928576,
+        "pe": 17.86396,
+        "rating": "buy · 14位分析師",
+        "target": 171.32143,
+        "earnings": "2026-07-16",
+        "summary": "State Street Corporation provides various financial products and services to institutional investors. It offers custody, accounting, and fund administration services for traditional and alternative assets, as well as multi-asset class investments; recordkeeping, client reporting, and investment book of record, transaction management, loans, cash, derivatives, and collateral services; investor services operations outsourcing; performance, risk, and compliance analytics; financial data management to support institutional investors; foreign exchange, brokerage, and other trading services; securit",
+        "news": [
+          {
+            "title": "Which S&P 500 ETF Is Better in 2026? State Street's SPY or iShares' IVV?",
+            "link": "https://www.fool.com/coverage/etfs/2026/07/06/which-s-and-p-500-etf-is-better-in-2026-state-street-s-spy-or-ishares-ivv/",
+            "date": "2026-07-06",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "ETF Inflows Smash Records, Tracking Toward Historic $2.3 Trillion in 2026",
+            "link": "https://www.barrons.com/advisor/articles/etf-asset-flows-record-state-street-992ff22b?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-07-06",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "Trump Rings Opening Bell From Oval Office to Mark Trump Accounts",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/trump-rings-opening-bell-oval-133321689.html",
+            "date": "2026-07-06",
+            "publisher": "Bloomberg"
+          },
+          {
+            "title": "Should State Street SPDR Dow Jones Industrial Average ETF Trust (DIA) Be on Your Investing Radar?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-dow-jones-102002140.html",
+            "date": "2026-07-06",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Are Advisors Rethinking Index Investing?",
+            "link": "https://www.thedailyupside.com/advisor/investing-strategies/are-advisors-rethinking-index-investing/",
+            "date": "2026-07-05",
+            "publisher": "The Daily Upside"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.64x、MACD 水上（零軸之上）。"
+      }
+    ],
+    "week": [],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.SLBT",
+      "close": 4.715000152587891,
+      "spike_mult": 15.6,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.IQMX",
+      "close": 13.90999984741211,
+      "spike_mult": 10.1,
+      "spike_date": "2026-07-10"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 4.8,
+        "m1": 10.7,
+        "m3": 13.7,
+        "m6": 3.4,
+        "y1": 8.3
+      },
+      "rank_m1": 1,
+      "rotate": 1,
+      "vol_ratio": 0.83,
+      "hot": false
+    },
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": 1.0,
+        "m1": 10.3,
+        "m3": 10.8,
+        "m6": 5.5,
+        "y1": 21.7
+      },
+      "rank_m1": 2,
+      "rotate": 2,
+      "vol_ratio": 0.96,
+      "hot": false
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": 2.4,
+        "m1": 6.9,
+        "m3": 13.6,
+        "m6": 20.3,
+        "y1": 26.9
+      },
+      "rank_m1": 3,
+      "rotate": 0,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": -1.9,
+        "m1": 4.3,
+        "m3": -1.6,
+        "m6": 7.5,
+        "y1": 14.6
+      },
+      "rank_m1": 4,
+      "rotate": 6,
+      "vol_ratio": 0.85,
+      "hot": true
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": -0.7,
+        "m1": 3.1,
+        "m3": 3.4,
+        "m6": 9.6,
+        "y1": 5.1
+      },
+      "rank_m1": 5,
+      "rotate": 3,
+      "vol_ratio": 0.74,
+      "hot": true
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": -2.1,
+        "m1": 2.7,
+        "m3": 7.4,
+        "m6": 11.5,
+        "y1": 9.7
+      },
+      "rank_m1": 6,
+      "rotate": 0,
+      "vol_ratio": 0.76,
+      "hot": false
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": 3.2,
+        "m1": 1.3,
+        "m3": 9.3,
+        "m6": -0.8,
+        "y1": 8.1
+      },
+      "rank_m1": 7,
+      "rotate": -2,
+      "vol_ratio": 0.81,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": 0.7,
+        "m1": 1.1,
+        "m3": 3.5,
+        "m6": 15.6,
+        "y1": 15.8
+      },
+      "rank_m1": 8,
+      "rotate": -1,
+      "vol_ratio": 0.82,
+      "hot": false
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": 3.8,
+        "m1": -1.4,
+        "m3": -1.1,
+        "m6": -5.8,
+        "y1": 3.9
+      },
+      "rank_m1": 9,
+      "rotate": 0,
+      "vol_ratio": 1.15,
+      "hot": false
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": 1.4,
+        "m1": -6.3,
+        "m3": 35.1,
+        "m6": 27.8,
+        "y1": 45.5
+      },
+      "rank_m1": 10,
+      "rotate": -9,
+      "vol_ratio": 0.91,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": -1.3,
+        "m1": -8.9,
+        "m3": -9.7,
+        "m6": 20.5,
+        "y1": 26.0
+      },
+      "rank_m1": 11,
+      "rotate": 0,
+      "vol_ratio": 0.67,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：金融（+10.7%）。 資金正流入：醫療、公用、必需消費（動量加速）。 資金轉弱：非必需消費、科技。 🔥 特別留意 公用、必需消費，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。"
+}

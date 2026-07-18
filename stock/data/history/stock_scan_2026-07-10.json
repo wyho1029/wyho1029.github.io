@@ -1,0 +1,559 @@
+{
+  "generated": "2026-07-10 06:05",
+  "run_type": "daily",
+  "scanned": 2920,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.BPOP",
+        "name": "Popular, Inc.",
+        "sector": "Financial Services",
+        "close": 169.38999938964844,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.89,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 10932042752,
+        "pe": 12.528846,
+        "rating": "strong_buy · 9位分析師",
+        "target": 178.11111,
+        "earnings": "2026-07-23",
+        "summary": "Popular, Inc., through its subsidiaries, provides various retail, mortgage, and commercial banking services for individuals and businesses in Puerto Rico, the United States, the British Virgin Islands, the Caribbean, and Latin America. The company offers savings, NOW, money market, and other interest-bearing demand accounts; non-interest bearing demand deposits; checking accounts; individual retirement accounts and educational contribution accounts; business accounts; investment accounts; private management accounts; and certificates of deposit. It also provides commercial and industrial, comm",
+        "news": [
+          {
+            "title": "1 Momentum  Stock with Competitive Advantages and 2 Facing Challenges",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-momentum-stock-competitive-advantages-095320052.html",
+            "date": "2026-06-30",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Popular (BPOP) Upgraded to Buy: What Does It Mean for the Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/popular-bpop-upgraded-buy-does-160002753.html",
+            "date": "2026-06-22",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Are You Looking for a Top Momentum Pick? Why Popular (BPOP) is a Great Choice",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/looking-top-momentum-pick-why-160003969.html",
+            "date": "2026-06-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Popular (BPOP) Valuation Check After Strong Multi Year Shareholder Returns",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/popular-bpop-valuation-check-strong-090827895.html",
+            "date": "2026-06-03",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Should Value Investors Buy Popular (BPOP) Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/value-investors-buy-popular-bpop-134002927.html",
+            "date": "2026-05-27",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.89x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.BTSGU",
+        "name": "BrightSpring Health Services, Inc.",
+        "sector": "Healthcare",
+        "close": 235.80999755859375,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 3.44,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": null,
+        "pe": null,
+        "rating": "",
+        "target": null,
+        "earnings": "2025-07-31",
+        "summary": "BrightSpring Health Services, Inc. operates as a home and community-based healthcare services platform in the United States. The company operates through two segments, Pharmacy Solutions and Provider Services. Its platform focuses on delivering pharmacy and provider services, including clinical and supportive care in home and community settings to Medicare, Medicaid, and insured populations. It also offers infused, injectable, and oral medication services; and patient-centric, highly skilled, and compassionate clinical home health care, as well as rehabilitation services, including physical, s",
+        "news": [
+          {
+            "title": "1 Cash-Producing Stock with Solid Fundamentals and 2 Facing Challenges",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-solid-122900187.html",
+            "date": "2026-07-09",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Q1 Senior Health, Home Health & Hospice Earnings: BrightSpring Health Services (NASDAQ:BTSG) Earns Top Marks",
+            "link": "https://finance.yahoo.com/healthcare/articles/q1-senior-health-home-health-180100629.html",
+            "date": "2026-07-01",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Is Analyst-Driven Momentum Reframing the Investment Case for BrightSpring Health Services (BTSG)?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/analyst-driven-momentum-reframing-investment-162503594.html",
+            "date": "2026-07-01",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "BrightSpring Health Services (BTSG) Stock Looks Priced At A Premium Despite Its 213% Run",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/brightspring-health-services-btsg-stock-111144176.html",
+            "date": "2026-07-01",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Are You Looking for a Top Momentum Pick? Why BrightSpring Health Services, Inc. (BTSG) is a Great Choice",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/looking-top-momentum-pick-why-160003156.html",
+            "date": "2026-06-30",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 3.44x、MACD 水上（零軸之上）。"
+      }
+    ],
+    "week": [
+      {
+        "code": "US.PARR",
+        "name": "Par Pacific Holdings, Inc.",
+        "sector": "Energy",
+        "close": 65.54000091552734,
+        "score": 87,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.05,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 3286455808,
+        "pe": 7.422424,
+        "rating": "buy · 7位分析師",
+        "target": 75.0,
+        "earnings": "2026-08-05（估）",
+        "summary": "Par Pacific Holdings, Inc., an energy company, provides renewable and conventional fuels in the United States. The company operates through three segments: Refining, Retail, and Logistics. The Refining segment owns and operates refineries that convert crude oil into gasoline, distillate, asphalt, and other products. The Retail segment operates convenience stores and fuel retail outlets that sell gasoline, diesel, and retail merchandise, such as soft drinks, prepared food, and other sundries under the Hele, 76, and nomnom brands, as well as unattended cardlock stations. The Logistics segment ow",
+        "news": [
+          {
+            "title": "Saipem Lands New FPSO Contract for Offshore Development in Indonesia",
+            "link": "https://finance.yahoo.com/energy/articles/saipem-lands-fpso-contract-offshore-161700303.html",
+            "date": "2026-07-09",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Strong Commodity Tailwinds Poised to Boost XOM's Q2 Results",
+            "link": "https://finance.yahoo.com/markets/commodities/articles/strong-commodity-tailwinds-poised-boost-161400086.html",
+            "date": "2026-07-09",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Victoria's Secret and BellRing Brands have been highlighted as Zacks Bull and Bear of the Day",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/victorias-secret-bellring-brands-highlighted-124600939.html",
+            "date": "2026-07-09",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "2 Bargain Top-Ranked Energy Stocks That Won't Stay Cheap for Long",
+            "link": "https://finance.yahoo.com/energy/articles/2-bargain-top-ranked-energy-152600085.html",
+            "date": "2026-07-08",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Delek US vs. Par Pacific: Which Energy Stock Is a Better Buy in 2026?",
+            "link": "https://www.fool.com/coverage/better-buy/2026/07/07/delek-us-vs-par-pacific-which-energy-stock-is-a-better-buy-in-2026/",
+            "date": "2026-07-07",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、放量 1.05x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.UGP",
+        "name": "Ultrapar Participacoes S.A. (New)",
+        "sector": "Energy",
+        "close": 5.809999942779541,
+        "score": 87,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.13,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 6213138944,
+        "pe": 10.563636,
+        "rating": "buy · 8位分析師",
+        "target": 6.35762,
+        "earnings": "2026-05-07",
+        "summary": "Ultrapar Participações S.A., through its subsidiaries, operates in the energy, mobility, and logistics infrastructure sectors in Brazil, the rest of Europe, the United States, Canada, other Latin American countries, Oceania, and internationally. It operates through Ultragaz, Ipiranga, Ultracargo, and Hidrovias segments. The company distributes and sells oil-related products, biofuels, gasoline, ethanol, diesel, fuel oil, kerosene, natural gas for vehicles, and additive fuels under the Ipimax brand to carriers, resellers, and retailers; operates service stations under the Ipiranga brand and con",
+        "news": [
+          {
+            "title": "Ultrapar Participações (UGP) Among the Best Undervalued Stocks Under $5",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ultrapar-participa-es-ugp-among-185342036.html",
+            "date": "2026-06-20",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Zacks.com featured highlights include First American Financial, Caleres, Cenovus, Ultrapar and Open Text",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-first-085300663.html",
+            "date": "2026-06-03",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "UGP or WMB: Which Is the Better Value Stock Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ugp-wmb-better-value-stock-154002212.html",
+            "date": "2026-06-02",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Is Ultrapar Participacoes (UGP) Stock Undervalued Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ultrapar-participacoes-ugp-stock-undervalued-134004700.html",
+            "date": "2026-06-02",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Tap These 5 Bargain Stocks With Amazingly Low EV-to-EBITDA Ratios",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tap-5-bargain-stocks-amazingly-121200144.html",
+            "date": "2026-06-02",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、放量 1.13x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.LNG",
+        "name": "Cheniere Energy, Inc.",
+        "sector": "Energy",
+        "close": 261.2900085449219,
+        "score": 84,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.8,
+        "mcdxx": 1,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 54753808384,
+        "pe": 44.28644,
+        "rating": "strong_buy · 22位分析師",
+        "target": 303.22726,
+        "earnings": "2026-08-06",
+        "summary": "Cheniere Energy, Inc., an energy infrastructure company, primarily engages in the liquefied natural gas (LNG) related businesses in the United States. The company owns and operates the Sabine Pass LNG terminal in Cameron Parish, Louisiana; and the Corpus Christi LNG terminal near Corpus Christi, Texas. It also owns and operates the Creole Trail pipeline, a 94-mile natural gas supply pipeline that interconnects the Sabine Pass LNG Terminal with several large interstate and intrastate pipelines; and the Corpus Christi pipeline, a 21-mile natural gas supply pipeline that interconnects the Corpus ",
+        "news": [
+          {
+            "title": "First U.S. LNG Ships To Asia From Mexico, Avoiding Hormuz Tensions",
+            "link": "https://www.investors.com/news/lng-stocks-u-s-gas-ships-asia-mexico-win-for-trump/?src=A00220&yptr=yahoo",
+            "date": "2026-07-09",
+            "publisher": "Investor's Business Daily"
+          },
+          {
+            "title": "Cheniere Energy (LNG) Benefited from Supply Constraints",
+            "link": "https://finance.yahoo.com/energy/articles/cheniere-energy-lng-benefited-supply-141954401.html",
+            "date": "2026-06-30",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Bernstein Starts Cheniere Energy (LNG) at Outperform, Backs Brownfield Expansion Strategy",
+            "link": "https://finance.yahoo.com/energy/articles/bernstein-starts-cheniere-energy-lng-051625184.html",
+            "date": "2026-06-26",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Market Chatter: US, Qatar Warn EU Methane Rules Could Trigger Gas Supply Shortages",
+            "link": "https://finance.yahoo.com/energy/articles/market-chatter-us-qatar-warn-153243202.html",
+            "date": "2026-06-23",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Cheniere Energy Up 17% YTD: Time to Buy, Hold or Take Profits?",
+            "link": "https://finance.yahoo.com/energy/articles/cheniere-energy-17-ytd-time-122800353.html",
+            "date": "2026-06-22",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 84分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.NVST",
+        "name": "Envista Holdings Corporation",
+        "sector": "Healthcare",
+        "close": 25.760000228881836,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.94,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 4191871232,
+        "pe": 62.82927,
+        "rating": "buy · 13位分析師",
+        "target": 29.61538,
+        "earnings": "2026-08-06",
+        "summary": "Envista Holdings Corporation, together with its subsidiaries, develops, manufactures, markets, and sells dental products in the United States, China, and internationally. The company operates in two segments, Specialty Products & Technologies, and Equipment & Consumables. The Specialty Products & Technologies segment offers dental implant systems, guided surgery systems, biomaterials, and prefabricated and custom-built prosthetics to oral surgeons, prosthodontists and periodontists, and general dentist; and brackets and wires, tubes and bands, archwires, clear aligners, digital orthodontic tre",
+        "news": [
+          {
+            "title": "Does NVST Stock Still Deserve a Place in Your Portfolio?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/does-nvst-stock-still-deserve-143000123.html",
+            "date": "2026-07-09",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "1 Small-Cap Stock Worth Investigating and 2 We Find Risky",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-small-cap-stock-worth-081043007.html",
+            "date": "2026-07-07",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Is Envista Holdings Corporation (NVST) a Top Ariel Investment Stock to Buy?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/envista-holdings-corporation-nvst-top-133717604.html",
+            "date": "2026-07-04",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "The John Rogers Contrarian Playbook: How Envista, MSG Entertainment, and Smucker Stack Up for Retirement Investors",
+            "link": "https://247wallst.com/investing/2026/06/30/the-john-rogers-contrarian-playbook-how-envista-msg-entertainment-and-smucker-stack-up-for-retirement-investors/",
+            "date": "2026-06-30",
+            "publisher": "24/7 Wall St."
+          },
+          {
+            "title": "NVST Stock Rallies 37.1% in a Year: What's Behind the Drive?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/nvst-stock-rallies-37-1-121300530.html",
+            "date": "2026-06-19",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      }
+    ],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.SLBT",
+      "close": 4.559999942779541,
+      "spike_mult": 26.6,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.IQMX",
+      "close": 12.210000038146973,
+      "spike_mult": 24.2,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.CRNX",
+      "close": 83.62000274658203,
+      "spike_mult": 21.7,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.RXT",
+      "close": 4.369999885559082,
+      "spike_mult": 13.7,
+      "spike_date": "2026-07-10"
+    },
+    {
+      "code": "US.ALOY",
+      "close": 12.979999542236328,
+      "spike_mult": 11.0,
+      "spike_date": "2026-07-10"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 1.4,
+        "m1": 7.2,
+        "m3": 8.9,
+        "m6": -0.7,
+        "y1": 8.0
+      },
+      "rank_m1": 1,
+      "rotate": 1,
+      "vol_ratio": 0.79,
+      "hot": false
+    },
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": 1.6,
+        "m1": 6.7,
+        "m3": 8.8,
+        "m6": 3.5,
+        "y1": 22.3
+      },
+      "rank_m1": 2,
+      "rotate": 1,
+      "vol_ratio": 0.92,
+      "hot": false
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": -1.2,
+        "m1": 4.6,
+        "m3": 6.5,
+        "m6": 12.4,
+        "y1": 23.2
+      },
+      "rank_m1": 3,
+      "rotate": 1,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": 0.8,
+        "m1": 4.4,
+        "m3": -2.9,
+        "m6": 6.6,
+        "y1": 14.3
+      },
+      "rank_m1": 4,
+      "rotate": 6,
+      "vol_ratio": 0.85,
+      "hot": true
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": -1.1,
+        "m1": 1.5,
+        "m3": 5.7,
+        "m6": -3.1,
+        "y1": 8.2
+      },
+      "rank_m1": 5,
+      "rotate": 0,
+      "vol_ratio": 0.9,
+      "hot": false
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": 0.1,
+        "m1": 1.3,
+        "m3": 5.1,
+        "m6": 10.4,
+        "y1": 10.5
+      },
+      "rank_m1": 6,
+      "rotate": 0,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": -1.5,
+        "m1": 1.0,
+        "m3": -2.5,
+        "m6": 6.7,
+        "y1": 12.2
+      },
+      "rank_m1": 7,
+      "rotate": 1,
+      "vol_ratio": 0.84,
+      "hot": false
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": -0.1,
+        "m1": 0.9,
+        "m3": 1.2,
+        "m6": 8.8,
+        "y1": 5.1
+      },
+      "rank_m1": 8,
+      "rotate": -1,
+      "vol_ratio": 0.74,
+      "hot": false
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": -0.1,
+        "m1": 0.8,
+        "m3": 31.0,
+        "m6": 26.7,
+        "y1": 45.4
+      },
+      "rank_m1": 9,
+      "rotate": -8,
+      "vol_ratio": 0.84,
+      "hot": false
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": 0.7,
+        "m1": -0.3,
+        "m3": -2.6,
+        "m6": -5.3,
+        "y1": 4.8
+      },
+      "rank_m1": 10,
+      "rotate": -1,
+      "vol_ratio": 1.12,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": 3.8,
+        "m1": -5.3,
+        "m3": -4.9,
+        "m6": 21.8,
+        "y1": 27.7
+      },
+      "rank_m1": 11,
+      "rotate": 0,
+      "vol_ratio": 0.71,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：金融（+7.2%）。 資金正流入：公用（動量加速）。 資金轉弱：科技。 🔥 特別留意 公用，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。"
+}

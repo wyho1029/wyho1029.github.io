@@ -1,0 +1,555 @@
+{
+  "generated": "2026-07-15 06:05",
+  "run_type": "daily",
+  "scanned": 2878,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.WFG",
+        "name": "West Fraser Timber Co. Ltd",
+        "sector": "Basic Materials",
+        "close": 71.19000244140625,
+        "score": 82,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.62,
+        "mcdxx": 2,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 5574449664,
+        "pe": null,
+        "rating": "buy · 6位分析師",
+        "target": 83.66667,
+        "earnings": "2026-07-30",
+        "summary": "West Fraser Timber Co. Ltd., a diversified wood products company, engages in manufacturing, selling, marketing, and distributing lumber, engineered wood products, northern bleached softwood kraft pulp, newsprint, paper, wood chips and other residuals. It operates through four segments: Lumber, North America Engineered Wood Products, Pulp & Paper, and Europe Engineered Wood Products. The Lumber segment produces spruce, pine, fir and southern yellow pine lumber, douglas fir, hemlock, wood chips, and other residuals. The North America Engineered Wood Products segment manufactures oriented strand ",
+        "news": [
+          {
+            "title": "Winnebago Industries (WGO) Q3 Earnings and Revenues Lag Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/winnebago-industries-wgo-q3-earnings-121502839.html",
+            "date": "2026-06-25",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Worthington Enterprises (WOR) Lags Q4 Earnings and Revenue Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/worthington-enterprises-wor-lags-q4-211502747.html",
+            "date": "2026-06-23",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "West Fraser Timber Stock Charges Ahead as Lumber’s Technical Breakout Gains Steam",
+            "link": "https://www.barchart.com/story/news/2501583/west-fraser-timber-stock-charges-ahead-as-lumbers-technical-breakout-gains-steam",
+            "date": "2026-06-16",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "How The West Fraser Timber (TSX:WFG) Narrative Is Evolving After Analyst Valuation Resets",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/west-fraser-timber-tsx-wfg-021029979.html",
+            "date": "2026-06-08",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "What Is West Fraser Timber Co Ltd (WFG) Doing with Kodiak AI?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/west-fraser-timber-co-ltd-172316379.html",
+            "date": "2026-06-06",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "日K 轉黃 82分：站穩上升 MA30/MA40（趨勢回調）、放量 1.62x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.CTRN",
+        "name": "Citi Trends, Inc.",
+        "sector": "Consumer Cyclical",
+        "close": 63.18000030517578,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.7,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 526279808,
+        "pe": 44.18182,
+        "rating": "",
+        "target": 73.0,
+        "earnings": "2026-08-25（估）",
+        "summary": "Citi Trends, Inc. operates as a value retailer of apparel, accessories, and home trends. The company offers apparel for juniors, missy, and plus size, including trend right sportswear, outerwear, sleepwear, lingerie, and scrubs for women; basics, fashion, and trends for boys up to size 20 and girls up to size 16, as well as sizes for newborns, infants, and toddlers; children's uniforms, accessories, and sleepwear; and apparel for men and big men, such as trend right sportswear and outerwear. It also provides fashionable handbags, luggage, hats, belts, sunglasses, jewelry, and watches for men a",
+        "news": [
+          {
+            "title": "Off Pricer Citi Trends Sees Shoes as Double-digit Growth Category",
+            "link": "https://wwd.com/footwear-news/shoe-industry-news/off-pricer-citi-trends-shoes-growth-category-stores-bts-1239061902/",
+            "date": "2026-07-10",
+            "publisher": "Footwear News"
+          },
+          {
+            "title": "Citi Trends Inc (CTRN) Q1 2026 Earnings Call Highlights: Strong Sales Growth Amid Fuel Cost ...",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/citi-trends-inc-ctrn-q1-210020417.html",
+            "date": "2026-06-02",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "Citi Trends, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-citi-trends-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-06-02",
+            "publisher": "Moby"
+          },
+          {
+            "title": "Citi Trends Q1 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/citi-trends-q1-earnings-call-highlights-2026-06-02/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-06-02",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Citi Trends Shares Gain After Strong Earnings Beat and Reaffirmed Outlook (CTRN)",
+            "link": "https://investorshub.advfn.com/market-news/article/29566/citi-trends-shares-gain-after-strong-earnings-beat-and-reaffirmed-outlook-ctrn",
+            "date": "2026-06-02",
+            "publisher": "InvestorsHub"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.7x、MACD 水上（零軸之上）。"
+      }
+    ],
+    "week": [
+      {
+        "code": "US.OXY",
+        "name": "Occidental Petroleum Corporation",
+        "sector": "Energy",
+        "close": 54.56999969482422,
+        "score": 89,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.55,
+        "mcdxx": 6,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 54277214208,
+        "pe": 73.74324,
+        "rating": "buy · 23位分析師",
+        "target": 65.04348,
+        "earnings": "2026-08-06",
+        "summary": "Occidental Petroleum Corporation, together with its subsidiaries, engages in the acquisition, exploration, and development of oil and gas properties in the United States and internationally. It operates through Oil and Gas and Midstream and Marketing. The Oil and Gas segment explores for, develops, and produces oil and condensate, natural gas liquids (NGLs), and natural gas. This segment also optimizes its transportation and storage capacity and invests in entities. The Midstream and Marketing segment purchases, markets, gathers, processes, transports and stores oil, condensate, NGLs, natural ",
+        "news": [
+          {
+            "title": "Is Occidental Petroleum (OXY) Stock Undervalued Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/occidental-petroleum-oxy-stock-undervalued-134004709.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Sector Update: Energy Stocks Higher Early Monday",
+            "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-higher-early-135532974.html",
+            "date": "2026-07-13",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Street Calls of the Week",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/street-calls-week-113002647.html",
+            "date": "2026-07-12",
+            "publisher": "Investing.com"
+          },
+          {
+            "title": "OXY Beats the Industry in the Past 9 Months: Buy or Stay Patient?",
+            "link": "https://finance.yahoo.com/energy/articles/oxy-beats-industry-past-9-151200443.html",
+            "date": "2026-07-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "The Real Risk Inside ExxonMobil Stock",
+            "link": "https://www.trefis.com/articles/606402/the-real-risk-inside-exxonmobil-stock/2026-07-09",
+            "date": "2026-07-10",
+            "publisher": "Trefis"
+          }
+        ],
+        "why": "周K 轉黃 89分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.TDW",
+        "name": "Tidewater Inc.",
+        "sector": "Energy",
+        "close": 73.97000122070312,
+        "score": 88,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.29,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 3678576384,
+        "pe": 12.473863,
+        "rating": "hold · 7位分析師",
+        "target": 86.57143,
+        "earnings": "2026-08-04（估）",
+        "summary": "Tidewater Inc., together with its subsidiaries, provides offshore support vessels and marine support services to the offshore energy industry through the operation of a fleet of offshore marine service vessels worldwide. The company operates through five segments: Americas, Asia Pacific, Middle East, Europe/Mediterranean, and West Africa. It offers phases of offshore crude oil and natural gas exploration, field development, production, maintenance, and windfarm development and maintenance activities; towing and anchor handling for mobile offshore drilling units; transportation of supplies and ",
+        "news": [
+          {
+            "title": "2 Small-Cap Stocks Worth Investigating and 1 Facing Headwinds",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-small-cap-stocks-worth-143039212.html",
+            "date": "2026-07-13",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Tidewater (TDW): Constructive Long-term Fundamentals Outweigh Short-Term Concerns",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tidewater-tdw-constructive-long-term-141256992.html",
+            "date": "2026-07-10",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "APA Corporation, Tidewater, and Tenaris Stocks Trade Down, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/apa-corporation-tidewater-tenaris-stocks-203942748.html",
+            "date": "2026-07-09",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Tidewater, Magnolia Oil & Gas, and Cactus Shares Are Soaring, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tidewater-magnolia-oil-gas-cactus-235352857.html",
+            "date": "2026-07-07",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Third Avenue Value Fund's Strategic Moves: Harley-Davidson Inc. Takes Center Stage",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/third-avenue-value-funds-strategic-180034446.html",
+            "date": "2026-06-25",
+            "publisher": "GuruFocus.com"
+          }
+        ],
+        "why": "周K 轉黃 88分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.VG",
+        "name": "Venture Global, Inc.",
+        "sector": "Energy",
+        "close": 13.229999542236328,
+        "score": 85,
+        "trend": 42,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.61,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/False",
+        "futu": null,
+        "mktcap": 32868057088,
+        "pe": 13.78125,
+        "rating": "buy · 19位分析師",
+        "target": 16.15789,
+        "earnings": "2026-08-11",
+        "summary": "Venture Global, Inc., a liquefied natural gas (LNG) company, engages in the ownership, development, construction, and operation of LNG production facilities and associated infrastructure in the United States, Germany, France, Netherlands, the United Kingdom, and internationally.The company is involved in LNG production, natural gas transportation, and regasification operations, as well as LNG sales and shipping business through LNG tankers. Its LNG projects include Calcasieu, Plaquemines, and CP2 projects. The company was founded in 2013 and is headquartered in Arlington, Virginia. Venture Glo",
+        "news": [
+          {
+            "title": "Venture Global (VG): Best Up and Coming Stocks to Invest In Right Now",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/venture-global-vg-best-coming-132536986.html",
+            "date": "2026-07-12",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Is Venture Global (VG) One of the Best IPO Stocks with Huge Upside Potential?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/venture-global-vg-one-best-135931260.html",
+            "date": "2026-07-10",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Here's Why Shares in Venture Global Soared This Week (Hint: It's Iran-Related)",
+            "link": "https://www.fool.com/investing/2026/07/10/heres-why-shares-in-venture-global-soared-this-wee/",
+            "date": "2026-07-10",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "U.S. LNG Exporter Reaps Windfall as Middle East Turmoil Drives Fees Higher",
+            "link": "https://finance.yahoo.com/energy/articles/u-lng-exporter-reaps-windfall-054500952.html",
+            "date": "2026-07-09",
+            "publisher": "Oilprice.com"
+          },
+          {
+            "title": "Venture Global (VG) Expands US LNG Supply Agreements",
+            "link": "https://finance.yahoo.com/energy/articles/venture-global-vg-expands-us-212341683.html",
+            "date": "2026-07-01",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "周K 轉黃 85分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.CF",
+        "name": "CF Industries Holdings, Inc.",
+        "sector": "Basic Materials",
+        "close": 119.19000244140625,
+        "score": 83,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.38,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 18311073792,
+        "pe": 10.737838,
+        "rating": "hold · 19位分析師",
+        "target": 125.72211,
+        "earnings": "2026-08-06",
+        "summary": "CF Industries Holdings, Inc., together with its subsidiaries, engages in the production of ammonia in North America, Europe, and internationally. It operates through Ammonia, Granular Urea, UAN, AN, and Other segments. The company offers ammonia products; nitrogen products, such as granular urea, urea ammonium nitrate solution, and ammonium nitrate; diesel exhaust fluid, urea liquor, and nitric acid products. It serves cooperatives, retailers, independent fertilizer distributors, traders, wholesalers, and industrial users. The company was founded in 1946 and is headquartered in Northbrook, Ill",
+        "news": [
+          {
+            "title": "CF Industries Boosts Shareholder Returns With 20% Dividend Hike",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/cf-industries-boosts-shareholder-returns-120100462.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Hartford and Amdocs Join the Perfect 10 Portfolio",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/hartford-amdocs-join-perfect-10-104523151.html",
+            "date": "2026-07-14",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "Zacks Industry Outlook Nutrien, CF Industries and Yara International",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-industry-outlook-nutrien-cf-072800115.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "CF Industries Just Raised Its Dividend by 20% While Its Stock Has Surged 55% in 2026",
+            "link": "https://www.barchart.com/story/news/3258989/cf-industries-just-raised-its-dividend-by-20-while-its-stock-has-surged-55-in-2026",
+            "date": "2026-07-13",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "3 Fertilizer Stocks to Keep an Eye on in a Challenging Industry",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-fertilizer-stocks-keep-eye-124000365.html",
+            "date": "2026-07-13",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 83分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      }
+    ],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.XOMA",
+      "close": 40.16999816894531,
+      "spike_mult": 13.7,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.FAC",
+      "close": 6.079999923706055,
+      "spike_mult": 12.9,
+      "spike_date": "2026-07-17"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 0.2,
+        "m1": 7.1,
+        "m3": 9.1,
+        "m6": 1.7,
+        "y1": 9.4
+      },
+      "rank_m1": 1,
+      "rotate": 1,
+      "vol_ratio": 0.78,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": -0.0,
+        "m1": 4.4,
+        "m3": -0.9,
+        "m6": 8.9,
+        "y1": 13.9
+      },
+      "rank_m1": 2,
+      "rotate": 7,
+      "vol_ratio": 0.84,
+      "hot": true
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": -1.1,
+        "m1": 3.3,
+        "m3": 4.7,
+        "m6": 12.0,
+        "y1": 21.7
+      },
+      "rank_m1": 3,
+      "rotate": 1,
+      "vol_ratio": 0.69,
+      "hot": false
+    },
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": -3.7,
+        "m1": 3.2,
+        "m3": 7.4,
+        "m6": 1.5,
+        "y1": 19.1
+      },
+      "rank_m1": 4,
+      "rotate": -1,
+      "vol_ratio": 0.9,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": 4.2,
+        "m1": 0.4,
+        "m3": 0.4,
+        "m6": 23.7,
+        "y1": 31.8
+      },
+      "rank_m1": 5,
+      "rotate": 3,
+      "vol_ratio": 0.69,
+      "hot": true
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": 2.5,
+        "m1": 0.3,
+        "m3": 26.3,
+        "m6": 25.9,
+        "y1": 44.3
+      },
+      "rank_m1": 6,
+      "rotate": -5,
+      "vol_ratio": 0.71,
+      "hot": false
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": -1.3,
+        "m1": -0.1,
+        "m3": 1.9,
+        "m6": -6.5,
+        "y1": 5.5
+      },
+      "rank_m1": 7,
+      "rotate": 0,
+      "vol_ratio": 0.88,
+      "hot": false
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": -0.9,
+        "m1": -0.1,
+        "m3": 4.3,
+        "m6": 11.5,
+        "y1": 10.7
+      },
+      "rank_m1": 8,
+      "rotate": -3,
+      "vol_ratio": 0.74,
+      "hot": false
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": 0.4,
+        "m1": -0.3,
+        "m3": -2.7,
+        "m6": -4.9,
+        "y1": 6.5
+      },
+      "rank_m1": 9,
+      "rotate": 2,
+      "vol_ratio": 1.11,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": -1.7,
+        "m1": -0.8,
+        "m3": -2.6,
+        "m6": 5.8,
+        "y1": 12.7
+      },
+      "rank_m1": 10,
+      "rotate": 0,
+      "vol_ratio": 0.81,
+      "hot": false
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": -1.7,
+        "m1": -1.5,
+        "m3": 3.0,
+        "m6": 6.6,
+        "y1": 6.1
+      },
+      "rank_m1": 11,
+      "rotate": -5,
+      "vol_ratio": 0.7,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：金融（+7.1%）。 資金正流入：公用、能源（動量加速）。 資金轉弱：房地產、必需消費。 🔥 特別留意 公用、能源，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。",
+  "tqqq_watch": {
+    "status": {
+      "week_end": "2026-07-17",
+      "color": "blue",
+      "close": 75.02,
+      "high52": 87.89,
+      "drawdown": 14.6,
+      "is_yellow": false,
+      "turned_yellow": false,
+      "trig_yellow": false,
+      "trig_drawdown": false
+    },
+    "triggers": []
+  }
+}

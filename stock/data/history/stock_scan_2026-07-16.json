@@ -1,0 +1,960 @@
+{
+  "generated": "2026-07-16 06:05",
+  "run_type": "daily",
+  "scanned": 2878,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.REAL",
+        "name": "The RealReal, Inc.",
+        "sector": "Consumer Cyclical",
+        "close": 11.260000228881836,
+        "score": 89,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.84,
+        "mcdxx": 9,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1356691840,
+        "pe": null,
+        "rating": "",
+        "target": 17.25,
+        "earnings": "2026-05-08",
+        "summary": "The RealReal, Inc. operates an online marketplace for resale luxury goods worldwide. It provides a range of product categories, including women's fashion, men's fashion, jewelry, and watches. The company sells products through its website, online marketplace, mobile app, and retail stores. The RealReal, Inc. was incorporated in 2011 and is headquartered in San Francisco, California.",
+        "news": [
+          {
+            "title": "The RealReal vs. RH: Which Consumer Stock Is a Better Buy in 2026?",
+            "link": "https://www.fool.com/coverage/better-buy/2026/06/17/realreal-vs-rh-which-consumer-stock-is-a-better-buy-in-2026/",
+            "date": "2026-06-18",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Is the Luxury Handbag’s Heyday Ending?",
+            "link": "https://www.wsj.com/business/retail/is-the-luxury-handbags-heyday-ending-ed1a589e?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-06-15",
+            "publisher": "The Wall Street Journal"
+          },
+          {
+            "title": "Stocks Rally on U.S.-Iran Deal to Open the Strait of Hormuz",
+            "link": "https://wwd.com/business-news/financial/european-luxury-stocks-rally-u-s-iran-deal-1239010220/",
+            "date": "2026-06-15",
+            "publisher": "WWD"
+          },
+          {
+            "title": "The RealReal's CFO Sold Over 35,000 Company Shares. Here's What That Means for Investors.",
+            "link": "https://www.fool.com/coverage/filings/2026/05/30/the-realreal-s-cfo-sold-over-35-000-company-shares-here-s-what-that-means-for-investors/",
+            "date": "2026-05-30",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "The RealReal (REAL) Upgraded to Buy: What Does It Mean for the Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/realreal-real-upgraded-buy-does-160002781.html",
+            "date": "2026-05-27",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 89分：站穩上升 MA30/MA40（趨勢回調）、放量 1.84x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.WAL",
+        "name": "Western Alliance Bancorporation",
+        "sector": "Financial Services",
+        "close": 81.79000091552734,
+        "score": 87,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.01,
+        "mcdxx": 7,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 8930270208,
+        "pe": 9.521537,
+        "rating": "buy · 15位分析師",
+        "target": 90.53333,
+        "earnings": "2026-07-22",
+        "summary": "Western Alliance Bancorporation operates as the bank holding company for Western Alliance Bank that provides various banking products and related services primarily in Arizona, California, and Nevada. It operates through Commercial and Consumer Related segments. The company offers deposit products, including demand deposit, checking, savings, and money market accounts, as well as fixed-rate and fixed maturity certificates of deposit accounts; treasury management products and services to small and middle-market businesses, specialized banking services to sophisticated commercial institutions an",
+        "news": [
+          {
+            "title": "Western Alliance (WAL) Earnings Expected to Grow: Should You Buy?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/western-alliance-wal-earnings-expected-140006599.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Strength Seen in TriCo (TCBK): Can Its 12.0% Jump Turn into More Strength?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/strength-seen-trico-tcbk-12-133700800.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Is Western Alliance Bancorporation (WAL) One of the Top Bank Stocks to Buy Now According to Analysts?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/western-alliance-bancorporation-wal-one-092935034.html",
+            "date": "2026-07-13",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "3 Small-Cap Stocks We Keep Off Our Radar",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-small-cap-stocks-keep-114001636.html",
+            "date": "2026-07-06",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Western Alliance Bancorporation (WAL): Buy, Sell, or Hold Post Q1 Earnings?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/western-alliance-bancorporation-wal-buy-195406236.html",
+            "date": "2026-07-03",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.01x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.LKFN",
+        "name": "Lakeland Financial Corporation",
+        "sector": "Financial Services",
+        "close": 61.630001068115234,
+        "score": 86,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.0,
+        "mcdxx": 6,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1535424384,
+        "pe": 14.433255,
+        "rating": "hold · 4位分析師",
+        "target": 65.0,
+        "earnings": "2026-07-27",
+        "summary": "Lakeland Financial Corporation operates as the bank holding company for Lake City Bank that provides various banking products and services in the United States. The company accepts various deposit products, such as noninterest bearing, interest-bearing checking, savings, money market, NOW, and demand deposits. It also offers loan products, including commercial and industrial, commercial real estate and multi-family residential, construction, agri-business and agricultural, consumer 1-4 family mortgage, and other commercial and consumer loans. In addition, the company provides retail and mercha",
+        "news": [
+          {
+            "title": "Lakeland Financial (LKFN) Could Be a Great Choice",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/lakeland-financial-lkfn-could-great-154504598.html",
+            "date": "2026-07-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "3 Small-Cap Stocks We Keep Off Our Radar",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-small-cap-stocks-keep-142024146.html",
+            "date": "2026-07-02",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "2 Unpopular Stocks That Deserve a Second Chance and 1 We Ignore",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-unpopular-stocks-deserve-second-102520568.html",
+            "date": "2026-06-30",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "3 Reliable Dividend Stocks Offering At Least 3.4% Yield",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-reliable-dividend-stocks-offering-113155420.html",
+            "date": "2026-06-09",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Assessing Lakeland Financial (LKFN) Valuation As Recent Share Moves Highlight Mixed Signals",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/assessing-lakeland-financial-lkfn-valuation-171416062.html",
+            "date": "2026-06-08",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 86分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.0x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.MMM",
+        "name": "3M Company",
+        "sector": "Industrials",
+        "close": 160.52999877929688,
+        "score": 85,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.14,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 83727196160,
+        "pe": 30.990349,
+        "rating": "buy · 17位分析師",
+        "target": 171.43471,
+        "earnings": "2026-07-21",
+        "summary": "3M Company provides diversified technology services in the America, the Asia Pacific, Europe, the Middle East, Africa, and internationally. It operates through three segments: Safety and Industrial, Transportation and Electronics, and Consumer. The Safety and Industrial segment provides industrial abrasives and finishing for metalworking applications; autobody repair solutions; industrial specialty products, such as personal hygiene products, masking, and packaging materials; electrical products and materials for construction and maintenance, power distribution, and electrical original equipme",
+        "news": [
+          {
+            "title": "Dow Jones Stock 3M Nears Buy Point On AI Data Center Win",
+            "link": "https://www.investors.com/news/3m-dow-jones-ai-data-center-play-buy-signal/?src=A00220&yptr=yahoo",
+            "date": "2026-07-15",
+            "publisher": "Investor's Business Daily"
+          },
+          {
+            "title": "Honeywell Losing Grip in Process Automation: What's Impeding Its Growth?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/honeywell-losing-grip-process-automation-155100014.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Illinois Tool Stock's Loudest Signal Is The One It Stopped Sending",
+            "link": "https://www.trefis.com/articles/606624/illinois-tool-stocks-loudest-signal-is-the-one-it-stopped-sending/2026-07-10",
+            "date": "2026-07-10",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "3M's Consumer Segment's Weakness Persists: What's the Road Ahead?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3ms-consumer-segments-weakness-persists-133600611.html",
+            "date": "2026-07-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "POSCO Targets Lithium, Energy to Transform Business Portfolio",
+            "link": "https://finance.yahoo.com/energy/articles/posco-targets-lithium-energy-transform-120500239.html",
+            "date": "2026-07-10",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 85分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.14x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.VST",
+        "name": "Vistra Corp.",
+        "sector": "Utilities",
+        "close": 160.22999572753906,
+        "score": 81,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.35,
+        "mcdxx": 9,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 54026743808,
+        "pe": 26.839197,
+        "rating": "strong_buy · 18位分析師",
+        "target": 222.88889,
+        "earnings": "2026-08-07",
+        "summary": "Vistra Corp., together with its subsidiaries, operates as an integrated retail electricity and power generation company in the United States. The company operates through five segments: Retail, Texas, East, West, and Asset Closure. The company retails electricity and natural gas to residential, commercial, and industrial customers across states in the United States and the District of Columbia. It is also involved in electricity generation, wholesale energy purchases and sales, commodity risk management, fuel procurement, and fuel logistics management activities. In addition, the company engag",
+        "news": [
+          {
+            "title": "Vistra (VST) Could Get A Lift From PJM's Next Capacity Auction",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/vistra-vst-could-lift-pjms-171232214.html",
+            "date": "2026-07-14",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Major US Power Sale to Show Depth of Eastern Grid’s Tight Supply",
+            "link": "https://finance.yahoo.com/energy/articles/major-us-power-sale-show-150000099.html",
+            "date": "2026-07-14",
+            "publisher": "Bloomberg"
+          },
+          {
+            "title": "Quality Stocks Aren’t the Names You’d Expect",
+            "link": "https://www.barrons.com/articles/quality-tech-stocks-investing-market-eade9ddd?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-07-13",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "Will Constellation Benefit From America's Rising Electricity Needs?",
+            "link": "https://finance.yahoo.com/energy/articles/constellation-benefit-americas-rising-electricity-161200525.html",
+            "date": "2026-07-13",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "VST Stock Trading at a Discounted Value: Should You Buy, Sell or Hold?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/vst-stock-trading-discounted-value-145600936.html",
+            "date": "2026-07-13",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 81分：站穩上升 MA30/MA40（趨勢回調）、放量 1.35x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.ADPT",
+        "name": "Adaptive Biotechnologies Corporation",
+        "sector": "Healthcare",
+        "close": 22.899999618530273,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.58,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 3665016320,
+        "pe": null,
+        "rating": "strong_buy · 7位分析師",
+        "target": 20.57143,
+        "earnings": "2026-07-30",
+        "summary": "Adaptive Biotechnologies Corporation, a commercial-stage company, develops an immune medicine platform for the diagnosis and treatment of various diseases. The company offers immunosequencing platform which combines a suite of proprietary chemistry, computational biology, and machine learning to generate clinical immunomics data to decode the adaptive immune system. It provides clonoSEQ diagnostic test which detects and monitors the remaining number of cancer cells that are present in a patient's body during and after treatment, known as Minimal Residual Disease (MRD). The company offers produ",
+        "news": [
+          {
+            "title": "An Adaptive Biotechnologies Insider Sold $8.5 Million in Stock After an 85% Run",
+            "link": "https://www.fool.com/coverage/filings/2026/07/12/an-adaptive-biotechnologies-insider-sold-usd8-5-million-in-stock-after-an-85-run/",
+            "date": "2026-07-12",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Imviva Biotech Granted FDA IDE Authorization for Cancer Treatment Trial",
+            "link": "https://www.yahoo.com/news/science/articles/imviva-biotech-granted-fda-ide-201059312.html",
+            "date": "2026-06-30",
+            "publisher": "Exec Edge"
+          },
+          {
+            "title": "BTIG Maintains a Buy Rating on Adaptive Biotechnologies (ADPT)",
+            "link": "https://finance.yahoo.com/healthcare/articles/btig-maintains-buy-rating-adaptive-221345902.html",
+            "date": "2026-06-27",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Adaptive Biotechnologies plans separation of immune medicine platform",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/adaptive-biotechnologies-plans-separation-immune-204651180.html",
+            "date": "2026-06-15",
+            "publisher": "Reuters"
+          },
+          {
+            "title": "What Does an Adaptive Biotech Insider's Sale of Nearly 40,000 Shares Mean for Investors?",
+            "link": "https://www.fool.com/coverage/filings/2026/06/14/what-does-an-adaptive-biotech-insider-s-sale-of-nearly-40-000-shares-mean-for-investors/",
+            "date": "2026-06-14",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.58x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.BWFG",
+        "name": "Bankwell Financial Group, Inc.",
+        "sector": "Financial Services",
+        "close": 59.15999984741211,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.53,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 471693312,
+        "pe": 11.855712,
+        "rating": "hold · 2位分析師",
+        "target": 56.5,
+        "earnings": "2026-07-23",
+        "summary": "Bankwell Financial Group, Inc. operates as the bank holding company for Bankwell Bank that provides various banking services for individual and commercial customers. It provides various traditional depository products, including checking, savings, money market, and certificates of deposit. The company also offers first mortgage loans secured by one-to-four family owner occupied residential properties for personal use; home equity loans and home equity lines of credit secured by owner occupied one-to-four family residential properties; loans secured by commercial real estate, multi-family dwell",
+        "news": [
+          {
+            "title": "Are Finance Stocks Lagging  Adamas Trust, Inc. (ADAM) This Year?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/finance-stocks-lagging-adamas-trust-134004333.html",
+            "date": "2026-06-05",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Undervalued Small Caps With Insider Buying To Enhance Your Portfolio",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/undervalued-small-caps-insider-buying-113953505.html",
+            "date": "2026-05-20",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "3 Undiscovered Gems In The US Market To Watch",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-undiscovered-gems-us-market-173317301.html",
+            "date": "2026-04-29",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "How The Investment Story For Bankwell Financial Group (BWFG) Is Shifting With New Analyst Targets",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investment-story-bankwell-financial-group-080521248.html",
+            "date": "2026-04-28",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Bankwell Financial Group, Inc. Beat Analyst Estimates: See What The Consensus Is Forecasting For This Year",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/bankwell-financial-group-inc-beat-141009712.html",
+            "date": "2026-04-26",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.53x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.GL",
+        "name": "Globe Life Inc.",
+        "sector": "Financial Services",
+        "close": 181.50999450683594,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.66,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 14093299712,
+        "pe": 12.569944,
+        "rating": "buy · 11位分析師",
+        "target": 186.27274,
+        "earnings": "2026-07-23",
+        "summary": "Globe Life Inc., through its subsidiaries, provides various life and supplemental health insurance products to lower middle- and middle-income families in the United States. It operates in three segments: Life Insurance, Supplemental Health Insurance, and Investments. The company offers whole, term, and other life insurance products, as well as life insurance for children; Medicare supplement and limited-benefit supplemental health insurance products, such as accident, cancer, critical illness, heart, intensive care, and other health products; and final expense, accidental death, mortgage prot",
+        "news": [
+          {
+            "title": "Globe Life (GL) Reports Next Week: Wall Street Expects Earnings Growth",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/globe-life-gl-reports-next-140004523.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Globe Life (GL) Stock Looks Reasonable As Its 106% Five Year Run Continues",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/globe-life-gl-stock-looks-121153152.html",
+            "date": "2026-07-14",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Arista Networks Stock Has A Higher Target, But The Market Wants Proof",
+            "link": "https://www.trefis.com/articles/606843/arista-networks-stock-has-a-higher-target-but-the-market-wants-proof/2026-07-13",
+            "date": "2026-07-13",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "Globe Life (GL) Could Be 4% Above Fair Value As Financing Gets Reset",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/globe-life-gl-could-4-211414285.html",
+            "date": "2026-07-13",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Marvell Stock And The Multi-Year Bet Management Made",
+            "link": "https://www.trefis.com/articles/606408/marvell-stock-and-the-multi-year-bet-management-made/2026-07-10",
+            "date": "2026-07-10",
+            "publisher": "Trefis"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.66x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.PLBC",
+        "name": "Plumas Bancorp",
+        "sector": "Financial Services",
+        "close": 60.2400016784668,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.74,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 419760512,
+        "pe": 12.7627125,
+        "rating": "buy · 3位分析師",
+        "target": 61.33333,
+        "earnings": "2026-07-15",
+        "summary": "Plumas Bancorp operates as the bank holding company for the Plumas Bank that provides various banking products and services for small and middle market businesses and individuals. The company accepts various deposits, such as checking, money market checking, business sweep, public funds sweep, savings, and retirement accounts, as well as time and remote deposits. Its loan portfolio comprises personal and commercial loans, real estate, construction, agricultural, and government-guaranteed loans; residential and home equity lines of credit; land development and construction loans; automobile loa",
+        "news": [
+          {
+            "title": "Plumas Bancorp (PLBC) Q2 Earnings: Taking a Look at Key Metrics Versus Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/plumas-bancorp-plbc-q2-earnings-150002259.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Plumas Bancorp (PLBC) Beats Q2 Earnings and Revenue Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/plumas-bancorp-plbc-beats-q2-144002959.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Why Plumas Bancorp (PLBC) is a Top Dividend Stock for Your Portfolio",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-plumas-bancorp-plbc-top-154501003.html",
+            "date": "2026-07-09",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Plumas Bancorp (PLBC) is a Top Dividend Stock Right Now: Should You Buy?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/plumas-bancorp-plbc-top-dividend-154503853.html",
+            "date": "2026-06-23",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Favourable Signals For Plumas Bancorp: Numerous Insiders Acquired Stock",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/favourable-signals-plumas-bancorp-numerous-133809183.html",
+            "date": "2026-04-25",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.74x、MACD 水上（零軸之上）。"
+      }
+    ],
+    "week": [
+      {
+        "code": "US.TDW",
+        "name": "Tidewater Inc.",
+        "sector": "Energy",
+        "close": 74.87000274658203,
+        "score": 87,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.42,
+        "mcdxx": 4,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 3723334144,
+        "pe": 12.625633,
+        "rating": "hold · 7位分析師",
+        "target": 86.57143,
+        "earnings": "2026-08-04（估）",
+        "summary": "Tidewater Inc., together with its subsidiaries, provides offshore support vessels and marine support services to the offshore energy industry through the operation of a fleet of offshore marine service vessels worldwide. The company operates through five segments: Americas, Asia Pacific, Middle East, Europe/Mediterranean, and West Africa. It offers phases of offshore crude oil and natural gas exploration, field development, production, maintenance, and windfarm development and maintenance activities; towing and anchor handling for mobile offshore drilling units; transportation of supplies and ",
+        "news": [
+          {
+            "title": "2 Small-Cap Stocks Worth Investigating and 1 Facing Headwinds",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-small-cap-stocks-worth-143039212.html",
+            "date": "2026-07-13",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Tidewater (TDW): Constructive Long-term Fundamentals Outweigh Short-Term Concerns",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tidewater-tdw-constructive-long-term-141256992.html",
+            "date": "2026-07-10",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "APA Corporation, Tidewater, and Tenaris Stocks Trade Down, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/apa-corporation-tidewater-tenaris-stocks-203942748.html",
+            "date": "2026-07-09",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Tidewater, Magnolia Oil & Gas, and Cactus Shares Are Soaring, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tidewater-magnolia-oil-gas-cactus-235352857.html",
+            "date": "2026-07-07",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Third Avenue Value Fund's Strategic Moves: Harley-Davidson Inc. Takes Center Stage",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/third-avenue-value-funds-strategic-180034446.html",
+            "date": "2026-06-25",
+            "publisher": "GuruFocus.com"
+          }
+        ],
+        "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.VG",
+        "name": "Venture Global, Inc.",
+        "sector": "Energy",
+        "close": 12.90999984741211,
+        "score": 85,
+        "trend": 42,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.79,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/False",
+        "futu": null,
+        "mktcap": 32073062400,
+        "pe": 13.447917,
+        "rating": "buy · 19位分析師",
+        "target": 16.15789,
+        "earnings": "2026-08-11",
+        "summary": "Venture Global, Inc., a liquefied natural gas (LNG) company, engages in the ownership, development, construction, and operation of LNG production facilities and associated infrastructure in the United States, Germany, France, Netherlands, the United Kingdom, and internationally.The company is involved in LNG production, natural gas transportation, and regasification operations, as well as LNG sales and shipping business through LNG tankers. Its LNG projects include Calcasieu, Plaquemines, and CP2 projects. The company was founded in 2013 and is headquartered in Arlington, Virginia. Venture Glo",
+        "news": [
+          {
+            "title": "Top Analyst Reports for NVIDIA, Oracle & Analog Device",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-nvidia-oracle-202800143.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "New Strong Buy Stocks for July 15th",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/strong-buy-stocks-july-15th-103600677.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Best Value Stocks to Buy for July 15th",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/best-value-stocks-buy-july-094900101.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Venture Global (VG): Best Up and Coming Stocks to Invest In Right Now",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/venture-global-vg-best-coming-132536986.html",
+            "date": "2026-07-12",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Is Venture Global (VG) One of the Best IPO Stocks with Huge Upside Potential?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/venture-global-vg-one-best-135931260.html",
+            "date": "2026-07-10",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "周K 轉黃 85分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.CF",
+        "name": "CF Industries Holdings, Inc.",
+        "sector": "Basic Materials",
+        "close": 117.81999969482422,
+        "score": 83,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.52,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 18100600832,
+        "pe": 10.614414,
+        "rating": "hold · 19位分析師",
+        "target": 125.72211,
+        "earnings": "2026-08-06",
+        "summary": "CF Industries Holdings, Inc., together with its subsidiaries, engages in the production of ammonia in North America, Europe, and internationally. It operates through Ammonia, Granular Urea, UAN, AN, and Other segments. The company offers ammonia products; nitrogen products, such as granular urea, urea ammonium nitrate solution, and ammonium nitrate; diesel exhaust fluid, urea liquor, and nitric acid products. It serves cooperatives, retailers, independent fertilizer distributors, traders, wholesalers, and industrial users. The company was founded in 1946 and is headquartered in Northbrook, Ill",
+        "news": [
+          {
+            "title": "CF Industries Boosts Shareholder Returns With 20% Dividend Hike",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/cf-industries-boosts-shareholder-returns-120100462.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Hartford and Amdocs Join the Perfect 10 Portfolio",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/hartford-amdocs-join-perfect-10-104523151.html",
+            "date": "2026-07-14",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "Zacks Industry Outlook Nutrien, CF Industries and Yara International",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-industry-outlook-nutrien-cf-072800115.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "CF Industries Just Raised Its Dividend by 20% While Its Stock Has Surged 55% in 2026",
+            "link": "https://www.barchart.com/story/news/3258989/cf-industries-just-raised-its-dividend-by-20-while-its-stock-has-surged-55-in-2026",
+            "date": "2026-07-13",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "3 Fertilizer Stocks to Keep an Eye on in a Challenging Industry",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-fertilizer-stocks-keep-eye-124000365.html",
+            "date": "2026-07-13",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 83分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.OXY",
+        "name": "Occidental Petroleum Corporation",
+        "sector": "Energy",
+        "close": 53.77000045776367,
+        "score": 81,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.77,
+        "mcdxx": 6,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 53481508864,
+        "pe": 72.66216,
+        "rating": "buy · 23位分析師",
+        "target": 65.04348,
+        "earnings": "2026-08-06",
+        "summary": "Occidental Petroleum Corporation, together with its subsidiaries, engages in the acquisition, exploration, and development of oil and gas properties in the United States and internationally. It operates through Oil and Gas and Midstream and Marketing. The Oil and Gas segment explores for, develops, and produces oil and condensate, natural gas liquids (NGLs), and natural gas. This segment also optimizes its transportation and storage capacity and invests in entities. The Midstream and Marketing segment purchases, markets, gathers, processes, transports and stores oil, condensate, NGLs, natural ",
+        "news": [
+          {
+            "title": "How Cheap Is ExxonMobil Stock Once You Look Two Years Out?",
+            "link": "https://www.trefis.com/articles/607079/how-cheap-is-exxonmobil-stock-once-you-look-two-years-out/2026-07-14",
+            "date": "2026-07-15",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "Is Occidental Petroleum (OXY) Stock Undervalued Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/occidental-petroleum-oxy-stock-undervalued-134004709.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Sector Update: Energy Stocks Higher Early Monday",
+            "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-higher-early-135532974.html",
+            "date": "2026-07-13",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Street Calls of the Week",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/street-calls-week-113002647.html",
+            "date": "2026-07-12",
+            "publisher": "Investing.com"
+          },
+          {
+            "title": "OXY Beats the Industry in the Past 9 Months: Buy or Stay Patient?",
+            "link": "https://finance.yahoo.com/energy/articles/oxy-beats-industry-past-9-151200443.html",
+            "date": "2026-07-10",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 81分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      }
+    ],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.FAC",
+      "close": 6.070000171661377,
+      "spike_mult": 14.4,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.XOMA",
+      "close": 40.16999816894531,
+      "spike_mult": 13.7,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.TCBK",
+      "close": 59.43000030517578,
+      "spike_mult": 11.0,
+      "spike_date": "2026-07-17"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 2.9,
+        "m1": 6.4,
+        "m3": 9.6,
+        "m6": 3.2,
+        "y1": 9.3
+      },
+      "rank_m1": 1,
+      "rotate": 1,
+      "vol_ratio": 0.78,
+      "hot": false
+    },
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": -2.5,
+        "m1": 3.4,
+        "m3": 6.8,
+        "m6": 1.4,
+        "y1": 19.3
+      },
+      "rank_m1": 2,
+      "rotate": 1,
+      "vol_ratio": 0.9,
+      "hot": false
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": -0.2,
+        "m1": 2.5,
+        "m3": 4.1,
+        "m6": 10.9,
+        "y1": 20.8
+      },
+      "rank_m1": 3,
+      "rotate": 1,
+      "vol_ratio": 0.69,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": -0.3,
+        "m1": 2.2,
+        "m3": -2.1,
+        "m6": 7.6,
+        "y1": 12.3
+      },
+      "rank_m1": 4,
+      "rotate": 5,
+      "vol_ratio": 0.83,
+      "hot": true
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": 3.6,
+        "m1": 1.8,
+        "m3": -2.5,
+        "m6": -3.0,
+        "y1": 7.2
+      },
+      "rank_m1": 5,
+      "rotate": 6,
+      "vol_ratio": 1.11,
+      "hot": true
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": 1.5,
+        "m1": 0.5,
+        "m3": 0.7,
+        "m6": -5.7,
+        "y1": 6.1
+      },
+      "rank_m1": 6,
+      "rotate": 2,
+      "vol_ratio": 0.88,
+      "hot": false
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": 0.9,
+        "m1": -0.9,
+        "m3": 3.5,
+        "m6": 11.4,
+        "y1": 10.1
+      },
+      "rank_m1": 7,
+      "rotate": -2,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": 1.6,
+        "m1": -1.1,
+        "m3": 1.7,
+        "m6": 23.6,
+        "y1": 32.2
+      },
+      "rank_m1": 8,
+      "rotate": -1,
+      "vol_ratio": 0.69,
+      "hot": false
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": 0.1,
+        "m1": -1.6,
+        "m3": 22.9,
+        "m6": 24.0,
+        "y1": 42.8
+      },
+      "rank_m1": 9,
+      "rotate": -8,
+      "vol_ratio": 0.7,
+      "hot": false
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": -1.1,
+        "m1": -2.1,
+        "m3": 3.2,
+        "m6": 5.4,
+        "y1": 6.1
+      },
+      "rank_m1": 10,
+      "rotate": -4,
+      "vol_ratio": 0.7,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": 0.7,
+        "m1": -2.9,
+        "m3": -2.5,
+        "m6": 4.9,
+        "y1": 13.0
+      },
+      "rank_m1": 11,
+      "rotate": -1,
+      "vol_ratio": 0.81,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：金融（+6.4%）。 資金正流入：公用、通訊（動量加速）。 資金轉弱：房地產、科技、必需消費。 🔥 特別留意 公用、通訊，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。",
+  "tqqq_watch": {
+    "status": {
+      "week_end": "2026-07-17",
+      "color": "blue",
+      "close": 74.44,
+      "high52": 87.89,
+      "drawdown": 15.3,
+      "is_yellow": false,
+      "turned_yellow": false,
+      "trig_yellow": false,
+      "trig_drawdown": false
+    },
+    "triggers": []
+  }
+}

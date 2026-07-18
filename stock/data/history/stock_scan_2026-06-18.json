@@ -1,0 +1,3730 @@
+{
+  "generated": "2026-06-18 06:06",
+  "run_type": "daily",
+  "scanned": 2811,
+  "thresholds": {
+    "day": 45,
+    "week": 70,
+    "mon": 45
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.BRAI",
+        "name": "Braiin Limited",
+        "sector": "Technology",
+        "close": 9.359999656677246,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 4.55,
+        "mcdxx": 10,
+        "macd": 0,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1928985728,
+        "pe": null,
+        "rating": "buy · 1位分析師",
+        "target": 10.0,
+        "earnings": "",
+        "summary": "Braiin Limited operates as an agriculture and analytics services company that provides solutions to improve farming productivity using IoTs, Wireless Connectivity, Robotics, Software, and AI/ML in Australia and New Zealand. The company was incorporated in 2022 and is based in Subiaco, Australia. As of March 20, 2023, Braiin Limited operates as a subsidiary of Northern Revival Acquisition Corporation.",
+        "news": [
+          {
+            "title": "Braiin (BRAI) Snatches $33.6B Deal, Soars 78% in 1 Week",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/braiin-brai-snatches-33-6b-032257446.html",
+            "date": "2026-06-01",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Braiin Ltd (BRAI) Skyrockets 74% on $33.6B UK Contract",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/braiin-ltd-brai-skyrockets-74-041658762.html",
+            "date": "2026-05-27",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Top Midday Gainers",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/top-midday-gainers-175449754.html",
+            "date": "2026-05-26",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "BRAI Stock Explodes 159% Today – AI PropTech Company Unlocks $33B Opportunity With New Deal",
+            "link": "https://stocktwits.com/news-articles/markets/equity/brai-stock-explodes-ai-proptech-company-33b-opportunity-new-deal/cZgOIRKReqK",
+            "date": "2026-05-26",
+            "publisher": "Stocktwits"
+          },
+          {
+            "title": "A Look At Braiin (BRAI) Valuation After Recent Stock Split Announcement",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/look-braiin-brai-valuation-sharp-090707949.html",
+            "date": "2026-04-28",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 4.55x、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.CNTA",
+        "name": "Centessa Pharmaceuticals plc",
+        "sector": "Healthcare",
+        "close": 39.869998931884766,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.61,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 6169137152,
+        "pe": null,
+        "rating": "buy · 6位分析師",
+        "target": 44.16667,
+        "earnings": "2026-05-15（估）",
+        "summary": "Centessa Pharmaceuticals plc, together with its subsidiaries, discovers, develops, and delivers orexin-based neuroscience therapeutics in the United Kingdom and the United States. The company develops ORX750, an orexin receptor 2 agonist, which is in Phase IIa clinical trial for the treatment of central disorders of hypersomnolence, including narcolepsy type 1 and 2, as well as idiopathic hypersomnia. It also engages in the development of ORX142 which is in Phase I clinical trial for the treatment of neurological and neurodegenerative disorders; ORX489 which is in Phase I clinical trial for th",
+        "news": [
+          {
+            "title": "Lilly Goes on $20 Billion Buying Spree as It Seeks Next Act",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/lilly-goes-20-billion-buying-165410445.html",
+            "date": "2026-05-27",
+            "publisher": "Bloomberg"
+          },
+          {
+            "title": "Here is Why Eli Lilly (LLY) is One of the Best Stocks to Buy for the Next 15 Years",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-eli-lilly-lly-one-111602340.html",
+            "date": "2026-05-08",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Update: Market Chatter: Eli Lilly Plans to Sell About $8 Billion of Bonds to Fund Acquisitions",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-eli-lilly-plans-153516544.html",
+            "date": "2026-05-06",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Is It Too Late To Consider Centessa Pharmaceuticals (CNTA) After A 191% One Year Surge?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/too-consider-centessa-pharmaceuticals-cnta-191226949.html",
+            "date": "2026-05-03",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Guggenheim Raises PT on Eli Lilly (LLY) Amid Several Acquisition Deals",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/guggenheim-raises-pt-eli-lilly-160324996.html",
+            "date": "2026-04-29",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.61x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.IBCP",
+        "name": "Independent Bank Corporation",
+        "sector": "Financial Services",
+        "close": 34.27000045776367,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.11,
+        "mcdxx": 8,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 706172992,
+        "pe": 10.260479,
+        "rating": "",
+        "target": 36.7,
+        "earnings": "2026-07-23（估）",
+        "summary": "Independent Bank Corporation operates as the bank holding company for Independent Bank that provides banking services in the United States. The company offers demand deposits, interest checking, money market accounts, savings accounts, and time certificates of deposit, including free checking accounts. It also provides consumer loans that consists of real estate loans comprising residential mortgages and home equity loans and lines, all secured by one-to-four family residential properties, as well as other consumer loans; and investment and financial services. In addition, the company offers c",
+        "news": [
+          {
+            "title": "Independent Bank (IBCP) is a Top Dividend Stock Right Now: Should You Buy?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/independent-bank-ibcp-top-dividend-154505678.html",
+            "date": "2026-06-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Virginia National Bankshares Leads Our 3 Dividend Stock Picks",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/virginia-national-bankshares-leads-3-113218721.html",
+            "date": "2026-06-10",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Independent Bank (IBCP) Upgraded to Buy: What Does It Mean for the Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/independent-bank-ibcp-upgraded-buy-160006989.html",
+            "date": "2026-06-08",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "This is Why  Independent Bank (IBCP) is a Great Dividend Stock",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-independent-bank-ibcp-great-154503661.html",
+            "date": "2026-05-29",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Independent Bank (IBCP) Could Be a Great Choice",
+            "link": "https://finance.yahoo.com/news/independent-bank-ibcp-could-great-154504799.html",
+            "date": "2026-05-13",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.11x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.CHPT",
+        "name": "ChargePoint Holdings, Inc.",
+        "sector": "Consumer Cyclical",
+        "close": 7.690000057220459,
+        "score": 76,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.36,
+        "mcdxx": 4,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 199152784,
+        "pe": null,
+        "rating": "hold · 6位分析師",
+        "target": 6.41667,
+        "earnings": "2026-09-03（估）",
+        "summary": "ChargePoint Holdings, Inc., together with its subsidiaries, provides electric vehicle (EV) charging technology solutions in the United States and internationally. The company offers a range of networked charging systems; charger management system, support, and e-mobility service providers solutions; and ChargePoint mobile application. It serves commercial, such as retail, workplace, hospitality, healthcare, education, fueling and convenience, and parking lot operators; fleet, including municipal buses, delivery and work vehicles, and port/airport/warehouse and other industrial applications, as",
+        "news": [
+          {
+            "title": "ChargePoint (CHPT) Is Attractively Priced Despite Fast-paced Momentum",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/chargepoint-chpt-attractively-priced-despite-125501473.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "High gas prices have more Americans opting for EVs: ChargePoint data",
+            "link": "https://finance.yahoo.com/sectors/technology/article/high-gas-prices-have-more-americans-opting-for-evs-chargepoint-data-191120446.html",
+            "date": "2026-06-15",
+            "publisher": "Yahoo Finance"
+          },
+          {
+            "title": "Array, ChargePoint, and Wabash Stocks Trade Up, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/array-chargepoint-wabash-stocks-trade-012520194.html",
+            "date": "2026-06-13",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "The fastest EV charger in the world isn’t coming to America",
+            "link": "https://www.thestreet.com/automotive/byd-ev-flash-charger-isnt-coming-to-america",
+            "date": "2026-06-11",
+            "publisher": "TheStreet"
+          },
+          {
+            "title": "Top Stocks Powering the Future of Electric and Self-Driving Vehicles",
+            "link": "https://finance.yahoo.com/sectors/technology/articles/top-stocks-powering-future-electric-135000449.html",
+            "date": "2026-06-11",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 76分：站穩上升 MA30/MA40（趨勢回調）、放量 1.36x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.EWTX",
+        "name": "Edgewise Therapeutics, Inc.",
+        "sector": "Healthcare",
+        "close": 34.81999969482422,
+        "score": 76,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.24,
+        "mcdxx": 4,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 3746388480,
+        "pe": null,
+        "rating": "buy · 11位分析師",
+        "target": 46.09091,
+        "earnings": "2026-08-06（估）",
+        "summary": "Edgewise Therapeutics, Inc., a biopharmaceutical company, discovers, develops, and commercializes therapies for the treatment of muscle disorders. Its lead product candidate, sevasemten, an orally administered small molecule that is in Phase II clinical trials, designed to address the root cause of dystrophinopathies including Duchenne muscular dystrophy and Becker muscular dystrophy. The company develops EDG-7500, a small molecule for the treatment of hypertrophic cardiomyopathy and other severe cardiac disorders that is in Phase I clinical trials; and EDG-15400, a novel small molecule for th",
+        "news": [
+          {
+            "title": "Edgewise Therapeutics Remains Compelling Cardiology Story Despite Atrial Fibrillation Concerns, RBC Says",
+            "link": "https://finance.yahoo.com/healthcare/articles/edgewise-therapeutics-remains-compelling-cardiology-150254298.html",
+            "date": "2026-06-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Edgewise Bounds Between Double-Digit Losses And Gain — What's Going On?",
+            "link": "https://www.investors.com/news/technology/edgewise-therapeutics-hcm-bristol-myers-squibb-cytokinetics/?src=A00220&yptr=yahoo",
+            "date": "2026-06-16",
+            "publisher": "Investor's Business Daily"
+          },
+          {
+            "title": "Edgewise Therapeutics Reports Improvements In Heart Drug Trial",
+            "link": "https://finance.yahoo.com/healthcare/articles/edgewise-therapeutics-reports-improvements-heart-174012636.html",
+            "date": "2026-06-16",
+            "publisher": "Benzinga"
+          },
+          {
+            "title": "SpaceX, Rackspace surge premarket; Edgewise Therapeutics, Huntsman fall",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-rackspace-surge-premarket-edgewise-124412342.html",
+            "date": "2026-06-16",
+            "publisher": "Investing.com"
+          },
+          {
+            "title": "Assessing Edgewise Therapeutics (EWTX) Valuation After A Sharp Recent Share Price Move",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/assessing-edgewise-therapeutics-ewtx-valuation-161042544.html",
+            "date": "2026-06-02",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 76分：站穩上升 MA30/MA40（趨勢回調）、放量 1.24x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.SDGR",
+        "name": "Schrodinger, Inc.",
+        "sector": "Healthcare",
+        "close": 15.529999732971191,
+        "score": 75,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.35,
+        "mcdxx": 3,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1160412800,
+        "pe": null,
+        "rating": "",
+        "target": 20.875,
+        "earnings": "2026-08-06（估）",
+        "summary": "Schrödinger, Inc., together with its subsidiaries, develops physics-based computational platform that enables discovery of novel molecules for drug development and materials applications in the United States, the Asia-Pacific, Europe, Middle East, Africa, and internationally. The company operates in two segments, Software and Drug Discovery. The Software segment sells its software to transform molecular discovery for life sciences and materials science industries. The Drug Discovery segment focuses on building a portfolio of preclinical and clinical programs, internally and through collaborati",
+        "news": [
+          {
+            "title": "Recursion Pharmaceuticals vs. Schrödinger: Which Healthcare Stock Is a Better Buy in 2026?",
+            "link": "https://www.fool.com/coverage/better-buy/2026/06/02/recursion-pharmaceuticals-vs-schrodinger-which-healthcare-stock-is-a-better-buy-in-2026/",
+            "date": "2026-06-02",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "How The Schrödinger (SDGR) Investment Story Is Shifting As Analysts Reset Price Targets",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/schr-dinger-sdgr-investment-story-131411501.html",
+            "date": "2026-05-25",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "My Top 3 Biotech Stocks for May 2026",
+            "link": "https://www.fool.com/investing/2026/05/20/my-top-3-biotech-stocks-for-may-2026/",
+            "date": "2026-05-20",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "7 Healthcare AI Stocks Under $50 With Huge Upside Potential",
+            "link": "https://247wallst.com/investing/2026/05/18/7-healthcare-ai-stocks-under-50-with-huge-upside-potential/",
+            "date": "2026-05-18",
+            "publisher": "24/7 Wall St."
+          },
+          {
+            "title": "Earnings Update: Schrödinger, Inc. (NASDAQ:SDGR) Just Reported And Analysts Are Trimming Their Forecasts",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/earnings-schr-dinger-inc-nasdaq-110539096.html",
+            "date": "2026-05-08",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 75分：站穩上升 MA30/MA40（趨勢回調）、放量 1.35x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.SRTA",
+        "name": "Strata Critical Medical, Inc.",
+        "sector": "Healthcare",
+        "close": 5.789999961853027,
+        "score": 75,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.04,
+        "mcdxx": 3,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 500988832,
+        "pe": null,
+        "rating": "",
+        "target": 9.25,
+        "earnings": "2026-08-04（估）",
+        "summary": "Strata Critical Medical, Inc. provides time-critical logistics and medical services to the healthcare industry in the United States. It operates in two segments, Logistics and Clinical. The company offers logistics services, such as air and ground transportation for human organs, transplant teams, and related medical materials and organ placement services; transplant clinical services, including organ recovery procedures, normothermic regional perfusion, and preservation services. It also provides other clinical services comprising cardiac perfusion services, blood management and autotransfusi",
+        "news": [
+          {
+            "title": "Strata Critical Medical, Inc. (SRTA) Surges 8.5%: Is This an Indication of Further Gains?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/strata-critical-medical-inc-srta-121400440.html",
+            "date": "2026-06-16",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "How The Story Is Shifting For Strata Critical Medical (SRTA) After New Analyst Assumptions",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/story-shifting-strata-critical-medical-001602911.html",
+            "date": "2026-05-25",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Strata Critical Medical, Inc. Beat Analyst Profit Forecasts, And Analysts Have New Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/strata-critical-medical-inc-beat-140746186.html",
+            "date": "2026-05-08",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Joby Keeps Losing Money—and the Stock Keeps Rising",
+            "link": "https://www.barrons.com/articles/joby-aviation-earnings-stock-price-bd56ff10?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-05-06",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "Strata Critical Medical, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-strata-critical-medical-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-05-06",
+            "publisher": "Moby"
+          }
+        ],
+        "why": "日K 轉黃 75分：站穩上升 MA30/MA40（趨勢回調）、放量 1.04x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.ASPN",
+        "name": "Aspen Aerogels, Inc.",
+        "sector": "Industrials",
+        "close": 6.050000190734863,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.06,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 501408640,
+        "pe": null,
+        "rating": "",
+        "target": 6.35,
+        "earnings": "2026-08-06（估）",
+        "summary": "Aspen Aerogels, Inc., an aerogel technology company, designs, develops, manufactures, and sells aerogel materials primarily for use in the energy industrial, sustainable insulation materials, and electric vehicle (EV) markets in the United States, Canada, Asia, Europe, and Latin America. It operates through two segments: Thermal Barrier and Energy Industrial. The company offers PyroThin aerogel thermal barriers for use in battery packs in EVs; Pyrogel XTE for refineries and petrochemical facilities; Pyrogel HPS for high temperatures and in demanding thermal applications in refining and chemica",
+        "news": [
+          {
+            "title": "How The Aspen Aerogels (ASPN) Investment Story Is Shifting With Mixed Analyst Views",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aspen-aerogels-aspn-investment-story-160901331.html",
+            "date": "2026-06-03",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Aspen Aerogels Q1 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/aspen-aerogels-q1-earnings-call-highlights-2026-05-09/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-09",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Aspen Aerogels, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-aspen-aerogels-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-05-07",
+            "publisher": "Moby"
+          },
+          {
+            "title": "Aspen Aerogels (ASPN) Q1 2026 Earnings Transcript",
+            "link": "https://www.fool.com/earnings/call-transcripts/2026/05/07/aspen-aerogels-aspn-q1-2026-earnings-transcript/",
+            "date": "2026-05-07",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Aspen Aerogels (ASPN) Reports Q1 Loss, Tops Revenue Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aspen-aerogels-aspn-reports-q1-114504396.html",
+            "date": "2026-05-07",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.06x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.CHRN",
+        "name": "ChronoScale Corporation",
+        "sector": "Technology",
+        "close": 20.610000610351562,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.14,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 2949154560,
+        "pe": null,
+        "rating": "",
+        "target": null,
+        "earnings": "2026-07-28（估）",
+        "summary": "ChronoScale Corporation designs and develops a compute platform to support artificial intelligence (AI) workloads. The company focuses on large-scale deployments and provides dedicated compute environments engineered for performance, consistency, and long-term operational execution. The company is based in Dallas, Texas. ChronoScale Corporation operates as a subsidiary of Applied Digital Corporation.",
+        "news": [
+          {
+            "title": "ChronoScale (CHRN) Stock Valuation After Sharp 1 Year Surge And Rich P/S Multiple",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/chronoscale-chrn-stock-valuation-sharp-170759648.html",
+            "date": "2026-06-13",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.14x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.CORZ",
+        "name": "Core Scientific, Inc.",
+        "sector": "Technology",
+        "close": 28.3799991607666,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.18,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 9021584384,
+        "pe": null,
+        "rating": "strong_buy · 17位分析師",
+        "target": 32.57353,
+        "earnings": "2026-05-07",
+        "summary": "Core Scientific, Inc. provides infrastructure for high-density colocation services and digital asset mining in the United States. It operates through three segments: Colocation, Digital Asset Self-Mining, and Digital Asset Hosted Mining. The company offers space, power, cooling, facilities operations, security, and other services to third-party customers to support workloads for machine learning and artificial intelligence; deployment, monitoring, troubleshooting, optimization, and maintenance of its customers' digital asset mining equipment; and electrical power, repair, and other infrastruct",
+        "news": [
+          {
+            "title": "Will KEEL's Near-Term Lease Execution Demonstrate Its Worth?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/keels-near-term-lease-execution-123200683.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Palantir upgraded, Rocket Companies downgraded: Wall Street's top analyst calls",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/palantir-upgraded-rocket-companies-downgraded-134018537.html",
+            "date": "2026-06-16",
+            "publisher": "The Fly"
+          },
+          {
+            "title": "Core Scientific Board Shift And Texas AI Build Reframe Growth Story",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/core-scientific-board-shift-texas-180956909.html",
+            "date": "2026-06-13",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "AMD upgraded, Adobe downgraded: Wall Street's top analyst calls",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/amd-upgraded-adobe-downgraded-wall-133850577.html",
+            "date": "2026-06-12",
+            "publisher": "The Fly"
+          },
+          {
+            "title": "Applied Digital Is Building a $36 Billion AI Real Estate Empire",
+            "link": "https://www.marketbeat.com/originals/applied-digital-is-building-a-36-billion-ai-real-estate-empire/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-06-12",
+            "publisher": "MarketBeat"
+          }
+        ],
+        "why": "日K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.18x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.FPS",
+        "name": "Forgent Power Solutions, Inc.",
+        "sector": "Industrials",
+        "close": 61.91999816894531,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.12,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 18850236416,
+        "pe": 3096.0,
+        "rating": "strong_buy · 10位分析師",
+        "target": 58.3,
+        "earnings": "2026-05-14",
+        "summary": "Forgent Power Solutions, Inc. designs and manufactures electrical distribution equipment used in data centers, the power grid and energy-intensive industrial facilities. The company's products include automatic transfer switches (ATS), gear eHouses, generator connection cabinets, low voltage switchgear, low voltage transformers, medium voltage switchgear, medium voltage VPI transformers, padmount transformers, panelboards, paralleling switchgear, PDU transformers, power distribution units, power skids, remote power panels, substation transformers, switchboards, tap boxes, and UPS eHouses. It a",
+        "news": [
+          {
+            "title": "Forgent Power Solutions (FPS) Reports FQ3 2026 Revenue and Bookings",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/forgent-power-solutions-fps-reports-182932800.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Jim Cramer Notes “Forgent Became an Incredible Performer”",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-notes-forgent-became-163834966.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Forgent Power (FPS) Hits All-Time High on 27% PT Hike",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/forgent-power-fps-hits-time-060645900.html",
+            "date": "2026-05-30",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Is Forgent Power Solutions (FPS) Still Attractive After Its Recent Share Price Surge",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/forgent-power-solutions-fps-still-050245989.html",
+            "date": "2026-05-30",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Monashee Scales Back Its Bet on Structure Therapeutics",
+            "link": "https://www.fool.com/coverage/filings/2026/05/20/monashee-scales-back-its-bet-on-structure-therapeutics/",
+            "date": "2026-05-20",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "日K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.12x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.KEEL",
+        "name": "Keel Infrastructure Corp.",
+        "sector": "Technology",
+        "close": 5.96999979019165,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.19,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 3604857088,
+        "pe": null,
+        "rating": "strong_buy · 8位分析師",
+        "target": 5.75,
+        "earnings": "2026-08-10（估）",
+        "summary": "Keel Infrastructure Corp. operates digital and energy infrastructure with focus on high-performance computing (HPC) and artificial intelligence (AI) workloads in North America, Canada, and the United States. It primarily owns and operates data centers housing computers to validate transactions on the bitcoin blockchain, as well as sells computational power used for hashing calculations for cryptocurrency mining. The company also provides electrician services to commercial and residential customers in Quebec, Canada. It also undertakes hosting of third-party mining hardware. The company was fou",
+        "news": [
+          {
+            "title": "Will KEEL's Near-Term Lease Execution Demonstrate Its Worth?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/keels-near-term-lease-execution-123200683.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Keel Infrastructure (KEEL) Climbs, Rides Renewed AI Optimism",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/keel-infrastructure-keel-climbs-rides-014113242.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Keel Infrastructure Raises US$458m As AI Data Center Pivot Accelerates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/keel-infrastructure-raises-us-458m-150855053.html",
+            "date": "2026-06-12",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Keel Infrastructure is Raising $458M, Even Though it Doesn’t Need the Cash",
+            "link": "https://blockspace.media/short/keel-infrastructure-is-raising-458m-even-though-it-doesnt-need-the-cash/",
+            "date": "2026-06-10",
+            "publisher": "Blockspace"
+          },
+          {
+            "title": "KEEL Stock Edges Higher On Closing $458M Debt: Retail Buzzes On 'Imminent Deal'",
+            "link": "https://stocktwits.com/news-articles/markets/equity/keel-stock-edges-higher-on-closing-458m-debt/cZ06PpER7RU",
+            "date": "2026-06-10",
+            "publisher": "Stocktwits"
+          }
+        ],
+        "why": "日K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.19x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.CHE",
+        "name": "Chemed Corp",
+        "sector": "Healthcare",
+        "close": 436.0299987792969,
+        "score": 66,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.92,
+        "mcdxx": 6,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 5787907584,
+        "pe": 23.813763,
+        "rating": "buy · 4位分析師",
+        "target": 446.5,
+        "earnings": "2026-04-24",
+        "summary": "Chemed Corporation provides hospice and palliative care services to patients through a network of physicians, doctors, registered nurses, home health aides, social workers, clergy, and volunteers primarily in the United States. The company operates through two segments: VITAS and Roto-Rooter segments. The company offers plumbing, drain cleaning, excavation, water restoration, and other related services to residential and commercial customers through company-owned branches, independent contractors, and franchisees. The company also provides direct medical services to patients, as well as spirit",
+        "news": [
+          {
+            "title": "Chemed (CHE) Stock Valuation Check After Recent Mixed Performance And Undervaluation Debate",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/chemed-che-stock-valuation-check-160848294.html",
+            "date": "2026-06-15",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "AVAH or CHE: Which Is the Better Value Stock Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/avah-che-better-value-stock-154004189.html",
+            "date": "2026-06-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "1 Profitable Stock for Long-Term Investors and 2 We Avoid",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-long-term-113728358.html",
+            "date": "2026-06-10",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "AVAH vs. CHE: Which Stock Is the Better Value Option?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/avah-vs-che-stock-better-154004094.html",
+            "date": "2026-05-25",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "2 Small-Cap Stocks with Solid Fundamentals and 1 We Avoid",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-small-cap-stocks-solid-093255660.html",
+            "date": "2026-05-20",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 66分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.ASYS",
+        "name": "Amtech Systems, Inc.",
+        "sector": "Technology",
+        "close": 21.385000228881836,
+        "score": 61,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.38,
+        "mcdxx": 1,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 373897472,
+        "pe": 118.80555,
+        "rating": "",
+        "target": 22.0,
+        "earnings": "2026-08-06（估）",
+        "summary": "Amtech Systems, Inc., together with its subsidiaries, manufactures and sells capital equipment and related consumables for use in fabricating and packaging semiconductor devices in the United States, Canada, Mexico, China, Malaysia, Taiwan, Singapore, the Czech Republic, Austria, Hungary, the United Kingdom, Germany, and internationally. It operates through Thermal Processing Solutions and Semiconductor Fabrication Solutions segments. The company offers thermal processing equipment for use in solder reflow operations for advanced semiconductor packaging and electronics assembly; belt furnaces ",
+        "news": [
+          {
+            "title": "3 Cash-Producing Stocks with Warning Signs",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-cash-producing-stocks-warning-091651110.html",
+            "date": "2026-06-17",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Amtech (ASYS) Surges 17.0%: Is This an Indication of Further Gains?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/amtech-asys-surges-17-0-082500908.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Amtech (ASYS) Shares Skyrocket, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/amtech-asys-shares-skyrocket-know-225737613.html",
+            "date": "2026-06-11",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Are Computer and Technology Stocks Lagging  Amtech Systems (ASYS) This Year?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/computer-technology-stocks-lagging-amtech-134004307.html",
+            "date": "2026-06-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "2 Semiconductor Stocks with Exciting Potential and 1 We Brush Off",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-semiconductor-stocks-exciting-potential-130528513.html",
+            "date": "2026-06-10",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 61分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.STAA",
+        "name": "STAAR Surgical Company",
+        "sector": "Healthcare",
+        "close": 29.219999313354492,
+        "score": 61,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.02,
+        "mcdxx": 1,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1454819840,
+        "pe": null,
+        "rating": "",
+        "target": 29.66667,
+        "earnings": "2026-08-13（估）",
+        "summary": "STAAR Surgical Company, together with its subsidiaries, designs, develops, manufactures, and sells phakic implantable lenses for the eye and accessory delivery systems to deliver the lenses into the eye. The company offers implantable collamer lens product family (ICLs) comprising EVO ICL, EVO+ ICL, EVO Visian ICL, and EVO Viva ICL for use in refractive surgery for the treatment of visual disorders, such as myopia, hyperopia, astigmatism, and presbyopia. It serves health care providers, including ophthalmic surgeons, vision and surgical centers, hospitals, government facilities, and distributo",
+        "news": [
+          {
+            "title": "Medical Devices & Supplies - Specialty Stocks Q1 Earnings: STAAR Surgical (NASDAQ:STAA) Firing on All Cylinders",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/medical-devices-supplies-specialty-stocks-171720419.html",
+            "date": "2026-06-12",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "1 Russell 2000 Stock with Exciting Potential and 2 We Ignore",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-russell-2000-stock-exciting-194130056.html",
+            "date": "2026-06-04",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "How The STAAR Surgical (STAA) Story Is Shifting After Q1 And New Analyst Targets",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/staar-surgical-staa-story-shifting-042932397.html",
+            "date": "2026-06-04",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Hedge Fund Broadwood Capital Added Over 1 Million Shares of STAAR Surgical to Its Position. Here's What That Means for Investors.",
+            "link": "https://www.fool.com/coverage/filings/2026/06/01/hedge-fund-broadwood-capital-added-over-1-million-shares-of-staar-surgical-to-its-position-here-s-what-that-means-for-investors/",
+            "date": "2026-06-01",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "This Hedge Fund Just Dumped Its Entire Stake in XPeng Stock. Should You Too?",
+            "link": "https://www.fool.com/coverage/filings/2026/05/26/this-hedge-fund-just-dumped-its-entire-stake-in-xpeng-stock-should-you-too/",
+            "date": "2026-05-26",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "日K 轉黃 61分：站穩上升 MA30/MA40（趨勢回調）、放量 1.02x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.ASX",
+        "name": "ASE Technology Holding Co., Ltd.",
+        "sector": "Technology",
+        "close": 37.439998626708984,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.8,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 82141331456,
+        "pe": 58.5,
+        "rating": "strong_buy · 2位分析師",
+        "target": 36.47134,
+        "earnings": "2026-07-30（估）",
+        "summary": "ASE Technology Holding Co., Ltd., together with its subsidiaries, provides semiconductor manufacturing services in the United States, Taiwan, rest of Asia, Europe, and internationally. It operates through Packaging, Testing, and EMS. The company offers semiconductor packaging, interconnect materials production, front-end engineering testing, wafer probing, and final testing services, as well as integrated solutions for EMS (electronic manufacturing services) in relation to computing, peripherals, communications, industrial, automotive, and server applications. It also provides turnkey services",
+        "news": [
+          {
+            "title": "Can Strong Smartphone Demand Sustain AMKR's Growth Momentum?",
+            "link": "https://finance.yahoo.com/technology/articles/strong-smartphone-demand-sustain-amkrs-140700454.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "ASE Technology Stock Surges 77.1% in 3 Months: Still a Buy?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ase-technology-stock-surges-77-154000944.html",
+            "date": "2026-06-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Asian Equities Traded in the US as American Depositary Receipts Rise in Friday Trading, Marginally Lower for Week",
+            "link": "https://finance.yahoo.com/markets/world-indices/articles/asian-equities-traded-us-american-143914203.html",
+            "date": "2026-06-12",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "ASX Expects Over $3.5B in LEAP Revenues in 2026: Is More Growth Ahead?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/asx-expects-over-3-5b-132800091.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Asian Equities Traded in the US as American Depositary Receipts Rise in Thursday Trading",
+            "link": "https://finance.yahoo.com/markets/world-indices/articles/asian-equities-traded-us-american-143805409.html",
+            "date": "2026-06-11",
+            "publisher": "MT Newswires"
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.CLYM",
+        "name": "Climb Bio, Inc.",
+        "sector": "Healthcare",
+        "close": 11.34000015258789,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.92,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 649362688,
+        "pe": null,
+        "rating": "strong_buy · 14位分析師",
+        "target": 20.92857,
+        "earnings": "2025-08-14（估）",
+        "summary": "Climb Bio, Inc., a clinical-stage biotechnology company, focuses on developing therapies to address unmet needs for patients living with immune-mediated diseases. The company's lead product candidate is the budoprutug, an anti-CD19 monoclonal antibody for the treatment of B-cell mediated diseases. It is also developing budoprutug which is in phase 2 clinical trials for the treatment of primary membranous nephropathy and immune thrombocytopenia; and Phase 1b clinical trial indicated for the systemic lupus erythematosus. In addition, the company is developing CLYM116, a preclinical stage anti A ",
+        "news": [
+          {
+            "title": "Climb Bio Teases Key Budoprutug, CLYM116 Readouts at BioConnect",
+            "link": "https://www.marketbeat.com/instant-alerts/climb-bio-teases-key-budoprutug-clym116-readouts-at-bioconnect-2026-05-21/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-21",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Climb Bio Spotlights Budoprutug CD19 Strategy, Sets Up 2026 Data Readouts in pMN, ITP and SLE",
+            "link": "https://www.marketbeat.com/instant-alerts/climb-bio-spotlights-budoprutug-cd19-strategy-sets-up-2026-data-readouts-in-pmn-itp-and-sle-2026-05-05/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-05",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Climb Bio (CLYM) Enters Agreement for $110M Private Placement Financing",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/climb-bio-clym-enters-agreement-170537860.html",
+            "date": "2026-05-05",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Why Climb Bio (CLYM) is One of the Best Performing Small Cap Stocks So Far in 2026",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-climb-bio-clym-one-081743387.html",
+            "date": "2026-05-01",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Climb Bio (CLYM) Receives FDA Fast Track Designation for Budoprutug in Rare Kidney Disease",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/climb-bio-clym-receives-fda-170006774.html",
+            "date": "2026-04-29",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.DNP",
+        "name": "DNP Select Income Fund, Inc.",
+        "sector": "Financial Services",
+        "close": 10.720000267028809,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.87,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 4039523584,
+        "pe": 9.24138,
+        "rating": "",
+        "target": null,
+        "earnings": "2024-12-20",
+        "summary": "DNP Select Income Fund Inc. is a closed ended balanced mutual fund launched by Virtus Investment Partners, Inc. The fund is managed by Duff & Phelps Investment Management Co. It invests in the public equity and fixed income markets of the United States. For the fixed income portion, the fund invests in bonds. It seeks to invest in stocks of companies operating in the Utility sector. The fund invests in stocks of companies across all market capitalizations. It benchmarks the performance of its portfolio against the S&P 500 Utilities Index and Barclays Capital U.S. Utility Bond Index. DNP Select",
+        "news": [
+          {
+            "title": "European Equities: 3 Stocks That May Be Priced Below Intrinsic Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/european-equities-3-stocks-may-103807082.html",
+            "date": "2026-03-27",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.EOSE",
+        "name": "Eos Energy Enterprises, Inc.",
+        "sector": "Industrials",
+        "close": 7.599999904632568,
+        "score": 60,
+        "trend": 30,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.74,
+        "mcdxx": 10,
+        "macd": 0,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 2580306432,
+        "pe": null,
+        "rating": "buy · 8位分析師",
+        "target": 9.625,
+        "earnings": "2026-07-29（估）",
+        "summary": "Eos Energy Enterprises, Inc. designs, develops, manufactures, and markets energy storage solutions for utility-scale, microgrid, and commercial and industrial applications in the United States. The company offers Znyth technology battery energy storage system (BESS), which provides operating flexibility to manage increased grid complexity and price volatility. It also provides the Z3 battery module that provides utilities, independent power producers, renewables developers, and commercial and industrial customers with an alternative to lithium-ion and lead-acid monopolar batteries for critical",
+        "news": [
+          {
+            "title": "EOSE Stock Climbs On Dual Catalysts: Europe Deal And U.S. Factory Ramp",
+            "link": "https://stocktwits.com/news-articles/markets/equity/eose-stock-climbs-on-dual-catalysts-europe-deal-us-factory-ramp/cZKKIRYR7e7",
+            "date": "2026-06-17",
+            "publisher": "Stocktwits"
+          },
+          {
+            "title": "Why EOS Energy Stock Popped Today",
+            "link": "https://www.fool.com/investing/2026/06/17/why-eos-energy-stock-popped-today/",
+            "date": "2026-06-17",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Eos Energy (EOSE) Surges 6.7% as New Site Kicks Off Production",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/eos-energy-eose-surges-6-015104211.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Why Eos Energy Stock Is Soaring Today",
+            "link": "https://www.fool.com/investing/2026/06/16/why-eos-energy-stock-soared-today/",
+            "date": "2026-06-16",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Fluence Scores Independent Validation of Industry-Leading Battery Storage Reliability",
+            "link": "https://finance.yahoo.com/sectors/energy/articles/fluence-scores-independent-validation-industry-221148794.html",
+            "date": "2026-06-09",
+            "publisher": "IPO-Edge.com"
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、放量 1.74x、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.JFR",
+        "name": "Nuveen Floating Rate Income Fund",
+        "sector": "Financial Services",
+        "close": 7.610000133514404,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.59,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1224962176,
+        "pe": 22.382353,
+        "rating": "",
+        "target": null,
+        "earnings": "2025-04-04",
+        "summary": "Nuveen Floating Rate Income Fund is a close ended fixed income mutual fund launched by Nuveen Investments, Inc. It is co-managed by Nuveen Fund Advisors LLC and Symphony Asset Management LLC. The fund invests in fixed income markets of the United States. It primarily invests in adjustable rate secured and unsecured senior loans. Nuveen Floating Rate Income Fund was formed on March 24, 2004 and is domiciled in the United States.",
+        "news": [
+          {
+            "title": "Private Credit Is Scary. Get Those High Yields With Less Risk.",
+            "link": "https://www.barrons.com/articles/private-credit-high-yields-without-risk-59730178?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-04-17",
+            "publisher": "Barrons.com"
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.MRVL",
+        "name": "Marvell Technology, Inc.",
+        "sector": "Technology",
+        "close": 289.5400085449219,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.93,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 253289594880,
+        "pe": 99.84138,
+        "rating": "strong_buy · 41位分析師",
+        "target": 235.6968,
+        "earnings": "2026-08-28（估）",
+        "summary": "Marvell Technology, Inc., together with its subsidiaries, provides data infrastructure semiconductor solutions and spanning the data center core to network edge in the United States, Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan, Vietnam, and internationally. The company develops and scales system-on-a-chip architectures, integrating analog, mixed-signal, and digital signal processing functionality. It offers a portfolio of ethernet solutions, including spanning controllers, network adapters, physical transceivers, and switches; single or multiple core processors; and ",
+        "news": [
+          {
+            "title": "What A Patient Holder Is Really Paying For Broadcom Stock",
+            "link": "https://www.trefis.com/articles/603361/what-a-patient-holder-is-really-paying-for-broadcom-stock/2026-06-17",
+            "date": "2026-06-17",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "Marvell Gains Attention After Nvidia Backing",
+            "link": "https://finance.yahoo.com/technology/ai/articles/marvell-gains-attention-nvidia-backing-165413870.html",
+            "date": "2026-06-17",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "Jim Cramer on Adobe: “I Don’t Want You in It”",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-adobe-don-t-165358452.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "The Real Engine for Advanced Micro Devices Stock Might Not Be What You Think",
+            "link": "https://www.trefis.com/articles/603344/the-real-engine-for-advanced-micro-devices-stock-might-not-be-what-you-think/2026-06-17",
+            "date": "2026-06-17",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "Semiconductor Stocks Climb in Premarket Trade Following Intel Manufacturing Milestone",
+            "link": "https://investorshub.advfn.com/market-news/article/30588/semiconductor-stocks-climb-in-premarket-trade-following-intel-manufacturing-milestone",
+            "date": "2026-06-17",
+            "publisher": "InvestorsHub"
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.NXG",
+        "name": "NXG NextGen Infrastructure Income Fund",
+        "sector": "Financial Services",
+        "close": 58.29999923706055,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.66,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 331312064,
+        "pe": 10.22807,
+        "rating": "",
+        "target": null,
+        "earnings": "",
+        "summary": "NXG NextGen Infrastructure Income Fund is a closed ended equity mutual fund launched and managed by Cushing MLP Asset Management, LP. The fund invests in stocks of companies across the energy supply chain spectrum, including upstream, midstream and downstream energy companies, as well as oil and gas services and logistics companies, energy-intensive chemical, metal and industrial and manufacturing companies and engineering and construction companies. NXG NextGen Infrastructure Income Fund was formed in 2012 and is domiciled in the United States.",
+        "news": [],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.PAYS",
+        "name": "Paysign, Inc.",
+        "sector": "Technology",
+        "close": 7.289999961853027,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.85,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 407553088,
+        "pe": 42.88235,
+        "rating": "strong_buy · 5位分析師",
+        "target": 9.95,
+        "earnings": "2026-08-05（估）",
+        "summary": "Paysign, Inc. provides prepaid card programs, patient affordability offerings, digital banking, life science software technology solutions, and integrated payment processing services for businesses, consumers, and government institutions in the United States. The company offers solutions for corporate rewards, prepaid gift cards, general-purpose reloadable debit cards, employee incentives, consumer rebates, donor compensation, clinical trials, healthcare reimbursement payments and pharmaceutical payment assistance, and demand deposit accounts accessible with a debit card and software solutions",
+        "news": [
+          {
+            "title": "3 Growth Companies With Insider Ownership As High As 38%",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-growth-companies-insider-ownership-113548840.html",
+            "date": "2026-05-28",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Why Paysign (PAYS) Is Down 13.7% After Patient Affordability Revenue Surpasses Plasma Business – And What's Next",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-paysign-pays-down-13-151740578.html",
+            "date": "2026-05-15",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Is FirstCash  (FCFS) Stock Outpacing Its Business Services Peers This Year?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/firstcash-fcfs-stock-outpacing-business-134005245.html",
+            "date": "2026-05-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Why Paysign Plunged Today",
+            "link": "https://www.fool.com/investing/2026/05/13/why-paysign-plunged-today/",
+            "date": "2026-05-13",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "PaySign, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-paysign-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-05-13",
+            "publisher": "Moby"
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.SIRI",
+        "name": "SiriusXM Holdings Inc.",
+        "sector": "Communication Services",
+        "close": 27.93000030517578,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.92,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 9401794560,
+        "pe": 11.834746,
+        "rating": "hold · 13位分析師",
+        "target": 28.0,
+        "earnings": "2026-04-30",
+        "summary": "Sirius XM Holdings Inc. operates as an audio entertainment company in North America. It operates through two segments, Sirius XM, and Pandora and Off-platform. The Sirius XM segment provides music, sports, entertainment, comedy, and talk and news channels, as well as podcast and infotainment services on subscription fee basis; and live, curated, and exclusive and on demand programming services through satellite radio systems and streamed through applications for mobile and home devices, and other consumer electronic equipment. This segment also distributes satellite radios through automakers a",
+        "news": [
+          {
+            "title": "Sirius XM (SIRI) Rises As Market Takes a Dip: Key Facts",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/sirius-xm-siri-rises-market-221503749.html",
+            "date": "2026-06-16",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Roku (ROKU) Soars 20.1%: Is Further Upside Left in the Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/roku-roku-soars-20-1-063500766.html",
+            "date": "2026-06-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Is Sirius XM Holdings Inc. (SIRI) A Good Stock To Buy Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/sirius-xm-holdings-inc-siri-163843453.html",
+            "date": "2026-06-12",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Why Wall Street Is Tuning In To Sirius XM Stock",
+            "link": "https://www.trefis.com/articles/602206/why-wall-street-is-tuning-in-to-sirius-xm-stock/2026-06-12",
+            "date": "2026-06-12",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "Sirius XM Joins S&P MidCap 400 As Valuation Gap Draws Attention",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/sirius-xm-joins-p-midcap-211830927.html",
+            "date": "2026-06-10",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.TSM",
+        "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+        "sector": "Technology",
+        "close": 432.1499938964844,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.95,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 2241334607872,
+        "pe": 37.15821,
+        "rating": "strong_buy · 18位分析師",
+        "target": 473.39584,
+        "earnings": "2026-07-16（估）",
+        "summary": "Taiwan Semiconductor Manufacturing Company Limited, together with its subsidiaries, manufactures, packages, tests, and sells integrated circuits and other semiconductor devices in Taiwan, China, Europe, the Middle East, Africa, Japan, the United States, and internationally. It provides various wafer fabrication processes, such as processes to manufacture complementary metal- oxide-semiconductor (CMOS) logic, mixed-signal, radio frequency, embedded memory, bipolar CMOS mixed-signal, and others. The company also involved in providing customer and engineering support services; manufacturing of ma",
+        "news": [
+          {
+            "title": "Intel's 18A-P chips are in production and just in time as CPU demand ramps up",
+            "link": "https://finance.yahoo.com/video/intels-18a-p-chips-are-in-production-and-just-in-time-as-cpu-demand-ramps-up-145010818.html",
+            "date": "2026-06-17",
+            "publisher": "Yahoo Finance Video"
+          },
+          {
+            "title": "Tech stocks today: Uber and Lucid expanding in Houston,  Intel's latest chip moves",
+            "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-uber-and-lucid-expanding-in-houston-intels-latest-chip-moves-100000021.html",
+            "date": "2026-06-15",
+            "publisher": "Yahoo Finance"
+          },
+          {
+            "title": "2 Artificial Intelligence Stocks You Can Buy and Hold for the Next Decade",
+            "link": "https://www.fool.com/investing/2026/06/17/2-artificial-intelligence-stocks-you-can-buy-and-h/",
+            "date": "2026-06-17",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "TSM at $426: Bubble Territory or a Buy for the Next AI Supercycle?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tsm-426-bubble-territory-buy-190000685.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "AMD, Intel Rise as TSMC Capacity Tightens",
+            "link": "https://finance.yahoo.com/technology/articles/amd-intel-rise-tsmc-capacity-165503042.html",
+            "date": "2026-06-17",
+            "publisher": "GuruFocus.com"
+          }
+        ],
+        "why": "日K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ALMU",
+        "name": "Aeluma, Inc.",
+        "sector": "Technology",
+        "close": 24.860000610351562,
+        "score": 56,
+        "trend": 42,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.74,
+        "mcdxx": 4,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 455070656,
+        "pe": null,
+        "rating": "",
+        "target": 28.66667,
+        "earnings": "2026-05-14",
+        "summary": "Aeluma, Inc. develops optoelectronic and electronic devices for sensing, communication, and computing applications in the United States. The company produces semiconductor materials and chips using compound semiconductors on diameter substrates that are used to manufacture mass market microelectronics. Its products are used in mobile, automotive, AI, defense and aerospace, communication, AR/VR, high-performance commuting, and quantum computing applications, as well as other electronic and optoelectronic devices, including lasers, transistors, and solar cells. Aeluma, Inc. was founded in 2019 a",
+        "news": [
+          {
+            "title": "3 Growth Companies Insiders Are Betting On",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-growth-companies-insiders-betting-113544566.html",
+            "date": "2026-06-12",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "A Look At Aeluma (ALMU) Valuation After A Sharp 17% Single Day Share Price Drop",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/look-aeluma-almu-valuation-sharp-090755140.html",
+            "date": "2026-06-06",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "The Speed of Light: 5 Stocks Powering AI’s Optical Future",
+            "link": "https://www.marketbeat.com/articles/the-speed-of-light-5-stocks-powering-ais-optical-future/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-06-02",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "5 Under-the-Radar AI Stocks to Watch in June",
+            "link": "https://www.marketbeat.com/originals/5-under-the-radar-ai-stocks-to-watch-in-june/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-31",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Aeluma (ALMU) Releases Financial Results for Q3 2026",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aeluma-almu-releases-financial-results-122156237.html",
+            "date": "2026-05-22",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "日K 轉黃 56分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.PM",
+        "name": "Philip Morris International Inc",
+        "sector": "Consumer Defensive",
+        "close": 179.44000244140625,
+        "score": 53,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.79,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 279667802112,
+        "pe": 25.273241,
+        "rating": "buy · 14位分析師",
+        "target": 193.85715,
+        "earnings": "2026-07-22",
+        "summary": "Philip Morris International Inc. operates as a tobacco company. The company offers cigarettes and smoke-free products, including heat-not-burn, e-vapor, and oral nicotine products under the IQOS, VEEV, and ZYN brands; and consumer accessories, such as lighters and matches. It also offers wellness products. The company was incorporated in 1987 and is headquartered in Stamford, Connecticut.",
+        "news": [
+          {
+            "title": "1 Unpopular Stock That Deserves Some Love and 2 Facing Challenges",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-deserves-love-141704335.html",
+            "date": "2026-06-16",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "2 Momentum  Stocks to Own for Decades and 1 We Ignore",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-momentum-stocks-own-decades-102807061.html",
+            "date": "2026-06-15",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Philip Morris International (PM) Stock Valuation Check As Smoke Free Growth Meets Richer P/E Multiple",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/philip-morris-international-pm-stock-150956449.html",
+            "date": "2026-06-14",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Is Philip Morris International Inc. (PM) A Good Stock To Buy Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/philip-morris-international-inc-pm-135849310.html",
+            "date": "2026-06-11",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "3 Market-Beating Stocks to Consider Right Now",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-market-beating-stocks-consider-124550499.html",
+            "date": "2026-06-08",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 53分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.DRTS",
+        "name": "Alpha Tau Medical Ltd.",
+        "sector": "Healthcare",
+        "close": 9.609999656677246,
+        "score": 51,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.78,
+        "mcdxx": 3,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 868031616,
+        "pe": null,
+        "rating": "buy · 5位分析師",
+        "target": 14.2,
+        "earnings": "2026-08-11（估）",
+        "summary": "Alpha Tau Medical Ltd., a clinical-stage oncology therapeutics company, focuses on the research, development, and commercialization of diffusing alpha-emitters radiation therapy (Alpha DaRT) for the treatment of solid cancer. Its Alpha-DaRT technology is in clinical trials for various forms comprising skin, oral, pancreatic, prostate, lung, liver, and breast cancers; and preclinical clinical studies for mouse tumors and human-derived tumors. The company has a strategic collaboration agreement to develop and commercialize Alpha DaRT for the treatment of prostate cancer. The company is headquart",
+        "news": [
+          {
+            "title": "DRTS Stock Shot Up A Whopping 22% Today – Why A $196.5M Prostate Cancer Deal Got Investors Buzzing",
+            "link": "https://stocktwits.com/news-articles/markets/equity/why-is-drts-stock-surging-today/cZ0j7HGRexz",
+            "date": "2026-06-03",
+            "publisher": "Stocktwits"
+          },
+          {
+            "title": "Alpha Tau Medical Sets Up Catalyst-Rich 2026 as Key Cancer Trial Data Nears",
+            "link": "https://www.marketbeat.com/instant-alerts/alpha-tau-medical-sets-up-catalyst-rich-2026-as-key-cancer-trial-data-nears-2026-05-29/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-29",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Alpha Tau Medical Shares Early REGAIN Data: 2 Complete Responses in Glioblastoma Study",
+            "link": "https://www.marketbeat.com/instant-alerts/alpha-tau-medical-shares-early-regain-data-2-complete-responses-in-glioblastoma-study-2026-05-11/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-11",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Alpha Tau Medical Conference: Japan Approval, Rolling FDA PMA, and Big 2026 Data Readouts Teased",
+            "link": "https://www.marketbeat.com/instant-alerts/alpha-tau-medical-conference-japan-approval-rolling-fda-pma-and-big-2026-data-readouts-teased-2026-03-19/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-03-19",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Alpha Tau price target raised to $12 from $9 at H.C. Wainwright",
+            "link": "https://finance.yahoo.com/news/alpha-tau-price-target-raised-153012776.html",
+            "date": "2026-02-25",
+            "publisher": "TipRanks"
+          }
+        ],
+        "why": "日K 轉黃 51分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.WCC",
+        "name": "WESCO International, Inc.",
+        "sector": "Industrials",
+        "close": 351.8800048828125,
+        "score": 50,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.91,
+        "mcdxx": 2,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 17138277376,
+        "pe": 24.991478,
+        "rating": "buy · 11位分析師",
+        "target": 381.0,
+        "earnings": "2026-07-30（估）",
+        "summary": "WESCO International, Inc. provides business-to-business distribution, logistics services, and supply chain solutions in the United States, Canada, and internationally. It operates through three segments: Electrical & Electronic Solutions (EES), Communications & Security Solutions (CSS), and Utility & Broadband Solutions (UBS). The EES segment offers electrical equipment and supplies, automation and connected devices, security, lighting, wire and cable, and safety, as well as maintenance, repair, and operating (MRO) products. This segment also offers project execution solutions, direct and indi",
+        "news": [
+          {
+            "title": "WESCO International (WCC) Aims to Acquire Newark Engineering",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/wesco-international-wcc-aims-acquire-155522772.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Why WESCO (WCC) Stock Is Up Today",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-wesco-wcc-stock-today-225704551.html",
+            "date": "2026-06-16",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "XPO, WESCO, and Regal Rexnord Stocks Trade Down, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/xpo-wesco-regal-rexnord-stocks-004128646.html",
+            "date": "2026-06-11",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Seth Klarman Is Ignoring AI Hype and Buying This Industrial Stock",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/seth-klarman-ignoring-ai-hype-150309475.html",
+            "date": "2026-06-10",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "3 Unpopular Stocks We Steer Clear Of",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-unpopular-stocks-steer-clear-105323857.html",
+            "date": "2026-06-02",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 50分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.AAON",
+        "name": "AAON, Inc.",
+        "sector": "Industrials",
+        "close": 133.36000061035156,
+        "score": 48,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.86,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 10923746304,
+        "pe": 93.9155,
+        "rating": "",
+        "target": 143.5,
+        "earnings": "2026-08-10（估）",
+        "summary": "AAON, Inc., together with its subsidiaries, engages in engineering, manufacturing, marketing, and selling air conditioning and heating equipment in the United States and Canada. The company operates through three segments: AAON Oklahoma, AAON Coil Products, and BASX. It offers rooftop units, data center cooling solutions, cleanroom systems, packaged outdoor mechanical rooms, air handling units, makeup air units, energy recovery units, condensing units, geothermal/water-source heat pumps, coils, and controls. The company markets and sells its products to retail, manufacturing, educational, lodg",
+        "news": [
+          {
+            "title": "Why AAON (AAON) Is Becoming More Tied to Data Center Cooling as BASX Backlog Scales",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-aaon-aaon-becoming-more-191942253.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Is AAON (AAON) Outperforming Other Construction Stocks This Year?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aaon-aaon-outperforming-other-construction-134003930.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Is It Too Late To Consider AAON (AAON) After The Recent Share Price Pullback?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/too-consider-aaon-aaon-recent-081134609.html",
+            "date": "2026-06-11",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "New Strong Buy Stocks for June 10th",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/strong-buy-stocks-june-10th-083600219.html",
+            "date": "2026-06-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "AAON, AGCO, and Kratos Shares Are Falling, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aaon-agco-kratos-shares-falling-011014040.html",
+            "date": "2026-06-10",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 48分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ENS",
+        "name": "EnerSys",
+        "sector": "Industrials",
+        "close": 227.67999267578125,
+        "score": 48,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.52,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 8314365952,
+        "pe": 29.53048,
+        "rating": "buy · 5位分析師",
+        "target": 247.286,
+        "earnings": "2026-08-06（估）",
+        "summary": "EnerSys engages in the provision of stored energy solutions for industrial applications worldwide. It operates through three segments: Network & Infrastructure Solutions, Industrial Mobility Solutions, and Precision Power Solutions. The Network & Infrastructure Solutions segment provides power solutions and services to broadband, telecommunications, data center, and industrial utility customers. The Industrial Mobility Solutions segment provides power for electric industrial forklifts and other material handling equipment as well as transportation applications, primarily Class 8 trucks. The Pr",
+        "news": [
+          {
+            "title": "Unpacking Q1 Earnings: EnerSys (NYSE:ENS) In The Context Of Other Renewable Energy Stocks",
+            "link": "https://finance.yahoo.com/energy/articles/unpacking-q1-earnings-enersys-nyse-154051616.html",
+            "date": "2026-06-17",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Did EnerSys' (ENS) Segment Overhaul and New Ventures Integration Just Reframe Its Core Investment Story?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/did-enersys-ens-segment-overhaul-042331250.html",
+            "date": "2026-06-06",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Powell vs. EnerSys: Which Industrial Stock has Better Prospects?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/powell-vs-enersys-industrial-stock-165400799.html",
+            "date": "2026-05-29",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Powell Faces Margin Risks From Higher Costs: What's the Road Ahead?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/powell-faces-margin-risks-higher-170800759.html",
+            "date": "2026-05-27",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "5 Insightful Analyst Questions From EnerSys’s Q1 Earnings Call",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/5-insightful-analyst-questions-enersys-104924821.html",
+            "date": "2026-05-27",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 48分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      }
+    ],
+    "week": [
+      {
+        "code": "US.SKE",
+        "name": "Skeena Resources Limited",
+        "sector": "Basic Materials",
+        "close": 30.0,
+        "score": 87,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.43,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 3722531584,
+        "pe": null,
+        "rating": "",
+        "target": null,
+        "earnings": "2026-08-14（估）",
+        "summary": "Skeena Resources Limited engages in the exploration and development of mineral properties in Canada. It explores for gold, silver, and copper deposits. Its flagship property is the Eskay Creek project, which consists of 51 mineral claims and eight mineral leases covering an area of approximately 7,666.02 hectares located in the Golden Triangle region of British Columbia. The company was formerly known as Prolific Resources Ltd. and changed its name to Skeena Resources Limited in June 1990. Skeena Resources Limited was incorporated in 1979 and is based in Vancouver, Canada.",
+        "news": [
+          {
+            "title": "Skeena Resources Limited (SKE) Reports Q1 2026 Results",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/skeena-resources-limited-ske-reports-084319917.html",
+            "date": "2026-05-29",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Skeena Resources (TSX:SKE) Valuation Check After Strong Multi Year Returns And Recent Share Price Pullback",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/skeena-resources-tsx-ske-valuation-071126750.html",
+            "date": "2026-05-11",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Why This $19 Million Gold Miner Buy Could Signal Bigger Upside Ahead",
+            "link": "https://www.fool.com/coverage/filings/2026/05/09/why-this-usd19-million-gold-miner-buy-could-signal-bigger-upside-ahead/",
+            "date": "2026-05-09",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Skeena Resources Ltd (SKE) Secures Funds for Its Eskay Creek Project",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/skeena-resources-ltd-ske-secures-200015055.html",
+            "date": "2026-05-05",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Skeena Resources Closes an Offering of US$750 Million of Senior Secured Notes",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/skeena-resources-closes-offering-us-154428213.html",
+            "date": "2026-04-10",
+            "publisher": "MT Newswires"
+          }
+        ],
+        "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、放量 1.43x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.CAVA",
+        "name": "CAVA Group, Inc.",
+        "sector": "Consumer Cyclical",
+        "close": 88.05000305175781,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.63,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 10255523840,
+        "pe": 169.32693,
+        "rating": "buy · 24位分析師",
+        "target": 92.0,
+        "earnings": "2026-05-20",
+        "summary": "CAVA Group, Inc. owns and operates a chain of restaurants under the CAVA brand in the United States. It also offers dips, spreads, and dressings through grocery stores. In addition, the company provides walk-the-line, online, and mobile ordering platforms. CAVA Group, Inc. was founded in 2006 and is headquartered in Washington, District Of Columbia.",
+        "news": [
+          {
+            "title": "McDonald’s and Cava Are Winning. Diners Are Going Value or Premium.",
+            "link": "https://www.barrons.com/articles/mcdonalds-cava-stocks-restaurant-sector-0a9f4344?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-06-17",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "Is PLAY Stock a Bargain or a Value Trap for Investors Today?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/play-stock-bargain-value-trap-154700119.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Gen Z calls it ‘slop’—but they’re fast casual’s most loyal (and demanding) customers",
+            "link": "https://finance.yahoo.com/small-business/articles/gen-z-calls-slop-fast-100000340.html",
+            "date": "2026-06-16",
+            "publisher": "Fortune"
+          },
+          {
+            "title": "Casual Dining’s Comeback Is Winning Over Wall Street. Cava and Dutch Bros Are Worth a Look.",
+            "link": "https://www.barrons.com/articles/cava-dutch-bros-stocks-restaurants-casual-dining-db0eedbc?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-06-15",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "1 Unpopular Stock That Should Get More Attention and 2 We Find Risky",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-more-attention-114007224.html",
+            "date": "2026-06-15",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.BALL",
+        "name": "Ball Corporation",
+        "sector": "Consumer Cyclical",
+        "close": 57.720001220703125,
+        "score": 79,
+        "trend": 38,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.56,
+        "mcdxx": 8,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "False/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 15367748608,
+        "pe": 16.827988,
+        "rating": "buy · 14位分析師",
+        "target": 70.78571,
+        "earnings": "2026-08-04（估）",
+        "summary": "Ball Corporation supplies aluminum packaging products for the beverage, personal care, and household products industries in the United States, Brazil, and internationally. The company manufactures and sells aluminum beverage containers to fillers of carbonated soft drinks, beer, energy drinks, and other beverages. It manufactures and sells extruded aluminum aerosol containers, recloseable aluminum bottles, aluminum cups, and aluminum slugs. The company was founded in 1880 and is headquartered in Westminster, Colorado.",
+        "news": [
+          {
+            "title": "America’s Recycling Goes to Waste. This Garbage Giant Wants to Change That.",
+            "link": "https://www.barrons.com/articles/recycling-waste-management-stock-909ace24?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-06-17",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "3 Profitable Stocks with Open Questions",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-profitable-stocks-open-questions-101704437.html",
+            "date": "2026-06-16",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Is Ball Corporation Stock Underperforming the Dow?",
+            "link": "https://www.barchart.com/story/news/2487080/is-ball-corporation-stock-underperforming-the-dow",
+            "date": "2026-06-16",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "Ball (BALL) Stock Valuation Check After Recent Momentum And Long-Term Return Weakness",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/ball-ball-stock-valuation-check-010947069.html",
+            "date": "2026-06-14",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "3 Reasons to Sell BALL and 1 Stock to Buy Instead",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-sell-ball-1-150920432.html",
+            "date": "2026-06-12",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "周K 轉黃 79分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.MRNA",
+        "name": "Moderna, Inc.",
+        "sector": "Healthcare",
+        "close": 61.79999923706055,
+        "score": 77,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.21,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 24521392128,
+        "pe": null,
+        "rating": "hold · 20位分析師",
+        "target": 43.3,
+        "earnings": "2026-07-31（估）",
+        "summary": "Moderna, Inc., a biotechnology company, provides messenger RNA medicines in the United States, Europe, and internationally. The company's respiratory vaccines include spikevax, mNEXSPIKE, mRESVIA, COVID, RSV, seasonal influenza, combination, and pandemic influenza vaccine; latent vaccines comprise cytomegalovirus, epstein-barr virus, and human immunodeficiency virus vaccines; enteric viruses include norovirus; public health vaccines consist of Zika, Nipah, and Mpox vaccines; and bacterial diseases vaccines, such as lyme vaccines. It also provides oncology therapeutics, such as intismeran autog",
+        "news": [
+          {
+            "title": "Update: US Equity Indexes Drop as Bets for Higher Interest Rates Jump After Fed Eliminates Easing Bias",
+            "link": "https://finance.yahoo.com/economy/policy/articles/us-equity-indexes-drop-bets-210408655.html",
+            "date": "2026-06-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "US Equity Markets End Lower After Government Bond Yields Rise, Fed's Policy Statement",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-markets-end-lower-202556668.html",
+            "date": "2026-06-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Biotech Stocks Surge As UniQure 'Nail-Biting Journey' Comes To An End",
+            "link": "https://www.investors.com/news/technology/biotech-stocks-regulatory-leniency-uniqure-atara-repliumne-biohaven-moderna/?src=A00220&yptr=yahoo",
+            "date": "2026-06-17",
+            "publisher": "Investor's Business Daily"
+          },
+          {
+            "title": "Sector Update: Healthcare Stocks Retreat Late Afternoon",
+            "link": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-retreat-afternoon-193801711.html",
+            "date": "2026-06-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "MRNA Stock Jumps as FDA Briefing Docs Ease Flu Shot Approval Concerns",
+            "link": "https://finance.yahoo.com/healthcare/articles/mrna-stock-jumps-fda-briefing-151100893.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 77分：站穩上升 MA30/MA40（趨勢回調）、放量 1.21x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.DHT",
+        "name": "DHT Holdings, Inc.",
+        "sector": "Energy",
+        "close": 18.110000610351562,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.12,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 2916464128,
+        "pe": 8.791263,
+        "rating": "",
+        "target": 20.28333,
+        "earnings": "2026-08-06（估）",
+        "summary": "DHT Holdings, Inc., through its subsidiaries, owns and operates crude oil tankers primarily in Monaco, Singapore, Norway, and India. The company also offers technical management services. As of December 15, 2025, it had a fleet of 22 very large crude carriers. The company was incorporated in 2005 and is headquartered in Hamilton, Bermuda.",
+        "news": [
+          {
+            "title": "3 Profitable Stocks We Keep Off Our Radar",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-profitable-stocks-keep-off-103607210.html",
+            "date": "2026-06-15",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Sector Update: Energy Stocks Lean Lower Premarket Thursday",
+            "link": "https://finance.yahoo.com/sectors/energy/articles/sector-energy-stocks-lean-lower-132244637.html",
+            "date": "2026-06-04",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Dividend Stocks To Consider In May 2026",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/dividend-stocks-consider-may-2026-173156079.html",
+            "date": "2026-05-29",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "3 Small-Cap Stocks We Find Risky",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-small-cap-stocks-risky-112038059.html",
+            "date": "2026-05-29",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "5 Insightful Analyst Questions From DHT Holdings’s Q1 Earnings Call",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/5-insightful-analyst-questions-dht-041255858.html",
+            "date": "2026-05-15",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "周K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.12x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ELVN",
+        "name": "Enliven Therapeutics, Inc.",
+        "sector": "Healthcare",
+        "close": 44.86000061035156,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.12,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 3132945408,
+        "pe": null,
+        "rating": "strong_buy · 9位分析師",
+        "target": 60.11111,
+        "earnings": "2026-05-14（估）",
+        "summary": "Enliven Therapeutics, Inc., a clinical-stage biopharmaceutical company, focuses on the discovery and development of small molecule inhibitors to help patients with cancer. Its clinical programs comprise ELVN-001, a small molecule kinase inhibitor which is in Phase 1 clinical trial to treat adults with chronic myeloid leukemia; and ELVN-002, a central nervous system (CNS) penetrant and irreversible human epidermal growth factor receptor 2 inhibitor that is in Phase 1 clinical trial for the treatment of non-small cell lung cancer (NSCLC) and other HER2 mutant tumors. The company was founded in 2",
+        "news": [
+          {
+            "title": "Enliven Therapeutics (ELVN) Soars on Stellar Leukemia Drug Trial",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/enliven-therapeutics-elvn-soars-stellar-070223682.html",
+            "date": "2026-06-13",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "ELVN Stock On Track For Best Week Since March Following FDA-Aligned Path For Cancer Drug Development",
+            "link": "https://stocktwits.com/news-articles/markets/equity/elvn-stock-on-track-for-best-week-since-march/cZKd3s0R75a",
+            "date": "2026-06-12",
+            "publisher": "Stocktwits"
+          },
+          {
+            "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Friday Ahead of SpaceX Debut",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-131503816.html",
+            "date": "2026-06-12",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Enliven Therapeutics Reports Positive Phase 1 CML Data and FDA Alignment for Phase 3 Trial (ELVN)",
+            "link": "https://investorshub.advfn.com/market-news/article/30196/enliven-therapeutics-reports-positive-phase-1-cml-data-and-fda-alignment-for-phase-3-trial-elvn",
+            "date": "2026-06-11",
+            "publisher": "InvestorsHub"
+          },
+          {
+            "title": "Enliven Therapeutics Says Aligned With US FDA on Dose Recommendation for Late-Stage Chronic Myeloid Leukemia Trial",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/enliven-therapeutics-says-aligned-us-131119172.html",
+            "date": "2026-06-11",
+            "publisher": "MT Newswires"
+          }
+        ],
+        "why": "周K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.12x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ALMS",
+        "name": "Alumis Inc.",
+        "sector": "Healthcare",
+        "close": 23.049999237060547,
+        "score": 70,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.73,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 2938690048,
+        "pe": null,
+        "rating": "",
+        "target": 40.1,
+        "earnings": "2026-08-13（估）",
+        "summary": "Alumis Inc., a clinical stage biopharmaceutical company, focuses on the development and commercialization of medicines for autoimmune disorders. The company offers envudeucitinib, a tyrosine kinase 2 (TYK2) inhibitor for the treatment of plaque psoriasis and systemic lupus erythematosus; and A-005, a central nervous system-penetrant allosteric TYK2 inhibitor that is in Phase 1 for the treatment of neuroinflammatory and neurodegenerative diseases. It also develops lonigutamab, a monoclonal antibody targeting IGF-1R for the treatment of thyroid eye diseases; and interferon regulatory factor 5 (I",
+        "news": [
+          {
+            "title": "Analyst Sentiment On Alumis (ALMS) Remains Strong Following Q1 Results And Envudeucitinib Pipeline Advancements",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/analyst-sentiment-alumis-alms-remains-103115361.html",
+            "date": "2026-05-29",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "This Biotech Stock Is Up 355%. One Fund Added a $169 Million Position Last Quarter",
+            "link": "https://www.fool.com/coverage/filings/2026/05/24/this-biotech-stock-is-up-355-one-fund-added-a-usd169-million-position-last-quarter/",
+            "date": "2026-05-24",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Is Alumis (ALMS) Trading Short-Term Revenue for a Leaner, More Focused Business Model?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/alumis-alms-trading-short-term-043425460.html",
+            "date": "2026-05-20",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Dyne Therapeutics Is Up 40%, but One Biotech Fund Just Disclosed Selling $14 Million Worth of Shares",
+            "link": "https://www.fool.com/coverage/filings/2026/05/19/dyne-therapeutics-is-up-40-but-one-biotech-fund-just-disclosed-selling-usd14-million-worth-of-shares/",
+            "date": "2026-05-19",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "What This Fund’s $14 Million Ocular Therapeutix Exit Could Signal for Investors",
+            "link": "https://www.fool.com/coverage/filings/2026/05/19/what-this-fund-s-usd14-million-ocular-therapeutix-exit-could-signal-for-investors/",
+            "date": "2026-05-19",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "周K 轉黃 70分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.SHMD",
+        "name": "SCHMID Group N.V.",
+        "sector": "Industrials",
+        "close": 6.789999961853027,
+        "score": 70,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.95,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 392467872,
+        "pe": null,
+        "rating": "strong_buy",
+        "target": null,
+        "earnings": "2026-08-08（估）",
+        "summary": "SCHMID Group N.V. develops and manufactures equipment and process solutions for electronics, photovoltaics, glass, and energy systems in Germany and internationally. The company offers electronics equipment, ET board, vertical and horizontal wet process, vacuum metallization and tech, plating, chemical mechanical polishing, and automation system solutions; and systems and process solutions for manufacturing and processing photovoltaic products, such as wafers, cells, modules, and thin films, as well as turnkey production lines. It also provides maintenance, after sales, customer training, and ",
+        "news": [
+          {
+            "title": "3 Growth Companies Insiders Are Betting On",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-growth-companies-insiders-betting-113544566.html",
+            "date": "2026-06-12",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "SCHMID Group Q4 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/schmid-group-q4-earnings-call-highlights-2026-05-18/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-18",
+            "publisher": "MarketBeat"
+          }
+        ],
+        "why": "周K 轉黃 70分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      }
+    ],
+    "mon": [
+      {
+        "code": "US.BLFS",
+        "name": "BioLife Solutions, Inc.",
+        "sector": "Healthcare",
+        "close": 25.579999923706055,
+        "score": 73,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.98,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1249772672,
+        "pe": null,
+        "rating": "strong_buy · 10位分析師",
+        "target": 32.3,
+        "earnings": "2026-08-07（估）",
+        "summary": "BioLife Solutions, Inc. develops, manufactures, and markets bioproduction products and services for the cell and gene therapy (CGT) industry in the United States, Europe, the Middle East, Africa, and internationally. The company's products are used in the basic and applied research, and commercial manufacturing of biologic-based therapies. It offers proprietary biopreservation media products, including HypoThermosol FRS and CryoStor Freeze Media that are formulated to mitigate preservation-induced, delayed-onset cell damage and death; bioproduction products, such as human platelet lysates for ",
+        "news": [
+          {
+            "title": "BioLife Solutions Leads 3 Stocks Estimated To Be Trading Below Fair Value",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/biolife-solutions-leads-3-stocks-113814374.html",
+            "date": "2026-06-04",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Orthofix Medical and 5 More Stocks See Action From Activist Investors",
+            "link": "https://www.barrons.com/articles/orthofix-medical-and-5-more-stocks-see-action-from-activist-investors-91c2c95e?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-05-29",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "A Look At BioLife Solutions (BLFS) Valuation As Shares Show Recent Short Term Momentum",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/look-biolife-solutions-blfs-valuation-011308044.html",
+            "date": "2026-05-11",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "BioLife (BLFS) Q1 2026 Earnings Transcript",
+            "link": "https://www.fool.com/earnings/call-transcripts/2026/05/08/biolife-blfs-q1-2026-earnings-transcript/",
+            "date": "2026-05-08",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "BioLife Solutions, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-biolife-solutions-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-05-08",
+            "publisher": "Moby"
+          }
+        ],
+        "why": "月K 轉黃 73分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.ITIC",
+        "name": "Investors Title Company",
+        "sector": "Financial Services",
+        "close": 256.0400085449219,
+        "score": 72,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.14,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 483402496,
+        "pe": 12.738309,
+        "rating": "",
+        "target": null,
+        "earnings": "2026-08-06（估）",
+        "summary": "Investors Title Company, through its subsidiaries, engages in the issuance of residential and commercial title insurance for residential, institutional, commercial, and industrial properties. The company operates through Title Insurance and Exchange Services segments. It underwrites land title insurance for owners and mortgagees as a primary insurer; and assumes the reinsurance of title insurance risks from other title insurance companies. The company also provides services in connection with tax-deferred exchanges of like-kind property; acts as a qualified intermediary in tax-deferred exchang",
+        "news": [
+          {
+            "title": "Investors Title Rises 22% in a Year: Should You Buy the Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-title-rises-22-buy-175300225.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "The Zacks Analyst Blog Highlights JPMorgan Chase, GE Aerospace, Western Digital, Syntec Optics and Investors Title",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-jpmorgan-141000491.html",
+            "date": "2026-06-01",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Top Stock Reports for JPMorgan, GE Aerospace & Western Digital",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-jpmorgan-ge-203000915.html",
+            "date": "2026-05-29",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Investors Title Company: Quiet Compounder in a Noisy Market",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-title-company-quiet-compounder-103052614.html",
+            "date": "2026-05-20",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "Investors Title Independent Director Acquires 17% More Stock",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-title-independent-director-acquires-101926314.html",
+            "date": "2026-05-15",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "月K 轉黃 72分：站穩上升 MA30/MA40（趨勢回調）、放量 1.14x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ZETA",
+        "name": "Zeta Global Holdings Corp.",
+        "sector": "Technology",
+        "close": 18.5,
+        "score": 70,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.77,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 4611266048,
+        "pe": null,
+        "rating": "strong_buy · 13位分析師",
+        "target": 28.30769,
+        "earnings": "2026-05-01",
+        "summary": "Zeta Global Holdings Corp. operates an omnichannel data-driven cloud platform that provides enterprises with consumer intelligence and marketing automation software in the United States and internationally. The company operates Zeta Marketing platform, a single platform designed to enable enterprises to acquire, grow, and retain consumer relationships more efficiently and effectively than alternative solutions. It also provides Zeta Messaging, an email service provider, offering end-to-end AI-powered omnichannel messaging capabilities, as well as integrated data management, enterprise-scale de",
+        "news": [
+          {
+            "title": "Elastic, Zeta Global, and ZoomInfo Shares Plummet, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/elastic-zeta-global-zoominfo-shares-231814710.html",
+            "date": "2026-06-09",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Is Zeta Global Holdings Corp. (ZETA) A Good Stock To Buy Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zeta-global-holdings-corp-zeta-152012267.html",
+            "date": "2026-06-08",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Is It Time To Reassess Zeta Global Holdings (ZETA) After Its Strong Multi‑Year Share Price Run?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/time-reassess-zeta-global-holdings-051130149.html",
+            "date": "2026-06-07",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "How The Zeta Global (ZETA) Investment Narrative Is Evolving Without New Analyst Targets",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zeta-global-zeta-investment-narrative-042037061.html",
+            "date": "2026-06-07",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Assessing Zeta Global Holdings (ZETA) Valuation After A Strong 1 Month And 1 Year Share Price Run",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/assessing-zeta-global-holdings-zeta-090902105.html",
+            "date": "2026-06-06",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "月K 轉黃 70分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.BROS",
+        "name": "Dutch Bros Inc.",
+        "sector": "Consumer Cyclical",
+        "close": 65.72000122070312,
+        "score": 68,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.54,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 11480194048,
+        "pe": 104.31747,
+        "rating": "strong_buy · 23位分析師",
+        "target": 77.08696,
+        "earnings": "2026-08-06（估）",
+        "summary": "Dutch Bros Inc., together with its subsidiaries, operates and franchises drive-thru shops in the United States. The company sells and distributes coffee, coffee-related products, and accessories. It operates through Company-Operated Shops and Franchising and Other segments. The company sells its products under various brands such as Dutch Bros, Dutch Bros Coffee, Dutch Bros Rebel, Dutch Bros, and Blue Rebel. Dutch Bros Inc. was founded in 1992 and is based in Tempe, Arizona.",
+        "news": [
+          {
+            "title": "Dutch Bros (BROS) to Acquire Phoenix East Valley Franchise Adding 29 Locations",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/dutch-bros-bros-acquire-phoenix-182843251.html",
+            "date": "2026-06-17",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Up 30% in 1 Month, Is Dutch Bros Stock Still a Strong Buy Before July?",
+            "link": "https://www.fool.com/investing/2026/06/17/up-33-in-1-month-is-dutch-bros-stock-still-a-stron/",
+            "date": "2026-06-17",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Best Stock to Buy Right Now: Dutch Bros vs. Sweetgreen",
+            "link": "https://www.fool.com/investing/2026/06/17/best-stock-to-buy-now-sweetgreen-vs-dutch-bros/",
+            "date": "2026-06-17",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "If You Buy Dutch Bros Today, Here's Where It Could Be in 5 Years",
+            "link": "https://www.fool.com/investing/2026/06/17/buy-dutch-bros-today-where-it-could-be-5-years/",
+            "date": "2026-06-17",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Dutch Bros Stock Jumps 25% in a Month: Buy the Rally or Wait?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/dutch-bros-stock-jumps-25-144600465.html",
+            "date": "2026-06-15",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "月K 轉黃 68分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.RDVT",
+        "name": "Red Violet, Inc.",
+        "sector": "Technology",
+        "close": 55.5,
+        "score": 68,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.86,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 783045120,
+        "pe": 57.21649,
+        "rating": "",
+        "target": 63.5,
+        "earnings": "2026-08-06（估）",
+        "summary": "Red Violet, Inc., an analytics and information solutions company, specializes in proprietary technologies and applying analytical capabilities to deliver identity intelligence in the United States. It offers idiCORE, an investigative solution used to address various organizational challenges, which include due diligence, risk mitigation, identity authentication, fraud detection and prevention, customer acquisition, and regulatory compliance; and FOREWARN, an app-based solution that provides instant knowledge before face-to-face engagement with a consumer, as well as helps professionals to iden",
+        "news": [
+          {
+            "title": "Undiscovered Gems in the US Market for May 2026",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/undiscovered-gems-us-market-may-113312789.html",
+            "date": "2026-05-07",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Red Violet Q1 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/red-violet-q1-earnings-call-highlights-2026-05-06/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-07",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Red Violet, Inc. (RDVT) Beats Q1 Earnings and Revenue Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/red-violet-inc-rdvt-beats-014510036.html",
+            "date": "2026-05-07",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Red Violet, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-red-violet-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-05-07",
+            "publisher": "Moby"
+          },
+          {
+            "title": "Red Violet (RDVT) Fell due to Broad-Based Weakness Across The Software Sector",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/red-violet-rdvt-fell-due-131647599.html",
+            "date": "2026-05-06",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "月K 轉黃 68分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.EQH",
+        "name": "Equitable Holdings, Inc.",
+        "sector": "Financial Services",
+        "close": 45.5,
+        "score": 63,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.63,
+        "mcdxx": 3,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 12809132032,
+        "pe": null,
+        "rating": "strong_buy · 12位分析師",
+        "target": 58.41667,
+        "earnings": "2026-08-05（估）",
+        "summary": "Equitable Holdings, Inc., together with its consolidated subsidiaries, operates as a diversified financial services company worldwide. The company operates through six segments: Individual Retirement, Group Retirement, Asset Management, Protection Solutions, Wealth Management, and Legacy. The Individual Retirement variable annuity products, including structured capital strategies, retirement cornerstone, and investment edge primarily to affluent and high net worth individuals. The Group Retirement provides tax-deferred investment and retirement services or products to plans sponsored by educat",
+        "news": [
+          {
+            "title": "Life Insurance Stocks Q1 Results: Benchmarking Equitable Holdings (NYSE:EQH)",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/life-insurance-stocks-q1-results-173207035.html",
+            "date": "2026-06-15",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Equitable Holdings (EQH) Stock Valuation Checked Against Mixed Returns And Conflicting Fair Value Signals",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/equitable-holdings-eqh-stock-valuation-091229050.html",
+            "date": "2026-06-13",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Equitable Holdings (EQH) Slid in Q1 Amid Market Volatility and Lower Fee-Related Income",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/equitable-holdings-eqh-slid-q1-143343040.html",
+            "date": "2026-06-11",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Diamond Hill Capital Select Strategy Purchased Equitable Holdings (EQH) Post-Merger Announcement",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/diamond-hill-capital-select-strategy-141604830.html",
+            "date": "2026-06-09",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "PRU Expands Retirement Market Presence With Fixed Indexed Annuity",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/pru-expands-retirement-market-presence-152400837.html",
+            "date": "2026-06-04",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "月K 轉黃 63分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.CLPT",
+        "name": "ClearPoint Neuro Inc.",
+        "sector": "Healthcare",
+        "close": 16.809999465942383,
+        "score": 62,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.9,
+        "mcdxx": 2,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 504124544,
+        "pe": null,
+        "rating": "strong_buy · 3位分析師",
+        "target": 22.0,
+        "earnings": "2026-08-12（估）",
+        "summary": "ClearPoint Neuro, Inc., a commercial-stage medical device company, focuses on the development and commercialization of platforms for performing minimally invasive surgical procedures in the brain in the United States. The company offers ClearPoint systems, such as ClearPoint hardware, which includes head fixation frame, computer workstation, and in-room monitor; and ClearPoint disposables, which consist of SmartFrame trajectory device, a hand controller and related accessories, and its SmartFlow Neuro cannula. It also provides ClearPoint software, which guides the physician in surgical plannin",
+        "news": [
+          {
+            "title": "ClearPoint Neuro Shares Jump as FDA Progress for UniQure Therapy Highlights Platform Value",
+            "link": "https://investorshub.advfn.com/market-news/article/30601/clearpoint-neuro-shares-jump-as-fda-progress-for-uniqure-therapy-highlights-platform-value",
+            "date": "2026-06-17",
+            "publisher": "InvestorsHub"
+          },
+          {
+            "title": "How The ClearPoint Neuro (CLPT) Narrative Is Shifting On Partnerships Valuation And FDA Risks",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/clearpoint-neuro-clpt-narrative-shifting-011803069.html",
+            "date": "2026-05-27",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "ClearPoint Neuro Inc (CLPT) Q1 2026 Earnings Call Highlights: Record Revenue and Strategic Growth",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/clearpoint-neuro-inc-clpt-q1-010143836.html",
+            "date": "2026-05-19",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "ClearPoint Neuro Q1 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/clearpoint-neuro-q1-earnings-call-highlights-2026-05-13/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-13",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Compared to Estimates, ClearPoint Neuro (CLPT) Q1 Earnings: A Look at Key Metrics",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/compared-estimates-clearpoint-neuro-clpt-220002650.html",
+            "date": "2026-05-13",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "月K 轉黃 62分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.CR",
+        "name": "Crane Company",
+        "sector": "Industrials",
+        "close": 209.14999389648438,
+        "score": 61,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.7,
+        "mcdxx": 1,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 12077510656,
+        "pe": 38.235832,
+        "rating": "strong_buy · 9位分析師",
+        "target": 219.66667,
+        "earnings": "2026-07-28（估）",
+        "summary": "Crane Company, together with its subsidiaries, engages in the manufacture and sale of engineered industrial products in the United States, Canada, the United Kingdom, Continental Europe, and internationally. The company operates in two segments, Aerospace & Advanced Technologies and Process Flow Technologies. The Aerospace & Electronics segment supplies critical components and systems, including original equipment and aftermarket parts for commercial aerospace, as well as the military aerospace, defense, and space markets. This segment also offers pressure sensors for aircraft engine control, ",
+        "news": [
+          {
+            "title": "1 Profitable Stock with Exciting Potential and 2 That Underwhelm",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-exciting-potential-090214355.html",
+            "date": "2026-06-09",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Why Is Watts Water (WTS) Up 7.1% Since Last Earnings Report?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-watts-water-wts-7-153023710.html",
+            "date": "2026-06-05",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "General Industrial Machinery Stocks Q1 Results: Benchmarking Crane (NYSE:CR)",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/general-industrial-machinery-stocks-q1-132530851.html",
+            "date": "2026-06-04",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Will DA Davidson’s Best-of-Breed Nod and Insider Share Conversion Change Crane’s (CR) Narrative",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/da-davidson-best-breed-nod-043234442.html",
+            "date": "2026-06-03",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "2 of Wall Street’s Favorite Stocks with Exciting Potential and 1 Facing Challenges",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-wall-street-favorite-stocks-173651181.html",
+            "date": "2026-06-01",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "月K 轉黃 61分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.AFG",
+        "name": "American Financial Group, Inc.",
+        "sector": "Financial Services",
+        "close": 133.35000610351562,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.63,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 11079529472,
+        "pe": 12.663818,
+        "rating": "buy · 6位分析師",
+        "target": 142.83333,
+        "earnings": "2026-04-30",
+        "summary": "American Financial Group, Inc., an insurance holding company, provides property and casualty insurance products in the United States. It operates through Property and Casualty Insurance and Other segments. The company offers property and transportation insurance products, such as physical damage and liability coverage for buses and trucks, other specialty transportation niches, inland and ocean marine, agricultural-related products, and other commercial property coverages; specialty casualty insurance, including primarily excess and surplus, executive and professional liability, general liabil",
+        "news": [
+          {
+            "title": "W. R. Berkley Stock: Is WRB Underperforming the Financial Sector?",
+            "link": "https://www.barchart.com/story/news/2492829/w-r-berkley-stock-is-wrb-underperforming-the-financial-sector",
+            "date": "2026-06-16",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "Investors Title Rises 22% in a Year: Should You Buy the Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-title-rises-22-buy-175300225.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "4 Insurance Stocks With Decent Dividend Yield to Bank on",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/4-insurance-stocks-decent-dividend-140500962.html",
+            "date": "2026-06-11",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "3 Insurance Stocks We Think Twice About",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-insurance-stocks-think-twice-112137564.html",
+            "date": "2026-06-11",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "American Financial Group (AFG): Buy, Sell, or Hold Post Q1 Earnings?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/american-financial-group-afg-buy-161728459.html",
+            "date": "2026-06-10",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.AFL",
+        "name": "AFLAC Incorporated",
+        "sector": "Financial Services",
+        "close": 116.23999786376953,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.74,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 59164401664,
+        "pe": 13.284572,
+        "rating": "hold · 14位分析師",
+        "target": 112.42857,
+        "earnings": "2026-08-07",
+        "summary": "Aflac Incorporated, through its subsidiaries, provides supplemental health and life insurance products. It operates in two segments, Aflac Japan and Aflac U.S. The Aflac Japan segment offers cancer, medical, nursing care, whole life, and GIFT insurance products, as well as WAYS and child endowment, and Tsumitasu insurance products in Japan. Its Aflac U.S. segment provides accident, disability, cancer, critical illness, hospital indemnity, dental, vision, and life insurance products in the United States. The company also provides hearing, final expense, pet, Medicare supplement, supplemental de",
+        "news": [
+          {
+            "title": "MarketBeat Week in Review – 06/08 - 06/12",
+            "link": "https://www.marketbeat.com/articles/marketbeat-week-in-review-06-08-06-12/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-06-13",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "The “Duck Stock” Keeps Quietly Making Money for Shareholders",
+            "link": "https://www.marketbeat.com/originals/the-duck-stock-keeps-quietly-making-money-for-shareholders/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-06-11",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "How Aflac (AFL) Investors Can Read A Steady Target And Evolving Company Story",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aflac-afl-investors-read-steady-180950060.html",
+            "date": "2026-06-10",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Globe Life Hits 52-Week High: Time to Add the Stock for Solid Returns?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/globe-life-hits-52-week-144800102.html",
+            "date": "2026-06-10",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Aflac Stock: Is AFL Outperforming the Financial Sector?",
+            "link": "https://www.barchart.com/story/news/2325036/aflac-stock-is-afl-outperforming-the-financial-sector",
+            "date": "2026-06-05",
+            "publisher": "Barchart"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ALL",
+        "name": "Allstate Corporation (The)",
+        "sector": "Financial Services",
+        "close": 221.66000366210938,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.64,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 57059921920,
+        "pe": 4.903982,
+        "rating": "buy · 22位分析師",
+        "target": 240.54546,
+        "earnings": "2026-04-30",
+        "summary": "The Allstate Corporation, together with its subsidiaries, provides property and casualty, and other insurance products in the United States and Canada. It operates in four segments: Allstate Protection; Run-off Property-Liability; Protection Services; and Corporate and Other. The company offers private passenger auto, homeowners, other personal lines and commercial insurance through exclusive agents, independent agents, contact centers and online under the Allstate, National General, Direct Auto and Answer Financial brands. It also provides consumer product protection plans, device and mobile ",
+        "news": [
+          {
+            "title": "Inflation Is Heating Up Again. Here's What It Means for Auto Insurers Progressive and Allstate.",
+            "link": "https://www.fool.com/investing/2026/06/16/inflation-is-heating-up-again-heres-what-it-means/",
+            "date": "2026-06-16",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Progressive Keeps Beating the Insurance Industry at Its Own Game. Can It Last?",
+            "link": "https://www.fool.com/investing/2026/06/15/progressive-keeps-beating-the-insurance-industry-a/",
+            "date": "2026-06-15",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Keefe Bruyette Downgrades The Allstate Corporation (ALL) Stock to Market Perform",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/keefe-bruyette-downgrades-allstate-corporation-111610714.html",
+            "date": "2026-06-14",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "MarketBeat Week in Review – 06/08 - 06/12",
+            "link": "https://www.marketbeat.com/articles/marketbeat-week-in-review-06-08-06-12/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-06-13",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "3 S&P 500 Stocks Worth Your Attention",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-p-500-stocks-worth-094256269.html",
+            "date": "2026-06-12",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.CINF",
+        "name": "Cincinnati Financial Corporation",
+        "sector": "Financial Services",
+        "close": 171.47000122070312,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.65,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 26524135424,
+        "pe": 9.803888,
+        "rating": "buy · 6位分析師",
+        "target": 181.5,
+        "earnings": "2026-07-28（估）",
+        "summary": "Cincinnati Financial Corporation provides property casualty insurance products in the United States. The company operates through five segments: Commercial Lines Insurance, Personal Lines Insurance, Excess and Surplus Lines Insurance, Life Insurance, and Investments. The Commercial Lines Insurance segment offers coverage for commercial casualty and property, commercial auto, and workers' compensation. This segment also provides contract and commercial surety bonds, and fidelity bonds; management liability; and machinery and equipment insurance products. The Personal Lines Insurance segment off",
+        "news": [
+          {
+            "title": "ESNT vs. CINF: Which Stock Is the Better Value Option?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/esnt-vs-cinf-stock-better-154004362.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Why Cincinnati Financial (CINF) is a Great Dividend Stock Right Now",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-cincinnati-financial-cinf-great-154504340.html",
+            "date": "2026-06-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Cincinnati Financial Outperforms Industry in a Year: Time to Hold?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/cincinnati-financial-outperforms-industry-time-155000063.html",
+            "date": "2026-06-05",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "How Is Travelers Companies' Stock Performance Compared to Other Property & Casualty Insurance Stocks?",
+            "link": "https://www.barchart.com/story/news/2325806/how-is-travelers-companies-stock-performance-compared-to-other-property-casualty-insurance-stocks",
+            "date": "2026-06-05",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "How The Investment Story Is Shifting For Cincinnati Financial (CINF) After Recent Analyst Revisions",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investment-story-shifting-cincinnati-financial-220745610.html",
+            "date": "2026-06-02",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.EAT",
+        "name": "Brinker International, Inc.",
+        "sector": "Consumer Cyclical",
+        "close": 158.8000030517578,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.49,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 6810581504,
+        "pe": 15.477583,
+        "rating": "buy · 20位分析師",
+        "target": 184.9,
+        "earnings": "2026-04-29",
+        "summary": "Brinker International, Inc., together with its subsidiaries, owns, develops, operates, and franchises casual dining restaurants in the United States and internationally. It operates and franchises Chili's Grill & Bar and Maggiano's Little Italy restaurant brands. The company was founded in 1975 and is headquartered in Dallas, Texas.",
+        "news": [
+          {
+            "title": "Dave & Buster's Stock Outlook Turns on a Back-to-Basics Turnaround",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/dave-busters-stock-outlook-turns-152000674.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Stocks making big moves this week: DraftKings, Intel, Brinker International, FuelCell Energy, and Robinhood",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-making-big-moves-week-202920047.html",
+            "date": "2026-06-12",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Chipotle Stock Falls 38% in a Year: Should You Buy Now or Hold Steady?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/chipotle-stock-falls-38-buy-131100563.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "1 of Wall Street’s Favorite Stocks with Solid Fundamentals and 2 Facing Challenges",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-wall-street-favorite-stocks-102920431.html",
+            "date": "2026-06-12",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Why Brinker International (EAT) Stock Is Up Today",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-brinker-international-eat-stock-224937807.html",
+            "date": "2026-06-11",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.GCMG",
+        "name": "GCM Grosvenor Inc.",
+        "sector": "Financial Services",
+        "close": 11.649999618530273,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.6,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 703463808,
+        "pe": 23.3,
+        "rating": "buy · 4位分析師",
+        "target": 14.25,
+        "earnings": "2026-08-06（估）",
+        "summary": "GCM Grosvenor Inc. is global alternative asset management solutions provider. The firm primarily provides its services to pooled investment vehicles. It also provides its services to investment companies, high net worth individuals, pension and profit sharing plans and state or municipal government entities. The firm invests in equity and alternative investment markets of the United States and internationally. The firm invests in multi-strategy, credit-focused, equity-focused, macro-focused, commodity-focused, and other specialty portfolios. It focuses on hedge fund asset classes, private equi",
+        "news": [
+          {
+            "title": "3 Top Dividend Stocks To Consider For Your Portfolio",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-top-dividend-stocks-consider-113210602.html",
+            "date": "2026-06-11",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "GCM Grosvenor (GCMG) Q1 2026 Earnings Transcript",
+            "link": "https://www.fool.com/earnings/call-transcripts/2026/06/01/gcm-grosvenor-gcmg-q1-2026-earnings-transcript/",
+            "date": "2026-06-01",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Should You Buy GCM Grosvenor Inc. (NASDAQ:GCMG) For Its Upcoming Dividend?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/buy-gcm-grosvenor-inc-nasdaq-142518994.html",
+            "date": "2026-05-31",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "May 2026's Top Dividend Stocks To Enhance Your Portfolio",
+            "link": "https://finance.yahoo.com/news/may-2026s-top-dividend-stocks-173209916.html",
+            "date": "2026-05-13",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Assessing GCM Grosvenor (GCMG) Valuation After Recent Share Price Momentum And Analyst Undervaluation Claims",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/assessing-gcm-grosvenor-gcmg-valuation-050756910.html",
+            "date": "2026-05-11",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.GNW",
+        "name": "Genworth Financial Inc",
+        "sector": "Financial Services",
+        "close": 8.970000267028809,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.57,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 3435592960,
+        "pe": 17.250002,
+        "rating": "",
+        "target": 11.0,
+        "earnings": "2026-07-30（估）",
+        "summary": "Genworth Financial, Inc., together with its subsidiaries, provides mortgage and long-term care insurance products in the United States. It operates through two segments: Enact and Closed Block. The company offers primary mortgage, and mortgage insurance products, and contract underwriting services. It also provides long-term care insurance products that are intended to protect against the significant and escalating costs of long-term care services provided in the insured's home, assisted living, and nursing facilities. In addition, the company offers protection and retirement income products, ",
+        "news": [
+          {
+            "title": "Genworth Financial (GNW) Earns Another Vote of Confidence as Outlook Brightens",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/genworth-financial-gnw-earns-another-003823339.html",
+            "date": "2026-06-12",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Will Genworth's (GNW) Softer Q1 Results and Buybacks Reframe Its Capital Allocation Narrative?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/genworths-gnw-softer-q1-results-042024822.html",
+            "date": "2026-05-11",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Genworth Financial Q1 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/genworth-financial-q1-earnings-call-highlights-2026-05-10/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-10",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Genworth (GNW) Q1 2026 Earnings Transcript",
+            "link": "https://www.fool.com/earnings/call-transcripts/2026/05/06/genworth-gnw-q1-2026-earnings-transcript/",
+            "date": "2026-05-06",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Genworth Financial, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-genworth-financial-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-05-06",
+            "publisher": "Moby"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.HEI",
+        "name": "Heico Corporation",
+        "sector": "Industrials",
+        "close": 337.3299865722656,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.58,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 47111262208,
+        "pe": 60.2375,
+        "rating": "buy · 20位分析師",
+        "target": 386.1,
+        "earnings": "2026-08-26（估）",
+        "summary": "HEICO Corporation provides aerospace, defense, and electronic related products and services in the United States and internationally. Its Flight Support Group segment offers jet engine and aircraft component replacement parts; thermal insulation blankets and parts; renewable/reusable insulation systems; and specialty components and assemblies. This segment also distributes hydraulic, pneumatic, structural, interconnect, mechanical, and electro-mechanical components for the commercial, regional, and general aviation markets; and offers repair and overhaul services for jet engine and aircraft co",
+        "news": [
+          {
+            "title": "Here's Why You Should Add AIR Stock to Your Portfolio Right Now",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-add-air-stock-155300823.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Hexcel Gains From Strong Aerospace Demand & Defense Exposure",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/hexcel-gains-strong-aerospace-demand-134000456.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "HEICO Sees Insider Stock Selling",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/heico-sees-insider-stock-selling-110008719.html",
+            "date": "2026-06-12",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Embraer Gains From Strong Jet Demand, Expanding Defense Opportunities",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/embraer-gains-strong-jet-demand-151100391.html",
+            "date": "2026-06-11",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "HEICO vs. Textron: Which Industrials Stock Is a Better Buy in 2026?",
+            "link": "https://www.fool.com/coverage/better-buy/2026/06/10/heico-vs-textron-which-industrials-stock-is-a-better-buy-in-2026/",
+            "date": "2026-06-11",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.JPM",
+        "name": "JP Morgan Chase & Co.",
+        "sector": "Financial Services",
+        "close": 333.4599914550781,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.64,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 893509828608,
+        "pe": 15.962662,
+        "rating": "buy · 21位分析師",
+        "target": 342.0,
+        "earnings": "2026-07-14",
+        "summary": "JPMorgan Chase & Co. operates as a bank and financial holding company in the United States, rest of North America, Europe, the Middle East, Africa, the Asia Pacific, Latin America, and the Caribbean. It operates in three segments: Consumer & Community Banking, Commercial & Investment Bank, and Asset & Wealth Management. The company offers deposit, investment and lending products, and cash management; mortgage origination and servicing activities; residential mortgages and home equity loans; and credit cards, payment solutions, travel services, merchant offers, lifestyle benefits, auto loans, a",
+        "news": [
+          {
+            "title": "Sector Update: Financial Stocks Softer Late Afternoon",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-softer-afternoon-195354447.html",
+            "date": "2026-06-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Traders Fully Price in a Rate Hike by October on Hawkish Fed",
+            "link": "https://finance.yahoo.com/economy/policy/articles/us-yields-jump-fed-dot-192433780.html",
+            "date": "2026-06-17",
+            "publisher": "Bloomberg"
+          },
+          {
+            "title": "The case for applying an old-school dividend strategy to investing today",
+            "link": "https://www.financial-planning.com/news/the-case-for-applying-a-dividend-strategy-to-investing-today",
+            "date": "2026-06-17",
+            "publisher": "Financial Planning"
+          },
+          {
+            "title": "Big Bank Stocks Hit Records Ahead of Fed Meeting",
+            "link": "https://www.barrons.com/livecoverage/stock-market-news-today-061726/card/big-bank-stocks-hit-records-ahead-of-fed-meeting-TMLUXgmPKTPhKe039LVd?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-06-17",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "Sector Update: Financial Stocks Advance Wednesday Afternoon",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-wednesday-174017775.html",
+            "date": "2026-06-17",
+            "publisher": "MT Newswires"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.LBTYK",
+        "name": "Liberty Global Ltd.",
+        "sector": "Communication Services",
+        "close": 10.90999984741211,
+        "score": 60,
+        "trend": 38,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.62,
+        "mcdxx": 4,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 3688643072,
+        "pe": null,
+        "rating": "",
+        "target": null,
+        "earnings": "2026-07-24",
+        "summary": "Liberty Global Ltd., together with its subsidiaries, provides broadband internet, video, fixed-line telephony, and mobile communications services to residential and business customers in Europe. It offers intelligent WiFi and broadband internet services, such as ONE Connect, which enables fast and flexible introductions of new hardware and services, as well as cloud-to-cloud open API integration; Smart Security that provides network security, safe browsing and fraud prevention measures; Smart Home, which provides enhanced entertainment and home automation and security services; and Connect Box",
+        "news": [
+          {
+            "title": "Banks Sell Out After Broadband Firms’ Land Grab Backfires",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/broadband-firms-land-grab-backfired-061500003.html",
+            "date": "2026-06-09",
+            "publisher": "Bloomberg"
+          },
+          {
+            "title": "Liberty Global (LBTY.A) Valuation Check After Mixed Short Term Share Performance",
+            "link": "https://finance.yahoo.com/news/liberty-global-lbty-valuation-check-161249249.html",
+            "date": "2026-05-13",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "This $18 Million Buy Signals Confidence in a Beaten-Down Infrastructure Play",
+            "link": "https://www.fool.com/coverage/filings/2026/05/12/this-usd18-million-buy-signals-confidence-in-a-beaten-down-infrastructure-play/",
+            "date": "2026-05-12",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "This Fund's $8.5 Million Sale Comes as NWPX Delivers Record Backlog and Profit Growth",
+            "link": "https://www.fool.com/coverage/filings/2026/05/12/this-fund-s-usd8-5-million-sale-comes-as-nwpx-delivers-record-backlog-and-profit-growth/",
+            "date": "2026-05-12",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Liberty Global Ltd (LBTYA) Q1 2026 Earnings Call Highlights: Strategic Moves and Operational ...",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/liberty-global-ltd-lbtya-q1-070257446.html",
+            "date": "2026-05-02",
+            "publisher": "GuruFocus.com"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.MGRC",
+        "name": "McGrath RentCorp",
+        "sector": "Industrials",
+        "close": 113.76000213623047,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.6,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 2794147072,
+        "pe": 18.057142,
+        "rating": "",
+        "target": 145.4,
+        "earnings": "2026-07-24（估）",
+        "summary": "McGrath RentCorp operates as a business-to-business rental company in the United States and internationally. The company also engages in renting and selling relocatable modular buildings, portable storage containers, and electronic test equipment. The company operates through four segments: Mobile Modular, Portable Storage, TRS-RenTelco, and Enviroplex. The Mobile Modular segment rents and sells modular buildings designed for use as classrooms, temporary offices adjacent to existing facilities, sales offices, construction field offices, restroom buildings, health care clinics, childcare facili",
+        "news": [
+          {
+            "title": "What to Know About This $18 Million Bet on a Rental Business With 35 Years of Dividend Growth",
+            "link": "https://www.fool.com/coverage/filings/2026/05/31/what-to-know-about-this-usd18-million-bet-on-a-rental-business-with-35-years-of-dividend-growth/",
+            "date": "2026-05-31",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Will McGrath RentCorp’s (MGRC) Expanded US$725 Million Credit Facility Reshape Its Recurring Rental Narrative",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/mcgrath-rentcorp-mgrc-expanded-us-161134698.html",
+            "date": "2026-05-17",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "This Fund Added a New 5% Portfolio Position in a Surging Defense and Medtech Supplier",
+            "link": "https://www.fool.com/coverage/filings/2026/05/16/this-fund-added-a-new-5-portfolio-position-in-a-surging-defense-and-medtech-supplier/",
+            "date": "2026-05-16",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "This $4 Million Rental Stock Buy Signals Confidence in Data Center Demand",
+            "link": "https://www.fool.com/coverage/filings/2026/05/16/this-usd4-million-rental-stock-buy-signals-confidence-in-data-center-demand/",
+            "date": "2026-05-16",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "What to Know About This Fund’s $14 Million Patrick Industries Exit After a Tough Quarter",
+            "link": "https://www.fool.com/coverage/filings/2026/05/16/what-to-know-about-this-fund-s-usd14-million-patrick-industries-exit-after-a-tough-quarter/",
+            "date": "2026-05-16",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.PRU",
+        "name": "Prudential Financial, Inc.",
+        "sector": "Financial Services",
+        "close": 107.01000213623047,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.53,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 37167263744,
+        "pe": 11.009259,
+        "rating": "hold · 15位分析師",
+        "target": 100.46667,
+        "earnings": "2026-07-30（估）",
+        "summary": "Prudential Financial, Inc., together with its subsidiaries, provides financial products and services in the United States, Japan and internationally. It operates through PGIM, Retirement Strategies, Group Insurance, Individual Life, and International Businesses segments. The PGIM segment offers investment management services and solutions related to public fixed income, public equity, real estate debt and equity, private credit and other alternatives, and multi-asset class strategies to institutional and retail clients, as well as its insurance and retirement businesses. The Retirement Strateg",
+        "news": [
+          {
+            "title": "PRU Stock Trades at Discount to Industry at 7.64X: Time to Hold?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/pru-stock-trades-discount-industry-144900791.html",
+            "date": "2026-06-16",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "3 Reasons to Sell PRU and 1 Stock to Buy Instead",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-sell-pru-1-202807534.html",
+            "date": "2026-06-15",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Argus Moves Prudential Financial (PRU) to Hold, Awaiting Clarity on Japan Operations",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/argus-moves-prudential-financial-pru-041523090.html",
+            "date": "2026-06-10",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Toll Brothers upgraded, Lennar downgraded: Wall Street's top analyst calls",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/toll-brothers-upgraded-lennar-downgraded-133255377.html",
+            "date": "2026-06-09",
+            "publisher": "The Fly"
+          },
+          {
+            "title": "Is Prudential Financial Stock Underperforming the S&P 500?",
+            "link": "https://www.barchart.com/story/news/2352681/is-prudential-financial-stock-underperforming-the-s-p-500",
+            "date": "2026-06-08",
+            "publisher": "Barchart"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.RDN",
+        "name": "Radian Group Inc.",
+        "sector": "Financial Services",
+        "close": 34.880001068115234,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.64,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 4638175232,
+        "pe": 8.130536,
+        "rating": "buy · 6位分析師",
+        "target": 43.16667,
+        "earnings": "2026-07-30（估）",
+        "summary": "Radian Group Inc., together with its subsidiaries, provides mortgage insurance in the United States. It aggregates, manages, and distributes mortgage credit risk for the benefit of mortgage lending institutions and mortgage credit investors through private mortgage insurance on residential first-lien mortgage loans. The company also offers private mortgage insurance, specialty insurance, and reinsurance lines. It serves mortgage originators, such as mortgage banks, commercial banks, savings institutions, credit unions, and community banks. The company was formerly known as CMAC Investment Corp",
+        "news": [
+          {
+            "title": "RDN Stock Near 52-Week High, Trading at a Discount: Time to Buy?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/rdn-stock-near-52-week-152300234.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Are Investors Undervaluing Radian Group (RDN) Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-undervaluing-radian-group-rdn-134003914.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "4 Insurance Stocks With Decent Dividend Yield to Bank on",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/4-insurance-stocks-decent-dividend-140500962.html",
+            "date": "2026-06-11",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Insiders Pour Millions Into These 2 Stocks — Here’s Why You Might Want to Ride Their Coattails",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/insiders-pour-millions-2-stocks-173000429.html",
+            "date": "2026-06-08",
+            "publisher": "TipRanks"
+          },
+          {
+            "title": "1 Value Stock with Exciting Potential and 2 Facing Headwinds",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-value-stock-exciting-potential-144550742.html",
+            "date": "2026-06-08",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.SUPV",
+        "name": "Grupo Supervielle S.A.",
+        "sector": "Financial Services",
+        "close": 11.210000038146973,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.59,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1059436992,
+        "pe": null,
+        "rating": "hold · 5位分析師",
+        "target": 12.76183,
+        "earnings": "2026-08-07（估）",
+        "summary": "Grupo Supervielle S.A., a financial services holding company, provides various banking products and services in Argentina. The company operates through Personal & Business Banking, Corporate Banking, Bank Treasury, Insurance, and Asset Management and Other Services segments. It offers savings and checking accounts, and time deposits; personal, mortgage, unsecured, and car loans; overdrafts; loans with special facilities for project and working capital financing; and leasing, bank guarantees for tenants, salary advances, domestic and international factoring, international guarantees and letters",
+        "news": [
+          {
+            "title": "How The Grupo Supervielle (BASE:SUPV) Investment Story Is Evolving With Cautious Analyst Targets",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/grupo-supervielle-supv-investment-story-100911736.html",
+            "date": "2026-05-03",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "How The Grupo Supervielle (BASE:SUPV) Investment Narrative Is Shifting After Target Cuts",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/grupo-supervielle-supv-investment-narrative-160606932.html",
+            "date": "2026-03-20",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Grupo Supervielle SA (SUPV) Q4 2025 Earnings Call Highlights: Navigating Challenges with ...",
+            "link": "https://finance.yahoo.com/news/grupo-supervielle-sa-supv-q4-010101277.html",
+            "date": "2026-03-12",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "How The Grupo Supervielle (BASE:SUPV) Investment Story Is Shifting With A Lower Target Price",
+            "link": "https://finance.yahoo.com/news/grupo-supervielle-supv-investment-story-081358108.html",
+            "date": "2026-03-06",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Grupo Supervielle Q4 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/grupo-supervielle-q4-earnings-call-highlights-2026-03-03/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-03-04",
+            "publisher": "MarketBeat"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.TLN",
+        "name": "Talen Energy Corporation",
+        "sector": "Utilities",
+        "close": 409.80999755859375,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.73,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 19586871296,
+        "pe": null,
+        "rating": "buy · 14位分析師",
+        "target": 472.18286,
+        "earnings": "2026-05-06",
+        "summary": "Talen Energy Corporation, an independent power producer and infrastructure company, produces and sells electricity, capacity, and ancillary services into wholesale power markets in the United States. The company's plants generate power using a variety of fuels, such as nuclear, fossil, oil, natural gas, and coal power plants. It owns and operates approximately 13.1 GW of power infrastructure. Talen Energy Corporation was incorporated in 2014 and is headquartered in Houston, Texas.",
+        "news": [
+          {
+            "title": "Talen Energy Corporation (TLN) Surges 5.3%: Is This an Indication of Further Gains?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/talen-energy-corporation-tln-surges-112000338.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Bloom Energy Trades at a Premium: How to Play the Stock",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-trades-premium-play-174300762.html",
+            "date": "2026-06-15",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Talen Energy Nears $3.45b Gas Deal As PJM Demand Grows",
+            "link": "https://finance.yahoo.com/sectors/energy/articles/talen-energy-nears-3-45b-060734224.html",
+            "date": "2026-06-15",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Veteran Investor: Talen Energy Is a Double at Minimum, With Triple-Digit Upside as Power Demand Rises",
+            "link": "https://247wallst.com/investing/2026/06/12/veteran-investor-talen-energy-is-a-double-at-minimum-with-triple-digit-upside-as-power-demand-rises/",
+            "date": "2026-06-12",
+            "publisher": "24/7 Wall St."
+          },
+          {
+            "title": "Are Options Traders Betting on a Big Move in Talen Energy Stock?",
+            "link": "https://finance.yahoo.com/markets/options/articles/options-traders-betting-big-move-123200609.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.WOR",
+        "name": "Worthington Enterprises, Inc.",
+        "sector": "Industrials",
+        "close": 59.040000915527344,
+        "score": 60,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.61,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 2925230336,
+        "pe": 178.90909,
+        "rating": "",
+        "target": 65.4,
+        "earnings": "2026-06-24",
+        "summary": "Worthington Enterprises, Inc. operates as an industrial manufacturing company. It operates through two segments, Consumer Products and Building Products. The Consumer Products segment provides products in the tools, outdoor living, and celebrations end markets. The segment's products include hand-held torches, micro torches, lighters, accessories, and fuel for constructing, fixing making, and creating; precision and specialty hand, digital, and safety tools; drywall tools and accessories used for finishing and taping, cutting, siding, and roofing; propane-filled cylinders for torches, camping ",
+        "news": [
+          {
+            "title": "Assessing Worthington Enterprises (WOR) Valuation As Recent Share Price Momentum Draws Attention",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/assessing-worthington-enterprises-wor-valuation-221238775.html",
+            "date": "2026-06-11",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "1 Profitable Stock on Our Buy List and 2 We Turn Down",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-buy-list-104014388.html",
+            "date": "2026-06-05",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Orion Energy Systems, Inc. (OESX) Misses Q4 Earnings Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/orion-energy-systems-inc-oesx-121501527.html",
+            "date": "2026-06-04",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Worthington (WOR) Q3 2026 Earnings Transcript",
+            "link": "https://www.fool.com/earnings/call-transcripts/2026/06/02/worthington-wor-q3-2026-earnings-transcript/",
+            "date": "2026-06-02",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Worthington’s Patriotic Honor And What It May Signal For WOR Investors",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/worthington-patriotic-honor-may-signal-141359892.html",
+            "date": "2026-05-20",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "月K 轉黃 60分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ACIW",
+        "name": "ACI Worldwide, Inc.",
+        "sector": "Technology",
+        "close": 44.63999938964844,
+        "score": 51,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.72,
+        "mcdxx": 3,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 4538172416,
+        "pe": 22.545454,
+        "rating": "strong_buy · 3位分析師",
+        "target": 65.33333,
+        "earnings": "2026-08-06（估）",
+        "summary": "ACI Worldwide, Inc. develops, markets, installs, and supports software products and services for facilitating electronic payments in the United States and worldwide. It operates through Payment Software, and Billers segments. The company offers ACI Acquiring, a solution to process credit, debit, and prepaid card transactions, deliver digital innovation, fraud prevention, and reduce fees; ACI Issuing, a digital payment issuing solution; and ACI Connetic, a solution that offers payment services for processing, routing, and managing various payment types. It provides ACI real-time payments, a sol",
+        "news": [
+          {
+            "title": "ACI Worldwide (ACIW) Stock After Wero Wallet Partnership Is The 28.4% Undervaluation Story Intact",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aci-worldwide-aciw-stock-wero-190804840.html",
+            "date": "2026-06-15",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "ACI Worldwide (ACIW) Is Up 6.3% After Joining EPI And Powering Wero Wallet Integration",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aci-worldwide-aciw-6-3-160911292.html",
+            "date": "2026-06-15",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "ACI Worldwide’s (ACIW) Key Role in Payment Network Modernization",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/aci-worldwide-aciw-key-role-143703772.html",
+            "date": "2026-06-12",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "South Africa’s Kwik Payments selects ACI orchestration platform",
+            "link": "https://www.electronicpaymentsinternational.com/news/south-africas-kwik-payments-selects-aci-orchestration-platform/",
+            "date": "2026-06-12",
+            "publisher": "Electronic Payments"
+          },
+          {
+            "title": "UBX Tanzania Deepens Partnership with ACI Worldwide (ACIW)",
+            "link": "https://finance.yahoo.com/sectors/technology/articles/ubx-tanzania-deepens-partnership-aci-184211644.html",
+            "date": "2026-06-02",
+            "publisher": "Insider Monkey"
+          }
+        ],
+        "why": "月K 轉黃 51分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.ALK",
+        "name": "Alaska Air Group, Inc.",
+        "sector": "Industrials",
+        "close": 48.27000045776367,
+        "score": 49,
+        "trend": 42,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.57,
+        "mcdxx": 7,
+        "macd": 0,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 5378676736,
+        "pe": 98.5102,
+        "rating": "strong_buy · 16位分析師",
+        "target": 57.5,
+        "earnings": "2026-04-21",
+        "summary": "Alaska Air Group, Inc., through its subsidiaries, operates airlines. It operates through three segments: Alaska Airlines, Hawaiian Airlines, and Regional. The company offers scheduled air transportation services on Boeing jet aircraft for passengers and cargo in the United States, and in parts of Canada, Mexico, Costa Rica, Belize, Guatemala, and the Bahamas; and for passengers across a shorter distance network within the United States, Canada, and Mexico. Alaska Air Group, Inc. was founded in 1932 and is based in Seattle, Washington.",
+        "news": [
+          {
+            "title": "Alaska Air Group (ALK) Stock Could Be 19.8% Overvalued After Oil Relief And SAF Progress",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/alaska-air-group-alk-stock-201553418.html",
+            "date": "2026-06-17",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Does SkyWest's Lower Valuation Indicate a Buying Opportunity?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/does-skywests-lower-valuation-indicate-153100189.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "ALK Expands West Coast Operations With New PDX Maintenance Facility",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/alk-expands-west-coast-operations-150600843.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Alaska Air (ALK) Launches SAF Project And Breaks Ground On Portland Hangar",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/alaska-air-alk-launches-saf-071511060.html",
+            "date": "2026-06-17",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Broader Market Weakens as Energy and Software Stocks Fall",
+            "link": "https://www.barchart.com/story/news/2496862/broader-market-weakens-as-energy-and-software-stocks-fall",
+            "date": "2026-06-16",
+            "publisher": "Barchart"
+          }
+        ],
+        "why": "月K 轉黃 49分：站穩上升 MA30/MA40（趨勢回調）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.BXP",
+        "name": "BXP, Inc.",
+        "sector": "Real Estate",
+        "close": 63.060001373291016,
+        "score": 48,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.44,
+        "mcdxx": 10,
+        "macd": 0,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 11244318720,
+        "pe": 31.688442,
+        "rating": "buy · 20位分析師",
+        "target": 69.3,
+        "earnings": "2026-07-29（估）",
+        "summary": "BXP, Inc. (BXP) is the largest publicly traded developer, owner, and manager of premier workplaces in the United States. Also, concentrated in six dynamic gateway markets - Boston, Los Angeles, New York, San Francisco, Seattle, and Washington, DC. BXP has delivered places that power progress for our clients and communities for more than 55 years. BXP is a fully integrated real estate company, organized as a real estate investment trust (REIT). As of March 31, 2026, including properties owned by joint ventures, BXP's portfolio totals 50.4 million square feet and 164 properties, including six pr",
+        "news": [
+          {
+            "title": "What BXP's 343 Madison Lease Means for Office Investors in 2026",
+            "link": "https://finance.yahoo.com/real-estate/articles/bxps-343-madison-lease-means-155200764.html",
+            "date": "2026-06-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Is Alexandria Real Estate Stock Underperforming the Dow?",
+            "link": "https://www.barchart.com/story/news/2484906/is-alexandria-real-estate-stock-underperforming-the-dow",
+            "date": "2026-06-16",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "BXP Stock Gains 20.7% in Three Months: Will the Momentum Last?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/bxp-stock-gains-20-7-152100696.html",
+            "date": "2026-06-09",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Are Wall Street Analysts Bullish on BXP Stock?",
+            "link": "https://www.barchart.com/story/news/2090872/are-wall-street-analysts-bullish-on-bxp-stock",
+            "date": "2026-05-22",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "Is BXP (BXP) Offering Value After Recent Rebound And Mixed Long Term Returns?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/bxp-bxp-offering-value-recent-212027146.html",
+            "date": "2026-05-11",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "月K 轉黃 48分：站穩上升 MA30/MA40（趨勢回調）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.LII",
+        "name": "Lennox International, Inc.",
+        "sector": "Industrials",
+        "close": 516.1099853515625,
+        "score": 48,
+        "trend": 38,
+        "hdly": 0,
+        "vol": 0,
+        "vol_ratio": 0.48,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 17960611840,
+        "pe": 22.928032,
+        "rating": "buy · 15位分析師",
+        "target": 570.06665,
+        "earnings": "2026-07-29（估）",
+        "summary": "Lennox International Inc., together with its subsidiaries, designs, manufactures, and markets products for the heating, ventilation, air conditioning, and refrigeration markets in the United States, Canada, and internationally. The Home Comfort Solutions segment provides furnaces, air conditioners, heat pumps, packaged heating and cooling systems, indoor air quality equipment, comfort control products, and replacement parts and supplies; residential heating, ventilation, cooling equipment, and air conditioning; and evaporator coils, air handlers, and unit heaters under Lennox, Dave Lennox Sign",
+        "news": [
+          {
+            "title": "Can Modine Sustain Its Margin Gains Through Fiscal 2027?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/modine-sustain-margin-gains-fiscal-145200834.html",
+            "date": "2026-06-16",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Lennox International (LII) Stock Valuation Check After Recent Steady Performance And Modest Undervaluation Estimate",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/lennox-international-lii-stock-valuation-080737786.html",
+            "date": "2026-06-13",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "1 Cash-Producing Stock to Consider Right Now and 2 That Underwhelm",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-consider-093614730.html",
+            "date": "2026-06-05",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Stock Indexes Post New Record Highs Amid AI Enthusiasm",
+            "link": "https://www.barchart.com/story/news/2267903/stock-indexes-post-new-record-highs-amid-ai-enthusiasm",
+            "date": "2026-06-02",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "Trump Lowers Tariffs on Farm Tractors, HVAC Equipment",
+            "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-02-2026/card/trump-lowers-tariffs-on-farm-tractors-hvac-equipment-J1FVz32IS4En848x4sEc?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-06-02",
+            "publisher": "The Wall Street Journal"
+          }
+        ],
+        "why": "月K 轉黃 48分：站穩上升 MA30/MA40（趨勢回調）、MACD 水上（零軸之上）。"
+      }
+    ]
+  },
+  "volume_watch": [
+    {
+      "code": "US.RXT",
+      "close": 7.53000020980835,
+      "spike_mult": 28.6,
+      "spike_date": "2026-06-19"
+    },
+    {
+      "code": "US.ALOY",
+      "close": 16.610000610351562,
+      "spike_mult": 11.3,
+      "spike_date": "2026-06-19"
+    }
+  ]
+}

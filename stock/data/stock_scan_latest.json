@@ -1,0 +1,1473 @@
+{
+  "generated": "2026-07-19 06:06",
+  "run_type": "daily",
+  "scanned": 2878,
+  "thresholds": {
+    "day": 80,
+    "week": 80,
+    "mon": 80
+  },
+  "timeframes": {
+    "day": [
+      {
+        "code": "US.INDB",
+        "name": "Independent Bank Corp.",
+        "sector": "Financial Services",
+        "close": 84.51000213623047,
+        "score": 81,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 2.01,
+        "mcdxx": 1,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 4024250112,
+        "pe": 15.282098,
+        "rating": "buy · 7位分析師",
+        "target": 91.71429,
+        "earnings": "2026-07-17",
+        "summary": "Independent Bank Corp. operates as the bank holding company for Rockland Trust Company that provides commercial banking products and services to individuals and small-to-medium sized businesses in the United States. It provides interest checking, money market, and savings accounts, as well as demand deposits and time certificates of deposit. The company also offers commercial real estate and construction, commercial and industrial, small business, secured and unsecured commercial, and consumer real estate loans; term loans and revolving/nonrevolving lines of credit; overdraft protection and le",
+        "news": [
+          {
+            "title": "Why Independent Bank (INDB) Shares Are Getting Obliterated Today",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-independent-bank-indb-shares-213746334.html",
+            "date": "2026-07-17",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Independent Bank Corp (INDB) Q2 2026 Earnings Call Highlights: Strong Deposit Growth and ...",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/independent-bank-corp-indb-q2-210045556.html",
+            "date": "2026-07-17",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "Independent Bank Q2 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/independent-bank-q2-earnings-call-highlights-2026-07-17/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-07-17",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Independent Bank Corp. (INDB) Q2 Earnings: Taking a Look at Key Metrics Versus Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/independent-bank-corp-indb-q2-220002443.html",
+            "date": "2026-07-16",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Independent Bank Corp. (INDB) Misses Q2 Earnings and Revenue Estimates",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/independent-bank-corp-indb-misses-212001679.html",
+            "date": "2026-07-16",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 81分：站穩上升 MA30/MA40（趨勢回調）、放量 2.01x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.NFBK",
+        "name": "Northfield Bancorp, Inc.",
+        "sector": "Financial Services",
+        "close": 14.859999656677246,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.61,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 620612992,
+        "pe": 114.30769,
+        "rating": "hold · 1位分析師",
+        "target": 14.5,
+        "earnings": "2026-04-22（估）",
+        "summary": "Northfield Bancorp, Inc. operates as the bank holding company for Northfield Bank that provides a range of banking services primarily to individuals and corporate customers. It offers deposit accounts, including transaction, money market savings, certificates of deposit, passbook and statement savings deposit accounts. The company also provides commercial and industrial and owner-occupied commercial real estate loans; one-to-four family residential real estate loans; multifamily loans; construction and land loans; home equity loans and lines of credit; and small business loans. In addition, it",
+        "news": [
+          {
+            "title": "Favourable Signals For Northfield Bancorp: Numerous Insiders Acquired Stock",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/favourable-signals-northfield-bancorp-numerous-104132547.html",
+            "date": "2026-04-13",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "NJ banks to merge in $597M deal",
+            "link": "https://www.bankingdive.com/news/columbia-northfield-bank-597-million-deal-new-jersey-new-york/811362/",
+            "date": "2026-02-04",
+            "publisher": "Banking Dive"
+          },
+          {
+            "title": "Fair Lawn and Woodbridge-based banks to merge. Will your branch close?",
+            "link": "https://www.northjersey.com/story/news/business/2026/02/03/columbia-northfield-banks-merge-nj-branches/88476701007/",
+            "date": "2026-02-03",
+            "publisher": "The Bergen Record"
+          },
+          {
+            "title": "Why Columbia Financial Stock Rocked the Market Today",
+            "link": "https://www.fool.com/investing/2026/02/02/why-columbia-financial-stock-rocked-the-market-tod/",
+            "date": "2026-02-03",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Columbia Financial Unveils $597M Northfield Bancorp Merger, Second-Step Conversion Plan for 2026",
+            "link": "https://www.marketbeat.com/instant-alerts/columbia-financial-unveils-597m-northfield-bancorp-merger-second-step-conversion-plan-for-2026-2026-02-02/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-02-02",
+            "publisher": "MarketBeat"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.61x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.ORKA",
+        "name": "Oruka Therapeutics, Inc.",
+        "sector": "Healthcare",
+        "close": 92.69999694824219,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 2.39,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 5590931456,
+        "pe": null,
+        "rating": "strong_buy · 12位分析師",
+        "target": 144.66667,
+        "earnings": "2026-08-11（估）",
+        "summary": "Oruka Therapeutics, Inc., a clinical-stage biopharmaceutical company, focuses on developing novel monoclonal antibody therapeutics for psoriasis (PsO), and other inflammatory and immunology (I&I) indications. Its lead products include ORKA-001 that targets p19 subunit of interleukin-23, which is in phase 2a trial for the treatment of PsO; and ORKA-002 that targets interleukin-17A and interleukin-17F, which is in phase 2 trial for the treatment of PsO, psoriatic arthritis, and other conditions. The company also develops ORKA-003 for targeting an undisclosed pathway; and ORKA-021, a sequential c",
+        "news": [
+          {
+            "title": "HMI Capital Pares Its Stake in AI Company nCino",
+            "link": "https://www.barrons.com/articles/hmi-capital-pares-its-stake-in-ai-company-ncino-f0743eb3?siteid=yhoof2&yptr=yahoo",
+            "date": "2026-07-10",
+            "publisher": "Barrons.com"
+          },
+          {
+            "title": "H.C. Wainwright Keeps Buy Rating on Oruka (ORKA) After Apogee Acquisition News",
+            "link": "https://finance.yahoo.com/healthcare/articles/h-c-wainwright-keeps-buy-212333523.html",
+            "date": "2026-07-01",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Oruka Stock Is Now Up Nearly 700%. Here's What a $687,000 Insider Sale Could Mean",
+            "link": "https://www.fool.com/coverage/filings/2026/06/27/oruka-stock-is-now-up-nearly-700-here-s-what-a-usd687-000-insider-sale-could-mean/",
+            "date": "2026-06-27",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Oruka Therapeutics' Head of Finance Sold Over 10,000 Company Shares. What Does That Mean for Investors?",
+            "link": "https://www.fool.com/coverage/filings/2026/06/24/oruka-therapeutics-head-of-finance-sold-over-10-000-company-shares-what-does-that-mean-for-investors/",
+            "date": "2026-06-24",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Oruka Therapeutics, Inc. (ORKA) Upgraded to Buy: What Does It Mean for the Stock?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/oruka-therapeutics-inc-orka-upgraded-160003788.html",
+            "date": "2026-06-12",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 2.39x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.PLSE",
+        "name": "Pulse Biosciences, Inc",
+        "sector": "Healthcare",
+        "close": 28.68000030517578,
+        "score": 80,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.46,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1984934528,
+        "pe": null,
+        "rating": "",
+        "target": 30.66667,
+        "earnings": "2026-05-04",
+        "summary": "Pulse Biosciences, Inc. operates as a novel bioelectric medicine company. It offers nPulse System, a novel Nanosecond Pulsed-Field Ablation delivery platform to treat benign lesions of the skin; nPulse Vybrance Percutaneous Electrode system for soft tissue ablation in surgical setting; nPulse Cardiac Surgical Clamp designed for use in surgical treatment of atrial fibrillation (AF); nPulse Cardiac Catheter System designed to provide a circumferential, or circular, ablation in a single treatment cycle; and nPulse Console, a software-enabled console-based platform designed to accommodate the clin",
+        "news": [
+          {
+            "title": "Did New Analyst Coverage and Insider Buying Just Shift Pulse Biosciences' (PLSE) Investment Narrative?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/did-analyst-coverage-insider-buying-110812676.html",
+            "date": "2026-06-09",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Here's Why Pulse Biosciences, Inc (PLSE) is a Great Momentum Stock to Buy",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-pulse-biosciences-inc-160001910.html",
+            "date": "2026-05-26",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Pulse Biosciences CEO Bought 15,000 Company Shares. Here's What That Means for Investors.",
+            "link": "https://www.fool.com/coverage/filings/2026/05/17/pulse-biosciences-ceo-bought-15-000-company-shares-here-s-what-that-means-for-investors/",
+            "date": "2026-05-17",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Is Pulse Biosciences (PLSE) Quietly Redefining Its Core Identity Around Atrial Fibrillation?",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/pulse-biosciences-plse-quietly-redefining-160801856.html",
+            "date": "2026-05-10",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Pulse Biosciences Q1 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/pulse-biosciences-q1-earnings-call-highlights-2026-05-08/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-08",
+            "publisher": "MarketBeat"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.46x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.TRVI",
+        "name": "Trevi Therapeutics, Inc.",
+        "sector": "Healthcare",
+        "close": 19.06999969482422,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 2.07,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 2707553024,
+        "pe": null,
+        "rating": "strong_buy · 10位分析師",
+        "target": 24.9,
+        "earnings": "2026-05-06",
+        "summary": "Trevi Therapeutics, Inc., a clinical-stage biopharmaceutical company, develops and commercializes investigational therapy for the treatment of chronic cough in patients with idiopathic pulmonary fibrosis (IPF) and non-IPF interstitial lung disease, and refractory chronic cough. The company develops Haduvio, an oral extended-release formulation of nalbuphine, which is in phase 2b Cough Reduction in IPF with nalbuphine ER clinical trial for treatment of chronic cough in patients with IPF, and phase 2a clinical trial in patients with refractory chronic cough. Trevi Therapeutics, Inc. has a licens",
+        "news": [
+          {
+            "title": "Trevi Therapeutics (TRVI) Soars as Haduvio Taps Into $15B Addressable Market",
+            "link": "https://finance.yahoo.com/healthcare/articles/trevi-therapeutics-trvi-soars-haduvio-022042519.html",
+            "date": "2026-07-18",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Trevi Therapeutics Is Up 100%, Pivotal bioVenture Adds Anyway. Here's Why That Matters.",
+            "link": "https://www.fool.com/coverage/filings/2026/06/03/trevi-therapeutics-is-up-100-pivotal-bioventure-adds-anyway-here-s-why-that-matters/",
+            "date": "2026-06-03",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Trevi Therapeutics Maps Haduvio Chronic Cough Push, Sees Cash Runway Into 2030",
+            "link": "https://www.marketbeat.com/instant-alerts/trevi-therapeutics-maps-haduvio-chronic-cough-push-sees-cash-runway-into-2030-2026-05-09/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-05-09",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Trevi Therapeutics, Inc. Q1 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-trevi-therapeutics-inc-q1-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-05-06",
+            "publisher": "Moby"
+          },
+          {
+            "title": "Why Trevi Therapeutics (TRVI) Is Up 5.9% After Extending Its Cash Runway Into 2030",
+            "link": "https://finance.yahoo.com/sectors/healthcare/articles/why-trevi-therapeutics-trvi-5-161432009.html",
+            "date": "2026-05-06",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 2.07x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.WAFD",
+        "name": "WaFd, Inc.",
+        "sector": "Financial Services",
+        "close": 38.119998931884766,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.9,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 2816628736,
+        "pe": 12.498361,
+        "rating": "hold · 4位分析師",
+        "target": 38.25,
+        "earnings": "2026-10-16（估）",
+        "summary": "WaFd, Inc. operates as the bank holding company for Washington Federal Bank that provides lending, depository, insurance, and other banking services in the United States. The company provides deposit products, including business and personal checking accounts, and term certificates of deposit, as well as money market accounts and passbook savings accounts. It offers single-family residential, construction, land acquisition and development, consumer lot, multi-family residential, commercial real estate, home equity, business, and consumer loans, as well as commercial and industrial loans. In ad",
+        "news": [
+          {
+            "title": "Why WaFd Bank (WAFD) Shares Are Trading Lower Today",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-wafd-bank-wafd-shares-233746108.html",
+            "date": "2026-07-17",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "WaFd Q3 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/wafd-q3-earnings-call-highlights-2026-07-17/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-07-17",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "WAFD Q3 Earnings Lag on Higher Provisions & Expenses, Revenues Up Y/Y",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/wafd-q3-earnings-lag-higher-120800335.html",
+            "date": "2026-07-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "WaFd revenue tops forecasts as earnings come in slightly below expectations",
+            "link": "https://investorshub.advfn.com/market-news/article/32144/wafd-revenue-tops-forecasts-as-earnings-come-in-slightly-below-expectations",
+            "date": "2026-07-17",
+            "publisher": "InvestorsHub"
+          },
+          {
+            "title": "WaFd (WAFD) Reports Q3 Earnings: What Key Metrics Have to Say",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/wafd-wafd-reports-q3-earnings-230001194.html",
+            "date": "2026-07-16",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.9x、MACD 水上（零軸之上）。"
+      }
+    ],
+    "week": [
+      {
+        "code": "US.OXY",
+        "name": "Occidental Petroleum Corporation",
+        "sector": "Energy",
+        "close": 54.86000061035156,
+        "score": 101,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.04,
+        "mcdxx": 6,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 54565658624,
+        "pe": 74.13513,
+        "rating": "buy · 23位分析師",
+        "target": 64.52174,
+        "earnings": "2026-08-06",
+        "summary": "Occidental Petroleum Corporation, together with its subsidiaries, engages in the acquisition, exploration, and development of oil and gas properties in the United States and internationally. It operates through Oil and Gas and Midstream and Marketing. The Oil and Gas segment explores for, develops, and produces oil and condensate, natural gas liquids (NGLs), and natural gas. This segment also optimizes its transportation and storage capacity and invests in entities. The Midstream and Marketing segment purchases, markets, gathers, processes, transports and stores oil, condensate, NGLs, natural ",
+        "news": [
+          {
+            "title": "ExxonMobil Stock Offers a Different Kind of Fuel",
+            "link": "https://www.trefis.com/articles/607719/exxonmobil-stock-offers-a-different-kind-of-fuel/2026-07-18",
+            "date": "2026-07-18",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "Occidental Petroleum Cut Its Capital Spending by 8% for 2026. Should the Oil Giant Rethink Its Plans with Crude Prices Now Up 30%?",
+            "link": "https://www.fool.com/investing/2026/07/18/occidental-petroleum-cut-its-capital-spending-by-8/",
+            "date": "2026-07-18",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Can Occidental Continue to Grow on the Back of the Permian Basin?",
+            "link": "https://finance.yahoo.com/energy/articles/occidental-continue-grow-back-permian-151100019.html",
+            "date": "2026-07-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Warren Buffett Says He Now Likes “Four or Five” Businesses Berkshire Owns More than Alphabet. What Are They?",
+            "link": "https://247wallst.com/investing/2026/07/16/warren-buffett-says-he-now-likes-four-or-five-businesses-berkshire-owns-more-than-alphabet-what-are-they/",
+            "date": "2026-07-16",
+            "publisher": "24/7 Wall St."
+          },
+          {
+            "title": "Occidental Petroleum (OXY) Stock Slides as Market Rises: Facts to Know Before You Trade",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/occidental-petroleum-oxy-stock-slides-215005020.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 101分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.04x、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.VG",
+        "name": "Venture Global, Inc.",
+        "sector": "Energy",
+        "close": 13.800000190734863,
+        "score": 97,
+        "trend": 42,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.2,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/False",
+        "futu": null,
+        "mktcap": 34284142592,
+        "pe": 14.375001,
+        "rating": "buy · 19位分析師",
+        "target": 16.21053,
+        "earnings": "2026-08-11",
+        "summary": "Venture Global, Inc., a liquefied natural gas (LNG) company, engages in the ownership, development, construction, and operation of LNG production facilities and associated infrastructure in the United States, Germany, France, Netherlands, the United Kingdom, and internationally.The company is involved in LNG production, natural gas transportation, and regasification operations, as well as LNG sales and shipping business through LNG tankers. Its LNG projects include Calcasieu, Plaquemines, and CP2 projects. The company was founded in 2013 and is headquartered in Arlington, Virginia. Venture Glo",
+        "news": [
+          {
+            "title": "Is Venture Global (VG) Cheap As Legal Scrutiny Meets Its LNG Growth Story?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/venture-global-vg-cheap-legal-140805921.html",
+            "date": "2026-07-18",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Is Venture Global’s (VG) Fiduciary Probe Quietly Reframing Its Management Credibility Narrative?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/venture-global-vg-fiduciary-probe-130822211.html",
+            "date": "2026-07-18",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Venture Global (VG) Stock Looks About Right On Fresh LNG Contract News",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/venture-global-vg-stock-looks-121157753.html",
+            "date": "2026-07-18",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Will ExxonMobil's Expanding LNG Portfolio Drive Long-Term Growth?",
+            "link": "https://finance.yahoo.com/energy/articles/exxonmobils-expanding-lng-portfolio-drive-154700666.html",
+            "date": "2026-07-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Top Analyst Reports for NVIDIA, Oracle & Analog Device",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/top-analyst-reports-nvidia-oracle-202800143.html",
+            "date": "2026-07-15",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 97分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.2x、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.EQNR",
+        "name": "Equinor ASA",
+        "sector": "Energy",
+        "close": 37.369998931884766,
+        "score": 87,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.14,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 88827789312,
+        "pe": 16.909502,
+        "rating": "hold · 6位分析師",
+        "target": 33.8,
+        "earnings": "2026-07-22",
+        "summary": "Equinor ASA operates as an energy company in Norway and internationally. It operates through Exploration & Production Norway; Exploration & Production International; Exploration & Production USA; Marketing, Midstream & Processing; and Renewables segments. The company engages in the discovery and appraisal of new resources, as well as commercial development and operation of the oil and gas portfolios; oil and gas field development, well deliveries, and sourcing; research, technology development, specialist advisory services, digitalization, IT, improvement, innovation, and ventures and future b",
+        "news": [
+          {
+            "title": "Vista Energy SAB de CV (VIST) Q2 2026 Earnings Call Highlights: Record Revenue and Production Surge",
+            "link": "https://finance.yahoo.com/energy/articles/vista-energy-sab-cv-vist-210021575.html",
+            "date": "2026-07-17",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "European Equities Traded in the US as American Depositary Receipts Decline Friday",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/european-equities-traded-us-american-145757113.html",
+            "date": "2026-07-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "TechnipFMC (FTI) Stock Looks Reasonable With Cash Flow Support",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/technipfmc-fti-stock-looks-reasonable-141122038.html",
+            "date": "2026-07-17",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Vista Energy Q2 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/vista-energy-q2-earnings-call-highlights-2026-07-17/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-07-17",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "TechnipFMC (FTI) Lands New Equinor And Eni Subsea Contracts Offshore Norway And Côte d’Ivoire",
+            "link": "https://finance.yahoo.com/energy/articles/technipfmc-fti-lands-equinor-eni-201314133.html",
+            "date": "2026-07-16",
+            "publisher": "Simply Wall St."
+          }
+        ],
+        "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、放量 1.14x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.TDW",
+        "name": "Tidewater Inc.",
+        "sector": "Energy",
+        "close": 75.81999969482422,
+        "score": 87,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.69,
+        "mcdxx": 4,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 3770577920,
+        "pe": 12.785835,
+        "rating": "hold · 7位分析師",
+        "target": 86.57143,
+        "earnings": "2026-08-04（估）",
+        "summary": "Tidewater Inc., together with its subsidiaries, provides offshore support vessels and marine support services to the offshore energy industry through the operation of a fleet of offshore marine service vessels worldwide. The company operates through five segments: Americas, Asia Pacific, Middle East, Europe/Mediterranean, and West Africa. It offers phases of offshore crude oil and natural gas exploration, field development, production, maintenance, and windfarm development and maintenance activities; towing and anchor handling for mobile offshore drilling units; transportation of supplies and ",
+        "news": [
+          {
+            "title": "2 Small-Cap Stocks Worth Investigating and 1 Facing Headwinds",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/2-small-cap-stocks-worth-143039212.html",
+            "date": "2026-07-13",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Tidewater (TDW): Constructive Long-term Fundamentals Outweigh Short-Term Concerns",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tidewater-tdw-constructive-long-term-141256992.html",
+            "date": "2026-07-10",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "APA Corporation, Tidewater, and Tenaris Stocks Trade Down, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/apa-corporation-tidewater-tenaris-stocks-203942748.html",
+            "date": "2026-07-09",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Tidewater, Magnolia Oil & Gas, and Cactus Shares Are Soaring, What You Need To Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tidewater-magnolia-oil-gas-cactus-235352857.html",
+            "date": "2026-07-07",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Third Avenue Value Fund's Strategic Moves: Harley-Davidson Inc. Takes Center Stage",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/third-avenue-value-funds-strategic-180034446.html",
+            "date": "2026-06-25",
+            "publisher": "GuruFocus.com"
+          }
+        ],
+        "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.CF",
+        "name": "CF Industries Holdings, Inc.",
+        "sector": "Basic Materials",
+        "close": 121.41999816894531,
+        "score": 83,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 0,
+        "vol_ratio": 0.93,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 15,
+        "sy_pattern": true,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 18653667328,
+        "pe": 10.938738,
+        "rating": "hold · 19位分析師",
+        "target": 125.19579,
+        "earnings": "2026-08-06",
+        "summary": "CF Industries Holdings, Inc., together with its subsidiaries, engages in the production of ammonia in North America, Europe, and internationally. It operates through Ammonia, Granular Urea, UAN, AN, and Other segments. The company offers ammonia products; nitrogen products, such as granular urea, urea ammonium nitrate solution, and ammonium nitrate; diesel exhaust fluid, urea liquor, and nitric acid products. It serves cooperatives, retailers, independent fertilizer distributors, traders, wholesalers, and industrial users. The company was founded in 1946 and is headquartered in Northbrook, Ill",
+        "news": [
+          {
+            "title": "CF Industries Boosts Shareholder Returns With 20% Dividend Hike",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/cf-industries-boosts-shareholder-returns-120100462.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Hartford and Amdocs Join the Perfect 10 Portfolio",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/hartford-amdocs-join-perfect-10-104523151.html",
+            "date": "2026-07-14",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "Zacks Industry Outlook Nutrien, CF Industries and Yara International",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-industry-outlook-nutrien-cf-072800115.html",
+            "date": "2026-07-14",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "CF Industries Just Raised Its Dividend by 20% While Its Stock Has Surged 55% in 2026",
+            "link": "https://www.barchart.com/story/news/3258989/cf-industries-just-raised-its-dividend-by-20-while-its-stock-has-surged-55-in-2026",
+            "date": "2026-07-13",
+            "publisher": "Barchart"
+          },
+          {
+            "title": "3 Fertilizer Stocks to Keep an Eye on in a Challenging Industry",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/3-fertilizer-stocks-keep-eye-124000365.html",
+            "date": "2026-07-13",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 83分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+      },
+      {
+        "code": "US.SHEL",
+        "name": "Shell PLC",
+        "sector": "Energy",
+        "close": 87.31999969482422,
+        "score": 80,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.05,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 241837473792,
+        "pe": 13.601246,
+        "rating": "buy · 13位分析師",
+        "target": 94.69231,
+        "earnings": "2026-07-30",
+        "summary": "Shell plc operates as an energy and petrochemical company in Europe, Asia, Oceania, Africa, the United States, and other parts of the Americas. It operates through the following segments: Integrated Gas, Upstream, Marketing, Chemicals and Products, and Renewables and Energy Solutions. The company explores for and extracts natural gas to produce liquefied natural gas or convert it into gas-to-liquids (GTL) fuels and other products; explores for and extracts crude oil, natural gas, and natural gas liquids; and operates marketing and transportation of oil, gas, and liquids, supported by the infra",
+        "news": [
+          {
+            "title": "Shell (SHEL) Ascends While Market Falls: Some Facts to Note",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/shell-shel-ascends-while-market-221503167.html",
+            "date": "2026-07-17",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "European Equities Traded in the US as American Depositary Receipts Decline Friday",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/european-equities-traded-us-american-145757113.html",
+            "date": "2026-07-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Update: US Equity Futures Drop as AI Concerns Weigh on Tech Stocks, Middle East Conflict Continues",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-futures-drop-ai-125222588.html",
+            "date": "2026-07-17",
+            "publisher": "MT Newswires"
+          },
+          {
+            "title": "Shell (LSE:SHEL) Stock Looks Reasonable Even After A 175% Run",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/shell-lse-shel-stock-looks-141421997.html",
+            "date": "2026-07-16",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Shell Expands Caribbean LNG Footprint With Bahamas Terminal",
+            "link": "https://finance.yahoo.com/energy/articles/shell-expands-caribbean-lng-footprint-135900798.html",
+            "date": "2026-07-16",
+            "publisher": "Zacks"
+          }
+        ],
+        "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.05x、MACD 水上（零軸之上）。"
+      }
+    ],
+    "mon": []
+  },
+  "volume_watch": [
+    {
+      "code": "US.FAC",
+      "close": 5.670000076293945,
+      "spike_mult": 16.2,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.XOMA",
+      "close": 40.16999816894531,
+      "spike_mult": 14.3,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.TCBK",
+      "close": 60.52000045776367,
+      "spike_mult": 13.0,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.CLBK",
+      "close": 23.420000076293945,
+      "spike_mult": 12.5,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.ARI",
+      "close": 6.980000019073486,
+      "spike_mult": 11.9,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.OGC",
+      "close": 22.510000228881836,
+      "spike_mult": 11.5,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.ALOY",
+      "close": 8.885000228881836,
+      "spike_mult": 11.4,
+      "spike_date": "2026-07-17"
+    },
+    {
+      "code": "US.ATAI",
+      "close": 7.21999979019165,
+      "spike_mult": 10.1,
+      "spike_date": "2026-07-17"
+    }
+  ],
+  "sectors": [
+    {
+      "code": "XLV",
+      "name": "醫療",
+      "ret": {
+        "d5": 0.2,
+        "m1": 5.8,
+        "m3": 10.4,
+        "m6": 2.9,
+        "y1": 22.1
+      },
+      "rank_m1": 1,
+      "rotate": 1,
+      "vol_ratio": 0.92,
+      "hot": false
+    },
+    {
+      "code": "XLE",
+      "name": "能源",
+      "ret": {
+        "d5": 4.7,
+        "m1": 4.9,
+        "m3": 2.7,
+        "m6": 21.7,
+        "y1": 38.1
+      },
+      "rank_m1": 2,
+      "rotate": 5,
+      "vol_ratio": 0.67,
+      "hot": true
+    },
+    {
+      "code": "XLF",
+      "name": "金融",
+      "ret": {
+        "d5": 1.0,
+        "m1": 3.9,
+        "m3": 8.5,
+        "m6": 4.8,
+        "y1": 9.9
+      },
+      "rank_m1": 3,
+      "rotate": 0,
+      "vol_ratio": 0.78,
+      "hot": false
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": 2.2,
+        "m1": 1.6,
+        "m3": 4.6,
+        "m6": 11.4,
+        "y1": 12.5
+      },
+      "rank_m1": 4,
+      "rotate": 2,
+      "vol_ratio": 0.75,
+      "hot": false
+    },
+    {
+      "code": "XLU",
+      "name": "公用",
+      "ret": {
+        "d5": -0.5,
+        "m1": 0.9,
+        "m3": -1.9,
+        "m6": 6.0,
+        "y1": 13.2
+      },
+      "rank_m1": 5,
+      "rotate": 4,
+      "vol_ratio": 0.84,
+      "hot": true
+    },
+    {
+      "code": "XLP",
+      "name": "必需消費",
+      "ret": {
+        "d5": 1.3,
+        "m1": 0.2,
+        "m3": 5.3,
+        "m6": 4.9,
+        "y1": 9.0
+      },
+      "rank_m1": 6,
+      "rotate": -1,
+      "vol_ratio": 0.74,
+      "hot": false
+    },
+    {
+      "code": "XLI",
+      "name": "工業",
+      "ret": {
+        "d5": -1.4,
+        "m1": 0.0,
+        "m3": 5.6,
+        "m6": 9.8,
+        "y1": 20.8
+      },
+      "rank_m1": 7,
+      "rotate": -3,
+      "vol_ratio": 0.68,
+      "hot": false
+    },
+    {
+      "code": "XLC",
+      "name": "通訊",
+      "ret": {
+        "d5": -0.9,
+        "m1": -1.2,
+        "m3": -6.6,
+        "m6": -4.6,
+        "y1": 5.4
+      },
+      "rank_m1": 8,
+      "rotate": 3,
+      "vol_ratio": 1.1,
+      "hot": false
+    },
+    {
+      "code": "XLY",
+      "name": "非必需消費",
+      "ret": {
+        "d5": -1.5,
+        "m1": -2.4,
+        "m3": -1.7,
+        "m6": -5.2,
+        "y1": 6.0
+      },
+      "rank_m1": 9,
+      "rotate": -1,
+      "vol_ratio": 0.91,
+      "hot": false
+    },
+    {
+      "code": "XLB",
+      "name": "物料",
+      "ret": {
+        "d5": -0.7,
+        "m1": -3.8,
+        "m3": -2.0,
+        "m6": 4.5,
+        "y1": 15.1
+      },
+      "rank_m1": 10,
+      "rotate": 0,
+      "vol_ratio": 0.79,
+      "hot": false
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": -5.5,
+        "m1": -5.7,
+        "m3": 15.6,
+        "m6": 21.6,
+        "y1": 36.5
+      },
+      "rank_m1": 11,
+      "rotate": -10,
+      "vol_ratio": 0.7,
+      "hot": false
+    }
+  ],
+  "sector_ai": "近一個月最強板塊：醫療（+5.8%）。 資金正流入：能源、房地產、公用（動量加速）。 資金轉弱：工業、科技。 🔥 特別留意 能源、公用，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。",
+  "tqqq_watch": {
+    "status": {
+      "week_end": "2026-07-17",
+      "color": "red",
+      "close": 67.53,
+      "high52": 87.89,
+      "drawdown": 23.2,
+      "is_yellow": false,
+      "turned_yellow": false,
+      "trig_yellow": false,
+      "trig_drawdown": false
+    },
+    "triggers": []
+  },
+  "cycle_bottom": {
+    "stocks": {
+      "candidates": [
+        {
+          "month": "2026-07",
+          "close": 32.73,
+          "high24": 59.9,
+          "trough": 24.78,
+          "drawdown": 58.6,
+          "red_count": 11,
+          "code": "US.NGVC",
+          "kind": "stock",
+          "name": "Natural Grocers by Vitamin Cottage, Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 54.86,
+          "high24": 112.82,
+          "trough": 47.3,
+          "drawdown": 58.1,
+          "red_count": 11,
+          "code": "US.QTWO",
+          "kind": "stock",
+          "name": "Q2 Holdings, Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 1257.11,
+          "high24": 2402.52,
+          "trough": 1025.0,
+          "drawdown": 57.3,
+          "red_count": 12,
+          "code": "US.FICO",
+          "kind": "stock",
+          "name": "Fair Isaac Corporation",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 25.94,
+          "high24": 36.2,
+          "trough": 16.68,
+          "drawdown": 53.9,
+          "red_count": 10,
+          "code": "US.CLMB",
+          "kind": "stock",
+          "name": "Climb Global Solutions, Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 13.22,
+          "high24": 20.25,
+          "trough": 9.51,
+          "drawdown": 53.0,
+          "red_count": 9,
+          "code": "US.AVPT",
+          "kind": "stock",
+          "name": "AvePoint, Inc.",
+          "sector": "Technology"
+        },
+        {
+          "month": "2026-07",
+          "close": 46.65,
+          "high24": 59.23,
+          "trough": 31.76,
+          "drawdown": 46.4,
+          "red_count": 5,
+          "code": "US.HROW",
+          "kind": "stock",
+          "name": "Harrow, Inc.",
+          "sector": "Healthcare"
+        },
+        {
+          "month": "2026-07",
+          "close": 17.4,
+          "high24": 25.05,
+          "trough": 14.53,
+          "drawdown": 42.0,
+          "red_count": 5,
+          "code": "US.BEKE",
+          "kind": "stock",
+          "name": "KE Holdings Inc",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 29.78,
+          "high24": 40.43,
+          "trough": 23.49,
+          "drawdown": 41.9,
+          "red_count": 8,
+          "code": "US.PAY",
+          "kind": "stock",
+          "name": "Paymentus Holdings, Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 97.23,
+          "high24": 135.57,
+          "trough": 82.12,
+          "drawdown": 39.4,
+          "red_count": 10,
+          "code": "US.SKYW",
+          "kind": "stock",
+          "name": "SkyWest, Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 135.44,
+          "high24": 175.85,
+          "trough": 107.04,
+          "drawdown": 39.1,
+          "red_count": 9,
+          "code": "US.PLMR",
+          "kind": "stock",
+          "name": "Palomar Holdings, Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 79.85,
+          "high24": 112.06,
+          "trough": 69.07,
+          "drawdown": 38.4,
+          "red_count": 12,
+          "code": "US.TRU",
+          "kind": "stock",
+          "name": "TransUnion",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 152.69,
+          "high24": 194.01,
+          "trough": 120.17,
+          "drawdown": 38.1,
+          "red_count": 8,
+          "code": "US.FRHC",
+          "kind": "stock",
+          "name": "Freedom Holding Corp.",
+          "sector": ""
+        },
+        {
+          "month": "2026-07",
+          "close": 13.93,
+          "high24": 18.45,
+          "trough": 11.78,
+          "drawdown": 36.1,
+          "red_count": 10,
+          "code": "US.DNOW",
+          "kind": "stock",
+          "name": "DNOW Inc.",
+          "sector": "Industrials"
+        },
+        {
+          "month": "2026-07",
+          "close": 376.83,
+          "high24": 513.18,
+          "trough": 329.37,
+          "drawdown": 35.8,
+          "red_count": 11,
+          "code": "US.RACE",
+          "kind": "stock",
+          "name": "Ferrari N.V.",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-07",
+          "close": 68.4,
+          "high24": 81.65,
+          "trough": 52.49,
+          "drawdown": 35.7,
+          "red_count": 6,
+          "code": "US.TBBK",
+          "kind": "stock",
+          "name": "The Bancorp, Inc.",
+          "sector": ""
+        }
+      ],
+      "confirmed": [
+        {
+          "month": "2026-06",
+          "close": 17.92,
+          "high24": 27.13,
+          "trough": 16.86,
+          "drawdown": 37.8,
+          "red_count": 11,
+          "code": "US.TIPT",
+          "kind": "stock",
+          "name": "Tiptree Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-06",
+          "close": 12.45,
+          "high24": 19.5,
+          "trough": 10.14,
+          "drawdown": 48.0,
+          "red_count": 8,
+          "code": "US.TBCH",
+          "kind": "stock",
+          "name": "Turtle Beach Corporation",
+          "sector": "Technology"
+        },
+        {
+          "month": "2026-06",
+          "close": 9.66,
+          "high24": 19.49,
+          "trough": 4.95,
+          "drawdown": 74.6,
+          "red_count": 9,
+          "code": "US.SUPV",
+          "kind": "stock",
+          "name": "Grupo Supervielle S.A.",
+          "sector": "Financial Services"
+        },
+        {
+          "month": "2026-06",
+          "close": 78.79,
+          "high24": 100.59,
+          "trough": 57.58,
+          "drawdown": 42.8,
+          "red_count": 5,
+          "code": "US.P",
+          "kind": "stock",
+          "name": "Everpure, Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-06",
+          "close": 50.96,
+          "high24": 83.36,
+          "trough": 38.01,
+          "drawdown": 54.4,
+          "red_count": 10,
+          "code": "US.NTNX",
+          "kind": "stock",
+          "name": "Nutanix, Inc.",
+          "sector": "Technology"
+        },
+        {
+          "month": "2026-06",
+          "close": 53.29,
+          "high24": 123.0,
+          "trough": 37.29,
+          "drawdown": 69.7,
+          "red_count": 12,
+          "code": "US.MMYT",
+          "kind": "stock",
+          "name": "MakeMyTrip Limited",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-06",
+          "close": 121.33,
+          "high24": 164.29,
+          "trough": 98.46,
+          "drawdown": 40.1,
+          "red_count": 7,
+          "code": "US.MHK",
+          "kind": "stock",
+          "name": "Mohawk Industries, Inc.",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-06",
+          "close": 18.98,
+          "high24": 26.65,
+          "trough": 11.88,
+          "drawdown": 55.4,
+          "red_count": 6,
+          "code": "US.MGNI",
+          "kind": "stock",
+          "name": "Magnite, Inc.",
+          "sector": "Communication Services"
+        },
+        {
+          "month": "2026-06",
+          "close": 29.84,
+          "high24": 34.2,
+          "trough": 19.34,
+          "drawdown": 43.5,
+          "red_count": 8,
+          "code": "US.LWAY",
+          "kind": "stock",
+          "name": "Lifeway Foods, Inc.",
+          "sector": "Consumer Defensive"
+        },
+        {
+          "month": "2026-06",
+          "close": 78.66,
+          "high24": 120.42,
+          "trough": 71.88,
+          "drawdown": 40.3,
+          "red_count": 12,
+          "code": "US.LPX",
+          "kind": "stock",
+          "name": "Louisiana-Pacific Corporation",
+          "sector": ""
+        },
+        {
+          "month": "2026-06",
+          "close": 62.59,
+          "high24": 87.13,
+          "trough": 48.86,
+          "drawdown": 43.9,
+          "red_count": 6,
+          "code": "US.KBH",
+          "kind": "stock",
+          "name": "KB Home",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-06",
+          "close": 38.1,
+          "high24": 56.58,
+          "trough": 29.97,
+          "drawdown": 47.0,
+          "red_count": 12,
+          "code": "US.IP",
+          "kind": "stock",
+          "name": "International Paper Company",
+          "sector": ""
+        },
+        {
+          "month": "2026-06",
+          "close": 40.41,
+          "high24": 55.59,
+          "trough": 31.19,
+          "drawdown": 43.9,
+          "red_count": 9,
+          "code": "US.HNI",
+          "kind": "stock",
+          "name": "HNI Corporation",
+          "sector": ""
+        },
+        {
+          "month": "2026-06",
+          "close": 34.67,
+          "high24": 72.98,
+          "trough": 14.52,
+          "drawdown": 80.1,
+          "red_count": 6,
+          "code": "US.HIMS",
+          "kind": "stock",
+          "name": "Hims & Hers Health, Inc.",
+          "sector": "Healthcare"
+        },
+        {
+          "month": "2026-06",
+          "close": 24.06,
+          "high24": 43.08,
+          "trough": 11.9,
+          "drawdown": 72.4,
+          "red_count": 5,
+          "code": "US.GRPN",
+          "kind": "stock",
+          "name": "Groupon, Inc.",
+          "sector": "Communication Services"
+        },
+        {
+          "month": "2026-06",
+          "close": 14.37,
+          "high24": 25.13,
+          "trough": 11.32,
+          "drawdown": 55.0,
+          "red_count": 9,
+          "code": "US.GRND",
+          "kind": "stock",
+          "name": "Grindr Inc.",
+          "sector": "Technology"
+        },
+        {
+          "month": "2026-06",
+          "close": 23.79,
+          "high24": 30.03,
+          "trough": 14.42,
+          "drawdown": 52.0,
+          "red_count": 6,
+          "code": "US.EVER",
+          "kind": "stock",
+          "name": "EverQuote, Inc.",
+          "sector": "Communication Services"
+        },
+        {
+          "month": "2026-06",
+          "close": 168.0,
+          "high24": 192.22,
+          "trough": 108.66,
+          "drawdown": 43.5,
+          "red_count": 8,
+          "code": "US.EAT",
+          "kind": "stock",
+          "name": "Brinker International, Inc.",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-06",
+          "close": 136.45,
+          "high24": 166.89,
+          "trough": 104.36,
+          "drawdown": 37.5,
+          "red_count": 6,
+          "code": "US.DORM",
+          "kind": "stock",
+          "name": "Dorman Products, Inc.",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-06",
+          "close": 124.66,
+          "high24": 156.26,
+          "trough": 92.56,
+          "drawdown": 40.8,
+          "red_count": 7,
+          "code": "US.CVSA",
+          "kind": "stock",
+          "name": "Covista Inc.",
+          "sector": "Consumer Defensive"
+        },
+        {
+          "month": "2026-06",
+          "close": 141.73,
+          "high24": 200.68,
+          "trough": 77.89,
+          "drawdown": 61.2,
+          "red_count": 8,
+          "code": "US.CVLT",
+          "kind": "stock",
+          "name": "Commvault Systems, Inc.",
+          "sector": "Technology"
+        },
+        {
+          "month": "2026-06",
+          "close": 614.38,
+          "high24": 713.01,
+          "trough": 403.67,
+          "drawdown": 43.4,
+          "red_count": 6,
+          "code": "US.CVCO",
+          "kind": "stock",
+          "name": "Cavco Industries, Inc.",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-06",
+          "close": 17.84,
+          "high24": 30.1,
+          "trough": 9.1,
+          "drawdown": 69.8,
+          "red_count": 5,
+          "code": "US.CLPT",
+          "kind": "stock",
+          "name": "ClearPoint Neuro Inc.",
+          "sector": "Healthcare"
+        },
+        {
+          "month": "2026-06",
+          "close": 66.31,
+          "high24": 82.7,
+          "trough": 51.36,
+          "drawdown": 37.9,
+          "red_count": 6,
+          "code": "US.BXP",
+          "kind": "stock",
+          "name": "BXP, Inc.",
+          "sector": "Real Estate"
+        },
+        {
+          "month": "2026-06",
+          "close": 14.17,
+          "high24": 18.89,
+          "trough": 11.79,
+          "drawdown": 37.6,
+          "red_count": 9,
+          "code": "US.BV",
+          "kind": "stock",
+          "name": "BrightView Holdings, Inc.",
+          "sector": "Industrials"
+        },
+        {
+          "month": "2026-06",
+          "close": 71.81,
+          "high24": 86.88,
+          "trough": 50.66,
+          "drawdown": 41.7,
+          "red_count": 7,
+          "code": "US.BROS",
+          "kind": "stock",
+          "name": "Dutch Bros Inc.",
+          "sector": "Consumer Cyclical"
+        },
+        {
+          "month": "2026-06",
+          "close": 35.52,
+          "high24": 49.26,
+          "trough": 27.62,
+          "drawdown": 43.9,
+          "red_count": 8,
+          "code": "US.BBSI",
+          "kind": "stock",
+          "name": "Barrett Business Services, Inc.",
+          "sector": "Industrials"
+        },
+        {
+          "month": "2026-06",
+          "close": 90.01,
+          "high24": 186.45,
+          "trough": 72.55,
+          "drawdown": 61.1,
+          "red_count": 6,
+          "code": "US.ANF",
+          "kind": "stock",
+          "name": "Abercrombie & Fitch Company",
+          "sector": ""
+        },
+        {
+          "month": "2026-06",
+          "close": 104.5,
+          "high24": 145.25,
+          "trough": 64.06,
+          "drawdown": 55.9,
+          "red_count": 5,
+          "code": "US.AGYS",
+          "kind": "stock",
+          "name": "Agilysys, Inc.",
+          "sector": "Technology"
+        }
+      ]
+    },
+    "etf": {
+      "candidates": [],
+      "confirmed": []
+    }
+  }
+}
