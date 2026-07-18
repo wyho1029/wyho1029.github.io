@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👀</text></svg>">
+<title>大V觀點追蹤</title>
+<style>
+:root{
+  --bg:#F5F2EA; --card:#FFFFFF; --ink:#22211D; --muted:#8A867A;
+  --green:#1F4A38; --green-soft:#E7EFE7;
+  --bull:#1E7B4F; --bear:#B3372B; --neu:#8A7B3C;
+  --line:#E3DFD2; --chip:#F0EDE3;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;
+  font-family:'Consolas','Menlo',monospace;font-size:14px}
+h1,.serif{font-family:Georgia,'Times New Roman',serif}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);padding:14px 16px}
+.pill{display:inline-block;border-radius:4px;padding:2px 10px}
+.pill.dark{background:var(--green);color:#fff}
+.pill.soft{background:var(--green-soft);color:var(--green)}
+.badge-bull{color:var(--bull);background:var(--green-soft)}
+.badge-bear{color:#fff;background:var(--bear)}
+.badge-neu{color:var(--neu);background:#F0EDE3}
+.pct-pos{color:var(--bull);font-weight:bold}
+.pct-neg{color:var(--bear);font-weight:bold}
+.trend{font-weight:bold}
+.sect{color:var(--muted);margin:22px 0 10px;font-size:13px}
+
+.wrap{max-width:1200px;margin:0 auto;padding:24px 24px 60px}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+hr{border:none;border-top:1px solid var(--line);margin:14px 0 4px}
+
+.head-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
+.head-row h1{display:flex;align-items:center;gap:10px;font-size:28px;margin:0}
+.head-right{text-align:right}
+.head-right .pill.soft{margin-bottom:4px}
+
+.tabbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin:18px 0}
+.tab-buttons{display:flex;gap:6px}
+.tab-btn{font-family:inherit;font-size:13px;padding:6px 16px;border-radius:6px;
+  border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer}
+.tab-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.author-chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:4px;
+  padding:3px 10px;font-size:12px;cursor:pointer;color:var(--ink)}
+.chip.active{background:var(--green);color:#fff;border-color:var(--green)}
+
+.badge{display:inline-block;border-radius:4px;padding:2px 10px;font-size:12px;white-space:nowrap}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.stock-card .r1{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.ticker{font-weight:700;font-size:16px}
+.r2{margin-bottom:6px}
+.big-num{font-size:26px;font-weight:700;margin:0 2px}
+.r3{margin-bottom:6px;color:var(--muted)}
+.num-bull{color:var(--bull)}
+.num-bear{color:var(--bear)}
+.num-neu{color:var(--neu)}
+.r4{margin-bottom:6px}
+.r5{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.r5 a,.bearish-row a{color:var(--green);text-decoration:none;font-weight:600}
+
+.bearish-row{display:flex;align-items:center;gap:14px;padding:10px 16px;margin-bottom:8px}
+.bearish-row .ticker{min-width:70px}
+.bearish-row a{margin-left:auto}
+
+#other-list{display:flex;flex-wrap:wrap;gap:8px}
+#other-list .chip{padding:4px 12px}
+
+.overlay{display:none;position:fixed;inset:0;background:rgba(34,33,29,.45);z-index:20;
+  align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto}
+.overlay-card{max-width:720px;width:100%;position:relative}
+.overlay-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.overlay-head h2{margin:0;font-size:24px}
+.overlay-close{margin-left:auto;background:none;border:none;font-size:18px;cursor:pointer;color:var(--muted)}
+#d-canvas{width:100%;height:140px;display:block;margin-bottom:6px}
+#d-spark-labels{margin-bottom:14px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+td a{color:var(--green)}
+
+.qa-card{display:flex;flex-direction:column;gap:8px}
+.qa-card input{font-family:inherit;font-size:13px;padding:8px 10px;border:1px solid var(--line);
+  border-radius:6px;background:var(--bg);color:var(--ink)}
+.qa-card button{align-self:flex-start;font-family:inherit;font-size:13px;padding:7px 18px;
+  border-radius:6px;border:none;background:var(--green);color:#fff;cursor:pointer}
+.qa-out{white-space:pre-wrap;margin-top:4px;font-size:13px;line-height:1.6;min-height:1em}
+.qa-out.err{color:var(--bear)}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);
+  font-size:12px;text-align:center}
+.err{color:var(--bear)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="head-row">
+      <div class="head-left">
+        <h1 class="serif">大V觀點追蹤 <span class="pill dark" id="date-pill">載入中…</span></h1>
+      </div>
+      <div class="head-right">
+        <div class="pill soft" id="count-pill">— names · — mentions</div>
+        <div class="muted small" id="updated-line">Updated —</div>
+        <button class="tab-btn" id="btn-update">🔄 更新</button>
+      </div>
+    </div>
+    <hr>
+  </header>
+
+  <div class="tabbar">
+    <div class="tab-buttons" id="tab-buttons"></div>
+    <div class="author-chips" id="author-chips"></div>
+  </div>
+
+  <div class="sect">▼ Most-discussed</div>
+  <div class="grid" id="most-discussed"><p class="muted">載入中…</p></div>
+
+  <div class="sect">▼ Bearish / stance shift</div>
+  <div id="bearish-list"><p class="muted">載入中…</p></div>
+
+  <div class="sect">▼ Other mentions</div>
+  <div id="other-list"><p class="muted">載入中…</p></div>
+
+  <div class="sect">▼ 主題熱度</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>主題</th><th>提及</th><th>股票</th></tr></thead>
+      <tbody id="theme-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="sect">▼ 分類抽查（幫 AI 打分，累積可信度）</div>
+  <div class="card">
+    <div class="muted small" id="audit-acc"></div>
+    <div style="display:flex;gap:6px;align-items:center;margin:6px 0">
+      <button class="tab-btn" id="btn-audit">抽 10 條核對</button>
+      <input id="pin-input" placeholder="PIN" type="password" style="width:80px">
+      <span class="muted small">（寫入功能用，同詳情頁筆記共用）</span>
+    </div>
+    <div id="audit-list"></div>
+  </div>
+
+  <div class="sect">▼ 大V成績表（勝＝call 後跑贏同期 SPY；bearish call 反向計；⚠＝樣本少過 20 唔好當真）</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>大V</th><th>Calls</th><th>7日勝率</th><th>30日勝率</th><th>30日平均超額</th><th>最勁一 call</th></tr></thead>
+      <tbody id="kol-stats-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="sect">▼ 跟單模擬（每個 bullish call 買一注、揸 30 日；虛線＝同法買 SPY）</div>
+  <div class="card">
+    <canvas id="pl-canvas" width="1100" height="220"></canvas>
+    <div class="muted small" id="pl-legend"></div>
+  </div>
+
+  <div class="sect">▼ AI 問答</div>
+  <div class="card qa-card">
+    <input id="qa-ticker" placeholder="股票代號，例如 NVDA">
+    <input id="qa-q" placeholder="問題（預設：總結呢隻股嘅觀點）">
+    <button onclick="ask()">問</button>
+    <div id="qa-out" class="qa-out"></div>
+  </div>
+
+  <footer>資訊整理，非投資建議 · 立場標籤由 AI 推斷，可能有錯，請以原帖為準</footer>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="card overlay-card">
+    <div class="overlay-head">
+      <h2 class="serif" id="d-ticker"></h2>
+      <span id="d-badge"></span>
+      <span id="d-yellow"></span>
+      <button class="overlay-close" id="overlay-close">✕</button>
+    </div>
+    <canvas id="d-canvas" width="640" height="140"></canvas>
+    <div class="muted small" id="d-spark-labels"></div>
+    <table>
+      <thead><tr><th>日期</th><th>大V</th><th>立場</th><th>摘要</th><th>+7日</th><th>+30日</th><th></th></tr></thead>
+      <tbody id="d-tbody"></tbody>
+    </table>
+    <div class="sect">▼ 我嘅記錄</div>
+    <div id="d-notes" class="small"></div>
+    <div style="display:flex;gap:6px;margin-top:8px">
+      <input id="note-text" placeholder="寫低你嘅決策／觀察（例：等回調到 $40 先入）" style="flex:1">
+      <input id="note-pin" placeholder="PIN" type="password" style="width:70px">
+      <button class="tab-btn" id="btn-note">存</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var DATA = null, PRICES = {}, NOTES = {}, RATINGS = {}, WIN = 'daily', AUTHOR = '';
+var WINDOWS = { daily: 1, weekly: 7, monthly: 28 };
+var CARD_LIMIT = 6;
+
+// 數據係 GitHub Pages 靜態檔；互動功能（PIN 筆記／抽查／AI問答／更新掣）
+// 行 Apps Script API（secrets 同 Drive 讀寫必須留喺 server）
+var API_URL = 'https://script.google.com/macros/s/AKfycbyxmnzES_-EggMGzbE_jsplGw7u0ylW9PZ2FdCs7YiGpAwv-SesGrqlMPPqFeuZjn00dw/exec';
+
+function api(params, cb) {
+  // 一律用 GET + query string（避開 CORS preflight）；cb 一定收到 object，
+  // 網絡死咗都會收 {error}——同以前 google.script.run 兩個 handler 合併咗
+  var qs = Object.keys(params).map(function (k) {
+    return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+  }).join('&');
+  fetch(API_URL + '?' + qs)
+    .then(function (r) { return r.json(); })
+    .then(cb)
+    .catch(function (e) { cb({ error: '連線失敗：' + e }); });
+}
+
+function fetchData(name, cb) {
+  // ?t= 破 GitHub Pages CDN cache（預設 10 分鐘）——撳完更新想即刻見到新數據
+  fetch('data/' + name + '?t=' + Date.now())
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(cb)
+    .catch(function (e) { cb({ error: '載入失敗：' + e }); });
+}
+
+fetchData('kol_latest.json', function (d) { DATA = d; render(); });
+fetchData('prices.json', function (d) { if (d && !d.error) PRICES = d; });
+var PRIVATE_LOADED = false;
+
+function loadPrivate() {
+  // 私人數據（筆記／評分）要 PIN 先攞到；有記住嘅 PIN 就自動載入
+  var pin = localStorage.getItem('kolpin');
+  if (!pin || PRIVATE_LOADED) return;
+  api({ api: 'private', pin: pin, name: 'notes.json' }, function (r) {
+    if (r && r.ok) { NOTES = r.data; PRIVATE_LOADED = true;
+      if (DETAIL_TICKER) renderNotes(DETAIL_TICKER); }
+  });
+  api({ api: 'private', pin: pin, name: 'ratings.json' }, function (r) {
+    if (r && r.ok) { RATINGS = r.data; updateAuditAcc(); }
+  });
+}
+
+function getPin(inputId) {
+  // 優先用輸入框嘅值，冇就用上次記住嘅；成功寫入先由 server 確認，錯會清返
+  var el = document.getElementById(inputId);
+  var p = (el && el.value.trim()) || localStorage.getItem('kolpin') || '';
+  if (!p) {
+    alert('請先喺 PIN 框輸入你設嘅 NOTE_PIN');
+    if (el) el.focus();
+    return '';
+  }
+  localStorage.setItem('kolpin', p);
+  return p;
+}
+
+function fillPins() {
+  var saved = localStorage.getItem('kolpin') || '';
+  ['pin-input', 'note-pin'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el && !el.value) el.value = saved;
+  });
+  loadPrivate();
+  updateAuditAcc();
+}
+document.addEventListener('DOMContentLoaded', fillPins);
+
+// 時段窗口：以 updated_at 當日為基準倒數 N 日（含當日）
+function inWindow(m) {
+  var end = DATA.updated_at.slice(0, 10);
+  var start = new Date(new Date(end) - (WINDOWS[WIN] - 1) * 864e5)
+      .toISOString().slice(0, 10);
+  return m.date >= start && m.date <= end &&
+         (!AUTHOR || m.author === AUTHOR);
+}
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+function windowLabel() {
+  return WIN === 'daily' ? 'today' : WIN === 'weekly' ? 'this week' : 'this month';
+}
+
+function stanceMeta(stance) {
+  if (stance === 'bullish') return ['▲', 'Bullish', 'badge-bull', 'var(--bull)'];
+  if (stance === 'bearish') return ['▼', 'Bearish', 'badge-bear', 'var(--bear)'];
+  return ['●', 'Neutral', 'badge-neu', 'var(--neu)'];
+}
+
+function stanceBadgeHtml(stance, label) {
+  var m = stanceMeta(stance);
+  return '<span class="badge ' + m[2] + '">' + m[0] + ' ' + m[1] +
+    (label ? (' · ' + label) : '') + '</span>';
+}
+
+function countInDays(mentions, days) {
+  var end = DATA.updated_at.slice(0, 10);
+  var start = new Date(new Date(end) - (days - 1) * 864e5).toISOString().slice(0, 10);
+  return countInRange(mentions, start, end);
+}
+
+function countInRange(mentions, start, end) {
+  var n = 0;
+  for (var i = 0; i < mentions.length; i++) {
+    var m = mentions[i];
+    if (m.date >= start && m.date <= end && (!AUTHOR || m.author === AUTHOR)) n++;
+  }
+  return n;
+}
+
+// 上一個同長度時段嘅計數（趨勢箭嘴用）
+function prevWindowCount(mentions) {
+  var n = WINDOWS[WIN];
+  var end = new Date(DATA.updated_at.slice(0, 10));
+  var prevEnd = new Date(end - n * 864e5).toISOString().slice(0, 10);
+  var prevStart = new Date(end - (2 * n - 1) * 864e5).toISOString().slice(0, 10);
+  return countInRange(mentions, prevStart, prevEnd);
+}
+
+function trendHtml(cur, prev) {
+  if (cur > prev) return ' <span class="trend" style="color:var(--bull)">↑</span>';
+  if (cur < prev) return ' <span class="trend" style="color:var(--bear)">↓</span>';
+  return ' <span class="trend muted">→</span>';
+}
+
+function pctHtml(v, prefix) {
+  if (v == null) return '<span class="muted">—</span>';
+  var cls = v >= 0 ? 'pct-pos' : 'pct-neg';
+  return '<span class="' + cls + '">' + (prefix || '') + (v >= 0 ? '+' : '') + v + '%</span>';
+}
+
+function yellowParts(yellow) {
+  if (!yellow) return [];
+  var parts = [];
+  ['day', 'week', 'mon'].forEach(function (k) {
+    if (yellow[k] != null) parts.push(k + ': ' + yellow[k]);
+  });
+  return parts;
+}
+
+// render()：對每隻股 filter mentions → 冇就跳過；
+// 統計 bull/bear/neu、7d/28d 計數（同樣用日期窗口，唔理 author 以外 filter）；
+// 卡片按時段 mention 數降序；最新 stance = 窗口內最後一條 mention 嘅 stance。
+function render() {
+  if (!DATA || DATA.error) {
+    var msg = esc(DATA && DATA.error || '載入中…');
+    document.getElementById('most-discussed').innerHTML = '<p class="err">' + msg + '</p>';
+    document.getElementById('bearish-list').innerHTML = '';
+    document.getElementById('other-list').innerHTML = '';
+    return;
+  }
+  renderTabs();
+
+  var stats = [];
+  var tickers = Object.keys(DATA.stocks);
+  for (var i = 0; i < tickers.length; i++) {
+    var tkr = tickers[i];
+    var s = DATA.stocks[tkr];
+    var all = s.mentions || [];
+    if (!all.length) continue;
+    var wm = all.filter(inWindow);
+    if (!wm.length) continue;
+    var bull = 0, bear = 0, neu = 0;
+    for (var j = 0; j < wm.length; j++) {
+      if (wm[j].stance === 'bullish') bull++;
+      else if (wm[j].stance === 'bearish') bear++;
+      else neu++;
+    }
+    var firstMention = all[0].date;
+    for (var k = 1; k < all.length; k++) {
+      if (all[k].date < firstMention) firstMention = all[k].date;
+    }
+    var authors = {};
+    for (var q = 0; q < wm.length; q++) authors[wm[q].author] = 1;
+    stats.push({
+      ticker: tkr, count: wm.length, bull: bull, bear: bear, neu: neu,
+      latestStance: wm[wm.length - 1].stance,
+      firstMention: firstMention,
+      d7: countInDays(all, 7), d28: countInDays(all, 28),
+      yellow: s.yellow,
+      gain: s.gain != null ? s.gain : null,
+      nAuthors: Object.keys(authors).length,
+      prev: prevWindowCount(all),
+      earnings: s.earnings || null,
+      theme: s.theme || null
+    });
+  }
+  stats.sort(function (a, b) { return b.count - a.count || a.ticker.localeCompare(b.ticker); });
+
+  renderHeader(stats);
+  renderMostDiscussed(stats.slice(0, CARD_LIMIT));
+  renderBearish(stats);
+  renderOther(stats.slice(CARD_LIMIT));
+  renderThemes(stats);
+  renderKolStats();
+}
+
+function renderHeader(stats) {
+  var end = DATA.updated_at.slice(0, 10);
+  var dateLabel = end;
+  if (WIN !== 'daily') {
+    var start = new Date(new Date(end) - (WINDOWS[WIN] - 1) * 864e5).toISOString().slice(0, 10);
+    dateLabel = start + ' ~ ' + end;
+  }
+  document.getElementById('date-pill').textContent = dateLabel;
+  var names = stats.length;
+  var mentions = stats.reduce(function (a, s) { return a + s.count; }, 0);
+  document.getElementById('count-pill').textContent = names + ' names · ' + mentions + ' mentions';
+  var updated = new Date(DATA.updated_at);
+  document.getElementById('updated-line').textContent = 'Updated ' +
+    (isNaN(updated.getTime()) ? DATA.updated_at : updated.toLocaleString());
+}
+
+function renderTabs() {
+  var tabsHtml = ['daily', 'weekly', 'monthly'].map(function (w) {
+    var label = w === 'daily' ? 'Daily' : w === 'weekly' ? 'Weekly' : 'Monthly';
+    return '<button class="tab-btn' + (WIN === w ? ' active' : '') + '" data-win="' + w + '">' + label + '</button>';
+  }).join('');
+  document.getElementById('tab-buttons').innerHTML = tabsHtml;
+
+  var handles = DATA.handles || [];
+  var chipsHtml = '<span class="chip author-chip' + (AUTHOR === '' ? ' active' : '') + '" data-author="">全部</span>' +
+    handles.map(function (h) {
+      return '<span class="chip author-chip' + (AUTHOR === h ? ' active' : '') + '" data-author="' + esc(h) + '">' + esc(h) + '</span>';
+    }).join('');
+  document.getElementById('author-chips').innerHTML = chipsHtml;
+}
+
+function renderMostDiscussed(list) {
+  var wl = windowLabel();
+  var html = list.map(function (st) {
+    var m = stanceMeta(st.latestStance);
+    var yp = yellowParts(st.yellow);
+    var chips = [];
+    if (yp.length) chips.push('<span class="pill soft">🟡 轉黃 ' + esc(yp.join(' · ')) + '</span>');
+    if (st.earnings) chips.push('<span class="pill soft">📅 財報 ' + esc(st.earnings) + '</span>');
+    var yellowHtml = chips.length ? '<div class="r4">' + chips.join(' ') + '</div>' : '';
+    var gainHtml = st.gain != null ? ' <span class="small">Gain ' + pctHtml(st.gain) + '</span>' : '';
+    var consensusHtml = st.nAuthors >= 2
+      ? ' <span class="pill soft">👥 ×' + st.nAuthors + ' 共識</span>' : '';
+    return '<div class="card stock-card" style="border-left:4px solid ' + m[3] + '">' +
+      '<div class="r1"><span><span class="ticker">' + esc(st.ticker) + '</span>' + gainHtml + '</span>' + stanceBadgeHtml(st.latestStance, wl) + '</div>' +
+      '<div class="r2">Mentions ' + wl + ' <span class="big-num">' + st.count + '</span>' + trendHtml(st.count, st.prev) + ' · 7d ' + st.d7 + ' · 28d ' + st.d28 + '</div>' +
+      '<div class="r3">Stance · ' + wl + ' <b class="num-bull">' + st.bull + '</b> bull ' +
+        '<b class="num-bear">' + st.bear + '</b> bear <b class="num-neu">' + st.neu + '</b> neu' + consensusHtml + '</div>' +
+      yellowHtml +
+      '<div class="r5"><span class="muted">First mention ' + esc(st.firstMention) + '</span>' +
+        '<a href="javascript:void(0)" data-detail="' + esc(st.ticker) + '">Detail →</a></div>' +
+    '</div>';
+  }).join('');
+  document.getElementById('most-discussed').innerHTML = html || '<p class="muted">呢個時段冇數據。</p>';
+}
+
+function renderBearish(stats) {
+  var wl = windowLabel();
+  var rows = stats.filter(function (st) { return st.bear > 0; });
+  var html = rows.map(function (st) {
+    return '<div class="card bearish-row">' +
+      '<span class="ticker">' + esc(st.ticker) + '</span>' +
+      stanceBadgeHtml('bearish', wl + ' (' + st.bear + ')') +
+      '<a href="javascript:void(0)" data-detail="' + esc(st.ticker) + '">Detail →</a>' +
+    '</div>';
+  }).join('');
+  document.getElementById('bearish-list').innerHTML = html || '<p class="muted">此時段冇 bearish / 轉勢股票。</p>';
+}
+
+function renderThemes(stats) {
+  var groups = {};
+  stats.forEach(function (st) {
+    var th = st.theme || '未分類';
+    var g = groups[th] || (groups[th] = { count: 0, tickers: [] });
+    g.count += st.count;
+    g.tickers.push(st);
+  });
+  var rows = Object.keys(groups).map(function (th) {
+    return { theme: th, g: groups[th] };
+  }).sort(function (a, b) { return b.g.count - a.g.count; });
+  var html = rows.map(function (r) {
+    var chips = r.g.tickers.slice(0, 12).map(function (st) {
+      return '<span class="chip" data-detail="' + esc(st.ticker) + '">' +
+        esc(st.ticker) + '·' + st.count + '</span>';
+    }).join(' ');
+    return '<tr><td><b>' + esc(r.theme) + '</b></td><td>' + r.g.count + '</td><td>' + chips + '</td></tr>';
+  }).join('');
+  document.getElementById('theme-tbody').innerHTML =
+    html || '<tr><td colspan="3" class="muted">呢個時段冇數據。</td></tr>';
+}
+
+function updateAuditAcc() {
+  var n = 0, ok = 0, k;
+  for (k in RATINGS) { n++; if (RATINGS[k] === 'ok') ok++; }
+  document.getElementById('audit-acc').textContent = n
+    ? '已核對 ' + n + ' 條 · AI 分類準確率 ' + Math.round(100 * ok / n) + '%'
+    : (PRIVATE_LOADED
+        ? '未有核對記錄 — 撳掣開始，逐條對返原帖睇 AI 標得啱唔啱。'
+        : '核對記錄係私人數據 — 入 PIN 用過一次之後會自動載入。');
+}
+
+function renderAudit() {
+  var pool = [];
+  Object.keys(DATA.stocks).forEach(function (tkr) {
+    (DATA.stocks[tkr].mentions || []).forEach(function (m) {
+      var key = m.tweet_id + '|' + tkr;
+      if (!RATINGS[key]) pool.push({ key: key, tkr: tkr, m: m });
+    });
+  });
+  // 隨機抽 10 條未核對嘅
+  for (var i = pool.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+  }
+  var html = pool.slice(0, 10).map(function (r) {
+    return '<div class="card bearish-row" id="audit-' + esc(r.key) + '">' +
+      '<span class="ticker">' + esc(r.tkr) + '</span> ' +
+      stanceBadgeHtml(r.m.stance, '') +
+      ' <span class="small">' + esc(r.m.summary) + '</span> ' +
+      (r.m.url ? '<a href="' + esc(r.m.url) + '" target="_blank" rel="noopener">原帖 →</a>' : '') +
+      ' <button class="tab-btn audit-btn" data-key="' + esc(r.key) + '" data-verdict="ok">啱</button>' +
+      ' <button class="tab-btn audit-btn" data-key="' + esc(r.key) + '" data-verdict="wrong">錯</button>' +
+    '</div>';
+  }).join('');
+  document.getElementById('audit-list').innerHTML =
+    html || '<p class="muted">全部核對晒！</p>';
+}
+
+function rateMention(key, verdict, btn) {
+  var pin = getPin('pin-input');
+  if (!pin) return;
+  btn.disabled = true;
+  api({ api: 'rating', pin: pin, key: key, verdict: verdict }, function (r) {
+    if (r.error) {
+      if (r.error.indexOf('PIN') >= 0) localStorage.removeItem('kolpin');  // 網絡錯唔好清 PIN
+      alert(r.error);
+      btn.disabled = false;
+      return;
+    }
+    RATINGS[key] = verdict;
+    var row = document.getElementById('audit-' + key);
+    if (row) row.style.opacity = 0.4;
+    updateAuditAcc();
+    loadPrivate();
+  });
+}
+
+function winCell(win, n) {
+  if (win == null) return '—';
+  var body = win + '% <span class="muted small">(' + n + ')</span>';
+  // 樣本少過 20 → 統計上唔可靠，灰色 + ⚠ 提示（TipRanks 嘅統計顯著性原則）
+  return n < 20 ? '<span class="muted">' + body + ' ⚠</span>' : body;
+}
+
+function renderKolStats() {
+  var ks = DATA.kol_stats || {};
+  var handles = DATA.handles || Object.keys(ks);
+  var rows = handles.filter(function (h) { return ks[h]; }).map(function (h) {
+    var a = ks[h];
+    var best = a.best
+      ? esc(a.best.ticker) + ' ' + pctHtml(a.best.ret) +
+        ' <span class="muted small">(' + esc(a.best.date) +
+        (a.best.stance === 'bearish' ? ' · bearish' : '') + ')</span>'
+      : '<span class="muted">—</span>';
+    return '<tr><td><b>' + esc(h) + '</b></td><td>' + a.calls + '</td>' +
+      '<td>' + winCell(a.win7, a.n7) + '</td>' +
+      '<td>' + winCell(a.win30, a.n30) + '</td>' +
+      '<td>' + pctHtml(a.avg30) + '</td><td>' + best + '</td></tr>';
+  }).join('');
+  document.getElementById('kol-stats-tbody').innerHTML =
+    rows || '<tr><td colspan="6" class="muted">未有足夠已到期嘅 call 數據（call 後要等 7／30 日先計到）。</td></tr>';
+  renderPlCurves();
+}
+
+var PL_COLORS = ['#1F4A38', '#B8860B', '#5B7DB1', '#8A4B7A'];
+
+function renderPlCurves() {
+  var canvas = document.getElementById('pl-canvas');
+  var legend = document.getElementById('pl-legend');
+  var pl = DATA.pl;
+  if (!pl || !pl.series || !pl.dates || !pl.dates.length) {
+    canvas.style.display = 'none';
+    legend.textContent = '未有足夠數據畫模擬曲線。';
+    return;
+  }
+  canvas.style.display = 'block';
+  var ctx = canvas.getContext('2d');
+  var w = canvas.width, h = canvas.height, pad = 10;
+  ctx.clearRect(0, 0, w, h);
+
+  var names = Object.keys(pl.series).filter(function (k) { return k !== 'SPY'; });
+  if (pl.series.SPY) names.push('SPY');
+  var all = [];
+  names.forEach(function (k) {
+    pl.series[k].forEach(function (v) { if (v != null) all.push(v); });
+  });
+  if (!all.length) { canvas.style.display = 'none'; legend.textContent = ''; return; }
+  var min = Math.min.apply(null, all.concat([0]));
+  var max = Math.max.apply(null, all.concat([0]));
+  var range = (max - min) || 1;
+  var nPts = pl.dates.length;
+  function xy(i, v) {
+    return [nPts > 1 ? pad + (w - 2 * pad) * i / (nPts - 1) : w / 2,
+            h - pad - (h - 2 * pad) * (v - min) / range];
+  }
+  // 0% 基準線
+  var zeroY = xy(0, 0)[1];
+  ctx.strokeStyle = '#D8D4C6';
+  ctx.setLineDash([3, 4]);
+  ctx.beginPath(); ctx.moveTo(pad, zeroY); ctx.lineTo(w - pad, zeroY); ctx.stroke();
+  ctx.setLineDash([]);
+
+  var legendHtml = [];
+  names.forEach(function (k, ki) {
+    var isSpy = k === 'SPY';
+    var color = isSpy ? '#8A867A' : PL_COLORS[ki % PL_COLORS.length];
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    if (isSpy) ctx.setLineDash([5, 4]);
+    ctx.beginPath();
+    var started = false;
+    pl.series[k].forEach(function (v, i) {
+      if (v == null) return;
+      var p = xy(i, v);
+      if (!started) { ctx.moveTo(p[0], p[1]); started = true; }
+      else ctx.lineTo(p[0], p[1]);
+    });
+    ctx.stroke();
+    ctx.setLineDash([]);
+    var vals = pl.series[k];
+    var lastV = null;
+    for (var i = vals.length - 1; i >= 0; i--) {
+      if (vals[i] != null) { lastV = vals[i]; break; }
+    }
+    legendHtml.push('<span style="color:' + color + '">' + (isSpy ? '┅' : '━') + ' ' +
+      esc(k) + '</span> ' + (lastV != null ? pctHtml(lastV) : ''));
+  });
+  legend.innerHTML = legendHtml.join(' · ') +
+    ' <span class="muted small">(' + esc(pl.dates[0]) + ' → ' + esc(pl.dates[nPts - 1]) + '，平均每注回報)</span>';
+}
+
+function renderOther(list) {
+  var html = list.map(function (st) {
+    return '<span class="chip" data-detail="' + esc(st.ticker) + '">' + esc(st.ticker) + '·' + st.count + '</span>';
+  }).join('');
+  document.getElementById('other-list').innerHTML = html || '<p class="muted">冇其他提及。</p>';
+}
+
+var DETAIL_TICKER = null;
+
+function renderNotes(ticker) {
+  var list = NOTES[ticker] || [];
+  document.getElementById('d-notes').innerHTML = list.length
+    ? list.map(function (n) {
+        return '<div>· <span class="muted">' + esc(n.date) + '</span> ' + esc(n.text) + '</div>';
+      }).join('')
+    : '<span class="muted">未有記錄。</span>';
+}
+
+function saveNote() {
+  var text = document.getElementById('note-text').value.trim();
+  if (!text || !DETAIL_TICKER) return;
+  var pin = getPin('note-pin');
+  if (!pin) return;
+  var btn = document.getElementById('btn-note');
+  btn.disabled = true;
+  api({ api: 'note', pin: pin, ticker: DETAIL_TICKER, text: text }, function (r) {
+    btn.disabled = false;
+    if (r.error) {
+      if (r.error.indexOf('PIN') >= 0) localStorage.removeItem('kolpin');  // 網絡錯唔好清 PIN
+      alert(r.error);
+      return;
+    }
+    NOTES[DETAIL_TICKER] = r.notes;
+    document.getElementById('note-text').value = '';
+    renderNotes(DETAIL_TICKER);
+    loadPrivate();
+  });
+}
+
+function showDetail(ticker) {
+  var s = DATA.stocks[ticker];
+  if (!s) return;
+  DETAIL_TICKER = ticker;
+  renderNotes(ticker);
+  var mentions = (s.mentions || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+  document.getElementById('d-ticker').textContent = ticker;
+  document.getElementById('d-badge').innerHTML = mentions.length ? stanceBadgeHtml(mentions[0].stance, '') : '';
+  var yp = yellowParts(s.yellow);
+  document.getElementById('d-yellow').innerHTML = yp.length
+    ? '<span class="pill soft">🟡 轉黃 ' + esc(yp.join(' · ')) + '</span>' : '';
+
+  var tbody = mentions.map(function (m) {
+    return '<tr><td>' + esc(m.date) + '</td><td>' + esc(m.author) + '</td>' +
+      '<td>' + stanceBadgeHtml(m.stance, '') + '</td>' +
+      '<td>' + esc(m.summary) +
+        (m.target ? ' <span class="pill soft">🎯 目標 $' + esc(m.target) + '</span>' : '') + '</td>' +
+      '<td>' + pctHtml(m.r7 != null ? m.r7 : null) + '</td>' +
+      '<td>' + pctHtml(m.r30 != null ? m.r30 : null) + '</td>' +
+      '<td>' + (m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">原帖 →</a>' : '') + '</td></tr>';
+  }).join('');
+  document.getElementById('d-tbody').innerHTML = tbody;
+
+  drawSparkline(ticker);
+  document.getElementById('overlay').style.display = 'flex';
+}
+
+function closeDetail() {
+  document.getElementById('overlay').style.display = 'none';
+}
+
+function drawSparkline(ticker) {
+  var canvas = document.getElementById('d-canvas');
+  var labelsEl = document.getElementById('d-spark-labels');
+  var p = PRICES[ticker];
+  if (!p || !p.closes || !p.closes.length || !p.dates || !p.dates.length) {
+    canvas.style.display = 'none';
+    labelsEl.textContent = '';
+    return;
+  }
+  canvas.style.display = 'block';
+  var ctx = canvas.getContext('2d');
+  var w = canvas.width, h = canvas.height, pad = 8;
+  ctx.clearRect(0, 0, w, h);
+
+  var closes = p.closes;
+  var min = Math.min.apply(null, closes);
+  var max = Math.max.apply(null, closes);
+  var range = (max - min) || 1;
+
+  ctx.strokeStyle = '#1E7B4F';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  closes.forEach(function (c, i) {
+    var x = closes.length > 1 ? pad + (w - 2 * pad) * i / (closes.length - 1) : w / 2;
+    var y = h - pad - (h - 2 * pad) * (c - min) / range;
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  if (closes.length === 1) {
+    ctx.fillStyle = '#1E7B4F';
+    ctx.beginPath();
+    ctx.arc(w / 2, h - pad - (h - 2 * pad) * 0.5, 3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  var first = closes[0], last = closes[closes.length - 1];
+  var pct = first ? ((last - first) / first * 100) : 0;
+  var sign = pct >= 0 ? '+' : '';
+  labelsEl.textContent = p.dates[0] + ': ' + first.toFixed(2) + ' → ' +
+    p.dates[p.dates.length - 1] + ': ' + last.toFixed(2) + ' (' + sign + pct.toFixed(1) + '%)';
+}
+
+function ask() {
+  var t = document.getElementById('qa-ticker').value.trim().toUpperCase();
+  var q = document.getElementById('qa-q').value.trim() || '總結呢隻股嘅觀點';
+  var out = document.getElementById('qa-out');
+  out.className = 'qa-out';
+  out.textContent = '諗緊…';
+  api({ api: 'ask', q: q, ticker: t }, function (r) {
+    if (r.error) {
+      out.className = 'qa-out err';
+      out.textContent = '⚠ ' + r.error;
+    } else {
+      out.className = 'qa-out';
+      out.textContent = r.answer;
+    }
+  });
+}
+
+function requestUpdate() {
+  var b = document.getElementById('btn-update');
+  b.disabled = true;
+  b.textContent = '請求緊…';
+  api({ api: 'update' }, function (r) {
+    if (r.error) {
+      b.disabled = false;
+      b.textContent = '🔄 更新';
+      alert('請求失敗：' + r.error);
+      return;
+    }
+    b.textContent = (r && r.msg) ? '✓ ' + r.msg : '✓ 已請求';
+  });
+}
+
+document.addEventListener('click', function (e) {
+  var t = e.target;
+  if (t.id === 'btn-update') { requestUpdate(); return; }
+  if (t.id === 'btn-audit') { renderAudit(); return; }
+  if (t.id === 'btn-note') { saveNote(); return; }
+  if (t.matches('.audit-btn')) {
+    rateMention(t.getAttribute('data-key'), t.getAttribute('data-verdict'), t);
+    return;
+  }
+  if (t.matches('.tab-btn')) { WIN = t.getAttribute('data-win'); render(); return; }
+  if (t.matches('.author-chip')) { AUTHOR = t.getAttribute('data-author'); render(); return; }
+  if (t.id === 'overlay-close') { closeDetail(); return; }
+  if (t.id === 'overlay') { closeDetail(); return; }
+  var d = t.closest('[data-detail]');
+  if (d) { showDetail(d.getAttribute('data-detail')); return; }
+});
+</script>
+</body>
+</html>
