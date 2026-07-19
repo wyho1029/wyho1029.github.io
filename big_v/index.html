@@ -227,7 +227,13 @@ fetchData('prices.json', function (d) { if (d && !d.error) PRICES = d; });
 
 NOTES = lsGet('kol_notes');
 RATINGS = lsGet('kol_ratings');
-document.addEventListener('DOMContentLoaded', updateAuditAcc);
+document.addEventListener('DOMContentLoaded', function () {
+  updateAuditAcc();
+  document.getElementById('import-file').addEventListener('change', function () {
+    if (this.files[0]) importPrivate(this.files[0]);
+    this.value = '';   // 清空先揀得返同一個檔（唔會第二次冇反應）
+  });
+});
 
 function exportPrivate() {
   var blob = new Blob([JSON.stringify({ notes: NOTES, ratings: RATINGS }, null, 1)],
