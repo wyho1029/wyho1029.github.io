@@ -87,11 +87,6 @@ th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertic
 th{color:var(--muted);font-weight:600}
 td a{color:var(--green)}
 
-.qa-card{display:flex;flex-direction:column;gap:8px}
-.qa-card input{font-family:inherit;font-size:13px;padding:8px 10px;border:1px solid var(--line);
-  border-radius:6px;background:var(--bg);color:var(--ink)}
-.qa-card button{align-self:flex-start;font-family:inherit;font-size:13px;padding:7px 18px;
-  border-radius:6px;border:none;background:var(--green);color:#fff;cursor:pointer}
 .ai-summary{white-space:pre-wrap;font-size:13px;line-height:1.6;background:var(--green-soft);
   border-radius:6px;padding:10px 12px;margin-bottom:14px}
 .ai-summary:empty{display:none}
@@ -249,18 +244,30 @@ function importPrivate(file) {
   fr.onload = function () {
     try {
       var d = JSON.parse(fr.result);
-      // 合併（唔覆蓋現有）：換機／多部機各自寫過嘅記錄都保得住
+      var before = { n: JSON.stringify(NOTES), r: JSON.stringify(RATINGS) };
+      // 合併（唔覆蓋現有）：換機／多部機各自寫過嘅記錄都保得住。
+      // 筆記按 date+text 去重——重複匯入同一份備份唔會變兩份
+      var added = 0;
       Object.keys(d.notes || {}).forEach(function (t) {
-        NOTES[t] = (NOTES[t] || []).concat(d.notes[t]);
+        var list = NOTES[t] || (NOTES[t] = []);
+        (d.notes[t] || []).forEach(function (n) {
+          var dup = list.some(function (e) {
+            return e.date === n.date && e.text === n.text;
+          });
+          if (!dup) { list.push(n); added++; }
+        });
       });
       Object.keys(d.ratings || {}).forEach(function (k) {
-        if (!RATINGS[k]) RATINGS[k] = d.ratings[k];
+        if (!RATINGS[k]) { RATINGS[k] = d.ratings[k]; added++; }
       });
-      lsSet('kol_notes', NOTES);
-      lsSet('kol_ratings', RATINGS);
+      if (!lsSet('kol_notes', NOTES) || !lsSet('kol_ratings', RATINGS)) {
+        NOTES = JSON.parse(before.n);       // 存唔到就完全復原，唔好扮成功
+        RATINGS = JSON.parse(before.r);
+        return;
+      }
       updateAuditAcc();
       if (DETAIL_TICKER) renderNotes(DETAIL_TICKER);
-      alert('已匯入');
+      alert(added ? '已匯入 ' + added + ' 條' : '冇新記錄（全部已存在）');
     } catch (e) { alert('檔案格式唔啱：' + e); }
   };
   fr.readAsText(file);
