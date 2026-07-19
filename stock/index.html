@@ -10,8 +10,8 @@
   :root, [data-theme="dark"] { --bg:#0e1116; --card:#161b22; --line:#2a313c; --fg:#e6edf3; --mut:#8b949e; --yel:#f5c518; --red:#f85149; }
   [data-theme="light"] { --bg:#f3eee6; --card:#e9e1d3; --line:#ddd3c2; --fg:#2b2620; --mut:#6b6358; --yel:#8a6d00; --red:#c0392b; }
   .bbar { display:inline-block; width:90px; height:8px; border-radius:4px;
-          background:var(--line); overflow:hidden; vertical-align:middle; }
-  .bbar i { display:inline-block; height:100%; }
+          background:var(--line); overflow:hidden; vertical-align:middle; text-align:left; line-height:0; }
+  .bbar i { display:inline-block; height:100%; vertical-align:top; }
   .bbar .bear { background:var(--red); }
   .bbar .bull { background:#3fb950; }
   .fbtn { background:var(--card); color:var(--mut); border:1px solid var(--line);
@@ -154,8 +154,8 @@
       if (!br.length){ alert('冇數據，冇嘢可下載。'); return; }
       var bl = ['排名,代號,全名,類型,Buzz,提及數,多頭%,淡友%,趨勢'];
       br.forEach(function(r){
-        bl.push([r.rank, r.ticker, qcsv(r.name || ''), r.kind, r.buzz,
-                 r.mentions, r.bull, r.bear, r.trend].join(','));
+        bl.push([r.rank, r.ticker, r.name || '', r.kind, r.buzz,
+                 r.mentions, r.bull, r.bear, r.trend].map(qcsv).join(','));
       });
       downloadCsv('X熱度榜_' + (CURRENT.generated || '').slice(0, 10) + '.csv', bl.join('\r\n'));
       return;
@@ -296,13 +296,19 @@
       + '<span class="arrow" id="arr-sec-cycle">▶</span><h2>🌙 月K週期底（' + n + '）</h2></div>'
       + '<div class="sec-b" id="sec-cycle" style="display:none">' + body + '</div></div>';
   }
+  function xnum(v, dash){                // Adanos 數值欄強制轉型，防注入（唔可信輸入）
+    if (v == null) return dash ? '—' : 0;
+    var n = Number(v);
+    return isFinite(n) ? n : (dash ? '—' : 0);
+  }
   function buzzBar(bull, bear){
-    return '<span class="bbar" title="多頭 ' + (bull||0) + '% · 淡友 ' + (bear||0) + '%">'
-      + '<i class="bear" style="width:' + (bear||0) + '%"></i>'
-      + '<i class="bull" style="width:' + (bull||0) + '%"></i></span>';
+    var bl = xnum(bull), be = xnum(bear);
+    return '<span class="bbar" title="多頭 ' + bl + '% · 淡友 ' + be + '%">'
+      + '<i class="bear" style="width:' + be + '%"></i>'
+      + '<i class="bull" style="width:' + bl + '%"></i></span>';
   }
   function buzzSpark(hist, trend){
-    var h = hist || [];
+    var h = (hist || []).map(Number).filter(isFinite);   // 唔可信輸入強制轉數字
     var col = trend === 'rising' ? '#3fb950' : (trend === 'falling' ? 'var(--red)' : 'var(--mut)');
     var arr = trend === 'rising' ? '↑' : (trend === 'falling' ? '↓' : '→');
     var svg = '';
@@ -326,14 +332,21 @@
       b.className = 'fbtn' + (b.getAttribute('data-k') === kind ? ' on' : '');
     });
   }
+  function xesc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
   function buzzSection(d){
     var x = d.x_buzz || {}, rows = x.rows || [];
     if (!rows.length) return '';
     var c = x.compare;
+    var tried = x.queries_tried != null ? x.queries_tried : x.queries_total;
+    var qStr = x.queries_total ? (x.queries_ok + '/' + tried + ' 成功，共 ' + x.queries_total + ' 條計劃') : '';
     var note = c
       ? '🔎 自家抽樣核對：Adanos Top ' + c.top20_total + ' 我哋抽到 ' + c.top20_hit
-        + ' 隻（' + c.pct + '%）· 抽樣 ' + c.posts + ' 帖 · ' + x.updated
-      : '🔎 今日未核對（自家抽樣失敗或撞 X 限流）· ' + x.updated;
+        + ' 隻（' + c.pct + '%）· 抽樣 ' + c.posts + ' 帖' + (qStr ? ' · ' + qStr : '') + ' · ' + x.updated
+      : '🔎 今日未核對（自家抽樣失敗或撞 X 限流' + (qStr ? '，' + qStr : '') + '）· ' + x.updated;
     if (x.stale) note += ' ⚠️ 數據截至 ' + (x.updated || '').slice(0, 10) + '（Adanos 今日攞唔到）';
     var body = '<div class="ai">' + note + '</div>'
       + '<div style="margin:8px 0">'
@@ -343,18 +356,18 @@
       + '<div class="scroll"><table id="buzzBody"><tr><th>#</th><th>代號</th><th>全名</th>'
       + '<th>Buzz</th><th>提及</th><th>情緒</th><th>走勢</th></tr>';
     rows.forEach(function(r){
-      body += '<tr data-kind="' + r.kind + '"><td>' + r.rank + '</td>'
-        + '<td class="name">' + r.ticker + (r.kind === 'etf' ? ' <span class="none">ETF</span>' : '') + '</td>'
-        + '<td>' + (r.name || '—') + '</td>'
+      body += '<tr data-kind="' + r.kind + '"><td>' + xnum(r.rank) + '</td>'
+        + '<td>' + xesc(r.ticker) + (r.kind === 'etf' ? ' <span class="none">ETF</span>' : '') + '</td>'
+        + '<td class="name">' + xesc(r.name || '—') + '</td>'
         + '<td class="score">' + (r.buzz != null ? Number(r.buzz).toFixed(1) : '—') + '</td>'
-        + '<td>' + (r.mentions != null ? r.mentions : '—') + '</td>'
+        + '<td>' + xnum(r.mentions, true) + '</td>'
         + '<td>' + buzzBar(r.bull, r.bear) + '</td>'
         + '<td>' + buzzSpark(r.hist, r.trend) + '</td></tr>';
     });
     body += '</table></div>';
     if (c && (c.extra || []).length){
       body += '<div class="meta" style="margin-top:8px">自家抽到但唔喺榜：'
-        + c.extra.join('、') + '（多數係加密幣或者細價股炒作）</div>';
+        + c.extra.map(xesc).join('、') + '（可能係細價股、加密幣，或者 Adanos 未收錄嘅代號）</div>';
     }
     return '<div class="sec"><div class="sec-h" onclick="toggleSec(\'sec-buzz\')">'
       + '<span class="arrow" id="arr-sec-buzz">▶</span><h2>🔥 X 熱度榜（' + rows.length + '）</h2>'
