@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投機學院</title>
+<style>
+:root {
+  --bg: #0e1117; --panel: #171c26; --card: #1d2330; --line: #2a3242;
+  --ink: #e8ecf3; --dim: #8b96a8; --gold: #f0b90b; --green: #2ecc71;
+  --red: #e74c3c; --blue: #4aa3ff;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.75 -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif; }
+a { color: var(--blue); text-decoration: none; }
+header { position: sticky; top: 0; z-index: 9; background: var(--panel); border-bottom: 1px solid var(--line); padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
+header h1 { font-size: 18px; color: var(--gold); white-space: nowrap; }
+nav { display: flex; gap: 2px; overflow-x: auto; }
+nav a { padding: 6px 10px; border-radius: 8px; color: var(--dim); white-space: nowrap; font-size: 14px; }
+nav a.on { background: var(--card); color: var(--gold); }
+main { max-width: 860px; margin: 0 auto; padding: 16px 14px 80px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 10px 0; }
+.dim { color: var(--dim); font-size: 13px; }
+.tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--dim); margin-right: 6px; }
+.tag.full { color: var(--green); border-color: var(--green); }
+.tag.stub { color: var(--dim); }
+.sem { margin: 22px 0 6px; }
+.sem h2 { color: var(--gold); font-size: 17px; }
+.lesson-row { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.lesson-row:last-child { border-bottom: none; }
+.lesson-row .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line); flex: none; }
+.lesson-row.done .dot { background: var(--green); }
+.lesson-row:hover { background: var(--panel); }
+.btn { display: inline-block; background: var(--gold); color: #000; border: none; border-radius: 8px; padding: 8px 16px; font-size: 15px; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+#loading { text-align: center; padding: 60px 0; color: var(--dim); }
+.step { display: flex; gap: 10px; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
+.step .n { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: #000; font-weight: 700; text-align: center; line-height: 24px; font-size: 13px; }
+.step-arrow { text-align: center; color: var(--gold); margin: 2px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📈 投機學院</h1>
+  <nav id="nav">
+    <a href="#/road">🗺️ 學習路徑</a>
+    <a href="#/cards">🃏 策略圖鑑</a>
+    <a href="#/graph">🕸️ 圖譜</a>
+    <a href="#/me">📊 進度</a>
+  </nav>
+</header>
+<main id="app"><div id="loading">載入中…</div></main>
+<script>
+var DB = null;
+var PROG = JSON.parse(localStorage.getItem('speclab_progress') || '{}');
+
+function saveProg() { localStorage.setItem('speclab_progress', JSON.stringify(PROG)); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+  return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function navTo(h) { location.hash = h; }
+
+function boot(data) {
+  if (!data || data.error) {
+    var cached = localStorage.getItem('speclab_cache');
+    try {
+      if (cached) { DB = JSON.parse(cached); route(); return; }
+    } catch (e) {}                              // 壞 cache 唔好卡死喺「載入中…」
+    document.getElementById('app').innerHTML =
+      '<div class="card">讀取失敗：' + esc(data && data.error) + '</div>';
+    return;
+  }
+  DB = data;
+  try { localStorage.setItem('speclab_cache', JSON.stringify(data)); } catch (e) {}
+  route();
+}
+
+// GitHub Pages 靜態檔（本地 dev 由 repo root 起 server 都行同一路徑）
+fetch('data/speclab_data.json')
+  .then(function (r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(boot)
+  .catch(function (e) { boot({ error: String(e) }); });
+
+window.addEventListener('hashchange', route);
+function route() {
+  if (!DB) return;
+  var h = location.hash || '#/road';
+  var app = document.getElementById('app');
+  document.querySelectorAll('#nav a').forEach(function (a) {
+    a.className = h.indexOf(a.getAttribute('href')) === 0 ? 'on' : '';
+  });
+  var m = h.match(/^#\/lesson\/(.+)$/);
+  if (m) { app.innerHTML = renderLesson(decodeURIComponent(m[1])); afterLesson(); }
+  else if (h === '#/cards') { app.innerHTML = renderCards(); afterCards(); }
+  else if (h === '#/graph') { app.innerHTML = renderGraph(); afterGraph(); }
+  else if (h === '#/me') { app.innerHTML = renderMe(); }
+  else { app.innerHTML = renderRoad(); }
+  window.scrollTo(0, 0);
+}
+
+/* ---------- 🗺️ 學習路徑 ---------- */
+function lessonsBySem(sem) {
+  var out = [];
+  Object.keys(DB.lessons).forEach(function (id) {
+    var l = DB.lessons[id];
+    if (l.status === 'full' && l.semester === sem) out.push(l);
+  });
+  out.sort(function (a, b) { return (a.difficulty || 0) - (b.difficulty || 0); });
+  return out;
+}
+
+function renderRoad() {
+  var html = '<div class="card"><b>學院簡介</b><div class="dim">拆解投機實驗室 '
+    + Object.keys(DB.lessons).length + ' 堂課（完整課 ' + DB.stats.full
+    + '、概要 ' + DB.stats.stub + '）。由先修班開始，一步步學。</div></div>';
+  DB.semesters.forEach(function (s) {
+    var ls = lessonsBySem(s.name);
+    html += '<div class="sem"><h2>' + esc(s.name) + '</h2><div class="dim">'
+      + esc(s.desc) + '</div></div><div class="card" style="padding:4px 6px">';
+    if (!ls.length) html += '<div class="dim" style="padding:9px 12px">呢學期嘅完整課仲整緊（圖鑑有概要版）</div>';
+    ls.forEach(function (l) {
+      var done = PROG[l.id] && PROG[l.id].read;
+      html += '<div class="lesson-row' + (done ? ' done' : '') + '" onclick="navTo(\'#/lesson/'
+        + esc(l.id) + '\')"><span class="dot"></span><span style="flex:1">' + esc(l.title)
+        + '</span><span class="dim">' + '★'.repeat(l.difficulty || 1) + '</span></div>';
+    });
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ---------- 下面四個由 Task 9-11 實作 ---------- */
+/* ---------- 📖 課堂 ---------- */
+function fmtMoney(n) {
+  if (!n) return '0';
+  if (n >= 1e8) return (n / 1e8).toFixed(1) + '億';
+  if (n >= 1e4) return (n / 1e4).toFixed(0) + '萬';
+  return String(n);
+}
+
+function ytThumb(id, q) {
+  return '<img src="https://i.ytimg.com/vi/' + esc(id) + '/' + (q || 'mq') + 'default.jpg"'
+    + ' loading="lazy" onerror="this.style.display=\'none\'"'
+    + ' style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover">';
+}
+
+function ytEmbed(id) {
+  return '<div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;margin:10px 0">'
+    + '<iframe src="https://www.youtube-nocookie.com/embed/' + esc(id) + '" loading="lazy" allowfullscreen'
+    + ' style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>';
+}
+
+function returnsBar(rs) {
+  if (!rs || !rs.to || rs.to <= 1 || rs.to <= rs.from) return '';
+  var logF = Math.log10(Math.max(rs.from, 1)), logT = Math.log10(rs.to);
+  var pct = Math.min(94, Math.max(6, Math.round(logF / logT * 100)));
+  return '<div class="card"><b>戰績（log scale）</b>'
+    + '<div style="margin-top:8px;background:var(--line);border-radius:6px;height:26px;position:relative">'
+    + '<div style="width:' + pct + '%;height:100%;background:var(--dim);border-radius:6px 0 0 6px"></div>'
+    + '<div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent ' + pct + '%,var(--gold) ' + pct + '%);border-radius:6px;opacity:.85"></div>'
+    + '</div><div class="dim">$' + esc(fmtMoney(rs.from)) + ' → $' + esc(fmtMoney(rs.to))
+    + (rs.note ? '（' + esc(rs.note) + '）' : '') + '</div></div>';
+}
+
+function renderLesson(id) {
+  var l = DB.lessons[id];
+  if (!l) return '<div class="card">搵唔到呢課</div>';
+  if (l.status === 'stub') {
+    var note = l.unavailable
+      ? '呢條片係頻道會員專屬（或者冇公開字幕），冇得自動提煉做完整課——想學就直接睇原片。'
+      : '呢課仲係概要版，完整教學喺批量提煉隊列度，就快有。';
+    return '<div class="card"><h2>' + esc(l.title) + '</h2>'
+      + '<p class="dim">' + note + '</p>'
+      + ytEmbed(l.id)
+      + '<a class="btn ghost" target="_blank" href="https://youtu.be/' + esc(l.id) + '">去 YouTube 睇 ▶</a></div>';
+  }
+  var h = '<div class="card">' + ytThumb(l.id, 'hq')
+    + '<div style="margin-top:10px"><span class="tag full">' + esc(l.category) + '</span>'
+    + '<span class="tag">' + esc(l.semester) + '</span>'
+    + (l.market || []).map(function (m) { return '<span class="tag">' + esc(m) + '</span>'; }).join('')
+    + '<h2 style="margin-top:6px">' + esc(l.title) + '</h2>'
+    + (l.trader ? '<div class="dim">主角：' + esc(l.trader) + '</div>' : '') + '</div></div>';
+
+  h += '<div class="card"><b>① 開場故事</b><p>' + esc(l.story) + '</p></div>';
+  h += returnsBar(l.returns_story);
+  h += '<div class="card" style="border-color:var(--gold)"><b>② 核心思想</b>'
+    + '<p style="font-size:18px;color:var(--gold)">「' + esc(l.one_liner) + '」</p></div>';
+
+  h += '<div class="card"><b>③ 核心概念</b>';
+  (l.concepts || []).forEach(function (c) {
+    h += '<p><b style="color:var(--blue)">' + esc(c.name) + '</b>：' + esc(c.explain) + '</p>';
+    var art = artFor(c.name);
+    if (art) h += '<div style="text-align:center;margin:2px 0 10px">' + art + '</div>';
+  });
+  if ((l.prerequisites || []).length)
+    h += '<div class="dim">前置概念：' + l.prerequisites.map(esc).join('、') + '</div>';
+  h += '</div>';
+
+  h += '<div class="card"><b>④ 進場規則（step by step）</b><div style="margin-top:8px">';
+  (l.entry_steps || []).forEach(function (s, i) {
+    if (i) h += '<div class="step-arrow">↓</div>';
+    h += '<div class="step"><span class="n">' + (i + 1) + '</span><span>' + esc(s) + '</span></div>';
+  });
+  h += '</div></div>';
+
+  h += '<div class="card"><b>⑤ 風控同出場</b><ul>';
+  (l.risk_rules || []).forEach(function (s) { h += '<li>' + esc(s) + '</li>'; });
+  h += '</ul>' + (l.example ? '<p class="dim"><b>實例：</b>' + esc(l.example) + '</p>' : '') + '</div>';
+
+  h += '<div class="card"><b>⑥ 小測驗</b>';
+  (l.quiz || []).forEach(function (q, qi) {
+    h += '<p style="margin-top:10px"><b>' + (qi + 1) + '. ' + esc(q.q) + '</b></p>';
+    q.options.forEach(function (o, oi) {
+      h += '<div class="lesson-row quiz-opt" data-q="' + qi + '" data-o="' + oi
+        + '" data-a="' + q.answer + '"><span class="dot"></span>' + esc(o) + '</div>';
+    });
+    h += '<div class="dim quiz-explain" id="qe' + qi + '" style="display:none">💡 ' + esc(q.explain) + '</div>';
+  });
+  h += '</div>';
+
+  h += '<div class="card" style="text-align:center">'
+    + '<p style="color:var(--gold)">「' + esc(l.quote) + '」</p>'
+    + ytEmbed(l.id)
+    + '<a class="btn ghost" target="_blank" href="https://youtu.be/' + esc(l.id) + '">去 YouTube 睇 ▶</a> '
+    + '<button class="btn" id="markDone">完成呢課 ✓</button></div>';
+  return h;
+}
+
+function afterLesson() {
+  var id = location.hash.replace('#/lesson/', '');
+  document.querySelectorAll('.quiz-opt').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var ok = el.dataset.o === el.dataset.a;
+      el.style.background = ok ? 'rgba(46,204,113,.18)' : 'rgba(231,76,60,.18)';
+      document.getElementById('qe' + el.dataset.q).style.display = 'block';
+      if (ok) {
+        var p = PROG[id] || (PROG[id] = {});
+        p.quiz = Math.max(p.quiz || 0,
+          document.querySelectorAll('.quiz-opt[style*="46, 204"]').length);
+        saveProg();
+      }
+    });
+  });
+  var btn = document.getElementById('markDone');
+  if (btn) btn.addEventListener('click', function () {
+    (PROG[id] || (PROG[id] = {})).read = true;
+    saveProg(); navTo('#/road');
+  });
+}
+
+/* ---------- 🃏 圖鑑 ---------- */
+var CARD_F = { cat: '', sem: '', st: '', q: '' };
+
+function radarSVG(r) {
+  if (!r) return '';
+  var keys = ['win_rate', 'rr', 'frequency', 'difficulty', 'capital'];
+  var labels = ['勝率', '賠率', '頻率', '難度', '本金'];
+  var cx = 60, cy = 54, R = 40;
+  function pt(i, v) {
+    var a = -Math.PI / 2 + i * 2 * Math.PI / 5;
+    return (cx + Math.cos(a) * R * v / 5).toFixed(1) + ',' + (cy + Math.sin(a) * R * v / 5).toFixed(1);
+  }
+  var grid = '', txt = '';
+  for (var g = 1; g <= 2; g++) {
+    var pts = keys.map(function (_, i) { return pt(i, g * 2.5); }).join(' ');
+    grid += '<polygon points="' + pts + '" fill="none" stroke="var(--line)"/>';
+  }
+  keys.forEach(function (_, i) {
+    var p = pt(i, 6.3).split(',');
+    txt += '<text x="' + p[0] + '" y="' + p[1] + '" font-size="9" fill="var(--dim)" text-anchor="middle">' + labels[i] + '</text>';
+  });
+  var shape = keys.map(function (k, i) { return pt(i, r[k] || 1); }).join(' ');
+  return '<svg viewBox="0 0 120 112" width="120" height="112">' + grid
+    + '<polygon points="' + shape + '" fill="rgba(240,185,11,.25)" stroke="var(--gold)"/>' + txt + '</svg>';
+}
+
+/* ---------- 概念插圖庫 ---------- */
+var AG = '#2ecc71', AR = '#e74c3c', AY = '#f0b90b', AD = '#8b96a8', AB = '#4aa3ff';
+function _svg(inner) { return '<svg viewBox="0 0 240 120" width="240" style="max-width:100%">' + inner + '</svg>'; }
+function _k(x, bt, bh, wt, wb, col) {   // 蠟燭：x, 實體top, 實體高, 影線top, 影線bottom
+  return '<line x1="' + (x + 4) + '" y1="' + wt + '" x2="' + (x + 4) + '" y2="' + wb + '" stroke="' + col + '" stroke-width="1.5"/>'
+    + '<rect x="' + x + '" y="' + bt + '" width="8" height="' + Math.max(bh, 2) + '" fill="' + col + '"/>';
+}
+function _ln(pts, col, dash) { return '<polyline points="' + pts + '" fill="none" stroke="' + col + '" stroke-width="1.5"' + (dash ? ' stroke-dasharray="4 3"' : '') + '/>'; }
+function _tx(x, y, s, col) { return '<text x="' + x + '" y="' + y + '" font-size="10" fill="' + (col || AD) + '">' + s + '</text>'; }
+function _ar(x1, y1, x2, y2, col) {
+  var a = Math.atan2(y2 - y1, x2 - x1);
+  function p(ang) { return (x2 - 8 * Math.cos(a + ang)) + ',' + (y2 - 8 * Math.sin(a + ang)); }
+  return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + col + '" stroke-width="1.5"/>'
+    + '<polygon points="' + x2 + ',' + y2 + ' ' + p(0.45) + ' ' + p(-0.45) + '" fill="' + col + '"/>';
+}
+function _zone(x, y, w, h, col, label) {
+  return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + col + '" opacity="0.18"/>'
+    + '<line x1="' + x + '" y1="' + y + '" x2="' + (x + w) + '" y2="' + y + '" stroke="' + col + '" stroke-dasharray="4 3"/>'
+    + '<line x1="' + x + '" y1="' + (y + h) + '" x2="' + (x + w) + '" y2="' + (y + h) + '" stroke="' + col + '" stroke-dasharray="4 3"/>'
+    + (label ? _tx(x + 4, y + h - 4, label, col) : '');
+}
+
+var CONCEPT_ART = [
+  [["訂單塊", "order block", "orderblock"], function () {
+    return _svg(_k(30, 60, 14, 55, 80, AR) + _k(45, 55, 12, 50, 72, AR)
+      + '<rect x="58" y="52" width="14" height="22" fill="none" stroke="' + AY + '" stroke-width="1.5"/>'
+      + _k(61, 54, 18, 50, 76, AR)
+      + _k(76, 24, 32, 18, 78, AG) + _k(91, 14, 12, 10, 28, AG)
+      + '<line x1="72" y1="52" x2="200" y2="52" stroke="' + AY + '" stroke-dasharray="4 3"/>'
+      + '<line x1="72" y1="74" x2="200" y2="74" stroke="' + AY + '" stroke-dasharray="4 3"/>'
+      + _ln("110,20 150,58 170,62", AD) + _ar(170, 62, 195, 30, AG)
+      + _tx(120, 90, "回踩訂單塊 → 反應", AY));
+  }],
+  [["假突破", "誘多", "誘空", "掃蕩", "獵殺", "sweep", "插針"], function () {
+    return _svg('<line x1="15" y1="75" x2="225" y2="75" stroke="' + AD + '" stroke-dasharray="4 3"/>'
+      + _tx(18, 70, "支撐位") + _k(60, 55, 14, 50, 74, AR) + _k(78, 62, 10, 58, 73, AR)
+      + _k(96, 68, 8, 60, 100, AR) + _k(114, 50, 24, 44, 102, AG)
+      + _tx(88, 112, "長影線掃損", AR) + _ar(130, 60, 170, 25, AG) + _tx(160, 20, "真方向", AG));
+  }],
+  [["突破回踩", "回踩", "retest", "突破"], function () {
+    return _svg('<line x1="15" y1="60" x2="225" y2="60" stroke="' + AD + '" stroke-dasharray="4 3"/>'
+      + _tx(18, 55, "阻力位") + _k(40, 75, 14, 70, 95, AG) + _k(55, 68, 12, 63, 92, AG)
+      + _k(70, 44, 20, 38, 78, AG) + _k(88, 62, 8, 58, 76, AR)
+      + _tx(76, 90, "回踩", AY) + _k(106, 30, 26, 24, 64, AG) + _ar(126, 40, 160, 15, AG));
+  }],
+  [["供需", "supply", "demand", "需求區", "供應區"], function () {
+    return _svg(_zone(15, 15, 210, 20, AR, "供應區")
+      + _zone(15, 88, 210, 20, AG, "需求區")
+      + _ln("30,90 60,60 85,38 110,55 135,88 160,60 185,40", AY)
+      + _ar(185, 40, 205, 30, AY));
+  }],
+  [["流動性", "止損聚集", "等高", "等低", "liquidity"], function () {
+    return _svg(_k(50, 40, 16, 34, 82, AG) + _k(80, 44, 14, 36, 84, AR) + _k(110, 42, 15, 35, 83, AG)
+      + '<line x1="40" y1="84" x2="180" y2="84" stroke="' + AR + '" stroke-dasharray="4 3"/>'
+      + _tx(46, 100, "✕ ✕ ✕ 止損聚集喺等低下面", AR)
+      + _ar(140, 70, 160, 88, AY) + _ar(165, 88, 195, 40, AG) + _tx(180, 30, "掃完先升", AG));
+  }],
+  [["止損", "停損", "stop loss"], function () {
+    return _svg(_k(70, 50, 18, 44, 90, AG) + _k(90, 38, 14, 32, 72, AG)
+      + _ar(30, 60, 66, 60, AB) + _tx(18, 52, "入場", AB)
+      + '<line x1="50" y1="95" x2="200" y2="95" stroke="' + AR + '" stroke-dasharray="4 3"/>'
+      + _tx(150, 108, "止損：擺喺結構低點下", AR)
+      + '<line x1="50" y1="20" x2="200" y2="20" stroke="' + AG + '" stroke-dasharray="4 3"/>'
+      + _tx(160, 15, "止盈", AG));
+  }],
+  [["均線", "移動平均", "EMA", "隧道", "vegas", "均線交叉", "金叉", "死叉"], function () {
+    return _svg(_ln("15,85 55,78 95,72 135,55 175,35 220,22", AY)
+      + _ln("15,60 55,62 95,66 135,60 175,48 220,38", AB)
+      + '<circle cx="118" cy="63" r="7" fill="none" stroke="' + AG + '" stroke-width="2"/>'
+      + _tx(95, 105, "快線上穿慢線 → 趨勢轉多") + _tx(180, 18, "快線", AY) + _tx(195, 45, "慢線", AB));
+  }],
+  [["孕線", "harami", "內包"], function () {
+    return _svg(_k(90, 25, 60, 18, 95, AR) + _k(115, 45, 22, 38, 75, AG)
+      + '<rect x="85" y="22" width="45" height="68" fill="none" stroke="' + AY + '" stroke-dasharray="4 3"/>'
+      + _tx(140, 60, "細K完全喺大K實體內", AY) + _tx(80, 110, "母線定方向，突破先入場"));
+  }],
+  [["雙頂", "雙底", "M頭", "W底", "2618"], function () {
+    return _svg(_ln("20,95 55,35 85,65 120,32 160,95", AY)
+      + '<line x1="30" y1="65" x2="190" y2="65" stroke="' + AD + '" stroke-dasharray="4 3"/>'
+      + _tx(18, 60, "頸線") + '<circle cx="55" cy="35" r="5" fill="none" stroke="' + AR + '"/>'
+      + '<circle cx="120" cy="32" r="5" fill="none" stroke="' + AR + '"/>'
+      + _ar(160, 95, 195, 108, AR) + _tx(150, 20, "第二頂唔破高", AR));
+  }],
+  [["VCP", "收縮", "波動收縮", "三角收斂", "楔形"], function () {
+    return _svg(_ln("15,30 45,85 75,38 105,75 130,48 150,65 165,55", AY)
+      + _ln("15,28 165,50", AD, true) + _ln("45,88 165,58", AD, true)
+      + _k(170, 20, 34, 14, 58, AG) + _ar(182, 30, 210, 12, AG)
+      + _tx(60, 110, "波幅越縮越窄 → 爆發"));
+  }],
+  [["趨勢線", "trendline"], function () {
+    return _svg(_k(35, 70, 16, 64, 92, AG) + _k(65, 55, 18, 48, 80, AG) + _k(95, 45, 14, 38, 70, AG)
+      + _k(125, 32, 16, 26, 56, AG) + '<line x1="20" y1="95" x2="200" y2="30" stroke="' + AY + '" stroke-width="2"/>'
+      + '<circle cx="39" cy="90" r="5" fill="none" stroke="' + AY + '"/>'
+      + '<circle cx="99" cy="68" r="5" fill="none" stroke="' + AY + '"/>'
+      + '<circle cx="159" cy="46" r="5" fill="none" stroke="' + AY + '"/>'
+      + _tx(70, 112, "最少三個觸點先算有效", AY));
+  }],
+  [["網格", "grid"], function () {
+    var g = '';
+    for (var y = 25; y <= 95; y += 17) g += '<line x1="15" y1="' + y + '" x2="225" y2="' + y + '" stroke="' + AD + '" stroke-dasharray="3 4" opacity="0.6"/>';
+    return _svg(g + _ln("15,80 45,55 75,88 110,42 145,70 180,30 220,60", AY)
+      + '<circle cx="75" cy="88" r="5" fill="' + AG + '"/>' + _tx(68, 105, "買", AG)
+      + '<circle cx="180" cy="30" r="5" fill="' + AR + '"/>' + _tx(174, 20, "賣", AR));
+  }],
+  [["滾倉", "複利", "金字塔"], function () {
+    return _svg('<rect x="30" y="90" width="18" height="14" fill="' + AB + '"/>'
+      + '<rect x="70" y="76" width="18" height="28" fill="' + AB + '"/>'
+      + '<rect x="110" y="52" width="18" height="52" fill="' + AB + '"/>'
+      + '<rect x="150" y="18" width="18" height="86" fill="' + AG + '"/>'
+      + _ln("39,86 79,70 119,46 159,12", AY) + _tx(40, 115, "贏咗先加碼，倉位滾大"));
+  }],
+  [["盈虧比", "風險回報", "賠率", "R:R", "盈亏比"], function () {
+    return _svg('<line x1="30" y1="70" x2="210" y2="70" stroke="' + AD + '"/>' + _tx(18, 74, "入場")
+      + '<rect x="80" y="70" width="40" height="20" fill="' + AR + '" opacity="0.5"/>' + _tx(126, 85, "風險 1R", AR)
+      + '<rect x="80" y="10" width="40" height="60" fill="' + AG + '" opacity="0.5"/>' + _tx(126, 35, "回報 3R", AG)
+      + _tx(30, 110, "細注博大賠率，輸得起贏得多"));
+  }],
+  [["時間框架", "多週期", "大級別", "小級別", "MTF"], function () {
+    return _svg(_k(50, 20, 60, 12, 100, AG)
+      + _k(120, 65, 20, 58, 95, AR) + _k(140, 45, 24, 38, 88, AG) + _k(160, 30, 18, 22, 70, AG) + _k(180, 18, 16, 12, 52, AG)
+      + _tx(30, 112, "大級別一支 = 小級別成段路")
+      + '<line x1="70" y1="20" x2="112" y2="20" stroke="' + AD + '" stroke-dasharray="3 3"/>'
+      + '<line x1="70" y1="100" x2="112" y2="95" stroke="' + AD + '" stroke-dasharray="3 3"/>');
+  }],
+  [["成交量", "量能", "volume", "放量", "量價"], function () {
+    return _svg(_k(40, 60, 12, 55, 80, AR) + _k(70, 52, 14, 46, 78, AG) + _k(100, 30, 24, 24, 60, AG) + _k(130, 20, 12, 14, 36, AG)
+      + '<rect x="38" y="95" width="12" height="12" fill="' + AD + '"/>'
+      + '<rect x="68" y="92" width="12" height="15" fill="' + AD + '"/>'
+      + '<rect x="98" y="72" width="12" height="35" fill="' + AY + '"/>'
+      + '<rect x="128" y="88" width="12" height="19" fill="' + AD + '"/>'
+      + _tx(150, 85, "突破嗰支要放量", AY));
+  }],
+  [["缺口", "gap", "CME"], function () {
+    return _svg(_k(40, 70, 18, 64, 94, AG) + _k(60, 62, 12, 56, 80, AG)
+      + _k(95, 28, 14, 22, 46, AG) + _k(115, 20, 12, 14, 36, AG)
+      + _zone(72, 46, 120, 14, AY, "缺口")
+      + _ln("125,26 160,40 180,52", AD) + _ar(180, 52, 200, 56, AY)
+      + _tx(120, 90, "價格傾向返嚟填返個窿"));
+  }],
+  [["樞軸", "關鍵位", "支撐", "阻力", "pivot", "整數"], function () {
+    return _svg('<line x1="15" y1="60" x2="225" y2="60" stroke="' + AY + '" stroke-width="2"/>'
+      + _ln("25,30 55,58 85,35", AD) + '<circle cx="55" cy="58" r="5" fill="none" stroke="' + AG + '"/>'
+      + _ln("100,90 130,62 160,88", AD) + '<circle cx="130" cy="62" r="5" fill="none" stroke="' + AG + '"/>'
+      + _tx(30, 110, "上面係支撐，跌穿變阻力", AY));
+  }],
+  [["頭肩", "head and shoulder"], function () {
+    return _svg(_ln("15,95 45,55 70,75 105,25 140,75 165,55 200,95", AY)
+      + '<line x1="30" y1="76" x2="210" y2="76" stroke="' + AD + '" stroke-dasharray="4 3"/>'
+      + _tx(18, 72, "頸線") + _tx(95, 15, "頭", AR) + _tx(40, 45, "肩") + _tx(162, 45, "肩")
+      + _ar(200, 95, 220, 110, AR));
+  }],
+  [["背離", "divergence", "頂背離", "底背離"], function () {
+    return _svg(_ln("20,55 60,30 100,48 145,20", AY) + _ln("20,52 145,17", AD, true)
+      + _tx(155, 22, "價創新高", AY)
+      + _ln("20,95 60,80 100,98 145,90", AB) + _ln("60,78 145,88", AD, true)
+      + _tx(155, 92, "指標冇跟", AB)
+      + '<line x1="10" y1="68" x2="230" y2="68" stroke="' + AD + '" opacity="0.4"/>');
+  }]
+];
+
+function artFor(name) {
+  if (!name) return '';
+  var lower = String(name).toLowerCase();
+  for (var i = 0; i < CONCEPT_ART.length; i++) {
+    var keys = CONCEPT_ART[i][0];
+    for (var j = 0; j < keys.length; j++) {
+      if (lower.indexOf(keys[j].toLowerCase()) >= 0) return CONCEPT_ART[i][1]();
+    }
+  }
+  return '';
+}
+
+function renderCards() {
+  var opts = function (arr, sel) {
+    return arr.map(function (x) {
+      return '<option' + (x === sel ? ' selected' : '') + '>' + esc(x) + '</option>';
+    }).join('');
+  };
+  var h = '<div class="card" style="display:flex;flex-wrap:wrap;gap:8px">'
+    + '<input id="fQ" placeholder="搜策略/交易員…" value="' + esc(CARD_F.q) + '" style="flex:1;min-width:140px;background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:7px 10px">'
+    + '<select id="fCat" style="background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px"><option value="">全部分類</option>' + opts(DB.categories, CARD_F.cat) + '</select>'
+    + '<select id="fSem" style="background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px"><option value="">全部學期</option>' + opts(DB.semesters.map(function (s) { return s.name; }), CARD_F.sem) + '</select>'
+    + '<select id="fSt" style="background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px"><option value="">全部狀態</option><option' + (CARD_F.st === 'full' ? ' selected' : '') + ' value="full">完整課</option><option' + (CARD_F.st === 'stub' ? ' selected' : '') + ' value="stub">概要</option></select>'
+    + '</div><div id="cardGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px"></div>';
+  return h;
+}
+
+function drawCards() {
+  var q = CARD_F.q.toLowerCase();
+  var html = '';
+  Object.keys(DB.lessons).forEach(function (id) {
+    var l = DB.lessons[id];
+    if (CARD_F.cat && l.category !== CARD_F.cat) return;
+    if (CARD_F.sem && l.semester !== CARD_F.sem) return;
+    if (CARD_F.st && l.status !== CARD_F.st) return;
+    if (q && (l.title + (l.trader || '')).toLowerCase().indexOf(q) < 0) return;
+    html += '<div class="card" style="margin:0;cursor:pointer" onclick="navTo(\'#/lesson/' + esc(id) + '\')">'
+      + '<div style="margin:-4px 0 8px">' + ytThumb(id) + '</div>'
+      + '<span class="tag ' + esc(l.status) + '">' + (l.status === 'full' ? esc(l.category) : '概要') + '</span>'
+      + '<div style="font-weight:600;margin:4px 0">' + esc(l.title) + '</div>'
+      + (l.trader ? '<div class="dim">' + esc(l.trader) + '</div>' : '')
+      + (l.one_liner ? '<div class="dim">「' + esc(l.one_liner) + '」</div>' : '')
+      + (l.radar ? '<div style="text-align:center">' + radarSVG(l.radar) + '</div>' : '')
+      + '</div>';
+  });
+  document.getElementById('cardGrid').innerHTML =
+    html || '<div class="dim">冇符合嘅卡</div>';
+}
+
+function afterCards() {
+  drawCards();
+  document.getElementById('fQ').addEventListener('input', function (e) { CARD_F.q = e.target.value; drawCards(); });
+  document.getElementById('fCat').addEventListener('change', function (e) { CARD_F.cat = e.target.value; drawCards(); });
+  document.getElementById('fSem').addEventListener('change', function (e) { CARD_F.sem = e.target.value; drawCards(); });
+  document.getElementById('fSt').addEventListener('change', function (e) { CARD_F.st = e.target.value; drawCards(); });
+}
+/* ---------- 🕸️ 圖譜 ---------- */
+var NODE_COLOR = { hub: 'var(--gold)', trader: 'var(--blue)', school: 'var(--green)', tool: '#b07cff' };
+
+function renderGraph() {
+  var g = DB.graph, byId = {};
+  g.nodes.forEach(function (n) { byId[n.id] = n; });
+  var s = '<div class="card"><b>師承同派系</b><div class="dim">'
+    + '<span style="color:var(--gold)">●</span>頻道 <span style="color:var(--blue)">●</span>交易員 '
+    + '<span style="color:var(--green)">●</span>流派 <span style="color:#b07cff">●</span>工具｜撳節點入課</div>'
+    + '<svg viewBox="0 0 1000 700" style="width:100%;height:auto">';
+  g.edges.forEach(function (e) {
+    var a = byId[e.from], b = byId[e.to];
+    if (!a || !b) return;
+    s += '<line x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y
+      + '" stroke="var(--line)" stroke-width="1.5"/>';
+    if (e.label) s += '<text x="' + ((a.x + b.x) / 2) + '" y="' + ((a.y + b.y) / 2 - 4)
+      + '" font-size="12" fill="var(--dim)" text-anchor="middle">' + esc(e.label) + '</text>';
+  });
+  g.nodes.forEach(function (n) {
+    var r = n.type === 'hub' ? 26 : 18;
+    s += '<g class="gnode" data-lesson="' + esc(n.lesson || '') + '" style="cursor:'
+      + (n.lesson ? 'pointer' : 'default') + '">'
+      + '<circle cx="' + n.x + '" cy="' + n.y + '" r="' + r + '" fill="' + (NODE_COLOR[n.type] || 'var(--dim)') + '" opacity=".9"/>'
+      + '<text x="' + n.x + '" y="' + (n.y + r + 15) + '" font-size="14" fill="var(--ink)" text-anchor="middle">' + esc(n.label) + '</text></g>';
+  });
+  return s + '</svg></div>';
+}
+
+function afterGraph() {
+  document.querySelectorAll('.gnode').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var id = el.dataset.lesson;
+      if (id && DB.lessons[id]) navTo('#/lesson/' + id);
+    });
+  });
+}
+
+/* ---------- 📊 進度 ---------- */
+function renderMe() {
+  var full = Object.keys(DB.lessons).filter(function (id) { return DB.lessons[id].status === 'full'; });
+  var read = full.filter(function (id) { return PROG[id] && PROG[id].read; });
+  var pct = full.length ? Math.round(read.length / full.length * 100) : 0;
+  var h = '<div class="card"><b>總進度</b>'
+    + '<div style="background:var(--line);border-radius:8px;height:20px;margin:8px 0">'
+    + '<div style="width:' + pct + '%;height:100%;background:var(--green);border-radius:8px"></div></div>'
+    + '<div class="dim">完成 ' + read.length + ' / ' + full.length + ' 堂完整課（' + pct + '%）</div></div>';
+  DB.semesters.forEach(function (s) {
+    var ls = full.filter(function (id) { return DB.lessons[id].semester === s.name; });
+    var dn = ls.filter(function (id) { return PROG[id] && PROG[id].read; });
+    h += '<div class="card"><b>' + esc(s.name) + '</b> <span class="dim">' + dn.length + '/' + ls.length + '</span></div>';
+  });
+  h += '<div class="card"><button class="btn ghost" onclick="if(confirm(\'重置所有進度？\')){localStorage.removeItem(\'speclab_progress\');location.reload()}">重置進度</button></div>';
+  return h;
+}
+</script>
+</body>
+</html>
