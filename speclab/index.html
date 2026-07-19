@@ -188,6 +188,9 @@ function renderLesson(id) {
     + '<h2 style="margin-top:6px">' + esc(l.title) + '</h2>'
     + (l.trader ? '<div class="dim">主角：' + esc(l.trader) + '</div>' : '') + '</div></div>';
 
+  if (l.source === 'description')
+    h += '<div class="card" style="border-color:var(--dim)"><span class="dim">📄 '
+      + '呢課由頻道主寫嘅影片描述提煉（原片冇字幕），內容比其他課簡略——細節要睇原片。</span></div>';
   h += '<div class="card"><b>① 開場故事</b><p>' + esc(l.story) + '</p></div>';
   h += returnsBar(l.returns_story);
   h += '<div class="card" style="border-color:var(--gold)"><b>② 核心思想</b>'
