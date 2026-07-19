@@ -92,8 +92,9 @@ td a{color:var(--green)}
   border-radius:6px;background:var(--bg);color:var(--ink)}
 .qa-card button{align-self:flex-start;font-family:inherit;font-size:13px;padding:7px 18px;
   border-radius:6px;border:none;background:var(--green);color:#fff;cursor:pointer}
-.qa-out{white-space:pre-wrap;margin-top:4px;font-size:13px;line-height:1.6;min-height:1em}
-.qa-out.err{color:var(--bear)}
+.ai-summary{white-space:pre-wrap;font-size:13px;line-height:1.6;background:var(--green-soft);
+  border-radius:6px;padding:10px 12px;margin-bottom:14px}
+.ai-summary:empty{display:none}
 
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);
   font-size:12px;text-align:center}
@@ -110,7 +111,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
       <div class="head-right">
         <div class="pill soft" id="count-pill">— names · — mentions</div>
         <div class="muted small" id="updated-line">Updated —</div>
-        <button class="tab-btn" id="btn-update">🔄 更新</button>
+        <div class="muted small">自動更新：每日 07:00 · 20:00</div>
       </div>
     </div>
     <hr>
@@ -141,10 +142,12 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
   <div class="sect">▼ 分類抽查（幫 AI 打分，累積可信度）</div>
   <div class="card">
     <div class="muted small" id="audit-acc"></div>
-    <div style="display:flex;gap:6px;align-items:center;margin:6px 0">
+    <div style="display:flex;gap:6px;align-items:center;margin:6px 0;flex-wrap:wrap">
       <button class="tab-btn" id="btn-audit">抽 10 條核對</button>
-      <input id="pin-input" placeholder="PIN" type="password" style="width:80px">
-      <span class="muted small">（寫入功能用，同詳情頁筆記共用）</span>
+      <button class="tab-btn" id="btn-export">⬇ 匯出筆記/評分</button>
+      <button class="tab-btn" id="btn-import">⬆ 匯入</button>
+      <input type="file" id="import-file" accept="application/json" style="display:none">
+      <span class="muted small">（存喺你部機瀏覽器；換機／清數據前記得匯出）</span>
     </div>
     <div id="audit-list"></div>
   </div>
@@ -163,14 +166,6 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
     <div class="muted small" id="pl-legend"></div>
   </div>
 
-  <div class="sect">▼ AI 問答</div>
-  <div class="card qa-card">
-    <input id="qa-ticker" placeholder="股票代號，例如 NVDA">
-    <input id="qa-q" placeholder="問題（預設：總結呢隻股嘅觀點）">
-    <button onclick="ask()">問</button>
-    <div id="qa-out" class="qa-out"></div>
-  </div>
-
   <footer>資訊整理，非投資建議 · 立場標籤由 AI 推斷，可能有錯，請以原帖為準</footer>
 </div>
 
@@ -184,6 +179,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
     </div>
     <canvas id="d-canvas" width="640" height="140"></canvas>
     <div class="muted small" id="d-spark-labels"></div>
+    <div id="d-summary" class="ai-summary"></div>
     <table>
       <thead><tr><th>日期</th><th>大V</th><th>立場</th><th>摘要</th><th>+7日</th><th>+30日</th><th></th></tr></thead>
       <tbody id="d-tbody"></tbody>
@@ -192,7 +188,6 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
     <div id="d-notes" class="small"></div>
     <div style="display:flex;gap:6px;margin-top:8px">
       <input id="note-text" placeholder="寫低你嘅決策／觀察（例：等回調到 $40 先入）" style="flex:1">
-      <input id="note-pin" placeholder="PIN" type="password" style="width:70px">
       <button class="tab-btn" id="btn-note">存</button>
     </div>
   </div>
@@ -203,20 +198,22 @@ var DATA = null, PRICES = {}, NOTES = {}, RATINGS = {}, WIN = 'daily', AUTHOR = 
 var WINDOWS = { daily: 1, weekly: 7, monthly: 28 };
 var CARD_LIMIT = 6;
 
-// 數據係 GitHub Pages 靜態檔；互動功能（PIN 筆記／抽查／AI問答／更新掣）
-// 行 Apps Script API（secrets 同 Drive 讀寫必須留喺 server）
-var API_URL = 'https://script.google.com/macros/s/AKfycbyxmnzES_-EggMGzbE_jsplGw7u0ylW9PZ2FdCs7YiGpAwv-SesGrqlMPPqFeuZjn00dw/exec';
+// 純靜態站：數據 fetch GitHub Pages JSON，筆記／抽查存 localStorage。
+// 零 server 依賴——即係你嘅筆記永遠唔會離開呢部機（所以唔使 PIN），
+// 但換機／清瀏覽器數據就會冇，想保就用下面個「匯出」掣。
+function lsGet(key) {
+  try { return JSON.parse(localStorage.getItem(key) || '{}'); }
+  catch (e) { return {}; }
+}
 
-function api(params, cb) {
-  // 一律用 GET + query string（避開 CORS preflight）；cb 一定收到 object，
-  // 網絡死咗都會收 {error}——同以前 google.script.run 兩個 handler 合併咗
-  var qs = Object.keys(params).map(function (k) {
-    return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
-  }).join('&');
-  fetch(API_URL + '?' + qs)
-    .then(function (r) { return r.json(); })
-    .then(cb)
-    .catch(function (e) { cb({ error: '連線失敗：' + e }); });
+function lsSet(key, obj) {
+  try {
+    localStorage.setItem(key, JSON.stringify(obj));
+    return true;
+  } catch (e) {
+    alert('存唔到（瀏覽器儲存爆滿或私隱模式）：' + e);
+    return false;
+  }
 }
 
 function fetchData(name, cb) {
@@ -232,44 +229,42 @@ function fetchData(name, cb) {
 
 fetchData('kol_latest.json', function (d) { DATA = d; render(); });
 fetchData('prices.json', function (d) { if (d && !d.error) PRICES = d; });
-var PRIVATE_LOADED = false;
 
-function loadPrivate() {
-  // 私人數據（筆記／評分）要 PIN 先攞到；有記住嘅 PIN 就自動載入
-  var pin = localStorage.getItem('kolpin');
-  if (!pin || PRIVATE_LOADED) return;
-  api({ api: 'private', pin: pin, name: 'notes.json' }, function (r) {
-    if (r && r.ok) { NOTES = r.data; PRIVATE_LOADED = true;
-      if (DETAIL_TICKER) renderNotes(DETAIL_TICKER); }
-  });
-  api({ api: 'private', pin: pin, name: 'ratings.json' }, function (r) {
-    if (r && r.ok) { RATINGS = r.data; updateAuditAcc(); }
-  });
+NOTES = lsGet('kol_notes');
+RATINGS = lsGet('kol_ratings');
+document.addEventListener('DOMContentLoaded', updateAuditAcc);
+
+function exportPrivate() {
+  var blob = new Blob([JSON.stringify({ notes: NOTES, ratings: RATINGS }, null, 1)],
+                      { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'kol_private_' + new Date().toISOString().slice(0, 10) + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 
-function getPin(inputId) {
-  // 優先用輸入框嘅值，冇就用上次記住嘅；成功寫入先由 server 確認，錯會清返
-  var el = document.getElementById(inputId);
-  var p = (el && el.value.trim()) || localStorage.getItem('kolpin') || '';
-  if (!p) {
-    alert('請先喺 PIN 框輸入你設嘅 NOTE_PIN');
-    if (el) el.focus();
-    return '';
-  }
-  localStorage.setItem('kolpin', p);
-  return p;
+function importPrivate(file) {
+  var fr = new FileReader();
+  fr.onload = function () {
+    try {
+      var d = JSON.parse(fr.result);
+      // 合併（唔覆蓋現有）：換機／多部機各自寫過嘅記錄都保得住
+      Object.keys(d.notes || {}).forEach(function (t) {
+        NOTES[t] = (NOTES[t] || []).concat(d.notes[t]);
+      });
+      Object.keys(d.ratings || {}).forEach(function (k) {
+        if (!RATINGS[k]) RATINGS[k] = d.ratings[k];
+      });
+      lsSet('kol_notes', NOTES);
+      lsSet('kol_ratings', RATINGS);
+      updateAuditAcc();
+      if (DETAIL_TICKER) renderNotes(DETAIL_TICKER);
+      alert('已匯入');
+    } catch (e) { alert('檔案格式唔啱：' + e); }
+  };
+  fr.readAsText(file);
 }
-
-function fillPins() {
-  var saved = localStorage.getItem('kolpin') || '';
-  ['pin-input', 'note-pin'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el && !el.value) el.value = saved;
-  });
-  loadPrivate();
-  updateAuditAcc();
-}
-document.addEventListener('DOMContentLoaded', fillPins);
 
 // 時段窗口：以 updated_at 當日為基準倒數 N 日（含當日）
 function inWindow(m) {
@@ -533,22 +528,12 @@ function renderAudit() {
 }
 
 function rateMention(key, verdict, btn) {
-  var pin = getPin('pin-input');
-  if (!pin) return;
+  RATINGS[key] = verdict;
+  if (!lsSet('kol_ratings', RATINGS)) { delete RATINGS[key]; return; }
   btn.disabled = true;
-  api({ api: 'rating', pin: pin, key: key, verdict: verdict }, function (r) {
-    if (r.error) {
-      if (r.error.indexOf('PIN') >= 0) localStorage.removeItem('kolpin');  // 網絡錯唔好清 PIN
-      alert(r.error);
-      btn.disabled = false;
-      return;
-    }
-    RATINGS[key] = verdict;
-    var row = document.getElementById('audit-' + key);
-    if (row) row.style.opacity = 0.4;
-    updateAuditAcc();
-    loadPrivate();
-  });
+  var row = document.getElementById('audit-' + key);
+  if (row) row.style.opacity = 0.4;
+  updateAuditAcc();
 }
 
 function winCell(win, n) {
@@ -657,31 +642,34 @@ var DETAIL_TICKER = null;
 function renderNotes(ticker) {
   var list = NOTES[ticker] || [];
   document.getElementById('d-notes').innerHTML = list.length
-    ? list.map(function (n) {
-        return '<div>· <span class="muted">' + esc(n.date) + '</span> ' + esc(n.text) + '</div>';
+    ? list.map(function (n, i) {
+        return '<div>· <span class="muted">' + esc(n.date) + '</span> ' + esc(n.text) +
+          ' <a href="javascript:void(0)" class="note-del muted" data-idx="' + i + '">✕</a></div>';
       }).join('')
     : '<span class="muted">未有記錄。</span>';
 }
 
 function saveNote() {
-  var text = document.getElementById('note-text').value.trim();
+  var text = document.getElementById('note-text').value.trim().slice(0, 500);
   if (!text || !DETAIL_TICKER) return;
-  var pin = getPin('note-pin');
-  if (!pin) return;
-  var btn = document.getElementById('btn-note');
-  btn.disabled = true;
-  api({ api: 'note', pin: pin, ticker: DETAIL_TICKER, text: text }, function (r) {
-    btn.disabled = false;
-    if (r.error) {
-      if (r.error.indexOf('PIN') >= 0) localStorage.removeItem('kolpin');  // 網絡錯唔好清 PIN
-      alert(r.error);
-      return;
-    }
-    NOTES[DETAIL_TICKER] = r.notes;
-    document.getElementById('note-text').value = '';
-    renderNotes(DETAIL_TICKER);
-    loadPrivate();
-  });
+  var d = new Date();
+  var stamp = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' +
+    ('0' + d.getDate()).slice(-2) + ' ' + ('0' + d.getHours()).slice(-2) + ':' +
+    ('0' + d.getMinutes()).slice(-2);
+  var list = NOTES[DETAIL_TICKER] || (NOTES[DETAIL_TICKER] = []);
+  list.push({ date: stamp, text: text });
+  if (!lsSet('kol_notes', NOTES)) { list.pop(); return; }
+  document.getElementById('note-text').value = '';
+  renderNotes(DETAIL_TICKER);
+}
+
+function deleteNote(ticker, idx) {
+  // localStorage 冇 server 備份，刪錯冇得救——所以要確認
+  if (!confirm('刪除呢條記錄？')) return;
+  var list = NOTES[ticker] || [];
+  var gone = list.splice(idx, 1);
+  if (!lsSet('kol_notes', NOTES)) { list.splice(idx, 0, gone[0]); return; }
+  renderNotes(ticker);
 }
 
 function showDetail(ticker) {
@@ -695,6 +683,7 @@ function showDetail(ticker) {
   var yp = yellowParts(s.yellow);
   document.getElementById('d-yellow').innerHTML = yp.length
     ? '<span class="pill soft">🟡 轉黃 ' + esc(yp.join(' · ')) + '</span>' : '';
+  document.getElementById('d-summary').textContent = s.ai_summary ? '🤖 ' + s.ai_summary : '';
 
   var tbody = mentions.map(function (m) {
     return '<tr><td>' + esc(m.date) + '</td><td>' + esc(m.author) + '</td>' +
@@ -757,43 +746,16 @@ function drawSparkline(ticker) {
     p.dates[p.dates.length - 1] + ': ' + last.toFixed(2) + ' (' + sign + pct.toFixed(1) + '%)';
 }
 
-function ask() {
-  var t = document.getElementById('qa-ticker').value.trim().toUpperCase();
-  var q = document.getElementById('qa-q').value.trim() || '總結呢隻股嘅觀點';
-  var out = document.getElementById('qa-out');
-  out.className = 'qa-out';
-  out.textContent = '諗緊…';
-  api({ api: 'ask', q: q, ticker: t }, function (r) {
-    if (r.error) {
-      out.className = 'qa-out err';
-      out.textContent = '⚠ ' + r.error;
-    } else {
-      out.className = 'qa-out';
-      out.textContent = r.answer;
-    }
-  });
-}
-
-function requestUpdate() {
-  var b = document.getElementById('btn-update');
-  b.disabled = true;
-  b.textContent = '請求緊…';
-  api({ api: 'update' }, function (r) {
-    if (r.error) {
-      b.disabled = false;
-      b.textContent = '🔄 更新';
-      alert('請求失敗：' + r.error);
-      return;
-    }
-    b.textContent = (r && r.msg) ? '✓ ' + r.msg : '✓ 已請求';
-  });
-}
-
 document.addEventListener('click', function (e) {
   var t = e.target;
-  if (t.id === 'btn-update') { requestUpdate(); return; }
   if (t.id === 'btn-audit') { renderAudit(); return; }
   if (t.id === 'btn-note') { saveNote(); return; }
+  if (t.id === 'btn-export') { exportPrivate(); return; }
+  if (t.id === 'btn-import') { document.getElementById('import-file').click(); return; }
+  if (t.matches('.note-del')) {
+    deleteNote(DETAIL_TICKER, Number(t.getAttribute('data-idx')));
+    return;
+  }
   if (t.matches('.audit-btn')) {
     rateMention(t.getAttribute('data-key'), t.getAttribute('data-verdict'), t);
     return;
