@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meme Pump Radar</title>
+<style>
+  :root{
+    --bg:#0e1117;--fg:#e6e6e6;--hdr-border:#222;--border:#1c2128;--muted:#8b949e;
+    --stats:#9aacb5;--pos:#4ade80;--neg:#f87171;--link:#60a5fa;--badge:#1f2937;
+    --panel:#161b22;--panel-border:#30363d;--dual:#fbbf24;
+  }
+  :root[data-theme="light"]{
+    --bg:#f5f2ea;--fg:#2b2b2b;--hdr-border:#e2dccb;--border:#e6e0d0;--muted:#6b6455;
+    --stats:#6b6455;--pos:#15803d;--neg:#dc2626;--link:#2563eb;--badge:#e7e0cf;
+    --panel:#efe9db;--panel-border:#d8d0bd;--dual:#b8860b;
+  }
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:0;background:var(--bg);color:var(--fg)}
+  header{padding:16px 20px;border-bottom:1px solid var(--hdr-border);position:relative}
+  h1{font-size:18px;margin:0 0 8px}
+  .stats{font-size:13px;color:var(--stats)}
+  .stats b{color:var(--pos)}
+  .updated{font-size:11px;color:var(--muted);margin-top:6px}
+  .wrap{overflow-x:auto;padding:12px}
+  table{border-collapse:collapse;width:100%;font-size:13px;white-space:nowrap}
+  th,td{padding:6px 8px;border-bottom:1px solid var(--border);text-align:right}
+  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+  th{color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--bg)}
+  .pos{color:var(--pos)}.neg{color:var(--neg)}
+  .badge{display:inline-block;padding:1px 6px;border-radius:4px;background:var(--badge);font-size:11px}
+  .rugged{color:var(--neg)}.complete{color:var(--muted)}.tracking{color:var(--link)}.dead{color:var(--muted);text-decoration:line-through}
+  a{color:var(--link);text-decoration:none}
+  .dual{color:var(--dual)}
+  .controls{margin-top:10px}
+  .ctrl{background:var(--panel);color:var(--fg);border:1px solid var(--panel-border);border-radius:4px;padding:4px 8px}
+  .btn{background:#238636;color:#fff;border:0;border-radius:4px;padding:5px 10px;cursor:pointer}
+  .btn2{background:var(--panel);color:var(--fg);border:1px solid var(--panel-border);border-radius:4px;padding:5px 10px;cursor:pointer}
+  #theme{position:absolute;top:14px;right:18px;background:var(--panel);color:var(--fg);border:1px solid var(--panel-border);border-radius:6px;padding:5px 9px;cursor:pointer;font-size:15px;line-height:1}
+</style></head><body>
+<header>
+  <button id="theme" title="切換 深/淺色">☀️</button>
+  <h1>🚀 Meme Pump Radar</h1>
+  <div class="stats" id="stats">載入中…</div>
+  <div class="controls">
+    <input id="q" class="ctrl" placeholder="搜 symbol">
+    <select id="chain" class="ctrl"><option value="">全鏈</option><option>solana</option><option>base</option><option>ethereum</option><option>bsc</option></select>
+    <select id="status" class="ctrl"><option value="">全狀態</option><option>tracking</option><option>rugged</option><option>dead</option><option>complete</option></select>
+    <select id="tier" class="ctrl"><option value="">全層</option><option value="early">🌱 早期</option><option value="confirm">🚀 確認</option></select>
+    <button id="reload" class="btn2">↻ 更新</button>
+    <button id="csv" class="btn">匯出 CSV</button>
+  </div>
+  <div class="updated" id="updated"></div>
+</header>
+<div class="wrap"><table id="tbl"><thead><tr>
+  <th>時間</th><th>幣</th><th>鏈</th><th>來源</th><th>價0</th>
+  <th>+1h</th><th>+3h</th><th>+6h</th><th>+24h</th><th>+7d</th><th>走勢</th><th>狀態</th><th>連結</th>
+</tr></thead><tbody></tbody></table></div>
+<script>
+/* ===== 數據源：Apps Script JSON API（掃描器/Sheet 仍喺 GAS，網站已搬 GitHub Pages）===== */
+var API='https://script.google.com/macros/s/AKfycbyRApe8BUpPnE8xZEVq_uXja8coQKAycUBspa9AGE3PHJmqStDRtHD0Oz0UAdOtSOM/exec?api=1';
+
+(function(){
+  var root=document.documentElement, tb=document.getElementById('theme');
+  function set(t){ root.setAttribute('data-theme',t); localStorage.setItem('mpr-theme',t); tb.textContent=(t==='light'?'🌙':'☀️'); }
+  set(localStorage.getItem('mpr-theme')||'dark');
+  tb.onclick=function(){ set(root.getAttribute('data-theme')==='light'?'dark':'light'); };
+})();
+var ALL=[];
+function spark(r){
+  var pts=[r.price0,r.p_1h,r.p_3h,r.p_6h,r.p_24h,r.p_7d].map(function(v){return (v===''||v==null)?null:Number(v);});
+  var xs=[],ys=[],valid=pts.filter(function(p){return p!=null;});
+  if(valid.length<2) return '<td>·</td>';
+  var lo=Math.min.apply(null,valid),hi=Math.max.apply(null,valid),rng=(hi-lo)||1;
+  pts.forEach(function(p,i){ if(p==null)return; xs.push(i/5*56); ys.push(18-(p-lo)/rng*16); });
+  var d=xs.map(function(x,i){return (i?'L':'M')+x.toFixed(1)+' '+ys[i].toFixed(1);}).join(' ');
+  var up=valid[valid.length-1]>=valid[0];
+  return '<td><svg width="60" height="20"><path d="'+d+'" fill="none" stroke="'+(up?'#4ade80':'#f87171')+'" stroke-width="1.5"/></svg></td>';
+}
+function pctCell(v){ if(v===''||v==null) return '<td>·</td>';
+  var n=Number(v); return '<td class="'+(n>=0?'pos':'neg')+'">'+(n>=0?'+':'')+n+'%</td>'; }
+function esc(s){ return String(s==null?'':s).replace(/[<>&"']/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c];}); }
+function render(rows){
+  var b=rows.map(function(r){
+    var link=r.url||('https://dexscreener.com/'+r.chain+'/'+r.pair_address);
+    var dual=Number(r.confidence)>=2?' <span class="dual" title="雙源確認">◆◆</span>':'';
+    var tb=r.tier==='confirm'?'🚀 ':(r.tier==='early'?'🌱 ':'');
+    var t=r.detected_at?new Date(r.detected_at).toLocaleString():'';
+    return '<tr><td>'+esc(t)+'</td><td>'+tb+esc(r.symbol)+dual+'</td><td><span class="badge">'+esc(r.chain)+'</span></td>'
+      +'<td>'+esc(r.sources)+'</td><td>$'+esc(r.price0)+'</td>'
+      +pctCell(r.pct_1h)+pctCell(r.pct_3h)+pctCell(r.pct_6h)+pctCell(r.pct_24h)+pctCell(r.pct_7d)+spark(r)
+      +'<td class="'+esc(r.status)+'">'+esc(r.status)+'</td>'
+      +'<td><a href="'+esc(link)+'" target="_blank" rel="noopener">↗</a></td></tr>';
+  }).join('');
+  document.querySelector('#tbl tbody').innerHTML=b||'<tr><td colspan="13">未有 signal</td></tr>';
+}
+function apply(){
+  var q=(document.getElementById('q').value||'').toLowerCase();
+  var ch=document.getElementById('chain').value, st=document.getElementById('status').value, ti=document.getElementById('tier').value;
+  render(ALL.filter(function(r){
+    return (!q||String(r.symbol).toLowerCase().indexOf(q)>=0)
+      &&(!ch||r.chain===ch)&&(!st||r.status===st)&&(!ti||r.tier===ti);
+  }));
+}
+function renderStats(s){
+  if(!s||!s.overall){ document.getElementById('stats').textContent='冇統計數據'; return; }
+  var parts=['整體 <b>'+s.overall.rate+'%</b> re-pump ('+s.overall.repump+'/'+s.overall.total+')'];
+  Object.keys(s.byChain||{}).forEach(function(k){var c=s.byChain[k];parts.push(k+' '+c.rate+'% ('+c.repump+'/'+c.total+')');});
+  var l2=[];
+  Object.keys(s.byTier||{}).forEach(function(k){
+    var t=s.byTier[k], icon=k==='confirm'?'🚀':(k==='early'?'🌱':'v1');
+    l2.push(icon+' '+t.total+'個 (rug '+t.rugged+(t.dead?'·dead '+t.dead:'')+')');
+  });
+  var sc=s.statusCounts||{};
+  l2.push('追蹤中 '+(sc.tracking||0));
+  document.getElementById('stats').innerHTML='回落後再上命中率 — '+parts.join(' · ')+'<br>'+l2.join(' · ');
+}
+function toCSV(rows){
+  var cols=['detected_at','chain','symbol','tier','token_address','pair_address','price0','pct_1h','pct_3h','pct_6h','pct_24h','pct_7d','status','sources','m5pct_at_detect','buys_h1_0','sells_h1_0','mcap_0','age_min_0','uniq_buyers_h1_0','uniq_sellers_h1_0'];
+  var q=function(v){v=String(v==null?'':v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+  return cols.join(',')+'\n'+rows.map(function(r){return cols.map(function(c){return q(r[c]);}).join(',');}).join('\n');
+}
+document.getElementById('csv').onclick=function(){
+  var blob=new Blob([toCSV(ALL)],{type:'text/csv'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='meme_pump_signals.csv';a.click();
+};
+['q','chain','status','tier'].forEach(function(id){document.getElementById(id).addEventListener('input',apply);});
+document.getElementById('reload').onclick=function(){ load(); };
+
+function load(){
+  document.getElementById('updated').textContent='更新中…';
+  fetch(API)
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(j){
+      ALL=j.signals||[];
+      apply();
+      renderStats(j.stats);
+      document.getElementById('updated').textContent='更新於 '+new Date(j.generated_at||Date.now()).toLocaleString()+'（每 60 秒自動更新）';
+    })
+    .catch(function(e){
+      document.querySelector('#tbl tbody').innerHTML='<tr><td colspan="13" style="color:var(--neg)">載入失敗：'+esc(e&&e.message||e)+'</td></tr>';
+      document.getElementById('updated').textContent='';
+    });
+}
+load();
+setInterval(load, 60000);
+</script>
+</body></html>
