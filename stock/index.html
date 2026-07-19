@@ -9,6 +9,15 @@
 <style>
   :root, [data-theme="dark"] { --bg:#0e1116; --card:#161b22; --line:#2a313c; --fg:#e6edf3; --mut:#8b949e; --yel:#f5c518; --red:#f85149; }
   [data-theme="light"] { --bg:#f3eee6; --card:#e9e1d3; --line:#ddd3c2; --fg:#2b2620; --mut:#6b6358; --yel:#8a6d00; --red:#c0392b; }
+  .bbar { display:inline-block; width:90px; height:8px; border-radius:4px;
+          background:var(--line); overflow:hidden; vertical-align:middle; }
+  .bbar i { display:inline-block; height:100%; }
+  .bbar .bear { background:var(--red); }
+  .bbar .bull { background:#3fb950; }
+  .fbtn { background:var(--card); color:var(--mut); border:1px solid var(--line);
+          border-radius:14px; padding:3px 12px; margin-right:6px; cursor:pointer;
+          font-size:12px; }
+  .fbtn.on { background:var(--fg); color:var(--bg); border-color:var(--fg); }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg);
          font:14px/1.5 -apple-system,"Segoe UI",Roboto,"Microsoft JhengHei",sans-serif;
@@ -140,6 +149,17 @@
   function downloadSection(id){
     if (!CURRENT){ return; }
     var TF = { 'sec-day': ['day', '日K'], 'sec-week': ['week', '週K'], 'sec-mon': ['mon', '月K'] };
+    if (id === 'sec-buzz'){
+      var br = (CURRENT.x_buzz || {}).rows || [];
+      if (!br.length){ alert('冇數據，冇嘢可下載。'); return; }
+      var bl = ['排名,代號,全名,類型,Buzz,提及數,多頭%,淡友%,趨勢'];
+      br.forEach(function(r){
+        bl.push([r.rank, r.ticker, qcsv(r.name || ''), r.kind, r.buzz,
+                 r.mentions, r.bull, r.bear, r.trend].join(','));
+      });
+      downloadCsv('X熱度榜_' + (CURRENT.generated || '').slice(0, 10) + '.csv', bl.join('\r\n'));
+      return;
+    }
     var list, label;
     if (id === 'sec-vol'){ list = CURRENT.volume_watch || []; label = '爆量觀察'; }
     else { var m = TF[id]; list = (CURRENT.timeframes || {})[m[0]] || []; label = m[1]; }
@@ -276,6 +296,71 @@
       + '<span class="arrow" id="arr-sec-cycle">▶</span><h2>🌙 月K週期底（' + n + '）</h2></div>'
       + '<div class="sec-b" id="sec-cycle" style="display:none">' + body + '</div></div>';
   }
+  function buzzBar(bull, bear){
+    return '<span class="bbar" title="多頭 ' + (bull||0) + '% · 淡友 ' + (bear||0) + '%">'
+      + '<i class="bear" style="width:' + (bear||0) + '%"></i>'
+      + '<i class="bull" style="width:' + (bull||0) + '%"></i></span>';
+  }
+  function buzzSpark(hist, trend){
+    var h = hist || [];
+    var col = trend === 'rising' ? '#3fb950' : (trend === 'falling' ? 'var(--red)' : 'var(--mut)');
+    var arr = trend === 'rising' ? '↑' : (trend === 'falling' ? '↓' : '→');
+    var svg = '';
+    if (h.length > 1){
+      var mx = Math.max.apply(null, h), mn = Math.min.apply(null, h), rng = (mx - mn) || 1;
+      var pts = h.map(function(v, i){
+        return (i / (h.length - 1) * 46).toFixed(1) + ',' + (14 - (v - mn) / rng * 12).toFixed(1);
+      }).join(' ');
+      svg = '<svg width="48" height="16" viewBox="0 0 48 16" style="vertical-align:middle">'
+        + '<polyline points="' + pts + '" fill="none" stroke="' + col + '" stroke-width="1.5"/></svg> ';
+    }
+    return svg + '<span style="color:' + col + '">' + arr + '</span>';
+  }
+  function buzzShow(kind){
+    var tb = document.getElementById('buzzBody');
+    if (!tb) return;
+    Array.prototype.forEach.call(tb.querySelectorAll('tr[data-kind]'), function(tr){
+      tr.style.display = (kind === 'all' || tr.getAttribute('data-kind') === kind) ? '' : 'none';
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('#sec-buzz .fbtn'), function(b){
+      b.className = 'fbtn' + (b.getAttribute('data-k') === kind ? ' on' : '');
+    });
+  }
+  function buzzSection(d){
+    var x = d.x_buzz || {}, rows = x.rows || [];
+    if (!rows.length) return '';
+    var c = x.compare;
+    var note = c
+      ? '🔎 自家抽樣核對：Adanos Top ' + c.top20_total + ' 我哋抽到 ' + c.top20_hit
+        + ' 隻（' + c.pct + '%）· 抽樣 ' + c.posts + ' 帖 · ' + x.updated
+      : '🔎 今日未核對（自家抽樣失敗或撞 X 限流）· ' + x.updated;
+    if (x.stale) note += ' ⚠️ 數據截至 ' + (x.updated || '').slice(0, 10) + '（Adanos 今日攞唔到）';
+    var body = '<div class="ai">' + note + '</div>'
+      + '<div style="margin:8px 0">'
+      + '<button class="fbtn on" data-k="all" onclick="buzzShow(\'all\')">全部</button>'
+      + '<button class="fbtn" data-k="stock" onclick="buzzShow(\'stock\')">股票</button>'
+      + '<button class="fbtn" data-k="etf" onclick="buzzShow(\'etf\')">ETF</button></div>'
+      + '<div class="scroll"><table id="buzzBody"><tr><th>#</th><th>代號</th><th>全名</th>'
+      + '<th>Buzz</th><th>提及</th><th>情緒</th><th>走勢</th></tr>';
+    rows.forEach(function(r){
+      body += '<tr data-kind="' + r.kind + '"><td>' + r.rank + '</td>'
+        + '<td class="name">' + r.ticker + (r.kind === 'etf' ? ' <span class="none">ETF</span>' : '') + '</td>'
+        + '<td>' + (r.name || '—') + '</td>'
+        + '<td class="score">' + (r.buzz != null ? Number(r.buzz).toFixed(1) : '—') + '</td>'
+        + '<td>' + (r.mentions != null ? r.mentions : '—') + '</td>'
+        + '<td>' + buzzBar(r.bull, r.bear) + '</td>'
+        + '<td>' + buzzSpark(r.hist, r.trend) + '</td></tr>';
+    });
+    body += '</table></div>';
+    if (c && (c.extra || []).length){
+      body += '<div class="meta" style="margin-top:8px">自家抽到但唔喺榜：'
+        + c.extra.join('、') + '（多數係加密幣或者細價股炒作）</div>';
+    }
+    return '<div class="sec"><div class="sec-h" onclick="toggleSec(\'sec-buzz\')">'
+      + '<span class="arrow" id="arr-sec-buzz">▶</span><h2>🔥 X 熱度榜（' + rows.length + '）</h2>'
+      + '<button class="dl-btn" onclick="event.stopPropagation();downloadSection(\'sec-buzz\')">⬇ CSV</button></div>'
+      + '<div class="sec-b" id="sec-buzz" style="display:none">' + body + '</div></div>';
+  }
   function section(title, count, bodyHtml, id){
     return '<div class="sec">'
       + '<div class="sec-h" onclick="toggleSec(\'' + id + '\')">'
@@ -309,6 +394,7 @@
     html += section('🔥 爆量觀察', vw.length, volRows(vw), 'sec-vol');
     html += tqqqSection(d);
     html += cycleSection(d);
+    html += buzzSection(d);
     html += sectorSection(d);
     html += '<div class="meta" style="margin-top:24px">資訊提示，非投資建議。</div>';
     content.innerHTML = html;
