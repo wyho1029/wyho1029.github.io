@@ -495,9 +495,7 @@ function updateAuditAcc() {
   for (k in RATINGS) { n++; if (RATINGS[k] === 'ok') ok++; }
   document.getElementById('audit-acc').textContent = n
     ? '已核對 ' + n + ' 條 · AI 分類準確率 ' + Math.round(100 * ok / n) + '%'
-    : (PRIVATE_LOADED
-        ? '未有核對記錄 — 撳掣開始，逐條對返原帖睇 AI 標得啱唔啱。'
-        : '核對記錄係私人數據 — 入 PIN 用過一次之後會自動載入。');
+    : '未有核對記錄 — 撳掣開始，逐條對返原帖睇 AI 標得啱唔啱。';
 }
 
 function renderAudit() {
