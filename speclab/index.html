@@ -74,13 +74,19 @@ function boot(data) {
   route();
 }
 
-// GitHub Pages 靜態檔（本地 dev 由 repo root 起 server 都行同一路徑）
-fetch('data/speclab_data.json')
-  .then(function (r) {
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    return r.json();
-  }).then(boot)
-  .catch(function (e) { boot({ error: String(e) }); });
+// 依次試：GitHub Pages 靜態檔 → 本地 dev（喺 repo root 起 server、開 /speclab_web/Index.html）
+function loadData(paths) {
+  fetch(paths[0])
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(boot)
+    .catch(function (e) {
+      if (paths.length > 1) { loadData(paths.slice(1)); return; }
+      boot({ error: String(e) });
+    });
+}
+loadData(['data/speclab_data.json', '../speclab/published/speclab_data.json']);
 
 window.addEventListener('hashchange', route);
 function route() {
