@@ -2,10 +2,104 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/CBBI/">
-<title>wyho1029</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wyho1029 · 工具台</title>
+<meta name="description" content="投機工具台：轉黃掃描 · 投機學院 · 大V觀點追蹤 · CBBI · Meme Pump Radar">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
+<style>
+  :root{
+    --bg:#0b0f17; --bg2:#131a26; --card:#161e2e; --card-h:#1d283c;
+    --line:#26314a; --txt:#e8ecf4; --dim:#9aa7bd; --accent:#ffcf4d;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f4f6fb; --bg2:#eaeef7; --card:#ffffff; --card-h:#ffffff;
+      --line:#e2e7f0; --txt:#1a2233; --dim:#5c6a82; --accent:#d99b00; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    min-height:100vh; font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans TC","Microsoft JhengHei",sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,var(--bg2),var(--bg));
+    color:var(--txt); -webkit-font-smoothing:antialiased;
+    display:flex; flex-direction:column; align-items:center;
+    padding:clamp(28px,7vw,72px) 20px 48px;
+  }
+  header{text-align:center; margin-bottom:clamp(28px,5vw,48px)}
+  h1{margin:0; font-size:clamp(28px,6vw,42px); letter-spacing:.5px}
+  h1 .mark{color:var(--accent)}
+  .tag{margin-top:10px; color:var(--dim); font-size:clamp(13px,2.6vw,15px)}
+  .grid{
+    width:100%; max-width:880px; display:grid; gap:16px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  }
+  a.card{
+    display:flex; gap:16px; align-items:flex-start;
+    padding:20px 22px; border:1px solid var(--line); border-radius:16px;
+    background:var(--card); color:inherit; text-decoration:none;
+    transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  a.card:hover{
+    transform:translateY(-3px); background:var(--card-h);
+    border-color:var(--accent);
+  }
+  .ico{font-size:30px; line-height:1; flex:none; width:38px; text-align:center}
+  .body{min-width:0}
+  .name{font-size:17px; font-weight:650; display:flex; align-items:center; gap:7px}
+  .name .arw{color:var(--dim); transition:transform .15s ease}
+  a.card:hover .name .arw{transform:translateX(3px); color:var(--accent)}
+  .desc{margin-top:5px; color:var(--dim); font-size:13.5px; line-height:1.5}
+  footer{margin-top:40px; color:var(--dim); font-size:12px; text-align:center}
+  footer a{color:var(--dim)}
+</style>
 </head>
 <body>
-<p><a href="/CBBI/">CBBI · Bitcoin Cycle Index →</a></p>
+  <header>
+    <h1><span class="mark">📊</span> 工具台</h1>
+    <div class="tag">投機・量化・鏈上工具一站入口</div>
+  </header>
+
+  <main class="grid">
+    <a class="card" href="stock/">
+      <div class="ico">🎯</div>
+      <div class="body">
+        <div class="name">轉黃掃描 <span class="arw">→</span></div>
+        <div class="desc">FCOLOR 轉黃底部反轉訊號 · 日／週／月K 掃全市場</div>
+      </div>
+    </a>
+
+    <a class="card" href="speclab/">
+      <div class="ico">📈</div>
+      <div class="body">
+        <div class="name">投機學院 <span class="arw">→</span></div>
+        <div class="desc">投機實驗室 120 堂交易策略課 · professor 式逐步教學</div>
+      </div>
+    </a>
+
+    <a class="card" href="big_v/">
+      <div class="ico">🗣️</div>
+      <div class="body">
+        <div class="name">大V觀點追蹤 <span class="arw">→</span></div>
+        <div class="desc">大V每日觀點提煉 · X 熱度榜 Top100</div>
+      </div>
+    </a>
+
+    <a class="card" href="CBBI/">
+      <div class="ico">₿</div>
+      <div class="body">
+        <div class="name">CBBI 週期指數 <span class="arw">→</span></div>
+        <div class="desc">Bitcoin 週期估值 0–100 · 越高越近周期頂</div>
+      </div>
+    </a>
+
+    <a class="card" href="meme_pump/">
+      <div class="ico">🚀</div>
+      <div class="body">
+        <div class="name">Meme Pump Radar <span class="arw">→</span></div>
+        <div class="desc">鏈上迷因幣爆量雷達 · Solana／Ethereum</div>
+      </div>
+    </a>
+  </main>
+
+  <footer>wyho1029.github.io · <a href="https://github.com/wyho1029/wyho1029.github.io">GitHub</a></footer>
 </body>
 </html>
