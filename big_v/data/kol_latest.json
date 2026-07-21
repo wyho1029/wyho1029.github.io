@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-21T07:01:43+08:00",
+ "updated_at": "2026-07-21T20:01:49+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -853,11 +853,21 @@
      "summary": "作者指出IREN展現出難以置信的強勢。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "Neocloud 股 IREN 盤前上漲 4% 以上。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -32.1,
-   "ai_summary": "根據歷史數據，多位大V對IREN最新立場普遍為看漲，主要論述點包括其受益於超大型雲端業者資本支出溢出、AI代理全面採用，以及近期修訂ARR目標至40億美元以上並獲得微軟、輝達等客戶，帶動股價大漲。其中，wliang和sunxliao持續看漲，未見明顯轉軚；但sunxliao在2026-07-16曾提示風險，指出股價可能繼續波動，取決於WGMI能否收在週線黃金之上，顯示對短期波動有所警惕。",
+   "ai_summary": "根據2026年7月12日至21日的數據，大V普遍看好IREN，最新立場為看漲，論述點包括受益於超大型雲端業者資本支出溢出、AI代理全面採用、行業順風及大型合約簽署預期，且股價在修訂ARR目標後大漲19.69%。未見明顯轉軚，但sunxliao在7月16日曾提示中性風險，指出股價可能繼續波動，取決於WGMI能否收在週線黃金之上。",
    "theme": "AI雲"
   },
   "META": {
@@ -1350,12 +1360,22 @@
      "summary": "作者認為INTC接近支撐位，預期短期反彈。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "英特爾股價上漲 4% 以上。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -31.1,
    "earnings": "2026-07-24",
-   "ai_summary": "根據提供的數據，wliang 在2026年6月22日看好INTC，但6月24日轉為看淡，指出路線圖與供應問題導致市佔流失，隨後在6月26日及7月20日再次轉為看好，認為政府股權投資消息及接近支撐位帶來反彈，立場多次轉變。aleabitoreddit 在6月24日及7月16日看好，但多次保持中立，提及政府可能成為軟性後盾、市場下跌影響及CEO警告氦氣問題，未見明確轉軚，但有風險提示。sunxliao 在6月26日看好美國晶圓廠和18A節點，立場一致。",
+   "ai_summary": "根據提供的數據，wliang 在2026年6月22日及26日曾看好INTC，但6月24日轉為看淡，指出路線圖與供應問題導致市佔流失，其後7月16日立場轉為中性，7月20日再次看好短期反彈，顯示其觀點有多次轉變。aleabitoreddit 在6月24日及7月16日、17日表達看漲，但多次提及中性或風險因素，如7月7日指出市場下跌可能影響股價，7月13日警告氦氣問題，整體立場偏向謹慎樂觀，未有明確轉軚。sunxliao 在6月26日看好美國晶圓廠和18A節點，立場一致。整體而言，最新立場分歧，wliang 最新看漲短期反彈，aleabitoreddit 最新看漲但提及風險，sunxliao 維持看漲。",
    "theme": "AI晶片"
   },
   "AMZN": {
@@ -1856,11 +1876,21 @@
      "summary": "AMD被視為NVIDIA的替代來源，但帖文未對NVIDIA表達明確立場。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079495178793201678",
+     "url": "https://x.com/aleabitoreddit/status/2079495178793201678",
+     "stance": "neutral",
+     "summary": "AMD 若確認 CPO 路線，顯示轉型不僅由 NVDA 驅動，但 NVDA 本身未直接受影響。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 1.6,
-   "ai_summary": "根據歷史數據，wliang 最新立場為看多，認為NVDA目前本益比僅23倍、營收高成長，且AI超級週期未見頂，AI代理採用將帶來長期受益，並將近期下跌視為買入機會，立場由中立轉為明確看多。aleabitoreddit 最新立場亦為看多，多次強調黃仁勳親自闢謠出貨延遲、ASIC競爭等負面消息，並相信公司對時間表的掌握，但曾於7月13日短暫轉為看空，提及DeepSeek和智譜開發自訂ASIC繞過NVDA，隨後又轉回看多，顯示其立場有過轉折。風險提示方面，aleabitoreddit 曾指出有人刻意放大技術細節問題來唱空，但認為實際影響有限。",
+   "ai_summary": "根據提供的歷史數據，wliang自2026年7月12日起持續維持看多立場，最新（7月20日）認為NVDA披露持有NBIS股權為行業帶來正面動能，並在7月17日強調股價下跌是買入機會，論述點包括本益比低、營收高成長及AI超級週期未見頂。aleabitoreddit立場多次轉變，從7月12日看多（認為唱空影響有限），到7月13日短暫看空（因DeepSeek開發自訂ASIC），再到7月14日及之後持續看多，最新（7月17日）強調NVDA是架構轉變領導者，TAM將擴大到910億美元，但7月13日曾提示ASIC競爭風險，顯示其對競爭因素有過短期擔憂。整體而言，兩位大V最新立場均為看多，無轉軚，但aleabitoreddit曾提示ASIC競爭風險。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -2839,11 +2869,21 @@
      "summary": "作者指出NBIS展現出難以置信的強勢。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "Neocloud 股 NBIS 盤前上漲 4% 以上。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -31.1,
-   "ai_summary": "根據歷史數據，最新立場（2026-07-20）多位大V普遍轉向看漲，主要論述點包括Nvidia披露持有NBIS 9.3%股權、與Reflection AI達成10億美元交易，以及市場整體反彈帶動股價飆升。wliang和aleabitoreddit均強調這些事件驗證了NBIS的業務前景，並視為買入機會。sunxliao在7月20日也轉為看漲，指出NBIS展現難以置信的強勢，但此前在7月15日曾短期看跌，並在7月16日提示波動風險，顯示立場有轉軚，但未見明確風險提示。",
+   "ai_summary": "根據歷史記錄，wliang持續看好NBIS，最新立場為強烈看漲，論述點包括NBIS受益於AI代理採用、與Reflection AI達成10億美元交易、Nvidia披露持股9.3%確認支持，以及市場下跌是買入機會，未見明顯轉軚。sunxliao最初看跌，但最新立場轉為看漲，指出NBIS展現難以置信的強勢，立場有明顯轉變。aleabitoreddit最新立場為看漲，認為超大型雲端業者模仿Neocloud模式驗證業務前景，但曾提示NBIS表現較慢，整體類股復甦中，未見明確風險提示。",
    "theme": "AI雲"
   },
   "SIVE": {
@@ -3075,6 +3115,26 @@
      "url": "https://x.com/aleabitoreddit/status/2078130772121399553",
      "stance": "bullish",
      "summary": "作者看好CPO領域的SIVE，認為架構轉變由NVDA主導，未來規模擴張將帶來成長。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079495178793201678",
+     "url": "https://x.com/aleabitoreddit/status/2079495178793201678",
+     "stance": "bullish",
+     "summary": "若 AMD 確認使用 Ayar Labs 或 GF SCALE 的 CPO 方案，SIVE 作為上游雷射供應商將極度受益。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "光學網路股 SIVE 上漲 4% 以上，顯示復甦跡象。",
      "r7": null,
      "r30": null
     }
@@ -3448,11 +3508,31 @@
      "summary": "AMD在微軟Azure擴展AI足跡，符合其成為NVIDIA之外第二來源的論述，估值差距將持續縮小。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079495178793201678",
+     "url": "https://x.com/aleabitoreddit/status/2079495178793201678",
+     "stance": "bullish",
+     "summary": "AMD 將在活動中提供 CPO 路線圖和 MI500 細節，若確認 CPO 路線，對產業主題有利。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "AMD 股價上漲 4% 以上。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -8.7,
-   "ai_summary": "根據歷史數據，最新立場偏向看好，多位大V如wliang和sunxliao在7月多次表達樂觀，認為AMD受益於AI代理採用、估值差距縮小及股價大幅上漲。論述點集中在AMD搶佔英特爾市佔率、MI系列AI加速器前景，以及成為NVIDIA之外第二來源的潛力。未見明顯轉軚，但aleabitoreddit在7月7日提示市場整體下跌可能影響AMD，但基本面未變，屬於風險提示。",
+   "ai_summary": "根據提供的數據，大V對AMD的最新立場總體偏向樂觀，其中wliang和sunxliao多次表達看漲觀點，強調AMD在搶佔英特爾市佔率、AI加速器及與NVIDIA估值差距縮小等方面的優勢，且未出現明顯轉軚。aleabitoreddit則長期保持中性立場，多次提及AMD與AAOI的協議、CPO採購等事件，但未明確表態，並在2026-07-07提示市場整體下跌可能影響AMD，但基本面未變，屬於風險提示。整體而言，看漲論述點集中於AI領域的成長潛力，而中性觀點則關注市場波動風險。",
    "theme": "其他"
   },
   "ASML": {
@@ -7945,11 +8025,21 @@
      "summary": "800G需求增長超預期，預示LITE等公司未來業績向好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "光學網路股 LITE 上漲 4% 以上，顯示復甦跡象。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -6.3,
-   "ai_summary": "根據提供的數據，該作者對LITE的最新立場偏向看漲，主要論述點包括：公司未來兩年產能已售罄、需求強勁，且作為西方雷達及AI數據中心雷射供應商，受益於800G需求增長超預期。作者在2026年7月2日曾短暫因股價下跌而轉為看空，但隨後迅速轉回看漲，並多次強調基本面未變，未見持續轉軚。風險提示方面，作者曾提及市場整體下跌及光學板塊疲軟可能影響股價，但認為屬過度反應。",
+   "ai_summary": "根據提供的數據，該大V對LITE的最新立場為看漲，主要論述點包括其AI數據中心雷射需求強勁、未來兩年產能已售罄、間接受益於西方雷達公司上游供應，以及800G需求增長超預期。該大V在2026年7月2日曾短暫轉為看空，但隨即又轉回看漲，並在後續多次重申基本面未變，未見持續性轉軚；風險提示方面，僅在2026年7月7日提及市場整體下跌可能影響股價，但強調基本面未變。",
    "theme": "光通訊"
   },
   "MRVL": {
@@ -8053,11 +8143,21 @@
      "summary": "作者認為AI半導體股MRVL目前下跌43%，是買入機會。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "Marvell 股價上漲 4% 以上。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -37.2,
-   "ai_summary": "根據歷史數據，最新立場（2026-07-17）為wliang bullish，認為MRVL下跌43%是買入機會，論述點基於超賣反彈。此前立場有多次轉軚，例如wliang在2026-06-23看跌後轉為看漲，而aleabitoreddit在2026-07-02同日先後發表看漲及看跌觀點，並在後續轉為中性。風險提示方面，2026-07-02的下跌被歸因於Bloomberg報導引發恐慌，且2026-07-16提及AI大型股遭打壓，暗示短期波動風險。",
+   "ai_summary": "根據提供的數據，最新立場偏向看好，多位大V在2026年7月持續強調MRVL的長期潛力，例如引用黃仁勳對其市值1兆美元的預測，並將股價下跌視為買入機會。論述點集中於客製化AI晶片、光學技術及股價回調後的反彈預期，但部分觀點曾出現轉軚，如wliang在7月16日看跌後，次日即轉為看漲。風險提示方面，有分析指出股價下跌11.2%是由於Bloomberg報導引發的恐慌，以及市場整體下跌可能影響股價，但基本面未變。",
    "theme": "AI晶片"
   },
   "OPEN": {
@@ -9261,11 +9361,21 @@
      "summary": "800G需求增長超預期，預示AAOI等公司未來業績向好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "光學網路股 AAOI 上漲 4% 以上，顯示復甦跡象。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -25.6,
-   "ai_summary": "根據提供的數據，該大V對AAOI的最新立場為看好，認為市場崩盤時不應視為結束，基本面仍然看好，並強調2027年Q3的14億美元季度營收目標尚未實現。論述點包括對美國端到端雷射/設計/組裝能力的信心、光子學超級週期的預期，以及800G需求增長超預期對AAOI的利好。該大V立場有轉變，曾於2026年7月10日引用B. Riley的賣出報告表達偏空觀點，但隨後在7月13日及17日轉回看好，並未明確提示風險。",
+   "ai_summary": "根據提供的數據，該大V對AAOI的最新立場為看多，認為2027年Q3營收目標未實現但基本面仍看好，且800G需求增長超預期。論述點包括美國製造能力、營收預測強勁，以及光子學超級週期。該大V曾多次轉軚，在2026年7月10日從看多轉為看空（引用B. Riley賣出報告），但隨後又轉回看多，並在7月2日股價下跌時提示恐慌性拋售風險。",
    "theme": "光通訊"
   },
   "EOS": {
@@ -9557,11 +9667,21 @@
      "summary": "作者提及Sivers與GFS合作，但未對GFS本身表達觀點。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079495178793201678",
+     "url": "https://x.com/aleabitoreddit/status/2079495178793201678",
+     "stance": "neutral",
+     "summary": "GFS 據報導參與 AMD MI500 CPO 工作，但尚無正式確認。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -34.0,
-   "ai_summary": "根據提供的數據，大V aleabitoreddit 在2026年6月至7月期間多次提及GFS，但始終保持中立立場，未對該股表達明確看好或看淡的觀點。其論述點主要圍繞GFS作為Sivers的參考雷射合作夥伴、GlobalFoundries的SCALE參考級雷射以及矽光子晶圓代工產能參與者等技術合作角色。這段時間內，大V沒有出現轉軚或風險提示，僅客觀描述GFS的產業參與情況。",
+   "ai_summary": "根據提供的數據，大V aleabitoreddit 對 GFS 的立場始終保持中性，未有明確買賣建議或轉軚情況。論述點集中在 GFS 作為矽光子晶圓代工產能參與者，以及與 Sivers 和 AMD MI500 CPO 的合作傳聞，但均未給予正面或負面評價。風險提示方面，作者僅指出 AMD MI500 CPO 合作「尚無正式確認」，暗示市場傳聞存在不確定性。",
    "theme": "光通訊"
   },
   "PLTR": {
@@ -11021,11 +11141,21 @@
      "summary": "被提及為交換平台參與者。",
      "r7": -1.5,
      "r30": null
+    },
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079495178793201678",
+     "url": "https://x.com/aleabitoreddit/status/2079495178793201678",
+     "stance": "neutral",
+     "summary": "Jefferies 預期 AMD 可能與 AVGO 合作 ESUN，但尚未確認。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -0.5,
-   "ai_summary": "根據提供的歷史數據，最新立場（2026-07-13）為中性偏多，因aleabitoreddit提及META的'Iris'將透過AVGO和台積電量產，顯示AVGO受益，但同時也被列為交換平台參與者，未明確轉向全面看漲。論述點集中在AI晶片相關事件，但未見明顯轉軚或風險提示，僅有sunxliao在2026-06-23提及AI晶片指引失誤曾導致市場下跌，但隨後反彈，暗示短期波動風險。",
+   "ai_summary": "根據提供的數據，最新立場為2026年7月13日由aleabitoreddit提出的看多觀點，論述點是META的'Iris'將透過AVGO和台積電量產，使AVGO受益。此前在2026年6月23日，sunxliao曾提及AVGO的AI晶片指引失誤導致市場下跌但隨後反彈，立場偏中性，而後續在7月13日及21日，aleabitoreddit多次以中性立場提及AVGO作為交換平台參與者或與AMD合作未確認，整體未見明確轉軚，但需注意指引失誤的風險提示。",
    "theme": "AI晶片"
   },
   "GS": {
@@ -12233,7 +12363,7 @@
     }
    ],
    "yellow": null,
-   "gain": -3.2,
+   "gain": -3.9,
    "theme": "其他"
   },
   "COIN": {
@@ -12531,6 +12661,60 @@
    "gain": 0.0,
    "ai_summary": "根據提供的歷史數據，alearitoreddit於2026年7月20日對VSH持中立立場，僅提及該公司與晶片電阻及鉭電容相關，但未給出明確買賣觀點或風險提示。目前未見立場轉變或進一步論述。",
    "theme": "其他"
+  },
+  "ALAB": {
+   "mentions": [
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079495178793201678",
+     "url": "https://x.com/aleabitoreddit/status/2079495178793201678",
+     "stance": "neutral",
+     "summary": "Jefferies 預期 AMD 可能與 ALAB 合作 UAL，但尚未確認。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "ai_summary": "根據2026年7月21日的資料，Jefferies 預期 AMD 可能與 ALAB 合作 UAL，但尚未確認，立場屬中性。論述點集中於合作可能性，但未提供具體證據或轉向信號。目前無明確風險提示，僅基於預期分析。",
+   "theme": "AI晶片"
+  },
+  "KIOXIA": {
+   "mentions": [
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "Kioxia 股價大漲 17.18%，表現強勁。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "theme": "其他"
+  },
+  "SSNLF": {
+   "mentions": [
+    {
+     "date": "2026-07-21",
+     "author": "aleabitoreddit",
+     "tweet_id": "2079479755481776221",
+     "url": "https://x.com/aleabitoreddit/status/2079479755481776221",
+     "stance": "bullish",
+     "summary": "三星股價上漲 6.15%，表現正面。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "earnings": "2026-07-30",
+   "ai_summary": "根據最新數據，截至2026年7月21日，大V aleabitoreddit 對SSNLF持看多立場，主要論述點為三星股價上漲6.15%的正面表現。目前未見立場轉變或風險提示。",
+   "theme": "其他"
   }
  },
  "kol_stats": {
@@ -12549,7 +12733,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 201,
+   "calls": 213,
    "n7": 141,
    "win7": 35,
    "n30": 0,
