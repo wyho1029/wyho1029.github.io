@@ -242,20 +242,36 @@
   }
   var CBADGE = { yellow:'🟡 黃', green:'🟢 綠', blue:'🔵 藍', red:'🔴 紅', none:'⚪ —' };
   function tqqqSection(d){
-    var w = d.tqqq_watch || {}, s = w.status || {}, tr = w.triggers || [];
+    var w = d.tqqq_watch || {}, s = w.status || {}, tr = w.triggers || [], st = w.stats || {};
+    var gap = (s.gap_to_30 != null)
+      ? (s.gap_to_30 > 0 ? ' · 距30%門檻仲差 <b>' + s.gap_to_30 + '%</b>' : ' · <b>已穿30%</b>')
+      : '';
+    var stale = s.stale ? ' ⚠️ 數據截至 ' + (s.week_end || '') + '（今日攞唔到）' : '';
     var line = s.week_end
       ? '目前 ' + (CBADGE[s.color] || s.color) + ' · 收 ' + fixed(s.close)
         + ' · 距52週高 <b>-' + s.drawdown + '%</b>（52週高 ' + fixed(s.high52)
-        + '、週結 ' + s.week_end + '）'
+        + '、週結 ' + s.week_end + '）' + gap + stale
       : '（未有數據）';
-    var body = '<div class="ai">' + line + '</div>';
+    var statLine = (st.n_total && !s.stale)   // stale 時 fwd 全被洗成 None、stats 會誤顯「未夠8週」，索性唔顯示
+      ? '<div class="ai">📊 歷史 ' + st.n_total + ' 次觸發'
+        + (st.n_8w ? ('；夠 8 週嘅 ' + st.n_8w + ' 次：平均 <b>'
+            + (st.avg_8w > 0 ? '+' : '') + st.avg_8w + '%</b> · 勝率 <b>' + st.win_rate_8w + '%</b>'
+            + '（最好 ' + (st.best_8w > 0 ? '+' : '') + st.best_8w + '% · 最差 ' + st.worst_8w + '%）')
+            : '（未夠 8 週）') + '</div>'
+      : '';
+    var body = '<div class="ai">' + line + '</div>' + statLine;
     if (tr.length){
       body += '<div class="scroll"><table><tr><th>類型</th><th>觸發週(結)</th><th>收市</th>'
-        + '<th>52週高</th><th>回落</th></tr>';
+        + '<th>52週高</th><th>回落</th><th>8週後</th></tr>';
       tr.forEach(function(t){
         var ty = (t.type === 'drawdown') ? '📉 跌破30%' : '🟡 轉黃';
+        var fwd = (t.fwd_8w != null)
+          ? '<span style="color:' + (t.fwd_8w > 0 ? '#3fb950' : 'var(--red)') + '">'
+            + (t.fwd_8w > 0 ? '+' : '') + t.fwd_8w + '%</span>'
+          : '—';
         body += '<tr><td>' + ty + '</td><td>' + t.week_end + '</td><td>' + fixed(t.close)
-          + '</td><td>' + fixed(t.high52) + '</td><td class="score">-' + t.drawdown + '%</td></tr>';
+          + '</td><td>' + fixed(t.high52) + '</td><td class="score">-' + t.drawdown + '%</td>'
+          + '<td>' + fwd + '</td></tr>';
       });
       body += '</table></div>';
     } else {
