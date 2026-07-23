@@ -308,11 +308,16 @@
       + '<i class="bull" style="width:' + bl + '%"></i></span>';
   }
   function buzzSpark(hist, trend){
-    var h = (hist || []).map(Number).filter(isFinite);   // 唔可信輸入強制轉數字
+    var raw = hist || [];
+    var h = raw.map(Number);   // 唔可信輸入強制轉數字
+    // 要全部點都係正常數字先畫線；有壞值（null→0、空、NaN）就唔畫，
+    // 唔好 filter 走壞點再攤開全闊——咁會令 x 軸間距講大話
+    var valid = raw.length > 1 && h.every(isFinite)
+      && raw.every(function(v){ return v !== null && v !== ''; });
     var col = trend === 'rising' ? '#3fb950' : (trend === 'falling' ? 'var(--red)' : 'var(--mut)');
     var arr = trend === 'rising' ? '↑' : (trend === 'falling' ? '↓' : '→');
     var svg = '';
-    if (h.length > 1){
+    if (valid){
       var mx = Math.max.apply(null, h), mn = Math.min.apply(null, h), rng = (mx - mn) || 1;
       var pts = h.map(function(v, i){
         return (i / (h.length - 1) * 46).toFixed(1) + ',' + (14 - (v - mn) / rng * 12).toFixed(1);
@@ -342,7 +347,8 @@
     if (!rows.length) return '';
     var c = x.compare;
     var tried = x.queries_tried != null ? x.queries_tried : x.queries_total;
-    var qStr = x.queries_total ? (x.queries_ok + '/' + tried + ' 成功，共 ' + x.queries_total + ' 條計劃') : '';
+    var qStr = x.queries_total ? (x.queries_ok + '/' + tried + ' 成功'
+      + (tried !== x.queries_total ? '，共 ' + x.queries_total + ' 條計劃' : '')) : '';
     var note = c
       ? '🔎 自家抽樣核對：Adanos Top ' + c.top20_total + ' 我哋抽到 ' + c.top20_hit
         + ' 隻（' + c.pct + '%）· 抽樣 ' + c.posts + ' 帖' + (qStr ? ' · ' + qStr : '') + ' · ' + x.updated
@@ -356,10 +362,11 @@
       + '<div class="scroll"><table id="buzzBody"><tr><th>#</th><th>代號</th><th>全名</th>'
       + '<th>Buzz</th><th>提及</th><th>情緒</th><th>走勢</th></tr>';
     rows.forEach(function(r){
-      body += '<tr data-kind="' + r.kind + '"><td>' + xnum(r.rank) + '</td>'
+      var bz = xnum(r.buzz, true);   // 壞值一律 '—'，同其他數值欄一致（唔好 show NaN）
+      body += '<tr data-kind="' + xesc(r.kind) + '"><td>' + xnum(r.rank) + '</td>'
         + '<td>' + xesc(r.ticker) + (r.kind === 'etf' ? ' <span class="none">ETF</span>' : '') + '</td>'
         + '<td class="name">' + xesc(r.name || '—') + '</td>'
-        + '<td class="score">' + (r.buzz != null ? Number(r.buzz).toFixed(1) : '—') + '</td>'
+        + '<td class="score">' + (bz === '—' ? '—' : bz.toFixed(1)) + '</td>'
         + '<td>' + xnum(r.mentions, true) + '</td>'
         + '<td>' + buzzBar(r.bull, r.bear) + '</td>'
         + '<td>' + buzzSpark(r.hist, r.trend) + '</td></tr>';
