@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-25T07:01:39+08:00",
+ "updated_at": "2026-07-25T20:02:06+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -10643,7 +10643,7 @@
     }
    ],
    "yellow": null,
-   "gain": -17.0,
+   "gain": -17.1,
    "theme": "其他"
   },
   "AOSL": {
@@ -13482,7 +13482,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -20.0,
    "theme": "AI雲"
   },
   "ORCL": {
