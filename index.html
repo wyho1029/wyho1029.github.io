@@ -15,6 +15,15 @@
     :root{ --bg:#f4f6fb; --bg2:#eaeef7; --card:#ffffff; --card-h:#ffffff;
       --line:#e2e7f0; --txt:#1a2233; --dim:#5c6a82; --accent:#d99b00; }
   }
+  /* 手動選擇冚過系統偏好（specificity 高過上面 :root）*/
+  :root[data-theme="dark"]{
+    --bg:#0b0f17; --bg2:#131a26; --card:#161e2e; --card-h:#1d283c;
+    --line:#26314a; --txt:#e8ecf4; --dim:#9aa7bd; --accent:#ffcf4d;
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f6fb; --bg2:#eaeef7; --card:#ffffff; --card-h:#ffffff;
+    --line:#e2e7f0; --txt:#1a2233; --dim:#5c6a82; --accent:#d99b00;
+  }
   *{box-sizing:border-box}
   html,body{margin:0}
   body{
@@ -50,9 +59,18 @@
   .desc{margin-top:5px; color:var(--dim); font-size:13.5px; line-height:1.5}
   footer{margin-top:40px; color:var(--dim); font-size:12px; text-align:center}
   footer a{color:var(--dim)}
+  .theme{
+    position:fixed; top:16px; right:16px; width:40px; height:40px;
+    border:1px solid var(--line); border-radius:50%; background:var(--card);
+    color:var(--txt); font-size:18px; cursor:pointer; line-height:1;
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .theme:hover{border-color:var(--accent); transform:scale(1.08)}
 </style>
 </head>
 <body>
+  <button class="theme" id="themeBtn" aria-label="切換明暗主題">🌙</button>
   <header>
     <h1><span class="mark">📊</span> 工具台</h1>
     <div class="tag">投機・量化・鏈上工具一站入口</div>
@@ -101,5 +119,18 @@
   </main>
 
   <footer>wyho1029.github.io · <a href="https://github.com/wyho1029/wyho1029.github.io">GitHub</a></footer>
+
+  <script>
+    var root = document.documentElement, btn = document.getElementById('themeBtn');
+    function cur(){ return root.getAttribute('data-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    function apply(t){ root.setAttribute('data-theme', t);
+      localStorage.setItem('hub-theme', t);
+      btn.textContent = t === 'dark' ? '☀️' : '🌙'; }   // 顯示「切去邊」嘅圖示
+    var saved = localStorage.getItem('hub-theme');
+    if (saved) apply(saved);
+    else btn.textContent = cur() === 'dark' ? '☀️' : '🌙';
+    btn.onclick = function(){ apply(cur() === 'dark' ? 'light' : 'dark'); };
+  </script>
 </body>
 </html>
