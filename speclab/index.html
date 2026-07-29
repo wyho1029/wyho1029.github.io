@@ -63,13 +63,15 @@ main { max-width: 860px; margin: 0 auto; padding: 16px 14px 80px; }
 (function () {
   var root = document.documentElement, b = document.getElementById('themeBtn');
   function icon(t) { return t === 'dark' ? '☀️' : '🌙'; }
-  var saved = localStorage.getItem('speclab_theme') || 'dark';
+  // 全站共用 hub-theme（同 origin，localStorage 通用），冇記錄就跟系統
+  var saved = localStorage.getItem('hub-theme') ||
+    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   root.setAttribute('data-theme', saved);
   b.textContent = icon(saved);
   b.onclick = function () {
     var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', t);
-    localStorage.setItem('speclab_theme', t);
+    localStorage.setItem('hub-theme', t);
     b.textContent = icon(t);
   };
 })();

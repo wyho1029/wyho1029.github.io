@@ -186,9 +186,10 @@
     btn.textContent=t==="light"?"🌙":"☀️";
     meta.content=t==="light"?"#eae3d0":"#16203a";
   }
-  let theme=localStorage.fd_theme||"dark";
+  // 全站共用 hub-theme（同 origin，localStorage 通用），冇記錄就跟系統
+  let theme=localStorage.getItem("hub-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
   apply(theme);
-  btn.onclick=()=>{ theme=theme==="light"?"dark":"light"; localStorage.fd_theme=theme; apply(theme); };
+  btn.onclick=()=>{ theme=theme==="light"?"dark":"light"; localStorage.setItem("hub-theme",theme); apply(theme); };
 })();
 
 // ---- analytics 已移除（本地私人版）；track() 留空殼令call site 唔使改 ----

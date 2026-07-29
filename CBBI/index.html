@@ -185,13 +185,15 @@ function applyTheme(name){
     const tip=chart.options.plugins.tooltip;
     tip.backgroundColor=t.tipBg;tip.borderColor=t.tipBd;tip.titleColor=t.tipTx;tip.bodyColor=t.tipTx;
     chart.update('none');}
-  try{localStorage.setItem('cbbi-theme',name);}catch(e){}
+  try{localStorage.setItem('hub-theme',name);}catch(e){}
 }
 document.getElementById('thDark').onclick=function(){applyTheme('dark');};
 document.getElementById('thLight').onclick=function(){applyTheme('light');};
 
 /* 先套用主題畀頁面外框（未有數據都得） */
-let savedTheme='dark'; try{savedTheme=localStorage.getItem('cbbi-theme')||'dark';}catch(e){}
+/* 全站共用 hub-theme（同 origin，localStorage 通用），冇記錄就跟系統 */
+let savedTheme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+try{savedTheme=localStorage.getItem('hub-theme')||savedTheme;}catch(e){}
 applyTheme(savedTheme);
 
 /* ===== 收到數據後先建圖 ===== */

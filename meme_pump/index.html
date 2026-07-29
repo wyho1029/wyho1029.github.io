@@ -59,8 +59,9 @@ var API='https://script.google.com/macros/s/AKfycbyRApe8BUpPnE8xZEVq_uXja8coQKAy
 
 (function(){
   var root=document.documentElement, tb=document.getElementById('theme');
-  function set(t){ root.setAttribute('data-theme',t); localStorage.setItem('mpr-theme',t); tb.textContent=(t==='light'?'🌙':'☀️'); }
-  set(localStorage.getItem('mpr-theme')||'dark');
+  function set(t){ root.setAttribute('data-theme',t); localStorage.setItem('hub-theme',t); tb.textContent=(t==='light'?'🌙':'☀️'); }
+  // 全站共用 hub-theme（同 origin，localStorage 通用），冇記錄就跟系統
+  set(localStorage.getItem('hub-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
   tb.onclick=function(){ set(root.getAttribute('data-theme')==='light'?'dark':'light'); };
 })();
 var ALL=[];
