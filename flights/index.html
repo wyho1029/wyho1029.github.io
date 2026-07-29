@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<meta name="theme-color" content="#16203a">
+<meta name="apple-mobile-web-app-title" content="平機票">
+<title>平機票 ✈️ 香港出發</title>
+<style>
+  :root{
+    --bg:#0e1116; --card:#171b22; --card2:#1e2430; --line:#262d3a;
+    --txt:#e8edf4; --dim:#8a94a6; --accent:#4ea1ff; --good:#2ecc71; --gold:#ffd25f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang HK","Helvetica Neue",sans-serif;line-height:1.45;padding-bottom:40px}
+  header{padding:22px 16px 14px;background:linear-gradient(135deg,#16203a,#0e1116);border-bottom:1px solid var(--line)}
+  h1{font-size:24px;font-weight:800;letter-spacing:-.5px}
+  h1 span{color:var(--accent)}
+  .sub{color:var(--dim);font-size:13px;margin-top:4px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px}
+  .controls{position:sticky;top:0;z-index:10;background:rgba(14,17,22,.94);backdrop-filter:blur(8px);padding:12px 0;border-bottom:1px solid var(--line)}
+  .row{display:flex;gap:6px;overflow-x:auto;padding:4px 0;scrollbar-width:none}
+  .row::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;background:var(--card);border:1px solid var(--line);color:var(--dim);
+        padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;white-space:nowrap;transition:.12s}
+  .chip:hover{border-color:var(--accent)}
+  .chip.on{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .lbl{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin:8px 2px 2px}
+  .count{color:var(--dim);font-size:13px;padding:12px 2px 4px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin:10px 0;transition:.12s;
+        content-visibility:auto;contain-intrinsic-size:auto 320px}  /* 螢幕外嘅卡片唔排版，重繪快好多 */
+  .card:hover{border-color:#34507a}
+  .chead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;cursor:pointer}
+  .dest{font-size:18px;font-weight:700}
+  .dest .rg{font-size:12px;color:var(--dim);font-weight:500;margin-left:6px}
+  .price{font-size:22px;font-weight:800;color:var(--good);white-space:nowrap}
+  .price small{font-size:12px;color:var(--dim);font-weight:500}
+  .price{text-align:right}
+  .rprice{font-size:12px;color:#ff7a8a;font-weight:700;margin-top:2px}
+  .dates{margin-top:10px}
+  .mrow{display:flex;align-items:baseline;gap:8px;margin:6px 0}
+  .mlbl{flex:0 0 44px;font-size:12px;color:var(--dim);font-weight:600;text-align:right}
+  .mdates{display:flex;flex-wrap:wrap;gap:5px}
+  .dchip{font-size:13px;background:var(--card2);border:1px solid var(--line);border-radius:8px;
+         padding:4px 9px;text-decoration:none;color:var(--txt);transition:.12s;white-space:nowrap}
+  .dchip:hover{border-color:var(--accent);background:#22324a}
+  .dchip.t1{border-color:#2ecc7144;color:var(--good);font-weight:600}
+  .dchip.t1 .dd{color:var(--good)}
+  .dchip.t2{border-color:#e0b34144;color:#e6bd55;font-weight:600}
+  .dchip.t2 .dd{color:#e6bd55}
+  .dchip.anom{border-color:#e0556655;color:#ff7a8a;font-weight:600}
+  .dchip .dd{color:var(--dim);font-size:10px;font-weight:400}
+  .band{font-size:12px;color:var(--dim);margin-top:2px}
+  .spark{vertical-align:-3px;color:var(--dim);opacity:.75;margin-left:2px}
+  .dchip.oldp{opacity:.6;border-style:dashed}
+  #totop{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;background:var(--card);
+         border:1px solid var(--line);color:var(--txt);display:flex;align-items:center;justify-content:center;
+         font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s;z-index:60;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  #totop.show{opacity:.92;pointer-events:auto}
+  .band b{color:var(--good)}
+  .band .pk{color:#8a94a6}
+  .anote{font-size:11px;color:#ff7a8a;margin-top:3px}
+  .more{font-size:12px;color:var(--accent);cursor:pointer;padding:6px 2px;display:inline-block}
+  .note{color:var(--dim);font-size:12px;padding:14px 2px;line-height:1.6}
+  .empty{color:var(--dim);text-align:center;padding:40px}
+  .budgetrow{font-size:13px;color:var(--dim);padding:4px 0;display:flex;align-items:center;gap:5px}
+  .binput{width:96px;background:var(--card);border:1px solid var(--line);color:var(--txt);padding:6px 9px;border-radius:8px;font-size:16px;font-family:inherit}
+  .binput::placeholder{color:var(--dim)}
+  .binput:focus{outline:none;border-color:var(--accent)}
+  .daterow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:2px 0}
+  .dinput{background:var(--card);border:1px solid var(--line);color:var(--txt);padding:7px 10px;border-radius:8px;font-size:16px;font-family:inherit;color-scheme:dark}
+  .dinput:focus{outline:none;border-color:var(--accent)}
+  .darrow{color:var(--dim);font-size:14px}
+  .dclear{color:var(--dim);font-size:12px;cursor:pointer;padding:4px 6px;display:none}
+  .dclear.on{display:inline}
+  .searchwrap{position:relative;margin-bottom:8px}
+  .search{width:100%;background:var(--card);border:1px solid var(--line);color:var(--txt);padding:8px 34px 8px 12px;border-radius:8px;font-size:16px;font-family:inherit}
+  .search::placeholder{color:var(--dim)}
+  .search:focus{outline:none;border-color:var(--accent)}
+  .clearbtn{position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--dim);cursor:pointer;font-size:15px;padding:4px 6px;display:none;line-height:1}
+  .searchwrap.has .clearbtn{display:block}
+  /* ---- collapsible filter panel ---- */
+  .fbar{display:flex;align-items:center;gap:8px;padding:2px 0;min-width:0;flex-wrap:wrap}
+  .ftoggle{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);
+           color:var(--txt);padding:7px 12px;border-radius:999px;font-size:13px;cursor:pointer;white-space:nowrap;user-select:none;transition:.12s}
+  .ftoggle:hover{border-color:var(--accent)}
+  .ftoggle.on{border-color:var(--accent);color:var(--accent)}
+  .farr{font-size:10px;color:var(--dim);transition:transform .18s}
+  .ftoggle.on .farr{transform:rotate(180deg)}
+  .fsum{font-size:12px;color:var(--accent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1 1 auto;min-width:0}
+  .fpanel{max-height:0;overflow:hidden;transition:max-height .22s ease}
+  .fpanel.open{max-height:600px;overflow:visible}
+  .resetrow{padding:10px 0 2px;display:none}
+  .resetrow.on{display:block}
+  .resetbtn{display:inline-flex;align-items:center;gap:6px;color:var(--dim);font-size:13px;cursor:pointer;
+            border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:999px;transition:.12s}
+  .resetbtn:hover{border-color:var(--accent);color:var(--accent)}
+  .a2hs-tip{position:fixed;left:10px;right:10px;bottom:12px;z-index:50;background:var(--card2);border:1px solid var(--line);
+            border-radius:12px;padding:11px 38px 11px 13px;font-size:13px;color:var(--txt);box-shadow:0 6px 24px rgba(0,0,0,.5);display:none}
+  .a2hs-tip.on{display:block}
+  .a2hs-x{position:absolute;right:6px;top:5px;color:var(--dim);font-size:16px;padding:6px;cursor:pointer}
+  /* ---- 釘選 / 價格變化 ---- */
+  .pin{cursor:pointer;opacity:.3;padding:2px 6px 2px 0;font-size:14px;user-select:none;transition:.12s}
+  .pin:hover{opacity:.7}
+  .pin.on{opacity:1}
+  .chg.down{color:var(--good);font-weight:700}
+  .chg.up{color:#ff7a8a;font-weight:700}
+  .low90{color:var(--gold);font-weight:700}
+  /* ---- 深/淺色切換 ---- */
+  .theme-btn{position:absolute;right:14px;top:0;font-size:17px;line-height:1;cursor:pointer;user-select:none;
+             background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 10px;transition:.12s}
+  .theme-btn:hover{border-color:var(--accent)}
+  body.light{
+    --bg:#f5f2ea; --card:#fffdf7; --card2:#ede8da; --line:#ddd5c2;
+    --txt:#2a2418; --dim:#7d7460; --accent:#2f6bce; --good:#0e9152; --gold:#e0a800;
+  }
+  body.light header{background:linear-gradient(135deg,#eae3d0,#f5f2ea)}
+  body.light .controls{background:rgba(245,242,234,.94)}
+  body.light .card:hover{border-color:#c9ba95}
+  body.light .dchip:hover{background:#f0ebdd}
+  body.light .dchip.t2,body.light .dchip.t2 .dd{color:#9a7b00}
+  body.light .dchip.anom,body.light .rprice,body.light .anote,body.light .chg.up{color:#d23b50}
+  body.light .low90{color:#9a7b00}
+  body.light .band .pk{color:#66707f}
+  body.light .dinput{color-scheme:light}
+  body.light .a2hs-tip{box-shadow:0 6px 24px rgba(30,50,80,.18)}
+</style>
+</head>
+<body>
+<header><div class="wrap" style="position:relative">
+  <h1>平機票 <span>✈️</span> 香港出發</h1>
+  <div class="sub" id="sub">載入中…</div>
+  <span class="theme-btn" id="themeBtn" title="切換深/淺色">☀️</span>
+</div></header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="searchwrap"><input id="q" class="search" placeholder="🔍 搜尋目的地（中 / English / code）…"><span class="clearbtn" id="qclear">✕</span></div>
+    <div class="fbar">
+      <span class="ftoggle" id="ftoggle">🔍 篩選 · 揀日子 / 地區 / 預算 <span class="farr">▾</span></span>
+      <span class="ftoggle" id="thunder">⚡ 特平筍盤</span>
+      <span class="ftoggle" id="pinsOnly">📌 已釘選</span>
+      <span class="fsum" id="fsum"></span>
+    </div>
+    <div class="fpanel" id="fpanel">
+      <div class="lbl">地區</div>
+      <div class="row" id="regions"></div>
+      <div class="lbl">幾時有假（揀日子範圍 — 淨係 show 整個 trip 啱晒呢段嘅）</div>
+      <div class="daterow">
+        <input type="date" id="dfrom" class="dinput"><span class="darrow">→</span><input type="date" id="dto" class="dinput"><span class="dclear" id="dclear">✕ 清除</span>
+      </div>
+      <div class="lbl">預算</div>
+      <div class="budgetrow">預算 ≤ $<input type="number" id="bdg" class="binput" placeholder="任何" inputmode="numeric"> 來回</div>
+      <div class="resetrow" id="resetrow"><span class="resetbtn" id="resetbtn">↺ 清除全部篩選</span></div>
+      <div style="text-align:center;padding:12px 0 2px"><span class="ftoggle" id="fcollapse">▴ 收起篩選</span></div>
+    </div>
+  </div>
+  <div class="count" id="count"></div>
+  <div id="results"></div>
+  <div class="note">
+    💡 價錢係 <b>來回 all-in base fare</b>（含稅 + 燃油），最後更新 <span id="upd"></span>。<br>
+    機票價會浮動，數字係參考價 —— 撳日子入去 Google Flights 睇<b>實時價</b>確認。
+  </div>
+</div>
+<div class="a2hs-tip" id="a2hsTip">📲 <b>加到主畫面</b>：撳 Safari 分享掣 → 「加至主畫面」，下次諗旅行一撳就開<span class="a2hs-x" id="a2hsX">✕</span></div>
+<div id="totop" title="返回頂部">↑</div>
+
+<script src="data.js"></script><!-- 本地數據管道 (update_data.py 生成)，冇都唔會出錯 -->
+<script>
+// ---- 回到頂 ----
+(function(){
+  const tt=document.getElementById("totop");
+  addEventListener("scroll",()=>tt.classList.toggle("show",scrollY>600),{passive:true});
+  tt.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+})();
+
+// ---- 深/淺色切換（localStorage 記住揀擇）----
+(function(){
+  const btn=document.getElementById("themeBtn");
+  const meta=document.querySelector('meta[name="theme-color"]');
+  function apply(t){
+    document.body.classList.toggle("light",t==="light");
+    btn.textContent=t==="light"?"🌙":"☀️";
+    meta.content=t==="light"?"#eae3d0":"#16203a";
+  }
+  let theme=localStorage.fd_theme||"dark";
+  apply(theme);
+  btn.onclick=()=>{ theme=theme==="light"?"dark":"light"; localStorage.fd_theme=theme; apply(theme); };
+})();
+
+// ---- analytics 已移除（本地私人版）；track() 留空殼令call site 唔使改 ----
+function track(){}
+// ----
+// ---- add-to-home-screen ----
+(function(){
+  // iOS Safari: manual hint (dismissible, remembered)
+  const ua=navigator.userAgent;
+  const inApp=/instagram|fban|fbav|fb_iab|line\/|micromessenger|twitter/i.test(ua); // in-app browsers: 冇分享→加主畫面,唔好教人撳唔存在嘅掣
+  const isIOS=/iphone|ipad|ipod/i.test(ua) && !inApp;
+  const standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+  if(isIOS && !standalone && !localStorage.fd_a2hs_x){
+    setTimeout(()=>{ document.getElementById("a2hsTip").classList.add("on"); track("a2hs_hint_shown",{}); },1500);
+    document.getElementById("a2hsX").onclick=()=>{ document.getElementById("a2hsTip").classList.remove("on");
+      localStorage.fd_a2hs_x=1; track("a2hs_hint_dismiss",{}); };
+  }
+})();
+// ----
+const MLABEL = m => { const [y,mm]=m.split("-"); return (y==="2027"?"27/":"")+parseInt(mm)+"月"; };
+const state = {region:"全部", from:null, to:null, budget:0, sort:"cheap", q:"", thunder:false, pinsOnly:false, expanded:{}, filtersOpen:false};
+let DATA = null;
+
+// ---- 釘選目的地（localStorage 記住，置頂顯示）----
+const pins = new Set(JSON.parse(localStorage.fd_pins||"[]"));
+window.togglePin = (d,ev)=>{ ev.preventDefault(); ev.stopPropagation();
+  pins.has(d)?pins.delete(d):pins.add(d);
+  localStorage.fd_pins=JSON.stringify([...pins]); render(); };
+
+// English city-name aliases (search by code already works; this adds typing "tokyo" etc.)
+const EN = {
+  OKA:"okinawa naha", KIX:"osaka", NRT:"tokyo", ISG:"ishigaki", TAK:"takamatsu",
+  HIJ:"hiroshima", NGO:"nagoya", FUK:"fukuoka", SDJ:"sendai", CTS:"sapporo",
+  PVG:"shanghai", TPE:"taipei", KHH:"kaohsiung", ICN:"seoul", PUS:"busan pusan",
+  CJU:"jeju", PEK:"beijing", MNL:"manila", HAN:"hanoi", SGN:"ho chi minh saigon",
+  DAD:"da nang danang", BKK:"bangkok", PEN:"penang", KUL:"kuala lumpur", HKT:"phuket",
+  CEB:"cebu", SIN:"singapore", CNX:"chiang mai", DPS:"bali denpasar", MLE:"maldives male",
+  DXB:"dubai", IST:"istanbul", FCO:"rome roma", MXP:"milan milano", LIS:"lisbon",
+  BCN:"barcelona", CDG:"paris", VIE:"vienna", ZRH:"zurich", LHR:"london",
+  MAD:"madrid", PRG:"prague", BUD:"budapest", ATH:"athens", AMS:"amsterdam",
+  MUC:"munich", HEL:"helsinki", CPH:"copenhagen", SYD:"sydney", MEL:"melbourne",
+  BNE:"brisbane", SFO:"san francisco", LAX:"los angeles", YVR:"vancouver",
+  AKL:"auckland", CHC:"christchurch", JFK:"new york nyc",
+  KOJ:"kagoshima", KMJ:"kumamoto", MYJ:"matsuyama", AXT:"akita",
+  CTU:"chengdu", XIY:"xian xi'an", KMG:"kunming", TAO:"qingdao tsingtao",
+  GMP:"seoul gimpo", RMQ:"taichung", TSA:"taipei songshan",
+  KBV:"krabi", USM:"koh samui", RGN:"yangon rangoon", SAI:"siem reap angkor",
+  DEL:"delhi new delhi", BOM:"mumbai bombay", KTM:"kathmandu", CMB:"colombo",
+  CPT:"cape town", JNB:"johannesburg", NBO:"nairobi", MRU:"mauritius",
+  GRU:"sao paulo", MEX:"mexico city", LIM:"lima peru",
+  HNL:"honolulu hawaii", LAS:"las vegas", ORD:"chicago", YUL:"montreal",
+  ZQN:"queenstown", CNS:"cairns", OOL:"gold coast",
+  KEF:"reykjavik iceland", DUB:"dublin", ARN:"stockholm", WAW:"warsaw"
+};
+
+const gfLink = (dest,d,r) => `https://www.google.com/travel/flights?q=Flights+from+HKG+to+${dest}+on+${d}+through+${r}`;
+const md = s => { const [,m,d]=s.split("-"); return parseInt(m)+"/"+parseInt(d); };
+// ---- 香港公眾假期（政府憲報，2027 農曆日子已核實）。掃描範圍向前碌，2028 頭都預埋 ----
+const HOLS = {
+  "2026-07-01":"回歸日","2026-09-26":"中秋翌日","2026-10-01":"國慶日","2026-10-19":"重陽節(補)",
+  "2026-12-25":"聖誕節","2026-12-26":"聖誕節翌日",
+  "2027-01-01":"元旦","2027-02-06":"年初一","2027-02-08":"年初三","2027-02-09":"年初四(補)",
+  "2027-03-26":"耶穌受難節","2027-03-27":"受難節翌日","2027-03-29":"復活節星期一",
+  "2027-04-05":"清明節","2027-05-01":"勞動節","2027-05-13":"佛誕","2027-06-09":"端午節",
+  "2027-07-01":"回歸日","2027-09-16":"中秋翌日","2027-10-01":"國慶日","2027-10-08":"重陽節",
+  "2027-12-25":"聖誕節","2027-12-27":"聖誕節翌日(補)","2028-01-01":"元旦"
+};
+function tripHol(d, r){   // 行程 [d, r] 期間有冇紅日
+  if(!r) return null;
+  const t = new Date(d+"T00:00:00");
+  for(let i=0; i<40; i++){
+    const iso = t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");
+    if(HOLS[iso]) return HOLS[iso];
+    if(iso >= r) break;
+    t.setDate(t.getDate()+1);
+  }
+  return null;
+}
+
+const WD = ["日","一","二","三","四","五","六"];
+const dow = s => WD[new Date(s+"T00:00:00").getDay()];
+
+function chips(elId, items, key){
+  const el=document.getElementById(elId);
+  el.innerHTML="";
+  items.forEach(it=>{
+    const c=document.createElement("div");
+    c.className="chip"+(state[key]===it.v?" on":"");
+    c.textContent=it.t;
+    c.onclick=()=>{ state[key]=(state[key]===it.v && it.nullable)?null:it.v; track("filter_use",{type:key,value:String(state[key])}); render(); };
+    el.appendChild(c);
+  });
+}
+
+function setup(){
+  const regions=["全部",...[...new Set(DATA.routes.map(r=>r.region))]];
+  chips("regions", regions.map(r=>({t:r,v:r})), "region");
+  // date-range picker wiring
+  const df=document.getElementById("dfrom"), dt=document.getElementById("dto"), dc=document.getElementById("dclear");
+  let lo="9999", hi="0";
+  DATA.routes.forEach(r=>r.dates.forEach(x=>{ if(x.d<lo)lo=x.d; if(x.r>hi)hi=x.r; }));
+  df.min=dt.min=lo; df.max=dt.max=hi;
+  const dToggle=()=>dc.classList.toggle("on", windowActive());
+  df.onchange=()=>{ state.from=df.value||null; if(state.from&&state.to&&state.from>state.to){dt.value=df.value;state.to=df.value;} dToggle(); render(); };
+  dt.onchange=()=>{ state.to=dt.value||null; if(state.from&&state.to&&state.to<state.from){df.value=dt.value;state.from=dt.value;} dToggle(); render(); };
+  dc.onclick=()=>{ df.value=dt.value=""; state.from=state.to=null; dToggle(); render(); };
+  // 打字唔好逐個字重繪，停低 150ms 先郁手
+  let _rt; const drender=()=>{ clearTimeout(_rt); _rt=setTimeout(render,150); };
+  const bdg=document.getElementById("bdg");
+  bdg.oninput=()=>{ state.budget=parseInt(bdg.value)||0; track("filter_use",{type:"budget",value:String(state.budget)}); drender(); };
+  const tb=document.getElementById("thunder");
+  tb.onclick=()=>{ state.thunder=!state.thunder; tb.classList.toggle("on",state.thunder); track("filter_use",{type:"thunder",value:String(state.thunder)}); render(); };
+  const pb=document.getElementById("pinsOnly");
+  pb.onclick=()=>{ state.pinsOnly=!state.pinsOnly; pb.classList.toggle("on",state.pinsOnly); render(); };
+  // collapsible filter toggle
+  const ft=document.getElementById("ftoggle"), fp=document.getElementById("fpanel");
+  ft.onclick=()=>setFilters(!state.filtersOpen,"tap");
+  document.getElementById("fcollapse").onclick=()=>{ setFilters(false,"bottom"); document.querySelector(".controls").scrollIntoView({block:"start"}); };
+  document.getElementById("resetbtn").onclick=resetFilters;
+  const qi=document.getElementById("q");
+  const sw=document.querySelector(".searchwrap");
+  qi.oninput=()=>{ state.q=qi.value.trim(); sw.classList.toggle("has",!!state.q); track("filter_use",{type:"search",value:state.q}); drender(); };
+  document.getElementById("qclear").onmousedown=e=>e.preventDefault(); // don't shift focus into input on tap
+  document.getElementById("qclear").onclick=()=>{ qi.value=""; state.q=""; sw.classList.remove("has"); qi.blur(); render(); };
+  document.getElementById("upd").textContent=DATA.updated;
+  document.getElementById("sub").textContent=`${DATA.routes.length} 條航線 · 未來 ${Math.round((new Date(hi)-new Date(lo))/2.63e9)} 個月任揀日子 · 更新 ${DATA.updated}`;
+  // 數據過期警告：更新腳本靜靜雞死咗都有得知
+  const _age=Math.floor((Date.now()-new Date(DATA.updated+"T00:00:00"))/864e5);
+  if(_age>3) document.getElementById("sub").innerHTML+=` · <span style="color:#ff7a8a;font-weight:700">⚠️ 數據 ${_age} 日冇更新</span>`;
+}
+
+// active-filter summary shown beside the toggle when collapsed
+function filterSummary(){
+  const p=[];
+  if(state.region!=="全部") p.push(state.region);
+  if(state.from||state.to) p.push(rangeLabel());
+  if(state.budget) p.push("≤$"+state.budget);
+  if(state.thunder) p.push("⚡特平");
+  if(state.pinsOnly) p.push("📌已釘選");
+  return p.join(" · ");
+}
+function updateSum(){
+  // when open, the panel itself shows state → hide the summary line to avoid dupe
+  document.getElementById("fsum").textContent = state.filtersOpen ? "" : filterSummary();
+}
+function setFilters(open,src){
+  if(state.filtersOpen===open) return;
+  state.filtersOpen=open;
+  document.getElementById("ftoggle").classList.toggle("on",open);
+  document.getElementById("fpanel").classList.toggle("open",open);
+  if(src==="tap") track("filter_toggle",{open});
+  updateSum();
+}
+const anyFilterActive = () => state.region!=="全部"||state.from||state.to||state.budget||state.thunder||state.pinsOnly||state.q;
+function resetFilters(){
+  state.region="全部"; state.from=state.to=null; state.budget=0; state.sort="cheap"; state.thunder=false; state.q="";
+  state.pinsOnly=false; document.getElementById("pinsOnly").classList.remove("on");
+  const df=document.getElementById("dfrom"), dt=document.getElementById("dto");
+  df.value=dt.value=""; document.getElementById("dclear").classList.remove("on");
+  document.getElementById("bdg").value="";
+  document.getElementById("thunder").classList.remove("on");
+  const qi=document.getElementById("q"); qi.value=""; document.querySelector(".searchwrap").classList.remove("has");
+  track("filter_reset",{});
+  render();
+}
+
+// ---- date-range (holiday window) picker ----
+const windowActive = () => !!(state.from||state.to);
+const fitsWindow = x => (!state.from || x.d>=state.from) && (!state.to || x.r<=state.to);  // WHOLE trip inside the window
+const rangeLabel = () => (state.from?md(state.from):"…")+"→"+(state.to?md(state.to):"…");
+function routeForWindow(r){
+  if(!windowActive()) return {price:r.regFloor, dates:r.dates};
+  const ds=r.dates.filter(fitsWindow);
+  if(!ds.length) return null;
+  const cheap=ds.filter(x=>x.tier!=="anomaly").map(x=>x.p);
+  return {price:cheap.length?Math.min(...cheap):Math.min(...ds.map(x=>x.p)), dates:ds};
+}
+
+function render(){
+  setupActive();
+  updateSum();
+  document.getElementById("resetrow").classList.toggle("on", !!anyFilterActive());
+  let list=DATA.routes.map(r=>{
+    const m=routeForWindow(r);
+    return m?{...r, _price:m.price, _dates:m.dates}:null;
+  }).filter(Boolean);
+  if(state.region!=="全部") list=list.filter(r=>r.region===state.region);
+  if(state.q){ const q=state.q.toLowerCase(); list=list.filter(r=>r.name.includes(state.q)||r.dest.toLowerCase().includes(q)||(EN[r.dest]||"").includes(q)); }
+  if(state.budget) list=list.filter(r=>r._price<=state.budget);
+  if(state.thunder) list=list.filter(r=>r._dates.some(x=>x.tier==="anomaly"));
+  if(state.pinsOnly){
+    list=list.filter(r=>pins.has(r.dest));
+    if(!pins.size){ document.getElementById("count").textContent="0 個目的地";
+      document.getElementById("results").innerHTML='<div class="empty">未有釘選 — 撳卡片名前面嘅 📌 加入</div>'; return; }
+  }
+  list.sort((a,b)=>(pins.has(b.dest)-pins.has(a.dest))||a._price-b._price);   // 釘選置頂，再按最平排
+
+  document.getElementById("count").textContent=`${list.length} 個目的地`+(windowActive()?` · ${rangeLabel()}有平飛`:"");
+  const res=document.getElementById("results");
+  if(!list.length){res.innerHTML='<div class="empty">冇符合嘅 — 試下放寬 filter</div>';return;}
+  res.innerHTML=list.map(r=>card(r)).join("");
+}
+
+function setupActive(){
+  const map={region:"regions"};   // budget = number input; date range = date inputs; sort removed
+  for(const [k,id] of Object.entries(map)){
+    document.querySelectorAll(`#${id} .chip`).forEach(c=>c.classList.toggle("on", c.textContent===state[k]));
+  }
+}
+
+function card(r){
+  const redLine = (r.redFloor && r.redFloor < r._price) ? `<div class="rprice">⚡特平 $${r.redFloor}</div>` : "";
+  const chead=`<div class="chead">
+      <div class="dest"><span class="pin${pins.has(r.dest)?" on":""}" onclick="togglePin('${r.dest}',event)" title="釘選置頂">📌</span>${r.name}<span class="rg">${r.region} · ${r.dest}</span></div>
+      <div class="price">$${r._price}<small>來回</small>${redLine}</div>
+    </div>`;
+  // dates = the deal slice (最平果堆). Each chip click-through to GF is the core utility.
+  const dates=[...r._dates].sort((a,b)=>a.d<b.d?-1:1);
+  // view-scoped: when a date-window is picked, the cheapest shown becomes the headline.
+  const _na=dates.map(x=>x.p).sort((a,b)=>a-b);
+  const ranged = windowActive();
+  const vFloor = ranged&&_na.length ? _na[0] : r.regFloor;
+  const vGmax  = vFloor;   // green = the cheapest price (+ ties) — unchanged logic
+  const _deal  = dates.filter(x=>x.tier!=="anomaly").map(x=>x.p);
+  const vPeak  = _deal.length ? Math.max(..._deal) : vFloor;
+  const vMid   = vGmax + (vPeak - vGmax)/2;   // above-floor part splits 黃(≤mid) / 白(>mid)
+  const groups=[];
+  dates.forEach(x=>{
+    const m=x.d.slice(0,7);
+    if(!groups.length||groups[groups.length-1].m!==m) groups.push({m,items:[]});
+    groups[groups.length-1].items.push(x);
+  });
+  const exp=state.expanded[r.dest];
+  const show=exp?groups:groups.slice(0,3);
+  const hidden=groups.length-show.length;
+  const rows=show.map(g=>{
+    const toks=g.items.map(x=>{
+      let cls=x.tier==="anomaly"?"anom":x.p<=vGmax?"t1":x.p<=vMid?"t2":"";
+      const px=x.tier==="anomaly"?`<span class="dd"> $${x.p}⚡</span>`:`<span class="dd"> $${x.p}</span>`;
+      const hol=tripHol(x.d,x.r);
+      // 累積返嚟嘅日子，個價可能舊咗 — 超過 7 日冇再確認就淡化提示
+      const age=x.seen?Math.round((new Date(DATA.updated+"T00:00:00")-new Date(x.seen+"T00:00:00"))/864e5):0;
+      if(age>7) cls+=" oldp";
+      const tt=[hol?`行程包住${hol}`:"",age>7?`價錢 ${age} 日前確認，撳入去核實`:""].filter(Boolean).join("；");
+      return `<a class="dchip ${cls}"${tt?` title="${tt}"`:""} target="_blank" data-dest="${r.dest}" data-date="${x.d}" data-price="${x.p}" data-days="${x.days}" data-tier="${x.tier}" href="${gfLink(r.dest,x.d,x.r)}">${parseInt(x.d.slice(8))}號<span class="dd">（${dow(x.d)}）</span>${hol?"🎌":""}${px}<span class="dd"> ${x.days}日</span></a>`;
+    }).join("");
+    return `<div class="mrow"><div class="mlbl">${MLABEL(g.m)}</div><div class="mdates">${toks}</div></div>`;
+  }).join("");
+  const more=hidden>0?`<span class="more" onclick="toggle('${r.dest}')">+ 仲有 ${hidden} 個月</span>`
+            :(groups.length>3?`<span class="more" onclick="toggle('${r.dest}')">收起</span>`:"");
+
+  // 搵最平 app → 淨係 show 最平 + 平日子。冇平時/高峰/約X日(每個 chip 自己有日數)。
+  const nShown = dates.length;
+  const anchorTxt = (r.anchor && r.anchor < vFloor) ? ` · <span class="pk">最平試過 $${r.anchor}</span>` : "";
+  const chgTxt = (typeof r.chg==="number" && r.chg!==0)
+    ? ` · <span class="chg ${r.chg<0?"down":"up"}">${r.chg<0?"↓":"↑"}$${Math.abs(r.chg)} 較上次</span>` : "";
+  const lowTxt = r.low90 ? ` · <span class="low90">📉 90日新低</span>` : "";
+  const band=`<div class="band">最平 <b>~$${vFloor}</b> 來回 · ${nShown} 個平日子${anchorTxt}${chgTxt}${lowTxt}${spark(r.trend)}</div>`;
+  return `<div class="card" data-name="${r.name}" data-dest="${r.dest}">${chead}
+    ${band}
+    <div class="dates">${rows}</div>
+    ${more}
+  </div>`;
+}
+// 近 30 日最平價走勢 sparkline（history 累積夠 3 日先畫）
+function spark(tr){
+  if(!tr) return "";
+  const v=tr.filter(x=>x!=null);
+  if(v.length<3) return "";
+  const mn=Math.min(...v), mx=Math.max(...v), W=64, H=16, n=tr.length;
+  const pts=[];
+  tr.forEach((x,i)=>{ if(x!=null) pts.push(((n<2?0:i/(n-1)*W)).toFixed(1)+","+((mx===mn?H/2:H-2-(x-mn)/(mx-mn)*(H-4))).toFixed(1)); });
+  return ` · <span class="sparkw" title="近30日最平價走勢"><svg class="spark" width="${W}" height="${H}"><polyline points="${pts.join(" ")}" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></span>`;
+}
+
+window.toggle=d=>{state.expanded[d]=!state.expanded[d];if(state.expanded[d])track("card_expand",{dest:d});render();};
+
+// gf_click — 核心 utility/intent event (date chip → Google Flights outbound)
+document.getElementById("results").addEventListener("click",e=>{
+  const a=e.target.closest("a.dchip"); if(!a) return;
+  const d=a.dataset.date;
+  track("gf_click",{dest:a.dataset.dest,date:d,month:d.slice(0,7),dow:new Date(d).getDay(),
+    price:+a.dataset.price,days:+a.dataset.days,tier:a.dataset.tier||"cheap",
+    region:state.region,date_window:windowActive()?((state.from||"")+".."+(state.to||"")):"none",sort:state.sort});
+});
+
+// tap card body (not a date chip / not 收起) → focus that destination (= search it)
+document.getElementById("results").addEventListener("click",e=>{
+  if(e.target.closest("a.dchip")||e.target.closest(".more")||e.target.closest(".pin")) return;
+  const card=e.target.closest(".card"); if(!card||!card.dataset.name) return;
+  const q=document.getElementById("q");
+  q.value=card.dataset.name; state.q=card.dataset.name;
+  document.querySelector(".searchwrap").classList.add("has");
+  track("card_focus",{dest:card.dataset.dest});
+  render(); scrollTo({top:0,behavior:"smooth"});
+});
+
+// 數據源：自家 update_data.py 每日生成 data.js (window.LOCAL_DATA)，102 條航線。
+// 有本地數據就直接用，唔再打上游 repo —— 上游得 65 條線，攞返嚟只會蓋走我哋更齊嘅數據。
+// 淨係喺完全冇 data.js（例如未跑過 update_data.py）先退回上游做救命後備。
+var _local = window.LOCAL_DATA || null;
+var _use = d => { DATA = d; setup(); render(); };
+if (_local) {
+  _use(_local);
+} else {
+  var _t = Date.now();
+  fetch("https://raw.githubusercontent.com/simonngai/flight-deals-data/main/data.json?t=" + _t, {cache:"no-store"})
+    .then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    .catch(()=> fetch("https://cdn.jsdelivr.net/gh/simonngai/flight-deals-data@main/data.json?t=" + _t, {cache:"no-store"}).then(r=>r.json()))
+    .then(_use)
+    .catch(()=>{ document.getElementById("sub").textContent="data 載入失敗"; });
+}
+</script>
+</body>
+</html>
