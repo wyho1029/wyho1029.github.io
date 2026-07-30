@@ -42,6 +42,8 @@
   button, select, input[type=search] { background:var(--card); color:var(--fg); border:1px solid var(--line);
            border-radius:8px; padding:6px 12px; font-size:13px; cursor:pointer; }
   input[type=search] { cursor:text; }
+  /* 主題掣固定喺 header 右上角（用戶習慣位置）；sticky header 本身就係定位基準 */
+  #themeBtn { position:absolute; top:12px; right:16px; }
   select { padding-right:8px; }
   .err { color:var(--red); padding:16px; }
   .empty { color:var(--mut); padding:8px; }
@@ -79,9 +81,9 @@
 <body>
 <header>
   <h1>🎯 轉黃掃描</h1>
+  <button id="themeBtn" onclick="toggleTheme()">☀️ 淺色</button>
   <div class="meta" id="meta">載入中…</div>
   <div style="margin-top:8px"><button onclick="load()">↻ 重新整理</button>
-    <button id="themeBtn" onclick="toggleTheme()" style="margin-left:6px">☀️ 淺色</button>
     <select id="histSel" onchange="onHist()" style="margin-left:6px"><option value="">📅 最新</option></select></div>
   <div style="margin-top:8px">
     <input id="searchBox" type="search" autocomplete="off" oninput="doSearch()"
