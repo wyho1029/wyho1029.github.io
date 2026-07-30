@@ -573,8 +573,10 @@
   function applyTheme(t){ document.documentElement.setAttribute('data-theme', t);
     var b = document.getElementById('themeBtn'); if (b) b.textContent = (t === 'dark') ? '☀️ 淺色' : '🌙 暗色'; }
   function toggleTheme(){ var cur = document.documentElement.getAttribute('data-theme') || 'dark';
-    var next = (cur === 'dark') ? 'light' : 'dark'; localStorage.setItem('theme', next); applyTheme(next); }
-  applyTheme(localStorage.getItem('theme') || 'dark');
+    var next = (cur === 'dark') ? 'light' : 'dark'; localStorage.setItem('hub-theme', next); applyTheme(next); }
+  // 全站共用 hub-theme（同 origin，localStorage 通用），冇記錄就跟系統
+  applyTheme(localStorage.getItem('hub-theme') ||
+    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
   load();
 </script>
 </body>
