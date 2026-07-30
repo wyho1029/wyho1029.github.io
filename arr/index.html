@@ -47,9 +47,51 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 /*# sourceURL=https://wisehomemaker.com/wp-includes/blocks/separator/style.min.css */
 </style>
 
+<!-- 深色模式：原頁只有淺色，以下全部 scope 喺 [data-theme="dark"] 下面，淺色行為零改動。
+     個 app 係 Evergreen UI（class 名係 build 出嚟嘅 hash，靠自己 host 嘅 commons.js 固定），
+     所以override 用語意 selector（input/select/label/[aria-selected]）行先，唔靠 hash。 -->
+<style id="arr-dark-css">
+:root[data-theme="dark"]{
+  --d-bg:#0b0f17; --d-card:#161e2e; --d-field:#1d2740; --d-field-off:#131a29;
+  --d-line:#2b3650; --d-txt:#e8ecf4; --d-dim:#9aa7bd; --d-accent:#5aa9f8;
+}
+:root[data-theme="dark"] body{ background:var(--d-bg); color:var(--d-txt); }
+:root[data-theme="dark"] body.page .site-main h1{ color:var(--d-txt); }
+/* Evergreen 個 tint2 卡片底 */
+:root[data-theme="dark"] #app div[class*="ub-bg_"]{ background:var(--d-card)!important; }
+:root[data-theme="dark"] #app label,
+:root[data-theme="dark"] #app span[class*="ub-color_425A70"]{ color:var(--d-dim)!important; }
+:root[data-theme="dark"] #app input,
+:root[data-theme="dark"] #app select{
+  background:var(--d-field)!important; color:var(--d-txt)!important;
+  box-shadow:inset 0 0 0 1px var(--d-line)!important;
+}
+:root[data-theme="dark"] #app input:disabled,
+:root[data-theme="dark"] #app select:disabled{ background:var(--d-field-off)!important; color:var(--d-dim)!important; }
+:root[data-theme="dark"] #app svg{ fill:var(--d-dim); }
+/* 揀咗嘅 tab 要排喺 ub-color 規則後面先贏 */
+:root[data-theme="dark"] #app [aria-selected="true"]{
+  background:rgba(90,169,248,.16)!important; color:var(--d-accent)!important;
+}
+#themeBtn{
+  position:fixed; top:16px; right:16px; width:40px; height:40px; z-index:9;
+  border:1px solid rgba(0,0,0,.15); border-radius:50%; background:#fff;
+  font-size:18px; line-height:1; cursor:pointer; padding:0;
+  display:flex; align-items:center; justify-content:center;
+}
+:root[data-theme="dark"] #themeBtn{ background:var(--d-card); border-color:var(--d-line); }
+</style>
+<script>
+// 全站共用 hub-theme（同 origin，localStorage 通用），冇記錄就跟系統。
+// 放喺 head 係為咗上色喺第一次 paint 之前，唔會閃一閃白色。
+try{ document.documentElement.setAttribute('data-theme',
+  localStorage.getItem('hub-theme') ||
+  (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); }catch(e){}
+</script>
 </head>
 
 <body class="wp-singular page-template-default page page-id-232 wp-embed-responsive wp-theme-w">
+<button id="themeBtn" aria-label="切換明暗主題">🌙</button>
 <style>
 #message {
     display: block;
@@ -102,6 +144,41 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <script id="wh-commons-js" src="assets/commons.js"></script>
 <script id="wh-annualized-rate-of-return-calculator-js" src="assets/calc.js"></script>
 <script id="daily-income-js" src="assets/daily-income.js"></script>
+
+<script>
+(function(){
+  var root=document.documentElement, b=document.getElementById('themeBtn');
+  function icon(t){ return t==='dark' ? '☀️' : '🌙'; }   // 顯示「切去邊」
+
+  // 個圖係 canvas，CSS 淨低唔到，要直接改 Chart.js。個 React component 每次
+  // update 淨係換 data，唔會覆蓋呢啲設定，所以撳一次就夠。
+  function paintChart(t){
+    if(typeof Chart==='undefined') return;
+    var dark=t==='dark';
+    Chart.defaults.global.defaultFontColor = dark ? '#9aa7bd' : '#666';
+    for(var id in Chart.instances){
+      var c=Chart.instances[id];
+      c.data.datasets[0].backgroundColor = dark ? 'rgba(90,169,248,.5)' : 'rgba(0,0,0,.1)';
+      c.update();
+    }
+  }
+  function apply(t){
+    root.setAttribute('data-theme',t);
+    b.textContent=icon(t);
+    paintChart(t);
+  }
+
+  apply(root.getAttribute('data-theme'));
+  // 個 chart 可能喺呢段 script 之後先 mount，load 完再上多次色
+  window.addEventListener('load',function(){ paintChart(root.getAttribute('data-theme')); });
+
+  b.onclick=function(){
+    var t=root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    try{ localStorage.setItem('hub-theme',t); }catch(e){}
+    apply(t);
+  };
+})();
+</script>
 
 
 
