@@ -239,6 +239,11 @@
       font-size: .9rem;
     }
 
+    .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -554,7 +559,8 @@
         <h2>批次入數</h2>
         <p class="hint" style="margin:0 0 12px">
           一行＝一局，直接打低每個人剩幾多隻牌。<strong>結牌嗰個打 0 或者留空</strong>，其餘要 1–13。<br>
-          Tab 去下一格、Enter 去下一行；打到最後一行會自動再加行。空行會直接略過。
+          Tab 去下一格、Enter 去下一行；打到最後一行會自動再加行。空行會直接略過。<br>
+          今次仲可以入 <strong id="batchSlots">0</strong> 局，撳 ✕ 可以刪走唔要嘅行。
         </p>
 
         <div class="table-wrap">
@@ -996,15 +1002,22 @@
       );
     }
 
+    function maxBatchRows() {
+      return Math.max(1, state.totalRounds - state.rounds.length);
+    }
+
     function addBatchRows(count) {
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < count && batchBody.rows.length < maxBatchRows(); i++) {
         const row = batchBody.insertRow();
         row.innerHTML = `
           <td class="batch-no"></td>
           ${state.names.map(() => `
             <td><input class="batchCell" type="number" inputmode="numeric" min="0" max="13" placeholder="–"></td>
           `).join("")}
-          <td class="batch-status"></td>`;
+          <td class="batch-status"></td>
+          <td class="no-print">
+            <button class="btn ghost small delBatchRowBtn" type="button" aria-label="刪除呢一行">✕</button>
+          </td>`;
       }
       refreshBatch();
     }
@@ -1044,6 +1057,8 @@
       });
 
       $("#saveBatchBtn").textContent = valid ? `全部存入（${valid} 局）` : "全部存入";
+      $("#addBatchRowsBtn").disabled = batchBody.rows.length >= maxBatchRows();
+      $("#batchSlots").textContent = maxBatchRows();
       return valid;
     }
 
@@ -1053,13 +1068,14 @@
         <tr>
           <th>局</th>
           ${state.names.map(name => `<th>${escapeHtml(name)}</th>`).join("")}
-          <th>結牌者得分</th>
+          <th>得分</th>
+          <th class="no-print"></th>
         </tr>`;
       batchBody.innerHTML = "";
       batchError.classList.add("hidden");
       batchPanel.classList.remove("hidden");
       entryPanel.classList.add("hidden");
-      addBatchRows(Math.max(5, state.totalRounds - state.rounds.length));
+      addBatchRows(maxBatchRows());
       batchPanel.scrollIntoView({ behavior: "smooth" });
     }
 
@@ -1251,6 +1267,16 @@
       const isLastRow = event.target.closest("tr") === batchBody.rows[batchBody.rows.length - 1];
       if (isLastRow && event.target.value !== "") addBatchRows(1);
       else refreshBatch();
+    });
+
+    batchBody.addEventListener("click", event => {
+      const button = event.target.closest(".delBatchRowBtn");
+      if (!button) return;
+      const row = button.closest("tr");
+      if (batchBody.rows.length > 1) row.remove();
+      else row.querySelectorAll(".batchCell").forEach(input => input.value = "");
+      batchError.classList.add("hidden");
+      refreshBatch();
     });
 
     batchBody.addEventListener("keydown", event => {
