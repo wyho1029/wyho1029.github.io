@@ -816,7 +816,8 @@
         <h2>批次入數</h2>
         <p class="hint" style="margin:0 0 12px">
           一行＝一局，直接打低每個人剩幾多隻牌。<strong>結牌嗰個打 0 或者留空</strong>，其餘要 1–13。<br>
-          Tab 去下一格、Enter 去下一行；打到最後一行會自動再加行。空行會直接略過。<br>
+          Tab 去下一格、Enter 去下一行；打到最後一行會自動再加行。<br>
+          局數係跟住上面順序落嚟；尾段留白會直接略過，中間有空行就撳 ✕ 刪走，下面會自動排返順序。<br>
           今次仲可以入 <strong id="batchSlots">0</strong> 局，撳 ✕ 可以刪走唔要嘅行。<br>
           有人犯規扣分就喺「額外調整」揀邊個、打幾多分（例如 -40）；一行只可以調整一個人。
         </p>
@@ -1309,35 +1310,41 @@
       refreshBatch();
     }
 
+    // 最後一行有填嘅位置；再之前嘅空行就係「窿」
+    function lastFilledIndex(parsedRows) {
+      return parsedRows.reduce((last, row, i) => row ? i : last, -1);
+    }
+
     function refreshBatch() {
-      const rows = readBatchRows();
+      const parsedRows = readBatchRows().map(parseBatchRow);
+      const lastFilled = lastFilledIndex(parsedRows);
       let valid = 0;
 
-      rows.forEach((row, rowIndex) => {
+      parsedRows.forEach((parsed, rowIndex) => {
         const tr = batchBody.rows[rowIndex];
         const status = tr.querySelector(".batch-status");
-        const parsed = parseBatchRow(row);
 
         tr.querySelectorAll(".batchCell").forEach((input, i) =>
           input.classList.toggle("win", !!parsed && !parsed.error && parsed.winnerIndex === i)
         );
 
+        // 局數跟位置行，刪走一行下面就會自動排返順序
+        tr.querySelector(".batch-no").textContent = state.rounds.length + rowIndex + 1;
+
         if (!parsed) {
-          tr.querySelector(".batch-no").textContent = "";
-          status.textContent = "";
-          status.classList.remove("bad");
+          const gap = rowIndex < lastFilled;
+          status.textContent = gap ? "呢局未填，撳 ✕ 刪走佢" : "";
+          status.classList.toggle("bad", gap);
           return;
         }
 
         if (parsed.error) {
-          tr.querySelector(".batch-no").textContent = "";
           status.textContent = parsed.error;
           status.classList.add("bad");
           return;
         }
 
         valid++;
-        tr.querySelector(".batch-no").textContent = state.rounds.length + valid;
         status.classList.remove("bad");
         const result = calculateRound(parsed.winnerIndex, parsed.remaining, parsed.adjustments);
         const shown = [parsed.winnerIndex];
@@ -1378,8 +1385,17 @@
     }
 
     function saveBatch() {
-      const rows = readBatchRows();
-      const parsed = rows.map(parseBatchRow).filter(Boolean);
+      const parsedRows = readBatchRows().map(parseBatchRow);
+
+      const gap = parsedRows.findIndex((row, i) => !row && i < lastFilledIndex(parsedRows));
+      if (gap >= 0) {
+        batchError.textContent =
+          `第 ${state.rounds.length + gap + 1} 局係空白嘅。撳嗰行嘅 ✕ 刪走佢，下面嘅局數會自動排返順序。`;
+        batchError.classList.remove("hidden");
+        return;
+      }
+
+      const parsed = parsedRows.filter(Boolean);
 
       const bad = parsed.find(row => row.error);
       if (bad) {
