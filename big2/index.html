@@ -171,6 +171,24 @@
       border-color: var(--accent-2);
     }
 
+    td.batch-adj { white-space: nowrap; }
+
+    .batchAdjWho {
+      width: 76px;
+      min-height: 42px;
+      padding: 4px 6px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    .batchAdjValue {
+      width: 62px;
+      min-height: 42px;
+      padding: 4px 4px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
     .batch-no { color: var(--muted); font-weight: 800; }
     .batch-status { font-size: .82rem; white-space: normal; min-width: 84px; }
     .batch-status.bad { color: var(--danger); font-weight: 800; }
@@ -424,6 +442,23 @@
       font-weight: 850;
     }
 
+    #rulesPanel h3 {
+      margin: 22px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+
+    ol.rules {
+      margin: 0;
+      padding-left: 1.5em;
+      line-height: 1.7;
+    }
+
+    ol.rules li { margin-bottom: 9px; }
+    ol.rules li:last-child { margin-bottom: 0; }
+
     .hidden { display: none !important; }
 
     .finished {
@@ -473,7 +508,52 @@
           <p class="subtitle">按剩牌自動計炒雙、炒三、結牌獎分及累積排名</p>
         </div>
       </div>
+      <button id="rulesBtn" class="btn ghost no-print" type="button">📖 規則</button>
     </header>
+
+    <section id="rulesPanel" class="panel hidden">
+      <h2>比賽規例（Appendix A）</h2>
+
+      <h3>派牌及洗牌規例</h3>
+      <ol class="rules">
+        <li>依照大會安排抽籤入座後，第一局由抽得東位的參賽者洗牌及派牌，其對家負責洗牌以作下一局用。每局由手持 ♦3 者以 ♦3 或以 ♦3 連帶的牌先出。每局賽完後由得勝者派牌，其對家負責洗牌，紅藍兩副牌輪流使用。</li>
+        <li>派牌前揭牌打骰，向右方派牌（逆時計方向）。</li>
+        <li>每局調轉接牌方向，即規定藍色牌右方先接，紅色牌左方先接。</li>
+        <li>只可 CUT 牌，不可過牌（打骰後不可 CUT 牌）。</li>
+      </ol>
+
+      <h3>出牌規例</h3>
+      <ol class="rules">
+        <li>上家未出牌或未說「PASS」或「大」時，下家不能出牌或以言語影響他人。</li>
+        <li>出牌後任何牌不可收回（即舉手不回），出錯牌除外。</li>
+        <li>如有人出錯牌，例如將 34568 當作 34567，將黑葵扇 ♠ 當作梅花 ♣ 之類，必須將牌收回，可以重新出牌或選擇 PASS，並於總分扣除 40 分（以每次計算）。</li>
+        <li>每次出牌規定牌數以 5 隻（「四條」必須加一餘牌湊夠 5 隻之數）、3 隻（三條）、2 隻（對子）或一隻牌（單牌）為限。</li>
+        <li>任何人只剩一張牌時，必須通知其他三人「LAST CARD」，並將該牌放在檯上，否則「結牌」時不會獎 15 分，並於總分扣除 40 分。</li>
+        <li>如已有人提出「LAST CARD」，其上家必須「頂大」。在提出「LAST CARD」者結牌後，其上家須將剩餘之牌翻出放在前面，供他人查閱，若發現沒有遵守「LAST CARD 頂大」規例，違規者的總分須被扣 40 分，再包輸。</li>
+        <li>每次出牌規定不能超過 30 秒。如在同一回合中，被同檯參賽者投訴超過 5 次，又經大會工作人員勸諭無效，大會有權取消其參賽資格。</li>
+      </ol>
+
+      <h3>牌之大細的判定規例</h3>
+      <ol class="rules">
+        <li>牌以 2 為最大，3 為最細，依次為 2、A、K、Q、J、10、9、8、7、6、5、4、3。</li>
+        <li>花以葵扇花 ♠ 為最大，階磚 ♦ 為最細，依次為葵扇花 ♠、紅心 ♥、梅花 ♣、階磚 ♦。</li>
+        <li>根據上列大細次序，牌以同花順為最大。依次為「四條」、「夫佬」、「花」、「順」、「三條」、「對子」、「單隻」。如有相同時，先以牌的大細順序定輸贏。如牌亦相同時，即以最大的牌的花定輸贏。</li>
+        <li>四隻 2 仔仍作「四條」處理，不會大於「同花順」。</li>
+      </ol>
+
+      <h3>「結牌」及「炒牌」之分數計算規例</h3>
+      <ol class="rules">
+        <li>分數贏入或輸出之計算法以手上剩餘牌數每 1 隻為 1 分。</li>
+        <li>每局有人結牌後，該局已算完結，其餘三家毋須繼續比賽。</li>
+        <li>結牌者被視作該局贏家，獎 15 分。然後其餘三家亦須根據手上所剩之牌數，以相同分數給予結牌者。另外其餘三家根據手上剩餘牌數互對輸贏。</li>
+        <li>在有人「結牌」後，若有人手上剩牌尚餘 10 隻、11 隻、12 隻，被視為「炒雙」。若剩牌尚餘 13 隻，被視為「炒三」。被「炒雙」者規定以手上所持牌數乘兩倍（被「炒三」者則乘三倍），再根據上述方法與其他三家對數。例如乙結牌時，甲手上有 12 隻牌即「炒雙」，輸給乙方 12 乘兩倍，即 24 分。如丙方尚餘 2 隻，甲與丙計算差額時應先將 12 乘 2 再減 2，即須付 22 分給丙方，如此類推。</li>
+        <li>如有人手持「四條」2，不能算作例牌而結牌，仍須繼續比賽。</li>
+      </ol>
+
+      <div class="actions no-print" style="margin-top:16px">
+        <button id="closeRulesBtn" class="btn" type="button">返回計分器</button>
+      </div>
+    </section>
 
     <section id="setupPanel" class="panel">
       <h2>開新牌局</h2>
@@ -560,7 +640,8 @@
         <p class="hint" style="margin:0 0 12px">
           一行＝一局，直接打低每個人剩幾多隻牌。<strong>結牌嗰個打 0 或者留空</strong>，其餘要 1–13。<br>
           Tab 去下一格、Enter 去下一行；打到最後一行會自動再加行。空行會直接略過。<br>
-          今次仲可以入 <strong id="batchSlots">0</strong> 局，撳 ✕ 可以刪走唔要嘅行。
+          今次仲可以入 <strong id="batchSlots">0</strong> 局，撳 ✕ 可以刪走唔要嘅行。<br>
+          有人犯規扣分就喺「額外調整」揀邊個、打幾多分（例如 -40）；一行只可以調整一個人。
         </p>
 
         <div class="table-wrap">
@@ -975,15 +1056,19 @@
     }
 
     // 一行＝一局：結牌者打 0 或留空，其餘 1–13
-    function parseBatchRow(cells) {
-      if (cells.every(value => value === "")) return null;
+    // ponytail: 一行只得一個人可以調整（犯規扣分基本上一次一個）；一局要調整兩個人就返逐局輸入嗰邊入
+    function parseBatchRow(row) {
+      const { cells, adjWho, adjValue } = row;
+      const blank = cells.every(value => value === "");
+      if (blank && adjWho === "" && adjValue === "") return null;
+      if (blank) return { error: "呢行未入剩牌" };
 
-      const blanks = [0, 1, 2, 3].filter(i => cells[i] === "" || Number(cells[i]) === 0);
-      if (blanks.length !== 1) {
-        return { error: blanks.length ? "得一個人可以係 0" : "要有個人係 0（結牌者）" };
+      const zeros = [0, 1, 2, 3].filter(i => cells[i] === "" || Number(cells[i]) === 0);
+      if (zeros.length !== 1) {
+        return { error: zeros.length ? "得一個人可以係 0" : "要有個人係 0（結牌者）" };
       }
 
-      const winnerIndex = blanks[0];
+      const winnerIndex = zeros[0];
       const remaining = [0, 0, 0, 0];
       for (let i = 0; i < 4; i++) {
         if (i === winnerIndex) continue;
@@ -993,13 +1078,24 @@
         }
         remaining[i] = value;
       }
-      return { winnerIndex, remaining };
+
+      const adjustments = [0, 0, 0, 0];
+      if (adjValue !== "" && Number(adjValue) !== 0) {
+        if (adjWho === "") return { error: "揀邊個要調整" };
+        const amount = Number(adjValue);
+        if (!Number.isInteger(amount)) return { error: "調整要整數" };
+        adjustments[Number(adjWho)] = amount;
+      }
+
+      return { winnerIndex, remaining, adjustments };
     }
 
     function readBatchRows() {
-      return [...batchBody.rows].map(row =>
-        [...row.querySelectorAll(".batchCell")].map(input => input.value.trim())
-      );
+      return [...batchBody.rows].map(row => ({
+        cells: [...row.querySelectorAll(".batchCell")].map(input => input.value.trim()),
+        adjWho: row.querySelector(".batchAdjWho").value,
+        adjValue: row.querySelector(".batchAdjValue").value.trim()
+      }));
     }
 
     function maxBatchRows() {
@@ -1014,6 +1110,13 @@
           ${state.names.map(() => `
             <td><input class="batchCell" type="number" inputmode="numeric" min="0" max="13" placeholder="–"></td>
           `).join("")}
+          <td class="batch-adj">
+            <select class="batchAdjWho" aria-label="邊個要額外調整">
+              <option value="">—</option>
+              ${state.names.map((name, i) => `<option value="${i}">${escapeHtml(name)}</option>`).join("")}
+            </select>
+            <input class="batchAdjValue" type="number" inputmode="numeric" step="1" placeholder="0" aria-label="調整分數">
+          </td>
           <td class="batch-status"></td>
           <td class="no-print">
             <button class="btn ghost small delBatchRowBtn" type="button" aria-label="刪除呢一行">✕</button>
@@ -1026,10 +1129,10 @@
       const rows = readBatchRows();
       let valid = 0;
 
-      rows.forEach((cells, rowIndex) => {
+      rows.forEach((row, rowIndex) => {
         const tr = batchBody.rows[rowIndex];
         const status = tr.querySelector(".batch-status");
-        const parsed = parseBatchRow(cells);
+        const parsed = parseBatchRow(row);
 
         tr.querySelectorAll(".batchCell").forEach((input, i) =>
           input.classList.toggle("win", !!parsed && !parsed.error && parsed.winnerIndex === i)
@@ -1052,8 +1155,13 @@
         valid++;
         tr.querySelector(".batch-no").textContent = state.rounds.length + valid;
         status.classList.remove("bad");
-        const result = calculateRound(parsed.winnerIndex, parsed.remaining, [0, 0, 0, 0]);
-        status.textContent = `${state.names[parsed.winnerIndex]} ${signed(result.finalScores[parsed.winnerIndex])}`;
+        const result = calculateRound(parsed.winnerIndex, parsed.remaining, parsed.adjustments);
+        const shown = [parsed.winnerIndex];
+        const adjusted = parsed.adjustments.findIndex(value => value !== 0);
+        if (adjusted >= 0 && adjusted !== parsed.winnerIndex) shown.push(adjusted);
+        status.textContent = shown
+          .map(i => `${state.names[i]} ${signed(result.finalScores[i])}`)
+          .join("　");
       });
 
       $("#saveBatchBtn").textContent = valid ? `全部存入（${valid} 局）` : "全部存入";
@@ -1068,6 +1176,7 @@
         <tr>
           <th>局</th>
           ${state.names.map(name => `<th>${escapeHtml(name)}</th>`).join("")}
+          <th>額外調整</th>
           <th>得分</th>
           <th class="no-print"></th>
         </tr>`;
@@ -1103,11 +1212,11 @@
       }
 
       for (const row of parsed) {
-        const result = calculateRound(row.winnerIndex, row.remaining, [0, 0, 0, 0]);
+        const result = calculateRound(row.winnerIndex, row.remaining, row.adjustments);
         state.rounds.push({
           winnerIndex: row.winnerIndex,
           remaining: row.remaining,
-          adjustments: [0, 0, 0, 0],
+          adjustments: row.adjustments,
           effective: result.effective,
           baseScores: result.baseScores,
           finalScores: result.finalScores,
@@ -1262,10 +1371,11 @@
     });
 
     batchBody.addEventListener("input", event => {
-      if (!event.target.classList.contains("batchCell")) return;
+      const field = event.target.closest(".batchCell, .batchAdjWho, .batchAdjValue");
+      if (!field) return;
       batchError.classList.add("hidden");
-      const isLastRow = event.target.closest("tr") === batchBody.rows[batchBody.rows.length - 1];
-      if (isLastRow && event.target.value !== "") addBatchRows(1);
+      const isLastRow = field.closest("tr") === batchBody.rows[batchBody.rows.length - 1];
+      if (isLastRow && field.classList.contains("batchCell") && field.value !== "") addBatchRows(1);
       else refreshBatch();
     });
 
@@ -1285,6 +1395,19 @@
       const nextRow = batchBody.rows[event.target.closest("tr").sectionRowIndex + 1];
       if (nextRow) nextRow.querySelector(".batchCell").focus();
     });
+
+    function toggleRules(show) {
+      $("#rulesPanel").classList.toggle("hidden", !show);
+      setupPanel.classList.toggle("hidden", show || !!state);
+      gamePanel.classList.toggle("hidden", show || !state);
+      $("#rulesBtn").textContent = show ? "✕ 返回" : "📖 規則";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    $("#rulesBtn").addEventListener("click", () =>
+      toggleRules($("#rulesPanel").classList.contains("hidden"))
+    );
+    $("#closeRulesBtn").addEventListener("click", () => toggleRules(false));
 
     $("#openBatchBtn").addEventListener("click", openBatch);
     $("#closeBatchBtn").addEventListener("click", closeBatch);
