@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#173f35" />
+  <title>鋤大D 結算計分器｜滑桿版</title>
+  <style>
+    :root {
+      --bg: #f4f1e9;
+      --panel: #fffdf8;
+      --ink: #202421;
+      --muted: #68716c;
+      --accent: #173f35;
+      --accent-2: #d6a84b;
+      --danger: #9f302b;
+      --line: #ddd8cc;
+      --positive: #12653d;
+      --negative: #a42a25;
+      --shadow: 0 10px 30px rgba(31, 45, 39, .09);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(214,168,75,.16), transparent 28rem),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .app {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 18px 14px 48px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 6px 0 18px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 4px; font-size: clamp(1.65rem, 5vw, 2.4rem); }
+    h2 { margin-bottom: 14px; }
+    .subtitle { color: var(--muted); margin: 0; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: white;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      background: color-mix(in srgb, var(--panel) 96%, transparent);
+      border: 1px solid rgba(221, 216, 204, .9);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .span-3 { grid-column: span 3; }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      color: var(--ink);
+      background: white;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(23, 63, 53, .12);
+    }
+
+    input:disabled {
+      background: #efeee9;
+      color: #777;
+    }
+
+    .quick-rounds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 9px;
+    }
+
+    .range-value-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 6px;
+      margin: 2px 0 8px;
+    }
+
+    .range-value {
+      min-width: 2ch;
+      font-size: 2.15rem;
+      line-height: 1;
+      font-weight: 950;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .range-unit {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .range-wrap {
+      padding: 4px 2px 0;
+    }
+
+    input[type="range"].remainingInput {
+      --range-progress: 0%;
+      appearance: none;
+      -webkit-appearance: none;
+      width: 100%;
+      min-height: 42px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      cursor: grab;
+      touch-action: pan-y;
+    }
+
+    input[type="range"].remainingInput:active {
+      cursor: grabbing;
+    }
+
+    input[type="range"].remainingInput:focus {
+      border: 0;
+      box-shadow: none;
+    }
+
+    input[type="range"].remainingInput::-webkit-slider-runnable-track {
+      height: 10px;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          to right,
+          var(--accent) 0%,
+          var(--accent) var(--range-progress),
+          #deddd7 var(--range-progress),
+          #deddd7 100%
+        );
+    }
+
+    input[type="range"].remainingInput::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 30px;
+      height: 30px;
+      margin-top: -10px;
+      border: 4px solid white;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 2px 8px rgba(23, 63, 53, .32);
+    }
+
+    input[type="range"].remainingInput::-moz-range-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #deddd7;
+    }
+
+    input[type="range"].remainingInput::-moz-range-progress {
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    input[type="range"].remainingInput::-moz-range-thumb {
+      width: 23px;
+      height: 23px;
+      border: 4px solid white;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 2px 8px rgba(23, 63, 53, .32);
+    }
+
+    .range-scale {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 750;
+      margin-top: -2px;
+      user-select: none;
+    }
+
+    .winner-zero {
+      min-height: 78px;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #efeee9;
+      padding: 17px 12px;
+      color: #777;
+    }
+
+    .winner-zero strong {
+      font-size: 2.15rem;
+      line-height: 1;
+    }
+
+    .winner-zero span {
+      font-weight: 800;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 15px;
+      min-height: 44px;
+      font-weight: 800;
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .btn.danger {
+      background: var(--danger);
+    }
+
+    .btn.small {
+      min-height: 34px;
+      padding: 6px 10px;
+      font-size: .9rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+    }
+
+    .game-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 32px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #ecf2ef;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .scoreboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .score-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 13px;
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .score-card.leader::before {
+      content: "暫時第一";
+      position: absolute;
+      top: 9px;
+      right: -32px;
+      transform: rotate(35deg);
+      background: var(--accent-2);
+      color: #2c2415;
+      font-size: .68rem;
+      font-weight: 900;
+      padding: 3px 34px;
+    }
+
+    .score-name {
+      color: var(--muted);
+      font-weight: 800;
+      padding-right: 42px;
+      overflow-wrap: anywhere;
+    }
+
+    .score-total {
+      font-size: 2rem;
+      line-height: 1.1;
+      font-weight: 950;
+      margin-top: 5px;
+    }
+
+    .positive { color: var(--positive); }
+    .negative { color: var(--negative); }
+    .zero { color: var(--ink); }
+
+    .player-entry {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 13px;
+      background: white;
+    }
+
+    .player-entry.winner {
+      border-color: var(--accent-2);
+      background: #fff9e9;
+    }
+
+    .player-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .player-head strong { overflow-wrap: anywhere; }
+    .effective {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 8px;
+      min-height: 1.4em;
+    }
+
+    .round-preview {
+      background: #eef4f1;
+      border: 1px dashed #9aafa5;
+      border-radius: 15px;
+      padding: 13px;
+      margin-top: 14px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 9px;
+    }
+
+    .preview-item {
+      padding: 9px;
+      border-radius: 11px;
+      background: white;
+      text-align: center;
+    }
+
+    .preview-item b {
+      display: block;
+      font-size: 1.25rem;
+      margin-top: 3px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: .91rem;
+      line-height: 1.55;
+    }
+
+    .warning {
+      color: var(--danger);
+      font-weight: 800;
+      margin-top: 10px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 720px;
+      background: white;
+    }
+
+    th, td {
+      padding: 11px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    th {
+      background: #f0eee7;
+      font-size: .9rem;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      background: white;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+    }
+
+    .hidden { display: none !important; }
+
+    .finished {
+      border: 2px solid var(--accent-2);
+      background: #fff9e8;
+      text-align: center;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      text-align: center;
+      font-size: .84rem;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .span-8, .span-6, .span-4, .span-3 { grid-column: span 12; }
+      .scoreboard, .preview-grid { grid-template-columns: repeat(2, 1fr); }
+      header { align-items: flex-start; }
+    }
+
+    @media (max-width: 430px) {
+      .app { padding-inline: 10px; }
+      .panel { padding: 14px; border-radius: 17px; }
+      .score-total { font-size: 1.65rem; }
+      .btn { flex: 1 1 auto; }
+    }
+
+    @media print {
+      body { background: white; }
+      .no-print, #setupPanel, #entryPanel { display: none !important; }
+      .panel { box-shadow: none; break-inside: avoid; }
+      .app { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">2♦</div>
+        <div>
+          <h1>鋤大D 結算計分器</h1>
+          <p class="subtitle">按剩牌自動計炒雙、炒三、結牌獎分及累積排名</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="setupPanel" class="panel">
+      <h2>開新牌局</h2>
+      <div class="grid">
+        <div class="span-4">
+          <label for="totalRounds">想玩幾多局？</label>
+          <input id="totalRounds" type="number" min="1" max="999" value="10" inputmode="numeric" />
+          <div class="quick-rounds">
+            <button class="btn ghost small quickRound" type="button" data-value="10">10局</button>
+            <button class="btn ghost small quickRound" type="button" data-value="16">16局</button>
+            <button class="btn ghost small quickRound" type="button" data-value="20">20局</button>
+          </div>
+        </div>
+
+        <div class="span-8">
+          <label>玩家名稱</label>
+          <div class="grid">
+            <div class="span-3"><input class="playerName" value="A" maxlength="20" aria-label="玩家A名稱" /></div>
+            <div class="span-3"><input class="playerName" value="B" maxlength="20" aria-label="玩家B名稱" /></div>
+            <div class="span-3"><input class="playerName" value="C" maxlength="20" aria-label="玩家C名稱" /></div>
+            <div class="span-3"><input class="playerName" value="D" maxlength="20" aria-label="玩家D名稱" /></div>
+          </div>
+        </div>
+
+        <div class="span-12 actions">
+          <button id="startGameBtn" class="btn" type="button">開始計分</button>
+          <span class="hint">固定四人制；開始後資料會自動儲存在呢部裝置。</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="gamePanel" class="hidden">
+      <section class="panel">
+        <div class="game-meta">
+          <span id="roundProgress" class="pill"></span>
+          <span class="pill">結牌者 +15 分</span>
+          <span class="pill">10–12 隻 ×2｜13 隻 ×3</span>
+        </div>
+
+        <div id="scoreboard" class="scoreboard"></div>
+
+        <div class="actions no-print" style="margin-top:14px">
+          <button id="exportBtn" class="btn secondary" type="button">匯出 CSV</button>
+          <button id="printBtn" class="btn ghost" type="button">列印／存 PDF</button>
+          <button id="resetBtn" class="btn danger" type="button">重新開局</button>
+        </div>
+      </section>
+
+      <section id="finishedPanel" class="panel finished hidden">
+        <h2>牌局完成</h2>
+        <p id="winnerText" style="font-size:1.15rem;font-weight:850;margin-bottom:0"></p>
+      </section>
+
+      <section id="entryPanel" class="panel">
+        <h2 id="entryTitle">輸入第 1 局</h2>
+
+        <div class="grid">
+          <div class="span-4">
+            <label for="winnerSelect">邊位首先出晒牌？</label>
+            <select id="winnerSelect"></select>
+          </div>
+          <div class="span-8">
+            <p class="hint" style="margin:3px 0 0">
+              左右滑動揀另外三位玩家手上剩低幾多隻牌。結牌者會自動當 0 隻。<br>
+              「額外調整」可用於犯規扣 40 分等情況；正常一局請留 0。
+            </p>
+          </div>
+        </div>
+
+        <div id="playerInputs" class="grid" style="margin-top:14px"></div>
+
+        <div id="roundPreview" class="round-preview"></div>
+        <div id="entryError" class="warning hidden"></div>
+
+        <div class="actions" style="margin-top:14px">
+          <button id="saveRoundBtn" class="btn" type="button">確認並儲存今局</button>
+          <button id="clearEntryBtn" class="btn ghost" type="button">清空今局輸入</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>每局紀錄</h2>
+        <div id="emptyHistory" class="hint">仲未有已完成嘅局數。</div>
+        <div id="historyWrap" class="table-wrap hidden">
+          <table>
+            <thead id="historyHead"></thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <details>
+          <summary>計分規則點計？</summary>
+          <div class="hint" style="margin-top:10px">
+            <p><strong>1.</strong> 剩 1–9 隻按原數；剩 10–12 隻屬「炒雙」，牌數乘 2；剩 13 隻屬「炒三」，牌數乘 3。</p>
+            <p><strong>2.</strong> 結牌者獲 15 分，並收取另外三人換算後嘅全部牌分。</p>
+            <p><strong>3.</strong> 另外三人兩兩比較，換算牌分較多者，輸兩者差額俾較少者。</p>
+            <p style="margin-bottom:0"><strong>4.</strong> 犯規等額外加減分會直接加入該玩家今局分數，所以加入調整後，全枱總分未必等於 15。</p>
+          </div>
+        </details>
+      </section>
+    </section>
+
+    <p class="footer-note">單一網頁檔案，毋須登入或伺服器；紀錄只會留喺目前瀏覽器。</p>
+  </main>
+
+  <script>
+    "use strict";
+
+    const STORAGE_KEY = "big2-scorekeeper-v1";
+    let state = null;
+
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+    const setupPanel = $("#setupPanel");
+    const gamePanel = $("#gamePanel");
+    const entryPanel = $("#entryPanel");
+    const finishedPanel = $("#finishedPanel");
+    const totalRoundsInput = $("#totalRounds");
+    const winnerSelect = $("#winnerSelect");
+    const playerInputs = $("#playerInputs");
+    const roundPreview = $("#roundPreview");
+    const entryError = $("#entryError");
+
+    function newState(totalRounds, names) {
+      return {
+        totalRounds,
+        names,
+        rounds: [],
+        createdAt: new Date().toISOString()
+      };
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (
+          Number.isInteger(parsed.totalRounds) &&
+          parsed.totalRounds > 0 &&
+          Array.isArray(parsed.names) &&
+          parsed.names.length === 4 &&
+          Array.isArray(parsed.rounds)
+        ) return parsed;
+      } catch (error) {
+        console.warn("無法讀取舊紀錄", error);
+      }
+      return null;
+    }
+
+    function effectiveCards(cards) {
+      if (cards >= 13) return cards * 3;
+      if (cards >= 10) return cards * 2;
+      return cards;
+    }
+
+    function classifyCards(cards) {
+      if (cards >= 13) return "炒三 ×3";
+      if (cards >= 10) return "炒雙 ×2";
+      return "正常 ×1";
+    }
+
+    function scoreClass(value) {
+      if (value > 0) return "positive";
+      if (value < 0) return "negative";
+      return "zero";
+    }
+
+    function signed(value) {
+      return value > 0 ? `+${value}` : String(value);
+    }
+
+    function calculateRound(winnerIndex, remaining, adjustments) {
+      const effective = remaining.map((cards, index) =>
+        index === winnerIndex ? 0 : effectiveCards(cards)
+      );
+
+      const baseScores = [0, 0, 0, 0];
+      baseScores[winnerIndex] = 15 + effective.reduce((sum, value) => sum + value, 0);
+
+      const losers = [0, 1, 2, 3].filter(index => index !== winnerIndex);
+      for (const player of losers) {
+        baseScores[player] -= effective[player];
+
+        for (const opponent of losers) {
+          if (opponent === player) continue;
+          baseScores[player] += effective[opponent] - effective[player];
+        }
+      }
+
+      const finalScores = baseScores.map((value, index) => value + adjustments[index]);
+      return { effective, baseScores, finalScores };
+    }
+
+    function getEntryData() {
+      const winnerIndex = Number(winnerSelect.value);
+      const remaining = [0, 0, 0, 0];
+      const adjustments = [0, 0, 0, 0];
+
+      $$(".remainingInput").forEach(input => {
+        const index = Number(input.dataset.index);
+        remaining[index] = input.disabled ? 0 : Number(input.value);
+      });
+
+      $$(".adjustmentInput").forEach(input => {
+        const index = Number(input.dataset.index);
+        adjustments[index] = Number(input.value || 0);
+      });
+
+      return { winnerIndex, remaining, adjustments };
+    }
+
+    function validateEntry(data) {
+      for (let i = 0; i < 4; i++) {
+        if (i === data.winnerIndex) continue;
+        if (!Number.isInteger(data.remaining[i]) || data.remaining[i] < 1 || data.remaining[i] > 13) {
+          return `${state.names[i]} 嘅剩牌必須係 1 至 13 之間嘅整數。`;
+        }
+      }
+
+      for (let i = 0; i < 4; i++) {
+        if (!Number.isFinite(data.adjustments[i]) || !Number.isInteger(data.adjustments[i])) {
+          return `${state.names[i]} 嘅額外調整必須係整數。`;
+        }
+      }
+
+      return "";
+    }
+
+    function totals() {
+      const result = [0, 0, 0, 0];
+      for (const round of state.rounds) {
+        round.finalScores.forEach((value, index) => result[index] += value);
+      }
+      return result;
+    }
+
+    function renderGame() {
+      setupPanel.classList.add("hidden");
+      gamePanel.classList.remove("hidden");
+
+      renderWinnerOptions();
+      renderPlayerInputs();
+      renderScoreboard();
+      renderHistory();
+      updateProgress();
+      updatePreview();
+    }
+
+    function renderWinnerOptions() {
+      const current = Number(winnerSelect.value || 0);
+      winnerSelect.innerHTML = state.names
+        .map((name, index) => `<option value="${index}">${escapeHtml(name)}</option>`)
+        .join("");
+      winnerSelect.value = String(Math.min(current, 3));
+    }
+
+    function renderPlayerInputs() {
+      const winnerIndex = Number(winnerSelect.value);
+      playerInputs.innerHTML = state.names.map((name, index) => {
+        const winner = index === winnerIndex;
+        return `
+          <div class="span-3 player-entry ${winner ? "winner" : ""}">
+            <div class="player-head">
+              <strong>${escapeHtml(name)}</strong>
+              ${winner ? '<span class="pill">結牌</span>' : ""}
+            </div>
+            <label for="remaining-${index}">剩餘牌數</label>
+            ${winner ? `
+              <div class="winner-zero" aria-label="結牌者剩餘 0 隻">
+                <strong>0</strong><span>隻</span>
+              </div>
+            ` : `
+              <div class="range-value-row">
+                <output
+                  id="remaining-value-${index}"
+                  class="range-value"
+                  for="remaining-${index}"
+                  aria-live="polite"
+                >1</output>
+                <span class="range-unit">隻</span>
+              </div>
+              <div class="range-wrap">
+                <input
+                  id="remaining-${index}"
+                  class="remainingInput"
+                  data-index="${index}"
+                  type="range"
+                  min="1"
+                  max="13"
+                  step="1"
+                  value="1"
+                  aria-label="${escapeHtml(name)} 剩餘牌數"
+                >
+                <div class="range-scale" aria-hidden="true">
+                  <span>1</span>
+                  <span>9</span>
+                  <span>10 炒雙</span>
+                  <span>13 炒三</span>
+                </div>
+              </div>
+            `}
+            <div id="effective-${index}" class="effective">${winner ? "結牌者：0 隻" : "正常 ×1 → 計 1 分牌"}</div>
+
+            <label for="adjustment-${index}" style="margin-top:9px">額外調整</label>
+            <input
+              id="adjustment-${index}"
+              class="adjustmentInput"
+              data-index="${index}"
+              type="number"
+              inputmode="numeric"
+              step="1"
+              value="0"
+              aria-label="${escapeHtml(name)} 額外調整"
+            >
+          </div>`;
+      }).join("");
+
+      $$(".remainingInput, .adjustmentInput").forEach(input => {
+        input.addEventListener("input", updatePreview);
+      });
+    }
+
+    function updatePreview() {
+      if (!state) return;
+
+      const data = getEntryData();
+      const result = calculateRound(data.winnerIndex, data.remaining, data.adjustments);
+
+      state.names.forEach((name, index) => {
+        const effectiveNode = $(`#effective-${index}`);
+        if (!effectiveNode) return;
+
+        if (index === data.winnerIndex) {
+          effectiveNode.textContent = "結牌者：0 隻";
+        } else if (!Number.isInteger(data.remaining[index]) || data.remaining[index] < 1 || data.remaining[index] > 13) {
+          effectiveNode.textContent = "尚未選擇";
+        } else {
+          const outputNode = $(`#remaining-value-${index}`);
+          const sliderNode = $(`#remaining-${index}`);
+          if (outputNode) outputNode.textContent = String(data.remaining[index]);
+          if (sliderNode) {
+            const progress = ((data.remaining[index] - 1) / 12) * 100;
+            sliderNode.style.setProperty("--range-progress", `${progress}%`);
+          }
+
+          effectiveNode.textContent =
+            `${classifyCards(data.remaining[index])} → 計 ${result.effective[index]} 分牌`;
+        }
+      });
+
+      const valid = !validateEntry(data);
+      if (!valid) {
+        roundPreview.innerHTML = `
+          <strong>今局預覽</strong>
+          <p class="hint" style="margin:7px 0 0">滑動揀好另外三人嘅剩牌後，就會即時計出今局得分。</p>`;
+        return;
+      }
+
+      roundPreview.innerHTML = `
+        <strong>第 ${state.rounds.length + 1} 局預覽</strong>
+        <div class="preview-grid">
+          ${state.names.map((name, index) => `
+            <div class="preview-item">
+              <span>${escapeHtml(name)}</span>
+              <b class="${scoreClass(result.finalScores[index])}">${signed(result.finalScores[index])}</b>
+              ${data.adjustments[index] !== 0
+                ? `<small>基本 ${signed(result.baseScores[index])}；調整 ${signed(data.adjustments[index])}</small>`
+                : `<small>今局得分</small>`
+              }
+            </div>
+          `).join("")}
+        </div>`;
+    }
+
+    function renderScoreboard() {
+      const playerTotals = totals();
+      const max = Math.max(...playerTotals);
+
+      $("#scoreboard").innerHTML = state.names.map((name, index) => `
+        <div class="score-card ${playerTotals[index] === max && state.rounds.length ? "leader" : ""}">
+          <div class="score-name">${escapeHtml(name)}</div>
+          <div class="score-total ${scoreClass(playerTotals[index])}">${signed(playerTotals[index])}</div>
+          <div class="hint">累積總分</div>
+        </div>
+      `).join("");
+    }
+
+    function renderHistory() {
+      const empty = $("#emptyHistory");
+      const wrap = $("#historyWrap");
+      const head = $("#historyHead");
+      const body = $("#historyBody");
+
+      head.innerHTML = `
+        <tr>
+          <th>局</th>
+          <th>結牌者</th>
+          ${state.names.map(name => `<th>${escapeHtml(name)}<br><small>剩牌／得分</small></th>`).join("")}
+          <th class="no-print">操作</th>
+        </tr>`;
+
+      if (!state.rounds.length) {
+        empty.classList.remove("hidden");
+        wrap.classList.add("hidden");
+        body.innerHTML = "";
+        return;
+      }
+
+      empty.classList.add("hidden");
+      wrap.classList.remove("hidden");
+
+      body.innerHTML = state.rounds.map((round, roundIndex) => `
+        <tr>
+          <td>${roundIndex + 1}</td>
+          <td>${escapeHtml(state.names[round.winnerIndex])}</td>
+          ${state.names.map((name, playerIndex) => {
+            const rem = round.remaining[playerIndex];
+            const adjustment = round.adjustments[playerIndex];
+            const cardText = playerIndex === round.winnerIndex
+              ? "結牌"
+              : `${rem} 隻${rem >= 13 ? "（炒三）" : rem >= 10 ? "（炒雙）" : ""}`;
+            return `
+              <td>
+                <small>${cardText}</small><br>
+                <strong class="${scoreClass(round.finalScores[playerIndex])}">
+                  ${signed(round.finalScores[playerIndex])}
+                </strong>
+                ${adjustment !== 0 ? `<br><small>調整 ${signed(adjustment)}</small>` : ""}
+              </td>`;
+          }).join("")}
+          <td class="no-print">
+            <button class="btn ghost small deleteRoundBtn" data-index="${roundIndex}" type="button">刪除</button>
+          </td>
+        </tr>
+      `).join("");
+
+      $$(".deleteRoundBtn").forEach(button => {
+        button.addEventListener("click", () => {
+          const index = Number(button.dataset.index);
+          if (!confirm(`確定刪除第 ${index + 1} 局？`)) return;
+          state.rounds.splice(index, 1);
+          saveState();
+          renderScoreboard();
+          renderHistory();
+          updateProgress();
+          clearEntry();
+        });
+      });
+    }
+
+    function updateProgress() {
+      const completed = state.rounds.length;
+      $("#roundProgress").textContent = `已完成 ${completed}／${state.totalRounds} 局`;
+      $("#entryTitle").textContent = `輸入第 ${completed + 1} 局`;
+
+      const finished = completed >= state.totalRounds;
+      entryPanel.classList.toggle("hidden", finished);
+      finishedPanel.classList.toggle("hidden", !finished);
+
+      if (finished) {
+        const playerTotals = totals();
+        const max = Math.max(...playerTotals);
+        const winners = state.names.filter((_, index) => playerTotals[index] === max);
+        $("#winnerText").textContent =
+          winners.length === 1
+            ? `總冠軍係 ${winners[0]}，最後累積 ${signed(max)} 分！`
+            : `${winners.join("、")} 同分冠軍，最後累積 ${signed(max)} 分！`;
+      }
+    }
+
+    function clearEntry() {
+      winnerSelect.value = "0";
+      renderPlayerInputs();
+      entryError.classList.add("hidden");
+      entryError.textContent = "";
+      updatePreview();
+    }
+
+    function saveRound() {
+      if (state.rounds.length >= state.totalRounds) return;
+
+      const data = getEntryData();
+      const error = validateEntry(data);
+      if (error) {
+        entryError.textContent = error;
+        entryError.classList.remove("hidden");
+        return;
+      }
+
+      const result = calculateRound(data.winnerIndex, data.remaining, data.adjustments);
+      state.rounds.push({
+        winnerIndex: data.winnerIndex,
+        remaining: data.remaining,
+        adjustments: data.adjustments,
+        effective: result.effective,
+        baseScores: result.baseScores,
+        finalScores: result.finalScores,
+        savedAt: new Date().toISOString()
+      });
+
+      saveState();
+      renderScoreboard();
+      renderHistory();
+      updateProgress();
+      clearEntry();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function resetGame() {
+      if (!confirm("確定清除目前所有局數同分數，重新開局？")) return;
+      localStorage.removeItem(STORAGE_KEY);
+      state = null;
+      gamePanel.classList.add("hidden");
+      setupPanel.classList.remove("hidden");
+      totalRoundsInput.value = "10";
+      $$(".playerName").forEach((input, index) => input.value = ["A", "B", "C", "D"][index]);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function exportCsv() {
+      const rows = [];
+      const header = ["局數", "結牌者"];
+
+      for (const name of state.names) {
+        header.push(`${name}剩牌`, `${name}換算牌分`, `${name}額外調整`, `${name}今局得分`);
+      }
+      rows.push(header);
+
+      state.rounds.forEach((round, index) => {
+        const row = [index + 1, state.names[round.winnerIndex]];
+        state.names.forEach((_, playerIndex) => {
+          row.push(
+            playerIndex === round.winnerIndex ? 0 : round.remaining[playerIndex],
+            round.effective[playerIndex],
+            round.adjustments[playerIndex],
+            round.finalScores[playerIndex]
+          );
+        });
+        rows.push(row);
+      });
+
+      const playerTotals = totals();
+      const totalRow = ["總分", ""];
+      state.names.forEach((_, index) => totalRow.push("", "", "", playerTotals[index]));
+      rows.push(totalRow);
+
+      const csv = "\uFEFF" + rows
+        .map(row => row.map(csvEscape).join(","))
+        .join("\r\n");
+
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `鋤大D計分_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function csvEscape(value) {
+      const text = String(value ?? "");
+      return `"${text.replaceAll('"', '""')}"`;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    $("#startGameBtn").addEventListener("click", () => {
+      const totalRounds = Number(totalRoundsInput.value);
+      const names = $$(".playerName").map(input => input.value.trim());
+
+      if (!Number.isInteger(totalRounds) || totalRounds < 1 || totalRounds > 999) {
+        alert("局數請輸入 1 至 999 之間嘅整數。");
+        return;
+      }
+
+      if (names.some(name => !name)) {
+        alert("請填寫晒四位玩家名稱。");
+        return;
+      }
+
+      if (new Set(names).size !== names.length) {
+        alert("四位玩家名稱唔可以重複。");
+        return;
+      }
+
+      state = newState(totalRounds, names);
+      saveState();
+      renderGame();
+    });
+
+    $$(".quickRound").forEach(button => {
+      button.addEventListener("click", () => {
+        totalRoundsInput.value = button.dataset.value;
+      });
+    });
+
+    winnerSelect.addEventListener("change", () => {
+      renderPlayerInputs();
+      updatePreview();
+    });
+
+    $("#saveRoundBtn").addEventListener("click", saveRound);
+    $("#clearEntryBtn").addEventListener("click", clearEntry);
+    $("#resetBtn").addEventListener("click", resetGame);
+    $("#exportBtn").addEventListener("click", exportCsv);
+    $("#printBtn").addEventListener("click", () => window.print());
+
+    state = loadState();
+    if (state) renderGame();
+  </script>
+</body>
+</html>
