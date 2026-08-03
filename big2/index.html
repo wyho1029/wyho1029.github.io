@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173f35" />
-  <title>鋤大D 結算計分器｜滑桿版</title>
+  <title>鋤大D 結算計分器</title>
   <style>
     :root {
       --bg: #f4f1e9;
@@ -128,109 +128,40 @@
       margin-top: 9px;
     }
 
-    .range-value-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 6px;
-      margin: 2px 0 8px;
+    .card-picker {
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+      gap: 3px;
     }
 
-    .range-value {
-      min-width: 2ch;
-      font-size: 2.15rem;
-      line-height: 1;
-      font-weight: 950;
-      color: var(--accent);
-      text-align: center;
-    }
-
-    .range-unit {
-      color: var(--muted);
-      font-weight: 800;
-    }
-
-    .range-wrap {
-      padding: 4px 2px 0;
-    }
-
-    input[type="range"].remainingInput {
-      --range-progress: 0%;
-      appearance: none;
-      -webkit-appearance: none;
-      width: 100%;
-      min-height: 42px;
+    .card-btn {
+      min-height: 38px;
       padding: 0;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-      cursor: grab;
-      touch-action: pan-y;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+      font-size: .82rem;
+      font-weight: 850;
+      line-height: 1;
     }
 
-    input[type="range"].remainingInput:active {
-      cursor: grabbing;
-    }
+    .card-btn[data-tier="x2"] { background: #fdf4e2; }
+    .card-btn[data-tier="x3"] { background: #fbe8e6; }
 
-    input[type="range"].remainingInput:focus {
-      border: 0;
-      box-shadow: none;
-    }
-
-    input[type="range"].remainingInput::-webkit-slider-runnable-track {
-      height: 10px;
-      border-radius: 999px;
-      background:
-        linear-gradient(
-          to right,
-          var(--accent) 0%,
-          var(--accent) var(--range-progress),
-          #deddd7 var(--range-progress),
-          #deddd7 100%
-        );
-    }
-
-    input[type="range"].remainingInput::-webkit-slider-thumb {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 30px;
-      height: 30px;
-      margin-top: -10px;
-      border: 4px solid white;
-      border-radius: 50%;
+    .card-btn.active {
       background: var(--accent);
-      box-shadow: 0 2px 8px rgba(23, 63, 53, .32);
+      border-color: var(--accent);
+      color: white;
     }
 
-    input[type="range"].remainingInput::-moz-range-track {
-      height: 10px;
-      border-radius: 999px;
-      background: #deddd7;
-    }
-
-    input[type="range"].remainingInput::-moz-range-progress {
-      height: 10px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    input[type="range"].remainingInput::-moz-range-thumb {
-      width: 23px;
-      height: 23px;
-      border: 4px solid white;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 2px 8px rgba(23, 63, 53, .32);
-    }
-
-    .range-scale {
+    .picker-scale {
       display: flex;
       justify-content: space-between;
       color: var(--muted);
-      font-size: .76rem;
+      font-size: .74rem;
       font-weight: 750;
-      margin-top: -2px;
+      margin-top: 4px;
       user-select: none;
     }
 
@@ -492,6 +423,9 @@
     @media (max-width: 430px) {
       .app { padding-inline: 10px; }
       .panel { padding: 14px; border-radius: 17px; }
+      .player-entry { padding: 11px 8px; }
+      .card-picker { gap: 2px; }
+      .card-btn { font-size: .76rem; }
       .score-total { font-size: 1.65rem; }
       .btn { flex: 1 1 auto; }
     }
@@ -578,7 +512,7 @@
           </div>
           <div class="span-8">
             <p class="hint" style="margin:3px 0 0">
-              左右滑動揀另外三位玩家手上剩低幾多隻牌。結牌者會自動當 0 隻。<br>
+              直接撳 1–13 揀另外三位玩家手上剩低幾多隻牌。結牌者會自動當 0 隻。<br>
               「額外調整」可用於犯規扣 40 分等情況；正常一局請留 0。
             </p>
           </div>
@@ -784,47 +718,36 @@
       playerInputs.innerHTML = state.names.map((name, index) => {
         const winner = index === winnerIndex;
         return `
-          <div class="span-3 player-entry ${winner ? "winner" : ""}">
+          <div class="span-6 player-entry ${winner ? "winner" : ""}">
             <div class="player-head">
               <strong>${escapeHtml(name)}</strong>
               ${winner ? '<span class="pill">結牌</span>' : ""}
             </div>
-            <label for="remaining-${index}">剩餘牌數</label>
+            <label>剩餘牌數</label>
             ${winner ? `
               <div class="winner-zero" aria-label="結牌者剩餘 0 隻">
                 <strong>0</strong><span>隻</span>
               </div>
             ` : `
-              <div class="range-value-row">
-                <output
-                  id="remaining-value-${index}"
-                  class="range-value"
-                  for="remaining-${index}"
-                  aria-live="polite"
-                >1</output>
-                <span class="range-unit">隻</span>
+              <div class="card-picker" role="group" aria-label="${escapeHtml(name)} 剩餘牌數">
+                ${Array.from({ length: 13 }, (_, i) => i + 1).map(n => `
+                  <button
+                    type="button"
+                    class="card-btn cardBtn"
+                    data-index="${index}"
+                    data-value="${n}"
+                    data-tier="${n >= 13 ? "x3" : n >= 10 ? "x2" : ""}"
+                    aria-pressed="false"
+                  >${n}</button>`).join("")}
               </div>
-              <div class="range-wrap">
-                <input
-                  id="remaining-${index}"
-                  class="remainingInput"
-                  data-index="${index}"
-                  type="range"
-                  min="1"
-                  max="13"
-                  step="1"
-                  value="1"
-                  aria-label="${escapeHtml(name)} 剩餘牌數"
-                >
-                <div class="range-scale" aria-hidden="true">
-                  <span>1</span>
-                  <span>9</span>
-                  <span>10 炒雙</span>
-                  <span>13 炒三</span>
-                </div>
+              <input id="remaining-${index}" class="remainingInput" data-index="${index}" type="hidden" value="0">
+              <div class="picker-scale" aria-hidden="true">
+                <span>1–9 正常</span>
+                <span>10–12 炒雙</span>
+                <span>13 炒三</span>
               </div>
             `}
-            <div id="effective-${index}" class="effective">${winner ? "結牌者：0 隻" : "正常 ×1 → 計 1 分牌"}</div>
+            <div id="effective-${index}" class="effective">${winner ? "結牌者：0 隻" : "尚未選擇"}</div>
 
             <label for="adjustment-${index}" style="margin-top:9px">額外調整</label>
             <input
@@ -840,8 +763,21 @@
           </div>`;
       }).join("");
 
-      $$(".remainingInput, .adjustmentInput").forEach(input => {
+      $$(".adjustmentInput").forEach(input => {
         input.addEventListener("input", updatePreview);
+      });
+
+      $$(".cardBtn").forEach(button => {
+        button.addEventListener("click", () => {
+          const index = Number(button.dataset.index);
+          $(`#remaining-${index}`).value = button.dataset.value;
+          $$(`.cardBtn[data-index="${index}"]`).forEach(other => {
+            const on = other === button;
+            other.classList.toggle("active", on);
+            other.setAttribute("aria-pressed", String(on));
+          });
+          updatePreview();
+        });
       });
     }
 
@@ -860,14 +796,6 @@
         } else if (!Number.isInteger(data.remaining[index]) || data.remaining[index] < 1 || data.remaining[index] > 13) {
           effectiveNode.textContent = "尚未選擇";
         } else {
-          const outputNode = $(`#remaining-value-${index}`);
-          const sliderNode = $(`#remaining-${index}`);
-          if (outputNode) outputNode.textContent = String(data.remaining[index]);
-          if (sliderNode) {
-            const progress = ((data.remaining[index] - 1) / 12) * 100;
-            sliderNode.style.setProperty("--range-progress", `${progress}%`);
-          }
-
           effectiveNode.textContent =
             `${classifyCards(data.remaining[index])} → 計 ${result.effective[index]} 分牌`;
         }
@@ -877,7 +805,7 @@
       if (!valid) {
         roundPreview.innerHTML = `
           <strong>今局預覽</strong>
-          <p class="hint" style="margin:7px 0 0">滑動揀好另外三人嘅剩牌後，就會即時計出今局得分。</p>`;
+          <p class="hint" style="margin:7px 0 0">撳好另外三人嘅剩牌後，就會即時計出今局得分。</p>`;
         return;
       }
 
