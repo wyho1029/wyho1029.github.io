@@ -554,6 +554,91 @@
       margin-top: 20px;
     }
 
+    /* 窄screen：批次表由 8 欄改做「一局一張卡」，唔使左右掃 */
+    @media (max-width: 640px) {
+      #batchWrap {
+        border: 0;
+        border-radius: 0;
+        overflow: visible;
+      }
+
+      #batchHead { display: none; }
+      #batchTable, #batchTable tbody { display: block; }
+
+      #batchTable tr {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 9px 6px;
+        align-items: end;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+        padding: 12px;
+        margin-bottom: 10px;
+      }
+
+      #batchTable td {
+        display: block;
+        border: 0;
+        padding: 0;
+        text-align: left;
+        white-space: normal;
+      }
+
+      #batchTable td[data-name]::before,
+      #batchTable td.batch-adj::before {
+        content: attr(data-name);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: .8rem;
+        font-weight: 800;
+      }
+
+      #batchTable td.batch-no {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        color: var(--ink);
+      }
+
+      #batchTable td.batch-no:not(:empty)::before { content: "第 "; }
+      #batchTable td.batch-no:not(:empty)::after { content: " 局"; }
+
+      #batchTable td.no-print {
+        grid-column: 4;
+        grid-row: 1;
+        justify-self: end;
+      }
+
+      #batchTable td.batch-adj {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      #batchTable td.batch-adj::before {
+        content: "額外調整";
+        margin-bottom: 0;
+        flex: none;
+      }
+
+      #batchTable .batchAdjWho {
+        flex: 1 1 auto;
+        width: auto;
+        margin-right: 0;
+      }
+
+      #batchTable .batchAdjValue { flex: none; width: 78px; }
+
+      #batchTable td.batch-status {
+        grid-column: 1 / -1;
+        min-width: 0;
+      }
+
+      #batchTable td.batch-status:empty { display: none; }
+    }
+
     @media (max-width: 800px) {
       .span-8, .span-6, .span-4, .span-3 { grid-column: span 12; }
       .scoreboard, .preview-grid { grid-template-columns: repeat(2, 1fr); }
@@ -729,7 +814,7 @@
           有人犯規扣分就喺「額外調整」揀邊個、打幾多分（例如 -40）；一行只可以調整一個人。
         </p>
 
-        <div class="table-wrap">
+        <div id="batchWrap" class="table-wrap">
           <table id="batchTable">
             <thead id="batchHead"></thead>
             <tbody id="batchBody"></tbody>
@@ -1196,8 +1281,10 @@
         const row = batchBody.insertRow();
         row.innerHTML = `
           <td class="batch-no"></td>
-          ${state.names.map(() => `
-            <td><input class="batchCell" type="number" inputmode="numeric" min="0" max="13" placeholder="–"></td>
+          ${state.names.map(name => `
+            <td data-name="${escapeHtml(name)}">
+              <input class="batchCell" type="number" inputmode="numeric" min="0" max="13" placeholder="–">
+            </td>
           `).join("")}
           <td class="batch-adj">
             <select class="batchAdjWho" aria-label="邊個要額外調整">
