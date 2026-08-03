@@ -729,11 +729,18 @@
       <div class="grid">
         <div class="span-4">
           <label for="totalRounds">想玩幾多局？</label>
-          <input id="totalRounds" type="number" min="1" max="999" value="10" inputmode="numeric" />
+          <select id="totalRounds"></select>
           <div class="quick-rounds">
-            <button class="btn ghost small quickRound" type="button" data-value="10">10局</button>
-            <button class="btn ghost small quickRound" type="button" data-value="16">16局</button>
-            <button class="btn ghost small quickRound" type="button" data-value="20">20局</button>
+            <input
+              id="customRounds"
+              class="hidden"
+              type="number"
+              min="1"
+              max="999"
+              placeholder="自己輸入局數（最多 999）"
+              inputmode="numeric"
+              aria-label="自訂局數"
+            >
           </div>
         </div>
 
@@ -871,6 +878,7 @@
     const entryPanel = $("#entryPanel");
     const finishedPanel = $("#finishedPanel");
     const totalRoundsInput = $("#totalRounds");
+    const customRoundsInput = $("#customRounds");
     const winnerSelect = $("#winnerSelect");
     const winnerTabs = $("#winnerTabs");
     const playerInputs = $("#playerInputs");
@@ -1454,6 +1462,8 @@
       gamePanel.classList.add("hidden");
       setupPanel.classList.remove("hidden");
       totalRoundsInput.value = "10";
+      customRoundsInput.value = "";
+      customRoundsInput.classList.add("hidden");
       $$(".playerName").forEach((input, index) => input.value = ["A", "B", "C", "D"][index]);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1512,8 +1522,25 @@
         .replaceAll("'", "&#039;");
     }
 
+    totalRoundsInput.innerHTML =
+      Array.from({ length: 20 }, (_, i) => i + 1)
+        .map(n => `<option value="${n}"${n === 10 ? " selected" : ""}>${n} 局</option>`)
+        .join("") + `<option value="custom">自訂（多過 20 局）…</option>`;
+
+    function chosenRounds() {
+      return totalRoundsInput.value === "custom"
+        ? Number(customRoundsInput.value)
+        : Number(totalRoundsInput.value);
+    }
+
+    totalRoundsInput.addEventListener("change", () => {
+      const custom = totalRoundsInput.value === "custom";
+      customRoundsInput.classList.toggle("hidden", !custom);
+      if (custom) customRoundsInput.focus();
+    });
+
     $("#startGameBtn").addEventListener("click", () => {
-      const totalRounds = Number(totalRoundsInput.value);
+      const totalRounds = chosenRounds();
       const names = $$(".playerName").map(input => input.value.trim());
 
       if (!Number.isInteger(totalRounds) || totalRounds < 1 || totalRounds > 999) {
@@ -1534,12 +1561,6 @@
       state = newState(totalRounds, names);
       saveState();
       renderGame();
-    });
-
-    $$(".quickRound").forEach(button => {
-      button.addEventListener("click", () => {
-        totalRoundsInput.value = button.dataset.value;
-      });
     });
 
     winnerTabs.addEventListener("click", event => {
