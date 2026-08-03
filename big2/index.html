@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173f35" />
   <title>鋤大D 結算計分器</title>
+  <script>
+    document.documentElement.setAttribute("data-theme",
+      localStorage.getItem("big2-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  </script>
   <style>
     :root {
       --bg: #f4f1e9;
@@ -17,9 +22,54 @@
       --line: #ddd8cc;
       --positive: #12653d;
       --negative: #a42a25;
+      --surface: #ffffff;
+      --surface-2: #efeee9;
+      --surface-muted: #777777;
+      --on-accent: #ffffff;
+      --head: #f0eee7;
+      --pill: #ecf2ef;
+      --tint: #fff9e9;
+      --preview: #eef4f1;
+      --preview-line: #9aafa5;
+      --x2: #fdf4e2;
+      --x3: #fbe8e6;
+      --leader-ink: #2c2415;
+      --glow: rgba(214, 168, 75, .16);
       --shadow: 0 10px 30px rgba(31, 45, 39, .09);
+      color-scheme: light;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
+    }
+
+    /* 暗黑淨係喺螢幕生效；列印一律用返上面嘅淺色，唔會印一版黑 */
+    @media screen {
+      :root[data-theme="dark"] {
+      --bg: #10140f;
+      --panel: #191e19;
+      --ink: #e9eee8;
+      --muted: #9ba79a;
+      --accent: #4fa383;
+      --accent-2: #d6a84b;
+      --danger: #d4756e;
+      --line: #303a30;
+      --positive: #5fc48e;
+      --negative: #ef8b84;
+      --surface: #202720;
+      --surface-2: #2a322a;
+      --surface-muted: #94a094;
+      --on-accent: #0c130e;
+      --head: #262d26;
+      --pill: #24302b;
+      --tint: #33301f;
+      --preview: #1d2622;
+      --preview-line: #47584f;
+      --x2: #38321f;
+      --x3: #3a2624;
+      --leader-ink: #2c2415;
+      --glow: rgba(214, 168, 75, .10);
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      color-scheme: dark;
+      }
     }
 
     * { box-sizing: border-box; }
@@ -28,7 +78,7 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at top right, rgba(214,168,75,.16), transparent 28rem),
+        radial-gradient(circle at top right, var(--glow), transparent 28rem),
         var(--bg);
       min-height: 100vh;
     }
@@ -55,6 +105,12 @@
     h2 { margin-bottom: 14px; }
     .subtitle { color: var(--muted); margin: 0; }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .brand {
       display: flex;
       align-items: center;
@@ -62,20 +118,21 @@
     }
 
     .logo {
+      flex: none;
       width: 46px;
       height: 46px;
       border-radius: 14px;
       display: grid;
       place-items: center;
       background: var(--accent);
-      color: white;
+      color: var(--on-accent);
       font-weight: 900;
       box-shadow: var(--shadow);
     }
 
     .panel {
       background: color-mix(in srgb, var(--panel) 96%, transparent);
-      border: 1px solid rgba(221, 216, 204, .9);
+      border: 1px solid var(--line);
       border-radius: 20px;
       padding: 18px;
       box-shadow: var(--shadow);
@@ -107,7 +164,7 @@
       border-radius: 12px;
       padding: 10px 12px;
       color: var(--ink);
-      background: white;
+      background: var(--surface);
       outline: none;
     }
 
@@ -117,8 +174,8 @@
     }
 
     input:disabled {
-      background: #efeee9;
-      color: #777;
+      background: var(--surface-2);
+      color: var(--surface-muted);
     }
 
     .quick-rounds {
@@ -126,6 +183,29 @@
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 9px;
+    }
+
+    .winner-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .winner-tab {
+      min-height: 46px;
+      padding: 6px 4px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 850;
+      overflow-wrap: anywhere;
+    }
+
+    .winner-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--on-accent);
     }
 
     .card-picker {
@@ -139,20 +219,20 @@
       padding: 0;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: white;
+      background: var(--surface);
       color: var(--ink);
       font-size: .82rem;
       font-weight: 850;
       line-height: 1;
     }
 
-    .card-btn[data-tier="x2"] { background: #fdf4e2; }
-    .card-btn[data-tier="x3"] { background: #fbe8e6; }
+    .card-btn[data-tier="x2"] { background: var(--x2); }
+    .card-btn[data-tier="x3"] { background: var(--x3); }
 
     .card-btn.active {
       background: var(--accent);
       border-color: var(--accent);
-      color: white;
+      color: var(--on-accent);
     }
 
     #batchTable { min-width: 0; }
@@ -167,7 +247,7 @@
     }
 
     .batchCell.win {
-      background: #fff9e9;
+      background: var(--tint);
       border-color: var(--accent-2);
     }
 
@@ -211,9 +291,9 @@
       gap: 6px;
       border: 1px solid var(--line);
       border-radius: 14px;
-      background: #efeee9;
+      background: var(--surface-2);
       padding: 17px 12px;
-      color: #777;
+      color: var(--surface-muted);
     }
 
     .winner-zero strong {
@@ -232,11 +312,11 @@
       min-height: 44px;
       font-weight: 800;
       background: var(--accent);
-      color: white;
+      color: var(--on-accent);
     }
 
     .btn.secondary {
-      background: white;
+      background: var(--surface);
       color: var(--accent);
       border: 1px solid var(--accent);
     }
@@ -283,7 +363,7 @@
       min-height: 32px;
       padding: 5px 10px;
       border-radius: 999px;
-      background: #ecf2ef;
+      background: var(--pill);
       color: var(--accent);
       font-weight: 800;
       font-size: .9rem;
@@ -299,7 +379,7 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 13px;
-      background: white;
+      background: var(--surface);
       position: relative;
       overflow: hidden;
     }
@@ -311,7 +391,7 @@
       right: -32px;
       transform: rotate(35deg);
       background: var(--accent-2);
-      color: #2c2415;
+      color: var(--leader-ink);
       font-size: .68rem;
       font-weight: 900;
       padding: 3px 34px;
@@ -339,12 +419,12 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 13px;
-      background: white;
+      background: var(--surface);
     }
 
     .player-entry.winner {
       border-color: var(--accent-2);
-      background: #fff9e9;
+      background: var(--tint);
     }
 
     .player-head {
@@ -364,8 +444,8 @@
     }
 
     .round-preview {
-      background: #eef4f1;
-      border: 1px dashed #9aafa5;
+      background: var(--preview);
+      border: 1px dashed var(--preview-line);
       border-radius: 15px;
       padding: 13px;
       margin-top: 14px;
@@ -381,7 +461,7 @@
     .preview-item {
       padding: 9px;
       border-radius: 11px;
-      background: white;
+      background: var(--surface);
       text-align: center;
     }
 
@@ -413,7 +493,7 @@
       border-collapse: collapse;
       width: 100%;
       min-width: 720px;
-      background: white;
+      background: var(--surface);
     }
 
     th, td {
@@ -424,7 +504,7 @@
     }
 
     th {
-      background: #f0eee7;
+      background: var(--head);
       font-size: .9rem;
     }
 
@@ -434,7 +514,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 12px;
-      background: white;
+      background: var(--surface);
     }
 
     summary {
@@ -463,7 +543,7 @@
 
     .finished {
       border: 2px solid var(--accent-2);
-      background: #fff9e8;
+      background: var(--tint);
       text-align: center;
     }
 
@@ -483,6 +563,7 @@
     @media (max-width: 430px) {
       .app { padding-inline: 10px; }
       .panel { padding: 14px; border-radius: 17px; }
+      .header-actions .btn { flex: 0 0 auto; white-space: nowrap; padding: 9px 11px; }
       .player-entry { padding: 11px 8px; }
       .card-picker { gap: 2px; }
       .card-btn { font-size: .76rem; }
@@ -491,7 +572,7 @@
     }
 
     @media print {
-      body { background: white; }
+      body { background: var(--surface); }
       .no-print, #setupPanel, #entryPanel { display: none !important; }
       .panel { box-shadow: none; break-inside: avoid; }
       .app { max-width: none; }
@@ -508,7 +589,10 @@
           <p class="subtitle">按剩牌自動計炒雙、炒三、結牌獎分及累積排名</p>
         </div>
       </div>
-      <button id="rulesBtn" class="btn ghost no-print" type="button">📖 規則</button>
+      <div class="header-actions no-print">
+        <button id="themeBtn" class="btn ghost" type="button" aria-label="切換明亮／暗黑主題">🌙</button>
+        <button id="rulesBtn" class="btn ghost" type="button">📖 規則</button>
+      </div>
     </header>
 
     <section id="rulesPanel" class="panel hidden">
@@ -612,8 +696,9 @@
 
         <div class="grid">
           <div class="span-4">
-            <label for="winnerSelect">邊位首先出晒牌？</label>
-            <select id="winnerSelect"></select>
+            <label>邊位首先出晒牌？</label>
+            <input id="winnerSelect" type="hidden" value="0">
+            <div id="winnerTabs" class="winner-tabs" role="group" aria-label="邊位首先出晒牌"></div>
           </div>
           <div class="span-8">
             <p class="hint" style="margin:3px 0 0">
@@ -702,6 +787,7 @@
     const finishedPanel = $("#finishedPanel");
     const totalRoundsInput = $("#totalRounds");
     const winnerSelect = $("#winnerSelect");
+    const winnerTabs = $("#winnerTabs");
     const playerInputs = $("#playerInputs");
     const roundPreview = $("#roundPreview");
     const entryError = $("#entryError");
@@ -831,7 +917,7 @@
       setupPanel.classList.add("hidden");
       gamePanel.classList.remove("hidden");
 
-      renderWinnerOptions();
+      renderWinnerTabs();
       renderPlayerInputs();
       renderScoreboard();
       renderHistory();
@@ -839,12 +925,15 @@
       updatePreview();
     }
 
-    function renderWinnerOptions() {
+    function renderWinnerTabs() {
       const current = Number(winnerSelect.value || 0);
-      winnerSelect.innerHTML = state.names
-        .map((name, index) => `<option value="${index}">${escapeHtml(name)}</option>`)
-        .join("");
-      winnerSelect.value = String(Math.min(current, 3));
+      winnerTabs.innerHTML = state.names.map((name, index) => `
+        <button
+          type="button"
+          class="winner-tab winnerTab ${index === current ? "active" : ""}"
+          data-index="${index}"
+          aria-pressed="${index === current}"
+        >${escapeHtml(name)}</button>`).join("");
     }
 
     function renderPlayerInputs() {
@@ -1234,6 +1323,7 @@
 
     function clearEntry() {
       winnerSelect.value = "0";
+      renderWinnerTabs();
       renderPlayerInputs();
       entryError.classList.add("hidden");
       entryError.textContent = "";
@@ -1365,7 +1455,11 @@
       });
     });
 
-    winnerSelect.addEventListener("change", () => {
+    winnerTabs.addEventListener("click", event => {
+      const button = event.target.closest(".winnerTab");
+      if (!button) return;
+      winnerSelect.value = button.dataset.index;
+      renderWinnerTabs();
       renderPlayerInputs();
       updatePreview();
     });
@@ -1403,6 +1497,18 @@
       $("#rulesBtn").textContent = show ? "✕ 返回" : "📖 規則";
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("big2-theme", theme);
+      $("#themeBtn").textContent = theme === "dark" ? "☀️" : "🌙";
+    }
+
+    applyTheme(document.documentElement.getAttribute("data-theme"));
+
+    $("#themeBtn").addEventListener("click", () =>
+      applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark")
+    );
 
     $("#rulesBtn").addEventListener("click", () =>
       toggleRules($("#rulesPanel").classList.contains("hidden"))
