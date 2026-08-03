@@ -155,6 +155,26 @@
       color: white;
     }
 
+    #batchTable { min-width: 0; }
+    #batchTable th, #batchTable td { padding: 5px 4px; }
+
+    .batchCell {
+      min-height: 42px;
+      padding: 6px 2px;
+      border-radius: 9px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .batchCell.win {
+      background: #fff9e9;
+      border-color: var(--accent-2);
+    }
+
+    .batch-no { color: var(--muted); font-weight: 800; }
+    .batch-status { font-size: .82rem; white-space: normal; min-width: 84px; }
+    .batch-status.bad { color: var(--danger); font-weight: 800; }
+
     .picker-scale {
       display: flex;
       justify-content: space-between;
@@ -526,6 +546,30 @@
         <div class="actions" style="margin-top:14px">
           <button id="saveRoundBtn" class="btn" type="button">確認並儲存今局</button>
           <button id="clearEntryBtn" class="btn ghost" type="button">清空今局輸入</button>
+          <button id="openBatchBtn" class="btn secondary" type="button">📝 批次入數（照紙抄）</button>
+        </div>
+      </section>
+
+      <section id="batchPanel" class="panel hidden">
+        <h2>批次入數</h2>
+        <p class="hint" style="margin:0 0 12px">
+          一行＝一局，直接打低每個人剩幾多隻牌。<strong>結牌嗰個打 0 或者留空</strong>，其餘要 1–13。<br>
+          Tab 去下一格、Enter 去下一行；打到最後一行會自動再加行。空行會直接略過。
+        </p>
+
+        <div class="table-wrap">
+          <table id="batchTable">
+            <thead id="batchHead"></thead>
+            <tbody id="batchBody"></tbody>
+          </table>
+        </div>
+
+        <div id="batchError" class="warning hidden"></div>
+
+        <div class="actions" style="margin-top:14px">
+          <button id="saveBatchBtn" class="btn" type="button">全部存入</button>
+          <button id="addBatchRowsBtn" class="btn ghost" type="button">加多 5 行</button>
+          <button id="closeBatchBtn" class="btn ghost" type="button">返回逐局輸入</button>
         </div>
       </section>
 
@@ -574,6 +618,9 @@
     const playerInputs = $("#playerInputs");
     const roundPreview = $("#roundPreview");
     const entryError = $("#entryError");
+    const batchPanel = $("#batchPanel");
+    const batchBody = $("#batchBody");
+    const batchError = $("#batchError");
 
     function newState(totalRounds, names) {
       return {
@@ -907,7 +954,7 @@
       $("#entryTitle").textContent = `輸入第 ${completed + 1} 局`;
 
       const finished = completed >= state.totalRounds;
-      entryPanel.classList.toggle("hidden", finished);
+      entryPanel.classList.toggle("hidden", finished || !batchPanel.classList.contains("hidden"));
       finishedPanel.classList.toggle("hidden", !finished);
 
       if (finished) {
@@ -919,6 +966,145 @@
             ? `總冠軍係 ${winners[0]}，最後累積 ${signed(max)} 分！`
             : `${winners.join("、")} 同分冠軍，最後累積 ${signed(max)} 分！`;
       }
+    }
+
+    // 一行＝一局：結牌者打 0 或留空，其餘 1–13
+    function parseBatchRow(cells) {
+      if (cells.every(value => value === "")) return null;
+
+      const blanks = [0, 1, 2, 3].filter(i => cells[i] === "" || Number(cells[i]) === 0);
+      if (blanks.length !== 1) {
+        return { error: blanks.length ? "得一個人可以係 0" : "要有個人係 0（結牌者）" };
+      }
+
+      const winnerIndex = blanks[0];
+      const remaining = [0, 0, 0, 0];
+      for (let i = 0; i < 4; i++) {
+        if (i === winnerIndex) continue;
+        const value = Number(cells[i]);
+        if (!Number.isInteger(value) || value < 1 || value > 13) {
+          return { error: `${state.names[i]} 要 1–13` };
+        }
+        remaining[i] = value;
+      }
+      return { winnerIndex, remaining };
+    }
+
+    function readBatchRows() {
+      return [...batchBody.rows].map(row =>
+        [...row.querySelectorAll(".batchCell")].map(input => input.value.trim())
+      );
+    }
+
+    function addBatchRows(count) {
+      for (let i = 0; i < count; i++) {
+        const row = batchBody.insertRow();
+        row.innerHTML = `
+          <td class="batch-no"></td>
+          ${state.names.map(() => `
+            <td><input class="batchCell" type="number" inputmode="numeric" min="0" max="13" placeholder="–"></td>
+          `).join("")}
+          <td class="batch-status"></td>`;
+      }
+      refreshBatch();
+    }
+
+    function refreshBatch() {
+      const rows = readBatchRows();
+      let valid = 0;
+
+      rows.forEach((cells, rowIndex) => {
+        const tr = batchBody.rows[rowIndex];
+        const status = tr.querySelector(".batch-status");
+        const parsed = parseBatchRow(cells);
+
+        tr.querySelectorAll(".batchCell").forEach((input, i) =>
+          input.classList.toggle("win", !!parsed && !parsed.error && parsed.winnerIndex === i)
+        );
+
+        if (!parsed) {
+          tr.querySelector(".batch-no").textContent = "";
+          status.textContent = "";
+          status.classList.remove("bad");
+          return;
+        }
+
+        if (parsed.error) {
+          tr.querySelector(".batch-no").textContent = "";
+          status.textContent = parsed.error;
+          status.classList.add("bad");
+          return;
+        }
+
+        valid++;
+        tr.querySelector(".batch-no").textContent = state.rounds.length + valid;
+        status.classList.remove("bad");
+        const result = calculateRound(parsed.winnerIndex, parsed.remaining, [0, 0, 0, 0]);
+        status.textContent = `${state.names[parsed.winnerIndex]} ${signed(result.finalScores[parsed.winnerIndex])}`;
+      });
+
+      $("#saveBatchBtn").textContent = valid ? `全部存入（${valid} 局）` : "全部存入";
+      return valid;
+    }
+
+    function openBatch() {
+      const head = $("#batchHead");
+      head.innerHTML = `
+        <tr>
+          <th>局</th>
+          ${state.names.map(name => `<th>${escapeHtml(name)}</th>`).join("")}
+          <th>結牌者得分</th>
+        </tr>`;
+      batchBody.innerHTML = "";
+      batchError.classList.add("hidden");
+      batchPanel.classList.remove("hidden");
+      entryPanel.classList.add("hidden");
+      addBatchRows(Math.max(5, state.totalRounds - state.rounds.length));
+      batchPanel.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function closeBatch() {
+      batchPanel.classList.add("hidden");
+      updateProgress();
+    }
+
+    function saveBatch() {
+      const rows = readBatchRows();
+      const parsed = rows.map(parseBatchRow).filter(Boolean);
+
+      const bad = parsed.find(row => row.error);
+      if (bad) {
+        batchError.textContent = `仲有行未填妥：${bad.error}`;
+        batchError.classList.remove("hidden");
+        return;
+      }
+
+      const slots = state.totalRounds - state.rounds.length;
+      if (parsed.length > slots) {
+        batchError.textContent = `淨返 ${slots} 局位，但你入咗 ${parsed.length} 局。刪走多餘嘅行，或者重新開局時開多啲局數。`;
+        batchError.classList.remove("hidden");
+        return;
+      }
+
+      for (const row of parsed) {
+        const result = calculateRound(row.winnerIndex, row.remaining, [0, 0, 0, 0]);
+        state.rounds.push({
+          winnerIndex: row.winnerIndex,
+          remaining: row.remaining,
+          adjustments: [0, 0, 0, 0],
+          effective: result.effective,
+          baseScores: result.baseScores,
+          finalScores: result.finalScores,
+          savedAt: new Date().toISOString()
+        });
+      }
+
+      saveState();
+      renderScoreboard();
+      renderHistory();
+      closeBatch();
+      clearEntry();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function clearEntry() {
@@ -1058,6 +1244,26 @@
       renderPlayerInputs();
       updatePreview();
     });
+
+    batchBody.addEventListener("input", event => {
+      if (!event.target.classList.contains("batchCell")) return;
+      batchError.classList.add("hidden");
+      const isLastRow = event.target.closest("tr") === batchBody.rows[batchBody.rows.length - 1];
+      if (isLastRow && event.target.value !== "") addBatchRows(1);
+      else refreshBatch();
+    });
+
+    batchBody.addEventListener("keydown", event => {
+      if (event.key !== "Enter" || !event.target.classList.contains("batchCell")) return;
+      event.preventDefault();
+      const nextRow = batchBody.rows[event.target.closest("tr").sectionRowIndex + 1];
+      if (nextRow) nextRow.querySelector(".batchCell").focus();
+    });
+
+    $("#openBatchBtn").addEventListener("click", openBatch);
+    $("#closeBatchBtn").addEventListener("click", closeBatch);
+    $("#saveBatchBtn").addEventListener("click", saveBatch);
+    $("#addBatchRowsBtn").addEventListener("click", () => addBatchRows(5));
 
     $("#saveRoundBtn").addEventListener("click", saveRound);
     $("#clearEntryBtn").addEventListener("click", clearEntry);
