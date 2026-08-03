@@ -214,8 +214,17 @@
       gap: 3px;
     }
 
+    .adjust-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .adjust-row .adjustmentInput { flex: 1 1 auto; min-width: 0; }
+    .adjust-row .foulBtn { flex: none; white-space: nowrap; }
+
     .card-btn {
-      min-height: 38px;
+      min-height: 44px;
       padding: 0;
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -629,7 +638,8 @@
         margin-right: 0;
       }
 
-      #batchTable .batchAdjValue { flex: none; width: 78px; }
+      #batchTable .batchAdjValue { flex: none; width: 66px; }
+      #batchTable .batchFoulBtn { flex: none; }
 
       #batchTable td.batch-status {
         grid-column: 1 / -1;
@@ -649,9 +659,10 @@
       .app { padding-inline: 10px; }
       .panel { padding: 14px; border-radius: 17px; }
       .header-actions .btn { flex: 0 0 auto; white-space: nowrap; padding: 9px 11px; }
-      .player-entry { padding: 11px 8px; }
-      .card-picker { gap: 2px; }
-      .card-btn { font-size: .76rem; }
+      /* 迫窄橫向留白，等 13 粒掣仍然一行過但夠 24px 闊（觸控最低要求） */
+      .player-entry { padding: 11px 4px; }
+      .card-picker { gap: 1px; }
+      .card-btn { font-size: .78rem; border-radius: 7px; }
       .score-total { font-size: 1.65rem; }
       .btn { flex: 1 1 auto; }
     }
@@ -675,6 +686,7 @@
         </div>
       </div>
       <div class="header-actions no-print">
+        <button id="undoBtn" class="btn secondary hidden" type="button">↩ 復原</button>
         <button id="themeBtn" class="btn ghost" type="button" aria-label="切換明亮／暗黑主題">🌙</button>
         <button id="rulesBtn" class="btn ghost" type="button">📖 規則</button>
       </div>
@@ -773,9 +785,16 @@
 
         <div class="actions no-print" style="margin-top:14px">
           <button id="exportBtn" class="btn secondary" type="button">匯出 CSV</button>
+          <button id="backupBtn" class="btn secondary" type="button">💾 備份 JSON</button>
+          <button id="restoreBtn" class="btn ghost" type="button">📂 還原備份</button>
+          <input id="restoreFile" type="file" accept="application/json,.json" class="hidden">
           <button id="printBtn" class="btn ghost" type="button">列印／存 PDF</button>
           <button id="resetBtn" class="btn danger" type="button">重新開局</button>
         </div>
+        <p class="hint" style="margin:10px 0 0">
+          紀錄淨係存喺呢部機呢個瀏覽器。清 cache、無痕模式或者換機都會冇咗 —
+          打完緊要嘅牌局記得撳「備份 JSON」保存落檔案。
+        </p>
       </section>
 
       <section id="finishedPanel" class="panel finished hidden">
@@ -869,6 +888,7 @@
     "use strict";
 
     const STORAGE_KEY = "big2-scorekeeper-v1";
+    const BACKUP_KEY = "big2-scorekeeper-undo";
     let state = null;
 
     const $ = (selector) => document.querySelector(selector);
@@ -889,6 +909,90 @@
     const batchBody = $("#batchBody");
     const batchError = $("#batchError");
 
+    // 任何破壞性操作前先影一張相，畀人撳「復原」攞返
+    function snapshot(label) {
+      if (!state) return;
+      try {
+        localStorage.setItem(BACKUP_KEY, JSON.stringify({ label, state }));
+      } catch (error) {
+        console.warn("影唔到快照", error);
+      }
+      refreshUndo();
+    }
+
+    function refreshUndo() {
+      const raw = localStorage.getItem(BACKUP_KEY);
+      const button = $("#undoBtn");
+      button.classList.toggle("hidden", !raw);
+      if (raw) {
+        try {
+          button.textContent = `↩ 復原${JSON.parse(raw).label || ""}`;
+        } catch (error) {
+          button.textContent = "↩ 復原";
+        }
+      }
+    }
+
+    function undoLast() {
+      const raw = localStorage.getItem(BACKUP_KEY);
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw).state;
+        if (!isValidState(parsed)) throw new Error("快照格式唔啱");
+        state = parsed;
+        localStorage.removeItem(BACKUP_KEY);
+        saveState();
+        renderGame();
+        refreshUndo();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } catch (error) {
+        alert("復原唔到：" + error.message);
+      }
+    }
+
+    function todayStamp() {
+      const now = new Date();
+      return [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, "0"),
+        String(now.getDate()).padStart(2, "0")
+      ].join("-");
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function exportJson() {
+      downloadBlob(
+        new Blob([JSON.stringify(state, null, 2)], { type: "application/json" }),
+        `鋤大D備份_${todayStamp()}.json`
+      );
+    }
+
+    function importJson(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(reader.result);
+          if (!isValidState(parsed)) throw new Error("唔係本計分器嘅備份檔");
+          snapshot("還原前嘅牌局");
+          state = parsed;
+          saveState();
+          renderGame();
+          alert(`已還原：${state.names.join("、")}，${state.rounds.length}／${state.totalRounds} 局。\n撳「↩ 復原」可以返轉頭。`);
+        } catch (error) {
+          alert("讀唔到呢個檔案：" + error.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
     function newState(totalRounds, names) {
       return {
         totalRounds,
@@ -899,7 +1003,34 @@
     }
 
     function saveState() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (error) {
+        // 私隱模式、儲存空間爆滿等：要當面講，唔可以靜靜雞蝕咗人哋一晚分數
+        alert(
+          "⚠️ 儲存唔到！呢部瀏覽器唔畀寫入（可能係無痕模式或者儲存空間滿咗）。\n" +
+          "分數暫時仲喺畫面度，但一 refresh 就會冇。請即刻撳「備份 JSON」保存落檔案。\n\n" +
+          error.message
+        );
+      }
+    }
+
+    function isValidState(parsed) {
+      return !!parsed &&
+        Number.isInteger(parsed.totalRounds) &&
+        parsed.totalRounds > 0 &&
+        Array.isArray(parsed.names) &&
+        parsed.names.length === 4 &&
+        parsed.names.every(name => typeof name === "string" && name.trim()) &&
+        Array.isArray(parsed.rounds) &&
+        parsed.rounds.every(round =>
+          Number.isInteger(round.winnerIndex) &&
+          round.winnerIndex >= 0 && round.winnerIndex < 4 &&
+          Array.isArray(round.finalScores) && round.finalScores.length === 4 &&
+          round.finalScores.every(Number.isFinite) &&
+          Array.isArray(round.remaining) && round.remaining.length === 4 &&
+          Array.isArray(round.adjustments) && round.adjustments.length === 4
+        );
     }
 
     function loadState() {
@@ -907,13 +1038,8 @@
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return null;
         const parsed = JSON.parse(raw);
-        if (
-          Number.isInteger(parsed.totalRounds) &&
-          parsed.totalRounds > 0 &&
-          Array.isArray(parsed.names) &&
-          parsed.names.length === 4 &&
-          Array.isArray(parsed.rounds)
-        ) return parsed;
+        if (isValidState(parsed)) return parsed;
+        alert("⚠️ 舊紀錄格式唔啱，讀唔返。如果你有備份 JSON，可以用「還原備份」攞返。");
       } catch (error) {
         console.warn("無法讀取舊紀錄", error);
       }
@@ -1017,6 +1143,7 @@
       renderHistory();
       updateProgress();
       updatePreview();
+      refreshUndo();
     }
 
     function renderWinnerTabs() {
@@ -1030,7 +1157,7 @@
         >${escapeHtml(name)}</button>`).join("");
     }
 
-    function renderPlayerInputs() {
+    function renderPlayerInputs(draft) {
       const winnerIndex = Number(winnerSelect.value);
       playerInputs.innerHTML = state.names.map((name, index) => {
         const winner = index === winnerIndex;
@@ -1067,18 +1194,31 @@
             <div id="effective-${index}" class="effective">${winner ? "結牌者：0 隻" : "尚未選擇"}</div>
 
             <label for="adjustment-${index}" style="margin-top:9px">額外調整</label>
-            <input
-              id="adjustment-${index}"
-              class="adjustmentInput"
-              data-index="${index}"
-              type="number"
-              inputmode="numeric"
-              step="1"
-              value="0"
-              aria-label="${escapeHtml(name)} 額外調整"
-            >
+            <div class="adjust-row">
+              <input
+                id="adjustment-${index}"
+                class="adjustmentInput"
+                data-index="${index}"
+                type="number"
+                inputmode="numeric"
+                step="1"
+                value="0"
+                aria-label="${escapeHtml(name)} 額外調整"
+              >
+              <button type="button" class="btn ghost small foulBtn" data-index="${index}">犯規 −40</button>
+            </div>
           </div>`;
       }).join("");
+
+      if (draft) {
+        draft.remaining.forEach((value, index) => {
+          if (index !== winnerIndex && value) setRemaining(index, value);
+        });
+        draft.adjustments.forEach((value, index) => {
+          const input = $(`#adjustment-${index}`);
+          if (input) input.value = value;
+        });
+      }
 
       $$(".adjustmentInput").forEach(input => {
         input.addEventListener("input", updatePreview);
@@ -1086,16 +1226,43 @@
 
       $$(".cardBtn").forEach(button => {
         button.addEventListener("click", () => {
-          const index = Number(button.dataset.index);
-          $(`#remaining-${index}`).value = button.dataset.value;
-          $$(`.cardBtn[data-index="${index}"]`).forEach(other => {
-            const on = other === button;
-            other.classList.toggle("active", on);
-            other.setAttribute("aria-pressed", String(on));
-          });
+          setRemaining(Number(button.dataset.index), button.dataset.value);
           updatePreview();
         });
       });
+
+      // 部分手機數字鍵盤冇「−」，罰分要撳掣先入到
+      $$(".foulBtn").forEach(button => {
+        button.addEventListener("click", () => {
+          const input = $(`#adjustment-${button.dataset.index}`);
+          input.value = Number(input.value) === -40 ? "0" : "-40";
+          updatePreview();
+        });
+      });
+    }
+
+    function setRemaining(index, value) {
+      const input = $(`#remaining-${index}`);
+      if (!input) return;
+      input.value = String(value);
+      $$(`.cardBtn[data-index="${index}"]`).forEach(button => {
+        const on = Number(button.dataset.value) === Number(value);
+        button.classList.toggle("active", on);
+        button.setAttribute("aria-pressed", String(on));
+      });
+    }
+
+    // 轉結牌者之前抽起已經入咗嘅資料，唔好白打
+    function readEntryDraft() {
+      const remaining = [0, 0, 0, 0];
+      const adjustments = ["0", "0", "0", "0"];
+      $$(".remainingInput").forEach(input => {
+        remaining[Number(input.dataset.index)] = Number(input.value) || 0;
+      });
+      $$(".adjustmentInput").forEach(input => {
+        adjustments[Number(input.dataset.index)] = input.value;
+      });
+      return { remaining, adjustments };
     }
 
     function updatePreview() {
@@ -1208,6 +1375,7 @@
         button.addEventListener("click", () => {
           const index = Number(button.dataset.index);
           if (!confirm(`確定刪除第 ${index + 1} 局？`)) return;
+          snapshot(`刪咗嘅第 ${index + 1} 局`);
           state.rounds.splice(index, 1);
           saveState();
           renderScoreboard();
@@ -1301,6 +1469,7 @@
               ${state.names.map((name, i) => `<option value="${i}">${escapeHtml(name)}</option>`).join("")}
             </select>
             <input class="batchAdjValue" type="number" inputmode="numeric" step="1" placeholder="0" aria-label="調整分數">
+            <button type="button" class="btn ghost small batchFoulBtn" aria-label="犯規扣 40 分">−40</button>
           </td>
           <td class="batch-status"></td>
           <td class="no-print">
@@ -1468,11 +1637,18 @@
       renderHistory();
       updateProgress();
       clearEntry();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // 存完應該返輸入區入下一局，唔係彈返頁頂逼人碌返落嚟
+      if (state.rounds.length >= state.totalRounds) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        $("#entryTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
 
     function resetGame() {
       if (!confirm("確定清除目前所有局數同分數，重新開局？")) return;
+      snapshot("重新開局前嘅牌局");
       localStorage.removeItem(STORAGE_KEY);
       state = null;
       gamePanel.classList.add("hidden");
@@ -1515,13 +1691,10 @@
         .map(row => row.map(csvEscape).join(","))
         .join("\r\n");
 
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `鋤大D計分_${new Date().toISOString().slice(0, 10)}.csv`;
-      a.click();
-      URL.revokeObjectURL(url);
+      downloadBlob(
+        new Blob([csv], { type: "text/csv;charset=utf-8" }),
+        `鋤大D計分_${todayStamp()}.csv`
+      );
     }
 
     function csvEscape(value) {
@@ -1582,9 +1755,10 @@
     winnerTabs.addEventListener("click", event => {
       const button = event.target.closest(".winnerTab");
       if (!button) return;
+      const draft = readEntryDraft();
       winnerSelect.value = button.dataset.index;
       renderWinnerTabs();
-      renderPlayerInputs();
+      renderPlayerInputs(draft);
       updatePreview();
     });
 
@@ -1598,6 +1772,15 @@
     });
 
     batchBody.addEventListener("click", event => {
+      const foul = event.target.closest(".batchFoulBtn");
+      if (foul) {
+        const input = foul.closest("tr").querySelector(".batchAdjValue");
+        input.value = Number(input.value) === -40 ? "" : "-40";
+        batchError.classList.add("hidden");
+        refreshBatch();
+        return;
+      }
+
       const button = event.target.closest(".delBatchRowBtn");
       if (!button) return;
       const row = button.closest("tr");
@@ -1648,10 +1831,19 @@
     $("#clearEntryBtn").addEventListener("click", clearEntry);
     $("#resetBtn").addEventListener("click", resetGame);
     $("#exportBtn").addEventListener("click", exportCsv);
+    $("#backupBtn").addEventListener("click", exportJson);
+    $("#undoBtn").addEventListener("click", undoLast);
+    $("#restoreBtn").addEventListener("click", () => $("#restoreFile").click());
+    $("#restoreFile").addEventListener("change", event => {
+      const [file] = event.target.files;
+      if (file) importJson(file);
+      event.target.value = "";
+    });
     $("#printBtn").addEventListener("click", () => window.print());
 
     state = loadState();
     if (state) renderGame();
+    else refreshUndo();
   </script>
 </body>
 </html>
