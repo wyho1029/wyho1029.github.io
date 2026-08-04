@@ -94,9 +94,10 @@
 
     header {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px 16px;
       margin: 6px 0 18px;
     }
 
@@ -109,12 +110,32 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex: none;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 0;
+    }
+
+    .undo-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--accent-2);
+      border-radius: 14px;
+      background: var(--tint);
+      padding: 11px 14px;
+      margin-bottom: 16px;
+    }
+
+    .undo-bar span {
+      flex: 1 1 180px;
+      font-weight: 750;
+      overflow-wrap: anywhere;
     }
 
     .logo {
@@ -686,11 +707,15 @@
         </div>
       </div>
       <div class="header-actions no-print">
-        <button id="undoBtn" class="btn secondary hidden" type="button">↩ 復原</button>
         <button id="themeBtn" class="btn ghost" type="button" aria-label="切換明亮／暗黑主題">🌙</button>
         <button id="rulesBtn" class="btn ghost" type="button">📖 規則</button>
       </div>
     </header>
+
+    <div id="undoBar" class="undo-bar hidden no-print">
+      <span id="undoText"></span>
+      <button id="undoBtn" class="btn small" type="button">↩ 復原</button>
+    </div>
 
     <section id="rulesPanel" class="panel hidden">
       <h2>比賽規例</h2>
@@ -922,15 +947,15 @@
 
     function refreshUndo() {
       const raw = localStorage.getItem(BACKUP_KEY);
-      const button = $("#undoBtn");
-      button.classList.toggle("hidden", !raw);
-      if (raw) {
-        try {
-          button.textContent = `↩ 復原${JSON.parse(raw).label || ""}`;
-        } catch (error) {
-          button.textContent = "↩ 復原";
-        }
+      $("#undoBar").classList.toggle("hidden", !raw);
+      if (!raw) return;
+      let label = "";
+      try {
+        label = JSON.parse(raw).label || "";
+      } catch (error) {
+        label = "";
       }
+      $("#undoText").textContent = label ? `可以復原：${label}` : "可以復原上一次操作";
     }
 
     function undoLast() {
