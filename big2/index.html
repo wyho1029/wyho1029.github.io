@@ -680,6 +680,7 @@
       .app { padding-inline: 10px; }
       .panel { padding: 14px; border-radius: 17px; }
       .header-actions .btn { flex: 0 0 auto; white-space: nowrap; padding: 9px 11px; }
+      .game-meta .btn { flex: 0 0 auto; }
       /* 迫窄橫向留白，等 13 粒掣仍然一行過但夠 24px 闊（觸控最低要求） */
       .player-entry { padding: 11px 4px; }
       .card-picker { gap: 1px; }
@@ -802,6 +803,7 @@
       <section class="panel">
         <div class="game-meta">
           <span id="roundProgress" class="pill"></span>
+          <button id="changeRoundsBtn" class="btn ghost small no-print" type="button">✏️ 改局數</button>
           <span class="pill">結牌者 +15 分</span>
           <span class="pill">10–12 隻 ×2｜13 隻 ×3</span>
         </div>
@@ -1671,6 +1673,32 @@
       }
     }
 
+    // 打打下想加長／縮短，唔應該逼人重新開局
+    function changeTotalRounds() {
+      const played = state.rounds.length;
+      const answer = prompt(
+        `而家設定咗 ${state.totalRounds} 局，已經打咗 ${played} 局。\n改成幾多局？`,
+        String(state.totalRounds)
+      );
+      if (answer === null) return;
+
+      const value = Number(String(answer).trim());
+      if (!Number.isInteger(value) || value < 1 || value > 999) {
+        alert("局數請輸入 1 至 999 之間嘅整數。");
+        return;
+      }
+      if (value < played) {
+        alert(`已經打咗 ${played} 局，改唔到去 ${value} 局。\n想減局數就要喺「每局紀錄」度先刪走後面嗰幾局。`);
+        return;
+      }
+      if (value === state.totalRounds) return;
+
+      snapshot(`改局數前（${state.totalRounds} 局）`);
+      state.totalRounds = value;
+      saveState();
+      updateProgress();
+    }
+
     function resetGame() {
       if (!confirm("確定清除目前所有局數同分數，重新開局？")) return;
       snapshot("重新開局前嘅牌局");
@@ -1857,6 +1885,7 @@
     $("#resetBtn").addEventListener("click", resetGame);
     $("#exportBtn").addEventListener("click", exportCsv);
     $("#backupBtn").addEventListener("click", exportJson);
+    $("#changeRoundsBtn").addEventListener("click", changeTotalRounds);
     $("#undoBtn").addEventListener("click", undoLast);
     $("#restoreBtn").addEventListener("click", () => $("#restoreFile").click());
     $("#restoreFile").addEventListener("change", event => {
