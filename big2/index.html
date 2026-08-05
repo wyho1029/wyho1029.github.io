@@ -584,7 +584,89 @@
       margin-top: 20px;
     }
 
+    .lastcard-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 10px 0 0;
+      font-weight: 700;
+      font-size: .88rem;
+      cursor: pointer;
+    }
+
+    .lastcard-row input {
+      width: 22px;
+      height: 22px;
+      min-height: 0;
+      flex: none;
+      margin-top: 1px;
+      accent-color: var(--danger);
+    }
+
     /* 窄screen：批次表由 8 欄改做「一局一張卡」，唔使左右掃 */
+    @media (max-width: 640px) {
+      #historyWrap {
+        border: 0;
+        border-radius: 0;
+        overflow: visible;
+      }
+
+      #historyHead { display: none; }
+      #historyTable, #historyTable tbody { display: block; min-width: 0; }
+
+      #historyTable tr {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+        padding: 12px;
+        margin-bottom: 10px;
+      }
+
+      #historyTable td {
+        display: block;
+        border: 0;
+        padding: 0;
+        text-align: left;
+        white-space: normal;
+      }
+
+      #historyTable td[data-name]::before {
+        content: attr(data-name);
+        display: block;
+        color: var(--muted);
+        font-size: .78rem;
+        font-weight: 800;
+      }
+
+      #historyTable td.hist-no {
+        grid-column: 1;
+        font-weight: 850;
+      }
+
+      #historyTable td.hist-no::before { content: "第 "; }
+      #historyTable td.hist-no::after { content: " 局"; }
+
+      #historyTable td.hist-winner {
+        grid-column: 2;
+        text-align: right;
+        font-weight: 800;
+      }
+
+      #historyTable td.hist-winner::before {
+        content: "結牌：";
+        color: var(--muted);
+        font-weight: 750;
+      }
+
+      #historyTable td.no-print {
+        grid-column: 1 / -1;
+        text-align: center;
+      }
+    }
+
     @media (max-width: 640px) {
       #batchWrap {
         border: 0;
@@ -865,7 +947,9 @@
           Tab 去下一格、Enter 去下一行；打到最後一行會自動再加行。<br>
           局數係跟住上面順序落嚟；尾段留白會直接略過，中間有空行就撳 ✕ 刪走，下面會自動排返順序。<br>
           今次仲可以入 <strong id="batchSlots">0</strong> 局，撳 ✕ 可以刪走唔要嘅行。<br>
-          有人犯規扣分就喺「額外調整」揀邊個、打幾多分（例如 -40）；一行只可以調整一個人。
+          有人犯規扣分就喺「額外調整」揀邊個、打幾多分（例如 -40）；一行只可以調整一個人。<br>
+          結牌者冇叫「LAST CARD」嗰局，喺呢度揀結牌者、打 <strong>-55</strong>（等於冇咗 15 分獎再扣 40）；
+          或者返「逐局輸入」用嗰個剔格自動計。
         </p>
 
         <div id="batchWrap" class="table-wrap">
@@ -888,7 +972,7 @@
         <h2>每局紀錄</h2>
         <div id="emptyHistory" class="hint">仲未有已完成嘅局數。</div>
         <div id="historyWrap" class="table-wrap hidden">
-          <table>
+          <table id="historyTable">
             <thead id="historyHead"></thead>
             <tbody id="historyBody"></tbody>
           </table>
@@ -1095,13 +1179,17 @@
       return value > 0 ? `+${value}` : String(value);
     }
 
-    function calculateRound(winnerIndex, remaining, adjustments) {
+    // 規例出牌第 5 條：剩一張牌唔叫「LAST CARD」→ 冇 15 分獎，兼總分扣 40
+    const NO_LAST_CARD_PENALTY = -40;
+
+    function calculateRound(winnerIndex, remaining, adjustments, noLastCard) {
       const effective = remaining.map((cards, index) =>
         index === winnerIndex ? 0 : effectiveCards(cards)
       );
 
       const baseScores = [0, 0, 0, 0];
-      baseScores[winnerIndex] = 15 + effective.reduce((sum, value) => sum + value, 0);
+      baseScores[winnerIndex] =
+        (noLastCard ? 0 : 15) + effective.reduce((sum, value) => sum + value, 0);
 
       const losers = [0, 1, 2, 3].filter(index => index !== winnerIndex);
       for (const player of losers) {
@@ -1113,7 +1201,9 @@
         }
       }
 
-      const finalScores = baseScores.map((value, index) => value + adjustments[index]);
+      const finalScores = baseScores.map((value, index) =>
+        value + adjustments[index] + (noLastCard && index === winnerIndex ? NO_LAST_CARD_PENALTY : 0)
+      );
       return { effective, baseScores, finalScores };
     }
 
@@ -1132,7 +1222,12 @@
         adjustments[index] = Number(input.value || 0);
       });
 
-      return { winnerIndex, remaining, adjustments };
+      return {
+        winnerIndex,
+        remaining,
+        adjustments,
+        noLastCard: $("#noLastCard")?.checked || false
+      };
     }
 
     function validateEntry(data) {
@@ -1199,6 +1294,10 @@
               <div class="winner-zero" aria-label="結牌者剩餘 0 隻">
                 <strong>0</strong><span>隻</span>
               </div>
+              <label class="lastcard-row" for="noLastCard">
+                <input id="noLastCard" type="checkbox">
+                <span>冇叫「LAST CARD」（唔獎 15 分，兼扣 40）</span>
+              </label>
             ` : `
               <div class="card-picker" role="group" aria-label="${escapeHtml(name)} 剩餘牌數">
                 ${Array.from({ length: 13 }, (_, i) => i + 1).map(n => `
@@ -1245,7 +1344,10 @@
           const input = $(`#adjustment-${index}`);
           if (input) input.value = value;
         });
+        if (draft.noLastCard) $("#noLastCard").checked = true;
       }
+
+      $("#noLastCard").addEventListener("change", updatePreview);
 
       $$(".adjustmentInput").forEach(input => {
         input.addEventListener("input", updatePreview);
@@ -1289,14 +1391,14 @@
       $$(".adjustmentInput").forEach(input => {
         adjustments[Number(input.dataset.index)] = input.value;
       });
-      return { remaining, adjustments };
+      return { remaining, adjustments, noLastCard: $("#noLastCard")?.checked || false };
     }
 
     function updatePreview() {
       if (!state) return;
 
       const data = getEntryData();
-      const result = calculateRound(data.winnerIndex, data.remaining, data.adjustments);
+      const result = calculateRound(data.winnerIndex, data.remaining, data.adjustments, data.noLastCard);
 
       state.names.forEach((name, index) => {
         const effectiveNode = $(`#effective-${index}`);
@@ -1375,8 +1477,10 @@
 
       body.innerHTML = state.rounds.map((round, roundIndex) => `
         <tr>
-          <td>${roundIndex + 1}</td>
-          <td>${escapeHtml(state.names[round.winnerIndex])}</td>
+          <td class="hist-no">${roundIndex + 1}</td>
+          <td class="hist-winner">${escapeHtml(state.names[round.winnerIndex])}${
+            round.noLastCard ? '<br><small class="negative">冇叫 LC</small>' : ""
+          }</td>
           ${state.names.map((name, playerIndex) => {
             const rem = round.remaining[playerIndex];
             const adjustment = round.adjustments[playerIndex];
@@ -1384,7 +1488,7 @@
               ? "結牌"
               : `${rem} 隻${rem >= 13 ? "（炒三）" : rem >= 10 ? "（炒雙）" : ""}`;
             return `
-              <td>
+              <td data-name="${escapeHtml(name)}">
                 <small>${cardText}</small><br>
                 <strong class="${scoreClass(round.finalScores[playerIndex])}">
                   ${signed(round.finalScores[playerIndex])}
@@ -1571,7 +1675,8 @@
       batchError.classList.add("hidden");
       batchPanel.classList.remove("hidden");
       entryPanel.classList.add("hidden");
-      addBatchRows(maxBatchRows());
+      // 只起頭 10 行；打到最後一行會自動再加，唔使一開就砌 999 行拖死部電話
+      addBatchRows(Math.min(10, maxBatchRows()));
       batchPanel.scrollIntoView({ behavior: "smooth" });
     }
 
@@ -1648,11 +1753,12 @@
         return;
       }
 
-      const result = calculateRound(data.winnerIndex, data.remaining, data.adjustments);
+      const result = calculateRound(data.winnerIndex, data.remaining, data.adjustments, data.noLastCard);
       state.rounds.push({
         winnerIndex: data.winnerIndex,
         remaining: data.remaining,
         adjustments: data.adjustments,
+        noLastCard: data.noLastCard,
         effective: result.effective,
         baseScores: result.baseScores,
         finalScores: result.finalScores,
