@@ -1821,7 +1821,7 @@
 
     function exportCsv() {
       const rows = [];
-      const header = ["局數", "結牌者"];
+      const header = ["局數", "結牌者", "冇叫LAST CARD"];
 
       for (const name of state.names) {
         header.push(`${name}剩牌`, `${name}換算牌分`, `${name}額外調整`, `${name}今局得分`);
@@ -1829,7 +1829,11 @@
       rows.push(header);
 
       state.rounds.forEach((round, index) => {
-        const row = [index + 1, state.names[round.winnerIndex]];
+        const row = [
+          index + 1,
+          state.names[round.winnerIndex],
+          round.noLastCard ? "是（唔獎 15 兼扣 40）" : ""
+        ];
         state.names.forEach((_, playerIndex) => {
           row.push(
             playerIndex === round.winnerIndex ? 0 : round.remaining[playerIndex],
@@ -1842,7 +1846,7 @@
       });
 
       const playerTotals = totals();
-      const totalRow = ["總分", ""];
+      const totalRow = ["總分", "", ""];
       state.names.forEach((_, index) => totalRow.push("", "", "", playerTotals[index]));
       rows.push(totalRow);
 
