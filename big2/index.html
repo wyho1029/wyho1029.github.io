@@ -1057,7 +1057,10 @@
       try {
         const parsed = JSON.parse(raw).state;
         if (!isValidState(parsed)) throw new Error("快照格式唔啱");
-        const draft = readEntryDraft();
+        // 只有復原返「同一場牌局」先好保留草稿。跨牌局（例如還原咗第二份備份之後
+        // 再復原）嘅話，畫面上嗰啲數字係屬於另一班玩家，套落去就會靜靜雞記錯數。
+        const sameGame = !!state && !!parsed.createdAt && parsed.createdAt === state.createdAt;
+        const draft = sameGame ? readEntryDraft() : undefined;
         state = parsed;
         localStorage.removeItem(BACKUP_KEY);
         saveState();
