@@ -1057,10 +1057,11 @@
       try {
         const parsed = JSON.parse(raw).state;
         if (!isValidState(parsed)) throw new Error("快照格式唔啱");
+        const draft = readEntryDraft();
         state = parsed;
         localStorage.removeItem(BACKUP_KEY);
         saveState();
-        renderGame();
+        renderGame(draft);
         refreshUndo();
         window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (error) {
@@ -1273,6 +1274,8 @@
       updateProgress();
       updatePreview();
       refreshUndo();
+      // 凡係重畫都要順手同步批次標籤，否則改名／復原／匯入之後會同 state.names 失配
+      refreshBatchLabels();
     }
 
     function renderWinnerTabs() {
@@ -1519,7 +1522,8 @@
           renderScoreboard();
           renderHistory();
           updateProgress();
-          clearEntry();
+          // 刪走一局同你手上打緊嗰局冇關係，唔應該連草稿都掃埋
+          updatePreview();
         });
       });
     }
@@ -1852,7 +1856,6 @@
       state.names = names;
       saveState();
       renderGame(draft);
-      refreshBatchLabels();
     }
 
     function shareResult() {
