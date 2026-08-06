@@ -24,7 +24,7 @@
       --negative: #a42a25;
       --surface: #ffffff;
       --surface-2: #efeee9;
-      --surface-muted: #777777;
+      --surface-muted: #5f645f;
       --on-accent: #ffffff;
       --head: #f0eee7;
       --pill: #ecf2ef;
@@ -192,6 +192,11 @@
     input:focus, select:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px rgba(23, 63, 53, .12);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
     }
 
     input:disabled {
@@ -773,7 +778,7 @@
 
     @media print {
       body { background: var(--surface); }
-      .no-print, #setupPanel, #entryPanel { display: none !important; }
+      .no-print, #setupPanel, #entryPanel, #batchPanel, #undoBar { display: none !important; }
       .panel { box-shadow: none; break-inside: avoid; }
       .app { max-width: none; }
     }
@@ -791,7 +796,7 @@
       </div>
       <div class="header-actions no-print">
         <button id="themeBtn" class="btn ghost" type="button" aria-label="切換明亮／暗黑主題">🌙</button>
-        <button id="rulesBtn" class="btn ghost" type="button">📖 規則</button>
+        <button id="rulesBtn" class="btn ghost" type="button" aria-expanded="false" aria-controls="rulesPanel">📖 規則</button>
       </div>
     </header>
 
@@ -884,8 +889,9 @@
     <section id="gamePanel" class="hidden">
       <section class="panel">
         <div class="game-meta">
-          <span id="roundProgress" class="pill"></span>
+          <span id="roundProgress" class="pill" aria-live="polite"></span>
           <button id="changeRoundsBtn" class="btn ghost small no-print" type="button">✏️ 改局數</button>
+          <button id="renamePlayersBtn" class="btn ghost small no-print" type="button">✏️ 改名</button>
           <span class="pill">結牌者 +15 分</span>
           <span class="pill">10–12 隻 ×2｜13 隻 ×3</span>
         </div>
@@ -893,6 +899,7 @@
         <div id="scoreboard" class="scoreboard"></div>
 
         <div class="actions no-print" style="margin-top:14px">
+          <button id="shareBtn" class="btn" type="button">📣 分享賽果</button>
           <button id="exportBtn" class="btn secondary" type="button">匯出 CSV</button>
           <button id="backupBtn" class="btn secondary" type="button">💾 備份 JSON</button>
           <button id="restoreBtn" class="btn ghost" type="button">📂 還原備份</button>
@@ -908,7 +915,7 @@
 
       <section id="finishedPanel" class="panel finished hidden">
         <h2>牌局完成</h2>
-        <p id="winnerText" style="font-size:1.15rem;font-weight:850;margin-bottom:0"></p>
+        <p id="winnerText" style="font-size:1.15rem;font-weight:850;margin-bottom:0" aria-live="polite"></p>
       </section>
 
       <section id="entryPanel" class="panel">
@@ -930,8 +937,8 @@
 
         <div id="playerInputs" class="grid" style="margin-top:14px"></div>
 
-        <div id="roundPreview" class="round-preview"></div>
-        <div id="entryError" class="warning hidden"></div>
+        <div id="roundPreview" class="round-preview" aria-live="polite"></div>
+        <div id="entryError" class="warning hidden" role="alert"></div>
 
         <div class="actions" style="margin-top:14px">
           <button id="saveRoundBtn" class="btn" type="button">確認並儲存今局</button>
@@ -959,7 +966,7 @@
           </table>
         </div>
 
-        <div id="batchError" class="warning hidden"></div>
+        <div id="batchError" class="warning hidden" role="alert"></div>
 
         <div class="actions" style="margin-top:14px">
           <button id="saveBatchBtn" class="btn" type="button">全部存入</button>
@@ -1805,6 +1812,51 @@
       updateProgress();
     }
 
+    // 改嘅只係顯示名，玩家 index 同歷史紀錄次序完全唔郁
+    function renamePlayers() {
+      const answer = prompt(
+        "四位玩家名稱，用逗號分隔（次序＝原本次序，分數唔會跟住搬）：",
+        state.names.join("，")
+      );
+      if (answer === null) return;
+
+      const names = answer.split(/[,，]/).map(name => name.trim());
+      if (names.length !== 4 || names.some(name => !name)) {
+        alert("要啱啱四個名，而且唔可以有空白。例如：阿明，阿華，阿強，阿珍");
+        return;
+      }
+      if (new Set(names).size !== 4) {
+        alert("四個名唔可以重複。");
+        return;
+      }
+      if (names.every((name, index) => name === state.names[index])) return;
+
+      snapshot(`改名前（${state.names.join("、")}）`);
+      state.names = names;
+      saveState();
+      renderGame();
+    }
+
+    function shareResult() {
+      const playerTotals = totals();
+      const order = [0, 1, 2, 3].sort((a, b) => playerTotals[b] - playerTotals[a]);
+      const lines = [
+        `🃏 鋤大D 計分（${state.rounds.length}／${state.totalRounds} 局）`,
+        ...order.map((index, rank) =>
+          `${rank + 1}. ${state.names[index]}　${signed(playerTotals[index])}`
+        )
+      ];
+      const text = lines.join("\n");
+
+      if (navigator.share) {
+        navigator.share({ text }).catch(() => {});
+        return;
+      }
+      navigator.clipboard.writeText(text)
+        .then(() => alert("賽果已經複製，可以直接貼落群組：\n\n" + text))
+        .catch(() => prompt("複製唔到，自己揀走佢：", text));
+    }
+
     function resetGame() {
       if (!confirm("確定清除目前所有局數同分數，重新開局？")) return;
       snapshot("重新開局前嘅牌局");
@@ -1861,7 +1913,10 @@
     }
 
     function csvEscape(value) {
-      const text = String(value ?? "");
+      let text = String(value ?? "");
+      // 文字（例如玩家名）以 = + - @ 開頭嘅話，試算表會當公式執行，加個單引號打斷佢。
+      // 數字唔可以碰，否則負分會變咗文字、加唔到數。
+      if (typeof value === "string" && /^[=+\-@]/.test(text)) text = "'" + text;
       return `"${text.replaceAll('"', '""')}"`;
     }
 
@@ -1965,6 +2020,7 @@
       setupPanel.classList.toggle("hidden", show || !!state);
       gamePanel.classList.toggle("hidden", show || !state);
       $("#rulesBtn").textContent = show ? "✕ 返回" : "📖 規則";
+      $("#rulesBtn").setAttribute("aria-expanded", String(show));
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -1996,6 +2052,8 @@
     $("#exportBtn").addEventListener("click", exportCsv);
     $("#backupBtn").addEventListener("click", exportJson);
     $("#changeRoundsBtn").addEventListener("click", changeTotalRounds);
+    $("#renamePlayersBtn").addEventListener("click", renamePlayers);
+    $("#shareBtn").addEventListener("click", shareResult);
     $("#undoBtn").addEventListener("click", undoLast);
     $("#restoreBtn").addEventListener("click", () => $("#restoreFile").click());
     $("#restoreFile").addEventListener("change", event => {
