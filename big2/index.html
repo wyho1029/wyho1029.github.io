@@ -1262,12 +1262,12 @@
       return result;
     }
 
-    function renderGame() {
+    function renderGame(draft) {
       setupPanel.classList.add("hidden");
       gamePanel.classList.remove("hidden");
 
       renderWinnerTabs();
-      renderPlayerInputs();
+      renderPlayerInputs(draft);
       renderScoreboard();
       renderHistory();
       updateProgress();
@@ -1668,9 +1668,9 @@
       return valid;
     }
 
-    function openBatch() {
-      const head = $("#batchHead");
-      head.innerHTML = `
+    // 改名之後要更新批次入面嘅標籤，但唔可以重建行 —— 一重建就抹走人哋打咗嘅數
+    function refreshBatchLabels() {
+      $("#batchHead").innerHTML = `
         <tr>
           <th>局</th>
           ${state.names.map(name => `<th>${escapeHtml(name)}</th>`).join("")}
@@ -1678,6 +1678,22 @@
           <th>得分</th>
           <th class="no-print"></th>
         </tr>`;
+
+      if (batchPanel.classList.contains("hidden")) return;
+
+      [...batchBody.rows].forEach(row => {
+        row.querySelectorAll("td[data-name]").forEach((cell, index) => {
+          cell.dataset.name = state.names[index];
+        });
+        row.querySelectorAll(".batchAdjWho option").forEach(option => {
+          if (option.value !== "") option.textContent = state.names[Number(option.value)];
+        });
+      });
+      refreshBatch();
+    }
+
+    function openBatch() {
+      refreshBatchLabels();
       batchBody.innerHTML = "";
       batchError.classList.add("hidden");
       batchPanel.classList.remove("hidden");
@@ -1832,9 +1848,11 @@
       if (names.every((name, index) => name === state.names[index])) return;
 
       snapshot(`改名前（${state.names.join("、")}）`);
+      const draft = readEntryDraft();
       state.names = names;
       saveState();
-      renderGame();
+      renderGame(draft);
+      refreshBatchLabels();
     }
 
     function shareResult() {
