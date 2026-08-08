@@ -53,6 +53,7 @@
   td.code { cursor:pointer; color:var(--yel); }
   td.code:hover { text-decoration:underline; }
   .dl-btn { margin-left:auto; padding:3px 10px; font-size:12px; }
+  .hc { cursor:help; }
   .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:10;
            align-items:flex-start; justify-content:center; padding:24px 12px; overflow:auto; }
   .modal-card { background:var(--card); border:1px solid var(--line); border-radius:12px;
@@ -109,6 +110,8 @@
         <dt>蓄勢</dt><dd>MCDXX 動能死低 ＝ 蓄勢待發（反向獎勵：越低分越高）。</dd>
         <dt>水上</dt><dd>MACD 嘅 DIF &gt; 0（零軸之上、趨勢偏多）。</dd>
         <dt>二次轉黃</dt><dd>過去黃K → 升 ≥40% → 回落 → 而家再轉黃（✅P ＝ 命中）。</dd>
+        <dt>⭐ 高信心候選</dt><dd>完成週K（週五收市）＋ 放量硬閘：分數 ≥80 且 量比 ≥1.5×。研究驗證中，<b>未計入</b> Discord／富途推送。<code>⭐?</code> ＝ 本週未收，週K收市先定案。</dd>
+        <dt>📐 交易計劃參考</dt><dd>止蝕參考 ＝ 近10日最低價 − 0.25×ATR14；2R 目標 ＝ 收市 ＋ 2×風險。研究參考值，非投資建議。</dd>
         <dt>✓ ／ ·</dt><dd>該因子有得分 ／ 冇分。</dd>
         <dt>入圍門檻</dt><dd>日K／月K ≥ 45 分、週K ≥ 70 分。</dd>
       </dl>
@@ -169,6 +172,11 @@
     var date = (CURRENT.generated || '').slice(0, 10);
     downloadCsv('轉黃-' + label + '_' + date + '.csv', buildCsv(list));
   }
+  function hcBadge(s){
+    if (s.hc === true) return '<span class="hc" title="⭐ 高信心候選：完成週K + 放量硬閘">⭐</span> ';
+    if (s.hc === 'pending') return '<span class="hc" title="⭐候選 · 週K收市先定案">⭐?</span> ';
+    return '';
+  }
   function mark(v){ return (v && v > 0) ? '✓' : '<span class="none">·</span>'; }
   function sy(h){ return h.sy_pattern ? '✅P' : '<span class="none">·</span>'; }
   function fixed(v){ return (v != null) ? Number(v).toFixed(3) : ''; }
@@ -180,7 +188,7 @@
       + '<th>股票</th><th>全名</th><th>板塊</th><th>分數</th><th>市值</th><th>收市價</th><th>主力</th>'
       + '<th>放量</th><th>蓄勢</th><th>水上</th><th>二次轉黃</th></tr>';
     list.forEach(function(s){
-      h += '<tr><td class="code" onclick="openDetail(\'' + s.code + '\')">' + sym(s.code) + '</td>'
+      h += '<tr><td class="code" onclick="openDetail(\'' + s.code + '\')">' + hcBadge(s) + sym(s.code) + '</td>'
         + '<td class="name">' + (s.name || '—') + '</td>'
         + '<td>' + (s.sector || '—') + '</td>'
         + '<td class="score">' + s.score + '</td>'
@@ -426,7 +434,12 @@
     ['day','week','mon'].forEach(function(tf){
       var list = (d.timeframes || {})[tf] || [];
       list.forEach(function(s){ DETAIL[s.code] = s; });
-      html += section(LBL[tf] + ' 轉黃', list.length, rows(list), 'sec-' + tf);
+      var body = rows(list);
+      var hasHcData = list.some(function(s){ return 'hc' in s; });
+      var anyHc = list.some(function(s){ return s.hc === true || s.hc === 'pending'; });
+      if (tf === 'week' && list.length && hasHcData && !anyHc)
+        body = '<div class="empty">本週零高信心候選（⭐）</div>' + body;
+      html += section(LBL[tf] + ' 轉黃', list.length, body, 'sec-' + tf);
     });
     var vw = d.volume_watch || [];
     html += section('🔥 爆量觀察', vw.length, volRows(vw), 'sec-vol');
@@ -453,6 +466,12 @@
       + '<div><dt>收市</dt><dd>' + fixed(s.close) + '</dd></div>'
       + '<div><dt>分數</dt><dd>' + s.score + '</dd></div>'
       + '</dl>';
+    if (s.stop_ref != null){
+      h += '<div class="dsec"><h4>📐 交易計劃參考</h4><p>止蝕參考 $' + dnum(s.stop_ref, 2)
+         + '（-' + dnum(s.risk_pct, 1) + '%、' + dnum(s.risk_atr, 1) + '×ATR）'
+         + ' · 2R 目標 $' + dnum(s.target_2r, 2) + '</p>'
+         + '<p class="dmut">研究參考值，非投資建議。</p></div>';
+    }
     if (s.summary) h += '<div class="dsec"><h4>公司簡介</h4><p>' + s.summary + '</p></div>';
     var news = s.news || [];
     if (news.length){
