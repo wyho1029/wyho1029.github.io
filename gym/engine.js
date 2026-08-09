@@ -21,6 +21,9 @@ var GymEngine = (function () {
   var FIRST_TIME_FACTOR = 0.65;
   var NEAR_MISS_RATIO = 0.8;
   var SECONDS_INCREMENT = 5;
+  // 最細槓片 1.25kg，左右各一塊 → 槓鈴總重最細變動 2.5kg。
+  // 唔對齊就會出 37kg / 38.75kg 呢啲上唔到槓嘅數。
+  var PLATE_STEP = 2.5;
 
   /** 該 entry 係咪全部組都做夠目標次數 */
   function allHit(entry) {
@@ -59,8 +62,7 @@ var GymEngine = (function () {
   }
 
   function deload(weight, exercise) {
-    var deloaded = Math.round(weight * DELOAD_FACTOR);
-    return Math.max(exercise.minWeight, deloaded);
+    return Math.max(exercise.minWeight, roundToStep(weight * DELOAD_FACTOR, PLATE_STEP));
   }
 
   /**
@@ -76,7 +78,7 @@ var GymEngine = (function () {
     if (!last) {
       if (isTimed) return { weight: 0, reps: opts.reps };
       var base = opts.estimate
-        ? Math.ceil(opts.estimate * FIRST_TIME_FACTOR / 1.25) * 1.25
+        ? roundToStep(opts.estimate * FIRST_TIME_FACTOR, PLATE_STEP)
         : ex.minWeight;
       return { weight: Math.max(ex.minWeight, base), reps: opts.reps };
     }

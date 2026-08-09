@@ -74,10 +74,10 @@ check('差少少（總次數 >= 80%）→ 重量不變', function () {
 });
 
 check('差好遠（總次數 < 80%）→ 即刻 deload 10%', function () {
-  // 目標 24 下，做咗 15 下 = 62%。40 × 0.9 = 36
+  // 目標 24 下，做咗 15 下 = 62%。40 × 0.9 = 36 → 對齊 2.5 → 35
   var sessions = [sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,6],[40,5],[40,4]])];
   eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
-       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 36, reps: 8 });
+       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 35, reps: 8 });
 });
 
 check('連續兩次差少少 → 第二次之後 deload', function () {
@@ -87,31 +87,31 @@ check('連續兩次差少少 → 第二次之後 deload', function () {
   ];
   eq(GymEngine.failStreak(sessions, 'Barbell_Squat'), 2);
   eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
-       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 36, reps: 8 });
+       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 35, reps: 8 });
 });
 
 check('deload 之後再失手一次 → 維持重量，唔會即刻再 deload', function () {
   var sessions = [
     sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,6]]),
     sess('2026-08-14', 'Barbell_Squat', 40, 8, [[40,8],[40,7],[40,7]]),
-    sess('2026-08-17', 'Barbell_Squat', 36, 8, [[36,8],[36,8],[36,7]])  // deload 後仍未全中
+    sess('2026-08-17', 'Barbell_Squat', 35, 8, [[35,8],[35,8],[35,7]])  // deload 後仍未全中
   ];
   eq(GymEngine.failStreak(sessions, 'Barbell_Squat'), 1, '重量下降處停止計數');
   eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
-       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 36, reps: 8 });
+       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 35, reps: 8 });
 });
 
 check('deload 後再達標 → 恢復加重', function () {
   var sessions = [
     sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,6]]),
-    sess('2026-08-14', 'Barbell_Squat', 36, 8, [[36,8],[36,8],[36,8]])
+    sess('2026-08-14', 'Barbell_Squat', 35, 8, [[35,8],[35,8],[35,8]])
   ];
   eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
-       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 41, reps: 8 });
+       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 40, reps: 8 });
 });
 
-check('deload 結果對齊 1.25 且唔低過 minWeight', function () {
-  // 22 × 0.9 = 19.8 → 對齊 20，但 minWeight 20 → 20
+check('deload 結果對齊 2.5 且唔低過 minWeight', function () {
+  // 22 × 0.9 = 19.8 → 對齊 2.5 → 20，同時 minWeight 20 都係 20
   var sessions = [sess('2026-08-11', 'Barbell_Squat', 22, 8, [[22,4],[22,4],[22,3]])];
   eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
        exercise: SQUAT, increments: INC, reps: 8 }), { weight: 20, reps: 8 });
@@ -161,4 +161,14 @@ check('計時動作：未達標 → 維持秒數', function () {
   }];
   eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Plank', exercise: PLANK,
        increments: INC, reps: 45 }), { weight: 0, reps: 45 });
+});
+
+check('deload 唔會出上唔到槓嘅重量（一律 2.5 嘅倍數）', function () {
+  [[37.5, 35], [45, 40], [52.5, 47.5], [60, 55]].forEach(function (pair) {
+    var sessions = [sess('2026-08-11', 'Barbell_Squat', pair[0], 8, [[pair[0],3],[pair[0],3],[pair[0],2]])];
+    var got = GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
+      exercise: SQUAT, increments: INC, reps: 8 });
+    eq(got.weight, pair[1], pair[0] + 'kg deload');
+    eq(got.weight % 2.5, 0, pair[0] + 'kg deload 結果要係 2.5 嘅倍數');
+  });
 });
