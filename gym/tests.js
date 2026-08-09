@@ -123,7 +123,7 @@ check('自定加重幅度生效', function () {
        increments: { upper: 1.25, lower: 5 }, reps: 8 }), { weight: 31.25, reps: 8 });
 });
 
-check('首次做某動作 → 估計值 × 65%，對齊 1.25', function () {
+check('首次做某動作 → 估計值 × 65%，對齊 2.5', function () {
   eq(GymEngine.nextTarget({ sessions: [], exerciseId: 'Barbell_Squat', exercise: SQUAT,
        increments: INC, reps: 8, estimate: 60 }), { weight: 40, reps: 8 });  // 39 → 40（對齊後）
 });
