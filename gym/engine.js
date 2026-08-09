@@ -67,7 +67,8 @@ var GymEngine = (function () {
 
   /**
    * 計算下次目標。
-   * opts = { sessions, exerciseId, exercise, increments, reps, estimate? }
+   * opts = { sessions, exerciseId, exercise, increments, reps, estimate?, canIncrease? }
+   * canIncrease 預設 true（准許加重）；false 時即使達標都唔加重。
    * 回傳 { weight, reps }
    */
   function nextTarget(opts) {
@@ -85,13 +86,14 @@ var GymEngine = (function () {
 
     var e = last.entry;
     var hit = allHit(e);
+    var canRaise = opts.canIncrease !== false;
 
     if (isTimed) {
-      return { weight: 0, reps: hit ? e.target.reps + SECONDS_INCREMENT : e.target.reps };
+      return { weight: 0, reps: (hit && canRaise) ? e.target.reps + SECONDS_INCREMENT : e.target.reps };
     }
 
     if (hit) {
-      return { weight: e.target.weight + opts.increments[ex.upperLower], reps: opts.reps };
+      return { weight: canRaise ? e.target.weight + opts.increments[ex.upperLower] : e.target.weight, reps: opts.reps };
     }
 
     var targetN = e.target.sets * e.target.reps;
@@ -228,14 +230,9 @@ var GymEngine = (function () {
       var t = nextTarget({
         sessions: ctx.sessions, exerciseId: ex.id, exercise: ex,
         increments: p.increments, reps: reps,
-        estimate: ctx.estimates && ctx.estimates[ex.id]
+        estimate: ctx.estimates && ctx.estimates[ex.id],
+        canIncrease: canIncreaseThisWeek(ctx.sessions, ex.id, p.startDate, ctx.today)
       });
-
-      // Ramp-back：同一個 7 日區塊唔准為同一動作加第二次重
-      if (!canIncreaseThisWeek(ctx.sessions, ex.id, p.startDate, ctx.today)) {
-        var last = lastEntryFor(ctx.sessions, ex.id);
-        if (last && t.weight > last.entry.target.weight) t.weight = last.entry.target.weight;
-      }
 
       entries.push({
         slot: spec.slot, variant: spec.variant, exerciseId: ex.id,

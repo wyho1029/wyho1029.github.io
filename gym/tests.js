@@ -441,3 +441,27 @@ check('buildWorkout：restSec 跟強度', function () {
   });
   eq(w.restSec, 120);
 });
+
+// ---- canIncrease：ramp-back cap 住喺 nextTarget 入面 ----
+check('nextTarget：canIncrease=false 時即使達標都唔加重', function () {
+  var sessions = [sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]])];
+  eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
+       exercise: SQUAT, increments: INC, reps: 8, canIncrease: false }), { weight: 40, reps: 8 });
+  eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
+       exercise: SQUAT, increments: INC, reps: 8, canIncrease: true }), { weight: 45, reps: 8 });
+  eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Barbell_Squat',
+       exercise: SQUAT, increments: INC, reps: 8 }), { weight: 45, reps: 8 }, '唔傳等於准許');
+});
+
+check('nextTarget：canIncrease=false 對計時動作同樣有效', function () {
+  var sessions = [{
+    date: '2026-08-11', day: 'A', done: true, note: '',
+    entries: [{ slot: 'core', exerciseId: 'Plank',
+                target: { sets: 3, reps: 45, weight: 0 },
+                actual: [{ w: 0, r: 45 }, { w: 0, r: 45 }, { w: 0, r: 45 }] }]
+  }];
+  eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Plank', exercise: PLANK,
+       increments: INC, reps: 45, canIncrease: false }), { weight: 0, reps: 45 });
+  eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Plank', exercise: PLANK,
+       increments: INC, reps: 45, canIncrease: true }), { weight: 0, reps: 50 });
+});
