@@ -267,3 +267,177 @@ check('每週日數唔同 → 所需次數跟住變', function () {
   var p5 = { daysPerWeek: 5, startDate: '2026-08-11', intensityUnlockedAt: null, intensityUnlockForced: false };
   eq(GymEngine.heavyUnlock(p5, [], '2026-09-10').sessionsNeeded, 15);
 });
+
+// ---- 動作庫 fixture ----
+var EXDB = [
+  { id: 'Barbell_Squat', name: '槓鈴深蹲', slot: 'squat', upperLower: 'lower', minWeight: 20, metric: 'reps' },
+  { id: 'Front_Barbell_Squat', name: '前蹲', slot: 'squat', upperLower: 'lower', minWeight: 20, metric: 'reps' },
+  { id: 'Leg_Press', name: '腿推機', slot: 'squat', upperLower: 'lower', minWeight: 0, metric: 'reps' },
+  { id: 'Romanian_Deadlift', name: '羅馬尼亞硬拉', slot: 'hinge', upperLower: 'lower', minWeight: 20, metric: 'reps' },
+  { id: 'Barbell_Deadlift', name: '傳統硬拉', slot: 'hinge', upperLower: 'lower', minWeight: 20, metric: 'reps' },
+  { id: 'Barbell_Bench_Press_-_Medium_Grip', name: '平板臥推', slot: 'horizontal_push', upperLower: 'upper', minWeight: 20, metric: 'reps' },
+  { id: 'Dumbbell_Bench_Press', name: '啞鈴臥推', slot: 'horizontal_push', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Standing_Military_Press', name: '站姿肩推', slot: 'vertical_push', upperLower: 'upper', minWeight: 20, metric: 'reps' },
+  { id: 'Seated_Dumbbell_Press', name: '坐姿啞鈴推', slot: 'vertical_push', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Bent_Over_Barbell_Row', name: '槓鈴划船', slot: 'horizontal_pull', upperLower: 'upper', minWeight: 20, metric: 'reps' },
+  { id: 'Seated_Cable_Rows', name: '坐姿繩索划船', slot: 'horizontal_pull', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Wide-Grip_Lat_Pulldown', name: '寬握高位下拉', slot: 'vertical_pull', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Pullups', name: '引體向上', slot: 'vertical_pull', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Plank', name: '平板支撐', slot: 'core', upperLower: 'upper', minWeight: 0, metric: 'seconds' },
+  { id: 'Hanging_Leg_Raise', name: '懸垂舉腿', slot: 'core', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Cable_Crunch', name: '繩索捲腹', slot: 'core', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Barbell_Curl', name: '槓鈴彎舉', slot: 'accessory', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Triceps_Pushdown', name: '三頭下壓', slot: 'accessory', upperLower: 'upper', minWeight: 0, metric: 'reps' },
+  { id: 'Face_Pull', name: '面拉', slot: 'accessory', upperLower: 'upper', minWeight: 0, metric: 'reps' }
+];
+var NOPREFS = { swaps: {}, banned: [] };
+
+check('splitFor：3 日 = A/B/C', function () {
+  var s = GymEngine.splitFor(3);
+  eq(s.length, 3);
+  eq(s.map(function (d) { return d.day; }), ['A', 'B', 'C']);
+});
+
+check('splitFor：2/4/5 日都有定義', function () {
+  eq(GymEngine.splitFor(2).length, 2);
+  eq(GymEngine.splitFor(4).length, 4);
+  eq(GymEngine.splitFor(5).length, 5);
+});
+
+check('3 日 split：Day A 同 Day C 嘅 squat variant 唔同', function () {
+  var s = GymEngine.splitFor(3);
+  var a = s[0].slots.filter(function (x) { return x.slot === 'squat'; })[0];
+  var c = s[2].slots.filter(function (x) { return x.slot === 'squat'; })[0];
+  eq(a.variant !== c.variant, true, 'variant 應該唔同，否則 A 同 C 會做同一個動作');
+});
+
+check('nextDay：未練過 → 由 Day A 開始', function () {
+  eq(GymEngine.nextDay({ daysPerWeek: 3 }, []).day, 'A');
+});
+
+check('nextDay：做完 A → 下一次係 B', function () {
+  var s = [sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8]])];
+  s[0].day = 'A';
+  eq(GymEngine.nextDay({ daysPerWeek: 3 }, s).day, 'B');
+});
+
+check('nextDay：做完 C → 循環返 A', function () {
+  var s = [sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8]])];
+  s[0].day = 'C';
+  eq(GymEngine.nextDay({ daysPerWeek: 3 }, s).day, 'A');
+});
+
+check('nextDay：跳過一日唔會令循環錯位', function () {
+  var s = [
+    sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8]]),
+    sess('2026-08-20', 'Barbell_Squat', 40, 8, [[40,8],[40,8]])
+  ];
+  s[0].day = 'A'; s[1].day = 'B';
+  eq(GymEngine.nextDay({ daysPerWeek: 3 }, s).day, 'C', '隔咗 9 日照樣接落去 C');
+});
+
+check('nextDay：未完成嘅 session 唔算數', function () {
+  var s = [sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8]])];
+  s[0].day = 'A'; s[0].done = false;
+  eq(GymEngine.nextDay({ daysPerWeek: 3 }, s).day, 'A');
+});
+
+check('pickExercise：variant 0 同 1 揀到唔同動作', function () {
+  var a = GymEngine.pickExercise({ slot: 'squat', variant: 0 }, EXDB, NOPREFS);
+  var b = GymEngine.pickExercise({ slot: 'squat', variant: 1 }, EXDB, NOPREFS);
+  eq(a.id !== b.id, true);
+});
+
+check('pickExercise：同一輸入永遠揀到同一個（deterministic）', function () {
+  var a = GymEngine.pickExercise({ slot: 'squat', variant: 0 }, EXDB, NOPREFS);
+  var b = GymEngine.pickExercise({ slot: 'squat', variant: 0 }, EXDB, NOPREFS);
+  eq(a.id, b.id);
+});
+
+check('pickExercise：swaps 覆蓋預設', function () {
+  var prefs = { swaps: { 'squat:0': 'Leg_Press' }, banned: [] };
+  eq(GymEngine.pickExercise({ slot: 'squat', variant: 0 }, EXDB, prefs).id, 'Leg_Press');
+});
+
+check('pickExercise：banned 嘅動作永不出現', function () {
+  var prefs = { swaps: {}, banned: ['Barbell_Squat', 'Front_Barbell_Squat'] };
+  eq(GymEngine.pickExercise({ slot: 'squat', variant: 0 }, EXDB, prefs).id, 'Leg_Press');
+});
+
+check('pickExercise：banned 咗嘅動作即使喺 swaps 都唔用', function () {
+  var prefs = { swaps: { 'squat:0': 'Barbell_Squat' }, banned: ['Barbell_Squat'] };
+  eq(GymEngine.pickExercise({ slot: 'squat', variant: 0 }, EXDB, prefs).id !== 'Barbell_Squat', true);
+});
+
+check('pickExercise：全部 banned → 回傳 null', function () {
+  var prefs = { swaps: {}, banned: ['Barbell_Squat', 'Front_Barbell_Squat', 'Leg_Press'] };
+  eq(GymEngine.pickExercise({ slot: 'squat', variant: 0 }, EXDB, prefs), null);
+});
+
+check('buildWorkout：每個 slot 都揀到動作，冇空 slot', function () {
+  var w = GymEngine.buildWorkout({
+    profile: { daysPerWeek: 3, intensity: 'medium', startDate: '2026-08-11',
+               increments: { upper: 2.5, lower: 5 } },
+    prefs: NOPREFS, exercises: EXDB, sessions: [], today: '2026-08-11'
+  });
+  eq(w.day, 'A');
+  eq(w.entries.every(function (e) { return !!e.exerciseId; }), true);
+  eq(w.entries.length > 0, true);
+});
+
+check('buildWorkout：第 1 週 medium → 每個動作只出 2 組', function () {
+  var w = GymEngine.buildWorkout({
+    profile: { daysPerWeek: 3, intensity: 'medium', startDate: '2026-08-11',
+               increments: { upper: 2.5, lower: 5 } },
+    prefs: NOPREFS, exercises: EXDB, sessions: [], today: '2026-08-11'
+  });
+  eq(w.entries.every(function (e) { return e.target.sets === 2; }), true);
+});
+
+check('buildWorkout：第 2 週 medium → 恢復 3 組', function () {
+  var w = GymEngine.buildWorkout({
+    profile: { daysPerWeek: 3, intensity: 'medium', startDate: '2026-08-11',
+               increments: { upper: 2.5, lower: 5 } },
+    prefs: NOPREFS, exercises: EXDB, sessions: [], today: '2026-08-19'
+  });
+  eq(w.entries.every(function (e) { return e.target.sets === 3; }), true);
+});
+
+check('buildWorkout：medium 加 1 個輔助動作', function () {
+  var w = GymEngine.buildWorkout({
+    profile: { daysPerWeek: 3, intensity: 'medium', startDate: '2026-08-11',
+               increments: { upper: 2.5, lower: 5 } },
+    prefs: NOPREFS, exercises: EXDB, sessions: [], today: '2026-08-19'
+  });
+  eq(w.entries.filter(function (e) { return e.slot === 'accessory'; }).length, 1);
+});
+
+check('buildWorkout：light 冇輔助動作', function () {
+  var w = GymEngine.buildWorkout({
+    profile: { daysPerWeek: 3, intensity: 'light', startDate: '2026-08-11',
+               increments: { upper: 2.5, lower: 5 } },
+    prefs: NOPREFS, exercises: EXDB, sessions: [], today: '2026-08-19'
+  });
+  eq(w.entries.filter(function (e) { return e.slot === 'accessory'; }).length, 0);
+});
+
+check('buildWorkout：ramp-back 期同一區塊內唔加重', function () {
+  var prev = sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]]);
+  prev.day = 'C';   // 令 nextDay 回到 A
+  var w = GymEngine.buildWorkout({
+    profile: { daysPerWeek: 3, intensity: 'medium', startDate: '2026-08-11',
+               increments: { upper: 2.5, lower: 5 } },
+    prefs: NOPREFS, exercises: EXDB, sessions: [prev], today: '2026-08-13'
+  });
+  var squat = w.entries.filter(function (e) { return e.exerciseId === 'Barbell_Squat'; })[0];
+  eq(squat.target.weight, 40, '同一 7 日區塊內唔可以加重');
+});
+
+check('buildWorkout：restSec 跟強度', function () {
+  var w = GymEngine.buildWorkout({
+    profile: { daysPerWeek: 3, intensity: 'medium', startDate: '2026-08-11',
+               increments: { upper: 2.5, lower: 5 } },
+    prefs: NOPREFS, exercises: EXDB, sessions: [], today: '2026-08-19'
+  });
+  eq(w.restSec, 120);
+});

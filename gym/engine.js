@@ -144,6 +144,108 @@ var GymEngine = (function () {
     };
   }
 
+  // ---- 訓練分割表 ----
+  function s(slot, variant) { return { slot: slot, variant: variant || 0 }; }
+
+  var SPLITS = {
+    2: [
+      { day: 'A', slots: [s('squat',0), s('horizontal_push',0), s('horizontal_pull',0), s('core',0)] },
+      { day: 'B', slots: [s('hinge',0), s('vertical_push',0), s('vertical_pull',0), s('core',1)] }
+    ],
+    3: [
+      { day: 'A', slots: [s('squat',0), s('horizontal_push',0), s('horizontal_pull',0), s('core',0)] },
+      { day: 'B', slots: [s('hinge',0), s('vertical_push',0), s('vertical_pull',0), s('core',1)] },
+      { day: 'C', slots: [s('squat',1), s('horizontal_push',1), s('horizontal_pull',1), s('core',2)] }
+    ],
+    4: [
+      { day: 'Upper A', slots: [s('horizontal_push',0), s('horizontal_pull',0), s('vertical_push',0), s('core',0)] },
+      { day: 'Lower A', slots: [s('squat',0), s('hinge',0), s('core',1)] },
+      { day: 'Upper B', slots: [s('vertical_push',1), s('vertical_pull',0), s('horizontal_push',1), s('core',2)] },
+      { day: 'Lower B', slots: [s('hinge',1), s('squat',1), s('core',0)] }
+    ],
+    5: [
+      { day: 'Push',  slots: [s('horizontal_push',0), s('vertical_push',0), s('core',0)] },
+      { day: 'Pull',  slots: [s('horizontal_pull',0), s('vertical_pull',0), s('core',1)] },
+      { day: 'Legs',  slots: [s('squat',0), s('hinge',0), s('core',2)] },
+      { day: 'Upper', slots: [s('horizontal_push',1), s('vertical_pull',1), s('core',0)] },
+      { day: 'Lower', slots: [s('squat',1), s('hinge',1), s('core',1)] }
+    ]
+  };
+
+  function splitFor(daysPerWeek) {
+    return SPLITS[daysPerWeek] || SPLITS[3];
+  }
+
+  /** 下一個要做嘅 day —— 跟上次完成嘅 day 順序接落去，唔綁定星期幾 */
+  function nextDay(profile, sessions) {
+    var split = splitFor(profile.daysPerWeek);
+    var doneList = sessions.filter(function (x) { return x.done; });
+    if (!doneList.length) return split[0];
+    var lastDay = doneList[doneList.length - 1].day;
+    var idx = split.findIndex(function (d) { return d.day === lastDay; });
+    if (idx < 0) return split[0];
+    return split[(idx + 1) % split.length];
+  }
+
+  /** 由 slot 揀具體動作。deterministic：同一輸入永遠同一結果。 */
+  function pickExercise(slotSpec, exercises, prefs) {
+    var banned = (prefs && prefs.banned) || [];
+    var pool = exercises
+      .filter(function (e) { return e.slot === slotSpec.slot && banned.indexOf(e.id) < 0; })
+      .sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+    if (!pool.length) return null;
+
+    var key = slotSpec.slot + ':' + slotSpec.variant;
+    var wanted = prefs && prefs.swaps && prefs.swaps[key];
+    if (wanted) {
+      var hit = pool.filter(function (e) { return e.id === wanted; })[0];
+      if (hit) return hit;
+    }
+    return pool[slotSpec.variant % pool.length];
+  }
+
+  /**
+   * 砌出今日嘅訓練。
+   * ctx = { profile, prefs, exercises, sessions, today, estimates? }
+   * estimates = { exerciseId: 使用者估計做得起嘅重量 }
+   */
+  function buildWorkout(ctx) {
+    var p = ctx.profile;
+    var day = nextDay(p, ctx.sessions);
+    var wk = weekIndex(p.startDate, ctx.today);
+    var conf = INTENSITY[p.intensity];
+    var sets = setsForWeek(p.intensity, wk);
+
+    var slots = day.slots.slice();
+    for (var i = 0; i < conf.accessories; i++) slots.push(s('accessory', i));
+
+    var entries = [];
+    slots.forEach(function (spec) {
+      var ex = pickExercise(spec, ctx.exercises, ctx.prefs);
+      if (!ex) return;
+
+      var reps = ex.metric === 'seconds' ? 45 : conf.reps;
+      var t = nextTarget({
+        sessions: ctx.sessions, exerciseId: ex.id, exercise: ex,
+        increments: p.increments, reps: reps,
+        estimate: ctx.estimates && ctx.estimates[ex.id]
+      });
+
+      // Ramp-back：同一個 7 日區塊唔准為同一動作加第二次重
+      if (!canIncreaseThisWeek(ctx.sessions, ex.id, p.startDate, ctx.today)) {
+        var last = lastEntryFor(ctx.sessions, ex.id);
+        if (last && t.weight > last.entry.target.weight) t.weight = last.entry.target.weight;
+      }
+
+      entries.push({
+        slot: spec.slot, variant: spec.variant, exerciseId: ex.id,
+        target: { sets: sets, reps: t.reps, weight: t.weight }
+      });
+    });
+
+    return { day: day.day, restSec: conf.restSec, entries: entries };
+  }
+
   return {
     roundToStep: roundToStep,
     weekIndex: weekIndex,
@@ -154,6 +256,11 @@ var GymEngine = (function () {
     INTENSITY: INTENSITY,
     setsForWeek: setsForWeek,
     canIncreaseThisWeek: canIncreaseThisWeek,
-    heavyUnlock: heavyUnlock
+    heavyUnlock: heavyUnlock,
+    SPLITS: SPLITS,
+    splitFor: splitFor,
+    nextDay: nextDay,
+    pickExercise: pickExercise,
+    buildWorkout: buildWorkout
   };
 })();
