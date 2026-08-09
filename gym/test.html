@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>GymEngine 測試</title>
+<style>
+  body { font: 14px/1.6 system-ui, sans-serif; max-width: 760px; margin: 24px auto; padding: 0 16px; }
+  .pass { color: #1a7f55; }
+  .fail { color: #c0392b; font-weight: 700; }
+  li { margin: 3px 0; }
+  #summary { font-size: 18px; font-weight: 700; margin: 16px 0; padding: 12px; border-radius: 8px; }
+  #summary.ok { background: #e3f4ec; color: #1a7f55; }
+  #summary.bad { background: #fdecea; color: #c0392b; }
+</style>
+</head>
+<body>
+<h1>GymEngine 測試</h1>
+<div id="summary"></div>
+<ul id="results"></ul>
+
+<script src="engine.js"></script>
+<script>
+var passed = 0, failed = 0;
+
+function eq(actual, expected, msg) {
+  var a = JSON.stringify(actual), e = JSON.stringify(expected);
+  if (a !== e) throw new Error((msg || '') + ' 預期 ' + e + '，實際 ' + a);
+}
+
+function check(name, fn) {
+  var li = document.createElement('li');
+  try {
+    fn();
+    passed++;
+    li.className = 'pass';
+    li.textContent = '✓ ' + name;
+  } catch (err) {
+    failed++;
+    li.className = 'fail';
+    li.textContent = '✗ ' + name + ' — ' + err.message;
+  }
+  document.getElementById('results').appendChild(li);
+}
+
+function done() {
+  var s = document.getElementById('summary');
+  s.className = failed ? 'bad' : 'ok';
+  s.textContent = failed ? (failed + ' 個失敗 / ' + (passed + failed) + ' 個測試')
+                         : ('全部通過 — ' + passed + ' 個測試');
+}
+</script>
+<script src="tests.js"></script>
+<script>done();</script>
+</body>
+</html>
