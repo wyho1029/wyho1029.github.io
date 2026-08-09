@@ -172,3 +172,98 @@ check('deload 唔會出上唔到槓嘅重量（一律 2.5 嘅倍數）', functio
     eq(got.weight % 2.5, 0, pair[0] + 'kg deload 結果要係 2.5 嘅倍數');
   });
 });
+
+// ---- 強度參數 ----
+check('INTENSITY 三檔參數正確', function () {
+  eq(GymEngine.INTENSITY.light.sets, 2);
+  eq(GymEngine.INTENSITY.medium.sets, 3);
+  eq(GymEngine.INTENSITY.heavy.sets, 4);
+  eq(GymEngine.INTENSITY.medium.reps, 8);
+  eq(GymEngine.INTENSITY.medium.restSec, 120);
+  eq(GymEngine.INTENSITY.heavy.accessories, 2);
+});
+
+// ---- 第 1 週只做 2 組 ----
+check('第 1 週：medium 都只出 2 組', function () {
+  eq(GymEngine.setsForWeek('medium', 0), 2);
+});
+
+check('第 2 週起：medium 恢復 3 組', function () {
+  eq(GymEngine.setsForWeek('medium', 1), 3);
+  eq(GymEngine.setsForWeek('medium', 4), 3);
+});
+
+check('第 1 週：light 本身就係 2 組，唔會變少', function () {
+  eq(GymEngine.setsForWeek('light', 0), 2);
+});
+
+// ---- 每個 7 日區塊最多加一次重 ----
+check('同一 7 日區塊內第二次做同一動作 → 唔准加重', function () {
+  var sessions = [sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]])];
+  eq(GymEngine.canIncreaseThisWeek(sessions, 'Barbell_Squat', '2026-08-11', '2026-08-14'), false);
+});
+
+check('去到下一個 7 日區塊 → 可以再加重', function () {
+  var sessions = [sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]])];
+  eq(GymEngine.canIncreaseThisWeek(sessions, 'Barbell_Squat', '2026-08-11', '2026-08-19'), true);
+});
+
+check('第 5 週起 ramp-back 限制解除', function () {
+  var sessions = [sess('2026-09-15', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]])];
+  eq(GymEngine.canIncreaseThisWeek(sessions, 'Barbell_Squat', '2026-08-11', '2026-09-17'), true);
+});
+
+check('從未做過該動作 → 唔受限', function () {
+  eq(GymEngine.canIncreaseThisWeek([], 'Barbell_Squat', '2026-08-11', '2026-08-14'), true);
+});
+
+// ---- 「重」強度閘門 ----
+function doneSessions(n, startDate) {
+  var out = [];
+  for (var i = 0; i < n; i++) {
+    var d = new Date(Date.parse(startDate + 'T00:00:00Z') + i * 2 * 86400000);
+    out.push(sess(d.toISOString().slice(0, 10), 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]]));
+  }
+  return out;
+}
+var PROFILE3 = { daysPerWeek: 3, startDate: '2026-08-11', intensityUnlockedAt: null, intensityUnlockForced: false };
+
+check('滿 4 週但只做 5 次 → 仍鎖', function () {
+  var r = GymEngine.heavyUnlock(PROFILE3, doneSessions(5, '2026-08-11'), '2026-09-10');
+  eq(r.unlocked, false);
+  eq(r.sessionsNeeded, 9);
+  eq(r.sessionsDone, 5);
+});
+
+check('做夠 9 次但只 2 週 → 仍鎖', function () {
+  var r = GymEngine.heavyUnlock(PROFILE3, doneSessions(9, '2026-08-11'), '2026-08-25');
+  eq(r.unlocked, false);
+  eq(r.weeksDone, 2);
+});
+
+check('4 週 + 9 次 → 解鎖', function () {
+  var r = GymEngine.heavyUnlock(PROFILE3, doneSessions(9, '2026-08-11'), '2026-09-10');
+  eq(r.unlocked, true);
+  eq(r.forced, false);
+});
+
+check('強制解鎖 → 即使未夠數都保持解鎖', function () {
+  var p = { daysPerWeek: 3, startDate: '2026-08-11',
+            intensityUnlockedAt: '2026-08-13', intensityUnlockForced: true };
+  var r = GymEngine.heavyUnlock(p, doneSessions(2, '2026-08-11'), '2026-08-14');
+  eq(r.unlocked, true);
+  eq(r.forced, true);
+});
+
+check('未完成嘅 session 唔計入解鎖次數', function () {
+  var s = doneSessions(9, '2026-08-11');
+  s[0].done = false;
+  var r = GymEngine.heavyUnlock(PROFILE3, s, '2026-09-10');
+  eq(r.sessionsDone, 8);
+  eq(r.unlocked, false);
+});
+
+check('每週日數唔同 → 所需次數跟住變', function () {
+  var p5 = { daysPerWeek: 5, startDate: '2026-08-11', intensityUnlockedAt: null, intensityUnlockForced: false };
+  eq(GymEngine.heavyUnlock(p5, [], '2026-09-10').sessionsNeeded, 15);
+});

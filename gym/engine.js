@@ -102,12 +102,58 @@ var GymEngine = (function () {
     return { weight: e.target.weight, reps: opts.reps };
   }
 
+  var INTENSITY = {
+    light:  { sets: 2, reps: 12, rpe: '6-7', restSec: 90,  accessories: 0 },
+    medium: { sets: 3, reps: 8,  rpe: '7-8', restSec: 120, accessories: 1 },
+    heavy:  { sets: 4, reps: 6,  rpe: '8-9', restSec: 180, accessories: 2 }
+  };
+
+  var RAMP_WEEKS = 4;          // 頭 4 個 7 日區塊屬 ramp-back 期
+  var UNLOCK_WEEKS = 4;
+  var UNLOCK_SESSIONS_PER_DAY = 3;   // daysPerWeek × 3
+
+  /** 第 1 個區塊（weekIdx 0）一律封頂 2 組 */
+  function setsForWeek(intensity, weekIdx) {
+    var base = INTENSITY[intensity].sets;
+    return weekIdx === 0 ? Math.min(base, 2) : base;
+  }
+
+  /** Ramp-back 期內，同一個 7 日區塊唔准為同一動作加第二次重 */
+  function canIncreaseThisWeek(sessions, exerciseId, startDate, today) {
+    var wk = weekIndex(startDate, today);
+    if (wk >= RAMP_WEEKS) return true;
+    var last = lastEntryFor(sessions, exerciseId);
+    if (!last) return true;
+    return weekIndex(startDate, last.session.date) !== wk;
+  }
+
+  /** 「重」強度解鎖狀態。時間管肌腱適應，次數管動作熟練度，兩個都要。 */
+  function heavyUnlock(profile, sessions, today) {
+    var sessionsDone = sessions.filter(function (s) { return s.done; }).length;
+    var weeksDone = weekIndex(profile.startDate, today);
+    var sessionsNeeded = profile.daysPerWeek * UNLOCK_SESSIONS_PER_DAY;
+    var earned = weeksDone >= UNLOCK_WEEKS && sessionsDone >= sessionsNeeded;
+    var forced = !!profile.intensityUnlockForced;
+    return {
+      unlocked: earned || !!profile.intensityUnlockedAt,
+      forced: forced,
+      weeksDone: weeksDone,
+      weeksNeeded: UNLOCK_WEEKS,
+      sessionsDone: sessionsDone,
+      sessionsNeeded: sessionsNeeded
+    };
+  }
+
   return {
     roundToStep: roundToStep,
     weekIndex: weekIndex,
     allHit: allHit,
     lastEntryFor: lastEntryFor,
     failStreak: failStreak,
-    nextTarget: nextTarget
+    nextTarget: nextTarget,
+    INTENSITY: INTENSITY,
+    setsForWeek: setsForWeek,
+    canIncreaseThisWeek: canIncreaseThisWeek,
+    heavyUnlock: heavyUnlock
   };
 })();
