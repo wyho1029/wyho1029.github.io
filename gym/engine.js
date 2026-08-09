@@ -17,8 +17,95 @@ var GymEngine = (function () {
     return Math.floor((b - a) / MS_PER_DAY / 7);
   }
 
+  var DELOAD_FACTOR = 0.9;
+  var FIRST_TIME_FACTOR = 0.65;
+  var NEAR_MISS_RATIO = 0.8;
+  var SECONDS_INCREMENT = 5;
+
+  /** 該 entry 係咪全部組都做夠目標次數 */
+  function allHit(entry) {
+    if (entry.actual.length < entry.target.sets) return false;
+    return entry.actual.every(function (s) { return s.r >= entry.target.reps; });
+  }
+
+  /** 由新到舊取出已完成 session 入面該動作嘅 entry */
+  function historyFor(sessions, exerciseId) {
+    var out = [];
+    for (var i = sessions.length - 1; i >= 0; i--) {
+      if (!sessions[i].done) continue;
+      var e = sessions[i].entries.filter(function (x) { return x.exerciseId === exerciseId; });
+      for (var j = 0; j < e.length; j++) out.push({ entry: e[j], session: sessions[i] });
+    }
+    return out;
+  }
+
+  function lastEntryFor(sessions, exerciseId) {
+    var h = historyFor(sessions, exerciseId);
+    return h.length ? h[0] : null;
+  }
+
+  /** 連續「未全部達標」次數。遇到重量下降（即嗰次已 deload 過）就停 ——
+      冇呢個停止條件，deload 之後再失手一次會即刻再 deload，一路插落去。 */
+  function failStreak(sessions, exerciseId) {
+    var h = historyFor(sessions, exerciseId);
+    var n = 0;
+    for (var i = 0; i < h.length; i++) {
+      if (allHit(h[i].entry)) break;
+      n++;
+      var older = h[i + 1];
+      if (older && h[i].entry.target.weight < older.entry.target.weight) break;
+    }
+    return n;
+  }
+
+  function deload(weight, exercise) {
+    var deloaded = Math.round(weight * DELOAD_FACTOR);
+    return Math.max(exercise.minWeight, deloaded);
+  }
+
+  /**
+   * 計算下次目標。
+   * opts = { sessions, exerciseId, exercise, increments, reps, estimate? }
+   * 回傳 { weight, reps }
+   */
+  function nextTarget(opts) {
+    var ex = opts.exercise;
+    var last = lastEntryFor(opts.sessions, opts.exerciseId);
+    var isTimed = ex.metric === 'seconds';
+
+    if (!last) {
+      if (isTimed) return { weight: 0, reps: opts.reps };
+      var base = opts.estimate
+        ? Math.ceil(opts.estimate * FIRST_TIME_FACTOR / 1.25) * 1.25
+        : ex.minWeight;
+      return { weight: Math.max(ex.minWeight, base), reps: opts.reps };
+    }
+
+    var e = last.entry;
+    var hit = allHit(e);
+
+    if (isTimed) {
+      return { weight: 0, reps: hit ? e.target.reps + SECONDS_INCREMENT : e.target.reps };
+    }
+
+    if (hit) {
+      return { weight: e.target.weight + opts.increments[ex.upperLower], reps: opts.reps };
+    }
+
+    var targetN = e.target.sets * e.target.reps;
+    var actualN = e.actual.reduce(function (a, s) { return a + s.r; }, 0);
+
+    if (actualN < targetN * NEAR_MISS_RATIO) return { weight: deload(e.target.weight, ex), reps: opts.reps };
+    if (failStreak(opts.sessions, opts.exerciseId) >= 2) return { weight: deload(e.target.weight, ex), reps: opts.reps };
+    return { weight: e.target.weight, reps: opts.reps };
+  }
+
   return {
     roundToStep: roundToStep,
-    weekIndex: weekIndex
+    weekIndex: weekIndex,
+    allHit: allHit,
+    lastEntryFor: lastEntryFor,
+    failStreak: failStreak,
+    nextTarget: nextTarget
   };
 })();
