@@ -112,6 +112,7 @@
         <dt>二次轉黃</dt><dd>過去黃K → 升 ≥40% → 回落 → 而家再轉黃（✅P ＝ 命中）。</dd>
         <dt>⭐ 高信心候選</dt><dd>完成週K（週五收市）＋ 放量硬閘：分數 ≥80 且 量比 ≥1.5×。研究驗證中，<b>未計入</b> Discord／富途推送。<code>⭐?</code> ＝ 本週未收，週K收市先定案。</dd>
         <dt>📐 交易計劃參考</dt><dd>止蝕參考 ＝ 近10日最低價 − 0.25×ATR14；2R 目標 ＝ 收市 ＋ 2×風險。研究參考值，非投資建議。</dd>
+        <dt>💥 動能爆燈</dt><dd>MCDXX 動能線連續 13 週以上封頂（20）＋ 週MA30／MA40 向上。同轉黃係相反嘅一極：轉黃買弱（底部反轉），爆燈買強（動能持續）。<b>長期觀察名單，唔係入場訊號。</b>「熱度週數」＝ MCDXX 熱度線（黃）連續封頂週數，只作對照唔做篩選。</dd>
         <dt>✓ ／ ·</dt><dd>該因子有得分 ／ 冇分。</dd>
         <dt>入圍門檻</dt><dd>日K／月K ≥ 45 分、週K ≥ 70 分。</dd>
       </dl>
@@ -165,6 +166,17 @@
       downloadCsv('X熱度榜_' + (CURRENT.generated || '').slice(0, 10) + '.csv', bl.join('\r\n'));
       return;
     }
+    if (id === 'sec-mpeg'){
+      var mr = CURRENT.momentum_peg || [];
+      if (!mr.length){ alert('呢個名單冇股票，冇嘢可下載。'); return; }
+      var ml = ['代號,全名,板塊,收市,動能週數,熱度週數,首次入榜'];
+      mr.forEach(function(r){
+        ml.push([r.code, r.name || '', r.sector || '', r.close,
+                 r.mm_streak, r.hot_streak, r.first_week || ''].map(qcsv).join(','));
+      });
+      downloadCsv('動能爆燈_' + (CURRENT.generated || '').slice(0, 10) + '.csv', ml.join('\r\n'));
+      return;
+    }
     var list, label;
     if (id === 'sec-vol'){ list = CURRENT.volume_watch || []; label = '爆量觀察'; }
     else { var m = TF[id]; list = (CURRENT.timeframes || {})[m[0]] || []; label = m[1]; }
@@ -199,6 +211,28 @@
         + '<td>' + mark(s.mcdxx) + '</td>'
         + '<td>' + mark(s.macd) + '</td>'
         + '<td>' + sy(s) + '</td></tr>';
+    });
+    return h + '</table></div>';
+  }
+  function mpegRows(list, errs){
+    if (!list || !list.length){
+      return (errs > 0)
+        ? '<div class="err">⚠️ 判定失敗：' + dnum(errs, 0) + ' 隻計唔到 —— 唔係真係零命中，請睇 daily_run.log</div>'
+        : '<div class="empty">（無）</div>';
+    }
+    var h = (errs > 0)
+      ? '<div class="err">⚠️ ' + dnum(errs, 0) + ' 隻計唔到 —— 呢個名單唔完整，請睇 daily_run.log</div>'
+      : '';
+    h += '<div class="scroll"><table><tr><th>股票</th><th>全名</th><th>板塊</th>'
+      + '<th>收市</th><th>動能週數</th><th>熱度週數</th><th>首次入榜</th></tr>';
+    list.forEach(function(s){
+      h += '<tr><td class="code" onclick="openDetail(\'' + s.code + '\')">' + sym(s.code) + '</td>'
+        + '<td class="name">' + (s.name || '—') + '</td>'
+        + '<td>' + (s.sector || '—') + '</td>'
+        + '<td>' + fixed(s.close) + '</td>'
+        + '<td class="score">' + dnum(s.mm_streak, 0) + '</td>'
+        + '<td>' + dnum(s.hot_streak, 0) + '</td>'
+        + '<td>' + (s.first_week || '—') + '</td></tr>';
     });
     return h + '</table></div>';
   }
@@ -443,6 +477,17 @@
     });
     var vw = d.volume_watch || [];
     html += section('🔥 爆量觀察', vw.length, volRows(vw), 'sec-vol');
+    var mpeg = d.momentum_peg || [];
+    var mpegErrs = Number(d.momentum_peg_errors) || 0;
+    mpeg.forEach(function(s){ if (!DETAIL[s.code]) DETAIL[s.code] = s; });
+    // 判定全線失敗、部分失敗、同「真係零命中」喺摺埋嘅 header 上都要分得出，唔係淨係展開先見到
+    var mpegFail = !mpeg.length && mpegErrs > 0;
+    var mpegPartialFail = !!mpeg.length && mpegErrs > 0;
+    var mpegTitle = mpegFail ? '💥 動能爆燈 ⚠️ 判定失敗' : '💥 動能爆燈';
+    var mpegCount = mpegFail ? (dnum(mpegErrs, 0) + ' 隻計唔到')
+      : mpegPartialFail ? (mpeg.length + ' · ⚠️ ' + dnum(mpegErrs, 0) + ' 隻計唔到')
+      : mpeg.length;
+    html += section(mpegTitle, mpegCount, mpegRows(mpeg, mpegErrs), 'sec-mpeg');
     html += tqqqSection(d);
     html += cycleSection(d);
     html += buzzSection(d);
@@ -464,7 +509,7 @@
       + '<div><dt>目標價</dt><dd>' + dnum(s.target, 2) + '</dd></div>'
       + '<div><dt>業績日</dt><dd>' + (s.earnings || '—') + '</dd></div>'
       + '<div><dt>收市</dt><dd>' + fixed(s.close) + '</dd></div>'
-      + '<div><dt>分數</dt><dd>' + s.score + '</dd></div>'
+      + '<div><dt>分數</dt><dd>' + dnum(s.score, 0) + '</dd></div>'
       + '</dl>';
     if (s.stop_ref != null){
       h += '<div class="dsec"><h4>📐 交易計劃參考</h4><p>止蝕參考 $' + dnum(s.stop_ref, 2)
