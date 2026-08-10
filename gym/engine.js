@@ -249,6 +249,31 @@ var GymEngine = (function () {
     return { day: day.day, restSec: conf.restSec, entries: entries };
   }
 
+  /** 合併本地同遠端。以 date+day 做 session 唯一鍵；衝突時本地贏
+      （本地先係啱啱做完嗰部，遠端多數係舊裝置留低）。 */
+  function mergeData(local, remote) {
+    if (!remote) return local;
+
+    var map = {};
+    (remote.sessions || []).forEach(function (x) { map[x.date + '|' + x.day] = x; });
+    (local.sessions || []).forEach(function (x) { map[x.date + '|' + x.day] = x; });
+
+    var sessions = Object.keys(map).map(function (k) { return map[k]; })
+      .sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+
+    var lp = local.profile, rp = remote.profile;
+    var profile = lp;
+    if (!lp) profile = rp;
+    else if (rp && (rp.updatedAt || '') > (lp.updatedAt || '')) profile = rp;
+
+    var prefs = local.prefs;
+    if (!prefs || (remote.prefs && (remote.prefs.updatedAt || '') > (prefs.updatedAt || ''))) {
+      prefs = remote.prefs;
+    }
+
+    return { v: 1, profile: profile, prefs: prefs, sessions: sessions };
+  }
+
   return {
     roundToStep: roundToStep,
     weekIndex: weekIndex,
@@ -264,6 +289,7 @@ var GymEngine = (function () {
     splitFor: splitFor,
     nextDay: nextDay,
     pickExercise: pickExercise,
-    buildWorkout: buildWorkout
+    buildWorkout: buildWorkout,
+    mergeData: mergeData
   };
 })();

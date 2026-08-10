@@ -486,3 +486,59 @@ check('buildWorkout：輔助動作跟 day 輪換，唔會日日都係同一個',
   eq(seen[0] !== seen[1] && seen[1] !== seen[2] && seen[0] !== seen[2], true,
      'Day A/B/C 嘅輔助動作應該三個都唔同，實際：' + seen.join('、'));
 });
+
+// ---- mergeData ----
+function mkData(sessions, updatedAt) {
+  return { v: 1, profile: { daysPerWeek: 3, updatedAt: updatedAt || '2026-08-11T00:00:00Z' },
+           prefs: { swaps: {}, banned: [] }, sessions: sessions || [] };
+}
+
+check('mergeData：遠端獨有嘅 session 會保留', function () {
+  var local = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8]])]);
+  var remote = mkData([sess('2026-08-14', 'Barbell_Squat', 45, 8, [[45,8]])]);
+  remote.sessions[0].day = 'B';
+  var m = GymEngine.mergeData(local, remote);
+  eq(m.sessions.length, 2);
+});
+
+check('mergeData：同 date+day 衝突時本地贏', function () {
+  var local = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]])]);
+  var remote = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,5]])]);
+  var m = GymEngine.mergeData(local, remote);
+  eq(m.sessions.length, 1);
+  eq(m.sessions[0].entries[0].actual.length, 3, '本地嗰份（3 組）應該贏');
+});
+
+check('mergeData：結果按日期排序', function () {
+  var local = mkData([sess('2026-08-20', 'Barbell_Squat', 40, 8, [[40,8]])]);
+  var remote = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8]])]);
+  remote.sessions[0].day = 'B';
+  var m = GymEngine.mergeData(local, remote);
+  eq(m.sessions.map(function (x) { return x.date; }), ['2026-08-11', '2026-08-20']);
+});
+
+check('mergeData：profile 取 updatedAt 較新嗰個', function () {
+  var local = mkData([], '2026-08-11T00:00:00Z');
+  var remote = mkData([], '2026-08-20T00:00:00Z');
+  remote.profile.daysPerWeek = 4;
+  eq(GymEngine.mergeData(local, remote).profile.daysPerWeek, 4);
+});
+
+check('mergeData：本地 profile 較新就用本地', function () {
+  var local = mkData([], '2026-08-20T00:00:00Z');
+  local.profile.daysPerWeek = 5;
+  var remote = mkData([], '2026-08-11T00:00:00Z');
+  eq(GymEngine.mergeData(local, remote).profile.daysPerWeek, 5);
+});
+
+check('mergeData：遠端係 null（首次）→ 直接用本地', function () {
+  var local = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8]])]);
+  eq(GymEngine.mergeData(local, null).sessions.length, 1);
+});
+
+check('mergeData：本地 profile 係 null → 用遠端', function () {
+  var local = mkData([]);
+  local.profile = null;
+  var remote = mkData([], '2026-08-11T00:00:00Z');
+  eq(GymEngine.mergeData(local, remote).profile.daysPerWeek, 3);
+});
