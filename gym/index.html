@@ -378,21 +378,32 @@ Views.settings = function (el) {
       '<button class="btn" id="saveInc" style="margin-top:12px">儲存</button>' +
     '</div>' +
     '<div class="card"><b>GitHub Token</b>' +
-      '<p class="muted">' + (Store.token() ? '已設定（' + Store.token().slice(0, 12) + '…）' : '未設定') + '</p>' +
+      '<p class="muted">' + (Store.token() ? '已設定' : '未設定') + '</p>' +
       '<input type="password" id="tk2" placeholder="貼新 token 換走舊嗰個">' +
       '<button class="btn ghost" id="saveTk" style="margin-top:10px">更新 Token</button>' +
       '<button class="btn ghost" id="syncNow" style="margin-top:8px">立即同步</button>' +
     '</div>';
 
+  // input 嘅 min/step 屬性喺直接讀 .value 時完全唔生效，要自己夾。
+  // 打 1 入去，parseFloat('1') 係 truthy，`|| 2.5` 永遠唔會救到你 ——
+  // 然後 nextTarget 加重時唔會再對齊，你會攞到 41kg / 42kg 呢啲上唔到槓嘅目標。
+  function readIncrement(id, fallback) {
+    var v = parseFloat(document.getElementById(id).value);
+    if (!isFinite(v) || v <= 0) v = fallback;
+    return Math.max(2.5, GymEngine.roundToStep(v, 2.5));
+  }
+
   document.getElementById('saveInc').onclick = function () {
-    p.increments.upper = parseFloat(document.getElementById('incU').value) || 2.5;
-    p.increments.lower = parseFloat(document.getElementById('incL').value) || 5;
+    p.increments.upper = readIncrement('incU', 2.5);
+    p.increments.lower = readIncrement('incL', 5);
     p.updatedAt = new Date().toISOString();
     Store.saveLocal(); Store.push(); render();
   };
   document.getElementById('saveTk').onclick = function () {
     var t = document.getElementById('tk2').value.trim();
-    if (t) { Store.setToken(t); Store.pull().then(render); }
+    // .catch(render) —— token 錯嘅話 pull 會 reject，冇 catch 就永遠唔會重畫，
+    // 個畫面會繼續顯示舊 token 已設定，同紅點自相矛盾。
+    if (t) { Store.setToken(t); Store.pull().then(render).catch(render); }
   };
   document.getElementById('syncNow').onclick = function () { Store.push().then(render); };
 };
