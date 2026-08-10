@@ -64,12 +64,18 @@ var Store = {
   token: function () { return localStorage.getItem(LS_TOKEN) || ''; },
   setToken: function (t) { localStorage.setItem(LS_TOKEN, t.trim()); },
 
+  corrupted: false,
+
   load: function () {
+    var raw = localStorage.getItem(LS_DATA);
     try {
-      var raw = localStorage.getItem(LS_DATA);
       this.data = raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(EMPTY));
     } catch (e) {
+      // 本地資料壞咗。唔可以靜靜哋當佢唔存在 —— 下一次 saveLocal 就會用空資料
+      // 蓋死成份訓練記錄。先另存一份原文，再舉手話俾使用者知。
+      try { localStorage.setItem('gym.data.corrupt.' + Date.now(), raw); } catch (e2) {}
       this.data = JSON.parse(JSON.stringify(EMPTY));
+      this.corrupted = true;
     }
     if (this.data.v !== 1) throw new Error('唔認識嘅資料版本 v=' + this.data.v + '，拒絕覆蓋');
     this.sha = localStorage.getItem(LS_SHA);
@@ -131,7 +137,7 @@ var Store = {
       self.sha = j.sha;
       localStorage.setItem(LS_SHA, j.sha);
       var remote = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, '')))));
-      if (remote.v !== 1) throw new Error('遠端資料版本 v=' + remote.v + ' 唔認識，拒絕覆蓋');
+      if (remote.v !== 1) { self.setStatus('error'); throw new Error('SCHEMA_MISMATCH'); }
       self.data = GymEngine.mergeData(self.data, remote);
       localStorage.setItem(LS_DATA, JSON.stringify(self.data));
       return self.data;
@@ -159,7 +165,12 @@ var Store = {
         self.setStatus('synced');
       });
     }).catch(function (err) {
-      if (err.message === 'TOKEN_INVALID') { self.setStatus('error'); return; }
+      // TOKEN_INVALID 同 SCHEMA_MISMATCH 都係「再試都冇用」，一定要紅。
+      // 🟡 嘅意思係「等陣自己會好」—— 用佢嚟表示一個永遠唔會好嘅狀態就係呃自己。
+      if (err.message === 'TOKEN_INVALID' || err.message === 'SCHEMA_MISMATCH') {
+        self.setStatus('error');
+        return;
+      }
       self.setStatus('dirty');       // 冇網：留返 dirty，下次開 app 補推
     });
   }
@@ -185,6 +196,13 @@ function today() { return new Date().toISOString().slice(0, 10); }
 function render() {
   var el = document.getElementById('app');
   el.innerHTML = '';
+  if (Store.corrupted) {
+    el.innerHTML =
+      '<div class="card" style="border-color:#c0392b">' +
+      '<b style="color:#c0392b">本地資料讀唔到</b>' +
+      '<p class="muted">壞咗嗰份已經另存喺瀏覽器，冇刪走。' +
+      '如果 GitHub 有備份，同步之後會還原返。</p></div>';
+  }
   var fn = Views[currentTab];
   if (fn) fn(el);
   Array.prototype.forEach.call(document.querySelectorAll('.tabs button'), function (b) {
@@ -200,9 +218,22 @@ document.querySelector('.tabs').addEventListener('click', function (e) {
 });
 
 // ---- 啟動 ----
+// 網絡出事**唔可以**令個 app 用唔到 —— gym 地牢冇訊號正正係本地優先嘅原因。
+// 所以 pull / push 各自食晒自己嘅錯，只反映喺右上角粒點度。
+// 最外層 catch 只剩返真正致命嘅嘢：本地資料版本唔認識、或者 exercises.json 載入唔到。
 Promise.resolve()
   .then(function () { Store.load(); return loadExercises(); })
-  .then(function () { render(); return Store.pull(); })
+  .then(function () {
+    render();                       // 先用本地資料畫出嚟，唔等網絡
+    return Store.pull().catch(function (err) {
+      if (err && (err.message === 'TOKEN_INVALID' || err.message === 'SCHEMA_MISMATCH')) {
+        Store.setStatus('error');
+      } else {
+        Store.setStatus('dirty');   // 冇訊號：本地照用，下次再同步
+      }
+      return null;
+    });
+  })
   .then(function () {
     if (localStorage.getItem(LS_DIRTY) === '1') return Store.push();   // 補推上次冇推成嘅
   })
