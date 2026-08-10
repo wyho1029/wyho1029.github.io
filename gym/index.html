@@ -199,6 +199,204 @@ function loadExercises() {
 
 function today() { return new Date().toISOString().slice(0, 10); }
 
+// ---- 首次執行 ----
+function renderSetup(el) {
+  el.innerHTML =
+    '<div class="card">' +
+      '<h2 style="margin-top:0">歡迎返嚟 💪</h2>' +
+      '<p class="muted">先做三件事，之後唔使再設定。</p>' +
+      '<p><b>1. 貼你嘅 GitHub token</b><br>' +
+      '<span class="muted">Settings → Developer settings → Fine-grained tokens，' +
+      '權限只需 gym-data 嘅 Contents: Read and write</span></p>' +
+      '<input type="password" id="tk" placeholder="github_pat_...">' +
+      '<p style="margin-top:18px"><b>2. 你一個禮拜想練幾多日？</b></p>' +
+      '<div id="dpw"></div>' +
+      '<p style="margin-top:18px"><b>3. 強度</b></p>' +
+      '<div id="int"></div>' +
+      '<p class="muted" style="margin-top:6px">「重」喺頭 4 週唔開放 —— 停練後肌肉恢復快過肌腱，' +
+      '呢個落差就係最容易受傷嘅位。</p>' +
+      '<button class="btn" id="go" style="margin-top:18px">開始</button>' +
+      '<p class="muted" id="err" style="color:#c0392b"></p>' +
+    '</div>';
+
+  var dpw = 3, intensity = 'medium';
+
+  function seg(host, opts, get, set) {
+    host.innerHTML = '';
+    var row = document.createElement('div');
+    row.style.cssText = 'display:flex;gap:6px';
+    opts.forEach(function (o) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = o.label;
+      b.disabled = !!o.disabled;
+      b.style.cssText = 'flex:1;padding:12px 0;border-radius:8px;font:inherit;cursor:pointer;border:1px solid ' +
+        (get() === o.value ? '#16181d;background:#16181d;color:#fff'
+                           : '#c9ced6;background:#fff;color:' + (o.disabled ? '#c4cad3' : '#16181d'));
+      b.onclick = function () { set(o.value); seg(host, opts, get, set); };
+      row.appendChild(b);
+    });
+    host.appendChild(row);
+  }
+
+  seg(document.getElementById('dpw'),
+      [2, 3, 4, 5].map(function (n) { return { label: n + ' 日', value: n }; }),
+      function () { return dpw; }, function (v) { dpw = v; });
+
+  seg(document.getElementById('int'),
+      [{ label: '輕', value: 'light' }, { label: '中', value: 'medium' },
+       { label: '重 🔒', value: 'heavy', disabled: true }],
+      function () { return intensity; }, function (v) { intensity = v; });
+
+  document.getElementById('go').onclick = function () {
+    var t = document.getElementById('tk').value.trim();
+    if (!t) { document.getElementById('err').textContent = '要先貼 token 先開始得。'; return; }
+    Store.setToken(t);
+    Store.data.profile = {
+      daysPerWeek: dpw, intensity: intensity, startDate: today(), unit: 'kg',
+      increments: { upper: 2.5, lower: 5 },
+      intensityUnlockedAt: null, intensityUnlockForced: false,
+      updatedAt: new Date().toISOString()
+    };
+    Store.saveLocal();
+    Store.push();
+    render();
+  };
+}
+
+// ---- 進行中嘅訓練 ----
+var Session = { current: null };
+
+function startWorkout() {
+  var w = GymEngine.buildWorkout({
+    profile: Store.data.profile, prefs: Store.data.prefs,
+    exercises: Exercises.list, sessions: Store.data.sessions, today: today()
+  });
+  Session.current = {
+    date: today(), day: w.day, done: false, note: '', restSec: w.restSec,
+    entries: w.entries.map(function (e) {
+      return { slot: e.slot, variant: e.variant, exerciseId: e.exerciseId,
+               target: e.target, actual: [] };
+    })
+  };
+  currentTab = 'workout';
+  render();
+}
+
+// ---- 首頁 ----
+Views.home = function (el) {
+  if (!Store.data.profile) return renderSetup(el);
+  var p = Store.data.profile;
+  var doneList = Store.data.sessions.filter(function (s) { return s.done; });
+  var last = doneList[doneList.length - 1];
+
+  var html = '';
+
+  if (last) {
+    var days = Math.round((Date.parse(today()) - Date.parse(last.date)) / 86400000);
+    html += '<div class="card"><div class="muted">上次訓練 · ' +
+            (days === 0 ? '今日' : days + ' 日前') + '</div>' +
+            '<div style="font-weight:700;margin:4px 0 8px">' + last.day +
+            ' · 完成 ' + last.entries.length + ' 個動作</div>';
+    last.entries.forEach(function (e) {
+      var ex = Exercises.byId[e.exerciseId] || { name: e.exerciseId, metric: 'reps' };
+      var reps = e.actual.map(function (a) { return a.r; }).join('/');
+      var improved = didImprove(e.exerciseId, last);
+      html += '<div style="display:flex;justify-content:space-between;padding:3px 0">' +
+              '<span>' + ex.name + '</span>' +
+              '<span style="' + (improved ? 'color:#22a06b;font-weight:700' : '') + '">' +
+              (ex.metric === 'seconds' ? reps + ' 秒 × ' + e.actual.length
+                                       : e.target.weight + ' × ' + reps) +
+              (improved ? ' ↑' : '') + '</span></div>';
+    });
+    html += '</div>';
+  } else {
+    html += '<div class="card"><b>仲未開始</b><p class="muted">撳下面個掣做第一次訓練。' +
+            '每個動作會問你大約做得起幾多，之後就唔使再估。</p></div>';
+  }
+
+  var next = GymEngine.nextDay(p, Store.data.sessions);
+  var slotNames = { squat: '蹲', hinge: '髖鉸鏈', horizontal_push: '平推', vertical_push: '上推',
+                    horizontal_pull: '平拉', vertical_pull: '上拉', core: '核心', accessory: '輔助' };
+  html += '<div class="card" style="border:2px solid #16181d">' +
+          '<div style="font-size:19px;font-weight:700">今日：' + next.day + '</div>' +
+          '<div class="muted" style="margin:3px 0 12px">' +
+          next.slots.map(function (s) { return slotNames[s.slot]; }).join(' · ') +
+          '　約 45 分鐘</div>' +
+          '<button class="btn" onclick="startWorkout()">開始訓練</button></div>';
+
+  var wkIdx = GymEngine.weekIndex(p.startDate, today());
+  var thisWeek = doneList.filter(function (s) {
+    return GymEngine.weekIndex(p.startDate, s.date) === wkIdx;
+  }).length;
+  var pct = Math.min(100, Math.round(thisWeek / p.daysPerWeek * 100));
+  html += '<div class="card"><div class="muted">本週 ' + thisWeek + ' / ' + p.daysPerWeek + ' 日</div>' +
+          '<div style="height:8px;border-radius:4px;background:#e8ebef;margin-top:6px;overflow:hidden">' +
+          '<div style="height:100%;width:' + pct + '%;background:#16181d"></div></div>';
+
+  var u = GymEngine.heavyUnlock(p, Store.data.sessions, today());
+  if (!u.unlocked) {
+    html += '<div class="muted" style="margin-top:10px">Ramp-back 第 ' + (u.weeksDone + 1) +
+            ' 週 · 完成 ' + u.sessionsDone + ' / ' + u.sessionsNeeded + ' 次解鎖「重」</div>';
+  } else if (u.forced) {
+    html += '<div class="muted" style="margin-top:10px">「重」已強制解鎖</div>';
+  } else {
+    html += '<div style="margin-top:10px;color:#22a06b;font-weight:700">4 週 ramp-back 完成 ✅ 重強度已開放</div>';
+  }
+  html += '</div>';
+
+  el.innerHTML = html;
+};
+
+/** 該動作喺呢個 session 嘅目標重量／秒數係咪高過對上一次 */
+function didImprove(exerciseId, session) {
+  var idx = Store.data.sessions.indexOf(session);
+  var prev = null;
+  for (var i = idx - 1; i >= 0; i--) {
+    if (!Store.data.sessions[i].done) continue;
+    var e = Store.data.sessions[i].entries.filter(function (x) { return x.exerciseId === exerciseId; })[0];
+    if (e) { prev = e; break; }
+  }
+  if (!prev) return false;
+  var cur = session.entries.filter(function (x) { return x.exerciseId === exerciseId; })[0];
+  var ex = Exercises.byId[exerciseId];
+  return ex && ex.metric === 'seconds'
+    ? cur.target.reps > prev.target.reps
+    : cur.target.weight > prev.target.weight;
+}
+
+// ---- 設定 ----
+Views.settings = function (el) {
+  var p = Store.data.profile;
+  if (!p) { el.innerHTML = '<div class="card muted">未完成初次設定。</div>'; return; }
+  el.innerHTML =
+    '<div class="card"><b>加重幅度</b>' +
+      '<p class="muted">達標之後每次加幾多。最細 2.5kg（1.25kg 細片左右各一塊）。爬得太急就調細，但唔可以細過 2.5 —— 再細上唔到槓。</p>' +
+      '<label class="muted">上肢 (kg)</label><input type="number" step="2.5" min="2.5" id="incU" value="' + p.increments.upper + '">' +
+      '<label class="muted" style="display:block;margin-top:8px">下肢 (kg)</label>' +
+      '<input type="number" step="2.5" min="2.5" id="incL" value="' + p.increments.lower + '">' +
+      '<button class="btn" id="saveInc" style="margin-top:12px">儲存</button>' +
+    '</div>' +
+    '<div class="card"><b>GitHub Token</b>' +
+      '<p class="muted">' + (Store.token() ? '已設定（' + Store.token().slice(0, 12) + '…）' : '未設定') + '</p>' +
+      '<input type="password" id="tk2" placeholder="貼新 token 換走舊嗰個">' +
+      '<button class="btn ghost" id="saveTk" style="margin-top:10px">更新 Token</button>' +
+      '<button class="btn ghost" id="syncNow" style="margin-top:8px">立即同步</button>' +
+    '</div>';
+
+  document.getElementById('saveInc').onclick = function () {
+    p.increments.upper = parseFloat(document.getElementById('incU').value) || 2.5;
+    p.increments.lower = parseFloat(document.getElementById('incL').value) || 5;
+    p.updatedAt = new Date().toISOString();
+    Store.saveLocal(); Store.push(); render();
+  };
+  document.getElementById('saveTk').onclick = function () {
+    var t = document.getElementById('tk2').value.trim();
+    if (t) { Store.setToken(t); Store.pull().then(render); }
+  };
+  document.getElementById('syncNow').onclick = function () { Store.push().then(render); };
+};
+
 // ---- 路由（Task 7–10 會填返每個畫面）----
 function render() {
   var el = document.getElementById('app');
