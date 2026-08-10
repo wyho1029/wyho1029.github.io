@@ -462,7 +462,7 @@
   "slot": "accessory",
   "equipment": "barbell",
   "upperLower": "upper",
-  "minWeight": 0,
+  "minWeight": 20,
   "metric": "reps",
   "images": [
    "img/Barbell_Curl/0.jpg",

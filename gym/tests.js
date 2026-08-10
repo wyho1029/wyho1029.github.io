@@ -465,3 +465,24 @@ check('nextTarget：canIncrease=false 對計時動作同樣有效', function () 
   eq(GymEngine.nextTarget({ sessions: sessions, exerciseId: 'Plank', exercise: PLANK,
        increments: INC, reps: 45, canIncrease: true }), { weight: 0, reps: 50 });
 });
+
+check('buildWorkout：輔助動作跟 day 輪換，唔會日日都係同一個', function () {
+  var profile = { daysPerWeek: 3, intensity: 'medium', startDate: '2026-08-11',
+                  increments: { upper: 2.5, lower: 5 } };
+  var seen = [], sessions = [];
+  GymEngine.splitFor(3).forEach(function () {
+    var w = GymEngine.buildWorkout({ profile: profile, prefs: NOPREFS, exercises: EXDB,
+                                     sessions: sessions, today: '2026-08-19' });
+    var acc = w.entries.filter(function (e) { return e.slot === 'accessory'; });
+    eq(acc.length, 1, '每日應該有一個輔助動作');
+    seen.push(acc[0].exerciseId);
+    sessions.push({ date: '2026-08-19', day: w.day, done: true, note: '',
+                    entries: w.entries.map(function (e) {
+                      return { slot: e.slot, variant: e.variant, exerciseId: e.exerciseId,
+                               target: e.target, actual: [] };
+                    }) });
+  });
+  eq(seen.length, 3);
+  eq(seen[0] !== seen[1] && seen[1] !== seen[2] && seen[0] !== seen[2], true,
+     'Day A/B/C 嘅輔助動作應該三個都唔同，實際：' + seen.join('、'));
+});

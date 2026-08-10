@@ -69,7 +69,8 @@ const PICKS = [
   ['Cable_Crunch', '繩索捲腹', 'core', 'upper', 0, 'reps',
     ['髖固定，只捲腹', '用腹肌唔好用手臂拉', '頂點呼氣']],
 
-  ['Barbell_Curl', '槓鈴彎舉', 'accessory', 'upper', 0, 'reps',
+  // minWeight 20：槓鈴動作一律用空槓做地板。0 會令 deload / 首次估算叫你做「0kg 槓鈴彎舉」。
+  ['Barbell_Curl', '槓鈴彎舉', 'accessory', 'upper', 20, 'reps',
     ['手肘固定喺身側', '唔好用腰擺動', '慢放落']],
   ['Hammer_Curls', '錘式彎舉', 'accessory', 'upper', 0, 'reps',
     ['掌心相對', '手肘唔好前後移', '控制離心']],

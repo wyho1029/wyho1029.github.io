@@ -213,13 +213,19 @@ var GymEngine = (function () {
    */
   function buildWorkout(ctx) {
     var p = ctx.profile;
+    var split = splitFor(p.daysPerWeek);
     var day = nextDay(p, ctx.sessions);
     var wk = weekIndex(p.startDate, ctx.today);
     var conf = INTENSITY[p.intensity];
     var sets = setsForWeek(p.intensity, wk);
 
+    // 輔助動作要跟住 day 輪換。如果每日都攞 variant 0，你會一世淨係做同一個輔助動作，
+    // 而動作庫入面大部分輔助動作（三頭、提踵、面拉…）永遠唔會出現。
+    var dayIdx = split.findIndex(function (d) { return d.day === day.day; });
+    if (dayIdx < 0) dayIdx = 0;
+
     var slots = day.slots.slice();
-    for (var i = 0; i < conf.accessories; i++) slots.push(s('accessory', i));
+    for (var i = 0; i < conf.accessories; i++) slots.push(s('accessory', dayIdx * conf.accessories + i));
 
     var entries = [];
     slots.forEach(function (spec) {
