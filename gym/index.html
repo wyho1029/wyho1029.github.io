@@ -53,6 +53,9 @@
 
 var OWNER = 'wyho1029', REPO = 'gym-data', PATH = 'data.json', BRANCH = 'main';
 var LS_DATA = 'gym.data', LS_TOKEN = 'gym.token', LS_SHA = 'gym.sha', LS_DIRTY = 'gym.dirty';
+// 固定 key，唔加時間戳 —— 資料一日未修好，每次 reload 都會再存一次，
+// 用時間戳就會無限堆積。同一份壞資料覆蓋自己冇損失。
+var LS_CORRUPT = 'gym.data.corrupt';
 var EMPTY = { v: 1, profile: null, prefs: { swaps: {}, banned: [] }, sessions: [] };
 
 var Store = {
@@ -73,7 +76,7 @@ var Store = {
     } catch (e) {
       // 本地資料壞咗。唔可以靜靜哋當佢唔存在 —— 下一次 saveLocal 就會用空資料
       // 蓋死成份訓練記錄。先另存一份原文，再舉手話俾使用者知。
-      try { localStorage.setItem('gym.data.corrupt.' + Date.now(), raw); } catch (e2) {}
+      try { localStorage.setItem(LS_CORRUPT, raw); } catch (e2) {}
       this.data = JSON.parse(JSON.stringify(EMPTY));
       this.corrupted = true;
     }
@@ -140,6 +143,10 @@ var Store = {
       if (remote.v !== 1) { self.setStatus('error'); throw new Error('SCHEMA_MISMATCH'); }
       self.data = GymEngine.mergeData(self.data, remote);
       localStorage.setItem(LS_DATA, JSON.stringify(self.data));
+      // 遠端資料成功merge入本地，壞資料已經唔再係當前狀態 —— 收返個紅色警告，
+      // 否則個 banner 講「同步之後會還原返」但永遠唔兌現。
+      self.corrupted = false;
+      try { localStorage.removeItem(LS_CORRUPT); } catch (e) {}
       return self.data;
     });
   },
