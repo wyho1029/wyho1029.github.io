@@ -1,0 +1,591 @@
+[
+ {
+  "id": "Barbell_Squat",
+  "name": "槓鈴深蹲",
+  "nameEn": "Barbell Squat",
+  "slot": "squat",
+  "equipment": "barbell",
+  "upperLower": "lower",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Barbell_Squat/0.jpg",
+   "img/Barbell_Squat/1.jpg"
+  ],
+  "cues": [
+   "腳掌全掌著地，膝頭同腳尖同方向",
+   "落到大腿平行或以下",
+   "核心收緊，唔好塌腰"
+  ]
+ },
+ {
+  "id": "Front_Barbell_Squat",
+  "name": "前蹲",
+  "nameEn": "Front Barbell Squat",
+  "slot": "squat",
+  "equipment": "barbell",
+  "upperLower": "lower",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Front_Barbell_Squat/0.jpg",
+   "img/Front_Barbell_Squat/1.jpg"
+  ],
+  "cues": [
+   "手肘抬高，槓放喺三角肌前束",
+   "上身盡量直立",
+   "膝頭唔好向內夾"
+  ]
+ },
+ {
+  "id": "Leg_Press",
+  "name": "腿推機",
+  "nameEn": "Leg Press",
+  "slot": "squat",
+  "equipment": "machine",
+  "upperLower": "lower",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Leg_Press/0.jpg",
+   "img/Leg_Press/1.jpg"
+  ],
+  "cues": [
+   "腳掌與肩同寬放喺踏板中間",
+   "唔好鎖死膝頭",
+   "腰貼實椅背"
+  ]
+ },
+ {
+  "id": "Goblet_Squat",
+  "name": "高腳杯深蹲",
+  "nameEn": "Goblet Squat",
+  "slot": "squat",
+  "equipment": "kettlebells",
+  "upperLower": "lower",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Goblet_Squat/0.jpg",
+   "img/Goblet_Squat/1.jpg"
+  ],
+  "cues": [
+   "啞鈴貼實胸口",
+   "手肘喺膝頭內側掃過",
+   "慢落快起"
+  ]
+ },
+ {
+  "id": "Romanian_Deadlift",
+  "name": "羅馬尼亞硬拉",
+  "nameEn": "Romanian Deadlift",
+  "slot": "hinge",
+  "equipment": "barbell",
+  "upperLower": "lower",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Romanian_Deadlift/0.jpg",
+   "img/Romanian_Deadlift/1.jpg"
+  ],
+  "cues": [
+   "膝頭微曲但唔再彎",
+   "髖向後推，槓貼住大腿滑落",
+   "感覺膕繩拉緊就停"
+  ]
+ },
+ {
+  "id": "Barbell_Deadlift",
+  "name": "傳統硬拉",
+  "nameEn": "Barbell Deadlift",
+  "slot": "hinge",
+  "equipment": "barbell",
+  "upperLower": "lower",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Barbell_Deadlift/0.jpg",
+   "img/Barbell_Deadlift/1.jpg"
+  ],
+  "cues": [
+   "槓貼近小腿中段",
+   "起身前先繃緊背闊肌",
+   "髖同膝同時伸展"
+  ]
+ },
+ {
+  "id": "Stiff-Legged_Barbell_Deadlift",
+  "name": "直腿硬拉",
+  "nameEn": "Stiff-Legged Barbell Deadlift",
+  "slot": "hinge",
+  "equipment": "barbell",
+  "upperLower": "lower",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Stiff-Legged_Barbell_Deadlift/0.jpg",
+   "img/Stiff-Legged_Barbell_Deadlift/1.jpg"
+  ],
+  "cues": [
+   "背保持中立，唔好拱起",
+   "重量放喺腳踭",
+   "幅度以柔軟度為限"
+  ]
+ },
+ {
+  "id": "Lying_Leg_Curls",
+  "name": "俯臥腿彎舉",
+  "nameEn": "Lying Leg Curls",
+  "slot": "hinge",
+  "equipment": "machine",
+  "upperLower": "lower",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Lying_Leg_Curls/0.jpg",
+   "img/Lying_Leg_Curls/1.jpg"
+  ],
+  "cues": [
+   "髖貼實墊，唔好翹起",
+   "頂點停一秒",
+   "慢放落"
+  ]
+ },
+ {
+  "id": "Barbell_Bench_Press_-_Medium_Grip",
+  "name": "平板臥推",
+  "nameEn": "Barbell Bench Press - Medium Grip",
+  "slot": "horizontal_push",
+  "equipment": "barbell",
+  "upperLower": "upper",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Barbell_Bench_Press_-_Medium_Grip/0.jpg",
+   "img/Barbell_Bench_Press_-_Medium_Grip/1.jpg"
+  ],
+  "cues": [
+   "肩胛骨收緊落沉",
+   "槓落到胸線位置",
+   "腳踩實地面"
+  ]
+ },
+ {
+  "id": "Dumbbell_Bench_Press",
+  "name": "啞鈴臥推",
+  "nameEn": "Dumbbell Bench Press",
+  "slot": "horizontal_push",
+  "equipment": "dumbbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Dumbbell_Bench_Press/0.jpg",
+   "img/Dumbbell_Bench_Press/1.jpg"
+  ],
+  "cues": [
+   "手腕保持中立",
+   "落到胸肌有拉伸感",
+   "頂點唔好互撞"
+  ]
+ },
+ {
+  "id": "Incline_Dumbbell_Press",
+  "name": "上斜啞鈴推",
+  "nameEn": "Incline Dumbbell Press",
+  "slot": "horizontal_push",
+  "equipment": "dumbbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Incline_Dumbbell_Press/0.jpg",
+   "img/Incline_Dumbbell_Press/1.jpg"
+  ],
+  "cues": [
+   "椅背約 30 度就夠",
+   "手肘唔好完全張開",
+   "控制落嘅速度"
+  ]
+ },
+ {
+  "id": "Dips_-_Triceps_Version",
+  "name": "雙槓臂屈伸",
+  "nameEn": "Dips - Triceps Version",
+  "slot": "horizontal_push",
+  "equipment": "body only",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Dips_-_Triceps_Version/0.jpg",
+   "img/Dips_-_Triceps_Version/1.jpg"
+  ],
+  "cues": [
+   "身體保持垂直練三頭",
+   "肩膊唔好聳起",
+   "落到手肘 90 度"
+  ]
+ },
+ {
+  "id": "Standing_Military_Press",
+  "name": "站姿肩推",
+  "nameEn": "Standing Military Press",
+  "slot": "vertical_push",
+  "equipment": "barbell",
+  "upperLower": "upper",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Standing_Military_Press/0.jpg",
+   "img/Standing_Military_Press/1.jpg"
+  ],
+  "cues": [
+   "臀同核心收緊，唔好用腰借力",
+   "槓過頭後頭部微微向前",
+   "手肘唔好過度外張"
+  ]
+ },
+ {
+  "id": "Seated_Dumbbell_Press",
+  "name": "坐姿啞鈴推",
+  "nameEn": "Seated Dumbbell Press",
+  "slot": "vertical_push",
+  "equipment": "dumbbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Seated_Dumbbell_Press/0.jpg",
+   "img/Seated_Dumbbell_Press/1.jpg"
+  ],
+  "cues": [
+   "腰貼椅背",
+   "啞鈴落到耳邊",
+   "唔好鎖死手肘"
+  ]
+ },
+ {
+  "id": "Dumbbell_Shoulder_Press",
+  "name": "啞鈴肩推",
+  "nameEn": "Dumbbell Shoulder Press",
+  "slot": "vertical_push",
+  "equipment": "dumbbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Dumbbell_Shoulder_Press/0.jpg",
+   "img/Dumbbell_Shoulder_Press/1.jpg"
+  ],
+  "cues": [
+   "起始位手肘微微向前",
+   "軌跡呈微微內收",
+   "核心保持穩定"
+  ]
+ },
+ {
+  "id": "Bent_Over_Barbell_Row",
+  "name": "槓鈴划船",
+  "nameEn": "Bent Over Barbell Row",
+  "slot": "horizontal_pull",
+  "equipment": "barbell",
+  "upperLower": "upper",
+  "minWeight": 20,
+  "metric": "reps",
+  "images": [
+   "img/Bent_Over_Barbell_Row/0.jpg",
+   "img/Bent_Over_Barbell_Row/1.jpg"
+  ],
+  "cues": [
+   "上身約 45 度，背保持中立",
+   "槓拉向肚臍",
+   "頂點夾緊肩胛"
+  ]
+ },
+ {
+  "id": "Seated_Cable_Rows",
+  "name": "坐姿繩索划船",
+  "nameEn": "Seated Cable Rows",
+  "slot": "horizontal_pull",
+  "equipment": "cable",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Seated_Cable_Rows/0.jpg",
+   "img/Seated_Cable_Rows/1.jpg"
+  ],
+  "cues": [
+   "唔好用腰前後擺",
+   "手肘貼近身體",
+   "頂點停一停"
+  ]
+ },
+ {
+  "id": "One-Arm_Dumbbell_Row",
+  "name": "單臂啞鈴划船",
+  "nameEn": "One-Arm Dumbbell Row",
+  "slot": "horizontal_pull",
+  "equipment": "dumbbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/One-Arm_Dumbbell_Row/0.jpg",
+   "img/One-Arm_Dumbbell_Row/1.jpg"
+  ],
+  "cues": [
+   "背保持平",
+   "拉到髖側",
+   "唔好轉腰借力"
+  ]
+ },
+ {
+  "id": "Wide-Grip_Lat_Pulldown",
+  "name": "寬握高位下拉",
+  "nameEn": "Wide-Grip Lat Pulldown",
+  "slot": "vertical_pull",
+  "equipment": "cable",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Wide-Grip_Lat_Pulldown/0.jpg",
+   "img/Wide-Grip_Lat_Pulldown/1.jpg"
+  ],
+  "cues": [
+   "胸挺起，微微後仰",
+   "拉到鎖骨位置",
+   "慢放返上去"
+  ]
+ },
+ {
+  "id": "Close-Grip_Front_Lat_Pulldown",
+  "name": "窄握高位下拉",
+  "nameEn": "Close-Grip Front Lat Pulldown",
+  "slot": "vertical_pull",
+  "equipment": "cable",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Close-Grip_Front_Lat_Pulldown/0.jpg",
+   "img/Close-Grip_Front_Lat_Pulldown/1.jpg"
+  ],
+  "cues": [
+   "肩膊先落沉再拉",
+   "手肘向下向後",
+   "唔好用身體擺動"
+  ]
+ },
+ {
+  "id": "Pullups",
+  "name": "引體向上",
+  "nameEn": "Pullups",
+  "slot": "vertical_pull",
+  "equipment": "body only",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Pullups/0.jpg",
+   "img/Pullups/1.jpg"
+  ],
+  "cues": [
+   "起始位完全伸直",
+   "下巴過槓",
+   "做唔到就用彈力帶輔助"
+  ]
+ },
+ {
+  "id": "Plank",
+  "name": "平板支撐",
+  "nameEn": "Plank",
+  "slot": "core",
+  "equipment": "body only",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "seconds",
+  "images": [
+   "img/Plank/0.jpg",
+   "img/Plank/1.jpg"
+  ],
+  "cues": [
+   "手肘喺膊頭正下方",
+   "臀部唔好翹高或塌低",
+   "正常呼吸"
+  ]
+ },
+ {
+  "id": "Hanging_Leg_Raise",
+  "name": "懸垂舉腿",
+  "nameEn": "Hanging Leg Raise",
+  "slot": "core",
+  "equipment": "body only",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Hanging_Leg_Raise/0.jpg",
+   "img/Hanging_Leg_Raise/1.jpg"
+  ],
+  "cues": [
+   "唔好前後擺盪",
+   "骨盆後傾先抬腿",
+   "慢放落"
+  ]
+ },
+ {
+  "id": "Cable_Crunch",
+  "name": "繩索捲腹",
+  "nameEn": "Cable Crunch",
+  "slot": "core",
+  "equipment": "cable",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Cable_Crunch/0.jpg",
+   "img/Cable_Crunch/1.jpg"
+  ],
+  "cues": [
+   "髖固定，只捲腹",
+   "用腹肌唔好用手臂拉",
+   "頂點呼氣"
+  ]
+ },
+ {
+  "id": "Barbell_Curl",
+  "name": "槓鈴彎舉",
+  "nameEn": "Barbell Curl",
+  "slot": "accessory",
+  "equipment": "barbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Barbell_Curl/0.jpg",
+   "img/Barbell_Curl/1.jpg"
+  ],
+  "cues": [
+   "手肘固定喺身側",
+   "唔好用腰擺動",
+   "慢放落"
+  ]
+ },
+ {
+  "id": "Hammer_Curls",
+  "name": "錘式彎舉",
+  "nameEn": "Hammer Curls",
+  "slot": "accessory",
+  "equipment": "dumbbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Hammer_Curls/0.jpg",
+   "img/Hammer_Curls/1.jpg"
+  ],
+  "cues": [
+   "掌心相對",
+   "手肘唔好前後移",
+   "控制離心"
+  ]
+ },
+ {
+  "id": "Triceps_Pushdown",
+  "name": "三頭下壓",
+  "nameEn": "Triceps Pushdown",
+  "slot": "accessory",
+  "equipment": "cable",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Triceps_Pushdown/0.jpg",
+   "img/Triceps_Pushdown/1.jpg"
+  ],
+  "cues": [
+   "上臂貼實身側",
+   "底部完全伸直",
+   "唔好聳肩"
+  ]
+ },
+ {
+  "id": "Side_Lateral_Raise",
+  "name": "側平舉",
+  "nameEn": "Side Lateral Raise",
+  "slot": "accessory",
+  "equipment": "dumbbell",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Side_Lateral_Raise/0.jpg",
+   "img/Side_Lateral_Raise/1.jpg"
+  ],
+  "cues": [
+   "用輕重量",
+   "抬到肩高就夠",
+   "手肘微曲"
+  ]
+ },
+ {
+  "id": "Face_Pull",
+  "name": "面拉",
+  "nameEn": "Face Pull",
+  "slot": "accessory",
+  "equipment": "cable",
+  "upperLower": "upper",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Face_Pull/0.jpg",
+   "img/Face_Pull/1.jpg"
+  ],
+  "cues": [
+   "拉向額頭高度",
+   "外旋肩膊",
+   "對肩膊健康好重要"
+  ]
+ },
+ {
+  "id": "Standing_Calf_Raises",
+  "name": "站姿提踵",
+  "nameEn": "Standing Calf Raises",
+  "slot": "accessory",
+  "equipment": "machine",
+  "upperLower": "lower",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Standing_Calf_Raises/0.jpg",
+   "img/Standing_Calf_Raises/1.jpg"
+  ],
+  "cues": [
+   "頂點停一秒",
+   "落到有拉伸感",
+   "全程控制"
+  ]
+ },
+ {
+  "id": "Leg_Extensions",
+  "name": "腿屈伸",
+  "nameEn": "Leg Extensions",
+  "slot": "accessory",
+  "equipment": "machine",
+  "upperLower": "lower",
+  "minWeight": 0,
+  "metric": "reps",
+  "images": [
+   "img/Leg_Extensions/0.jpg",
+   "img/Leg_Extensions/1.jpg"
+  ],
+  "cues": [
+   "唔好用衝力甩上去",
+   "頂點停一停",
+   "膝頭有唔舒服就減重"
+  ]
+ }
+]
