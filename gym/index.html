@@ -514,8 +514,7 @@ Views.workout = function (el) {
     if (pool.length < 2) return;
     var at = pool.findIndex(function (x) { return x.id === e.exerciseId; });
     var pick = pool[(at + 1) % pool.length];
-    e.exerciseId = pick.id;
-    e.actual = [];
+
     var t = GymEngine.nextTarget({
       sessions: Store.data.sessions, exerciseId: pick.id, exercise: pick,
       increments: Store.data.profile.increments,
@@ -524,8 +523,21 @@ Views.workout = function (el) {
       canIncrease: GymEngine.canIncreaseThisWeek(Store.data.sessions, pick.id,
                                                  Store.data.profile.startDate, today())
     });
-    e.target.weight = t.weight;
-    e.target.reps = t.reps;
+    var fresh = {
+      slot: e.slot, variant: e.variant, exerciseId: pick.id,
+      target: { sets: e.target.sets, reps: t.reps, weight: t.weight },
+      actual: []
+    };
+
+    if (e.actual.length) {
+      // 已經做咗嘅組數係身體真係做過嘅嘢 —— 換動作唔可以抹走佢。
+      // 保留舊 entry（結束時照樣記低），喺後面插入新動作，游標移過去。
+      s.entries.splice(curIdx + 1, 0, fresh);
+      curIdx++;
+    } else {
+      s.entries[curIdx] = fresh;
+    }
+
     Store.data.prefs.swaps[e.slot + ':' + e.variant] = pick.id;
     Store.data.prefs.updatedAt = new Date().toISOString();
     persistSession();
@@ -535,7 +547,15 @@ Views.workout = function (el) {
   document.getElementById('finish').onclick = function () {
     if (!confirm('結束今日訓練？')) return;
     s.entries = s.entries.filter(function (x) { return x.actual.length > 0; });
-    if (!s.entries.length) { Session.current = null; currentTab = 'home'; render(); return; }
+    if (!s.entries.length) {
+      // 一組都冇做過。「換動作」嗰陣已經寫咗個 done:false session 落 storage，
+      // 唔清走就會永遠留低一份空記錄，仲會推上 GitHub。
+      Store.data.sessions = Store.data.sessions.filter(function (x) {
+        return !(x.date === s.date && x.day === s.day && !x.done);
+      });
+      Store.saveLocal();
+      Session.current = null; curIdx = 0; currentTab = 'home'; render(); return;
+    }
     s.done = true;
     upsertSession(s);
     Session.current = null;
