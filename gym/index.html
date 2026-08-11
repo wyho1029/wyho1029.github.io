@@ -581,6 +581,122 @@ function upsertSession(s) {
   else Store.data.sessions.push(s);
 }
 
+// ---- 計劃 ----
+Views.plan = function (el) {
+  var p = Store.data.profile;
+  if (!p) { el.innerHTML = '<div class="card muted">未完成初次設定。</div>'; return; }
+  var u = GymEngine.heavyUnlock(p, Store.data.sessions, today());
+  var split = GymEngine.splitFor(p.daysPerWeek);
+  var wkIdx = GymEngine.weekIndex(p.startDate, today());
+  var doneThisWeek = Store.data.sessions.filter(function (s) {
+    return s.done && GymEngine.weekIndex(p.startDate, s.date) === wkIdx;
+  });
+  var nextDay = GymEngine.nextDay(p, Store.data.sessions).day;
+
+  function segHtml(id, opts, cur) {
+    return '<div id="' + id + '" style="display:flex;gap:6px">' + opts.map(function (o) {
+      var style = o.value === cur ? 'border:1px solid #16181d;background:#16181d;color:#fff'
+                : o.locked      ? 'border:1px solid #eceef1;background:#f4f5f7;color:#c4cad3'
+                                : 'border:1px solid #c9ced6;background:#fff;color:#16181d';
+      return '<button data-v="' + o.value + '" style="flex:1;padding:12px 0;border-radius:8px;' +
+             'font:inherit;cursor:pointer;' + style + '">' + o.label + '</button>';
+    }).join('') + '</div>';
+  }
+
+  var html =
+    '<div class="card">' +
+      '<div class="muted" style="margin-bottom:6px">每週練幾多日</div>' +
+      segHtml('segDays', [2, 3, 4, 5].map(function (n) { return { label: n, value: n }; }), p.daysPerWeek) +
+      '<div class="muted" style="margin:14px 0 6px">強度</div>' +
+      segHtml('segInt', [
+        { label: '輕', value: 'light' },
+        { label: '中', value: 'medium' },
+        { label: u.unlocked ? '重' : '重 🔒', value: 'heavy', locked: !u.unlocked }
+      ], p.intensity) +
+    '</div>';
+
+  split.forEach(function (d) {
+    var doneRec = doneThisWeek.filter(function (s) { return s.day === d.day; })[0];
+    var tag = doneRec ? '<span style="font-size:10px;padding:2px 8px;border-radius:20px;background:#e3f4ec;color:#1a7f55">已完成 ' + doneRec.date.slice(5) + '</span>'
+            : d.day === nextDay ? '<span style="font-size:10px;padding:2px 8px;border-radius:20px;background:#16181d;color:#fff">今日</span>'
+            : '<span style="font-size:10px;padding:2px 8px;border-radius:20px;background:#eceef1;color:#79818e">未開始</span>';
+
+    html += '<div class="card"><div style="display:flex;justify-content:space-between;' +
+            'align-items:center;font-weight:700;margin-bottom:6px"><span>' + d.day + '</span>' + tag + '</div>';
+
+    d.slots.forEach(function (spec) {
+      var ex = GymEngine.pickExercise(spec, Exercises.list, Store.data.prefs);
+      if (!ex) return;
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;' +
+              'padding:7px 0;border-bottom:1px solid #f2f4f6"><span>' + ex.name + '</span>' +
+              (doneRec ? '' : '<button data-swap="' + spec.slot + ':' + spec.variant +
+                '" style="font-size:11px;border:1px solid #c9ced6;border-radius:6px;' +
+                'padding:3px 9px;background:#fff;color:#79818e;cursor:pointer">換</button>') +
+              '</div>';
+    });
+    html += '</div>';
+  });
+
+  el.innerHTML = html;
+
+  document.getElementById('segDays').onclick = function (ev) {
+    var b = ev.target.closest('button[data-v]');
+    if (!b) return;
+    p.daysPerWeek = +b.dataset.v;
+    p.updatedAt = new Date().toISOString();
+    Store.saveLocal(); Store.push(); render();
+  };
+
+  document.getElementById('segInt').onclick = function (ev) {
+    var b = ev.target.closest('button[data-v]');
+    if (!b) return;
+    var v = b.dataset.v;
+    if (v === 'heavy' && !u.unlocked) { showHeavyGate(u); return; }
+    p.intensity = v;
+    p.updatedAt = new Date().toISOString();
+    Store.saveLocal(); Store.push(); render();
+  };
+
+  // 用 .onclick= 而唔係 addEventListener —— el（#app）每次切去「計劃」tab
+  // 都係同一個 DOM node，只有 innerHTML 會被清空。用 addEventListener 會
+  // 一次疊一次，換一次動作可能觸發幾次、跳過晒個 pool。.onclick= 淨係揸實
+  // 一個 handler，唔會疊。
+  el.onclick = function (ev) {
+    var b = ev.target.closest('button[data-swap]');
+    if (!b) return;
+    var parts = b.dataset.swap.split(':');
+    var spec = { slot: parts[0], variant: +parts[1] };
+    var pool = Exercises.list.filter(function (x) {
+      return x.slot === spec.slot && (Store.data.prefs.banned || []).indexOf(x.id) < 0;
+    }).sort(function (a, b2) { return a.id < b2.id ? -1 : 1; });
+    if (pool.length < 2) return;
+    var cur = GymEngine.pickExercise(spec, Exercises.list, Store.data.prefs);
+    var at = pool.findIndex(function (x) { return x.id === cur.id; });
+    Store.data.prefs.swaps[b.dataset.swap] = pool[(at + 1) % pool.length].id;
+    Store.data.prefs.updatedAt = new Date().toISOString();
+    Store.saveLocal(); Store.push(); render();
+  };
+};
+
+/** 「重」強度閘門 —— 擋衝動，唔擋人。要撳兩次先解鎖。 */
+function showHeavyGate(u) {
+  var left = Math.max(0, u.sessionsNeeded - u.sessionsDone);
+  var weeksLeft = Math.max(0, u.weeksNeeded - u.weeksDone);
+  var msg = '重新開始頭 ' + u.weeksNeeded + ' 週唔開放「重」強度。\n\n' +
+            '停練之後肌肉恢復快過肌腱同韌帶 —— 你感覺推得起，但結締組織未 ready，' +
+            '呢個落差就係最容易受傷嘅位。\n\n' +
+            '仲差：' + weeksLeft + ' 週、' + left + ' 次訓練。';
+  if (!confirm(msg + '\n\n撳「取消」等佢自然解鎖；撳「確定」進入強制解鎖。')) return;
+  if (!confirm('確認強制解鎖？\n\n頭 4 週用重強度受傷風險較高，呢個決定會記錄低。')) return;
+
+  var p = Store.data.profile;
+  p.intensityUnlockedAt = today();
+  p.intensityUnlockForced = true;
+  p.intensity = 'heavy';
+  p.updatedAt = new Date().toISOString();
+  Store.saveLocal(); Store.push(); render();
+}
+
 // ---- 路由（Task 7–10 會填返每個畫面）----
 function render() {
   var el = document.getElementById('app');
