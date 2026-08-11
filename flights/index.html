@@ -143,6 +143,7 @@
       <span class="ftoggle" id="ftoggle">🔍 篩選 · 揀日子 / 地區 / 預算 <span class="farr">▾</span></span>
       <span class="ftoggle" id="thunder">⚡ 特平筍盤</span>
       <span class="ftoggle" id="pinsOnly">📌 已釘選</span>
+      <span class="ftoggle" id="nonstop" title="只計直航（唔使轉機）嘅價錢同日子">✈️ 直航</span>
       <span class="fsum" id="fsum"></span>
     </div>
     <div class="fpanel" id="fpanel">
@@ -210,7 +211,7 @@ function track(){}
 })();
 // ----
 const MLABEL = m => { const [y,mm]=m.split("-"); return (y==="2027"?"27/":"")+parseInt(mm)+"月"; };
-const state = {region:"全部", from:null, to:null, budget:0, sort:"cheap", q:"", thunder:false, pinsOnly:false, expanded:{}, filtersOpen:false};
+const state = {region:"全部", from:null, to:null, budget:0, sort:"cheap", q:"", thunder:false, pinsOnly:false, nonstop:false, expanded:{}, filtersOpen:false};
 let DATA = null;
 
 // ---- 釘選目的地（localStorage 記住，置頂顯示）----
@@ -304,6 +305,8 @@ function setup(){
   tb.onclick=()=>{ state.thunder=!state.thunder; tb.classList.toggle("on",state.thunder); track("filter_use",{type:"thunder",value:String(state.thunder)}); render(); };
   const pb=document.getElementById("pinsOnly");
   pb.onclick=()=>{ state.pinsOnly=!state.pinsOnly; pb.classList.toggle("on",state.pinsOnly); render(); };
+  const nsb=document.getElementById("nonstop");
+  nsb.onclick=()=>{ state.nonstop=!state.nonstop; nsb.classList.toggle("on",state.nonstop); render(); };
   // collapsible filter toggle
   const ft=document.getElementById("ftoggle"), fp=document.getElementById("fpanel");
   ft.onclick=()=>setFilters(!state.filtersOpen,"tap");
@@ -329,6 +332,7 @@ function filterSummary(){
   if(state.budget) p.push("≤$"+state.budget);
   if(state.thunder) p.push("⚡特平");
   if(state.pinsOnly) p.push("📌已釘選");
+  if(state.nonstop) p.push("✈️直航");
   return p.join(" · ");
 }
 function updateSum(){
@@ -343,10 +347,11 @@ function setFilters(open,src){
   if(src==="tap") track("filter_toggle",{open});
   updateSum();
 }
-const anyFilterActive = () => state.region!=="全部"||state.from||state.to||state.budget||state.thunder||state.pinsOnly||state.q;
+const anyFilterActive = () => state.region!=="全部"||state.from||state.to||state.budget||state.thunder||state.pinsOnly||state.nonstop||state.q;
 function resetFilters(){
   state.region="全部"; state.from=state.to=null; state.budget=0; state.sort="cheap"; state.thunder=false; state.q="";
   state.pinsOnly=false; document.getElementById("pinsOnly").classList.remove("on");
+  state.nonstop=false; document.getElementById("nonstop").classList.remove("on");
   const df=document.getElementById("dfrom"), dt=document.getElementById("dto");
   df.value=dt.value=""; document.getElementById("dclear").classList.remove("on");
   document.getElementById("bdg").value="";
@@ -372,7 +377,17 @@ function render(){
   setupActive();
   updateSum();
   document.getElementById("resetrow").classList.toggle("on", !!anyFilterActive());
-  let list=DATA.routes.map(r=>{
+  let base=DATA.routes;
+  if(state.nonstop){
+    // 直航模式：轉用 ns 嗰組數據；冇直航嘅目的地直接隱藏。
+    // 升跌／90日新低／走勢係按「全部航班」價計嘅，喺直航模式唔啱用，所以清走。
+    base=base.filter(r=>r.ns&&r.ns.dates&&r.ns.dates.length)
+      .map(r=>({...r, regFloor:r.ns.regFloor, redFloor:r.ns.redFloor, anchor:r.ns.anchor,
+                dates:r.ns.dates, chg:null, low90:false, trend:null}));
+    if(!base.length){ document.getElementById("count").textContent="0 個目的地";
+      document.getElementById("results").innerHTML='<div class="empty">✈️ 直航數據要等下一次掃描（每朝 8 點）先有</div>'; return; }
+  }
+  let list=base.map(r=>{
     const m=routeForWindow(r);
     return m?{...r, _price:m.price, _dates:m.dates}:null;
   }).filter(Boolean);
@@ -387,7 +402,8 @@ function render(){
   }
   list.sort((a,b)=>(pins.has(b.dest)-pins.has(a.dest))||a._price-b._price);   // 釘選置頂，再按最平排
 
-  document.getElementById("count").textContent=`${list.length} 個目的地`+(windowActive()?` · ${rangeLabel()}有平飛`:"");
+  document.getElementById("count").textContent=`${list.length} 個目的地`+(windowActive()?` · ${rangeLabel()}有平飛`:"")
+    +(state.nonstop?" · ✈️ 只計直航（撳入 Google Flights 要自己剔返 Nonstop）":"");
   const res=document.getElementById("results");
   if(!list.length){res.innerHTML='<div class="empty">冇符合嘅 — 試下放寬 filter</div>';return;}
   res.innerHTML=list.map(r=>card(r)).join("");
