@@ -408,6 +408,159 @@ Views.settings = function (el) {
   document.getElementById('syncNow').onclick = function () { Store.push().then(render); };
 };
 
+// ---- 訓練中 ----
+var curIdx = 0;
+
+Views.workout = function (el) {
+  var s = Session.current;
+  if (!s) { currentTab = 'home'; render(); return; }
+  if (curIdx >= s.entries.length) curIdx = s.entries.length - 1;
+
+  var e = s.entries[curIdx];
+  var ex = Exercises.byId[e.exerciseId] || { name: e.exerciseId, nameEn: '', images: [], cues: [], metric: 'reps' };
+  var timed = ex.metric === 'seconds';
+  var lastRec = GymEngine.lastEntryFor(Store.data.sessions, e.exerciseId);
+
+  var chips = s.entries.map(function (x, i) {
+    var full = x.actual.length >= x.target.sets;
+    var bg = full ? '#22a06b;color:#fff' : i === curIdx ? '#16181d;color:#fff' : '#e8ebef;color:#79818e';
+    return '<button data-i="' + i + '" style="flex:1;height:38px;border:0;border-radius:8px;' +
+           'font:600 13px inherit;cursor:pointer;background:' + bg + '">' +
+           (full ? '✓' : (i + 1)) + '</button>';
+  }).join('');
+
+  var lastTxt = lastRec
+    ? '上次 ' + (timed ? lastRec.entry.target.reps + ' 秒 × ' + lastRec.entry.actual.length
+                       : lastRec.entry.target.weight + 'kg × ' +
+                         lastRec.entry.actual.map(function (a) { return a.r; }).join('/'))
+    : '第一次做呢個動作';
+
+  var dots = [];
+  for (var i = 0; i < e.target.sets; i++) dots.push(i < e.actual.length ? '●' : '○');
+
+  el.innerHTML =
+    '<div style="display:flex;gap:6px;margin-bottom:12px">' + chips + '</div>' +
+    '<div class="card">' +
+      (ex.images && ex.images[0]
+        ? '<img src="' + ex.images[0] + '" alt="' + ex.name + '" loading="lazy" ' +
+          'style="width:100%;border-radius:9px;background:#e8ebef" ' +
+          'onerror="this.style.display=\'none\'">'
+        : '') +
+      '<div style="font-weight:700;font-size:17px;margin-top:8px">' + ex.name + '</div>' +
+      '<div class="muted">' + (ex.nameEn || '') + '</div>' +
+      '<div class="muted" style="margin:6px 0 12px">' + lastTxt + '</div>' +
+
+      '<div style="display:flex;gap:8px">' +
+        (timed ? '' :
+        '<div style="flex:1;border:2px solid #16181d;border-radius:10px;padding:8px 4px;text-align:center">' +
+          '<div class="muted" style="font-size:10px">重量 kg</div>' +
+          '<input id="inW" type="number" step="1.25" value="' + e.target.weight + '" ' +
+          'style="border:0;padding:0;text-align:center;font:700 22px inherit;width:100%">' +
+        '</div>') +
+        '<div style="flex:1;border:2px solid #16181d;border-radius:10px;padding:8px 4px;text-align:center">' +
+          '<div class="muted" style="font-size:10px">' + (timed ? '秒數' : '次數') + '</div>' +
+          '<input id="inR" type="number" value="' + e.target.reps + '" ' +
+          'style="border:0;padding:0;text-align:center;font:700 22px inherit;width:100%">' +
+        '</div>' +
+        '<button id="logSet" style="flex:1;border:0;border-radius:10px;background:#22a06b;color:#fff;' +
+        'font-size:26px;cursor:pointer">✓</button>' +
+      '</div>' +
+
+      '<div style="text-align:center;letter-spacing:6px;color:#b3bac4;font-size:17px;margin-top:12px">' +
+      dots.join('') + '</div>' +
+      '<div class="muted" style="text-align:center">已完成 ' + e.actual.length + ' / ' +
+      e.target.sets + ' 組 · 休息 ' + Math.round(s.restSec / 60) + ' 分鐘</div>' +
+
+      (ex.cues && ex.cues.length
+        ? '<ul class="muted" style="margin:12px 0 0;padding-left:18px">' +
+          ex.cues.map(function (c) { return '<li>' + c + '</li>'; }).join('') + '</ul>'
+        : '') +
+    '</div>' +
+
+    '<div style="display:flex;gap:8px;margin-bottom:12px">' +
+      '<button class="btn ghost" id="prev">← 上一個</button>' +
+      '<button class="btn ghost" id="swap">換動作</button>' +
+      '<button class="btn" id="next">下一個 →</button>' +
+    '</div>' +
+    '<button class="btn ghost" id="finish">結束訓練</button>';
+
+  el.querySelector('div').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button[data-i]');
+    if (b) { curIdx = +b.dataset.i; render(); }
+  });
+
+  document.getElementById('logSet').onclick = function () {
+    var w = timed ? 0 : parseFloat(document.getElementById('inW').value);
+    var r = parseInt(document.getElementById('inR').value, 10);
+    if (!(w >= 0 && w <= 500)) { alert('重量要喺 0–500 kg 之間'); return; }
+    if (!(r > 0 && r <= 100) && !timed) { alert('次數要喺 1–100 之間'); return; }
+    if (timed && !(r > 0 && r <= 600)) { alert('秒數要喺 1–600 之間'); return; }
+    e.actual.push({ w: w, r: r });
+    persistSession();
+    render();
+  };
+
+  document.getElementById('prev').onclick = function () {
+    if (curIdx > 0) { curIdx--; render(); }
+  };
+  document.getElementById('next').onclick = function () {
+    Store.schedulePush();                       // 每完成一個動作先推一次
+    if (curIdx < s.entries.length - 1) { curIdx++; render(); }
+  };
+  document.getElementById('swap').onclick = function () {
+    var pool = Exercises.list.filter(function (x) {
+      return x.slot === e.slot && (Store.data.prefs.banned || []).indexOf(x.id) < 0;
+    }).sort(function (a, b) { return a.id < b.id ? -1 : 1; });
+    if (pool.length < 2) return;
+    var at = pool.findIndex(function (x) { return x.id === e.exerciseId; });
+    var pick = pool[(at + 1) % pool.length];
+    e.exerciseId = pick.id;
+    e.actual = [];
+    var t = GymEngine.nextTarget({
+      sessions: Store.data.sessions, exerciseId: pick.id, exercise: pick,
+      increments: Store.data.profile.increments,
+      reps: pick.metric === 'seconds' ? 45 : e.target.reps,
+      // 冇呢個，ramp-back 期內撳「換動作」就可以攞到閘門本應擋住嘅加重
+      canIncrease: GymEngine.canIncreaseThisWeek(Store.data.sessions, pick.id,
+                                                 Store.data.profile.startDate, today())
+    });
+    e.target.weight = t.weight;
+    e.target.reps = t.reps;
+    Store.data.prefs.swaps[e.slot + ':' + e.variant] = pick.id;
+    Store.data.prefs.updatedAt = new Date().toISOString();
+    persistSession();
+    render();
+  };
+
+  document.getElementById('finish').onclick = function () {
+    if (!confirm('結束今日訓練？')) return;
+    s.entries = s.entries.filter(function (x) { return x.actual.length > 0; });
+    if (!s.entries.length) { Session.current = null; currentTab = 'home'; render(); return; }
+    s.done = true;
+    upsertSession(s);
+    Session.current = null;
+    curIdx = 0;
+    Store.saveLocal();
+    Store.push();
+    currentTab = 'home';
+    render();
+  };
+};
+
+/** 把進行中嘅 session 寫返 Store（未 done，只為咗閃退唔會蝕） */
+function persistSession() {
+  upsertSession(Session.current);
+  Store.saveLocal();
+}
+
+function upsertSession(s) {
+  var at = Store.data.sessions.findIndex(function (x) {
+    return x.date === s.date && x.day === s.day;
+  });
+  if (at >= 0) Store.data.sessions[at] = s;
+  else Store.data.sessions.push(s);
+}
+
 // ---- 路由（Task 7–10 會填返每個畫面）----
 function render() {
   var el = document.getElementById('app');
