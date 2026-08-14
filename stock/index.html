@@ -54,6 +54,11 @@
   td.code:hover { text-decoration:underline; }
   .dl-btn { margin-left:auto; padding:3px 10px; font-size:12px; }
   .hc { cursor:help; }
+  /* 冇綠色：每個分帶兩段回測嘅 uplift CI 上界都 <0，唔可以有「呢隻得」嘅視覺暗示 */
+  .fit-mid, .fit-lo, .fit-na { cursor:help; font-weight:600; padding:1px 5px; border-radius:3px; }
+  .fit-mid { color:inherit; }
+  .fit-lo { background:rgba(198,40,40,.14); color:#c62828; }
+  .fit-na { color:#8a8a8a; font-weight:400; }
   .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:10;
            align-items:flex-start; justify-content:center; padding:24px 12px; overflow:auto; }
   .modal-card { background:var(--card); border:1px solid var(--line); border-radius:12px;
@@ -110,11 +115,13 @@
         <dt>蓄勢</dt><dd>MCDXX 動能死低 ＝ 蓄勢待發（反向獎勵：越低分越高）。</dd>
         <dt>水上</dt><dd>MACD 嘅 DIF &gt; 0（零軸之上、趨勢偏多）。</dd>
         <dt>二次轉黃</dt><dd>過去黃K → 升 ≥40% → 回落 → 而家再轉黃（✅P ＝ 命中）。</dd>
-        <dt>⭐ 高信心候選</dt><dd>完成週K（週五收市）＋ 放量硬閘：分數 ≥80 且 量比 ≥1.5×。研究驗證中，<b>未計入</b> Discord／富途推送。<code>⭐?</code> ＝ 本週未收，週K收市先定案。</dd>
+        <dt>⭐ 高信心候選（已下架）</dt><dd><b>2026-08 全歷史回測否定咗呢個閘。</b>原本規則係「完成週K ＋ 分數 ≥80 且 量比 ≥1.5×」。喺 2014-2020 同 2021-2023 兩段獨立驗證，佢喺兩段都係<b>最差</b>嘅一組：對同日買 SPY 嘅勝率差 −19.6%（兩段 95% 信賴區間上界都喺零以下）。量比呢個因子喺兩段仲要反方向，即係佢根本分辨唔到勝負。徽章已經移除，只保留歷史紀錄。</dd>
         <dt>📐 交易計劃參考</dt><dd>止蝕參考 ＝ 近10日最低價 − 0.25×ATR14；2R 目標 ＝ 收市 ＋ 2×風險。研究參考值，非投資建議。</dd>
-        <dt>💥 動能爆燈</dt><dd>MCDXX 動能線連續 13 週以上封頂（20）＋ 週MA30／MA40 向上。同轉黃係相反嘅一極：轉黃買弱（底部反轉），爆燈買強（動能持續）。<b>長期觀察名單，唔係入場訊號。</b>「熱度週數」＝ MCDXX 熱度線（黃）連續封頂週數，只作對照唔做篩選。</dd>
+        <dt>💥 動能爆燈</dt><dd>MCDXX 動能線連續 13 週以上封頂（20）＋ 週MA30／MA40 向上。<b>⚠️ 已驗證：無 edge。</b>2026-08 全歷史回測（入榜後持 26 週，對同日買 SPY）：2014-2020 勝率差 −23.4%、2021-2023 −28.9%，兩段 95% 信賴區間上界都喺零以下。<b>純長期觀察名單，唔係入場訊號，亦唔好當佢跑贏大市。</b>「熱度週數」＝ MCDXX 熱度線（黃）連續封頂週數，只作對照唔做篩選。</dd>
         <dt>✓ ／ ·</dt><dd>該因子有得分 ／ 冇分。</dd>
         <dt>入圍門檻</dt><dd>日K／月K ≥ 45 分、週K ≥ 70 分。</dd>
+        <dt>體質（0–2）</dt><dd>喺<b>呢批轉黃股之間</b>排序用，<b>唔係</b>預測跑唔跑贏大市。納入標準同「否定 ⭐／💥 兩條賽道」嗰把尺一模一樣——因子組減非因子組嘅平均 R 差，要喺 2014-2020 同 2021-2023 <b>兩段嘅 95% 信賴區間都排除零</b>。只有兩個過到：<b>蓄勢</b>（動能跌到最低）同 <b>止蝕空間</b>（≥1.25 個 ATR）。<br>兩段獨立驗證：0 分 → 1 分 → 2 分，dev 平均 R −0.192／+0.042／+0.176，val −0.648／−0.071／+0.085，兩段都單調。<br><b>最可靠嘅用法係避開 0 分</b>（兩段都係最差嗰組）。正面嗰邊站得住嘅只有<b>相對</b>講法：2 分減 ≤1 分嘅平均 R 差，兩段信賴區間都排除零。<br>⚠️ <b>每一個分帶、兩段、CI 上界全部喺零以下</b>——即係 2 分嗰組都跑輸同日買 SPY（2 分帶：dev −20.4%～−12.3%、val −18.7%～−2.9%）。參考返同期 <b>SPY 自己嘅 8 週勝率係 dev 75.4%、val 64.5%</b>，而 2 分帶嘅絕對勝率只有 dev 60.8%、val 52.9%。所以佢幫你由五十隻收窄到五隻去研究，代替唔到「呢五隻邊隻好、點解」嘅判斷。<br>⚠️ 上面「勝率」＝ 8 週買入持有（有冇賺錢），「平均 R」＝ 有止蝕／目標嘅模擬交易，係<b>兩個唔同實驗</b>，唔好當同一件事。<br><b>曾經計分、用返同一把尺就唔合格而剔走嘅</b>：成交額前 25%（val CI 包住零）、健康回調 8–25%（兩段都包住零）。兩者仍然喺詳情度顯示做參考，但唔計分。更早剔走：回調 &gt;35%、二次轉黃、量比（方向反轉）。<br><code>?</code> ＝ 有因子算唔到，唔係體質差。</dd>
+        <dt>⚠️ 分數同勝率嘅關係（已回測）</dt><dd><b>分數高唔等於贏面高。</b>2026-08 用 2013-2026 全歷史重建咗 57,597 條轉黃訊號驗證：分數帶之間嘅 8 週勝率幾乎平坦（dev 段 &lt;65 分 59.7%、90+ 分 54.4%），而<b>所有分數帶都跑輸同日買 SPY</b>。<code>≥80</code> 推送層 dev 勝率 57.8%／val 51.3%，對配對 SPY 嘅勝率差係 −19.4%／−16.4%，兩段 95% 信賴區間上界都喺零以下。呢個掃描器<b>係一個篩選器，唔係入場訊號</b>——用嚟縮窄觀察範圍可以，見到就照入唔可以。完整報告：<code>docs/research/2026-08-11-phase2-backtest/</code>。</dd>
       </dl>
     </div>
   </div>
@@ -184,26 +191,46 @@
     var date = (CURRENT.generated || '').slice(0, 10);
     downloadCsv('轉黃-' + label + '_' + date + '.csv', buildCsv(list));
   }
-  function hcBadge(s){
-    if (s.hc === true) return '<span class="hc" title="⭐ 高信心候選：完成週K + 放量硬閘">⭐</span> ';
-    if (s.hc === 'pending') return '<span class="hc" title="⭐候選 · 週K收市先定案">⭐?</span> ';
-    return '';
-  }
+  // ⭐ 徽章已下架：2026-08 全歷史回測顯示呢個閘喺 dev/val 兩段都係最差嘅一組
+  // （uplift −19.6%，兩段 CI 上界都 <0）。後端照計照記日誌，淨係唔再顯示。
+  function hcBadge(s){ return ''; }
   function mark(v){ return (v && v > 0) ? '✓' : '<span class="none">·</span>'; }
   function sy(h){ return h.sy_pattern ? '✅P' : '<span class="none">·</span>'; }
   function fixed(v){ return (v != null) ? Number(v).toFixed(3) : ''; }
   function sym(c){ return (c || '').replace(/^US\./, ''); }
   function mcap(v){ return (v != null) ? Math.round(v / 1e8).toLocaleString('en-US') + ' 億' : '—'; }
+  // 體質分：0-2，只用 dev/val 兩段 95% CI 都排除零嘅兩個因子（蓄勢、止蝕空間）。
+  // ⚠️ 冇綠色：每個分帶喺兩段回測嘅 uplift CI 上界都喺零以下，即係最高分嗰組
+  // 都跑輸同日買 SPY。用綠色會令人未 hover 就讀到「呢隻得」。
+  // 只標紅 fit=0（兩段都係最差嗰組）。算唔到就唔上色，唔可以將數據故障當體質差。
+  function fitCell(s){
+    if (s.fit == null) return '<span class="none">·</span>';
+    var names = {coil:'蓄勢', risk:'止蝕空間'};
+    var miss = s.fit_missing || [];
+    var on = [], off = [];
+    Object.keys(names).forEach(function(k){
+      if (miss.indexOf(names[k]) < 0) ((s.fit_flags || {})[k] ? on : off).push(names[k]);
+    });
+    var tip = '有：' + (on.join('、') || '無') + '｜冇：' + (off.join('、') || '無');
+    if (miss.length) tip += '｜算唔到：' + miss.join('、');
+    if (miss.length) return '<span class="fit-na" title="' + tip + '">' + s.fit + '/2?</span>';
+    var cls = s.fit === 0 ? 'fit-lo' : 'fit-mid';
+    return '<span class="' + cls + '" title="' + tip + '">' + s.fit + '/2</span>';
+  }
   function rows(list){
     if (!list || !list.length) return '<div class="empty">（無）</div>';
+    var hasFit = list.some(function(s){ return s.fit != null; });
     var h = '<div class="scroll"><table><tr>'
-      + '<th>股票</th><th>全名</th><th>板塊</th><th>分數</th><th>市值</th><th>收市價</th><th>主力</th>'
+      + '<th>股票</th><th>全名</th><th>板塊</th><th>分數</th>'
+      + (hasFit ? '<th>體質</th>' : '')
+      + '<th>市值</th><th>收市價</th><th>主力</th>'
       + '<th>放量</th><th>蓄勢</th><th>水上</th><th>二次轉黃</th></tr>';
     list.forEach(function(s){
       h += '<tr><td class="code" onclick="openDetail(\'' + s.code + '\')">' + hcBadge(s) + sym(s.code) + '</td>'
         + '<td class="name">' + (s.name || '—') + '</td>'
         + '<td>' + (s.sector || '—') + '</td>'
         + '<td class="score">' + s.score + '</td>'
+        + (hasFit ? '<td>' + fitCell(s) + '</td>' : '')
         + '<td>' + mcap(s.mktcap) + '</td>'
         + '<td>' + fixed(s.close) + '</td>'
         + '<td>' + mark(s.hdly) + '</td>'
@@ -469,10 +496,7 @@
       var list = (d.timeframes || {})[tf] || [];
       list.forEach(function(s){ DETAIL[s.code] = s; });
       var body = rows(list);
-      var hasHcData = list.some(function(s){ return 'hc' in s; });
-      var anyHc = list.some(function(s){ return s.hc === true || s.hc === 'pending'; });
-      if (tf === 'week' && list.length && hasHcData && !anyHc)
-        body = '<div class="empty">本週零高信心候選（⭐）</div>' + body;
+      // ⭐ 高信心層已下架（見 hcBadge 註釋），唔再顯示「本週零高信心候選」提示
       html += section(LBL[tf] + ' 轉黃', list.length, body, 'sec-' + tf);
     });
     var vw = d.volume_watch || [];
