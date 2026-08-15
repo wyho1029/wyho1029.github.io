@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-15 06:08",
-  "run_type": "daily",
-  "scanned": 2817,
+  "generated": "2026-08-15 09:15",
+  "run_type": "weekly",
+  "scanned": 2878,
   "thresholds": {
     "day": 80,
     "week": 80,
@@ -461,6 +461,12 @@
         "summary": "Applied Optoelectronics, Inc. engages in the design, manufacture, and sale of fiber-optic networking products in the United States, Taiwan, and China. The company offers optical modules, optical filters, lasers, laser components, subassemblies, transmitters and transceivers, turn-key equipment, headend, node, and distribution equipment, as well as amplifiers. It sells its products to internet data center operators, cable television, telecom equipment manufacturers, fiber-to-the-home, and internet service providers through its direct and indirect sales channels. Applied Optoelectronics, Inc. wa",
         "news": [
           {
+            "title": "Applied Optoelectronics (AAOI) Could Be 93% Overvalued As Amazon Deal Lifts Revenue Hopes",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/applied-optoelectronics-aaoi-could-93-001604934.html",
+            "date": "2026-08-15",
+            "publisher": "Simply Wall St."
+          },
+          {
             "title": "Applied Optoelectronics (AAOI) Stock May Be Undervalued Despite Fresh AI Demand News",
             "link": "https://finance.yahoo.com/markets/stocks/articles/applied-optoelectronics-aaoi-stock-may-201018987.html",
             "date": "2026-08-14",
@@ -481,12 +487,6 @@
           {
             "title": "Lumentum Puts The Insane Opportunity for Companies like Marvell and Ciena Into Focus With One Stunning Quote",
             "link": "https://247wallst.com/investing/2026/08/13/lumentum-puts-the-insane-opportunity-for-companies-like-marvell-and-ciena-into-focus-with-one-stunning-quote/",
-            "date": "2026-08-13",
-            "publisher": "24/7 Wall St."
-          },
-          {
-            "title": "Jim Cramer Says Skip Poet and Buy These 2 Proven Photonics Stocks for AI Data Centers in August",
-            "link": "https://247wallst.com/investing/2026/08/13/jim-cramer-says-skip-poet-and-buy-these-2-proven-photonics-stocks-for-ai-data-centers-in-august/",
             "date": "2026-08-13",
             "publisher": "24/7 Wall St."
           }
@@ -565,75 +565,75 @@
         "why": "周K 轉黃 95分：站穩上升 MA30/MA40（趨勢回調）、放量 1.67x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
       },
       {
-        "code": "US.VAL",
-        "name": "Valaris Limited",
-        "sector": "Energy",
-        "close": 85.62000274658203,
-        "score": 93,
-        "trend": 38,
+        "code": "US.KOPN",
+        "name": "Kopin Corporation",
+        "sector": "Technology",
+        "close": 5.5,
+        "score": 95,
+        "trend": 50,
         "hdly": 8,
-        "vol": 20,
-        "vol_ratio": 1.53,
-        "vol_ratio_prev5": 1.82,
-        "hc": true,
+        "vol": 12,
+        "vol_ratio": 1.48,
+        "vol_ratio_prev5": 1.76,
+        "hc": false,
         "bar_complete": true,
-        "fit": 2,
+        "fit": 1,
         "fit_flags": {
-          "coil": true,
+          "coil": false,
           "risk": true
         },
         "fit_missing": [],
-        "pullback26": 0.2497371128117467,
-        "stop_ref": 74.37,
-        "risk_pct": 13.14,
-        "risk_atr": 2.95,
-        "target_2r": 108.13,
-        "mcdxx": 2,
+        "pullback26": 0.1679273995603143,
+        "stop_ref": 3.33,
+        "risk_pct": 39.49,
+        "risk_atr": 4.85,
+        "target_2r": 9.84,
+        "mcdxx": 0,
         "macd": 10,
         "second_yellow": 15,
         "sy_pattern": true,
-        "sy_above_ma": "False/True",
+        "sy_above_ma": "True/True",
         "sy_ma_slope": "True/True",
         "futu": null,
-        "mktcap": 5945094144,
-        "pe": 6.4570136,
-        "rating": "hold · 8位分析師",
-        "target": 69.05,
-        "earnings": "2026-10-29（估）",
-        "summary": "Valaris Limited, together with its subsidiaries, provides offshore contract drilling services in Brazil, the United Kingdom, Gulf of America, Australia, Angola, and internationally. It operates through four segments: Floaters, Jackups, ARO, and Other. The company owns an offshore drilling rig fleet, which includes drillships, dynamically positioned semisubmersible rigs, a moored semisubmersible rig, and jackup rigs. It also offers management services on rigs owned by third parties. The company serves international, government-owned, and independent oil and gas companies. Valaris Limited was fo",
+        "mktcap": 1022299328,
+        "pe": 137.5,
+        "rating": "strong_buy · 6位分析師",
+        "target": 8.625,
+        "earnings": "2026-11-11（估）",
+        "summary": "Kopin Corporation, together with its subsidiaries, develops, manufactures, and sells microdisplays, subassemblies, and related components for defense, enterprise, industrial, and consumer products in the United States, the Asia-Pacific, Europe, and internationally. The company offers miniature active-matrix liquid crystal displays, ferroelectric liquid crystal on silicon displays, organic light emitting diode displays, MicroLED display technologies, application specific optical solutions, backlights, and optical lenses. Its products are used for soldier thermal weapon rifle sights, avionic fix",
         "news": [
           {
-            "title": "Sherwin-Williams Stock Outlook: Is Wall Street Bullish or Bearish?",
-            "link": "https://www.barchart.com/story/news/3833318/sherwin-williams-stock-outlook-is-wall-street-bullish-or-bearish",
-            "date": "2026-08-13",
-            "publisher": "Barchart"
-          },
-          {
-            "title": "Helmerich & Payne, Range Resources, Valaris, Liberty Energy, and Seadrill Stocks Trade Up, What You Need To Know",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/helmerich-payne-range-resources-valaris-164522960.html",
+            "title": "Kopin (KOPN) Stock Sees Fair Value Lift After Higher Analyst Targets On FPV Outlook",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/kopin-kopn-stock-sees-fair-231443605.html",
             "date": "2026-08-12",
-            "publisher": "StockStory"
+            "publisher": "Simply Wall St."
           },
           {
-            "title": "1 Profitable Stock Worth Investigating and 2 We Question",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-worth-investigating-150922755.html",
-            "date": "2026-08-10",
-            "publisher": "StockStory"
+            "title": "Kopin Corporation Q2 2026 Earnings Call Summary",
+            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-kopin-corporation-q2-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+            "date": "2026-08-12",
+            "publisher": "Moby"
           },
           {
-            "title": "Is Valaris (VAL) Losing Momentum After Its Strong Rally?",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/valaris-val-losing-momentum-strong-144844052.html",
-            "date": "2026-08-07",
-            "publisher": "Insider Monkey"
-          },
-          {
-            "title": "Valaris Limited (VAL) Tops Q2 Earnings and Revenue Estimates",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/valaris-limited-val-tops-q2-003520459.html",
-            "date": "2026-08-06",
+            "title": "Kopin (KOPN) Reports Break-Even Earnings for Q2",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/kopin-kopn-reports-break-even-232001192.html",
+            "date": "2026-08-11",
             "publisher": "Zacks"
+          },
+          {
+            "title": "Kopin Soars Tuesday Following MicroLED Development Award",
+            "link": "https://247wallst.com/investing/2026/08/11/kopin-soars-tuesday-following-microled-development-award/",
+            "date": "2026-08-11",
+            "publisher": "24/7 Wall St."
+          },
+          {
+            "title": "Fabric.AI Targets CES 2027 for First Neural I/o MicroLED Optical Interconnect Demonstration",
+            "link": "https://investorshub.advfn.com/market-news/article/34039/fabric-ai-targets-ces-2027-for-first-neural-i-o-microled-optical-interconnect-demonstration",
+            "date": "2026-08-11",
+            "publisher": "InvestorsHub"
           }
         ],
-        "why": "周K 轉黃 93分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.53x、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+        "why": "周K 轉黃 95分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.48x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
       },
       {
         "code": "US.ALOY",
@@ -745,6 +745,12 @@
         "summary": "Coherent Corp. develops, manufactures, and markets engineered materials, optoelectronic components and devices, and laser systems for the use in the industrial, communications, electronics, and instrumentation markets worldwide. It operates through three segments: Networking, Materials, and Lasers. The Networking segment offers transceivers, systems, subsystems, modules, components, optics, and semiconductor devices for datacenter and communications applications. The Materials segment provides engineered materials, laser optics, thermoelectric components, and advanced ceramic and metal-matrix ",
         "news": [
           {
+            "title": "Jim Cramer Weighs In on Lumentum (LITE) and Coherent (COHR) Post-Earnings",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-weighs-lumentum-lite-233522087.html",
+            "date": "2026-08-14",
+            "publisher": "Insider Monkey"
+          },
+          {
             "title": "Why Is Coherent (COHR) Stock Rocketing Higher Today",
             "link": "https://finance.yahoo.com/markets/stocks/articles/why-coherent-cohr-stock-rocketing-190900411.html",
             "date": "2026-08-14",
@@ -767,12 +773,6 @@
             "link": "https://www.investors.com/news/stock-market-hits-highs-cisco-lumentum-super-micro-sandisk-key-movers-weekly-review/?src=A00220&yptr=yahoo",
             "date": "2026-08-14",
             "publisher": "Investor's Business Daily"
-          },
-          {
-            "title": "Reddit is Up 11% Premarket After S&P 500 Addition. Here’s How Other New S&P 500 Stocks Performed.",
-            "link": "https://247wallst.com/investing/2026/08/14/reddit-is-up-11-premarket-after-sp-500-addition-heres-how-other-new-sp-500-stocks-performed/",
-            "date": "2026-08-14",
-            "publisher": "24/7 Wall St."
           }
         ],
         "why": "周K 轉黃 88分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.58x、MACD 水上（零軸之上）。"
@@ -816,6 +816,12 @@
         "summary": "Nebius Group N.V., a technology company, engages in building full-stack infrastructure to service the global AI industry in the United States, the United Kingdom, and internationally. It offers Nebius builds full-stack infrastructure for AI, including large-scale GPU clusters, cloud platforms, and tools and services for developers. The company also provides TripleTen, an edtech platform for re-skilling individuals for careers in technolgy; and Avride, which develops autonomous driving technology for self-driving cars and delivery robotics. It has a strategic alliance with NVIDIA Corporation to",
         "news": [
           {
+            "title": "Applied Digital (APLD) Stock Trades Up, Here Is Why",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/applied-digital-apld-stock-trades-232500526.html",
+            "date": "2026-08-14",
+            "publisher": "StockStory"
+          },
+          {
             "title": "US Equity Markets End Lower Amid Weak Retail Sales Data, Rise in Crude Oil Prices",
             "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-markets-end-lower-200704074.html",
             "date": "2026-08-14",
@@ -838,12 +844,6 @@
             "link": "https://247wallst.com/investing/2026/08/14/spacex-slides-again-friday-but-still-holds-most-of-a-big-weekly-gain/",
             "date": "2026-08-14",
             "publisher": "24/7 Wall St."
-          },
-          {
-            "title": "Bank of America resets Nebius stock price target after 454% surge",
-            "link": "https://www.thestreet.com/investing/stocks/nbis-bofa-bank-of-america-raises-nebius-stock-price-target-after-q2-earnings-august-2026",
-            "date": "2026-08-14",
-            "publisher": "TheStreet"
           }
         ],
         "why": "周K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、放量 1.31x、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
@@ -1232,6 +1232,12 @@
       "spike_date": "2026-08-14"
     },
     {
+      "code": "US.VREX",
+      "close": 18.489999771118164,
+      "spike_mult": 13.7,
+      "spike_date": "2026-08-14"
+    },
+    {
       "code": "US.EVC",
       "close": 9.010000228881836,
       "spike_mult": 12.9,
@@ -1524,18 +1530,6 @@
         },
         {
           "month": "2026-08",
-          "close": 207.97,
-          "high24": 307.93,
-          "trough": 154.11,
-          "drawdown": 50.0,
-          "red_count": 11,
-          "code": "US.SAP",
-          "kind": "stock",
-          "name": "SAP  SE ADS",
-          "sector": ""
-        },
-        {
-          "month": "2026-08",
           "close": 114.01,
           "high24": 168.48,
           "trough": 87.34,
@@ -1604,6 +1598,18 @@
           "code": "US.BX",
           "kind": "stock",
           "name": "Blackstone Inc.",
+          "sector": ""
+        },
+        {
+          "month": "2026-08",
+          "close": 76.35,
+          "high24": 93.65,
+          "trough": 55.53,
+          "drawdown": 40.7,
+          "red_count": 6,
+          "code": "US.RDNT",
+          "kind": "stock",
+          "name": "RadNet, Inc.",
           "sector": ""
         },
         {
@@ -4321,6 +4327,15 @@
       "first_week": "2026-08-07"
     },
     {
+      "code": "US.STX",
+      "name": "Seagate Technology Holdings PLC",
+      "sector": "Technology",
+      "close": 973.44,
+      "mm_streak": 53,
+      "hot_streak": 63,
+      "first_week": "2026-08-14"
+    },
+    {
       "code": "US.NESR",
       "name": "National Energy Services Reunited Corp",
       "sector": "Energy",
@@ -4346,6 +4361,15 @@
       "mm_streak": 46,
       "hot_streak": 52,
       "first_week": "2026-08-07"
+    },
+    {
+      "code": "US.ROIV",
+      "name": "Roivant Sciences Ltd.",
+      "sector": "",
+      "close": 36.2,
+      "mm_streak": 44,
+      "hot_streak": 49,
+      "first_week": "2026-08-14"
     },
     {
       "code": "US.TD",
@@ -4519,13 +4543,13 @@
       "first_week": "2026-08-07"
     },
     {
-      "code": "US.RY",
-      "name": "Royal Bank Of Canada",
-      "sector": "",
-      "close": 216.56,
+      "code": "US.STT",
+      "name": "State Street Corporation",
+      "sector": "Financial Services",
+      "close": 191.74,
       "mm_streak": 19,
-      "hot_streak": 66,
-      "first_week": "2026-08-07"
+      "hot_streak": 20,
+      "first_week": "2026-08-14"
     },
     {
       "code": "US.BCAT",
