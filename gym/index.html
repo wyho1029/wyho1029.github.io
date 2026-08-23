@@ -697,6 +697,106 @@ function showHeavyGate(u) {
   Store.saveLocal(); Store.push(); render();
 }
 
+// ---- 進度 ----
+var progressExId = null;
+
+Views.progress = function (el) {
+  var done = Store.data.sessions.filter(function (s) { return s.done; });
+  if (!done.length) {
+    el.innerHTML = '<div class="card muted">仲未有訓練記錄。做完第一次訓練就會見到走勢圖。</div>';
+    return;
+  }
+
+  var ids = [];
+  done.forEach(function (s) {
+    s.entries.forEach(function (e) { if (ids.indexOf(e.exerciseId) < 0) ids.push(e.exerciseId); });
+  });
+  if (!progressExId || ids.indexOf(progressExId) < 0) progressExId = ids[0];
+
+  var ex = Exercises.byId[progressExId] || { name: progressExId, metric: 'reps' };
+  var timed = ex.metric === 'seconds';
+
+  var pts = [];
+  done.forEach(function (s) {
+    s.entries.forEach(function (e) {
+      if (e.exerciseId !== progressExId) return;
+      pts.push({ date: s.date, v: timed ? e.target.reps : e.target.weight });
+    });
+  });
+
+  var html =
+    '<div class="card"><div class="muted" style="margin-bottom:6px">動作</div>' +
+    '<select id="exSel" style="width:100%;font:inherit;padding:10px;border:1px solid #c9ced6;border-radius:8px">' +
+    ids.map(function (id) {
+      var n = (Exercises.byId[id] || {}).name || id;
+      return '<option value="' + id + '"' + (id === progressExId ? ' selected' : '') + '>' + n + '</option>';
+    }).join('') + '</select>';
+
+  if (pts.length < 2) {
+    html += '<p class="muted" style="margin-top:12px">再做多一次呢個動作就會出走勢圖。</p></div>';
+  } else {
+    var vals = pts.map(function (p) { return p.v; });
+    var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
+    var pad = (max - min) * 0.15 || 5;
+    var lo = min - pad, hi = max + pad;
+    var W = 260, H = 130, L = 32, R = 250, T = 12, B = 108;
+
+    var xy = pts.map(function (p, i) {
+      var x = pts.length === 1 ? (L + R) / 2 : L + (R - L) * i / (pts.length - 1);
+      var y = B - (B - T) * (p.v - lo) / (hi - lo);
+      return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, v: p.v, date: p.date };
+    });
+
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;margin-top:12px">';
+    [0, 0.5, 1].forEach(function (f) {
+      var y = T + (B - T) * f;
+      svg += '<line x1="' + L + '" y1="' + y + '" x2="' + R + '" y2="' + y + '" stroke="#f0f2f4"/>' +
+             '<text x="2" y="' + (y + 4) + '" font-size="9" fill="#a2a9b4">' +
+             Math.round(hi - (hi - lo) * f) + '</text>';
+    });
+    svg += '<polyline points="' + xy.map(function (p) { return p.x + ',' + p.y; }).join(' ') +
+           '" fill="none" stroke="#16181d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
+    xy.forEach(function (p, i) {
+      var isDeload = i > 0 && p.v < xy[i - 1].v;
+      svg += isDeload
+        ? '<circle cx="' + p.x + '" cy="' + p.y + '" r="4" fill="#fff" stroke="#e8833a" stroke-width="2.5"/>'
+        : (i === xy.length - 1 ? '<circle cx="' + p.x + '" cy="' + p.y + '" r="4" fill="#16181d"/>' : '');
+    });
+    svg += '<text x="' + L + '" y="126" font-size="9" fill="#a2a9b4">' + pts[0].date.slice(5) + '</text>' +
+           '<text x="' + (R - 28) + '" y="126" font-size="9" fill="#a2a9b4">' + pts[pts.length - 1].date.slice(5) + '</text>' +
+           '</svg>';
+
+    var delta = pts[pts.length - 1].v - pts[0].v;
+    var unit = timed ? ' 秒' : 'kg';
+    html += svg +
+      '<div style="text-align:center;font-weight:700;color:' + (delta >= 0 ? '#22a06b' : '#e8833a') + '">' +
+      (delta >= 0 ? '+' : '') + delta + unit + '（' + pts.length + ' 次記錄）</div>';
+    if (xy.some(function (p, i) { return i > 0 && p.v < xy[i - 1].v; })) {
+      html += '<div class="muted" style="text-align:center;font-size:12px">橙色點 = deload。跌唔係失敗，係系統叫你退返落去再爬。</div>';
+    }
+    html += '</div>';
+  }
+
+  // 出席日曆（最近 28 日）
+  var hits = {};
+  done.forEach(function (s) { hits[s.date] = true; });
+  var cells = '';
+  for (var i = 27; i >= 0; i--) {
+    var d = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+    cells += '<i style="display:block;width:100%;aspect-ratio:1;border-radius:50%;background:' +
+             (hits[d] ? '#22a06b' : '#eceef1') + '"></i>';
+  }
+  html += '<div class="card"><div class="muted" style="margin-bottom:8px">最近 4 週出席</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:5px">' + cells + '</div>' +
+          '<div class="muted" style="text-align:center;margin-top:8px">' + done.length + ' 次訓練</div></div>';
+
+  el.innerHTML = html;
+  document.getElementById('exSel').onchange = function () {
+    progressExId = this.value;
+    render();
+  };
+};
+
 // ---- 路由（Task 7–10 會填返每個畫面）----
 function render() {
   var el = document.getElementById('app');
