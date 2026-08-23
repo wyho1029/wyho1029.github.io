@@ -268,6 +268,19 @@ function renderSetup(el) {
 var Session = { current: null };
 
 function startWorkout() {
+  // 中途 reload 過（iOS Safari 會自己丟走背景 tab）就會行到呢度。
+  // 一定要接返今日未完成嗰個 session —— upsertSession 靠 date+day 做 key，
+  // 起個新嘅落去會喺第一次 logSet 時蓋走已經記低咗嘅組數。
+  var pending = Store.data.sessions.filter(function (x) {
+    return x.date === today() && !x.done;
+  })[0];
+  if (pending) {
+    Session.current = pending;
+    curIdx = 0;
+    currentTab = 'workout';
+    render();
+    return;
+  }
   var w = GymEngine.buildWorkout({
     profile: Store.data.profile, prefs: Store.data.prefs,
     exercises: Exercises.list, sessions: Store.data.sessions, today: today()
@@ -322,6 +335,7 @@ Views.home = function (el) {
           '<div style="font-size:19px;font-weight:700">今日：' + next.day + '</div>' +
           '<div class="muted" style="margin:3px 0 12px">' +
           next.slots.map(function (s) { return slotNames[s.slot]; }).join(' · ') +
+          (GymEngine.INTENSITY[p.intensity].accessories ? ' · 輔助' : '') +
           '　約 45 分鐘</div>' +
           '<button class="btn" onclick="startWorkout()">開始訓練</button></div>';
 
@@ -433,7 +447,7 @@ Views.workout = function (el) {
     ? '上次 ' + (timed ? lastRec.entry.target.reps + ' 秒 × ' + lastRec.entry.actual.length
                        : lastRec.entry.target.weight + 'kg × ' +
                          lastRec.entry.actual.map(function (a) { return a.r; }).join('/'))
-    : '第一次做呢個動作';
+    : '第一次做呢個動作 —— 填你大約做得起嘅 65% 落去，之後個 app 會自己接手';
 
   var dots = [];
   for (var i = 0; i < e.target.sets; i++) dots.push(i < e.actual.length ? '●' : '○');
@@ -495,6 +509,10 @@ Views.workout = function (el) {
     if (!(w >= 0 && w <= 500)) { alert('重量要喺 0–500 kg 之間'); return; }
     if (!(r > 0 && r <= 100) && !timed) { alert('次數要喺 1–100 之間'); return; }
     if (timed && !(r > 0 && r <= 600)) { alert('秒數要喺 1–600 之間'); return; }
+    // 第一組落咗嘅重量就係今日實際做緊嘅重量，要寫返入 target。
+    // nextTarget 只讀 target.weight —— 唔寫返去，你喺格仔改幾多次都會被丟掉，
+    // 「今次做幾多」呢個建議就永遠停留喺起始值，成個 progressive overload 白費。
+    if (!e.actual.length && !timed) e.target.weight = w;
     e.actual.push({ w: w, r: r });
     persistSession();
     render();
@@ -615,7 +633,8 @@ Views.plan = function (el) {
       ], p.intensity) +
     '</div>';
 
-  split.forEach(function (d) {
+  var conf = GymEngine.INTENSITY[p.intensity];
+  split.forEach(function (d, dayIdx) {
     var doneRec = doneThisWeek.filter(function (s) { return s.day === d.day; })[0];
     var tag = doneRec ? '<span style="font-size:10px;padding:2px 8px;border-radius:20px;background:#e3f4ec;color:#1a7f55">已完成 ' + doneRec.date.slice(5) + '</span>'
             : d.day === nextDay ? '<span style="font-size:10px;padding:2px 8px;border-radius:20px;background:#16181d;color:#fff">今日</span>'
@@ -624,7 +643,13 @@ Views.plan = function (el) {
     html += '<div class="card"><div style="display:flex;justify-content:space-between;' +
             'align-items:center;font-weight:700;margin-bottom:6px"><span>' + d.day + '</span>' + tag + '</div>';
 
-    d.slots.forEach(function (spec) {
+    // 要包埋輔助動作，否則計劃頁顯示 4 個動作但實際訓練有 5–6 個，
+    // 而且輔助動作永遠冇「換」掣。變式偏移要同 buildWorkout 一致。
+    var slots = d.slots.slice();
+    for (var ai = 0; ai < conf.accessories; ai++) {
+      slots.push({ slot: 'accessory', variant: dayIdx * conf.accessories + ai });
+    }
+    slots.forEach(function (spec) {
       var ex = GymEngine.pickExercise(spec, Exercises.list, Store.data.prefs);
       if (!ex) return;
       html += '<div style="display:flex;justify-content:space-between;align-items:center;' +
@@ -805,15 +830,17 @@ Views.progress = function (el) {
 function render() {
   var el = document.getElementById('app');
   el.innerHTML = '';
+  var fn = Views[currentTab];
+  if (fn) fn(el);
+  // 一定要喺 view 畫完之後先插。每個 view 都係 el.innerHTML = ...（覆蓋），
+  // 擺喺之前插嘅嘢會即刻被抹走 —— 個 banner 就永遠見唔到。
   if (Store.corrupted) {
-    el.innerHTML =
+    el.insertAdjacentHTML('afterbegin',
       '<div class="card" style="border-color:#c0392b">' +
       '<b style="color:#c0392b">本地資料讀唔到</b>' +
       '<p class="muted">壞咗嗰份已經另存喺瀏覽器，冇刪走。' +
-      '如果 GitHub 有備份，同步之後會還原返。</p></div>';
+      '如果 GitHub 有備份，同步之後會還原返。</p></div>');
   }
-  var fn = Views[currentTab];
-  if (fn) fn(el);
   Array.prototype.forEach.call(document.querySelectorAll('.tabs button'), function (b) {
     b.classList.toggle('on', b.dataset.tab === currentTab);
   });
