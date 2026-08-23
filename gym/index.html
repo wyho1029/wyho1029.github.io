@@ -723,6 +723,10 @@ Views.progress = function (el) {
       pts.push({ date: s.date, v: timed ? e.target.reps : e.target.weight });
     });
   });
+  // 一定要自己按日期排，唔可以靠 sessions 陣列本身嘅次序。mergeData 每次 pull 會排返，
+  // 但 upsertSession 淨係 append —— 時鐘偏差、兩部裝置、或者手動注入都會令次序同日期唔一致。
+  // 圖表嘅 delta、deload 標記、日期標籤全部靠呢個次序，錯咗係靜靜哋出錯數，唔會 crash。
+  pts.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
 
   var html =
     '<div class="card"><div class="muted" style="margin-bottom:6px">動作</div>' +
