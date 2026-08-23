@@ -256,7 +256,13 @@ var GymEngine = (function () {
 
     var map = {};
     (remote.sessions || []).forEach(function (x) { map[x.date + '|' + x.day] = x; });
-    (local.sessions || []).forEach(function (x) { map[x.date + '|' + x.day] = x; });
+    (local.sessions || []).forEach(function (x) {
+      // 本地贏，但有一個例外：一個未完成嘅 session 唔應該蓋走
+      // 另一部裝置上面同日同 Day 而且已經完成咗嘅記錄。
+      var r = map[x.date + '|' + x.day];
+      if (r && r.done && !x.done) return;
+      map[x.date + '|' + x.day] = x;
+    });
 
     var sessions = Object.keys(map).map(function (k) { return map[k]; })
       .sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });

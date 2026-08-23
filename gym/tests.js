@@ -542,3 +542,21 @@ check('mergeData：本地 profile 係 null → 用遠端', function () {
   var remote = mkData([], '2026-08-11T00:00:00Z');
   eq(GymEngine.mergeData(local, remote).profile.daysPerWeek, 3);
 });
+
+check('mergeData：本地未完成唔可以蓋走遠端已完成', function () {
+  var local = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,2]])]);
+  local.sessions[0].done = false;
+  var remote = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,8],[40,8],[40,8]])]);
+  var m = GymEngine.mergeData(local, remote);
+  eq(m.sessions.length, 1);
+  eq(m.sessions[0].done, true, '遠端已完成嗰份應該保住');
+  eq(m.sessions[0].entries[0].actual.length, 3);
+});
+
+check('mergeData：兩邊都未完成時本地照樣贏', function () {
+  var local = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,5],[40,5]])]);
+  local.sessions[0].done = false;
+  var remote = mkData([sess('2026-08-11', 'Barbell_Squat', 40, 8, [[40,1]])]);
+  remote.sessions[0].done = false;
+  eq(GymEngine.mergeData(local, remote).sessions[0].entries[0].actual.length, 2);
+});
