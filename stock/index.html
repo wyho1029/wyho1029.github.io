@@ -110,10 +110,12 @@
         <dt>蓄勢</dt><dd>MCDXX 動能死低 ＝ 蓄勢待發（反向獎勵：越低分越高）。</dd>
         <dt>水上</dt><dd>MACD 嘅 DIF &gt; 0（零軸之上、趨勢偏多）。</dd>
         <dt>二次轉黃</dt><dd>過去黃K → 升 ≥40% → 回落 → 而家再轉黃（✅P ＝ 命中）。</dd>
-        <dt>⭐ 高信心候選</dt><dd>完成週K（週五收市）＋ 放量硬閘：分數 ≥80 且 量比 ≥1.5×。研究驗證中，<b>未計入</b> Discord／富途推送。<code>⭐?</code> ＝ 本週未收，週K收市先定案。</dd>
+        <dt>⭐ 高信心候選（已下架）</dt><dd><b>2026-08 全歷史回測否定咗呢個閘。</b>原本規則係「完成週K ＋ 分數 ≥80 且 量比 ≥1.5×」。喺 2014-2020 同 2021-2023 兩段獨立驗證，佢喺兩段都係<b>最差</b>嘅一組：對同日買 SPY 嘅勝率差 −19.6%（兩段 95% 信賴區間上界都喺零以下）。量比呢個因子喺兩段仲要反方向，即係佢根本分辨唔到勝負。徽章已經移除，只保留歷史紀錄。</dd>
         <dt>📐 交易計劃參考</dt><dd>止蝕參考 ＝ 近10日最低價 − 0.25×ATR14；2R 目標 ＝ 收市 ＋ 2×風險。研究參考值，非投資建議。</dd>
+        <dt>💥 動能爆燈</dt><dd>MCDXX 動能線連續 13 週以上封頂（20）＋ 週MA30／MA40 向上。<b>⚠️ 已驗證：無 edge。</b>2026-08 全歷史回測（入榜後持 26 週，對同日買 SPY）：2014-2020 勝率差 −23.4%、2021-2023 −28.9%，兩段 95% 信賴區間上界都喺零以下。<b>純長期觀察名單，唔係入場訊號，亦唔好當佢跑贏大市。</b>「熱度週數」＝ MCDXX 熱度線（黃）連續封頂週數，只作對照唔做篩選。</dd>
         <dt>✓ ／ ·</dt><dd>該因子有得分 ／ 冇分。</dd>
         <dt>入圍門檻</dt><dd>日K／月K ≥ 45 分、週K ≥ 70 分。</dd>
+        <dt>⚠️ 分數同勝率嘅關係（已回測）</dt><dd><b>分數高唔等於贏面高。</b>2026-08 用 2013-2026 全歷史重建咗 57,597 條轉黃訊號驗證：分數帶之間嘅 8 週勝率幾乎平坦（dev 段 &lt;65 分 59.7%、90+ 分 54.4%），而<b>所有分數帶都跑輸同日買 SPY</b>。<code>≥80</code> 推送層 dev 勝率 57.8%／val 51.3%，對配對 SPY 嘅勝率差係 −19.4%／−16.4%，兩段 95% 信賴區間上界都喺零以下。呢個掃描器<b>係一個篩選器，唔係入場訊號</b>——用嚟縮窄觀察範圍可以，見到就照入唔可以。完整報告：<code>docs/research/2026-08-11-phase2-backtest/</code>。</dd>
       </dl>
     </div>
   </div>
@@ -165,6 +167,17 @@
       downloadCsv('X熱度榜_' + (CURRENT.generated || '').slice(0, 10) + '.csv', bl.join('\r\n'));
       return;
     }
+    if (id === 'sec-mpeg'){
+      var mr = CURRENT.momentum_peg || [];
+      if (!mr.length){ alert('呢個名單冇股票，冇嘢可下載。'); return; }
+      var ml = ['代號,全名,板塊,收市,動能週數,熱度週數,首次入榜'];
+      mr.forEach(function(r){
+        ml.push([r.code, r.name || '', r.sector || '', r.close,
+                 r.mm_streak, r.hot_streak, r.first_week || ''].map(qcsv).join(','));
+      });
+      downloadCsv('動能爆燈_' + (CURRENT.generated || '').slice(0, 10) + '.csv', ml.join('\r\n'));
+      return;
+    }
     var list, label;
     if (id === 'sec-vol'){ list = CURRENT.volume_watch || []; label = '爆量觀察'; }
     else { var m = TF[id]; list = (CURRENT.timeframes || {})[m[0]] || []; label = m[1]; }
@@ -172,11 +185,9 @@
     var date = (CURRENT.generated || '').slice(0, 10);
     downloadCsv('轉黃-' + label + '_' + date + '.csv', buildCsv(list));
   }
-  function hcBadge(s){
-    if (s.hc === true) return '<span class="hc" title="⭐ 高信心候選：完成週K + 放量硬閘">⭐</span> ';
-    if (s.hc === 'pending') return '<span class="hc" title="⭐候選 · 週K收市先定案">⭐?</span> ';
-    return '';
-  }
+  // ⭐ 徽章已下架：2026-08 全歷史回測顯示呢個閘喺 dev/val 兩段都係最差嘅一組
+  // （uplift −19.6%，兩段 CI 上界都 <0）。後端照計照記日誌，淨係唔再顯示。
+  function hcBadge(s){ return ''; }
   function mark(v){ return (v && v > 0) ? '✓' : '<span class="none">·</span>'; }
   function sy(h){ return h.sy_pattern ? '✅P' : '<span class="none">·</span>'; }
   function fixed(v){ return (v != null) ? Number(v).toFixed(3) : ''; }
@@ -199,6 +210,28 @@
         + '<td>' + mark(s.mcdxx) + '</td>'
         + '<td>' + mark(s.macd) + '</td>'
         + '<td>' + sy(s) + '</td></tr>';
+    });
+    return h + '</table></div>';
+  }
+  function mpegRows(list, errs){
+    if (!list || !list.length){
+      return (errs > 0)
+        ? '<div class="err">⚠️ 判定失敗：' + dnum(errs, 0) + ' 隻計唔到 —— 唔係真係零命中，請睇 daily_run.log</div>'
+        : '<div class="empty">（無）</div>';
+    }
+    var h = (errs > 0)
+      ? '<div class="err">⚠️ ' + dnum(errs, 0) + ' 隻計唔到 —— 呢個名單唔完整，請睇 daily_run.log</div>'
+      : '';
+    h += '<div class="scroll"><table><tr><th>股票</th><th>全名</th><th>板塊</th>'
+      + '<th>收市</th><th>動能週數</th><th>熱度週數</th><th>首次入榜</th></tr>';
+    list.forEach(function(s){
+      h += '<tr><td class="code" onclick="openDetail(\'' + s.code + '\')">' + sym(s.code) + '</td>'
+        + '<td class="name">' + (s.name || '—') + '</td>'
+        + '<td>' + (s.sector || '—') + '</td>'
+        + '<td>' + fixed(s.close) + '</td>'
+        + '<td class="score">' + dnum(s.mm_streak, 0) + '</td>'
+        + '<td>' + dnum(s.hot_streak, 0) + '</td>'
+        + '<td>' + (s.first_week || '—') + '</td></tr>';
     });
     return h + '</table></div>';
   }
@@ -435,14 +468,22 @@
       var list = (d.timeframes || {})[tf] || [];
       list.forEach(function(s){ DETAIL[s.code] = s; });
       var body = rows(list);
-      var hasHcData = list.some(function(s){ return 'hc' in s; });
-      var anyHc = list.some(function(s){ return s.hc === true || s.hc === 'pending'; });
-      if (tf === 'week' && list.length && hasHcData && !anyHc)
-        body = '<div class="empty">本週零高信心候選（⭐）</div>' + body;
+      // ⭐ 高信心層已下架（見 hcBadge 註釋），唔再顯示「本週零高信心候選」提示
       html += section(LBL[tf] + ' 轉黃', list.length, body, 'sec-' + tf);
     });
     var vw = d.volume_watch || [];
     html += section('🔥 爆量觀察', vw.length, volRows(vw), 'sec-vol');
+    var mpeg = d.momentum_peg || [];
+    var mpegErrs = Number(d.momentum_peg_errors) || 0;
+    mpeg.forEach(function(s){ if (!DETAIL[s.code]) DETAIL[s.code] = s; });
+    // 判定全線失敗、部分失敗、同「真係零命中」喺摺埋嘅 header 上都要分得出，唔係淨係展開先見到
+    var mpegFail = !mpeg.length && mpegErrs > 0;
+    var mpegPartialFail = !!mpeg.length && mpegErrs > 0;
+    var mpegTitle = mpegFail ? '💥 動能爆燈 ⚠️ 判定失敗' : '💥 動能爆燈';
+    var mpegCount = mpegFail ? (dnum(mpegErrs, 0) + ' 隻計唔到')
+      : mpegPartialFail ? (mpeg.length + ' · ⚠️ ' + dnum(mpegErrs, 0) + ' 隻計唔到')
+      : mpeg.length;
+    html += section(mpegTitle, mpegCount, mpegRows(mpeg, mpegErrs), 'sec-mpeg');
     html += tqqqSection(d);
     html += cycleSection(d);
     html += buzzSection(d);
@@ -464,7 +505,7 @@
       + '<div><dt>目標價</dt><dd>' + dnum(s.target, 2) + '</dd></div>'
       + '<div><dt>業績日</dt><dd>' + (s.earnings || '—') + '</dd></div>'
       + '<div><dt>收市</dt><dd>' + fixed(s.close) + '</dd></div>'
-      + '<div><dt>分數</dt><dd>' + s.score + '</dd></div>'
+      + '<div><dt>分數</dt><dd>' + dnum(s.score, 0) + '</dd></div>'
       + '</dl>';
     if (s.stop_ref != null){
       h += '<div class="dsec"><h4>📐 交易計劃參考</h4><p>止蝕參考 $' + dnum(s.stop_ref, 2)
