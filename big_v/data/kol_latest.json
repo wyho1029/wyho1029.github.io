@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-26T07:02:13+08:00",
+ "updated_at": "2026-08-26T20:01:37+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -5771,6 +5771,16 @@
      "url": "https://x.com/aleabitoreddit/status/2092186856792506435",
      "stance": "bullish",
      "summary": "作者看好Sivers Photonics，認為其光電合作、產能及NASDAQ上市將推動股價重估。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-08-26",
+     "author": "aleabitoreddit",
+     "tweet_id": "2092517102339162263",
+     "url": "https://x.com/aleabitoreddit/status/2092517102339162263",
+     "stance": "bullish",
+     "summary": "作者看好Sivers這家雷射公司，認為市場需求大，並期待其財報和納斯達克上市。",
      "r7": null,
      "r30": null
     }
@@ -16723,11 +16733,21 @@
      "summary": "作者引用AAOI的強勁需求與產能預期，暗示其股價曾大漲，顯示對其前景樂觀。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-08-26",
+     "author": "aleabitoreddit",
+     "tweet_id": "2092408620277457255",
+     "url": "https://x.com/aleabitoreddit/status/2092408620277457255",
+     "stance": "bullish",
+     "summary": "作者引用AAOI財報確認TIA和驅動器需求異常強勁，對其前景看好。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -18.3,
-   "ai_summary": "根據歷史數據，AAOI的大V觀點整體偏多，最新立場仍以看漲為主，主要論述圍繞需求能見度高、產能受限及美國生產溢價，認為光學供應短缺將支撐長期表現。然而，部分觀點出現轉軚，如aleabitoreddit在8月21日轉為看空，批評公司頻繁發行ATM融資對股東不友善，即使營運展望正面也難以支持股價，但隨後又恢復看漲，僅指出融資時機不佳可能造成短期壓力。另有觀點提示風險，如sunxliao在8月24日持中性態度，認為股價正處於關鍵支撐位，多空對峙，需觀察突破或跌破方向，整體而言，多數大V仍看好，但融資稀釋與短期技術位是主要風險提示。",
+   "ai_summary": "根據數據，AAOI的大V立場整體偏多，但最新觀點出現分歧。多數大V（如aleabitoreddit、wliang、sunxliao）持續看好其需求能見度、美國生產溢價及CPO毛利率提升，認為股價被低估或回調後有支撐，其中wliang曾於76美元買入並在150美元獲利一倍，暗示可能再進場。然而，aleabitoreddit在8月21日曾短暫轉為看空，批評公司頻繁發行ATM融資對股東不友善，即使營運展望正面也難以支持，但隨後在8月24日又恢復看好，僅批評融資時機不佳可能造成短期壓力。整體而言，大V普遍認為基本面強勁，但需注意融資稀釋風險及關鍵支撐位（如日線黃金支撐）的多空對峙，未有全面轉軚跡象。",
    "theme": "光通訊"
   },
   "EOS": {
@@ -20997,7 +21017,7 @@
     }
    ],
    "yellow": null,
-   "gain": 16.8,
+   "gain": 17.2,
    "theme": "其他"
   },
   "COIN": {
@@ -21812,12 +21832,21 @@
      "summary": "作者對SMTC失去興趣，轉而研究其他記憶體相關標的。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-08-26",
+     "author": "aleabitoreddit",
+     "tweet_id": "2092408620277457255",
+     "url": "https://x.com/aleabitoreddit/status/2092408620277457255",
+     "stance": "bullish",
+     "summary": "作者認為Semtech業績強勁，光學產品需求旺盛，1.6T FiberEdge市佔率可望過半，且訂單能見度高，Q3指引遠超預期。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -8.5,
-   "earnings": "2026-08-26",
-   "ai_summary": "根據歷史記錄，最新立場為中性偏淡，作者於2026年8月25日明確表示對SMTC失去興趣，轉而研究其他記憶體相關標的。此前8月7日曾持樂觀看法，認為AAOI提到的DSP和TIA瓶頸對SMTC屬正面行業訊號，但此後立場明顯轉變，未有提及具體風險或轉軚原因，僅以興趣轉移作為論述點。整體而言，作者從短期看好轉為不再關注，未見持續看多論述。",
+   "ai_summary": "根據歷史記錄，最新立場為看多。論述重點在於Semtech業績強勁、光學產品需求旺盛，1.6T FiberEdge市佔率可望過半，且訂單能見度高，Q3指引遠超預期。立場曾出現轉變，從8月7日看多，到8月25日轉為中性並失去興趣，但8月26日又因業績數據重新轉為看多，整體未見明確風險提示。",
    "theme": "光通訊"
   },
   "LULU": {
@@ -22305,7 +22334,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 476,
+   "calls": 479,
    "n7": 374,
    "win7": 43,
    "n30": 214,
