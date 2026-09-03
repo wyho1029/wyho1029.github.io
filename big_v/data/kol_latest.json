@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03T07:02:15+08:00",
+ "updated_at": "2026-09-03T20:01:29+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -6369,6 +6369,16 @@
      "url": "https://x.com/aleabitoreddit/status/2095064848031678648",
      "stance": "bullish",
      "summary": "作者批評公司管理層偏離投資者關注的核心光電業務，但強調仍持有超過一百萬股，並希望公司聚焦CPO及美國資金，長期看好。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-03",
+     "author": "aleabitoreddit",
+     "tweet_id": "2095453263613341938",
+     "url": "https://x.com/aleabitoreddit/status/2095453263613341938",
+     "stance": "bullish",
+     "summary": "作者對SIVE擴充產能感到驚喜，認為其營收潛力巨大，並在行業短缺下看好其前景。",
      "r7": null,
      "r30": null
     }
@@ -18896,7 +18906,7 @@
     }
    ],
    "yellow": null,
-   "gain": -20.1,
+   "gain": -20.5,
    "theme": "其他"
   },
   "AOSL": {
@@ -21322,12 +21332,22 @@
      "target": 367.0,
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-03",
+     "author": "aleabitoreddit",
+     "tweet_id": "2095453263613341938",
+     "url": "https://x.com/aleabitoreddit/status/2095453263613341938",
+     "stance": "neutral",
+     "summary": "作者提及AVGO財報電話會議中提到行業短缺，但未表達明確立場。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -3.4,
    "earnings": "2026-09-03",
-   "ai_summary": "綜合近期觀點，最新立場偏向審慎樂觀，多數提及聚焦於AI光學與晶圓代工需求強勁，如與三星協議、CPO雷射及FOPLP產能布局，認為業績指引超預期且盤後下跌屬過度反應。論述重點在於AI基礎設施擴張帶動博通成長，但同時存在風險提示，包括Nvidia策略可能侵蝕市場地位，以及早前AI晶片指引失誤曾引發市場波動。整體未見明顯轉軚，惟後期對競爭壓力與供應鏈不確定性著墨增加。",
+   "ai_summary": "根據歷史數據，最新立場整體偏多，但期間有轉軚跡象。論述點集中於AI與光學需求強勁，包括Meta Iris量產、三星2000億美元框架協議、AMD合作及雷射供不應求等，均被視為正面催化。然而，8月31日曾出現看空觀點，認為Nvidia策略可能侵蝕博通市場地位，屬風險提示。整體而言，多數提及為中性或偏多，僅少數明確看空，且後續財報後作者認為盤後下跌屬過度反應，顯示信心回升。",
    "theme": "AI晶片"
   },
   "GS": {
@@ -22273,7 +22293,7 @@
     }
    ],
    "yellow": null,
-   "gain": -56.8,
+   "gain": -57.2,
    "ai_summary": "根據歷史記錄，最新立場維持看多。論述重點包括管理層公開市場買入顯示信心、市場誤解報導導致錯殺，以及同業Lumentum強勁業績對CPO廠商的正面訊號。整體觀點從未轉向看空，但早期曾提示股價下跌15.4%時的市場誤解風險，後續持續強調反彈與成長潛力。",
    "theme": "半導體設備"
   },
@@ -22867,6 +22887,16 @@
      "summary": "作者公開看好IQE，認為其投資觀點正確。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-03",
+     "author": "aleabitoreddit",
+     "tweet_id": "2095460499769155944",
+     "url": "https://x.com/aleabitoreddit/status/2095460499769155944",
+     "stance": "bullish",
+     "summary": "IQE作為量子點磊晶代工龍頭，與Quintessent簽訂採購協議，量子點雷射進入客戶取樣階段，前景看好。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -23214,7 +23244,7 @@
     }
    ],
    "yellow": null,
-   "gain": 11.1,
+   "gain": 7.7,
    "theme": "其他"
   },
   "COIN": {
@@ -23447,7 +23477,7 @@
     }
    ],
    "yellow": null,
-   "gain": -28.6,
+   "gain": -28.5,
    "ai_summary": "根據最新立場，aleabitoreddit對AMKR維持偏多看法，認為OSAT封測產能吃緊及傳統封裝缺口將使AMKR在2027年受惠。論述點包括KYEC投資美國測試設施帶動2028年效益，以及市場偏好現有加速成長而非未來題材的風險提示。整體立場由中性轉回偏多，但未見明確轉軚，僅提醒市場對成長節奏的敏感度。",
    "theme": "半導體設備"
   },
@@ -25552,7 +25582,7 @@
     }
    ],
    "yellow": null,
-   "gain": -3.4,
+   "gain": -5.6,
    "ai_summary": "根據最新數據，sunxliao 對 ZCSH 維持一貫看多立場，從 2026-08-31 至 09-01 連續三日強調其強勁表現，並預期股價可能突破 70 美元。論述重點在於本週期表現超乎預期，且已考慮將其納入第四季定期定額投資組合，顯示長期信心。目前未見轉軚或風險提示，立場穩定樂觀。",
    "theme": "其他"
   },
@@ -25645,7 +25675,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -1.6,
    "ai_summary": "根據最新資料，CAPA在2026年9月1日被提及時，立場屬中性，論述點集中於新MLCC ETF提供曝險機會，但同時指出加速器增加可能加劇供應瓶頸風險。該觀點未見明顯轉軚，但明確提示了潛在的供應鏈壓力，屬於風險警示型評論。",
    "theme": "MLCC"
   },
@@ -25663,7 +25693,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": 1.8,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -26028,6 +26058,42 @@
    "gain": 0.0,
    "ai_summary": "根據最新資料，sunxliao 於2026年9月2日對TRMD持看多立場，核心論點為公司受惠於海運費率上升。目前未見其立場轉變或提出風險警示，僅基於此單一時間點數據，無法判斷後續有無調整。",
    "theme": "海運"
+  },
+  "ALMU": {
+   "mentions": [
+    {
+     "date": "2026-09-03",
+     "author": "aleabitoreddit",
+     "tweet_id": "2095460499769155944",
+     "url": "https://x.com/aleabitoreddit/status/2095460499769155944",
+     "stance": "bullish",
+     "summary": "量子點雷射商業化將帶動相關公司如ALMU受益。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "earnings": "2026-09-17",
+   "ai_summary": "根據歷史記錄，最新立場為看多，論述重點在於量子點雷射商業化將帶動ALMU受益。未見明顯轉軚，但僅此一次提及，缺乏後續更新或風險提示。",
+   "theme": "量子點"
+  },
+  "ALRIB": {
+   "mentions": [
+    {
+     "date": "2026-09-03",
+     "author": "aleabitoreddit",
+     "tweet_id": "2095460499769155944",
+     "url": "https://x.com/aleabitoreddit/status/2095460499769155944",
+     "stance": "bullish",
+     "summary": "量子點機台瓶頸公司如ALRIB可能獲得更多關注。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "theme": "量子點"
   }
  },
  "kol_stats": {
@@ -26046,7 +26112,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 608,
+   "calls": 612,
    "n7": 407,
    "win7": 44,
    "n30": 269,
@@ -26245,7 +26311,7 @@
     -13.47,
     -13.13,
     -13.77,
-    -12.97
+    -12.98
    ],
    "wliang": [
     null,
