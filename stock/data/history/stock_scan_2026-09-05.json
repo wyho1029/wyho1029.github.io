@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-05 06:09",
-  "run_type": "daily",
-  "scanned": 2864,
+  "generated": "2026-09-05 09:16",
+  "run_type": "weekly",
+  "scanned": 2857,
   "thresholds": {
     "day": 80,
     "week": 80,
@@ -10,208 +10,400 @@
   "timeframes": {
     "day": [
       {
-        "code": "US.BEKE",
-        "name": "KE Holdings Inc",
-        "sector": "Real Estate",
-        "close": 17.920000076293945,
-        "score": 84,
+        "code": "US.HPE",
+        "name": "Hewlett Packard Enterprise Company",
+        "sector": "Technology",
+        "close": 54.439998626708984,
+        "score": 88,
         "trend": 50,
-        "hdly": 0,
+        "hdly": 8,
         "vol": 20,
-        "vol_ratio": 1.6,
-        "vol_ratio_prev5": 1.13,
+        "vol_ratio": 1.84,
+        "vol_ratio_prev5": 2.59,
         "hc": null,
         "bar_complete": true,
         "stop_ref": null,
         "risk_pct": null,
         "risk_atr": null,
         "target_2r": null,
-        "mcdxx": 4,
+        "mcdxx": 0,
         "macd": 10,
         "second_yellow": 0,
         "sy_pattern": false,
         "sy_above_ma": "na/na",
         "sy_ma_slope": "na/na",
         "futu": null,
-        "mktcap": 19758501888,
-        "pe": 28.444445,
-        "rating": "strong_buy · 21位分析師",
-        "target": 23.680841,
-        "earnings": "2026-11-10（估）",
-        "summary": "KE Holdings Inc., through its subsidiaries, engages in operating an integrated online and offline platform for housing transactions and services in the People's Republic of China. The company operates through five segments: Existing Home Transaction Services, New Home Transaction Services, Home Renovation and Furnishing, Home rental services, and Emerging and Other Services. It operates Beike, an integrated online and offline platform for housing transactions and services; Lianjia, a real estate brokerage brand; Agent Cooperation Network, an operating system that fosters reciprocity and bondin",
+        "mktcap": 69028167680,
+        "pe": 26.804123,
+        "rating": "buy · 20位分析師",
+        "target": 67.7795,
+        "earnings": "2026-09-03",
+        "summary": "Hewlett Packard Enterprise Company, together with its subsidiaries, develops intelligent solutions in the United States, the Americas, Europe, the Middle East, Africa, the Asia Pacific, Japan, and internationally. It operates in five segments: Server, Hybrid Cloud, Networking, Financial Services, and Corporate Investments and Other. The company offers general-purpose servers, workload-optimized servers, and integrated systems, including HPE ProLiant Rack and Tower servers; HPE Synergy; HPE Scale Up servers; HPE Edgeline servers; HPE Cray EX; HPE Cray XD; and HPE NonStop. It also provides cloud",
         "news": [
           {
-            "title": "BEKE vs. SHOP: Which Stock Is the Better Value Option?",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/beke-vs-shop-stock-better-154003238.html",
-            "date": "2026-08-31",
+            "title": "Why this veteran tech CEO is impressed by Nvidia's Jensen Huang buying Hugging Face for $12.9 billion",
+            "link": "https://finance.yahoo.com/markets/stocks/article/why-this-veteran-tech-ceo-is-impressed-by-nvidias-jensen-huang-buying-hugging-face-for-129-billion-104313626.html",
+            "date": "2026-09-04",
+            "publisher": "Yahoo Finance"
+          },
+          {
+            "title": "How Much Track Is Left For ANET Stock?",
+            "link": "https://www.trefis.com/articles/614379/how-much-track-is-left-for-anet-stock/2026-09-04",
+            "date": "2026-09-04",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "Cisco Systems Stock Rose On More Than Its AI Orders",
+            "link": "https://www.trefis.com/articles/614421/cisco-systems-stock-rose-on-more-than-its-ai-orders/2026-09-04",
+            "date": "2026-09-04",
+            "publisher": "Trefis"
+          },
+          {
+            "title": "DELL Stock Hits 52-Week High: Does it Have More Room to Run?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/dell-stock-hits-52-week-181500648.html",
+            "date": "2026-09-04",
             "publisher": "Zacks"
           },
           {
-            "title": "KE Holdings (BEKE) Shares Climbed, So What Is Driving Attention Now?",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/ke-holdings-beke-shares-climbed-070826057.html",
-            "date": "2026-08-29",
-            "publisher": "Simply Wall St."
-          },
-          {
-            "title": "Should KE Holdings’ 2026 Profit Jump on Lower Revenue Require Action From BEKE Investors?",
-            "link": "https://finance.yahoo.com/real-estate/articles/ke-holdings-2026-profit-jump-030858056.html",
-            "date": "2026-08-29",
-            "publisher": "Simply Wall St."
-          },
-          {
-            "title": "Wall Street Analysts Predict a 27.36% Upside in KE Hodlings (BEKE): Here's  What You Should Know",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-predict-27-135506862.html",
-            "date": "2026-08-27",
-            "publisher": "Zacks"
-          },
-          {
-            "title": "KE Holdings (BEKE) Outruns Falling Revenue With Record Profit Margins",
-            "link": "https://finance.yahoo.com/real-estate/articles/ke-holdings-beke-outruns-falling-105943701.html",
-            "date": "2026-08-27",
-            "publisher": "Insider Monkey"
+            "title": "Super Micro Surges 7% as Semiconductors Lead a Flat Tape; Hewlett Packard Enterprise Falls 3%, Dell Edges Higher",
+            "link": "https://247wallst.com/investing/2026/09/04/super-micro-surges-7-as-semiconductors-lead-a-flat-tape-hewlett-packard-enterprise-falls-3-dell-edges-higher/",
+            "date": "2026-09-04",
+            "publisher": "24/7 Wall St."
           }
         ],
-        "why": "日K 轉黃 84分：站穩上升 MA30/MA40（趨勢回調）、放量 1.6x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+        "why": "日K 轉黃 88分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.84x、MACD 水上（零軸之上）。"
       },
       {
-        "code": "US.IBTA",
-        "name": "Ibotta, Inc.",
-        "sector": "Technology",
-        "close": 38.38999938964844,
+        "code": "US.HSAI",
+        "name": "Hesai Group",
+        "sector": "Consumer Cyclical",
+        "close": 18.459999084472656,
+        "score": 88,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 20,
+        "vol_ratio": 1.5,
+        "vol_ratio_prev5": 1.56,
+        "hc": null,
+        "bar_complete": true,
+        "stop_ref": null,
+        "risk_pct": null,
+        "risk_atr": null,
+        "target_2r": null,
+        "mcdxx": 10,
+        "macd": 0,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 23747330048,
+        "pe": 37.78,
+        "rating": "strong_buy · 19位分析師",
+        "target": 28.338816,
+        "earnings": "2026-11-10",
+        "summary": "Hesai Group, through with its subsidiaries, engages in the development, manufacturing, and sale of three-dimensional light detection and ranging solutions (LiDAR) in Mainland China, Europe, North America, and internationally. The company provides gas sensor products, validation services, solution service, and other services, as well as designs and develops engineering products. Its LiDAR products are used in passenger and commercial vehicles with advanced driver assistance systems; autonomous vehicle fleets providing passenger and freight mobility services; and other applications, such as last",
+        "news": [
+          {
+            "title": "Will GeoCue Partnership Accelerate Ouster's Lidar Growth?",
+            "link": "https://finance.yahoo.com/technology/articles/geocue-partnership-accelerate-ousters-lidar-142200032.html",
+            "date": "2026-09-03",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Hesai’s (HSAI) Robotics Bet Just Started Paying Off In A Big Way",
+            "link": "https://finance.yahoo.com/technology/articles/hesai-hsai-robotics-bet-just-102837118.html",
+            "date": "2026-08-27",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Hesai (HSAI) Q2 2026 Earnings Call Transcript",
+            "link": "https://www.fool.com/earnings/call-transcripts/2026/08/25/hesai-hsai-q2-2026-earnings-call-transcript/",
+            "date": "2026-08-25",
+            "publisher": "Motley Fool"
+          },
+          {
+            "title": "Hesai (HSAI) Is Moving Beyond LiDAR. Can Robotics Become a Second Profit Pool?",
+            "link": "https://finance.yahoo.com/technology/articles/hesai-hsai-moving-beyond-lidar-233613779.html",
+            "date": "2026-08-21",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Einride AB Reports Growth Acceleration & Fleet Scale Moves Towards 2028 – Quarterly Update Report",
+            "link": "https://finance.yahoo.com/technology/articles/einride-ab-reports-growth-acceleration-164314486.html",
+            "date": "2026-08-21",
+            "publisher": "Exec Edge"
+          }
+        ],
+        "why": "日K 轉黃 88分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.5x、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.DOO",
+        "name": "BRP Inc.",
+        "sector": "Consumer Cyclical",
+        "close": 64.22000122070312,
+        "score": 87,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 2.73,
+        "vol_ratio_prev5": 4.98,
+        "hc": null,
+        "bar_complete": true,
+        "stop_ref": null,
+        "risk_pct": null,
+        "risk_atr": null,
+        "target_2r": null,
+        "mcdxx": 7,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 4789838336,
+        "pe": 60.648647,
+        "rating": "buy · 4位分析師",
+        "target": 72.01356,
+        "earnings": "2026-12-03（估）",
+        "summary": "BRP Inc., together with its subsidiaries, designs, develops, manufactures, and sells powersports vehicles and marine products in the United States, Canada, Europe, Asia Pacific, Latin America, and internationally. It operate4s through two segments, Powersports and Marine. The Powersports segment offers year-round products, such as all-terrain vehicles, side-by-side vehicles, and three-wheeled and two vehicles; seasonal products, including snowmobiles, personal watercraft, and pontoons; and OEM engines, which includes parts, accessories and apparel (PA&A), engines for karts, recreational aircra",
+        "news": [
+          {
+            "title": "This TSX stock was a top gainer with products less vulnerable to U.S. tariffs",
+            "link": "https://financialpost.com/investing/this-tsx-stock-top-gainer-less-vulnerable-tariffs",
+            "date": "2026-09-04",
+            "publisher": "Financial Post"
+          },
+          {
+            "title": "TSX movers: VersaBank jumps 10% as corporate catalysts lift top gainers",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/tsx-movers-versabank-jumps-10-162209865.html",
+            "date": "2026-09-04",
+            "publisher": "Investing.com"
+          },
+          {
+            "title": "BRP Inc (DOO) (Q2 2027) Earnings Call Highlights: Revenue Surges 18% and EPS Guidance Raised ...",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/brp-inc-doo-q2-2027-210039507.html",
+            "date": "2026-09-03",
+            "publisher": "GuruFocus.com"
+          },
+          {
+            "title": "BRP Q2 Earnings Call Highlights",
+            "link": "https://www.marketbeat.com/instant-alerts/transcript-brp-q2-earnings-call-highlights-2026-09-03/?utm_source=yahoofinance&utm_medium=yahoofinance",
+            "date": "2026-09-03",
+            "publisher": "MarketBeat"
+          },
+          {
+            "title": "Ski-Doo maker BRP raises full-year outlook on 'reduced net tariff costs'",
+            "link": "https://financialpost.com/transportation/autos/ski-doo-maker-brp-raises-outlook-on-tariff-costs",
+            "date": "2026-09-03",
+            "publisher": "Financial Post"
+          }
+        ],
+        "why": "日K 轉黃 87分：站穩上升 MA30/MA40（趨勢回調）、放量 2.73x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.NVST",
+        "name": "Envista Holdings Corporation",
+        "sector": "Healthcare",
+        "close": 27.59000015258789,
+        "score": 85,
+        "trend": 50,
+        "hdly": 8,
+        "vol": 12,
+        "vol_ratio": 1.3,
+        "vol_ratio_prev5": 1.44,
+        "hc": null,
+        "bar_complete": true,
+        "stop_ref": null,
+        "risk_pct": null,
+        "risk_atr": null,
+        "target_2r": null,
+        "mcdxx": 5,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 4381651456,
+        "pe": 47.034485,
+        "rating": "buy · 14位分析師",
+        "target": 30.78571,
+        "earnings": "2026-10-29（估）",
+        "summary": "Envista Holdings Corporation, together with its subsidiaries, develops, manufactures, markets, and sells dental products in the United States, China, and internationally. The company operates in two segments, Specialty Products & Technologies, and Equipment & Consumables. The Specialty Products & Technologies segment offers dental implant systems, guided surgery systems, biomaterials, and prefabricated and custom-built prosthetics to oral surgeons, prosthodontists and periodontists, and general dentist; and brackets and wires, tubes and bands, archwires, clear aligners, digital orthodontic tre",
+        "news": [
+          {
+            "title": "Envista (NVST) Up 0.8% Since Last Earnings Report: Can It Continue?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/envista-nvst-0-8-since-153016239.html",
+            "date": "2026-09-04",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "1 Stock Under $50 Worth Your Attention and 2 Facing Challenges",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-stock-under-50-worth-121410044.html",
+            "date": "2026-09-04",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "Envista Holdings Shares Rise After JPMorgan Upgrade",
+            "link": "https://investorshub.advfn.com/market-news/article/35622/envista-holdings-shares-rise-after-jpmorgan-upgrade",
+            "date": "2026-09-03",
+            "publisher": "InvestorsHub"
+          },
+          {
+            "title": "Broadcom upgraded, Ultragenyx downgraded: Wall Street's top analyst calls",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-upgraded-ultragenyx-downgraded-wall-133157671.html",
+            "date": "2026-09-03",
+            "publisher": "The Fly"
+          },
+          {
+            "title": "Here Are Thursday’s Top Wall Street Analyst Research Calls: Broadcom, Deere & Company, Dell Technologies, Devon Energy, Moderna, Permian Resources, PG&E, Thermo Fisher, Viper Energy, and More",
+            "link": "https://247wallst.com/investing/2026/09/03/here-are-thursdays-top-wall-street-analyst-research-calls-broadcom-deere-company-dell-technologies-devon-energy-moderna-permian-resources-pge-thermo-fisher-viper-energy-and-more/",
+            "date": "2026-09-03",
+            "publisher": "24/7 Wall St."
+          }
+        ],
+        "why": "日K 轉黃 85分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.3x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.PWP",
+        "name": "Perella Weinberg Partners",
+        "sector": "Financial Services",
+        "close": 16.93000030517578,
         "score": 82,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 12,
+        "vol_ratio": 1.03,
+        "vol_ratio_prev5": 1.01,
+        "hc": null,
+        "bar_complete": true,
+        "stop_ref": null,
+        "risk_pct": null,
+        "risk_atr": null,
+        "target_2r": null,
+        "mcdxx": 10,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 1635132928,
+        "pe": 64.61539,
+        "rating": "",
+        "target": 22.25,
+        "earnings": "2026-11-06（估）",
+        "summary": "Perella Weinberg Partners, an independent advisory firm, provides strategic and financial advice services in the United States, the United Kingdom, and internationally. It offers advisory services related to strategic and financial decisions, mergers and acquisition execution, shareholder engagement advisory, and financing and capital solutions advice with a focus on restructuring, liability management, capital markets advisory, and private capital placement, as well as underwriting and research services primarily for the energy and related industries. The company serves public multinational c",
+        "news": [
+          {
+            "title": "Riverwater Exited Perella Weinberg (PWP) as Smaller M&A Advisors Face a Tough Road Ahead",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/riverwater-exited-perella-weinberg-pwp-132353878.html",
+            "date": "2026-09-03",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "1 Profitable Stock to Keep an Eye On and 2 That Underwhelm",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-profitable-stock-keep-eye-080718387.html",
+            "date": "2026-09-03",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "1 Stock Under $50 with Solid Fundamentals and 2 We Brush Off",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/1-stock-under-50-solid-164907435.html",
+            "date": "2026-08-27",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "The 5 Most Interesting Analyst Questions From Perella Weinberg’s Q2 Earnings Call",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/5-most-interesting-analyst-questions-012522585.html",
+            "date": "2026-08-10",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "PWP Q2 Deep Dive: Revenue Backlog and New Capabilities Set Stage for Growth",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/pwp-q2-deep-dive-revenue-164522746.html",
+            "date": "2026-08-04",
+            "publisher": "StockStory"
+          }
+        ],
+        "why": "日K 轉黃 82分：站穩上升 MA30/MA40（趨勢回調）、放量 1.03x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
+      },
+      {
+        "code": "US.NWG",
+        "name": "NatWest Group plc",
+        "sector": "Financial Services",
+        "close": 18.950000762939453,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.67,
+        "vol_ratio_prev5": 2.11,
+        "hc": null,
+        "bar_complete": true,
+        "stop_ref": null,
+        "risk_pct": null,
+        "risk_atr": null,
+        "target_2r": null,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "na/na",
+        "sy_ma_slope": "na/na",
+        "futu": null,
+        "mktcap": 75186167808,
+        "pe": 9.376238,
+        "rating": "buy · 4位分析師",
+        "target": 21.9125,
+        "earnings": "2026-10-30",
+        "summary": "NatWest Group plc, together with its subsidiaries, provides banking and financial products and services in the United Kingdom and internationally. It operates through the Retail Banking, Private Banking, and Commercial & Institutional segments. The Retail Banking segment offers a range of banking products and related financial services, such as current accounts, mortgages, personal unsecured lending, and personal deposits, as well as mobile and online banking services. Its Private Banking segment provides banking, lending, and wealth management products for high-net-worth individuals and their",
+        "news": [
+          {
+            "title": "NatWest (NWG) Looks to America for Growth as UK Banking Competition Intensifies",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/natwest-nwg-looks-america-growth-022902673.html",
+            "date": "2026-08-29",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Reform UK infighting complicates Farage’s push to prepare party to govern",
+            "link": "https://www.yahoo.com/news/politics/articles/reform-uk-infighting-complicates-farage-062635801.html",
+            "date": "2026-08-22",
+            "publisher": "Investing.com"
+          },
+          {
+            "title": "AI Is Starting to Define Bank Internships as Much as Long Hours",
+            "link": "https://finance.yahoo.com/technology/ai/articles/ai-starting-define-bank-internships-083136011.html",
+            "date": "2026-08-18",
+            "publisher": "Bloomberg"
+          },
+          {
+            "title": "UK officials fear Burnham’s fiscal flexibility could unsettle bond markets",
+            "link": "https://finance.yahoo.com/economy/policy/articles/uk-officials-fear-burnham-fiscal-063254577.html",
+            "date": "2026-08-08",
+            "publisher": "Investing.com"
+          },
+          {
+            "title": "NatWest (NWG) Q2 2026 Earnings Call Transcript",
+            "link": "https://www.fool.com/earnings/call-transcripts/2026/08/07/natwest-nwg-q2-2026-earnings-call-transcript/",
+            "date": "2026-08-08",
+            "publisher": "Motley Fool"
+          }
+        ],
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.67x、MACD 水上（零軸之上）。"
+      },
+      {
+        "code": "US.TNK",
+        "name": "Teekay Tankers Ltd.",
+        "sector": "Energy",
+        "close": 91.83000183105469,
+        "score": 80,
         "trend": 50,
         "hdly": 0,
         "vol": 20,
         "vol_ratio": 1.51,
-        "vol_ratio_prev5": 1.74,
-        "hc": null,
-        "bar_complete": true,
-        "stop_ref": null,
-        "risk_pct": null,
-        "risk_atr": null,
-        "target_2r": null,
-        "mcdxx": 2,
-        "macd": 10,
-        "second_yellow": 0,
-        "sy_pattern": false,
-        "sy_above_ma": "na/na",
-        "sy_ma_slope": "na/na",
-        "futu": null,
-        "mktcap": 891647104,
-        "pe": null,
-        "rating": "",
-        "target": 36.14286,
-        "earnings": "2026-11-12",
-        "summary": "Ibotta, Inc., a technology company, provides digital promotion services to clients in the United States. The company sources digital promotions from its clients primarily consumer packaged goods brands and distributes these promotions to consumers through its network of publishers enabled by Ibotta Performance Network (IPN), a technology platform. It offers promotional services through the IPN, including direct-to-consumer mobile, web, and browser extension properties, as well as third-party publisher properties. The company also provides display ads, tiles, sponsored offers, newsletters, and ",
-        "news": [
-          {
-            "title": "1 Unpopular Stock That Deserves Some Love and 2 Facing Headwinds",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-deserves-love-093518541.html",
-            "date": "2026-09-03",
-            "publisher": "StockStory"
-          },
-          {
-            "title": "3 Services Stocks We Keep Off Our Radar",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/3-services-stocks-keep-off-002823635.html",
-            "date": "2026-09-03",
-            "publisher": "StockStory"
-          },
-          {
-            "title": "1 Russell 2000 Stock Worth Your Attention and 2 That Underwhelm",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/1-russell-2000-stock-worth-081113982.html",
-            "date": "2026-08-26",
-            "publisher": "StockStory"
-          },
-          {
-            "title": "1 Stock Under $50 for Long-Term Investors and 2 We Ignore",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/1-stock-under-50-long-222220781.html",
-            "date": "2026-08-17",
-            "publisher": "StockStory"
-          },
-          {
-            "title": "1 Momentum  Stock with Competitive Advantages and 2 We Ignore",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/1-momentum-stock-competitive-advantages-032522006.html",
-            "date": "2026-08-12",
-            "publisher": "StockStory"
-          }
-        ],
-        "why": "日K 轉黃 82分：站穩上升 MA30/MA40（趨勢回調）、放量 1.51x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
-      },
-      {
-        "code": "US.ZURA",
-        "name": "Zura Bio Limited",
-        "sector": "Healthcare",
-        "close": 6.230000019073486,
-        "score": 82,
-        "trend": 50,
-        "hdly": 8,
-        "vol": 12,
-        "vol_ratio": 1.06,
-        "vol_ratio_prev5": 0.98,
-        "hc": null,
-        "bar_complete": true,
-        "stop_ref": null,
-        "risk_pct": null,
-        "risk_atr": null,
-        "target_2r": null,
-        "mcdxx": 2,
-        "macd": 10,
-        "second_yellow": 0,
-        "sy_pattern": false,
-        "sy_above_ma": "na/na",
-        "sy_ma_slope": "na/na",
-        "futu": null,
-        "mktcap": 597015488,
-        "pe": null,
-        "rating": "",
-        "target": 18.0,
-        "earnings": "2026-11-12（估）",
-        "summary": "Zura Bio Limited, a clinical-stage biotechnology company, develops medicines for autoimmune and inflammatory disorders in the United States. The company develops Tibulizumab, a humanized IgG4 single-chain variable fragment bispecific antibody engineered to bind and neutralize both IL-17A and BAFF within a single therapeutic molecule, which is in Phase 2 clinical trial development. It also develops Torudokimab (ZB-880), a fully human immunoglobulin G4 monoclonal antibody targeting interleukin-33 that has completed Phase 1 clinical studies; and Crebankitug (ZB-168), a fully human immunoglobulin ",
-        "news": [
-          {
-            "title": "William Blair Starts Zura Bio (ZURA) at Outperform",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/william-blair-starts-zura-bio-180912106.html",
-            "date": "2026-07-14",
-            "publisher": "Insider Monkey"
-          },
-          {
-            "title": "Here's Why We're Not Too Worried About Zura Bio's (NASDAQ:ZURA) Cash Burn Situation",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-were-not-too-100926751.html",
-            "date": "2026-06-03",
-            "publisher": "Simply Wall St."
-          },
-          {
-            "title": "One Zura Bio Insider Raised Their Stake In The Previous Year",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/one-zura-bio-insider-raised-100627028.html",
-            "date": "2026-04-23",
-            "publisher": "Simply Wall St."
-          },
-          {
-            "title": "Apogee Therapeutics Stock Up 100% as Fund Lifts Stake to $28 Million",
-            "link": "https://www.fool.com/coverage/filings/2026/02/25/apogee-therapeutics-stock-up-100-as-fund-lifts-stake-to-usd28-million/",
-            "date": "2026-02-25",
-            "publisher": "Motley Fool"
-          },
-          {
-            "title": "This Fund Bet $20 Million on RAPT Therapeutics as Stock Surges 500% This Past Year and Buyout Offer Emerges",
-            "link": "https://www.fool.com/coverage/filings/2026/02/25/this-fund-bet-usd20-million-on-rapt-therapeutics-as-stock-surges-500-this-past-year-and-buyout-offer-emerges/",
-            "date": "2026-02-25",
-            "publisher": "Motley Fool"
-          }
-        ],
-        "why": "日K 轉黃 82分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.06x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
-      },
-      {
-        "code": "US.CTRN",
-        "name": "Citi Trends, Inc.",
-        "sector": "Consumer Cyclical",
-        "close": 71.16000366210938,
-        "score": 80,
-        "trend": 50,
-        "hdly": 8,
-        "vol": 12,
-        "vol_ratio": 1.4,
-        "vol_ratio_prev5": 1.34,
+        "vol_ratio_prev5": 1.59,
         "hc": null,
         "bar_complete": true,
         "stop_ref": null,
@@ -225,109 +417,109 @@
         "sy_above_ma": "na/na",
         "sy_ma_slope": "na/na",
         "futu": null,
-        "mktcap": 592752000,
-        "pe": 82.74419,
-        "rating": "strong_buy · 2位分析師",
-        "target": 91.0,
-        "earnings": "2026-08-25",
-        "summary": "Citi Trends, Inc. operates as a value retailer of apparel, accessories, and home trends. The company offers apparel for juniors, missy, and plus size, including trend right sportswear, outerwear, sleepwear, lingerie, and scrubs for women; basics, fashion, and trends for boys up to size 20 and girls up to size 16, as well as sizes for newborns, infants, and toddlers; children's uniforms, accessories, and sleepwear; and apparel for men and big men, such as trend right sportswear and outerwear. It also provides fashionable handbags, luggage, hats, belts, sunglasses, jewelry, and watches for men a",
+        "mktcap": 3238082048,
+        "pe": 5.502063,
+        "rating": "",
+        "target": 93.8,
+        "earnings": "2026-11-05",
+        "summary": "Teekay Tankers Ltd., together with its subsidiaries, provides marine transportation services to oil industries in Bermuda and internationally. The company operates in two segments: Tankers and Marine Servies. It offers voyage and time charter services; offshore ship-to-ship transfer of commodities primarily crude oil and refined oil products; and tanker commercial and technical management services. In addition, the company is involved in the vessels management, procurement, and equipment rental businesses. It serves energy and utility companies, oil traders, oil consumers and petroleum product",
         "news": [
           {
-            "title": "Citi Trends (CTRN) Q2 2026 Earnings Call Transcript",
-            "link": "https://www.fool.com/earnings/call-transcripts/2026/09/01/citi-trends-ctrn-q2-2026-earnings-call-transcript/",
-            "date": "2026-09-01",
-            "publisher": "Motley Fool"
+            "title": "“Schrodinger’s Strait:” Why Hormuz Now Exists in a State of Permanent Uncertainty",
+            "link": "https://247wallst.com/investing/2026/09/03/schrodingers-strait-why-hormuz-now-exists-in-a-state-of-permanent-uncertainty/",
+            "date": "2026-09-03",
+            "publisher": "24/7 Wall St."
           },
           {
-            "title": "Citi Trends (CTRN) Turns A Growth Streak Into Real Profit",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/citi-trends-ctrn-turns-growth-141403811.html",
-            "date": "2026-09-01",
-            "publisher": "Insider Monkey"
-          },
-          {
-            "title": "Citi Trends Inc (CTRN) (Q2 2026) Earnings Call Highlights: Eighth Consecutive Quarter of ...",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/citi-trends-inc-ctrn-q2-210057097.html",
-            "date": "2026-08-25",
+            "title": "Shipping Stocks Soar as Hormuz Disruption Sends Tanker Shares Surging",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/shipping-stocks-soar-hormuz-disruption-134130314.html",
+            "date": "2026-09-03",
             "publisher": "GuruFocus.com"
           },
           {
-            "title": "Citi Trends, Inc. Q2 2026 Earnings Call Summary",
-            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-citi-trends-inc-q2-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
-            "date": "2026-08-25",
-            "publisher": "Moby"
+            "title": "Are Investors Undervaluing TEEKAY TANK LTD (TNK) Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/investors-undervaluing-teekay-tank-ltd-134003225.html",
+            "date": "2026-08-31",
+            "publisher": "Zacks"
           },
           {
-            "title": "Citi Trends Q2 Earnings Call Highlights",
-            "link": "https://www.marketbeat.com/instant-alerts/transcript-citi-trends-q2-earnings-call-highlights-2026-08-25/?utm_source=yahoofinance&utm_medium=yahoofinance",
-            "date": "2026-08-25",
-            "publisher": "MarketBeat"
+            "title": "Teekay Tankers (TNK) Recently Broke Out Above the 20-Day Moving Average",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/teekay-tankers-tnk-recently-broke-133502423.html",
+            "date": "2026-08-28",
+            "publisher": "Zacks"
+          },
+          {
+            "title": "Teekay Tankers (TNK) Is Up 6.92% in One Week: What You Should Know",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/teekay-tankers-tnk-6-92-160006004.html",
+            "date": "2026-08-27",
+            "publisher": "Zacks"
           }
         ],
-        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.4x、MACD 水上（零軸之上）。"
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.51x、MACD 水上（零軸之上）。"
       },
       {
-        "code": "US.TCBX",
-        "name": "Third Coast Bancshares, Inc.",
-        "sector": "Financial Services",
-        "close": 46.04999923706055,
+        "code": "US.VNT",
+        "name": "Vontier Corporation",
+        "sector": "Technology",
+        "close": 33.02000045776367,
         "score": 80,
         "trend": 50,
         "hdly": 0,
-        "vol": 20,
-        "vol_ratio": 1.58,
-        "vol_ratio_prev5": 1.95,
+        "vol": 12,
+        "vol_ratio": 1.03,
+        "vol_ratio_prev5": 1.07,
         "hc": null,
         "bar_complete": true,
         "stop_ref": null,
         "risk_pct": null,
         "risk_atr": null,
         "target_2r": null,
-        "mcdxx": 0,
+        "mcdxx": 8,
         "macd": 10,
         "second_yellow": 0,
         "sy_pattern": false,
         "sy_above_ma": "na/na",
         "sy_ma_slope": "na/na",
         "futu": null,
-        "mktcap": 766961344,
-        "pe": 11.455224,
-        "rating": "buy · 5位分析師",
-        "target": 47.0,
-        "earnings": "2026-10-22（估）",
-        "summary": "Third Coast Bancshares, Inc. operates as the bank holding company for Third Coast Bank that provides various commercial banking solutions to small and medium-sized businesses and professionals in Texas, the United States. The company's deposit products include checking, money market, savings, and individual retirement accounts, as well as certificates of deposit. Its loan portfolio consists of commercial and residential real estate loans; construction, development and other loans; commercial and industrial loans; and farmland, consumer, and agricultural loans, as well as lease financing and bo",
+        "mktcap": 4502159872,
+        "pe": 13.817427,
+        "rating": "",
+        "target": 41.049,
+        "earnings": "2026-10-29",
+        "summary": "Vontier Corporation provides mobility ecosystem solutions worldwide. It operates through three segments: Mobility Technologies, Repair Solutions, and Environmental and Fueling Solutions. The Mobility Technologies segment provides digitally enabled equipment and operating software solutions for mobility ecosystem, such as convenience retail operating platform, point-of-sale and payment solutions, remote diagnostics and site-management tools, workflow automation solutions, data analytics, operating software platform for electric vehicle charging networks, integrated solutions for alternative fue",
         "news": [
           {
-            "title": "Third Coast Bank CEO Bart Caraway on Putting People and Purpose Into Banking",
-            "link": "https://finance.yahoo.com/video/third-coast-bank-ceo-bart-124122382.html",
-            "date": "2026-08-24",
-            "publisher": "NYSE"
-          },
-          {
-            "title": "Third Coast Bancshares Q2 Earnings Call Highlights",
-            "link": "https://www.marketbeat.com/instant-alerts/third-coast-bancshares-q2-earnings-call-highlights-2026-07-23/?utm_source=yahoofinance&utm_medium=yahoofinance",
-            "date": "2026-07-23",
-            "publisher": "MarketBeat"
-          },
-          {
-            "title": "Third Coast Bancshares, Inc. Q2 2026 Earnings Call Summary",
-            "link": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-third-coast-bancshares-inc-q2-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
-            "date": "2026-07-23",
-            "publisher": "Moby"
-          },
-          {
-            "title": "Third Coast Bancshares, Inc. (TCBX) Q2 Earnings and Revenues Top Estimates",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/third-coast-bancshares-inc-tcbx-215509394.html",
-            "date": "2026-07-22",
+            "title": "Is Vontier (VNT) a Great Value Stock Right Now?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/vontier-vnt-great-value-stock-134003960.html",
+            "date": "2026-09-04",
             "publisher": "Zacks"
           },
           {
-            "title": "First Reliance Bancshares (FSRL) Soars 20.3%: Is Further Upside Left in the Stock?",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/first-reliance-bancshares-fsrl-soars-095500396.html",
-            "date": "2026-06-26",
+            "title": "Is Vontier (VNT) Undervalued As Driivz Showcases Its AI Charging Network Agent?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/vontier-vnt-undervalued-driivz-showcases-230811127.html",
+            "date": "2026-09-02",
+            "publisher": "Simply Wall St."
+          },
+          {
+            "title": "Why Vontier (VNT) Could Be an Overlooked Value Stock",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/why-vontier-vnt-could-overlooked-171346482.html",
+            "date": "2026-09-01",
+            "publisher": "Insider Monkey"
+          },
+          {
+            "title": "Vontier (VNT): Buy, Sell, or Hold Post Q2 Earnings?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/vontier-vnt-buy-sell-hold-140220962.html",
+            "date": "2026-09-01",
+            "publisher": "StockStory"
+          },
+          {
+            "title": "VNT vs. SYM: Which Stock Is the Better Value Option?",
+            "link": "https://finance.yahoo.com/markets/stocks/articles/vnt-vs-sym-stock-better-154004050.html",
+            "date": "2026-08-26",
             "publisher": "Zacks"
           }
         ],
-        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.58x、MACD 水上（零軸之上）。"
+        "why": "日K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.03x、MACD 水上（零軸之上）、動能蓄勢（死低）。"
       }
     ],
     "week": [
@@ -335,20 +527,20 @@
         "code": "US.ZVRA",
         "name": "Zevra Therapeutics, Inc.",
         "sector": "Healthcare",
-        "close": 12.399999618530273,
-        "score": 97,
+        "close": 12.539999961853027,
+        "score": 84,
         "trend": 50,
         "hdly": 8,
-        "vol": 12,
-        "vol_ratio": 1.05,
-        "vol_ratio_prev5": 0.97,
+        "vol": 0,
+        "vol_ratio": 0.88,
+        "vol_ratio_prev5": 0.78,
         "hc": false,
         "bar_complete": true,
         "stop_ref": 11.29,
-        "risk_pct": 8.95,
-        "risk_atr": 2.79,
-        "target_2r": 14.62,
-        "mcdxx": 2,
+        "risk_pct": 9.96,
+        "risk_atr": 3.17,
+        "target_2r": 15.04,
+        "mcdxx": 1,
         "macd": 10,
         "second_yellow": 15,
         "sy_pattern": true,
@@ -357,7 +549,7 @@
         "futu": null,
         "mktcap": 736358848,
         "pe": 13.333333,
-        "rating": "strong_buy · 9位分析師",
+        "rating": "",
         "target": 25.0,
         "earnings": "2026-11-05（估）",
         "summary": "Zevra Therapeutics, Inc., a commercial-stage company, focuses on addressing unmet needs for the treatment of rare diseases in the United States. The company develops its products through Ligand Activated Technology platform. Its lead product candidate is KP1077, consisting of KP1077IH, which is under Phase 3 clinical trial for the treatment of idiopathic hypersomnia, and KP1077N, which is under Phase 3 clinical trial to treat narcolepsy. The company is developing Celiprolol, an investigational product candidate that is under Phase 3 clinical trial for the treatment of vascular Ehlers Danlos sy",
@@ -393,89 +585,25 @@
             "publisher": "Stocktwits"
           }
         ],
-        "why": "周K 轉黃 97分：站穩上升 MA30/MA40（趨勢回調）、主力進場、放量 1.05x、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
-      },
-      {
-        "code": "US.BE",
-        "name": "Bloom Energy Corporation",
-        "sector": "Industrials",
-        "close": 252.8699951171875,
-        "score": 83,
-        "trend": 50,
-        "hdly": 8,
-        "vol": 0,
-        "vol_ratio": 0.96,
-        "vol_ratio_prev5": 0.75,
-        "hc": false,
-        "bar_complete": true,
-        "stop_ref": 181.97,
-        "risk_pct": 28.04,
-        "risk_atr": 4.47,
-        "target_2r": 394.68,
-        "mcdxx": 0,
-        "macd": 10,
-        "second_yellow": 15,
-        "sy_pattern": true,
-        "sy_above_ma": "True/True",
-        "sy_ma_slope": "True/True",
-        "futu": null,
-        "mktcap": 74477133824,
-        "pe": 324.19232,
-        "rating": "buy · 26位分析師",
-        "target": 275.08463,
-        "earnings": "2026-10-28（估）",
-        "summary": "Bloom Energy Corporation designs, manufactures, sells, and installs solid oxide fuel cell systems for on-site power generation in the United States and internationally. It offers Bloom Energy Server, an energy server platform to convert fuel, such as natural gas, biogas, hydrogen, or a blend of these fuels, into electricity through a non-combustion electrochemical process. The company also provides Bloom Electrolyzer for producing hydrogen. It sells its products through direct and indirect sales channels to utilities, data centers, retail, healthcare, education, telecom, manufacturing, and oth",
-        "news": [
-          {
-            "title": "Bloom Energy, Astera Rally On Hopes They Will Join S&P Friday; Who Else Could Be Added",
-            "link": "https://www.barrons.com/articles/sp-500-index-additions-bloom-energy-9e4bf0dc?siteid=yhoof2&yptr=yahoo",
-            "date": "2026-09-04",
-            "publisher": "Barrons.com"
-          },
-          {
-            "title": "Zacks Investment Ideas feature highlights: Bloom Energy and Tesla",
-            "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-134300704.html",
-            "date": "2026-09-04",
-            "publisher": "Zacks"
-          },
-          {
-            "title": "Watch These 2 Energy Stocks — S&P 500 Addition Could Come Before Quarter's End",
-            "link": "https://stocktwits.com/news-articles/markets/equity/watch-these-2-energy-stocks-s-and-p-500-addition-could-come-before-quarter-s-end/cZswnUNRJvU",
-            "date": "2026-09-04",
-            "publisher": "Stocktwits"
-          },
-          {
-            "title": "HPE Cannot Build AI Servers Fast Enough. Is the Stock Still Cheap?",
-            "link": "https://247wallst.com/investing/2026/09/03/hpe-cannot-build-ai-servers-fast-enough-is-the-stock-still-cheap/",
-            "date": "2026-09-03",
-            "publisher": "24/7 Wall St."
-          },
-          {
-            "title": "Bloom Energy: Unlocking Massive Growth Behind the Meter",
-            "link": "https://finance.yahoo.com/energy/articles/bloom-energy-unlocking-massive-growth-185200924.html",
-            "date": "2026-09-03",
-            "publisher": "Zacks"
-          }
-        ],
-        "why": "周K 轉黃 83分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
+        "why": "周K 轉黃 84分：站穩上升 MA30/MA40（趨勢回調）、主力進場、MACD 水上（零軸之上）、動能蓄勢（死低）、二次轉黃確認（曾升≥40%後回落再轉黃）。"
       },
       {
         "code": "US.MOVE",
         "name": "Corvex, Inc.",
         "sector": "Technology",
-        "close": 14.739999771118164,
+        "close": 14.319999694824219,
         "score": 80,
         "trend": 50,
         "hdly": 0,
         "vol": 20,
-        "vol_ratio": 2.41,
-        "vol_ratio_prev5": 4.57,
+        "vol_ratio": 2.38,
+        "vol_ratio_prev5": 4.45,
         "hc": true,
         "bar_complete": true,
-        "stop_ref": 7.98,
-        "risk_pct": 45.87,
-        "risk_atr": 4.11,
-        "target_2r": 28.26,
+        "stop_ref": 7.97,
+        "risk_pct": 44.37,
+        "risk_atr": 3.75,
+        "target_2r": 27.03,
         "mcdxx": 10,
         "macd": 0,
         "second_yellow": 0,
@@ -483,7 +611,7 @@
         "sy_above_ma": "True/True",
         "sy_ma_slope": "True/True",
         "futu": null,
-        "mktcap": 407521248,
+        "mktcap": 465080544,
         "pe": null,
         "rating": "",
         "target": null,
@@ -521,7 +649,7 @@
             "publisher": "Simply Wall St."
           }
         ],
-        "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 2.41x、動能蓄勢（死低）。"
+        "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 2.38x、動能蓄勢（死低）。"
       }
     ],
     "mon": []
@@ -529,8 +657,8 @@
   "volume_watch": [
     {
       "code": "US.FRNM",
-      "close": 16.309999465942383,
-      "spike_mult": 26.7,
+      "close": 16.899999618530273,
+      "spike_mult": 23.6,
       "spike_date": "2026-09-04"
     }
   ],
@@ -539,14 +667,14 @@
       "code": "XLE",
       "name": "能源",
       "ret": {
-        "d5": 2.2,
-        "m1": 10.1,
-        "m3": 11.9,
-        "m6": 14.8,
-        "y1": 48.3
+        "d5": 3.7,
+        "m1": 12.8,
+        "m3": 10.8,
+        "m6": 16.0,
+        "y1": 50.6
       },
       "rank_m1": 1,
-      "rotate": 1,
+      "rotate": 2,
       "vol_ratio": 0.66,
       "hot": false
     },
@@ -554,11 +682,11 @@
       "code": "XLV",
       "name": "醫療",
       "ret": {
-        "d5": 0.2,
-        "m1": 4.3,
-        "m3": 12.5,
-        "m6": 13.2,
-        "y1": 26.9
+        "d5": 1.0,
+        "m1": 5.5,
+        "m3": 14.4,
+        "m6": 13.5,
+        "y1": 28.8
       },
       "rank_m1": 2,
       "rotate": -1,
@@ -566,31 +694,16 @@
       "hot": false
     },
     {
-      "code": "XLK",
-      "name": "科技",
-      "ret": {
-        "d5": 0.9,
-        "m1": 1.1,
-        "m3": 4.0,
-        "m6": 36.7,
-        "y1": 43.4
-      },
-      "rank_m1": 3,
-      "rotate": 1,
-      "vol_ratio": 0.51,
-      "hot": false
-    },
-    {
       "code": "XLC",
       "name": "通訊",
       "ret": {
-        "d5": -0.8,
-        "m1": 0.8,
-        "m3": 0.6,
-        "m6": -4.1,
-        "y1": -0.6
+        "d5": 1.8,
+        "m1": 2.3,
+        "m3": 0.5,
+        "m6": -3.7,
+        "y1": 1.5
       },
-      "rank_m1": 4,
+      "rank_m1": 3,
       "rotate": 4,
       "vol_ratio": 0.65,
       "hot": true
@@ -599,26 +712,41 @@
       "code": "XLF",
       "name": "金融",
       "ret": {
-        "d5": 0.0,
-        "m1": 0.5,
-        "m3": 11.5,
-        "m6": 15.9,
-        "y1": 9.1
+        "d5": 1.2,
+        "m1": 1.0,
+        "m3": 12.6,
+        "m6": 15.3,
+        "y1": 11.2
       },
-      "rank_m1": 5,
+      "rank_m1": 4,
       "rotate": -2,
       "vol_ratio": 0.74,
+      "hot": false
+    },
+    {
+      "code": "XLK",
+      "name": "科技",
+      "ret": {
+        "d5": -1.4,
+        "m1": 0.0,
+        "m3": -3.6,
+        "m6": 33.0,
+        "y1": 43.1
+      },
+      "rank_m1": 5,
+      "rotate": 6,
+      "vol_ratio": 0.51,
       "hot": false
     },
     {
       "code": "XLB",
       "name": "物料",
       "ret": {
-        "d5": -1.4,
-        "m1": 0.5,
-        "m3": 4.0,
-        "m6": 6.0,
-        "y1": 16.9
+        "d5": -1.1,
+        "m1": -0.0,
+        "m3": 2.3,
+        "m6": 4.4,
+        "y1": 17.8
       },
       "rank_m1": 6,
       "rotate": -1,
@@ -629,14 +757,14 @@
       "code": "XLP",
       "name": "必需消費",
       "ret": {
-        "d5": -1.0,
-        "m1": -0.6,
-        "m3": 2.1,
-        "m6": -0.2,
-        "y1": 7.8
+        "d5": 0.2,
+        "m1": -0.1,
+        "m3": 4.6,
+        "m6": 1.1,
+        "y1": 8.7
       },
       "rank_m1": 7,
-      "rotate": -1,
+      "rotate": -3,
       "vol_ratio": 0.71,
       "hot": false
     },
@@ -644,72 +772,72 @@
       "code": "XLU",
       "name": "公用",
       "ret": {
-        "d5": 0.8,
-        "m1": -0.7,
-        "m3": -2.2,
-        "m6": -6.6,
-        "y1": 5.8
+        "d5": -0.3,
+        "m1": -1.4,
+        "m3": -1.4,
+        "m6": -7.0,
+        "y1": 5.5
       },
       "rank_m1": 8,
-      "rotate": 3,
+      "rotate": 2,
       "vol_ratio": 0.94,
-      "hot": false
-    },
-    {
-      "code": "XLRE",
-      "name": "房地產",
-      "ret": {
-        "d5": -1.2,
-        "m1": -2.0,
-        "m3": -0.9,
-        "m6": 4.0,
-        "y1": 8.8
-      },
-      "rank_m1": 9,
-      "rotate": 1,
-      "vol_ratio": 0.87,
       "hot": false
     },
     {
       "code": "XLY",
       "name": "非必需消費",
       "ret": {
-        "d5": -2.0,
-        "m1": -2.7,
-        "m3": 0.2,
-        "m6": 0.8,
-        "y1": -1.5
+        "d5": 0.5,
+        "m1": -1.8,
+        "m3": -0.5,
+        "m6": 0.3,
+        "y1": 1.6
       },
-      "rank_m1": 10,
+      "rank_m1": 9,
       "rotate": -1,
       "vol_ratio": 0.62,
+      "hot": false
+    },
+    {
+      "code": "XLRE",
+      "name": "房地產",
+      "ret": {
+        "d5": -0.9,
+        "m1": -2.1,
+        "m3": 0.5,
+        "m6": 3.7,
+        "y1": 10.4
+      },
+      "rank_m1": 10,
+      "rotate": -4,
+      "vol_ratio": 0.87,
       "hot": false
     },
     {
       "code": "XLI",
       "name": "工業",
       "ret": {
-        "d5": -1.1,
-        "m1": -5.1,
-        "m3": 0.9,
-        "m6": 3.7,
-        "y1": 17.2
+        "d5": -2.4,
+        "m1": -6.3,
+        "m3": -0.7,
+        "m6": 2.0,
+        "y1": 18.0
       },
       "rank_m1": 11,
-      "rotate": -4,
+      "rotate": -2,
       "vol_ratio": 0.72,
       "hot": false
     }
   ],
-  "sector_ai": "近一個月最強板塊：能源（+10.1%）。 資金正流入：通訊（動量加速）。 資金轉弱：工業。 🔥 特別留意 通訊，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。",
+  "sector_ai": "近一個月最強板塊：能源（+12.8%）。 資金正流入：能源、通訊、科技（動量加速）。 資金轉弱：必需消費、房地產、工業。 🔥 特別留意 通訊，短期動量明顯加速。 ⚠️ 以上為程式根據動量數據自動生成嘅觀察，並非買賣建議，請自行判斷。",
   "tqqq_watch": {
     "status": {
       "week_end": "2026-09-04",
       "color": "red",
-      "close": 72.37,
+      "close": 72.03,
       "high52": 87.89,
-      "drawdown": 17.7,
-      "gap_to_30": 12.3,
+      "drawdown": 18.0,
+      "gap_to_30": 12.0,
       "is_yellow": false,
       "turned_yellow": false,
       "trig_yellow": false,
@@ -742,7 +870,7 @@
       "candidates": [
         {
           "month": "2026-09",
-          "close": 142.8,
+          "close": 144.82,
           "high24": 543.0,
           "trough": 86.93,
           "drawdown": 84.0,
@@ -754,7 +882,7 @@
         },
         {
           "month": "2026-09",
-          "close": 56.59,
+          "close": 55.39,
           "high24": 181.14,
           "trough": 44.17,
           "drawdown": 75.6,
@@ -766,7 +894,19 @@
         },
         {
           "month": "2026-09",
-          "close": 17.6,
+          "close": 87.39,
+          "high24": 170.87,
+          "trough": 51.99,
+          "drawdown": 69.6,
+          "red_count": 6,
+          "code": "US.WGS",
+          "kind": "stock",
+          "name": "GeneDx Holdings Corp.",
+          "sector": ""
+        },
+        {
+          "month": "2026-09",
+          "close": 17.13,
           "high24": 36.91,
           "trough": 13.02,
           "drawdown": 64.7,
@@ -778,7 +918,7 @@
         },
         {
           "month": "2026-09",
-          "close": 5.34,
+          "close": 5.35,
           "high24": 7.55,
           "trough": 2.95,
           "drawdown": 60.9,
@@ -790,7 +930,7 @@
         },
         {
           "month": "2026-09",
-          "close": 122.11,
+          "close": 124.72,
           "high24": 153.86,
           "trough": 69.3,
           "drawdown": 55.0,
@@ -802,7 +942,7 @@
         },
         {
           "month": "2026-09",
-          "close": 217.35,
+          "close": 215.35,
           "high24": 278.9,
           "trough": 135.24,
           "drawdown": 51.5,
@@ -811,18 +951,6 @@
           "kind": "stock",
           "name": "PrimeEnergy Resources Corporation",
           "sector": ""
-        },
-        {
-          "month": "2026-09",
-          "close": 20.76,
-          "high24": 32.11,
-          "trough": 15.92,
-          "drawdown": 50.4,
-          "red_count": 8,
-          "code": "US.WWW",
-          "kind": "stock",
-          "name": "Wolverine World Wide, Inc.",
-          "sector": "Consumer Cyclical"
         },
         {
           "month": "2026-09",
@@ -838,7 +966,7 @@
         },
         {
           "month": "2026-09",
-          "close": 174.33,
+          "close": 182.53,
           "high24": 207.52,
           "trough": 116.67,
           "drawdown": 43.8,
@@ -850,7 +978,7 @@
         },
         {
           "month": "2026-09",
-          "close": 542.43,
+          "close": 560.11,
           "high24": 785.0,
           "trough": 446.55,
           "drawdown": 43.1,
@@ -862,7 +990,7 @@
         },
         {
           "month": "2026-09",
-          "close": 20.27,
+          "close": 20.76,
           "high24": 25.57,
           "trough": 15.08,
           "drawdown": 41.0,
@@ -871,6 +999,18 @@
           "kind": "stock",
           "name": "Harmony Gold Mining Company Limited",
           "sector": "Basic Materials"
+        },
+        {
+          "month": "2026-09",
+          "close": 145.88,
+          "high24": 182.19,
+          "trough": 114.18,
+          "drawdown": 37.3,
+          "red_count": 6,
+          "code": "US.SHOP",
+          "kind": "stock",
+          "name": "Shopify Inc.",
+          "sector": ""
         }
       ],
       "confirmed": [
@@ -1698,2008 +1838,888 @@
     }
   },
   "x_buzz": {
-    "updated": "2026-09-05 06:09",
+    "updated": "2026-09-05 09:16",
     "stale": false,
-    "quota_left": 212,
+    "quota_left": 210,
     "rows": [
       {
         "rank": 1,
-        "ticker": "TSLA",
-        "name": "Tesla Inc",
-        "kind": "stock",
-        "buzz": 89.4,
-        "mentions": 754,
-        "bull": 39,
-        "bear": 21,
-        "trend": "rising",
-        "hist": [
-          85.42,
-          87.83,
-          88.53,
-          88.06,
-          88.03,
-          90.01,
-          89.4
-        ]
-      },
-      {
-        "rank": 2,
-        "ticker": "NVDA",
-        "name": "NVIDIA Corp",
-        "kind": "stock",
-        "buzz": 88.6,
-        "mentions": 943,
-        "bull": 50,
-        "bear": 9,
-        "trend": "rising",
-        "hist": [
-          87.37,
-          89.11,
-          89.96,
-          89.41,
-          90.24,
-          90.79,
-          88.6
-        ]
-      },
-      {
-        "rank": 3,
-        "ticker": "MU",
-        "name": "Micron Technology Inc",
-        "kind": "stock",
-        "buzz": 88.1,
-        "mentions": 854,
-        "bull": 49,
-        "bear": 12,
-        "trend": "rising",
-        "hist": [
-          85.85,
-          86.12,
-          87.11,
-          87.33,
-          86.83,
-          87.83,
-          88.1
-        ]
-      },
-      {
-        "rank": 4,
-        "ticker": "AMC",
-        "name": "AMC Entertainment Holdings Inc - Class A",
-        "kind": "stock",
-        "buzz": 87.5,
-        "mentions": 481,
-        "bull": 43,
-        "bear": 21,
-        "trend": "rising",
-        "hist": [
-          80.73,
-          82.64,
-          88.11,
-          86.48,
-          84.46,
-          84.11,
-          87.5
-        ]
-      },
-      {
-        "rank": 5,
-        "ticker": "HOOD",
-        "name": "Robinhood Markets Inc - Class A",
-        "kind": "stock",
-        "buzz": 87.3,
-        "mentions": 487,
-        "bull": 52,
-        "bear": 10,
-        "trend": "rising",
-        "hist": [
-          82.23,
-          86.5,
-          85.08,
-          86.61,
-          86.99,
-          88.46,
-          87.3
-        ]
-      },
-      {
-        "rank": 6,
-        "ticker": "AAPL",
-        "name": "Apple Inc",
-        "kind": "stock",
-        "buzz": 87.0,
-        "mentions": 351,
-        "bull": 47,
-        "bear": 16,
-        "trend": "falling",
-        "hist": [
-          86.67,
-          89.46,
-          91.8,
-          90.06,
-          87.75,
-          85.59,
-          87.0
-        ]
-      },
-      {
-        "rank": 7,
-        "ticker": "META",
-        "name": "Meta Platforms Inc - Class A",
-        "kind": "stock",
-        "buzz": 87.0,
-        "mentions": 516,
-        "bull": 54,
-        "bear": 10,
-        "trend": "stable",
-        "hist": [
-          83.53,
-          85.56,
-          88.78,
-          87.45,
-          88.08,
-          88.03,
-          87.0
-        ]
-      },
-      {
-        "rank": 8,
-        "ticker": "IREN",
-        "name": "Iris Energy Ltd",
-        "kind": "stock",
-        "buzz": 86.9,
-        "mentions": 393,
-        "bull": 50,
-        "bear": 12,
-        "trend": "stable",
-        "hist": [
-          83.75,
-          86.23,
-          87.05,
-          86.58,
-          87.42,
-          86.58,
-          86.9
-        ]
-      },
-      {
-        "rank": 9,
-        "ticker": "SPY",
-        "name": "SPDR S&P 500 ETF Trust",
-        "kind": "etf",
-        "buzz": 86.8,
-        "mentions": 728,
-        "bull": 33,
-        "bear": 13,
-        "trend": "stable",
-        "hist": [
-          84.99,
-          86.86,
-          87.92,
-          87.24,
-          88.17,
-          87.67,
-          86.8
-        ]
-      },
-      {
-        "rank": 10,
-        "ticker": "UBER",
-        "name": "Uber Technologies Inc",
-        "kind": "stock",
-        "buzz": 86.7,
-        "mentions": 202,
-        "bull": 39,
-        "bear": 23,
-        "trend": "rising",
-        "hist": [
-          83.72,
-          78.1,
-          79.52,
-          80.04,
-          87.59,
-          85.18,
-          86.7
-        ]
-      },
-      {
-        "rank": 11,
-        "ticker": "NBIS",
-        "name": "Nebius Group N.V. - Class A",
-        "kind": "stock",
-        "buzz": 86.5,
-        "mentions": 424,
-        "bull": 49,
-        "bear": 12,
-        "trend": "stable",
-        "hist": [
-          83.81,
-          85.23,
-          86.83,
-          86.63,
-          86.75,
-          85.69,
-          86.5
-        ]
-      },
-      {
-        "rank": 12,
-        "ticker": "MSTR",
-        "name": "Microstrategy Inc - Class A",
-        "kind": "stock",
-        "buzz": 86.3,
-        "mentions": 445,
-        "bull": 49,
-        "bear": 11,
-        "trend": "stable",
-        "hist": [
-          82.83,
-          86.39,
-          89.1,
-          85.99,
-          87.07,
-          87.56,
-          86.3
-        ]
-      },
-      {
-        "rank": 13,
-        "ticker": "GOOGL",
-        "name": "Alphabet Inc - Class A",
-        "kind": "stock",
-        "buzz": 86.2,
-        "mentions": 381,
-        "bull": 48,
-        "bear": 10,
-        "trend": "stable",
-        "hist": [
-          82.86,
-          85.77,
-          86.96,
-          87.18,
-          86.96,
-          85.91,
-          86.2
-        ]
-      },
-      {
-        "rank": 14,
-        "ticker": "SNDK",
-        "name": "Sandisk Corp",
-        "kind": "stock",
-        "buzz": 86.2,
-        "mentions": 447,
-        "bull": 43,
-        "bear": 10,
-        "trend": "rising",
-        "hist": [
-          81.29,
-          80.77,
-          85.75,
-          85.51,
-          84.25,
-          85.77,
-          86.2
-        ]
-      },
-      {
-        "rank": 15,
-        "ticker": "AVGO",
-        "name": "Broadcom Inc",
-        "kind": "stock",
-        "buzz": 86.1,
-        "mentions": 361,
-        "bull": 56,
-        "bear": 12,
-        "trend": "rising",
-        "hist": [
-          85.21,
-          84.07,
-          86.42,
-          85.5,
-          87.98,
-          87.63,
-          86.1
-        ]
-      },
-      {
-        "rank": 16,
         "ticker": "SPCX",
         "name": "Space Exploration Technologies Corp",
         "kind": "stock",
-        "buzz": 86.1,
-        "mentions": 445,
-        "bull": 51,
-        "bear": 14,
-        "trend": "stable",
+        "buzz": 54.4,
+        "mentions": 9,
+        "bull": 67,
+        "bear": 0,
+        "trend": "falling",
         "hist": [
-          85.4,
           88.33,
           87.46,
           86.99,
           87.68,
           88.89,
-          86.1
-        ]
-      },
-      {
-        "rank": 17,
-        "ticker": "AMZN",
-        "name": "Amazon.com Inc",
-        "kind": "stock",
-        "buzz": 85.9,
-        "mentions": 338,
-        "bull": 54,
-        "bear": 9,
-        "trend": "stable",
-        "hist": [
-          83.97,
-          86.26,
-          87.09,
-          86.12,
-          87.34,
-          86.72,
-          85.9
-        ]
-      },
-      {
-        "rank": 18,
-        "ticker": "ASST",
-        "name": "Asset Entities Inc - Class B",
-        "kind": "stock",
-        "buzz": 85.8,
-        "mentions": 268,
-        "bull": 60,
-        "bear": 9,
-        "trend": "rising",
-        "hist": [
-          82.63,
-          81.07,
-          87.42,
-          84.73,
-          84.96,
-          86.84,
-          85.8
-        ]
-      },
-      {
-        "rank": 19,
-        "ticker": "LULU",
-        "name": "Lululemon Athletica Inc",
-        "kind": "stock",
-        "buzz": 85.7,
-        "mentions": 569,
-        "bull": 28,
-        "bear": 37,
-        "trend": "rising",
-        "hist": [
-          79.43,
-          79.59,
-          81.13,
-          70.92,
-          78.29,
-          85.92,
-          85.7
-        ]
-      },
-      {
-        "rank": 20,
-        "ticker": "ASTS",
-        "name": "AST SpaceMobile Inc - Class A",
-        "kind": "stock",
-        "buzz": 85.6,
-        "mentions": 306,
-        "bull": 50,
-        "bear": 19,
-        "trend": "rising",
-        "hist": [
-          82.82,
-          85.04,
           86.39,
-          85.81,
-          87.11,
-          86.54,
-          85.6
+          54.4
         ]
       },
       {
-        "rank": 21,
-        "ticker": "FICO",
-        "name": "Fair Isaac Corp",
-        "kind": "stock",
-        "buzz": 85.5,
-        "mentions": 204,
-        "bull": 33,
-        "bear": 38,
-        "trend": "rising",
-        "hist": [
-          60.93,
-          47.84,
-          38.48,
-          39.13,
-          33.1,
-          50.83,
-          85.5
-        ]
-      },
-      {
-        "rank": 22,
-        "ticker": "GME",
-        "name": "Gamestop Corporation - Class A",
-        "kind": "stock",
-        "buzz": 85.4,
-        "mentions": 370,
-        "bull": 55,
-        "bear": 13,
-        "trend": "falling",
-        "hist": [
-          81.23,
-          84.72,
-          86.91,
-          86.57,
-          85.88,
-          86.09,
-          85.4
-        ]
-      },
-      {
-        "rank": 23,
+        "rank": 2,
         "ticker": "INTC",
         "name": "Intel Corp",
         "kind": "stock",
-        "buzz": 85.4,
-        "mentions": 295,
-        "bull": 56,
-        "bear": 9,
-        "trend": "stable",
+        "buzz": 52.8,
+        "mentions": 9,
+        "bull": 33,
+        "bear": 33,
+        "trend": "falling",
         "hist": [
-          80.6,
           80.51,
           86.28,
           85.36,
           85.27,
           84.98,
-          85.4
+          85.94,
+          52.8
         ]
       },
       {
-        "rank": 24,
-        "ticker": "MSFT",
-        "name": "Microsoft Corporation",
-        "kind": "stock",
-        "buzz": 85.4,
-        "mentions": 309,
-        "bull": 47,
-        "bear": 12,
-        "trend": "falling",
-        "hist": [
-          84.09,
-          88.53,
-          87.75,
-          85.96,
-          86.21,
-          87.0,
-          85.4
-        ]
-      },
-      {
-        "rank": 25,
-        "ticker": "AMD",
-        "name": "Advanced Micro Devices Inc",
-        "kind": "stock",
-        "buzz": 85.1,
-        "mentions": 366,
-        "bull": 54,
-        "bear": 11,
-        "trend": "stable",
-        "hist": [
-          81.96,
-          84.52,
-          85.84,
-          85.32,
-          84.88,
-          85.74,
-          85.1
-        ]
-      },
-      {
-        "rank": 26,
-        "ticker": "SKHY",
-        "name": "SK hynix Inc. American Depositary Shares",
-        "kind": "stock",
-        "buzz": 85.1,
-        "mentions": 232,
-        "bull": 56,
-        "bear": 7,
-        "trend": "rising",
-        "hist": [
-          81.55,
-          80.81,
-          83.08,
-          81.12,
-          82.26,
-          81.28,
-          85.1
-        ]
-      },
-      {
-        "rank": 27,
-        "ticker": "OPEN",
-        "name": "Opendoor Technologies Inc",
-        "kind": "stock",
-        "buzz": 85.0,
-        "mentions": 234,
-        "bull": 65,
-        "bear": 13,
-        "trend": "rising",
-        "hist": [
-          81.29,
-          81.15,
-          82.65,
-          84.61,
-          83.25,
-          82.93,
-          85.0
-        ]
-      },
-      {
-        "rank": 28,
-        "ticker": "PLTR",
-        "name": "Palantir Technologies Inc - Class A",
-        "kind": "stock",
-        "buzz": 84.8,
-        "mentions": 262,
-        "bull": 40,
-        "bear": 14,
-        "trend": "stable",
-        "hist": [
-          83.29,
-          85.8,
-          86.62,
-          86.79,
-          85.1,
-          86.54,
-          84.8
-        ]
-      },
-      {
-        "rank": 29,
-        "ticker": "RKLB",
-        "name": "Rocket Lab USA Inc",
-        "kind": "stock",
-        "buzz": 84.8,
-        "mentions": 272,
-        "bull": 60,
-        "bear": 8,
-        "trend": "stable",
-        "hist": [
-          81.79,
-          84.45,
-          85.99,
-          85.6,
-          86.05,
-          85.74,
-          84.8
-        ]
-      },
-      {
-        "rank": 30,
-        "ticker": "NET",
-        "name": "Cloudflare Inc - Class A",
-        "kind": "stock",
-        "buzz": 84.3,
-        "mentions": 202,
-        "bull": 53,
-        "bear": 18,
-        "trend": "falling",
-        "hist": [
-          80.49,
-          84.95,
-          85.84,
-          85.93,
-          85.83,
-          84.76,
-          84.3
-        ]
-      },
-      {
-        "rank": 31,
+        "rank": 3,
         "ticker": "QQQ",
         "name": "Invesco QQQ Trust Series 1",
         "kind": "etf",
-        "buzz": 84.2,
-        "mentions": 419,
-        "bull": 27,
-        "bear": 8,
+        "buzz": 46.7,
+        "mentions": 6,
+        "bull": 33,
+        "bear": 17,
         "trend": "falling",
         "hist": [
-          81.44,
           83.6,
           85.71,
           86.03,
           84.68,
           85.08,
-          84.2
+          84.7,
+          46.7
         ]
       },
       {
-        "rank": 32,
-        "ticker": "SOFI",
-        "name": "SoFi Technologies Inc",
-        "kind": "stock",
-        "buzz": 84.2,
-        "mentions": 292,
-        "bull": 52,
-        "bear": 12,
-        "trend": "rising",
-        "hist": [
-          81.42,
-          84.07,
-          84.82,
-          84.42,
-          86.7,
-          84.88,
-          84.2
-        ]
-      },
-      {
-        "rank": 33,
-        "ticker": "CIFR",
-        "name": "Cipher Mining Inc",
-        "kind": "stock",
-        "buzz": 84.1,
-        "mentions": 188,
-        "bull": 50,
-        "bear": 12,
-        "trend": "rising",
-        "hist": [
-          79.72,
-          80.51,
-          84.2,
-          83.23,
-          84.69,
-          86.02,
-          84.1
-        ]
-      },
-      {
-        "rank": 34,
-        "ticker": "MRVL",
-        "name": "Marvell Technology Inc",
-        "kind": "stock",
-        "buzz": 84.1,
-        "mentions": 214,
-        "bull": 62,
-        "bear": 3,
-        "trend": "falling",
-        "hist": [
-          82.21,
-          84.72,
-          85.0,
-          83.58,
-          82.3,
-          84.22,
-          84.1
-        ]
-      },
-      {
-        "rank": 35,
-        "ticker": "CRDO",
-        "name": "Credo Technology Group Holding Ltd",
-        "kind": "stock",
-        "buzz": 83.9,
-        "mentions": 197,
-        "bull": 52,
-        "bear": 8,
-        "trend": "rising",
-        "hist": [
-          77.89,
-          78.97,
-          79.8,
-          85.42,
-          85.96,
-          85.1,
-          83.9
-        ]
-      },
-      {
-        "rank": 36,
-        "ticker": "CRWV",
-        "name": "CoreWeave Inc - Class A",
-        "kind": "stock",
-        "buzz": 83.8,
-        "mentions": 218,
-        "bull": 50,
-        "bear": 14,
-        "trend": "rising",
-        "hist": [
-          79.75,
-          80.88,
-          82.64,
-          83.7,
-          81.92,
-          83.9,
-          83.8
-        ]
-      },
-      {
-        "rank": 37,
-        "ticker": "GPRO",
-        "name": "GoPro Inc - Class A",
-        "kind": "stock",
-        "buzz": 83.8,
-        "mentions": 193,
-        "bull": 64,
-        "bear": 6,
-        "trend": "stable",
-        "hist": [
-          0.0,
-          0.0,
-          85.27,
-          88.24,
-          84.72,
-          84.96,
-          83.8
-        ]
-      },
-      {
-        "rank": 38,
-        "ticker": "CRCL",
-        "name": "Circle Internet Group Inc - Class A",
-        "kind": "stock",
-        "buzz": 83.5,
-        "mentions": 171,
-        "bull": 56,
-        "bear": 5,
-        "trend": "rising",
-        "hist": [
-          73.29,
-          74.0,
-          82.98,
-          82.17,
-          77.53,
-          85.23,
-          83.5
-        ]
-      },
-      {
-        "rank": 39,
-        "ticker": "ORCL",
-        "name": "Oracle Corp",
-        "kind": "stock",
-        "buzz": 83.5,
-        "mentions": 259,
-        "bull": 48,
-        "bear": 14,
-        "trend": "rising",
-        "hist": [
-          73.25,
-          80.86,
-          82.47,
-          81.28,
-          82.44,
-          84.63,
-          83.5
-        ]
-      },
-      {
-        "rank": 40,
-        "ticker": "DELL",
-        "name": "Dell Technologies Inc - Class C",
-        "kind": "stock",
-        "buzz": 83.4,
-        "mentions": 205,
-        "bull": 60,
-        "bear": 7,
-        "trend": "rising",
-        "hist": [
-          82.33,
-          81.78,
-          83.78,
-          87.89,
-          87.69,
-          86.23,
-          83.4
-        ]
-      },
-      {
-        "rank": 41,
-        "ticker": "DRAM",
-        "name": "Roundhill Memory ETF",
-        "kind": "etf",
-        "buzz": 83.4,
-        "mentions": 191,
-        "bull": 45,
-        "bear": 7,
-        "trend": "rising",
-        "hist": [
-          73.05,
-          75.89,
-          78.69,
-          78.78,
-          80.96,
-          80.68,
-          83.4
-        ]
-      },
-      {
-        "rank": 42,
-        "ticker": "SMCI",
-        "name": "Super Micro Computer Inc",
-        "kind": "stock",
-        "buzz": 83.3,
-        "mentions": 209,
-        "bull": 63,
-        "bear": 8,
-        "trend": "rising",
-        "hist": [
-          63.15,
-          72.2,
-          82.65,
-          80.87,
-          80.2,
-          77.9,
-          83.3
-        ]
-      },
-      {
-        "rank": 43,
-        "ticker": "ASII",
-        "name": "Astra International Tbk",
-        "kind": "stock",
-        "buzz": 83.0,
-        "mentions": 49,
-        "bull": 43,
-        "bear": 10,
-        "trend": "rising",
-        "hist": [
-          0.0,
-          33.03,
-          28.09,
-          40.91,
-          45.77,
-          87.93,
-          83.0
-        ]
-      },
-      {
-        "rank": 44,
-        "ticker": "SATA",
-        "name": "Strive, Inc.",
-        "kind": "stock",
-        "buzz": 82.9,
-        "mentions": 77,
-        "bull": 55,
-        "bear": 6,
-        "trend": "stable",
-        "hist": [
-          76.65,
-          69.63,
-          85.56,
-          80.71,
-          82.19,
-          82.91,
-          82.9
-        ]
-      },
-      {
-        "rank": 45,
-        "ticker": "AI",
-        "name": "C3.ai Inc - Class A",
-        "kind": "stock",
-        "buzz": 82.8,
-        "mentions": 127,
-        "bull": 50,
-        "bear": 6,
-        "trend": "stable",
-        "hist": [
-          80.92,
-          84.78,
-          84.38,
-          86.09,
-          85.22,
-          85.17,
-          82.8
-        ]
-      },
-      {
-        "rank": 46,
-        "ticker": "COIN",
-        "name": "Coinbase Global Inc - Class A",
-        "kind": "stock",
-        "buzz": 82.8,
-        "mentions": 235,
-        "bull": 31,
-        "bear": 6,
-        "trend": "rising",
-        "hist": [
-          82.33,
-          79.33,
-          85.17,
-          83.78,
-          84.96,
-          86.1,
-          82.8
-        ]
-      },
-      {
-        "rank": 47,
-        "ticker": "BMNR",
-        "name": "BitMine Immersion Technologies Inc",
-        "kind": "stock",
-        "buzz": 82.7,
-        "mentions": 158,
-        "bull": 51,
-        "bear": 6,
-        "trend": "rising",
-        "hist": [
-          81.45,
-          78.83,
-          85.07,
-          78.77,
-          78.62,
-          85.26,
-          82.7
-        ]
-      },
-      {
-        "rank": 48,
-        "ticker": "MEME",
-        "name": "Roundhill Investments - Meme Stock ETF",
-        "kind": "etf",
-        "buzz": 82.7,
-        "mentions": 137,
-        "bull": 49,
-        "bear": 14,
-        "trend": "rising",
-        "hist": [
-          31.77,
-          44.0,
-          44.78,
-          58.07,
-          60.01,
-          66.54,
-          82.7
-        ]
-      },
-      {
-        "rank": 49,
-        "ticker": "SNOW",
-        "name": "Snowflake Inc - Class A",
-        "kind": "stock",
-        "buzz": 82.6,
-        "mentions": 189,
-        "bull": 61,
-        "bear": 11,
-        "trend": "rising",
-        "hist": [
-          78.6,
-          77.04,
-          82.26,
-          80.04,
-          86.22,
-          87.0,
-          82.6
-        ]
-      },
-      {
-        "rank": 50,
-        "ticker": "AAOI",
-        "name": "Applied Optoelectronics Inc",
-        "kind": "stock",
-        "buzz": 82.4,
-        "mentions": 144,
-        "bull": 53,
-        "bear": 10,
-        "trend": "rising",
-        "hist": [
-          82.6,
-          79.19,
-          81.73,
-          82.84,
-          82.06,
-          80.88,
-          82.4
-        ]
-      },
-      {
-        "rank": 51,
+        "rank": 4,
         "ticker": "NKE",
         "name": "Nike Inc - Class B",
         "kind": "stock",
-        "buzz": 82.4,
-        "mentions": 264,
-        "bull": 34,
-        "bear": 28,
+        "buzz": 46.4,
+        "mentions": 7,
+        "bull": 57,
+        "bear": 29,
         "trend": "stable",
         "hist": [
-          80.85,
           78.93,
           83.05,
           81.33,
           79.13,
           80.94,
-          82.4
-        ]
-      },
-      {
-        "rank": 52,
-        "ticker": "ONDS",
-        "name": "Ondas Holdings Inc",
-        "kind": "stock",
-        "buzz": 82.3,
-        "mentions": 166,
-        "bull": 49,
-        "bear": 14,
-        "trend": "rising",
-        "hist": [
-          81.5,
-          83.36,
-          82.74,
-          84.77,
-          86.26,
-          84.62,
-          82.3
-        ]
-      },
-      {
-        "rank": 53,
-        "ticker": "ADBE",
-        "name": "Adobe Inc",
-        "kind": "stock",
-        "buzz": 82.2,
-        "mentions": 157,
-        "bull": 46,
-        "bear": 15,
-        "trend": "rising",
-        "hist": [
-          76.0,
-          79.52,
-          79.22,
-          78.51,
-          81.05,
-          82.02,
-          82.2
-        ]
-      },
-      {
-        "rank": 54,
-        "ticker": "IBIT",
-        "name": "iShares Bitcoin Trust",
-        "kind": "etf",
-        "buzz": 82.2,
-        "mentions": 109,
-        "bull": 54,
-        "bear": 7,
-        "trend": "rising",
-        "hist": [
-          68.84,
-          76.23,
-          81.92,
-          81.53,
-          75.15,
-          84.02,
-          82.2
-        ]
-      },
-      {
-        "rank": 55,
-        "ticker": "TSM",
-        "name": "Taiwan Semiconductor Manufacturing",
-        "kind": "stock",
-        "buzz": 82.2,
-        "mentions": 111,
-        "bull": 49,
-        "bear": 11,
-        "trend": "rising",
-        "hist": [
-          76.77,
-          76.41,
-          84.7,
-          81.93,
-          84.96,
-          80.68,
-          82.2
-        ]
-      },
-      {
-        "rank": 56,
-        "ticker": "ZETA",
-        "name": "Zeta Global Holdings Corp - Class A",
-        "kind": "stock",
-        "buzz": 82.2,
-        "mentions": 103,
-        "bull": 60,
-        "bear": 9,
-        "trend": "falling",
-        "hist": [
-          81.39,
-          80.11,
-          84.74,
-          85.3,
-          83.77,
-          85.28,
-          82.2
-        ]
-      },
-      {
-        "rank": 57,
-        "ticker": "VST",
-        "name": "Vistra Corp",
-        "kind": "stock",
-        "buzz": 82.1,
-        "mentions": 100,
-        "bull": 54,
-        "bear": 6,
-        "trend": "rising",
-        "hist": [
-          80.82,
-          80.52,
-          83.46,
-          83.09,
-          85.3,
-          82.66,
-          82.1
-        ]
-      },
-      {
-        "rank": 58,
-        "ticker": "CBRS",
-        "name": "Cerebras Systems Inc. Class A Common Stock",
-        "kind": "stock",
-        "buzz": 81.8,
-        "mentions": 143,
-        "bull": 59,
-        "bear": 8,
-        "trend": "rising",
-        "hist": [
-          63.28,
-          58.13,
-          64.74,
-          76.01,
-          79.76,
-          75.07,
-          81.8
-        ]
-      },
-      {
-        "rank": 59,
-        "ticker": "HIMS",
-        "name": "Hims & Hers Health Inc - Class A",
-        "kind": "stock",
-        "buzz": 81.8,
-        "mentions": 154,
-        "bull": 45,
-        "bear": 17,
-        "trend": "falling",
-        "hist": [
-          79.26,
-          82.14,
-          86.11,
-          84.91,
-          84.01,
-          83.82,
-          81.8
-        ]
-      },
-      {
-        "rank": 60,
-        "ticker": "PL",
-        "name": "Planet Labs PBC - Class A",
-        "kind": "stock",
-        "buzz": 81.8,
-        "mentions": 153,
-        "bull": 63,
-        "bear": 8,
-        "trend": "rising",
-        "hist": [
-          54.21,
-          66.67,
-          77.24,
-          52.06,
-          76.63,
-          84.25,
-          81.8
-        ]
-      },
-      {
-        "rank": 61,
-        "ticker": "NFLX",
-        "name": "Netflix Inc",
-        "kind": "stock",
-        "buzz": 81.7,
-        "mentions": 185,
-        "bull": 48,
-        "bear": 21,
-        "trend": "rising",
-        "hist": [
-          82.05,
-          78.4,
-          81.23,
-          83.95,
-          82.06,
-          82.31,
-          81.7
-        ]
-      },
-      {
-        "rank": 62,
-        "ticker": "LITE",
-        "name": "Lumentum Holdings Inc",
-        "kind": "stock",
-        "buzz": 81.5,
-        "mentions": 95,
-        "bull": 40,
-        "bear": 12,
-        "trend": "rising",
-        "hist": [
-          80.49,
-          80.38,
-          82.61,
-          81.49,
-          80.97,
           82.84,
-          81.5
+          46.4
         ]
       },
       {
-        "rank": 63,
-        "ticker": "PATH",
-        "name": "UiPath Inc - Class A",
-        "kind": "stock",
-        "buzz": 81.4,
-        "mentions": 199,
-        "bull": 38,
-        "bear": 20,
-        "trend": "rising",
-        "hist": [
-          71.67,
-          75.42,
-          78.85,
-          71.81,
-          63.76,
-          81.22,
-          81.4
-        ]
-      },
-      {
-        "rank": 64,
-        "ticker": "ALAB",
-        "name": "Astera Labs Inc",
-        "kind": "stock",
-        "buzz": 81.3,
-        "mentions": 151,
-        "bull": 54,
-        "bear": 8,
-        "trend": "rising",
-        "hist": [
-          70.9,
-          59.26,
-          68.33,
-          69.02,
-          66.96,
-          68.0,
-          81.3
-        ]
-      },
-      {
-        "rank": 65,
-        "ticker": "EOSE",
-        "name": "Eos Energy Enterprises Inc - Class A",
-        "kind": "stock",
-        "buzz": 81.3,
-        "mentions": 104,
-        "bull": 47,
-        "bear": 13,
-        "trend": "rising",
-        "hist": [
-          72.08,
-          71.76,
-          78.38,
-          79.55,
-          73.86,
-          82.04,
-          81.3
-        ]
-      },
-      {
-        "rank": 66,
-        "ticker": "GOLD",
-        "name": "Randgold Resources Ltd",
-        "kind": "stock",
-        "buzz": 81.3,
-        "mentions": 125,
-        "bull": 54,
-        "bear": 13,
-        "trend": "stable",
-        "hist": [
-          78.85,
-          78.97,
-          82.48,
-          83.14,
-          82.72,
-          82.03,
-          81.3
-        ]
-      },
-      {
-        "rank": 67,
-        "ticker": "APP",
-        "name": "Applovin Corp - Class A",
-        "kind": "stock",
-        "buzz": 81.2,
-        "mentions": 148,
-        "bull": 45,
-        "bear": 16,
-        "trend": "rising",
-        "hist": [
-          80.68,
-          83.02,
-          81.08,
-          81.84,
-          84.37,
-          82.26,
-          81.2
-        ]
-      },
-      {
-        "rank": 68,
-        "ticker": "GG",
-        "name": "Golconda Gold Ltd.",
-        "kind": "stock",
-        "buzz": 81.2,
-        "mentions": 168,
-        "bull": 63,
-        "bear": 10,
-        "trend": "stable",
-        "hist": [
-          80.35,
-          84.73,
-          81.15,
-          82.18,
-          81.17,
-          80.29,
-          81.2
-        ]
-      },
-      {
-        "rank": 69,
-        "ticker": "GLD",
-        "name": "SPDR Gold Shares ETF",
+        "rank": 5,
+        "ticker": "SPY",
+        "name": "SPDR S&P 500 ETF Trust",
         "kind": "etf",
-        "buzz": 81.2,
-        "mentions": 149,
-        "bull": 41,
-        "bear": 13,
-        "trend": "rising",
-        "hist": [
-          77.67,
-          77.79,
-          81.58,
-          82.32,
-          83.12,
-          83.43,
-          81.2
-        ]
-      },
-      {
-        "rank": 70,
-        "ticker": "IOT",
-        "name": "Samsara Inc - Class A",
-        "kind": "stock",
-        "buzz": 81.0,
-        "mentions": 117,
-        "bull": 74,
-        "bear": 4,
-        "trend": "rising",
-        "hist": [
-          37.51,
-          43.82,
-          52.14,
-          40.75,
-          41.99,
-          82.8,
-          81.0
-        ]
-      },
-      {
-        "rank": 71,
-        "ticker": "KEEL",
-        "name": "Keel Infrastructure Corp. Common Stock",
-        "kind": "stock",
-        "buzz": 81.0,
-        "mentions": 79,
-        "bull": 66,
-        "bear": 6,
-        "trend": "stable",
-        "hist": [
-          76.7,
-          78.15,
-          81.11,
-          79.57,
-          68.98,
-          81.74,
-          81.0
-        ]
-      },
-      {
-        "rank": 72,
-        "ticker": "VOO",
-        "name": "VANGUARD 500 INDEX FUND ETF SHARES",
-        "kind": "etf",
-        "buzz": 81.0,
-        "mentions": 89,
-        "bull": 46,
-        "bear": 11,
-        "trend": "stable",
-        "hist": [
-          79.01,
-          77.72,
-          80.74,
-          81.68,
-          80.06,
-          80.17,
-          81.0
-        ]
-      },
-      {
-        "rank": 73,
-        "ticker": "SIVE",
-        "name": "Silver Verde May Mining Co., Inc.",
-        "kind": "stock",
-        "buzz": 80.9,
-        "mentions": 125,
-        "bull": 62,
-        "bear": 13,
-        "trend": "rising",
-        "hist": [
-          82.9,
-          82.56,
-          83.02,
-          81.57,
-          84.6,
-          85.81,
-          80.9
-        ]
-      },
-      {
-        "rank": 74,
-        "ticker": "MRNA",
-        "name": "Moderna Inc",
-        "kind": "stock",
-        "buzz": 80.8,
-        "mentions": 114,
-        "bull": 46,
-        "bear": 12,
-        "trend": "stable",
-        "hist": [
-          75.01,
-          78.39,
-          81.48,
-          84.56,
-          82.69,
-          81.12,
-          80.8
-        ]
-      },
-      {
-        "rank": 75,
-        "ticker": "NIO",
-        "name": "NIO Inc",
-        "kind": "stock",
-        "buzz": 80.8,
-        "mentions": 148,
-        "bull": 45,
-        "bear": 22,
-        "trend": "stable",
-        "hist": [
-          80.19,
-          76.8,
-          82.64,
-          84.28,
-          83.25,
-          82.46,
-          80.8
-        ]
-      },
-      {
-        "rank": 76,
-        "ticker": "EFX",
-        "name": "Equifax Inc",
-        "kind": "stock",
-        "buzz": 80.7,
-        "mentions": 32,
-        "bull": 34,
-        "bear": 50,
-        "trend": "rising",
-        "hist": [
-          0.0,
-          0.0,
-          27.49,
-          0.0,
-          0.0,
-          0.0,
-          80.7
-        ]
-      },
-      {
-        "rank": 77,
-        "ticker": "ZS",
-        "name": "Zscaler Inc",
-        "kind": "stock",
-        "buzz": 80.6,
-        "mentions": 129,
-        "bull": 62,
-        "bear": 7,
-        "trend": "rising",
-        "hist": [
-          64.48,
-          73.42,
-          77.89,
-          72.12,
-          72.86,
-          82.41,
-          80.6
-        ]
-      },
-      {
-        "rank": 78,
-        "ticker": "CRM",
-        "name": "Salesforce Inc",
-        "kind": "stock",
-        "buzz": 80.4,
-        "mentions": 96,
-        "bull": 47,
-        "bear": 7,
+        "buzz": 45.8,
+        "mentions": 7,
+        "bull": 29,
+        "bear": 29,
         "trend": "falling",
         "hist": [
-          81.76,
-          81.94,
-          83.07,
-          81.57,
-          83.28,
-          80.78,
-          80.4
+          86.86,
+          87.92,
+          87.24,
+          88.17,
+          87.67,
+          87.23,
+          45.8
         ]
       },
       {
-        "rank": 79,
-        "ticker": "USAR",
-        "name": "USA Rare Earth Inc - Class A",
+        "rank": 6,
+        "ticker": "MU",
+        "name": "Micron Technology Inc",
         "kind": "stock",
-        "buzz": 80.4,
-        "mentions": 96,
-        "bull": 52,
-        "bear": 11,
-        "trend": "rising",
-        "hist": [
-          52.73,
-          33.2,
-          44.2,
-          20.39,
-          49.37,
-          68.5,
-          80.4
-        ]
-      },
-      {
-        "rank": 80,
-        "ticker": "LLY",
-        "name": "Lilly(Eli) & Company",
-        "kind": "stock",
-        "buzz": 80.1,
-        "mentions": 89,
-        "bull": 43,
-        "bear": 12,
-        "trend": "rising",
-        "hist": [
-          72.2,
-          74.15,
-          81.62,
-          81.0,
-          83.78,
-          82.86,
-          80.1
-        ]
-      },
-      {
-        "rank": 81,
-        "ticker": "AXG",
-        "name": "Solowin Holdings",
-        "kind": "stock",
-        "buzz": 80.0,
-        "mentions": 113,
-        "bull": 75,
-        "bear": 3,
-        "trend": "rising",
-        "hist": [
-          0.0,
-          0.0,
-          79.03,
-          84.21,
-          76.59,
-          84.17,
-          80.0
-        ]
-      },
-      {
-        "rank": 82,
-        "ticker": "AXTI",
-        "name": "AXT Inc",
-        "kind": "stock",
-        "buzz": 80.0,
-        "mentions": 62,
-        "bull": 48,
-        "bear": 15,
-        "trend": "stable",
-        "hist": [
-          71.93,
-          59.73,
-          78.36,
-          77.32,
-          60.17,
-          73.62,
-          80.0
-        ]
-      },
-      {
-        "rank": 83,
-        "ticker": "BABA",
-        "name": "Alibaba Group Holding Ltd",
-        "kind": "stock",
-        "buzz": 80.0,
-        "mentions": 94,
-        "bull": 45,
-        "bear": 22,
-        "trend": "rising",
-        "hist": [
-          71.55,
-          71.46,
-          80.46,
-          81.82,
-          77.11,
-          82.18,
-          80.0
-        ]
-      },
-      {
-        "rank": 84,
-        "ticker": "FOX",
-        "name": "Fox Corporation - Class B",
-        "kind": "stock",
-        "buzz": 80.0,
-        "mentions": 132,
-        "bull": 78,
-        "bear": 6,
-        "trend": "rising",
-        "hist": [
-          75.83,
-          73.88,
-          78.57,
-          76.62,
-          77.11,
-          78.11,
-          80.0
-        ]
-      },
-      {
-        "rank": 85,
-        "ticker": "MOO",
-        "name": "VANECK AGRIBUSINESS ETF",
-        "kind": "etf",
-        "buzz": 80.0,
-        "mentions": 82,
+        "buzz": 42.4,
+        "mentions": 4,
         "bull": 50,
-        "bear": 13,
+        "bear": 0,
         "trend": "stable",
         "hist": [
-          43.37,
-          80.87,
-          79.2,
-          84.97,
-          83.94,
-          81.95,
-          80.0
+          86.12,
+          87.11,
+          87.33,
+          86.83,
+          87.83,
+          88.54,
+          42.4
         ]
       },
       {
-        "rank": 86,
-        "ticker": "ASML",
-        "name": "ASML Holding NV",
+        "rank": 7,
+        "ticker": "LULU",
+        "name": "Lululemon Athletica Inc",
         "kind": "stock",
-        "buzz": 79.8,
-        "mentions": 55,
-        "bull": 60,
-        "bear": 9,
+        "buzz": 42.0,
+        "mentions": 6,
+        "bull": 50,
+        "bear": 33,
         "trend": "rising",
         "hist": [
-          55.51,
-          60.34,
-          73.85,
-          69.22,
-          66.74,
-          80.55,
-          79.8
+          79.59,
+          81.13,
+          70.92,
+          78.29,
+          85.92,
+          86.06,
+          42.0
         ]
       },
       {
-        "rank": 87,
-        "ticker": "MCD",
-        "name": "McDonald`s Corp",
+        "rank": 8,
+        "ticker": "PLTR",
+        "name": "Palantir Technologies Inc - Class A",
         "kind": "stock",
-        "buzz": 79.4,
-        "mentions": 87,
+        "buzz": 42.0,
+        "mentions": 3,
         "bull": 33,
-        "bear": 26,
-        "trend": "rising",
-        "hist": [
-          73.83,
-          75.81,
-          76.0,
-          77.73,
-          73.51,
-          77.61,
-          79.4
-        ]
-      },
-      {
-        "rank": 88,
-        "ticker": "IWM",
-        "name": "ISHARES RUSSELL 2000 ETF",
-        "kind": "etf",
-        "buzz": 79.2,
-        "mentions": 122,
-        "bull": 30,
-        "bear": 11,
-        "trend": "stable",
-        "hist": [
-          68.11,
-          74.36,
-          81.21,
-          82.04,
-          82.07,
-          81.3,
-          79.2
-        ]
-      },
-      {
-        "rank": 89,
-        "ticker": "IONQ",
-        "name": "IonQ Inc",
-        "kind": "stock",
-        "buzz": 79.0,
-        "mentions": 70,
-        "bull": 61,
-        "bear": 10,
+        "bear": 33,
         "trend": "falling",
         "hist": [
-          75.19,
-          75.09,
-          81.58,
-          81.74,
-          80.32,
-          79.57,
-          79.0
+          85.8,
+          86.62,
+          86.79,
+          85.1,
+          86.54,
+          85.38,
+          42.0
         ]
       },
       {
-        "rank": 90,
+        "rank": 9,
+        "ticker": "META",
+        "name": "Meta Platforms Inc - Class A",
+        "kind": "stock",
+        "buzz": 41.6,
+        "mentions": 4,
+        "bull": 25,
+        "bear": 25,
+        "trend": "falling",
+        "hist": [
+          85.56,
+          88.78,
+          87.45,
+          88.08,
+          88.03,
+          87.35,
+          41.6
+        ]
+      },
+      {
+        "rank": 10,
         "ticker": "TLT",
         "name": "ISHARES 20+ YEAR TREASURY BOND ETF",
         "kind": "etf",
-        "buzz": 78.9,
-        "mentions": 116,
-        "bull": 34,
-        "bear": 16,
-        "trend": "stable",
+        "buzz": 41.0,
+        "mentions": 2,
+        "bull": 100,
+        "bear": 0,
+        "trend": "falling",
         "hist": [
-          77.18,
           74.95,
           78.31,
           80.92,
           77.71,
           79.02,
-          78.9
+          79.09,
+          41.0
         ]
       },
       {
-        "rank": 91,
-        "ticker": "SOXX",
-        "name": "ISHARES SEMICONDUCTOR ETF",
-        "kind": "etf",
-        "buzz": 78.6,
-        "mentions": 98,
-        "bull": 38,
-        "bear": 18,
-        "trend": "rising",
-        "hist": [
-          69.55,
-          64.95,
-          78.03,
-          77.6,
-          76.29,
-          75.64,
-          78.6
-        ]
-      },
-      {
-        "rank": 92,
-        "ticker": "ARM",
-        "name": "Arm Holdings plc.",
+        "rank": 11,
+        "ticker": "GOOGL",
+        "name": "Alphabet Inc - Class A",
         "kind": "stock",
-        "buzz": 78.5,
-        "mentions": 63,
-        "bull": 51,
-        "bear": 6,
-        "trend": "rising",
+        "buzz": 40.9,
+        "mentions": 3,
+        "bull": 0,
+        "bear": 0,
+        "trend": "falling",
         "hist": [
-          58.39,
-          62.88,
-          70.58,
-          73.66,
-          70.46,
-          78.72,
-          78.5
+          85.77,
+          86.96,
+          87.18,
+          86.96,
+          85.91,
+          86.5,
+          40.9
         ]
       },
       {
-        "rank": 93,
-        "ticker": "HPE",
-        "name": "Hewlett Packard Enterprise Company",
+        "rank": 12,
+        "ticker": "NVDA",
+        "name": "NVIDIA Corp",
         "kind": "stock",
-        "buzz": 78.5,
-        "mentions": 87,
-        "bull": 56,
-        "bear": 3,
-        "trend": "rising",
+        "buzz": 40.9,
+        "mentions": 5,
+        "bull": 40,
+        "bear": 20,
+        "trend": "falling",
         "hist": [
-          65.28,
-          70.43,
-          77.64,
-          76.76,
-          84.57,
-          84.46,
-          78.5
+          89.11,
+          89.96,
+          89.41,
+          90.24,
+          90.79,
+          88.92,
+          40.9
         ]
       },
       {
-        "rank": 94,
-        "ticker": "WULF",
-        "name": "TeraWulf Inc",
+        "rank": 13,
+        "ticker": "UBER",
+        "name": "Uber Technologies Inc",
         "kind": "stock",
-        "buzz": 78.4,
-        "mentions": 43,
-        "bull": 58,
-        "bear": 9,
-        "trend": "rising",
+        "buzz": 39.9,
+        "mentions": 4,
+        "bull": 25,
+        "bear": 50,
+        "trend": "stable",
         "hist": [
-          71.21,
-          71.05,
-          77.97,
-          76.43,
-          76.0,
-          75.74,
-          78.4
+          78.1,
+          79.52,
+          80.04,
+          87.59,
+          85.18,
+          86.74,
+          39.9
         ]
       },
       {
-        "rank": 95,
-        "ticker": "F",
-        "name": "Ford Motor Company",
+        "rank": 14,
+        "ticker": "ONON",
+        "name": "On Holding AG Class A",
         "kind": "stock",
-        "buzz": 78.3,
-        "mentions": 23,
-        "bull": 61,
-        "bear": 4,
+        "buzz": 39.3,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
         "trend": "rising",
         "hist": [
-          31.05,
-          35.71,
-          64.56,
-          46.98,
-          66.99,
-          65.15,
-          78.3
+          51.18,
+          35.63,
+          43.93,
+          41.2,
+          51.42,
+          63.08,
+          39.3
         ]
       },
       {
-        "rank": 96,
-        "ticker": "NVO",
-        "name": "Novo Nordisk",
+        "rank": 15,
+        "ticker": "NBIS",
+        "name": "Nebius Group N.V. - Class A",
         "kind": "stock",
-        "buzz": 78.3,
-        "mentions": 69,
-        "bull": 59,
-        "bear": 14,
-        "trend": "rising",
+        "buzz": 38.9,
+        "mentions": 3,
+        "bull": 0,
+        "bear": 0,
+        "trend": "falling",
         "hist": [
-          71.57,
-          74.27,
-          73.17,
-          77.66,
-          73.87,
-          77.87,
-          78.3
+          85.23,
+          86.83,
+          86.63,
+          86.75,
+          85.69,
+          87.02,
+          38.9
         ]
       },
       {
-        "rank": 97,
+        "rank": 16,
+        "ticker": "SNDK",
+        "name": "Sandisk Corp",
+        "kind": "stock",
+        "buzz": 38.9,
+        "mentions": 3,
+        "bull": 0,
+        "bear": 0,
+        "trend": "stable",
+        "hist": [
+          80.77,
+          85.75,
+          85.51,
+          84.25,
+          85.77,
+          87.1,
+          38.9
+        ]
+      },
+      {
+        "rank": 17,
+        "ticker": "INFQ",
+        "name": "Infleqtion, Inc.",
+        "kind": "stock",
+        "buzz": 36.0,
+        "mentions": 2,
+        "bull": 0,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          65.87,
+          76.84,
+          77.99,
+          62.91,
+          46.52,
+          71.2,
+          36.0
+        ]
+      },
+      {
+        "rank": 18,
+        "ticker": "ORCL",
+        "name": "Oracle Corp",
+        "kind": "stock",
+        "buzz": 35.8,
+        "mentions": 2,
+        "bull": 50,
+        "bear": 0,
+        "trend": "stable",
+        "hist": [
+          80.86,
+          82.47,
+          81.28,
+          82.44,
+          84.63,
+          83.97,
+          35.8
+        ]
+      },
+      {
+        "rank": 19,
         "ticker": "FMCC",
         "name": "Federal Home Loan Mortgage Corp",
         "kind": "stock",
-        "buzz": 78.1,
-        "mentions": 81,
-        "bull": 23,
-        "bear": 19,
+        "buzz": 35.7,
+        "mentions": 2,
+        "bull": 50,
+        "bear": 0,
         "trend": "rising",
         "hist": [
-          0.0,
           0.0,
           28.65,
           71.61,
           68.69,
           69.6,
-          78.1
+          77.89,
+          35.7
         ]
       },
       {
-        "rank": 98,
-        "ticker": "ENA",
-        "name": "Endesa SA",
+        "rank": 20,
+        "ticker": "TSLA",
+        "name": "Tesla Inc",
         "kind": "stock",
-        "buzz": 77.7,
-        "mentions": 85,
-        "bull": 58,
-        "bear": 11,
+        "buzz": 35.4,
+        "mentions": 2,
+        "bull": 0,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          87.83,
+          88.53,
+          88.06,
+          88.03,
+          90.01,
+          89.71,
+          35.4
+        ]
+      },
+      {
+        "rank": 21,
+        "ticker": "DELL",
+        "name": "Dell Technologies Inc - Class C",
+        "kind": "stock",
+        "buzz": 34.9,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
         "trend": "falling",
         "hist": [
-          47.39,
-          81.2,
-          80.54,
-          82.43,
-          76.33,
-          81.4,
-          77.7
+          81.78,
+          83.78,
+          87.89,
+          87.69,
+          86.23,
+          84.01,
+          34.9
         ]
       },
       {
-        "rank": 99,
+        "rank": 22,
+        "ticker": "ANTH",
+        "name": "Anthera Pharmaceuticals, Inc.",
+        "kind": "stock",
+        "buzz": 34.5,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          35.65,
+          34.5
+        ]
+      },
+      {
+        "rank": 23,
         "ticker": "FNMA",
         "name": "Federal National Mortgage Association",
         "kind": "stock",
-        "buzz": 77.5,
-        "mentions": 110,
-        "bull": 23,
-        "bear": 25,
+        "buzz": 33.9,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
         "trend": "rising",
         "hist": [
-          27.37,
           33.74,
           28.65,
           73.05,
           68.72,
           72.31,
-          77.5
+          77.61,
+          33.9
         ]
       },
       {
-        "rank": 100,
-        "ticker": "MS",
-        "name": "Morgan Stanley",
+        "rank": 24,
+        "ticker": "TSM",
+        "name": "Taiwan Semiconductor Manufacturing",
         "kind": "stock",
-        "buzz": 77.4,
-        "mentions": 31,
-        "bull": 45,
-        "bear": 13,
+        "buzz": 33.7,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          76.41,
+          84.7,
+          81.93,
+          84.96,
+          80.68,
+          82.19,
+          33.7
+        ]
+      },
+      {
+        "rank": 25,
+        "ticker": "SNOW",
+        "name": "Snowflake Inc - Class A",
+        "kind": "stock",
+        "buzz": 33.2,
+        "mentions": 3,
+        "bull": 33,
+        "bear": 33,
+        "trend": "rising",
+        "hist": [
+          77.04,
+          82.26,
+          80.04,
+          86.22,
+          87.0,
+          82.78,
+          33.2
+        ]
+      },
+      {
+        "rank": 26,
+        "ticker": "ANET",
+        "name": "Arista Networks Inc",
+        "kind": "stock",
+        "buzz": 33.1,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          71.2,
+          77.24,
+          70.2,
+          59.26,
+          65.49,
+          64.88,
+          33.1
+        ]
+      },
+      {
+        "rank": 27,
+        "ticker": "RKLB",
+        "name": "Rocket Lab USA Inc",
+        "kind": "stock",
+        "buzz": 30.6,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          84.45,
+          85.99,
+          85.6,
+          86.05,
+          85.74,
+          85.22,
+          30.6
+        ]
+      },
+      {
+        "rank": 28,
+        "ticker": "BAC",
+        "name": "Bank Of America Corp",
+        "kind": "stock",
+        "buzz": 30.2,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          62.64,
+          84.51,
+          85.87,
+          74.16,
+          73.86,
+          69.67,
+          30.2
+        ]
+      },
+      {
+        "rank": 29,
+        "ticker": "IWM",
+        "name": "ISHARES RUSSELL 2000 ETF",
+        "kind": "etf",
+        "buzz": 29.8,
+        "mentions": 3,
+        "bull": 0,
+        "bear": 33,
+        "trend": "falling",
+        "hist": [
+          74.36,
+          81.21,
+          82.04,
+          82.07,
+          81.3,
+          79.35,
+          29.8
+        ]
+      },
+      {
+        "rank": 30,
+        "ticker": "FEVR",
+        "name": "Inspire Faithward Large Cap Momentum ETF",
+        "kind": "etf",
+        "buzz": 29.7,
+        "mentions": 1,
+        "bull": 100,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          0.0,
+          0.0,
+          0.0,
+          29.69,
+          35.15,
+          29.69,
+          29.7
+        ]
+      },
+      {
+        "rank": 31,
+        "ticker": "IVV",
+        "name": "ISHARES CORE S&P 500 ETF",
+        "kind": "etf",
+        "buzz": 27.9,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          32.96,
+          41.66,
+          56.83,
+          42.34,
+          41.36,
+          47.92,
+          27.9
+        ]
+      },
+      {
+        "rank": 32,
+        "ticker": "VOO",
+        "name": "VANGUARD 500 INDEX FUND ETF SHARES",
+        "kind": "etf",
+        "buzz": 27.9,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
         "trend": "stable",
         "hist": [
-          68.04,
-          76.55,
-          74.82,
-          80.14,
+          77.72,
+          80.74,
+          81.68,
+          80.06,
+          80.17,
+          83.3,
+          27.9
+        ]
+      },
+      {
+        "rank": 33,
+        "ticker": "000660",
+        "name": "SK Hynix",
+        "kind": "stock",
+        "buzz": 27.8,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          41.57,
+          39.94,
+          0.0,
           75.85,
-          75.49,
-          77.4
+          73.86,
+          76.39,
+          27.8
+        ]
+      },
+      {
+        "rank": 34,
+        "ticker": "AXTI",
+        "name": "AXT Inc",
+        "kind": "stock",
+        "buzz": 27.8,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "stable",
+        "hist": [
+          59.73,
+          78.36,
+          77.32,
+          60.17,
+          73.62,
+          80.19,
+          27.8
+        ]
+      },
+      {
+        "rank": 35,
+        "ticker": "ASTS",
+        "name": "AST SpaceMobile Inc - Class A",
+        "kind": "stock",
+        "buzz": 27.4,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          85.04,
+          86.39,
+          85.81,
+          87.11,
+          86.54,
+          86.02,
+          27.4
+        ]
+      },
+      {
+        "rank": 36,
+        "ticker": "ADDYY",
+        "name": "adidas AG ADR",
+        "kind": "stock",
+        "buzz": 27.3,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          23.81,
+          0.0,
+          0.0,
+          0.0,
+          31.43,
+          27.23,
+          27.3
+        ]
+      },
+      {
+        "rank": 37,
+        "ticker": "ONDS",
+        "name": "Ondas Holdings Inc",
+        "kind": "stock",
+        "buzz": 26.5,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          83.36,
+          82.74,
+          84.77,
+          86.26,
+          84.62,
+          82.57,
+          26.5
+        ]
+      },
+      {
+        "rank": 38,
+        "ticker": "DRAM",
+        "name": "Roundhill Memory ETF",
+        "kind": "etf",
+        "buzz": 26.3,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          75.89,
+          78.69,
+          78.78,
+          80.96,
+          80.68,
+          83.96,
+          26.3
+        ]
+      },
+      {
+        "rank": 39,
+        "ticker": "AAPL",
+        "name": "Apple Inc",
+        "kind": "stock",
+        "buzz": 25.8,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          89.46,
+          91.8,
+          90.06,
+          87.75,
+          85.59,
+          87.24,
+          25.8
+        ]
+      },
+      {
+        "rank": 40,
+        "ticker": "MSFT",
+        "name": "Microsoft Corporation",
+        "kind": "stock",
+        "buzz": 25.8,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "falling",
+        "hist": [
+          88.53,
+          87.75,
+          85.96,
+          86.21,
+          87.0,
+          85.85,
+          25.8
+        ]
+      },
+      {
+        "rank": 41,
+        "ticker": "RSP",
+        "name": "INVESCO S&P 500 EQUAL WEIGHT ETF",
+        "kind": "etf",
+        "buzz": 25.7,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 0,
+        "trend": "rising",
+        "hist": [
+          42.43,
+          39.32,
+          54.1,
+          56.93,
+          46.91,
+          54.31,
+          25.7
+        ]
+      },
+      {
+        "rank": 42,
+        "ticker": "AVGO",
+        "name": "Broadcom Inc",
+        "kind": "stock",
+        "buzz": 22.9,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 100,
+        "trend": "falling",
+        "hist": [
+          84.07,
+          86.42,
+          85.5,
+          87.98,
+          87.63,
+          86.52,
+          22.9
+        ]
+      },
+      {
+        "rank": 43,
+        "ticker": "LYFT",
+        "name": "Lyft Inc Cls A",
+        "kind": "stock",
+        "buzz": 21.0,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 100,
+        "trend": "rising",
+        "hist": [
+          24.03,
+          50.12,
+          55.28,
+          41.41,
+          72.85,
+          45.3,
+          21.0
+        ]
+      },
+      {
+        "rank": 44,
+        "ticker": "HOOD",
+        "name": "Robinhood Markets Inc - Class A",
+        "kind": "stock",
+        "buzz": 8.8,
+        "mentions": 1,
+        "bull": 0,
+        "bear": 100,
+        "trend": "rising",
+        "hist": [
+          86.5,
+          85.08,
+          86.61,
+          86.99,
+          88.46,
+          87.55,
+          8.8
         ]
       }
     ],
@@ -3710,19 +2730,10 @@
   },
   "momentum_peg": [
     {
-      "code": "US.DXYZ",
-      "name": "Destiny Tech100 Inc.",
-      "sector": "",
-      "close": 32.7,
-      "mm_streak": 127,
-      "hot_streak": 127,
-      "first_week": "2026-09-04"
-    },
-    {
       "code": "US.RAPP",
       "name": "Rapport Therapeutics, Inc.",
       "sector": "Healthcare",
-      "close": 45.77,
+      "close": 47.65,
       "mm_streak": 117,
       "hot_streak": 117,
       "first_week": "2026-08-07"
@@ -3731,7 +2742,7 @@
       "code": "US.RFAI",
       "name": "RF Acquisition Corp II",
       "sector": "",
-      "close": 41.5,
+      "close": 42.04,
       "mm_streak": 113,
       "hot_streak": 113,
       "first_week": "2026-08-21"
@@ -3740,25 +2751,16 @@
       "code": "US.CURB",
       "name": "Curbline Properties Corp.",
       "sector": "",
-      "close": 29.47,
+      "close": 29.41,
       "mm_streak": 101,
       "hot_streak": 101,
-      "first_week": "2026-08-07"
-    },
-    {
-      "code": "US.SOBO",
-      "name": "South Bow Corporation",
-      "sector": "Energy",
-      "close": 37.05,
-      "mm_streak": 100,
-      "hot_streak": 100,
       "first_week": "2026-08-07"
     },
     {
       "code": "US.NTWO",
       "name": "Newbury Street II Acquisition Corp",
       "sector": "",
-      "close": 10.95,
+      "close": 10.92,
       "mm_streak": 88,
       "hot_streak": 88,
       "first_week": "2026-08-21"
@@ -3767,7 +2769,7 @@
       "code": "US.TIGO",
       "name": "Millicom International Cellular S.A.",
       "sector": "Communication Services",
-      "close": 94.83,
+      "close": 95.91,
       "mm_streak": 72,
       "hot_streak": 79,
       "first_week": "2026-08-07"
@@ -3776,7 +2778,7 @@
       "code": "US.CM",
       "name": "Canadian Imperial Bank of Commerce",
       "sector": "Financial Services",
-      "close": 117.5,
+      "close": 118.16,
       "mm_streak": 69,
       "hot_streak": 72,
       "first_week": "2026-08-07"
@@ -3785,7 +2787,7 @@
       "code": "US.STRZ",
       "name": "Starz Entertainment Corp.",
       "sector": "",
-      "close": 26.89,
+      "close": 26.92,
       "mm_streak": 69,
       "hot_streak": 69,
       "first_week": "2026-08-07"
@@ -3794,7 +2796,7 @@
       "code": "US.NESR",
       "name": "National Energy Services Reunited Corp",
       "sector": "Energy",
-      "close": 34.75,
+      "close": 34.5,
       "mm_streak": 54,
       "hot_streak": 55,
       "first_week": "2026-08-07"
@@ -3812,7 +2814,7 @@
       "code": "US.BTSG",
       "name": "BrightSpring Health Services, Inc.",
       "sector": "",
-      "close": 60.73,
+      "close": 61.43,
       "mm_streak": 49,
       "hot_streak": 55,
       "first_week": "2026-08-07"
@@ -3821,7 +2823,7 @@
       "code": "US.ROIV",
       "name": "Roivant Sciences Ltd.",
       "sector": "",
-      "close": 34.93,
+      "close": 34.41,
       "mm_streak": 47,
       "hot_streak": 52,
       "first_week": "2026-08-14"
@@ -3830,7 +2832,7 @@
       "code": "US.TD",
       "name": "Toronto Dominion Bank (The)",
       "sector": "",
-      "close": 121.63,
+      "close": 123.31,
       "mm_streak": 47,
       "hot_streak": 68,
       "first_week": "2026-08-07"
@@ -3839,7 +2841,7 @@
       "code": "US.ATI",
       "name": "ATI Inc.",
       "sector": "",
-      "close": 210.65,
+      "close": 204.54,
       "mm_streak": 39,
       "hot_streak": 46,
       "first_week": "2026-08-07"
@@ -3848,7 +2850,7 @@
       "code": "US.ASX",
       "name": "ASE Technology Holding Co., Ltd.",
       "sector": "Technology",
-      "close": 37.51,
+      "close": 37.43,
       "mm_streak": 36,
       "hot_streak": 47,
       "first_week": "2026-08-07"
@@ -3857,7 +2859,7 @@
       "code": "US.RPRX",
       "name": "Royalty Pharma plc",
       "sector": "Healthcare",
-      "close": 63.96,
+      "close": 63.88,
       "mm_streak": 31,
       "hot_streak": 47,
       "first_week": "2026-08-07"
@@ -3866,7 +2868,7 @@
       "code": "US.DNTH",
       "name": "Dianthus Therapeutics, Inc.",
       "sector": "Healthcare",
-      "close": 108.1,
+      "close": 107.85,
       "mm_streak": 27,
       "hot_streak": 34,
       "first_week": "2026-08-07"
@@ -3875,7 +2877,7 @@
       "code": "US.XMAX",
       "name": "XMAX, Inc.",
       "sector": "Consumer Cyclical",
-      "close": 8.63,
+      "close": 8.67,
       "mm_streak": 25,
       "hot_streak": 53,
       "first_week": "2026-08-07"
@@ -3884,7 +2886,7 @@
       "code": "US.MSGS",
       "name": "Madison Square Garden Sports Corp.",
       "sector": "Communication Services",
-      "close": 391.16,
+      "close": 387.07,
       "mm_streak": 24,
       "hot_streak": 38,
       "first_week": "2026-08-07"
@@ -3893,7 +2895,7 @@
       "code": "US.ORKA",
       "name": "Oruka Therapeutics, Inc.",
       "sector": "Healthcare",
-      "close": 92.51,
+      "close": 90.99,
       "mm_streak": 24,
       "hot_streak": 48,
       "first_week": "2026-08-07"
@@ -3902,7 +2904,7 @@
       "code": "US.BNY",
       "name": "The Bank of New York Mellon Corporation",
       "sector": "Financial Services",
-      "close": 164.84,
+      "close": 164.33,
       "mm_streak": 23,
       "hot_streak": 71,
       "first_week": "2026-08-07"
@@ -3911,7 +2913,7 @@
       "code": "US.CBL",
       "name": "CBL & Associates Properties, Inc.",
       "sector": "Real Estate",
-      "close": 54.98,
+      "close": 54.92,
       "mm_streak": 23,
       "hot_streak": 44,
       "first_week": "2026-08-07"
@@ -3920,7 +2922,7 @@
       "code": "US.HSBC",
       "name": "HSBC Holdings, plc.",
       "sector": "Financial Services",
-      "close": 107.11,
+      "close": 106.46,
       "mm_streak": 23,
       "hot_streak": 108,
       "first_week": "2026-08-07"
@@ -3929,7 +2931,7 @@
       "code": "US.AAMI",
       "name": "Acadian Asset Management Inc.",
       "sector": "",
-      "close": 93.58,
+      "close": 92.24,
       "mm_streak": 22,
       "hot_streak": 65,
       "first_week": "2026-08-07"
@@ -3938,7 +2940,7 @@
       "code": "US.BMO",
       "name": "Bank Of Montreal",
       "sector": "",
-      "close": 175.4,
+      "close": 176.86,
       "mm_streak": 22,
       "hot_streak": 63,
       "first_week": "2026-08-07"
@@ -3947,7 +2949,7 @@
       "code": "US.ECPG",
       "name": "Encore Capital Group Inc",
       "sector": "",
-      "close": 97.3,
+      "close": 96.93,
       "mm_streak": 22,
       "hot_streak": 31,
       "first_week": "2026-08-07"
@@ -3956,10 +2958,19 @@
       "code": "US.RY",
       "name": "Royal Bank Of Canada",
       "sector": "",
-      "close": 210.59,
+      "close": 212.07,
       "mm_streak": 22,
       "hot_streak": 69,
       "first_week": "2026-08-07"
+    },
+    {
+      "code": "US.STT",
+      "name": "State Street Corporation",
+      "sector": "Financial Services",
+      "close": 193.94,
+      "mm_streak": 22,
+      "hot_streak": 23,
+      "first_week": "2026-08-14"
     },
     {
       "code": "US.BCAT",
@@ -3974,7 +2985,7 @@
       "code": "US.BNS",
       "name": "Bank Nova Scotia Halifax Pfd 3",
       "sector": "Financial Services",
-      "close": 93.82,
+      "close": 94.92,
       "mm_streak": 21,
       "hot_streak": 23,
       "first_week": "2026-08-07"
@@ -3983,7 +2994,7 @@
       "code": "US.CLYM",
       "name": "Climb Bio, Inc.",
       "sector": "Healthcare",
-      "close": 15.52,
+      "close": 14.59,
       "mm_streak": 21,
       "hot_streak": 31,
       "first_week": "2026-08-07"
@@ -3992,7 +3003,7 @@
       "code": "US.DRTS",
       "name": "Alpha Tau Medical Ltd.",
       "sector": "Healthcare",
-      "close": 15.03,
+      "close": 14.62,
       "mm_streak": 21,
       "hot_streak": 39,
       "first_week": "2026-08-07"
@@ -4001,7 +3012,7 @@
       "code": "US.MSGE",
       "name": "Madison Square Garden Entertainment Corp.",
       "sector": "Communication Services",
-      "close": 77.41,
+      "close": 77.8,
       "mm_streak": 21,
       "hot_streak": 44,
       "first_week": "2026-08-07"
@@ -4010,7 +3021,7 @@
       "code": "US.NTRS",
       "name": "Northern Trust Corporation",
       "sector": "",
-      "close": 186.63,
+      "close": 187.45,
       "mm_streak": 21,
       "hot_streak": 23,
       "first_week": "2026-08-07"
@@ -4019,7 +3030,7 @@
       "code": "US.RVMD",
       "name": "Revolution Medicines, Inc.",
       "sector": "Healthcare",
-      "close": 210.02,
+      "close": 210.87,
       "mm_streak": 21,
       "hot_streak": 47,
       "first_week": "2026-08-07"
@@ -4028,7 +3039,7 @@
       "code": "US.SYRE",
       "name": "Spyre Therapeutics, Inc.",
       "sector": "",
-      "close": 88.98,
+      "close": 87.25,
       "mm_streak": 21,
       "hot_streak": 31,
       "first_week": "2026-08-07"
@@ -4037,7 +3048,7 @@
       "code": "US.DELL",
       "name": "Dell Technologies Inc.",
       "sector": "Technology",
-      "close": 524.14,
+      "close": 516.39,
       "mm_streak": 20,
       "hot_streak": 24,
       "first_week": "2026-08-07"
@@ -4046,7 +3057,7 @@
       "code": "US.NHC",
       "name": "National HealthCare Corporation",
       "sector": "Healthcare",
-      "close": 218.64,
+      "close": 221.64,
       "mm_streak": 20,
       "hot_streak": 34,
       "first_week": "2026-08-07"
@@ -4055,7 +3066,7 @@
       "code": "US.CARE",
       "name": "Carter Bankshares, Inc.",
       "sector": "",
-      "close": 31.98,
+      "close": 31.77,
       "mm_streak": 19,
       "hot_streak": 24,
       "first_week": "2026-08-07"
@@ -4064,7 +3075,7 @@
       "code": "US.ETON",
       "name": "Eton Pharmaceuticals, Inc.",
       "sector": "",
-      "close": 58.45,
+      "close": 59.9,
       "mm_streak": 19,
       "hot_streak": 25,
       "first_week": "2026-08-07"
@@ -4079,10 +3090,19 @@
       "first_week": "2026-08-07"
     },
     {
+      "code": "US.ATEX",
+      "name": "Anterix Inc.",
+      "sector": "Communication Services",
+      "close": 87.1,
+      "mm_streak": 18,
+      "hot_streak": 21,
+      "first_week": "2026-08-07"
+    },
+    {
       "code": "US.HPE",
       "name": "Hewlett Packard Enterprise Company",
       "sector": "Technology",
-      "close": 52.0,
+      "close": 54.44,
       "mm_streak": 17,
       "hot_streak": 20,
       "first_week": "2026-08-07"
@@ -4091,7 +3111,7 @@
       "code": "US.LGND",
       "name": "Ligand Pharmaceuticals Incorporated",
       "sector": "",
-      "close": 285.6,
+      "close": 289.74,
       "mm_streak": 16,
       "hot_streak": 60,
       "first_week": "2026-08-14"
@@ -4100,7 +3120,7 @@
       "code": "US.TRST",
       "name": "TrustCo Bank Corp NY",
       "sector": "Financial Services",
-      "close": 57.92,
+      "close": 57.6,
       "mm_streak": 16,
       "hot_streak": 23,
       "first_week": "2026-08-14"
@@ -4109,7 +3129,7 @@
       "code": "US.DFTX",
       "name": "Definium Therapeutics, Inc.",
       "sector": "",
-      "close": 38.09,
+      "close": 38.0,
       "mm_streak": 15,
       "hot_streak": 34,
       "first_week": "2026-08-21"
@@ -4118,7 +3138,7 @@
       "code": "US.AMRX",
       "name": "Amneal Pharmaceuticals, Inc.",
       "sector": "",
-      "close": 17.44,
+      "close": 17.87,
       "mm_streak": 13,
       "hot_streak": 14,
       "first_week": "2026-09-04"
@@ -4127,7 +3147,7 @@
       "code": "US.BPOP",
       "name": "Popular, Inc.",
       "sector": "Financial Services",
-      "close": 171.32,
+      "close": 171.33,
       "mm_streak": 13,
       "hot_streak": 23,
       "first_week": "2026-09-04"
@@ -4136,7 +3156,7 @@
       "code": "US.CIB",
       "name": "Grupo Cibest S.A.",
       "sector": "",
-      "close": 100.58,
+      "close": 101.87,
       "mm_streak": 13,
       "hot_streak": 15,
       "first_week": "2026-09-04"
@@ -4145,7 +3165,7 @@
       "code": "US.ENVA",
       "name": "Enova International, Inc.",
       "sector": "Financial Services",
-      "close": 230.58,
+      "close": 233.17,
       "mm_streak": 13,
       "hot_streak": 15,
       "first_week": "2026-09-04"
@@ -4154,7 +3174,7 @@
       "code": "US.MYE",
       "name": "Myers Industries, Inc.",
       "sector": "",
-      "close": 31.81,
+      "close": 30.96,
       "mm_streak": 13,
       "hot_streak": 18,
       "first_week": "2026-09-04"
@@ -4163,7 +3183,7 @@
       "code": "US.PTGX",
       "name": "Protagonist Therapeutics, Inc.",
       "sector": "Healthcare",
-      "close": 145.72,
+      "close": 148.8,
       "mm_streak": 13,
       "hot_streak": 56,
       "first_week": "2026-09-04"
@@ -4172,7 +3192,7 @@
       "code": "US.TVTX",
       "name": "Travere Therapeutics, Inc.",
       "sector": "",
-      "close": 65.28,
+      "close": 66.54,
       "mm_streak": 13,
       "hot_streak": 21,
       "first_week": "2026-09-04"
@@ -4181,7 +3201,7 @@
       "code": "US.UFCS",
       "name": "United Fire Group, Inc",
       "sector": "",
-      "close": 55.98,
+      "close": 56.1,
       "mm_streak": 13,
       "hot_streak": 23,
       "first_week": "2026-09-04"
