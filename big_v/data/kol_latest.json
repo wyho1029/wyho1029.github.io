@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-09T20:02:33+08:00",
+ "updated_at": "2026-09-11T23:33:17+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -276,7 +276,7 @@
      "stance": "bullish",
      "summary": "人形機器人題材受關注，可能受催化而反彈。",
      "r7": 7.2,
-     "r30": null
+     "r30": 11.6
     },
     {
      "date": "2026-08-16",
@@ -300,7 +300,7 @@
     }
    ],
    "yellow": null,
-   "gain": -3.5,
+   "gain": -4.2,
    "ai_summary": "根據歷史數據，大V對TSLA最新立場整體偏多，核心論述圍繞Optimus人形機器人量產進展與市場潛力，多次強調特斯拉在美國產能領先及馬斯克看好其成為史上最大產品。最新觀點（8月16日）仍樂觀預期機器人外形設計方向正確，但8月19日轉為中性，僅提及Optimus包含於公司整體而未明確表態。期間有多次轉軚信號，如8月5日從中性轉為看好量產加速，8月7日以Michael Burry做空失敗案例暗示看漲，但8月12日僅視為題材反彈催化，未給出持續強烈看多理由。風險提示方面，7月23日有作者指出波動性高於高貝塔小型股，8月5日亦提及Optimus僅佔市值小部分，顯示對估值支撐存疑。整體而言，立場由早期中性轉向多次看多，但最新轉中性，且未見明確看空論述。",
    "theme": "機器人"
   },
@@ -704,7 +704,7 @@
      "stance": "bullish",
      "summary": "作者認為Unitree IPO可能成為人形機器人板塊的催化劑，CCXI可能受惠。",
      "r7": 6.8,
-     "r30": null
+     "r30": -18.0
     },
     {
      "date": "2026-08-10",
@@ -714,7 +714,7 @@
      "stance": "bullish",
      "summary": "作者認為CCXI是教科書級別的早期投資例子，雖然尚未盈利且依賴執行，但正是這種早期階段提供了機會。",
      "r7": 6.8,
-     "r30": null
+     "r30": -18.0
     },
     {
      "date": "2026-08-10",
@@ -724,7 +724,7 @@
      "stance": "bullish",
      "summary": "作者看好CCXI，認為人形機器人/機器人板塊的強勢對其有利。",
      "r7": 6.8,
-     "r30": null
+     "r30": -18.0
     },
     {
      "date": "2026-08-11",
@@ -734,7 +734,7 @@
      "stance": "bullish",
      "summary": "作者看好CCXI，因其投資的Agility Robotics公司，且估值合理。",
      "r7": -4.4,
-     "r30": null
+     "r30": -21.7
     },
     {
      "date": "2026-08-11",
@@ -744,7 +744,7 @@
      "stance": "bullish",
      "summary": "作者認為CCXI是美國唯一純人形機器人上市公司，估值遠低於Unitree，看好其估值差距收窄，可能暴漲。",
      "r7": -4.4,
-     "r30": null
+     "r30": -21.7
     },
     {
      "date": "2026-08-11",
@@ -754,7 +754,7 @@
      "stance": "bullish",
      "summary": "作者看好CCXI的持續上漲趨勢。",
      "r7": -4.4,
-     "r30": null
+     "r30": -21.7
     },
     {
      "date": "2026-08-11",
@@ -764,7 +764,7 @@
      "stance": "bullish",
      "summary": "作者推薦CCXI，認為2026年有潛力。",
      "r7": -4.4,
-     "r30": null
+     "r30": -21.7
     },
     {
      "date": "2026-08-12",
@@ -774,7 +774,7 @@
      "stance": "bullish",
      "summary": "人形機器人題材受關注，可能受催化而反彈。",
      "r7": -9.8,
-     "r30": null
+     "r30": -21.2
     },
     {
      "date": "2026-08-13",
@@ -888,7 +888,7 @@
     }
    ],
    "yellow": null,
-   "gain": -17.1,
+   "gain": -22.3,
    "ai_summary": "綜合大V意見，CCXI最新立場整體偏多，但存在分歧。wliang從8月11日至17日多次看好其美國唯一純人形機器人概念及估值收窄潛力，惟8月14日曾警告IPO對相關股票不利，屬短期風險提示，其後仍維持看好。sunxliao全程強烈看多，多次強調上漲趨勢及年度新高機會，未見轉淡。aleabitoreddit起初中性，8月底起轉為看好，認為投資觀點將於2027/2028年實現，並列為下半年新主題。整體論述集中於機器人題材、政策補貼及估值優勢，未見明確轉軚，但需留意IPO相關風險。",
    "theme": "機器人"
   },
@@ -1564,7 +1564,7 @@
      "stance": "bullish",
      "summary": "作者提到自己曾在約6美元時看好IREN，暗示其早期投資價值。",
      "r7": 15.9,
-     "r30": null
+     "r30": 17.1
     },
     {
      "date": "2026-08-10",
@@ -1574,7 +1574,7 @@
      "stance": "bullish",
      "summary": "作者認為IREN即將出現無腦入場位，看好其後市。",
      "r7": 15.9,
-     "r30": null
+     "r30": 17.1
     },
     {
      "date": "2026-08-10",
@@ -1584,7 +1584,7 @@
      "stance": "bullish",
      "summary": "作者看好IREN，期待在更好的價位進場。",
      "r7": 15.9,
-     "r30": null
+     "r30": 17.1
     },
     {
      "date": "2026-08-11",
@@ -1594,7 +1594,7 @@
      "stance": "bullish",
      "summary": "作者以正面語氣提到IREN等前礦商成長，暗示看好其轉型。",
      "r7": 5.7,
-     "r30": null
+     "r30": 9.8
     },
     {
      "date": "2026-08-11",
@@ -1604,7 +1604,7 @@
      "stance": "bullish",
      "summary": "作者認為IREN股價應該更高。",
      "r7": 5.7,
-     "r30": null
+     "r30": 9.8
     },
     {
      "date": "2026-08-11",
@@ -1614,7 +1614,7 @@
      "stance": "bullish",
      "summary": "作者提到IREN在2025年從7.52美元漲了920%，暗示看好。",
      "r7": 5.7,
-     "r30": null
+     "r30": 9.8
     },
     {
      "date": "2026-08-12",
@@ -1624,7 +1624,7 @@
      "stance": "neutral",
      "summary": "作者提及Iren在與Nebius的電力供應比較中曾是關注點，但Nebius的電力指引持續上調，暗示Iren的相對優勢減弱。",
      "r7": -1.9,
-     "r30": null
+     "r30": 1.7
     },
     {
      "date": "2026-08-13",
@@ -1744,7 +1744,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Iris Energy是比特幣礦業相關持倉。",
-     "r7": null,
+     "r7": 14.6,
      "r30": null
     },
     {
@@ -1806,11 +1806,31 @@
      "summary": "作者認為IREN同樣表現出色，看好其前景。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "wliang",
+     "tweet_id": "2097729340427419729",
+     "url": "https://x.com/wliang/status/2097729340427419729",
+     "stance": "bullish",
+     "summary": "作者認為AI基礎設施中的neoclouds值得看好。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "sunxliao",
+     "tweet_id": "2098298055581896792",
+     "url": "https://x.com/sunxliao/status/2098298055581896792",
+     "stance": "bullish",
+     "summary": "作者認為IREN 4小時圖走勢良好，只要守住並將金色支撐位轉為支撐，就可望延續升勢。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -20.7,
-   "ai_summary": "根據歷史記錄，最新立場整體偏多，多位作者看好IREN的業務潛力，包括Neocloud領域推薦、Anthropic相關看好，以及技術面出現罕見的雙週線藍鑽訊號後股價可能翻倍的歷史類比。論述點集中於築底過程開始、世代級進場點浮現，以及一週內上漲37%的強勁表現。雖然早期有作者對過度使用ATM融資表達疑慮，以及九月股市疲弱導致股價被拋售的風險提示，但後續觀點明顯轉向樂觀，未見持續看空立場。",
+   "gain": -24.9,
+   "ai_summary": "最新立場係整體看漲，sunxliao 同 wliang 都持續看好 IREN，sunxliao 指已出現週線同雙週線藍鑽訊號，認為若收復黃金區域並守住金色支撐位就可延續升勢，wliang 則以 neocloud 及 AI 基礎設施角度推薦。論述點集中在技術面築底與訊號歷史升幅，以及比特幣礦業同 Anthropic 相關業務前景。風險提示方面，aleabitoreddit 曾於 9 月 1 日指股價被大幅拋售反映九月市況疲弱，但其後已轉為看漲，未見其他大V有明顯轉軚。",
    "theme": "AI雲"
   },
   "META": {
@@ -2304,11 +2324,31 @@
      "summary": "作者指出Meta增加資本支出，顯示對AI基礎設施的需求，間接利好NVDA。",
      "r7": -1.7,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097815176838017066",
+     "url": "https://x.com/aleabitoreddit/status/2097815176838017066",
+     "stance": "bullish",
+     "summary": "作者提及META資本開支，並認為AI相關股票（包括此類大型科技股）長線受惠。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者提及META的TPU v9，暗示其AI相關光學內容需求將帶動供應鏈。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 8.1,
-   "ai_summary": "根據歷史數據，最新立場整體偏多。論述重點集中於Meta持續上調資本支出至1300至1450億美元，反映AI算力需求遠超供給，並看好其對AI基礎設施及新雲業務模式的正面影響。未有明顯轉軚，但曾於7月29日出現中性觀望，主要等待財報結果，其後立場轉為明確看多，並提及資本支出消息被市場消化後對股價有利。風險提示方面，僅在7月22日提及Google因算力不足削減對Meta的分配，但未直接評論其前景，整體未見重大負面警示。",
+   "gain": 14.9,
+   "ai_summary": "根據提及歷史，最新立場係 aleabitoreddit 同 wliang 都維持睇好 META，核心論述圍繞資本支出持續增加、AI 運算需求遠超供應、以及資本開支預測上調至1300至1450億美元，帶動 AI 基礎設施及相關供應鏈需求。期間 wliang 曾於7月29日表示中性，僅提到關注財報但未表態，隨後7月30日轉回睇好，並無明顯轉軚或風險提示。",
    "theme": "AI"
   },
   "INTC": {
@@ -2632,11 +2672,21 @@
      "summary": "作者提到INTC，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "wliang",
+     "tweet_id": "2098044730391093651",
+     "url": "https://x.com/wliang/status/2098044730391093651",
+     "stance": "bullish",
+     "summary": "作者認為INTC正回測突破位，會趁低吸納。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -25.9,
-   "ai_summary": "根據歷史記錄，最新立場整體偏多，多數大V持續看好英特爾在AI數據中心、製程量產提前及CPU漲價等基本面利多，其中wliang在8月25日曾短暫轉為看空，預期AMD明年超越英特爾，但隨後在8月28日重新轉為看漲，並強調技術面與基本面開始吻合，可能重演約150%漲幅。論述重點集中於長期協議、14A製程提前、價格上漲及技術訊號如三重藍色或藍鑽石，但9月1日有提及HBM4E基底晶片自產傳聞遭SK海力士否認，屬中性風險提示，整體未見持續性轉軚，但需留意個別作者對AMD競爭的短期憂慮。",
+   "gain": -26.5,
+   "ai_summary": "最新立場方面，aleabitoreddit 同 wliang 都轉為或維持看好英特爾，sunxliao 亦傾向樂觀。論述點集中喺中國 CPU 長期協議同加價、14A 製程提前量產、PC CPU 加價獲市場正面回應，以及技術面出現藍鑽石或三重藍色訊號、回測突破位趁低吸納。wliang 曾喺 8 月 25 日看淡、預期 AMD 明年超越英特爾，但三日後即轉軚看好；aleabitoreddit 喺 9 月 1 日就 HBM4E 基底晶片一事轉為中性，提到 SK 海力士否認部分內容，屬唯一風險提示。",
    "theme": "AI晶片"
   },
   "AMZN": {
@@ -2869,7 +2919,7 @@
      "stance": "bullish",
      "summary": "作者看好亞馬遜，因其投資的Agility Robotics公司前景樂觀。",
      "r7": -4.7,
-     "r30": null
+     "r30": -7.5
     },
     {
      "date": "2026-08-15",
@@ -2938,7 +2988,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095882424932766163",
      "stance": "bullish",
      "summary": "作者認為亞馬遜也因AI需求而受益。",
-     "r7": null,
+     "r7": -0.9,
      "r30": null
     },
     {
@@ -2950,11 +3000,21 @@
      "summary": "亞馬遜與高通簽訂新協議，可透過認股權證購買約40億美元股份，並有高達600億美元的里程碑收入，對亞馬遜有利。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097815176838017066",
+     "url": "https://x.com/aleabitoreddit/status/2097815176838017066",
+     "stance": "bullish",
+     "summary": "作者提及AMZN資本開支，並認為AI相關股票（包括此類大型科技股）長線受惠。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 9.8,
-   "ai_summary": "根據歷史數據，大V對亞馬遜整體立場偏多，核心論述集中在AI雲端需求強勁、資本支出上調至2200億美元帶動營收與利潤率提升，以及投資Agility Robotics和高通協議等潛在收益。最新立場維持看多，並未出現明顯轉軚，但部分提及僅陳述事實而未明確表態，屬中性風險提示，整體未見看空觀點。",
+   "gain": 9.4,
+   "ai_summary": "根據提及歷史，最新立場偏多：aleabitoreddit 喺 9 月 8 至 9 日先後提到亞馬遜與高通簽訂認股權證協議、涉及約 40 億美元股份及最高 600 億美元里程碑收入，並指資本開支令大型 AI 科技股長線受惠。主要論述點圍繞 AWS 雲端同 AI 需求強勁、資本開支上調至 2200 億美元、積壓訂單同利潤率提升，以及 Agility Robotics、Anthropic 等投資或合作帶動。立場曾經喺 8 月中至 8 月底由多轉向中性，當時只提及 Agility、Marvell 認股權證同出租 Mac mini 而無明確表態，9 月初先重新轉多，期間未見風險提示。",
    "theme": "機器人"
   },
   "NVDA": {
@@ -3126,7 +3186,7 @@
      "url": "https://x.com/aleabitoreddit/status/2074416685843612031",
      "stance": "neutral",
      "summary": "作者提到NVIDIA被三星超越，但未明確表達對NVDA的立場。",
-     "r7": 7.6,
+     "r7": 7.5,
      "r30": 11.2
     },
     {
@@ -3136,7 +3196,7 @@
      "url": "https://x.com/aleabitoreddit/status/2074405723816304743",
      "stance": "bullish",
      "summary": "作者指出NVDA已反駁CPO延遲的報告，顯示其基本面強勁。",
-     "r7": 7.6,
+     "r7": 7.5,
      "r30": 11.2
     },
     {
@@ -3146,7 +3206,7 @@
      "url": "https://x.com/wliang/status/2074396393553179042",
      "stance": "neutral",
      "summary": "帖文提及NVDA被三星超越，但未表達明確立場。",
-     "r7": 7.6,
+     "r7": 7.5,
      "r30": 11.2
     },
     {
@@ -3156,7 +3216,7 @@
      "url": "https://x.com/aleabitoreddit/status/2074581698604593367",
      "stance": "neutral",
      "summary": "與禾賽科技的合作關係受到美國國家安全審查。",
-     "r7": 7.6,
+     "r7": 7.5,
      "r30": 11.2
     },
     {
@@ -3557,7 +3617,7 @@
      "stance": "bullish",
      "summary": "作者認為NVIDIA在OCP APAC活動中會有催化劑。",
      "r7": 3.4,
-     "r30": null
+     "r30": 2.8
     },
     {
      "date": "2026-08-11",
@@ -3567,7 +3627,7 @@
      "stance": "bullish",
      "summary": "作者看好NVIDIA，因其投資的Agility Robotics公司前景樂觀。",
      "r7": 1.0,
-     "r30": null
+     "r30": 0.5
     },
     {
      "date": "2026-08-13",
@@ -3916,7 +3976,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095012962360828314",
      "stance": "neutral",
      "summary": "作者提到NVDA，但未明確表達多空立場。",
-     "r7": null,
+     "r7": -0.3,
      "r30": null
     },
     {
@@ -3926,7 +3986,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095261816767283663",
      "stance": "bullish",
      "summary": "作者將博通與輝達業績相比，暗示輝達同樣強勁。",
-     "r7": null,
+     "r7": -0.3,
      "r30": null
     },
     {
@@ -3936,7 +3996,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095153855818547571",
      "stance": "bullish",
      "summary": "Nvidia 預期營收可望大幅增長，且推論需求已超過訓練，作者看好其成長潛力，甚至猜測可能成為首家市值達 10 兆美元的公司。",
-     "r7": null,
+     "r7": -0.3,
      "r30": null
     },
     {
@@ -3946,7 +4006,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095490725412733092",
      "stance": "bullish",
      "summary": "作者認為NVIDIA收購Hugging Face的舉動類似微軟收購GitHub，看好其戰略價值。",
-     "r7": null,
+     "r7": -4.3,
      "r30": null
     },
     {
@@ -3956,7 +4016,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095823005595439615",
      "stance": "neutral",
      "summary": "作者將NVIDIA視為美國下游半導體巨頭，但未表達明確多空立場。",
-     "r7": null,
+     "r7": -4.3,
      "r30": null
     },
     {
@@ -3966,7 +4026,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095882424932766163",
      "stance": "bullish",
      "summary": "作者認為Nvidia受供應限制，但增長潛力巨大，AI需求強勁。",
-     "r7": null,
+     "r7": -4.3,
      "r30": null
     },
     {
@@ -4008,11 +4068,21 @@
      "summary": "作者看好NVDA，認為資金回流半導體股將帶動其上漲。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者認為NVDA對超大規模資本開支的預測強勁，看好AI相關需求。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 12.8,
-   "ai_summary": "根據歷史記錄，該作者對NVDA整體維持強烈看漲立場，最新觀點集中在AI需求強勁、推論需求超過訓練、供應限制下增長潛力巨大，並多次強調投資聯發科、鎖定ABF載板產能及收購Hugging Face等戰略佈局，甚至猜測其可能成為首家市值達10兆美元的公司。論述重點圍繞基本面增長、生態系擴張及產業鏈受惠，並引用高盛上調光模組預測及Anthropic算力大單作為支撐。期間雖有兩次中性表述（未明確多空），但未見明顯轉軚或風險提示，整體立場一致偏多。",
+   "gain": 10.2,
+   "ai_summary": "aleabitoreddit 最新立場維持看多，論述集中喺 Nvidia 投資聯發科擴大 ASIC 生態、鎖定 ABF 載板產能、受惠 Anthropic 算力大單、推論需求超越訓練、收購 Hugging Face 具戰略價值，以及高盛上調 Rubin Ultra 光模組用量預測帶動產業鏈需求，期間雖有幾次中性表態但無轉軚。wliang 亦睇好 NVDA，指其一週內上漲 5% 且資金回流半導體股將帶動上漲。風險提示方面，僅提到 Nvidia 受供應限制，但認為增長潛力巨大。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -4434,13 +4504,33 @@
      "url": "https://x.com/aleabitoreddit/status/2095882424932766163",
      "stance": "bullish",
      "summary": "作者認為谷歌母公司同樣受惠於AI運算需求。",
+     "r7": 1.0,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097815176838017066",
+     "url": "https://x.com/aleabitoreddit/status/2097815176838017066",
+     "stance": "bullish",
+     "summary": "作者提及GOOGL資本開支，並認為AI相關股票（包括此類大型科技股）長線受惠。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者提及GOOGL的TPU v9，暗示其AI相關光學內容需求將帶動供應鏈。",
      "r7": null,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -6.9,
-   "ai_summary": "根據歷史數據，大V對GOOGL整體立場偏多，最新觀點集中於AI需求與資本開支強勁，認為財報後拋售屬噪音且股價會回升。論述重點包括運算短缺、上調資本開支至1950至2050億美元、AI雲需求創紀錄及利潤率提升，並多次以GOOGL先跌後漲為例看好後市。立場未見明顯轉軚，但曾有一次中性提及Marvell交易及一次看空評論，指出售Boston Dynamics削弱競爭力，屬風險提示，惟後續仍以看多為主。",
+   "gain": -6.0,
+   "ai_summary": "最新立場偏向看好：wliang 一直維持 bullish，強調財報後先跌後漲屬噪音、回調是買入機會，並多次以 GOOGL 先跌後漲約 20% 為例暗示類似走勢；aleabitoreddit 在 8 月中至 9 月中多數時間亦轉向 bullish，論點包括 AI 雲需求創紀錄、積壓訂單與利潤率提升、與三星簽長期記憶體供應協議、投資聯發科、資本開支利好 AI 產業鏈，以及 TPU v9 帶動光學供應鏈需求。\n\n論述點集中在 AI 雲與 AI 基礎設施需求、資本開支、供應鏈合作及財報後股價韌性。風險提示方面，aleabitoreddit 曾於 8 月 23 日轉為 bearish，指 Google 出售 Boston Dynamics 是錯誤決定，導致缺乏能後空翻的人形機器人、競爭力受損；其後於 8 月 31 日恢復 bullish。整體未見 wliang 轉軚。",
    "theme": "其他"
   },
   "CRWV": {
@@ -4743,7 +4833,7 @@
      "stance": "bullish",
      "summary": "Coreweave 的積壓訂單超過 1040 億美元，且不包括 Q3 新增的 250 億美元客戶協議，顯示 AI 需求巨大。",
      "r7": 3.2,
-     "r30": null
+     "r30": -1.3
     },
     {
      "date": "2026-08-11",
@@ -4753,7 +4843,7 @@
      "stance": "bullish",
      "summary": "作者看好CRWV，認為其約1000億美元積壓訂單受零售投資者喜愛，盤後上漲13%，突破技術阻力位。",
      "r7": 3.2,
-     "r30": null
+     "r30": -1.3
     },
     {
      "date": "2026-08-12",
@@ -4763,7 +4853,7 @@
      "stance": "neutral",
      "summary": "作者提到CoreWeave的訂單積壓作為行業需求強勁的佐證，但未明確表達對其股價的立場。",
      "r7": -15.7,
-     "r30": null
+     "r30": -15.5
     },
     {
      "date": "2026-08-12",
@@ -4773,7 +4863,7 @@
      "stance": "bullish",
      "summary": "財報和展望強勁，看好後續表現。",
      "r7": -15.7,
-     "r30": null
+     "r30": -15.5
     },
     {
      "date": "2026-08-13",
@@ -4832,7 +4922,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到CoreWeave是AI/雲端相關持倉。",
-     "r7": null,
+     "r7": 17.3,
      "r30": null
     },
     {
@@ -4844,11 +4934,21 @@
      "summary": "作者分享的股票清單中，CRWV 一週內上漲 29%，顯示看漲立場。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098430387693433144",
+     "url": "https://x.com/aleabitoreddit/status/2098430387693433144",
+     "stance": "bullish",
+     "summary": "作者指 Leopold 買入 CRWV 期權，屬看好訊號。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -14.7,
-   "ai_summary": "根據歷史記錄，大V對CRWV整體立場以看漲為主，最新立場仍偏多。論述重點集中在龐大積壓訂單（超過1040億美元）、AI算力需求強勁、財報展望佳，以及Neocloud賽道受惠等基本面因素。期間未見明確轉軚，但sunxliao於8月19日曾簡短提及下跌，屬風險提示或短期波動觀察，未改變整體看漲基調。",
+   "gain": -22.2,
+   "ai_summary": "wliang 由頭到尾都係看好 CRWV，最新立場仍然係 bullish，論述集中喺積壓訂單龐大、財報同展望強勁、帶動 WGMI 同 NVDA，以及股價多次大漲（12 個交易日升 33%、一週升 29%），冇轉軚亦冇風險提示。aleabitoreddit 大致看好，最新提到 Leopold 買入 CRWV 期權屬看好訊號，論述包括積壓訂單超過 1040 億美元、反駁折舊做空論點，8 月 12 日曾轉為中性但之後回復看好。sunxliao 於 8 月 19 日提到 CRWV 下跌，屬看淡表態，但冇進一步論述。",
    "theme": "AI雲"
   },
   "NBIS": {
@@ -5782,7 +5882,7 @@
      "stance": "neutral",
      "summary": "作者提到NBIS將公布財報，但未明確表達觀點。",
      "r7": 46.0,
-     "r30": null
+     "r30": 30.5
     },
     {
      "date": "2026-08-10",
@@ -5792,7 +5892,7 @@
      "stance": "bullish",
      "summary": "作者認為NBIS即將出現無腦入場位，看好其後市。",
      "r7": 46.0,
-     "r30": null
+     "r30": 30.5
     },
     {
      "date": "2026-08-11",
@@ -5802,7 +5902,7 @@
      "stance": "bullish",
      "summary": "作者對NBIS即將發布的財報感到興奮，認為會為漲勢增添動力。",
      "r7": 28.6,
-     "r30": null
+     "r30": 18.1
     },
     {
      "date": "2026-08-11",
@@ -5812,7 +5912,7 @@
      "stance": "bullish",
      "summary": "作者認為NBIS股價低於200美元，應該更高。",
      "r7": 28.6,
-     "r30": null
+     "r30": 18.1
     },
     {
      "date": "2026-08-11",
@@ -5822,7 +5922,7 @@
      "stance": "bullish",
      "summary": "作者提到NBIS在2025年從39.12美元漲了666%，暗示看好。",
      "r7": 28.6,
-     "r30": null
+     "r30": 18.1
     },
     {
      "date": "2026-08-12",
@@ -5832,7 +5932,7 @@
      "stance": "bullish",
      "summary": "作者看好Nebius，認為其營收增長強勁、需求可見度高，並指出預付款和合約承諾顯示未來成長潛力巨大。",
      "r7": -13.6,
-     "r30": null
+     "r30": -11.5
     },
     {
      "date": "2026-08-12",
@@ -5842,7 +5942,7 @@
      "stance": "bullish",
      "summary": "財報和展望強勁，看好後續表現。",
      "r7": -13.6,
-     "r30": null
+     "r30": -11.5
     },
     {
      "date": "2026-08-12",
@@ -5852,7 +5952,7 @@
      "stance": "bullish",
      "summary": "作者認為Nebius業績強勁，營收與EBITDA大幅超預期，AI雲端收入增長驚人，合約產能提升，且客戶預付款龐大，公司甚至表示可立即賣出2027年全部產能，因此看好其股價表現。",
      "r7": -13.6,
-     "r30": null
+     "r30": -11.5
     },
     {
      "date": "2026-08-13",
@@ -6021,7 +6121,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Nebius是其投資組合中的核心焦點之一。",
-     "r7": null,
+     "r7": 17.8,
      "r30": null
     },
     {
@@ -6073,11 +6173,21 @@
      "summary": "作者分享NBIS的投資想法，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "wliang",
+     "tweet_id": "2097729340427419729",
+     "url": "https://x.com/wliang/status/2097729340427419729",
+     "stance": "bullish",
+     "summary": "作者認為AI基礎設施中的neoclouds值得看好。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -8.0,
-   "ai_summary": "截至2026年9月8日，NBIS整體立場明顯偏多，多位大V如aleabitoreddit、wliang及sunxliao均看好其AI算力前景，並強調與Nvidia架構、Palantir合作及需求失衡等利多因素。最新論述集中於股價上漲動能強勁，如月線圖健康、累積期結束及一週內漲幅28%，顯示市場信心高漲。早期雖有零星中性或看空評論（如8月19日下跌超10%），但後續立場已全面轉多，未見明顯轉軚或風險警示，僅有部分提及未明確表態的時刻，整體風險提示缺乏。",
+   "gain": -13.5,
+   "ai_summary": "最新立場係一面倒看好：aleabitoreddit、sunxliao、wliang 三位作者到後期都係 bullish，其中 aleabitoreddit 視 NBIS 為投資組合核心焦點之一，sunxliao 認為月線無問題、Q4 前累積期快結束應鎖定倉位，wliang 則推薦 Nebius 作為 Neocloud 領域標的。論述點集中在率先採用 Nvidia 最新架構、Nebius token factory 高效能、AI 算力需求巨大失衡、與 Palantir 合作成為主權 AI 基礎設施夥伴，以及股價曾漲超過 100% 甚至逾 10 倍。三人立場均由早期嘅中性轉為明確看好，期間未見任何轉軚或風險提示。",
    "theme": "AI雲"
   },
   "SIVE": {
@@ -6721,6 +6831,36 @@
      "summary": "作者確認SIVE與中國可插拔製造商合作，且因供應緊張調升雷射價格，看好其前景。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097660318369697875",
+     "url": "https://x.com/aleabitoreddit/status/2097660318369697875",
+     "stance": "bullish",
+     "summary": "作者指CIOE 2026深圳渠道調查已見激光加價，看好其受惠供應緊張。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098358633960726788",
+     "url": "https://x.com/aleabitoreddit/status/2098358633960726788",
+     "stance": "bullish",
+     "summary": "作者認為 Sivers 加價有助激光供應商未來幾季毛利率擴張。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者認為在光學元件短缺下，SIVE等雷射供應商將受益。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -6741,7 +6881,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.6,
+   "gain": 1.4,
    "theme": "機器人"
   },
   "BE": {
@@ -6833,7 +6973,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Bloom Energy是能源/電力相關持倉，與AI能源需求相關。",
-     "r7": null,
+     "r7": 23.9,
      "r30": null
     },
     {
@@ -6855,11 +6995,21 @@
      "summary": "作者看好Bloom Energy，認為銀色阻力已被突破，且自低點200多美元以來確認藍色鑽石形態。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098430387693433144",
+     "url": "https://x.com/aleabitoreddit/status/2098430387693433144",
+     "stance": "bullish",
+     "summary": "作者指 Leopold 買入 BE 期權，屬看好訊號。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -4.2,
-   "ai_summary": "根據歷史數據，大V對BE股票立場持續看多，最新觀點集中於其強勁基本面與技術面突破，包括營收年增166%、上調2026年指引，以及股價自低點反彈並突破阻力位。論述點主要圍繞電網瓶頸帶動融資擴張、AI能源需求相關性，以及技術形態如鑽石底部確認。未有明顯轉軚跡象，但部分提及急跌後買入機會及反彈，屬風險提示性質，整體未見看空論述。",
+   "gain": -4.4,
+   "ai_summary": "最新立場係全體大V一致睇好BE，冇人轉軚。主要論述點包括：電網瓶頸帶動Brookfield對BE燃料電池融資大增5倍至250億美元、營收年增166%兼上調2026年指引、與AI能源需求相關，以及技術面脫離週線黃金支撐、突破阻力並確認鑽石形態，加上Leopold期權持倉同Pelosi跟單交易等利好訊號。風險提示方面，只有7月30日提及經歷急跌後可能係買入機會，其餘未見明確風險警告。",
    "theme": "氫能"
   },
   "ASX": {
@@ -6893,7 +7043,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.7,
+   "gain": -9.0,
    "theme": "機器人"
   },
   "RDDT": {
@@ -6970,7 +7120,7 @@
     }
    ],
    "yellow": null,
-   "gain": -5.5,
+   "gain": -1.3,
    "ai_summary": "根據最新數據，作者於2026年8月29日轉為看淡，稱Reddit在兩個月回調後是垃圾股票，立場由7月底的樂觀明顯逆轉。此前7月31日曾看好業績超預期，認為市場下跌只是藉口，但8月22日僅提及MRVL催化劑而未評論RDDT，顯示關注度下降。整體論述從基本面強勁、股價合理回升，轉向質疑其短期表現，風險提示集中在回調後的估值與市場情緒。",
    "theme": "其他"
   },
@@ -7088,7 +7238,7 @@
     }
    ],
    "yellow": null,
-   "gain": -11.9,
+   "gain": -14.2,
    "ai_summary": "根據歷史記錄，大V對CBRS的立場經歷了明顯轉變。早期（6月至7月）wliang與aleabitoreddit均持強烈看多觀點，主要論點包括營收年增94%、與OpenAI簽訂200億美元合約、算力稀缺性及阿聯酋大型AI園區需求，並認為財報驗證了推理需求。然而，8月中旬起wliang轉為看空，指出IPO後表現不佳及相關股票重挫，顯示對短期股價風險的擔憂。至9月5日，wliang立場轉為中性，雖認可前景強勁，但警告當前估值已反映多年完美執行，需警惕回調風險；隨後9月7日sunxliao再度轉為看多，認為價格在黃金區間之上交易可增強多頭信心，看好本週表現。整體而言，最新立場分歧，但多數後期評論已加入估值過高或執行風險的提示。",
    "theme": "其他"
   },
@@ -7542,7 +7692,7 @@
      "stance": "bullish",
      "summary": "作者認為AMD在OCP APAC活動中會有催化劑。",
      "r7": 7.8,
-     "r30": null
+     "r30": 11.0
     },
     {
      "date": "2026-08-11",
@@ -7552,7 +7702,7 @@
      "stance": "bullish",
      "summary": "作者認為AMD行使選擇權擴大與Riot的合作，顯示對其業務的正面看法。",
      "r7": 2.1,
-     "r30": null
+     "r30": 6.2
     },
     {
      "date": "2026-08-11",
@@ -7562,7 +7712,7 @@
      "stance": "neutral",
      "summary": "作者提及AMD擴大了與Anthropic的現有協議，但未明確表達立場。",
      "r7": 2.1,
-     "r30": null
+     "r30": 6.2
     },
     {
      "date": "2026-08-11",
@@ -7572,7 +7722,7 @@
      "stance": "bullish",
      "summary": "作者提到AMD在2025年從96.65美元漲了505%，暗示看好。",
      "r7": 2.1,
-     "r30": null
+     "r30": 6.2
     },
     {
      "date": "2026-08-13",
@@ -7742,7 +7892,7 @@
      "url": "https://x.com/wliang/status/2095871474515034537",
      "stance": "bullish",
      "summary": "作者認為AMD是長期高信心投資，技術面顯示在黃金區支撐附近盤整形成發射台，預期將反彈，上次買入信號帶來約180%漲幅。",
-     "r7": null,
+     "r7": 8.6,
      "r30": null
     },
     {
@@ -7814,11 +7964,51 @@
      "summary": "作者將AMD列為類似的成功交易案例之一。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097690661965459913",
+     "url": "https://x.com/sunxliao/status/2097690661965459913",
+     "stance": "bullish",
+     "summary": "作者認為AMD從週線支撐位440美元強力反彈，短線走勢強勁，看好後市向上。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "wliang",
+     "tweet_id": "2098044730391093651",
+     "url": "https://x.com/wliang/status/2098044730391093651",
+     "stance": "bullish",
+     "summary": "作者認為AMD正回測突破位，會趁低吸納。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098430387693433144",
+     "url": "https://x.com/aleabitoreddit/status/2098430387693433144",
+     "stance": "bullish",
+     "summary": "作者指 Leopold 買入 AMD 期權，屬看好訊號。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "wliang",
+     "tweet_id": "2098402812820385941",
+     "url": "https://x.com/wliang/status/2098402812820385941",
+     "stance": "bullish",
+     "summary": "作者認為 AMD 出現類似支撐位交易 setup，之前曾短時間內反彈約 20%。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -8.3,
-   "ai_summary": "根據歷史紀錄，最新立場整體偏多，主要論述集中於AMD在AI基礎設施的完整布局，包括沙烏地阿拉伯HUMAIN合作至2030年達1GW規模、與博通鎖定FOPLP產能及確保CW雷射供應等，並多次以技術面黃金區支撐及先前約180%漲幅信號作為看好依據。多位作者（如wliang、aleabitoreddit、sunxliao）均維持看漲或中性偏多，未見明確轉軚或風險提示，僅有部分提及股價波動及動能持續性作為觀察條件。整體而言，論述點強調AMD作為長期高信心投資標的，且新興架構合作顯示其產業地位。",
+   "gain": -6.0,
+   "ai_summary": "最新立場係一致看好，多位大V都維持bullish，冇人轉軚。論述點集中在技術面同供應鏈：wliang指AMD喺黃金區支撐附近盤整形成發射台，預期反彈，並以先前買入信號帶來約180%漲幅為例，又提到正回測突破位會趁低吸納；aleabitoreddit就講AMD與博通預訂FOPLP產能、鎖定ABF載板，以及積極確保CW雷射供應避免瓶頸，顯示需求強勁，並提到Leopold買入AMD期權屬看好訊號；sunxliao指週線支撐位440美元強力反彈，短線走勢強勁。風險提示方面，數據中未見有明確風險警告，只有wliang提到若動能持續才可能出現買入信號。",
    "theme": "其他"
   },
   "ASML": {
@@ -7870,12 +8060,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095823005595439615",
      "stance": "neutral",
      "summary": "作者指出ASML在EUV光刻機領域有歐洲壟斷地位，但未表達明確多空立場。",
-     "r7": null,
+     "r7": -0.1,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -11.2,
+   "gain": -13.8,
    "ai_summary": "根據歷史數據，最新立場偏向樂觀，主要論述集中於中國自產DUV對ASML影響有限，僅佔營收約2.4%，且EUV技術護城河難以被取代，因此認為股價超跌屬反應過度。未有明顯轉軚跡象，但早期提及者立場中性，僅陳述歐洲壟斷地位，未給出明確多空建議。整體風險提示在於中國DUV消息可能持續引發市場情緒波動，但作者認為基本面影響輕微。",
    "theme": "半導體設備"
   },
@@ -8143,7 +8333,7 @@
     }
    ],
    "yellow": null,
-   "gain": -54.5,
+   "gain": -53.7,
    "ai_summary": "根據最新數據，大V對VPG整體維持強烈看漲立場，核心論點圍繞其精密力傳感器技術在機器人供應鏈中的稀缺性與不可替代性，並看好其作為特斯拉Optimus潛在供應商的成長空間。多位作者反覆強調公司業績強勁、訂單增長，且技術壁壘高、競爭少，近期更以回測進場點和供應商獎項作為加碼理由。立場上未見明顯轉軚，但曾出現中性表述，僅將其列為機器人主題相關股票或觀察名單，未明確多空，同時有提及同業ETF下跌時表現不算太差，屬於相對抗跌的風險提示。整體來看，看漲情緒主導，但後期中性觀察記錄顯示態度略趨謹慎。",
    "theme": "其他"
   },
@@ -8336,7 +8526,7 @@
      "url": "https://x.com/wliang/status/2095142947343745253",
      "stance": "bullish",
      "summary": "作者預期MSTR會跟隨比特幣突破阻力，走勢相似。",
-     "r7": null,
+     "r7": 7.7,
      "r30": null
     },
     {
@@ -8346,7 +8536,7 @@
      "url": "https://x.com/wliang/status/2095596345427910689",
      "stance": "bullish",
      "summary": "作者認為MSTR在82美元時是穩健買點，現在回到140美元附近，暗示看好其後續表現。",
-     "r7": null,
+     "r7": -11.2,
      "r30": null
     },
     {
@@ -8356,7 +8546,7 @@
      "url": "https://x.com/wliang/status/2095543117642338398",
      "stance": "bullish",
      "summary": "作者表示在MSTR上獲利約70%，看好其後續表現。",
-     "r7": null,
+     "r7": -11.2,
      "r30": null
     },
     {
@@ -8366,7 +8556,7 @@
      "url": "https://x.com/wliang/status/2095500465660133562",
      "stance": "bullish",
      "summary": "作者認為比特幣在62,000美元附近形成發射台，若繼續盤整可能迎來另一波強勁上漲，MSTR可作為放大曝險的選擇。",
-     "r7": null,
+     "r7": -11.2,
      "r30": null
     },
     {
@@ -8376,7 +8566,7 @@
      "url": "https://x.com/sunxliao/status/2095528031851028497",
      "stance": "bullish",
      "summary": "作者認為MSTR將迎來12-18個月的比特幣相關上漲行情。",
-     "r7": null,
+     "r7": -11.2,
      "r30": null
     },
     {
@@ -8386,7 +8576,7 @@
      "url": "https://x.com/sunxliao/status/2095572031400272172",
      "stance": "bullish",
      "summary": "作者認為MSTR有巨大漲幅，看好其未來表現。",
-     "r7": null,
+     "r7": -11.2,
      "r30": null
     },
     {
@@ -8396,7 +8586,7 @@
      "url": "https://x.com/wliang/status/2095867215497101712",
      "stance": "bullish",
      "summary": "作者看好MSTR，認為其將跟隨比特幣回測突破位後測試阻力，並期望能突破約155美元。",
-     "r7": null,
+     "r7": -4.4,
      "r30": null
     },
     {
@@ -8406,7 +8596,7 @@
      "url": "https://x.com/wliang/status/2095863990605807962",
      "stance": "bullish",
      "summary": "作者提到先前分享MSTR於82美元，隨後上漲約75%。",
-     "r7": null,
+     "r7": -4.4,
      "r30": null
     },
     {
@@ -8428,11 +8618,31 @@
      "summary": "作者提到MSTR在約82美元時被點名，目前上漲了65%。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097700844280131689",
+     "url": "https://x.com/sunxliao/status/2097700844280131689",
+     "stance": "bullish",
+     "summary": "作者認為即將有足夠藍鑽石訊號，上次由20美元升至520美元，回報達2500%。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "wliang",
+     "tweet_id": "2098088613460271477",
+     "url": "https://x.com/wliang/status/2098088613460271477",
+     "stance": "bullish",
+     "summary": "作者認為MSTR喺每日支撐位附近會反彈，週線圖仍然完好。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 60.0,
-   "ai_summary": "根據歷史記錄，MSTR 的整體立場持續強烈看漲，從 2026 年 8 月底至 9 月初，多位作者（wliang 與 sunxliao）均一致看好，並未出現轉軚或明確風險提示。主要論述圍繞其作為比特幣代理投資工具，認為股價已從約 82 美元反彈上漲 65% 至 75%，且尚未觸發賣出信號，預期將跟隨比特幣突破阻力並迎來更大漲幅，甚至看好未來 12 至 18 個月的上漲行情。最新立場（9 月 8 日）仍強調其潛力，並重提先前 82 美元的買點，顯示對後市持續樂觀。",
+   "gain": 59.9,
+   "ai_summary": "兩位大V由始至終都對MSTR保持看好，冇出現轉軚或風險提示。wliang 最新立場係認為MSTR喺每日支撐位附近會反彈、週線圖仍然完好，並多次提到82美元買入後獲利約65%至75%，目標突破約155美元；sunxliao 就將MSTR視為比特幣代理投資，預期迎來12至18個月嘅比特幣相關上漲行情，並提到藍鑽石訊號上次帶嚟2500%回報。兩人論述主要圍繞比特幣走勢帶動MSTR、回調可加碼，以及MSTR作為放大比特幣曝險嘅工具。",
    "theme": "比特幣"
   },
   "HUMN": {
@@ -8535,7 +8745,7 @@
      "stance": "bullish",
      "summary": "作者認為HUMN ETF是少數仍在黃金區間上方交易的ETF，看好其強勢。",
      "r7": 3.9,
-     "r30": null
+     "r30": -7.8
     },
     {
      "date": "2026-08-11",
@@ -8545,7 +8755,7 @@
      "stance": "bullish",
      "summary": "作者看好HUMN ETF，認為首次周線背離出現，加上Unitree IPO將帶動整個機器人板塊關注度。",
      "r7": -0.3,
-     "r30": null
+     "r30": -10.8
     },
     {
      "date": "2026-08-11",
@@ -8555,7 +8765,7 @@
      "stance": "bullish",
      "summary": "作者認為HUMN ETF正形成更高高點和更高低點，且因Unitree IPO超額認購8000倍，可能出現最強勁的反彈。",
      "r7": -0.3,
-     "r30": null
+     "r30": -10.8
     },
     {
      "date": "2026-08-11",
@@ -8565,7 +8775,7 @@
      "stance": "bullish",
      "summary": "作者看好HUMN，認為機器人主題強勁。",
      "r7": -0.3,
-     "r30": null
+     "r30": -10.8
     },
     {
      "date": "2026-08-14",
@@ -8589,7 +8799,7 @@
     }
    ],
    "yellow": null,
-   "gain": -14.3,
+   "gain": -15.7,
    "ai_summary": "根據歷史記錄，最新立場整體偏多，多位大V在八月持續看好HUMN ETF，認為其技術面強勢、具備上漲動能，並受惠於機器人主題及Unitree IPO帶動的板塊關注度。論述重點包括ETF在黃金區間上方交易、形成更高高點與更高低點，以及突破強阻力位以延續漲勢。雖然早期有提及板塊表現不佳的風險，但後續觀點已全面轉向看好，未見明顯轉軚或持續的風險警示。",
    "theme": "其他"
   },
@@ -8617,7 +8827,7 @@
     }
    ],
    "yellow": null,
-   "gain": -4.5,
+   "gain": -5.1,
    "theme": "機器人"
   },
   "OUST": {
@@ -8830,7 +9040,7 @@
      "stance": "bullish",
      "summary": "作者看好OUST，認為人形機器人/機器人板塊的強勢對其有利。",
      "r7": 14.2,
-     "r30": null
+     "r30": -14.0
     },
     {
      "date": "2026-08-11",
@@ -8840,7 +9050,7 @@
      "stance": "bullish",
      "summary": "作者看好OUST，認為機器人主題強勁。",
      "r7": -4.7,
-     "r30": null
+     "r30": -21.9
     },
     {
      "date": "2026-08-14",
@@ -8874,7 +9084,7 @@
     }
    ],
    "yellow": null,
-   "gain": -10.8,
+   "gain": -14.5,
    "ai_summary": "根據歷史數據，OUST最新立場偏向樂觀，多數大V（如wliang、sunxliao）持續看好其感測器技術在機器人領域的成長潛力，並多次強調股價從28美元大幅上漲（如127%至637%）的強勁表現。論述點集中於人形機器人需求、競爭對手受監管排除等利多因素。不過，wliang在8月14日曾轉為看空，警告今年IPO可能對相關股票不利，顯示立場有過短暫轉變，但隨後sunxliao仍維持看多，整體未見持續性風險提示。",
    "theme": "機器人"
   },
@@ -9002,7 +9212,7 @@
     }
    ],
    "yellow": null,
-   "gain": -5.3,
+   "gain": 0.4,
    "ai_summary": "根據歷史記錄，多位大V對AMBA整體維持偏多立場，最新觀點集中於其邊緣AI視覺晶片在機器人與人形機器人領域的應用潛力，並強調供應鏈壁壘高，看好板塊動能回升。期間出現過中性表述，例如提及AMBA作為供應鏈潛在選擇但未明確表態，以及有作者承認尚未深入研究，顯示立場偶有保留。整體未見明顯轉軚，但部分評論僅列為相關股票而未給出明確多空判斷，風險提示較少，主要聚焦於機器人主題的長期機會。",
    "theme": "機器人"
   },
@@ -9067,7 +9277,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.9,
+   "gain": -4.8,
    "ai_summary": "根據最新數據，wliang 在2026年6月29日對CSCO持看多立場，以思科為例強調早期買入者最終會大幅獲利，暗示AI股仍有巨大空間。至8月31日，立場轉為中性，僅提及CSCO網路設備已投入生產，未明確表達多空看法。整體而言，觀點由樂觀轉為觀望，未有明確轉軚或風險提示，但最新立場已偏向中性。",
    "theme": "AI"
   },
@@ -9321,7 +9531,7 @@
      "stance": "neutral",
      "summary": "作者提到ASTS將公布財報，但未明確表達觀點。",
      "r7": 3.5,
-     "r30": null
+     "r30": -9.2
     },
     {
      "date": "2026-08-11",
@@ -9331,7 +9541,7 @@
      "stance": "bullish",
      "summary": "作者推薦ASTS，認為2026年有潛力。",
      "r7": -6.4,
-     "r30": null
+     "r30": -16.4
     },
     {
      "date": "2026-08-13",
@@ -9370,7 +9580,7 @@
      "url": "https://x.com/wliang/status/2095233958954885302",
      "stance": "bullish",
      "summary": "作者看好ASTS，認為其正接近阻力區，但新業務發展可能助其突破，上方阻力很小。",
-     "r7": null,
+     "r7": 0.0,
      "r30": null
     },
     {
@@ -9385,7 +9595,7 @@
     }
    ],
    "yellow": null,
-   "gain": -9.7,
+   "gain": -17.7,
    "ai_summary": "根據歷史記錄，最新立場明顯偏多，多位作者持續看好ASTS，論述集中於直連手機衛星的壟斷地位、BlueBird衛星發射及日本服務啟動等業務進展，並以股價從28.61美元大漲368%佐證潛力。wliang在8月初曾短暫轉為中性，提及太空板塊短期波動及關注財報，但隨後迅速回歸看多，並強調上方阻力很小。整體未見明確轉軚，但早期有風險提示，指出股價曾從高點下跌57%及板塊低迷，後續則以樂觀展望為主。",
    "theme": "衛星通訊"
   },
@@ -9629,7 +9839,7 @@
      "stance": "neutral",
      "summary": "作者提到RKLB將公布財報，但未明確表達觀點。",
      "r7": 2.5,
-     "r30": null
+     "r30": -21.2
     },
     {
      "date": "2026-08-22",
@@ -9683,7 +9893,7 @@
     }
    ],
    "yellow": null,
-   "gain": -34.3,
+   "gain": -36.9,
    "ai_summary": "根據歷史數據，大V對RKLB整體立場由8月初的觀望轉向持續看多，最新（9月8日）仍屬樂觀。論述重點包括獲得美國太空軍大額合約、太空產業前景、以及技術面支撐與反彈預期。期間雖有提及財報公布前需觀察動能的中性觀點，但未出現明確轉軚，整體風險提示僅限於短期波動及股價高點回調。",
    "theme": "太空"
   },
@@ -9696,8 +9906,8 @@
      "url": "https://x.com/sunxliao/status/2066953357785464986",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為其屬於當前最強的主題之一。",
-     "r7": null,
-     "r30": null
+     "r7": 5.5,
+     "r30": -32.4
     },
     {
      "date": "2026-06-17",
@@ -9706,8 +9916,8 @@
      "url": "https://x.com/sunxliao/status/2067254097745727488",
      "stance": "bullish",
      "summary": "作者看好CIFR，因其有AWS作為錨定租戶驗證。",
-     "r7": null,
-     "r30": null
+     "r7": -0.5,
+     "r30": -33.4
     },
     {
      "date": "2026-06-18",
@@ -9716,8 +9926,8 @@
      "url": "https://x.com/sunxliao/status/2067642563734262193",
      "stance": "bullish",
      "summary": "作者發現CIFR後股價飆升844%，看好其潛力。",
-     "r7": null,
-     "r30": null
+     "r7": -12.0,
+     "r30": -29.6
     },
     {
      "date": "2026-06-21",
@@ -9726,8 +9936,8 @@
      "url": "https://x.com/sunxliao/status/2068700277390430218",
      "stance": "bullish",
      "summary": "作者分享CIFR早期進場點，價格已大幅上漲。",
-     "r7": null,
-     "r30": null
+     "r7": -11.8,
+     "r30": -18.7
     },
     {
      "date": "2026-06-22",
@@ -9736,8 +9946,8 @@
      "url": "https://x.com/wliang/status/2069109451819552782",
      "stance": "bullish",
      "summary": "作者看好CIFR，從約3美元漲至約30美元。",
-     "r7": null,
-     "r30": null
+     "r7": -11.8,
+     "r30": -13.1
     },
     {
      "date": "2026-06-23",
@@ -9746,8 +9956,8 @@
      "url": "https://x.com/sunxliao/status/2069439405161599348",
      "stance": "bullish",
      "summary": "作者認為CIFR的圖表健康，價格下跌是正常波動，建議繼續關注。",
-     "r7": null,
-     "r30": null
+     "r7": -11.4,
+     "r30": -6.6
     },
     {
      "date": "2026-06-24",
@@ -9756,8 +9966,8 @@
      "url": "https://x.com/wliang/status/2069834456433893830",
      "stance": "bullish",
      "summary": "作者認為CIFR在今日有良好折讓。",
-     "r7": null,
-     "r30": null
+     "r7": -12.9,
+     "r30": -11.7
     },
     {
      "date": "2026-06-24",
@@ -9766,8 +9976,8 @@
      "url": "https://x.com/sunxliao/status/2069795797655503079",
      "stance": "neutral",
      "summary": "作者更新CIFR狀態為2/3藍鑽，未明確表達多空立場。",
-     "r7": null,
-     "r30": null
+     "r7": -12.9,
+     "r30": -11.7
     },
     {
      "date": "2026-06-25",
@@ -9776,8 +9986,8 @@
      "url": "https://x.com/sunxliao/status/2069978187346624796",
      "stance": "bullish",
      "summary": "作者認為CIFR將從黃金區域大幅反彈",
-     "r7": null,
-     "r30": null
+     "r7": -22.0,
+     "r30": -15.7
     },
     {
      "date": "2026-06-26",
@@ -9786,8 +9996,8 @@
      "url": "https://x.com/wliang/status/2070623559526056070",
      "stance": "bullish",
      "summary": "作者認為CIFR因HPC合約流入而受益，股價從約3美元漲至30美元。",
-     "r7": null,
-     "r30": null
+     "r7": -16.2,
+     "r30": -16.5
     },
     {
      "date": "2026-06-26",
@@ -9796,8 +10006,8 @@
      "url": "https://x.com/sunxliao/status/2070516905979576589",
      "stance": "bullish",
      "summary": "看好CIFR的圖表技術面穩固",
-     "r7": null,
-     "r30": null
+     "r7": -16.2,
+     "r30": -16.5
     },
     {
      "date": "2026-06-29",
@@ -9806,8 +10016,8 @@
      "url": "https://x.com/wliang/status/2071442686771667075",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為其將受益於AI推理成本下降和需求增長。",
-     "r7": null,
-     "r30": null
+     "r7": -12.5,
+     "r30": -28.8
     },
     {
      "date": "2026-07-02",
@@ -9816,8 +10026,8 @@
      "url": "https://x.com/sunxliao/status/2072619055115350277",
      "stance": "bullish",
      "summary": "作者看好CIFR，計劃在價格回升時買入。",
-     "r7": null,
-     "r30": null
+     "r7": 16.1,
+     "r30": 20.6
     },
     {
      "date": "2026-07-03",
@@ -9826,8 +10036,8 @@
      "url": "https://x.com/wliang/status/2073067846075089401",
      "stance": "bullish",
      "summary": "作者認為CIFR會受益於超大型雲端業者資本支出轉向新興雲端服務的趨勢。",
-     "r7": null,
-     "r30": null
+     "r7": 1.7,
+     "r30": 11.2
     },
     {
      "date": "2026-07-04",
@@ -9836,8 +10046,8 @@
      "url": "https://x.com/wliang/status/2073479252519887201",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為所有提到的股票最終都會受益於代理式AI帶來的巨大算力需求。",
-     "r7": null,
-     "r30": null
+     "r7": -7.6,
+     "r30": 11.2
     },
     {
      "date": "2026-07-05",
@@ -9846,8 +10056,8 @@
      "url": "https://x.com/sunxliao/status/2073738207636975839",
      "stance": "bullish",
      "summary": "作者認為CIFR目前價格20.04低於之前高點30.08，暗示有買入機會。",
-     "r7": null,
-     "r30": null
+     "r7": -7.6,
+     "r30": -6.2
     },
     {
      "date": "2026-07-06",
@@ -9856,8 +10066,8 @@
      "url": "https://x.com/wliang/status/2074033467608686802",
      "stance": "bullish",
      "summary": "作者認為CIFR在自由落體式下跌後提供了明顯的買入機會。",
-     "r7": null,
-     "r30": null
+     "r7": -7.6,
+     "r30": -13.9
     },
     {
      "date": "2026-07-08",
@@ -9866,8 +10076,8 @@
      "url": "https://x.com/wliang/status/2074780759852712222",
      "stance": "neutral",
      "summary": "作者提及CIFR因META消息被零售投資者拋售，但未明確表達立場。",
-     "r7": null,
-     "r30": null
+     "r7": -9.1,
+     "r30": -21.4
     },
     {
      "date": "2026-07-08",
@@ -9876,8 +10086,8 @@
      "url": "https://x.com/sunxliao/status/2074902951689425316",
      "stance": "bullish",
      "summary": "藍鑽指標2/3，偏多",
-     "r7": null,
-     "r30": null
+     "r7": -9.1,
+     "r30": -21.4
     },
     {
      "date": "2026-07-10",
@@ -9886,8 +10096,8 @@
      "url": "https://x.com/wliang/status/2075595134138261510",
      "stance": "bullish",
      "summary": "作者回顧去年推薦買入CIFR，立場看漲。",
-     "r7": null,
-     "r30": null
+     "r7": -20.6,
+     "r30": -26.1
     },
     {
      "date": "2026-07-10",
@@ -9896,8 +10106,8 @@
      "url": "https://x.com/wliang/status/2075576715754029319",
      "stance": "bullish",
      "summary": "作者認為回調是健康現象，論述未變。",
-     "r7": null,
-     "r30": null
+     "r7": -20.6,
+     "r30": -26.1
     },
     {
      "date": "2026-07-10",
@@ -9906,8 +10116,8 @@
      "url": "https://x.com/sunxliao/status/2075552971405107606",
      "stance": "bullish",
      "summary": "作者預期AI基礎設施相關股票將快速反彈。",
-     "r7": null,
-     "r30": null
+     "r7": -20.6,
+     "r30": -26.1
     },
     {
      "date": "2026-07-12",
@@ -9916,8 +10126,8 @@
      "url": "https://x.com/wliang/status/2076386523658777030",
      "stance": "bullish",
      "summary": "作者提及過去在CIFR約3美元時給出買入信號，暗示看好。",
-     "r7": null,
-     "r30": null
+     "r7": 2.3,
+     "r30": -14.3
     },
     {
      "date": "2026-07-12",
@@ -9926,8 +10136,8 @@
      "url": "https://x.com/sunxliao/status/2076350535834517984",
      "stance": "bullish",
      "summary": "作者分享CIFR交易想法，股價從3.15美元上漲約856%。",
-     "r7": null,
-     "r30": null
+     "r7": 2.3,
+     "r30": -14.3
     },
     {
      "date": "2026-07-13",
@@ -9936,8 +10146,8 @@
      "url": "https://x.com/sunxliao/status/2076701283864686848",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為其能從超大型雲端業者的資本支出溢出中受益。",
-     "r7": null,
-     "r30": null
+     "r7": 2.3,
+     "r30": -11.0
     },
     {
      "date": "2026-07-14",
@@ -9946,8 +10156,8 @@
      "url": "https://x.com/wliang/status/2077013035441414448",
      "stance": "bullish",
      "summary": "作者預期CIFR將受益於CLSK轉型帶動的整個行業順風。",
-     "r7": null,
-     "r30": null
+     "r7": 15.2,
+     "r30": -16.4
     },
     {
      "date": "2026-07-15",
@@ -9956,8 +10166,8 @@
      "url": "https://x.com/wliang/status/2077391858964001265",
      "stance": "bullish",
      "summary": "作者認為CIFR作為neocloud將受益於AI代理的全面採用。",
-     "r7": null,
-     "r30": null
+     "r7": 23.1,
+     "r30": -10.2
     },
     {
      "date": "2026-07-16",
@@ -9966,8 +10176,8 @@
      "url": "https://x.com/sunxliao/status/2077797109953417696",
      "stance": "neutral",
      "summary": "作者提到CIFR等Neocloud股票可能繼續波動，取決於WGMI能否收在週線黃金之上。",
-     "r7": null,
-     "r30": null
+     "r7": 45.7,
+     "r30": 4.4
     },
     {
      "date": "2026-07-17",
@@ -9976,8 +10186,8 @@
      "url": "https://x.com/wliang/status/2078147063896834239",
      "stance": "bullish",
      "summary": "作者認為Neocloud股CIFR目前下跌44%，是買入機會。",
-     "r7": null,
-     "r30": null
+     "r7": 31.8,
+     "r30": 5.4
     },
     {
      "date": "2026-07-20",
@@ -9986,8 +10196,8 @@
      "url": "https://x.com/wliang/status/2079161117214130290",
      "stance": "bullish",
      "summary": "CIFR 預期將跟進簽署大型合約。",
-     "r7": null,
-     "r30": null
+     "r7": 5.4,
+     "r30": -22.6
     },
     {
      "date": "2026-07-20",
@@ -9996,8 +10206,8 @@
      "url": "https://x.com/aleabitoreddit/status/2079254669793316962",
      "stance": "bullish",
      "summary": "CIFR 股價上漲 16.76%，受新催化劑推動。",
-     "r7": null,
-     "r30": null
+     "r7": 5.4,
+     "r30": -22.6
     },
     {
      "date": "2026-07-20",
@@ -10006,8 +10216,8 @@
      "url": "https://x.com/wliang/status/2079330605930607077",
      "stance": "bullish",
      "summary": "作者認為CIFR上漲因板塊情緒，暗示看好",
-     "r7": null,
-     "r30": null
+     "r7": 5.4,
+     "r30": -22.6
     },
     {
      "date": "2026-07-20",
@@ -10016,8 +10226,8 @@
      "url": "https://x.com/wliang/status/2079200501023809786",
      "stance": "bullish",
      "summary": "作者看好CIFR，股價飆升。",
-     "r7": null,
-     "r30": null
+     "r7": 5.4,
+     "r30": -22.6
     },
     {
      "date": "2026-07-20",
@@ -10026,8 +10236,8 @@
      "url": "https://x.com/sunxliao/status/2079214780607602841",
      "stance": "bullish",
      "summary": "作者指出CIFR展現出難以置信的強勢。",
-     "r7": null,
-     "r30": null
+     "r7": 5.4,
+     "r30": -22.6
     },
     {
      "date": "2026-07-21",
@@ -10036,8 +10246,8 @@
      "url": "https://x.com/aleabitoreddit/status/2079622706572804368",
      "stance": "bullish",
      "summary": "作者對CIFR的單日強勁反彈表示看好。",
-     "r7": null,
-     "r30": null
+     "r7": -10.8,
+     "r30": -24.8
     },
     {
      "date": "2026-07-21",
@@ -10046,8 +10256,8 @@
      "url": "https://x.com/wliang/status/2079688398852301061",
      "stance": "bullish",
      "summary": "CIFR 從低點反彈約 42%，作者認為是買入機會。",
-     "r7": null,
-     "r30": null
+     "r7": -10.8,
+     "r30": -24.8
     },
     {
      "date": "2026-07-21",
@@ -10056,8 +10266,8 @@
      "url": "https://x.com/wliang/status/2079603036809572400",
      "stance": "bullish",
      "summary": "作者提到CIFR股價從3.01美元上漲892%，表達看漲立場。",
-     "r7": null,
-     "r30": null
+     "r7": -10.8,
+     "r30": -24.8
     },
     {
      "date": "2026-07-21",
@@ -10066,8 +10276,8 @@
      "url": "https://x.com/wliang/status/2079603038969303135",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為其表現強勁。",
-     "r7": null,
-     "r30": null
+     "r7": -10.8,
+     "r30": -24.8
     },
     {
      "date": "2026-07-21",
@@ -10076,8 +10286,8 @@
      "url": "https://x.com/sunxliao/status/2079585331704451438",
      "stance": "bullish",
      "summary": "作者提到CIFR等股票全面上漲，立場看漲。",
-     "r7": null,
-     "r30": null
+     "r7": -10.8,
+     "r30": -24.8
     },
     {
      "date": "2026-07-22",
@@ -10086,8 +10296,8 @@
      "url": "https://x.com/wliang/status/2080037081401958840",
      "stance": "bullish",
      "summary": "作者認為GOOGL增加資本支出直接利好CIFR等neocloud股票。",
-     "r7": null,
-     "r30": null
+     "r7": -27.7,
+     "r30": -35.5
     },
     {
      "date": "2026-07-22",
@@ -10096,8 +10306,8 @@
      "url": "https://x.com/wliang/status/2079947113769963948",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為其有多十億美元訂單積壓，比去年更樂觀。",
-     "r7": null,
-     "r30": null
+     "r7": -27.7,
+     "r30": -35.5
     },
     {
      "date": "2026-07-22",
@@ -10106,8 +10316,8 @@
      "url": "https://x.com/sunxliao/status/2079954851417755719",
      "stance": "bullish",
      "summary": "作者看好CIFR。",
-     "r7": null,
-     "r30": null
+     "r7": -27.7,
+     "r30": -35.5
     },
     {
      "date": "2026-07-23",
@@ -10116,8 +10326,8 @@
      "url": "https://x.com/sunxliao/status/2080299351579234453",
      "stance": "bullish",
      "summary": "作者認為若WGMI收盤在黃金區上方，則CIFR等個股將出現看漲延續。",
-     "r7": null,
-     "r30": null
+     "r7": -12.2,
+     "r30": -40.5
     },
     {
      "date": "2026-07-24",
@@ -10127,8 +10337,8 @@
      "stance": "bullish",
      "summary": "作者在低點買入CIFR並持續加倉，目標價17.40美元已達成。",
      "target": 17.4,
-     "r7": null,
-     "r30": null
+     "r7": -3.6,
+     "r30": -33.7
     },
     {
      "date": "2026-07-27",
@@ -10137,8 +10347,8 @@
      "url": "https://x.com/sunxliao/status/2081610305227088203",
      "stance": "bullish",
      "summary": "CIFR與NBIS處於同一賽道，受益於開放權重模型帶來的算力需求。",
-     "r7": null,
-     "r30": null
+     "r7": 11.6,
+     "r30": -26.0
     },
     {
      "date": "2026-07-30",
@@ -10147,8 +10357,8 @@
      "url": "https://x.com/sunxliao/status/2082779008434073953",
      "stance": "neutral",
      "summary": "作者認為CIFR與NBIS情況相同，可能測試支撐位。",
-     "r7": null,
-     "r30": null
+     "r7": -19.6,
+     "r30": -31.6
     },
     {
      "date": "2026-07-30",
@@ -10157,8 +10367,8 @@
      "url": "https://x.com/wliang/status/2082884488045142142",
      "stance": "neutral",
      "summary": "作者提及CIFR作為高Beta股例子，但未表達明確觀點。",
-     "r7": null,
-     "r30": null
+     "r7": -19.6,
+     "r30": -31.6
     },
     {
      "date": "2026-07-30",
@@ -10167,8 +10377,8 @@
      "url": "https://x.com/wliang/status/2082832677510709464",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為今日大漲，恭喜持有或抄底者。",
-     "r7": null,
-     "r30": null
+     "r7": -19.6,
+     "r30": -31.6
     },
     {
      "date": "2026-08-02",
@@ -10177,8 +10387,8 @@
      "url": "https://x.com/sunxliao/status/2083740688672567602",
      "stance": "bullish",
      "summary": "作者看好CIFR，認為其月線轉多後可能大幅上漲。",
-     "r7": null,
-     "r30": null
+     "r7": -32.4,
+     "r30": -39.5
     },
     {
      "date": "2026-08-04",
@@ -10187,8 +10397,8 @@
      "url": "https://x.com/wliang/status/2084695883346763943",
      "stance": "bullish",
      "summary": "作者認為CIFR因財報失望下跌11%，但基本面未變，仍看好。",
-     "r7": null,
-     "r30": null
+     "r7": -15.6,
+     "r30": -14.8
     },
     {
      "date": "2026-08-04",
@@ -10197,8 +10407,8 @@
      "url": "https://x.com/wliang/status/2084678135036166201",
      "stance": "bullish",
      "summary": "作者看好Neocloud類股，CIFR在12個交易日內上漲34%",
-     "r7": null,
-     "r30": null
+     "r7": -15.6,
+     "r30": -14.8
     },
     {
      "date": "2026-08-10",
@@ -10207,8 +10417,8 @@
      "url": "https://x.com/wliang/status/2086898340936175888",
      "stance": "bullish",
      "summary": "作者提到自己曾在約3美元時看好CIFR，暗示其早期投資價值。",
-     "r7": null,
-     "r30": null
+     "r7": 13.3,
+     "r30": 3.5
     },
     {
      "date": "2026-08-10",
@@ -10217,8 +10427,8 @@
      "url": "https://x.com/wliang/status/2086870312646578194",
      "stance": "bullish",
      "summary": "作者認為CIFR即將出現無腦入場位，看好其後市。",
-     "r7": null,
-     "r30": null
+     "r7": 13.3,
+     "r30": 3.5
     },
     {
      "date": "2026-08-10",
@@ -10227,8 +10437,8 @@
      "url": "https://x.com/sunxliao/status/2086857634200842508",
      "stance": "bullish",
      "summary": "作者看好CIFR，期待在更好的價位進場。",
-     "r7": null,
-     "r30": null
+     "r7": 13.3,
+     "r30": 3.5
     },
     {
      "date": "2026-08-11",
@@ -10237,8 +10447,8 @@
      "url": "https://x.com/wliang/status/2087248593753370779",
      "stance": "bullish",
      "summary": "作者認為CIFR股價低於20美元，應該更高。",
-     "r7": null,
-     "r30": null
+     "r7": -6.5,
+     "r30": -7.4
     },
     {
      "date": "2026-08-16",
@@ -10247,7 +10457,7 @@
      "url": "https://x.com/wliang/status/2089054357727895743",
      "stance": "bullish",
      "summary": "作者認為CIFR被低估，股價其後上漲。",
-     "r7": null,
+     "r7": -17.0,
      "r30": null
     },
     {
@@ -10257,7 +10467,7 @@
      "url": "https://x.com/sunxliao/status/2090076896096866417",
      "stance": "bearish",
      "summary": "作者提到CIFR下跌。",
-     "r7": null,
+     "r7": 0.8,
      "r30": null
     },
     {
@@ -10267,7 +10477,7 @@
      "url": "https://x.com/sunxliao/status/2092044436394107065",
      "stance": "neutral",
      "summary": "作者提及CIFR，但未明確表達多空立場。",
-     "r7": null,
+     "r7": -10.4,
      "r30": null
     },
     {
@@ -10277,7 +10487,7 @@
      "url": "https://x.com/wliang/status/2094068309641527567",
      "stance": "bullish",
      "summary": "作者推薦Cipher Mining作為Neocloud領域的投資標的。",
-     "r7": null,
+     "r7": 19.4,
      "r30": null
     },
     {
@@ -10287,7 +10497,7 @@
      "url": "https://x.com/sunxliao/status/2094117506789314659",
      "stance": "bullish",
      "summary": "作者認為CIFR開始具吸引力，但需確認關鍵價位能否守住並收復。",
-     "r7": null,
+     "r7": 19.4,
      "r30": null
     },
     {
@@ -10322,7 +10532,7 @@
     }
    ],
    "yellow": null,
-   "gain": null,
+   "gain": -33.8,
    "ai_summary": "綜合近期大V觀點，CIFR整體維持看多立場，主要論述圍繞其月線轉多、Neocloud領域投資價值及股價被低估，多次強調早期約3美元及15美元進場的潛力，並預期後市有無腦入場位。最新立場仍偏多，但sunxliao在8月19日曾短暫轉為看空，提及股價下跌，隨後在8月25日轉為中性，僅提及而未表態，至8月30日重新轉多，但強調需確認關鍵價位能否守住並收復，顯示對短期波動有風險提示。整體而言，多數觀點持續看好，惟期間出現一次短暫轉空及中性觀望，反映對價格回調的謹慎。",
    "theme": "AI雲"
   },
@@ -11279,7 +11489,7 @@
      "stance": "bullish",
      "summary": "作者看好WYFI，期待在更好的價位進場。",
      "r7": 28.5,
-     "r30": null
+     "r30": -18.2
     },
     {
      "date": "2026-08-11",
@@ -11289,7 +11499,7 @@
      "stance": "bullish",
      "summary": "作者認為WYFI股價應該更高。",
      "r7": 11.8,
-     "r30": null
+     "r30": -23.5
     },
     {
      "date": "2026-08-11",
@@ -11299,7 +11509,7 @@
      "stance": "bullish",
      "summary": "作者推薦WYFI，認為2026年有潛力。",
      "r7": 11.8,
-     "r30": null
+     "r30": -23.5
     },
     {
      "date": "2026-08-13",
@@ -11378,12 +11588,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到WYFI是持倉之一。",
-     "r7": null,
+     "r7": 11.6,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -42.3,
+   "gain": -45.1,
    "ai_summary": "根據歷史記錄，sunxliao 在2026年7月底至8月中持續強烈看多WYFI，多次強調其週線、月線轉強及新創雲端主題，並在8月13日股價上漲至30.51美元時重申看好，但8月19日轉為看空，提及股價大幅下跌，之後8月25日立場轉為中性，未明確表態。wliang 在8月11日至9月1日多次看多，認為股價應更高且近期表現良好，但8月19日因持股較少且對發行270M美元消息未明確表態，立場轉為中性，後續9月1日又恢復看多，聚焦低延遲推理領域。整體而言，最新立場分歧，sunxliao 已從強烈看多轉為中性，wliang 則維持看多但曾短暫中性，無明顯風險提示，僅有對發行消息的保留態度。",
    "theme": "AI雲"
   },
@@ -11576,7 +11786,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095102771418845551",
      "stance": "bullish",
      "summary": "台積電作為 Marvell 所有先進 IC 與 ASIC 的製造核心，是 AI 架構的關鍵支柱，持續受惠。",
-     "r7": null,
+     "r7": 4.8,
      "r30": null
     },
     {
@@ -11586,7 +11796,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者認為台積電是核心贏家，但beta較低。",
-     "r7": null,
+     "r7": 4.8,
      "r30": null
     },
     {
@@ -11596,7 +11806,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095012962360828314",
      "stance": "bullish",
      "summary": "作者指出台灣市場表現強勁，TSM作為供應商快速恢復。",
-     "r7": null,
+     "r7": 4.8,
      "r30": null
     },
     {
@@ -11606,12 +11816,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095823005595439615",
      "stance": "neutral",
      "summary": "作者將台積電視為美國盟友的關鍵半導體製造商，但未表達明確多空立場。",
-     "r7": null,
+     "r7": 1.4,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -6.1,
+   "gain": -7.0,
    "ai_summary": "根據歷史記錄，TSM最新立場整體偏多，論述集中於其在矽光子、先進封裝及AI晶片製造的核心地位，多次強調產能擴張與行業需求強勁。期間立場未見明顯轉軚，但多次中性提及僅作為對比或路線圖參考，未有直接看空。風險提示方面，2026年8月24日曾指出FAU可能成為未來瓶頸，反映對供應鏈限制的關注，但整體未動搖看漲基調。",
    "theme": "AI晶片"
   },
@@ -12275,7 +12485,7 @@
      "stance": "bullish",
      "summary": "作者認為美光科技接近黃金區，是快速波段操作的好時機。",
      "r7": 17.5,
-     "r30": null
+     "r30": 19.4
     },
     {
      "date": "2026-08-11",
@@ -12285,7 +12495,7 @@
      "stance": "bullish",
      "summary": "作者提到美光在2025年從92.96美元漲了1250%，暗示看好。",
      "r7": 8.3,
-     "r30": null
+     "r30": 12.5
     },
     {
      "date": "2026-08-13",
@@ -12564,7 +12774,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者認為Micron是記憶體領域的持倉，具有低前瞻本益比和高能見度。",
-     "r7": null,
+     "r7": 7.5,
      "r30": null
     },
     {
@@ -12574,7 +12784,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095580088620449880",
      "stance": "bullish",
      "summary": "作者認為記憶體大廠優先生產高階AI/資料中心記憶體，減少舊世代產品供給，導致DDR3/DDR2短缺，連帶有利美光等記憶體股。",
-     "r7": null,
+     "r7": 2.0,
      "r30": null
     },
     {
@@ -12584,7 +12794,7 @@
      "url": "https://x.com/sunxliao/status/2095875556718018786",
      "stance": "bullish",
      "summary": "作者認為美光在4小時圖出現三重藍色訊號，突破紫色線後將上漲。",
-     "r7": null,
+     "r7": -3.5,
      "r30": null
     },
     {
@@ -12656,11 +12866,31 @@
      "summary": "作者分享MU的投資想法，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097937708178186303",
+     "url": "https://x.com/aleabitoreddit/status/2097937708178186303",
+     "stance": "bullish",
+     "summary": "作者認為HBM推高AI加速卡價格，對美光等記憶體股有利，並表示自己長倉記憶體。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者看好記憶體需求，認為MU等記憶體公司受惠於超大規模資本開支，利潤率高且不受短期宏觀影響。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -17.4,
-   "ai_summary": "綜合近期多位大V觀點，對美光（MU）立場持續強烈看漲，無人轉軚。論述核心圍繞AI與資料中心需求帶動記憶體供不應求，加上公司低前瞻本益比及高能見度，看好其長期市值增長至兆元級別，並多次以自身持倉獲利（如800%、270%）佐證觀點。技術面分析亦偏多，認為突破關鍵價位後將續漲，整體未見風險提示，僅少數提及等待新買入信號以捕捉下一波行情。",
+   "gain": -19.0,
+   "ai_summary": "最新立場係全體大V一致看好美光，wliang、aleabitoreddit同sunxliao都維持bullish，冇人轉軚。論述點集中喺AI基礎設施帶動記憶體需求、HBM推高價格、高階AI記憶體排擠舊世代供給導致短缺、低前瞻本益比同高能見度，以及資金回流半導體股。風險提示方面，數據中未見任何大V提出明確風險警告。",
    "theme": "記憶體"
   },
   "ONDS": {
@@ -12773,7 +13003,7 @@
      "stance": "bullish",
      "summary": "作者以ONDS為例，說明在低於1美元時押注早期公司的風險與回報。",
      "r7": -3.3,
-     "r30": null
+     "r30": -21.7
     },
     {
      "date": "2026-08-14",
@@ -12847,7 +13077,7 @@
     }
    ],
    "yellow": null,
-   "gain": -14.3,
+   "gain": -18.2,
    "ai_summary": "根據歷史記錄，wliang 對ONDS自2026年7月起持續看漲，多次強調其從低價（如0.83美元）大幅上漲、受惠國防及無人機趨勢，並視為被低估的10倍交易機會，立場從未轉變。其他提及者如aleabitoreddit與sunxliao亦一致看好，分別聚焦關稅政策受惠及股價漲幅（如0.71美元漲667%）。整體而言，所有觀點均為樂觀，未見任何轉軚或風險提示，僅wliang在8月10日提及押注早期公司的風險與回報，但未改變其看漲結論。",
    "theme": "其他"
   },
@@ -12992,11 +13222,21 @@
      "summary": "OpenAI囤積大量Mac mini和Mac Studio，蘋果產品需求強勁。",
      "r7": -2.7,
      "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "sunxliao",
+     "tweet_id": "2098273957099282579",
+     "url": "https://x.com/sunxliao/status/2098273957099282579",
+     "stance": "bullish",
+     "summary": "作者對蘋果摺疊手機感興趣，願意買三部，睇好蘋果。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 7.5,
-   "ai_summary": "根據歷史數據，最新立場偏向看漲，尤其集中在AI生態系統與產品需求方面。論述點包括蘋果因OpenAI及Anthropic使用其產品而受益，即使未主動布局也取得優勢，且OpenAI囤積Mac設備顯示需求強勁；此外，收購AI晶片公司或擴大資本支出被視為潛在利好，股價短期下跌被認為是暫時現象。立場有明顯轉變，早期多次中性提及（如記憶體成本、被三星超越、政府施壓），後期轉為明確看漲，但期間亦出現風險提示，包括記憶體短缺導致業績指引疲軟、政府干預採購可能影響供應鏈關係，以及關稅與採購壓力帶來的潛在風險。",
+   "gain": 14.0,
+   "ai_summary": "最新立場偏看好：wliang 認為蘋果股價下跌只係暫時，長期仍值得持有；aleabitoreddit 指蘋果因 OpenAI 同 Anthropic 使用其產品而在 AI 領域被動受益，OpenAI 囤積大量 Mac mini 同 Mac Studio 亦顯示需求強勁；sunxliao 就對摺疊手機感興趣並睇好。論述點集中在 AI 生態帶動、產品需求同新硬件期待。風險提示方面，帖文提過記憶體成本上漲同短缺令業績指引疲軟、被三星超越、美國政府施壓向 INTC 採購及呼籲唔好買中國記憶體晶片等地緣同供應鏈因素，但作者多數只提及而無明確轉軚。",
    "theme": "AI"
   },
   "MSFT": {
@@ -13198,7 +13438,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095490725412733092",
      "stance": "neutral",
      "summary": "作者以微軟收購GitHub作類比，未表達明確多空立場。",
-     "r7": null,
+     "r7": -3.5,
      "r30": null
     },
     {
@@ -13208,12 +13448,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095882424932766163",
      "stance": "bullish",
      "summary": "作者指出微軟等公司表示運算需求失衡，看好其AI前景。",
-     "r7": null,
+     "r7": -0.6,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 32.3,
+   "gain": 33.1,
    "ai_summary": "根據歷史數據，最新立場整體偏多，多位大V持續看好微軟AI與雲端業務，論述重點集中於資本支出上調至1750億美元、運算需求超過供給、Maia 300晶片量產及三星記憶體長期協議等利好因素。其中wliang在7月29日後轉為中性，僅提及財報觀察而未明確表態，但後續又回歸看好資本支出對NVDA的間接利好。風險提示方面，僅有aleabitoreddit在8月30日以諷刺語氣提及Windows程式影響韓國散戶，但未構成明確看空訊號，整體未見重大轉軚或系統性風險警告。",
    "theme": "AI"
   },
@@ -13396,7 +13636,7 @@
      "url": "https://x.com/sunxliao/status/2095595159232889222",
      "stance": "bullish",
      "summary": "作者認為IBIT是投資比特幣的現貨ETF，看好其前景。",
-     "r7": null,
+     "r7": -5.8,
      "r30": null
     },
     {
@@ -13406,7 +13646,7 @@
      "url": "https://x.com/sunxliao/status/2095528031851028497",
      "stance": "bullish",
      "summary": "作者看好IBIT在未來12-18個月的表現。",
-     "r7": null,
+     "r7": -5.8,
      "r30": null
     },
     {
@@ -13416,7 +13656,7 @@
      "url": "https://x.com/sunxliao/status/2095572031400272172",
      "stance": "bullish",
      "summary": "作者認為IBIT有巨大漲幅，看好其未來表現。",
-     "r7": null,
+     "r7": -5.8,
      "r30": null
     },
     {
@@ -13428,11 +13668,21 @@
      "summary": "作者看好IBIT，認為應繼續前進。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "sunxliao",
+     "tweet_id": "2098061651077664970",
+     "url": "https://x.com/sunxliao/status/2098061651077664970",
+     "stance": "bearish",
+     "summary": "作者認為 IBIT 正處於調整階段，但接近尾聲。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 31.1,
-   "ai_summary": "根據歷史記錄，sunxliao 對 IBIT 的立場整體維持強烈看漲，從 2026 年 8 月初至 9 月 6 日期間，多次強調其作為比特幣現貨 ETF 的優勢，並計劃透過大量買入、定期定額及 DCA 策略參與比特幣牛市。其論述核心在於比特幣月線出現藍鑽訊號、牛市週期來臨，以及 IBIT 與 MSTR、BTC 走勢同步，認為回調時可加碼，並看好未來 12 至 18 個月表現。期間僅於 8 月 31 日出現一次中性提及，未明確表態，但無明顯轉軚或風險提示，整體立場一致且積極。",
+   "gain": 31.8,
+   "ai_summary": "sunxliao 由 2026 年 8 月起一直看好 IBIT，核心論點係 IBIT 係參與比特幣牛市嘅簡易現貨 ETF 工具，受惠於比特幣月線藍鑽訊號及牛市週期，並計劃以定期定額同回調加碼方式持續買入，甚至納入每日更新同 DCA 策略。到 2026 年 9 月 10 日立場轉為看淡，指 IBIT 正處於調整階段，但同時認為調整接近尾聲，屬首次明確風險提示。",
    "theme": "比特幣"
   },
   "WULF": {
@@ -13875,7 +14125,7 @@
      "stance": "bullish",
      "summary": "作者看好WULF，期待在更好的價位進場。",
      "r7": 8.6,
-     "r30": null
+     "r30": 5.7
     },
     {
      "date": "2026-08-11",
@@ -13885,7 +14135,7 @@
      "stance": "bullish",
      "summary": "作者認為WULF交易價格低於與Anthropic協議前，暗示被低估。",
      "r7": -6.7,
-     "r30": null
+     "r30": -3.6
     },
     {
      "date": "2026-08-15",
@@ -13949,7 +14199,7 @@
     }
    ],
    "yellow": null,
-   "gain": -36.2,
+   "gain": -38.0,
    "ai_summary": "根據歷史數據，sunxliao 對 WULF 的立場整體偏多，多次強調其受惠於開放權重模型及 Anthropic 190億美元協議帶動的算力需求，並看好月線轉多後的漲勢，但期間亦曾於7月30日及8月19日轉為中性或看空，提示支撐位測試及下跌風險，顯示觀點有波動。wliang 則持續看多，認為其股價低於與 Anthropic 協議前水準屬低估，並強調協議對算力需求的長期利好。整體而言，最新立場仍以看多為主，但 sunxliao 在8月後期曾短暫轉空，反映對短期回調的警覺，未有全面轉向看空。",
    "theme": "AI雲"
   },
@@ -13967,7 +14217,7 @@
     }
    ],
    "yellow": null,
-   "gain": -8.2,
+   "gain": -11.9,
    "theme": "其他"
   },
   "SLV": {
@@ -13994,7 +14244,7 @@
     }
    ],
    "yellow": null,
-   "gain": 11.0,
+   "gain": 9.0,
    "ai_summary": "根據最新數據，sunxliao 在 2026 年 8 月 28 日維持看漲立場，明確表示看好白銀，認為今年其餘時間所有回調都是買入機會，論述點聚焦於白銀的強勢趨勢。此前在 6 月 30 日，他已將 SLV 列為跟隨的強勢主題之一，立場從未轉變，持續看多。整體而言，作者未提出風險提示，僅強調回調買入，立場一致且樂觀。",
    "theme": "其他"
   },
@@ -14012,7 +14262,7 @@
     }
    ],
    "yellow": null,
-   "gain": -12.5,
+   "gain": -12.7,
    "theme": "半導體設備"
   },
   "TAN": {
@@ -14029,7 +14279,7 @@
     }
    ],
    "yellow": null,
-   "gain": -16.9,
+   "gain": -19.5,
    "theme": "其他"
   },
   "REMX": {
@@ -14046,7 +14296,7 @@
     }
    ],
    "yellow": null,
-   "gain": -13.3,
+   "gain": -19.5,
    "theme": "其他"
   },
   "COPX": {
@@ -14063,7 +14313,7 @@
     }
    ],
    "yellow": null,
-   "gain": 22.6,
+   "gain": 15.9,
    "theme": "其他"
   },
   "DRIV": {
@@ -14080,7 +14330,7 @@
     }
    ],
    "yellow": null,
-   "gain": -10.0,
+   "gain": -10.9,
    "theme": "其他"
   },
   "QTUM": {
@@ -14097,7 +14347,7 @@
     }
    ],
    "yellow": null,
-   "gain": -10.0,
+   "gain": -10.5,
    "theme": "其他"
   },
   "AEVA": {
@@ -14244,7 +14494,7 @@
     }
    ],
    "yellow": null,
-   "gain": -36.7,
+   "gain": -39.6,
    "ai_summary": "根據數據，最新立場偏向樂觀，多位作者持續看好AEVA的FMCW LiDAR技術在機器人領域的應用，並強調其成為CPO/NPO光源供應商及簽署JDA等正面進展。論述重點包括機器人主題受惠、競爭對手受監管排除，以及預期2026下半年開始貢獻營收。整體未見明顯轉軚，但部分提及僅列為相關股票或未深入研究，且多次指出目前缺乏純粹投資機會，屬於潛在風險提示。",
    "theme": "其他"
   },
@@ -14302,7 +14552,7 @@
     }
    ],
    "yellow": null,
-   "gain": -36.9,
+   "gain": -38.6,
    "ai_summary": "根據歷史記錄，sunxliao 對 BB 的立場整體偏多，最新一次（2026-08-04）明確看好其準備上漲，並持續將 BB 與機器人主題掛鉤。論述重點圍繞機器人領域的投資潛力，但同日另一則提及僅列為相關股票而未明確表態，顯示立場略有反覆。整體未見明顯風險提示，但早期曾自認尚未深入研究，後續轉為積極看多，需留意其觀點可能隨主題熱度波動。",
    "theme": "其他"
   },
@@ -14406,7 +14656,7 @@
      "stance": "bullish",
      "summary": "作者認為機器人是最強主題，看好BOT。",
      "r7": -8.3,
-     "r30": null
+     "r30": -11.2
     },
     {
      "date": "2026-08-14",
@@ -14430,7 +14680,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.3,
+   "gain": -18.7,
    "ai_summary": "根據最新數據，sunxliao自2026年6月起持續看好BOT，多次強調機器人主題強勢，並於7月提及股價從21美元上漲約131%，8月仍認為其準備好上漲，立場維持樂觀。相反，wliang在8月14日提出警告，指今年IPO對相關股票不利，BOT可能受影響，這是唯一明確的風險提示。整體而言，多數意見偏多，但存在對IPO壓力的潛在憂慮，未有明顯轉軚跡象。",
    "theme": "其他"
   },
@@ -14448,7 +14698,7 @@
     }
    ],
    "yellow": null,
-   "gain": -1.3,
+   "gain": 8.0,
    "theme": "機器人"
   },
   "CGNX": {
@@ -14465,7 +14715,7 @@
     }
    ],
    "yellow": null,
-   "gain": -8.8,
+   "gain": -6.8,
    "theme": "機器人"
   },
   "ZBRA": {
@@ -14482,7 +14732,7 @@
     }
    ],
    "yellow": null,
-   "gain": 37.8,
+   "gain": 37.7,
    "theme": "機器人"
   },
   "AMBQ": {
@@ -14499,7 +14749,7 @@
     }
    ],
    "yellow": null,
-   "gain": -29.9,
+   "gain": -25.7,
    "theme": "機器人"
   },
   "ATOM": {
@@ -14516,7 +14766,7 @@
     }
    ],
    "yellow": null,
-   "gain": -45.6,
+   "gain": -44.8,
    "theme": "機器人"
   },
   "INDI": {
@@ -14533,7 +14783,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.9,
+   "gain": -8.8,
    "theme": "機器人"
   },
   "LSCC": {
@@ -14550,7 +14800,7 @@
     }
    ],
    "yellow": null,
-   "gain": -20.0,
+   "gain": -19.6,
    "theme": "機器人"
   },
   "ALNT": {
@@ -14567,7 +14817,7 @@
     }
    ],
    "yellow": null,
-   "gain": -4.1,
+   "gain": -0.1,
    "theme": "機器人"
   },
   "KLIC": {
@@ -14594,7 +14844,7 @@
     }
    ],
    "yellow": null,
-   "gain": -35.7,
+   "gain": -33.2,
    "ai_summary": "根據最新數據，KLIC的立場維持看漲，兩次提及均為正面觀點。論述重點在於半導體組裝與自動化技術在機器人領域的應用潛力，以及線焊設備作為產業瓶頸時，KLIC作為供應商的受惠機會。目前未見轉軚或風險提示，但需留意後續是否出現供應鏈或需求變化。",
    "theme": "機器人"
   },
@@ -14612,7 +14862,7 @@
     }
    ],
    "yellow": null,
-   "gain": -5.4,
+   "gain": -6.7,
    "theme": "機器人"
   },
   "AUR": {
@@ -14631,7 +14881,7 @@
    "yellow": {
     "week": 80
    },
-   "gain": -1.7,
+   "gain": -1.1,
    "theme": "機器人"
   },
   "MBLY": {
@@ -14648,7 +14898,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.7,
+   "gain": 0.7,
    "theme": "機器人"
   },
   "XPEV": {
@@ -14685,7 +14935,7 @@
     }
    ],
    "yellow": null,
-   "gain": -14.6,
+   "gain": -18.0,
    "ai_summary": "截至最新提及，大V對小鵬汽車（XPEV）立場偏多，主要論點集中於其Iron人形機器人及eVTOL業務的領導地位與分拆募資成果，認為估值達63億美元以上顯示前景看好。早前有中性提及僅將其列為中國人形機器人領導者之一，未見明顯轉軚，但後續觀點更強調機器人業務的財務價值，未見明確風險提示。",
    "theme": "機器人"
   },
@@ -14703,7 +14953,7 @@
     }
    ],
    "yellow": null,
-   "gain": -43.4,
+   "gain": -47.5,
    "theme": "機器人"
   },
   "RR": {
@@ -14720,7 +14970,7 @@
     }
    ],
    "yellow": null,
-   "gain": -12.1,
+   "gain": -16.2,
    "theme": "機器人"
   },
   "SERV": {
@@ -14737,7 +14987,7 @@
     }
    ],
    "yellow": null,
-   "gain": -22.8,
+   "gain": -28.7,
    "theme": "機器人"
   },
   "SYM": {
@@ -14754,7 +15004,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.8,
+   "gain": 1.5,
    "theme": "機器人"
   },
   "ISRG": {
@@ -14771,7 +15021,7 @@
     }
    ],
    "yellow": null,
-   "gain": -13.7,
+   "gain": -9.5,
    "theme": "機器人"
   },
   "ARKG": {
@@ -14798,7 +15048,7 @@
     }
    ],
    "yellow": null,
-   "gain": 13.1,
+   "gain": 10.2,
    "theme": "其他"
   },
   "AXTI": {
@@ -14981,7 +15231,7 @@
      "stance": "bullish",
      "summary": "Lumentum 因需求失衡增加對 AXTI 的 InP 基板採購，顯示 AXTI 作為合作夥伴將受惠於雷射需求增長。",
      "r7": -6.4,
-     "r30": null
+     "r30": -15.6
     },
     {
      "date": "2026-08-12",
@@ -14991,7 +15241,7 @@
      "stance": "bullish",
      "summary": "受光電類股動能帶動，股價大漲。",
      "r7": -6.4,
-     "r30": null
+     "r30": -15.6
     },
     {
      "date": "2026-08-13",
@@ -15122,11 +15372,21 @@
      "summary": "作者分享AXTI的投資想法，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "wliang",
+     "tweet_id": "2097729340427419729",
+     "url": "https://x.com/wliang/status/2097729340427419729",
+     "stance": "bullish",
+     "summary": "作者看好AI基礎設施中的光子學領域。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 0.7,
-   "ai_summary": "根據歷史記錄，AXTI 最新立場整體偏多，多位大V（如 aleabitoreddit、wliang、sunxliao）持續看好其受惠於 InP 基板短缺、漲價及光電需求增長，並強調過去漲幅（如 3843.9%、2055%、5800%）驗證投資論點。論述核心圍繞供應鏈緊張與合作夥伴關係（如 Lumentum 採購），但 2026-09-01 曾出現短暫轉軚，因股價大幅拋售而轉為看淡，反映對九月市場疲弱的風險提示。整體未見長期立場逆轉，但多次提及需注意關鍵價位與市場波動。",
+   "gain": -4.1,
+   "ai_summary": "最新立場整體偏看好：wliang 興奮於光子學及 AI 基礎設施，aleabitoreddit 多次公開看好並指 InP 基板短缺令公司受益，sunxliao 認為支撐位反彈後市可期。論述點集中在光電趨勢、InP 短缺與基板材料漲價，以及過去一年數千 % 的漲幅驗證投資論點。aleabitoreddit 曾於 9 月 1 日轉為看淡，指股價被大幅拋售反映九月市況疲弱，其後又回復看好；sunxliao 亦提醒需注意關鍵價位。",
    "theme": "半導體設備"
   },
   "BFLY": {
@@ -15143,7 +15403,7 @@
     }
    ],
    "yellow": null,
-   "gain": -15.4,
+   "gain": -17.9,
    "theme": "醫療"
   },
   "CPSH": {
@@ -15220,7 +15480,7 @@
     }
    ],
    "yellow": null,
-   "gain": -36.6,
+   "gain": -34.2,
    "ai_summary": "根據歷史提及記錄，CPSH最新立場偏向樂觀，因2026年8月6日wliang明確看好其作為真正瓶頸環節，並預期2027年產能擴大後將有良好回報。論述重點圍繞其美國AlSiC關鍵瓶頸地位與基本面穩固，但同時有風險提示，如7月30日wliang指出股價從高點下跌約71%，屬高波動性股票。立場曾出現轉變，例如wliang由7月16日看好轉為7月30日看淡，再於8月6日轉回看好；sunxliao則在6月21日看跌、6月26日看漲、7月30日轉中性、8月5日再轉看好，整體反映對太空主題波動的跟隨與反覆。",
    "theme": "國防"
   },
@@ -15255,11 +15515,21 @@
      "summary": "作者提到DRAM可能受影響，但未明確立場。",
      "r7": 4.8,
      "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098430387693433144",
+     "url": "https://x.com/aleabitoreddit/status/2098430387693433144",
+     "stance": "bullish",
+     "summary": "作者指 Leopold 買入 DRAM 期權，屬看好訊號。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -15.0,
-   "ai_summary": "根據最新數據，大V對DRAM的立場整體偏多，但近期有轉趨謹慎的跡象。sunxliao在6月因三星和SK海力士看好，但8月24日轉為中性，提及可能受影響但未明確表態，顯示風險意識上升。wliang則在8月21日維持看多，建議透過DRAM ETF參與供應短缺機會，論述聚焦於記憶體短缺的投資契機。整體而言，多頭論述仍主導，但最新觀點已加入不確定性提示。",
+   "gain": -17.4,
+   "ai_summary": "最新立場偏向看好，wliang 建議透過 DRAM ETF 參與記憶體供應短缺的投資機會，aleabitoreddit 亦指 Leopold 買入 DRAM 期權屬看好訊號。sunxliao 早前因三星和 SK 海力士看好 DRAM，但其後轉為中性，提到 DRAM 可能受影響但未明確立場，屬立場軟化。整體未見明顯風險提示。",
    "theme": "半導體設備"
   },
   "GLD": {
@@ -15306,7 +15576,7 @@
     }
    ],
    "yellow": null,
-   "gain": 7.0,
+   "gain": 7.3,
    "ai_summary": "根據歷史紀錄，sunxliao 對 GLD 的立場從頭到尾維持看多，最新一次（8月28日）明確表示今年其餘時間所有回調都是買入機會，論述核心圍繞央行持續買盤及定期定額策略。雖然8月25日曾提及Pokemon表現優於黃金，但並未轉為看空，僅為相對比較，未構成風險提示或立場轉變。整體而言，該作者持續樂觀，未見任何看淡或風險警告。",
    "theme": "其他"
   },
@@ -15334,7 +15604,7 @@
     }
    ],
    "yellow": null,
-   "gain": -17.0,
+   "gain": -19.7,
    "theme": "醫療"
   },
   "KEEL": {
@@ -15556,7 +15826,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到KEEL是持倉之一。",
-     "r7": null,
+     "r7": 19.3,
      "r30": null
     },
     {
@@ -15568,11 +15838,21 @@
      "summary": "作者分享KEEL的投資想法，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "sunxliao",
+     "tweet_id": "2098429603979329984",
+     "url": "https://x.com/sunxliao/status/2098429603979329984",
+     "stance": "bullish",
+     "summary": "作者認為市場對 KEEL 關注不足，預期週線藍鑽石形態可能再次出現，帶動約 3 倍升幅。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -37.4,
-   "ai_summary": "綜合近期多位大V觀點，對KEEL整體維持看漲立場，最新看法集中於其月線轉多後具備大幅上漲潛力，且股價在3美元附近有月線黃金支撐。論述重點包括訂單積壓超過十億美元、預期簽署大型合約，以及受整體市場反彈帶動。立場未見明顯轉軚，但期間曾出現短期風險提示，例如7月15日指出該股受neocloud板塊動盪影響而看跌，其後看法迅速轉回偏多。",
+   "gain": -37.9,
+   "ai_summary": "最新立場係整體看漲，sunxliao同wliang近期都持續睇好KEEL，aleabitoreddit亦提到KEEL係持倉之一。論述點包括藍鑽指標、月線黃金支撐位約3美元、週線藍鑽石形態可能帶動約3倍升幅、多十億美元訂單積壓、預期跟進簽署大型合約，以及市場對KEEL關注不足。sunxliao曾於2026年7月15日短暫轉為看跌，指neocloud股票經歷動盪，但之後轉回看漲；風險提示方面，sunxliao提到希望KEEL守住3美元附近，以及若WGMI收盤在黃金區上方才會出現看漲延續。",
    "theme": "其他"
   },
   "LITE": {
@@ -15935,7 +16215,7 @@
      "stance": "bullish",
      "summary": "作者看好LITE，認為其在光電領域的強勁反彈中具備機會。",
      "r7": 19.1,
-     "r30": null
+     "r30": 21.6
     },
     {
      "date": "2026-08-10",
@@ -15945,7 +16225,7 @@
      "stance": "neutral",
      "summary": "作者提到LITE將公布財報，但未明確表達觀點。",
      "r7": 19.1,
-     "r30": null
+     "r30": 21.6
     },
     {
      "date": "2026-08-11",
@@ -15955,7 +16235,7 @@
      "stance": "bullish",
      "summary": "Lumentum 營收從 8.08 億美元成長至 10.1 億美元再至 12.5 億美元，且營業利潤率持續增長，光子學業務表現亮眼。",
      "r7": 6.4,
-     "r30": null
+     "r30": 14.0
     },
     {
      "date": "2026-08-11",
@@ -15965,7 +16245,7 @@
      "stance": "bullish",
      "summary": "Lumentum 業績強勁，營收和利潤率超預期，且指引上調，反映 CPO 需求增長。",
      "r7": 6.4,
-     "r30": null
+     "r30": 14.0
     },
     {
      "date": "2026-08-12",
@@ -15975,7 +16255,7 @@
      "stance": "bullish",
      "summary": "Lumentum確認CW雷射需求強勁且能提高價格，CPO擴產時程不變，作者認為其競爭優勢明顯。",
      "r7": -11.2,
-     "r30": null
+     "r30": 1.0
     },
     {
      "date": "2026-08-12",
@@ -15985,7 +16265,7 @@
      "stance": "bullish",
      "summary": "Lumentum 確認 CPO 規模化部署於 2027 下半年啟動，且超高功率雷射需求極度失衡，公司定價能力強，中國競爭對手進度落後，看好其雷射業務前景。",
      "r7": -11.2,
-     "r30": null
+     "r30": 1.0
     },
     {
      "date": "2026-08-12",
@@ -15995,7 +16275,7 @@
      "stance": "bullish",
      "summary": "Coherent 確認 CPO 規模化營收於 2027 下半年開始，對 Lumentum 等 CPO 參與者為正面訊號。",
      "r7": -11.2,
-     "r30": null
+     "r30": 1.0
     },
     {
      "date": "2026-08-12",
@@ -16005,7 +16285,7 @@
      "stance": "bullish",
      "summary": "財報優於預期且指引穩健，帶動光電類股上漲。",
      "r7": -11.2,
-     "r30": null
+     "r30": 1.0
     },
     {
      "date": "2026-08-13",
@@ -16144,7 +16424,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095102771418845551",
      "stance": "bullish",
      "summary": "Lumentum 同樣預期 NPO 於 2027 年底至 2028 上半年量產，並看好 CPO 雷射出貨提前於 2027 下半年開始貢獻營收。",
-     "r7": null,
+     "r7": 13.6,
      "r30": null
     },
     {
@@ -16154,7 +16434,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095546138510459218",
      "stance": "neutral",
      "summary": "文中提及 Lumentum 產能，作為市場背景資訊。",
-     "r7": null,
+     "r7": 10.4,
      "r30": null
     },
     {
@@ -16186,11 +16466,31 @@
      "summary": "作者表示LITE仍供應雷射，但價格溢價高，客戶因短缺而尋找替代方案。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097660318369697875",
+     "url": "https://x.com/aleabitoreddit/status/2097660318369697875",
+     "stance": "bullish",
+     "summary": "作者自2025年起看好激光題材，認為供應緊張支持稀缺溢價，並預期2027至2028年光子超級周期重演記憶體行情。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者認為在光學元件短缺下，LITE等雷射供應商將受益。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 19.8,
-   "ai_summary": "根據歷史記錄，該作者對LITE的最新立場偏向樂觀，多次強調光學供應短缺、產能訂滿及AI網絡產品需求，看好其前景並曾列為選股之一。論述核心圍繞供應鏈失衡與CPO雷射量產提前帶來的受惠機會，但後期轉為中性，指出LITE雖持續供應雷射，但因價格溢價過高，客戶正尋求替代方案，隱含風險提示。整體立場由強烈看多轉為審慎，未見明確轉軚，但已加入對高溢價的擔憂。",
+   "gain": 15.3,
+   "ai_summary": "作者最新立場偏看好LITE，認為喺光學元件同雷射供應短缺下，LITE作為垂直整合供應商會受惠，產能已被訂滿，網絡產品亦係AI運算建設嘅關鍵，並預期2027至2028年光子超級周期重演記憶體行情。論述重點包括CPO雷射出貨可能提前喺2027下半年貢獻營收、NPO預期2027年底至2028上半年量產、收購擴展市場，以及股價漲幅超過100%。風險提示方面，作者提到LITE價格溢價高，客戶因短缺而尋找替代方案，但整體未見明確轉軚。",
    "theme": "光通訊"
   },
   "MRVL": {
@@ -16442,7 +16742,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095102771418845551",
      "stance": "bullish",
      "summary": "Marvell 在矽光子與 CPO 技術上進展明確，NPO 預計 2027 年底至 2028 年量產，並強調供應鏈多元化與台積電合作，長期看好。",
-     "r7": null,
+     "r7": 13.8,
      "r30": null
     },
     {
@@ -16452,7 +16752,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095546138510459218",
      "stance": "neutral",
      "summary": "文中引用 Marvell 高層言論，支持歐洲雷射供應鏈觀點。",
-     "r7": null,
+     "r7": 8.7,
      "r30": null
     },
     {
@@ -16477,7 +16777,7 @@
     }
    ],
    "yellow": null,
-   "gain": -27.4,
+   "gain": -23.5,
    "ai_summary": "根據歷史記錄，最新立場整體偏多，尤其自8月底至9月初多次強調MRVL受惠於Google、Amazon及Nvidia的ASIC與光學擴展合作，並看好矽光子及CPO技術長期潛力，認為收購Celestial應以未來機會評估而非短期虧損。論述點集中於客戶2027年大規模部署、台積電合作及供應鏈多元化，且作者在9月7日明確表示MRVL是其選股之一且漲幅超過100%，立場未有轉軚。風險提示方面，8月28日及9月3日曾提及客戶揭露受限及歐洲雷射供應鏈觀點，但未構成明確看空訊號，整體未見明顯風險警告或立場逆轉。",
    "theme": "AI晶片"
   },
@@ -16545,7 +16845,7 @@
     }
    ],
    "yellow": null,
-   "gain": -29.7,
+   "gain": -35.0,
    "ai_summary": "sunxliao自2026年6月至9月持續看好OPEN，立場從未轉變，核心論點圍繞房市復甦及股價自0.90美元起漲逾十倍（約1106%至1111%）的強勁動能。最新於8月25日兩次發文強調，股價正在回測月線支撐且表現穩健，預期反彈後將再啟動漲勢，顯示其對技術面與趨勢延續的信心。整體無風險提示或轉軚跡象，僅重複確認既有看多邏輯。",
    "theme": "其他"
   },
@@ -16613,7 +16913,7 @@
     }
    ],
    "yellow": null,
-   "gain": -17.6,
+   "gain": -18.2,
    "theme": "AI雲"
   },
   "QQQ": {
@@ -16866,7 +17166,7 @@
      "stance": "bullish",
      "summary": "作者認為QQQ走勢健康，週線出現買入信號，維持風險偏好，除非跌破約680水平。",
      "r7": 1.2,
-     "r30": null
+     "r30": -0.6
     },
     {
      "date": "2026-08-13",
@@ -16925,13 +17225,33 @@
      "url": "https://x.com/wliang/status/2095586085862527480",
      "stance": "bullish",
      "summary": "作者看好QQQ的回升，認為若明日持續買壓，本週將偏多，且價格守住關鍵位時無需恐慌。",
+     "r7": -1.3,
+     "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "wliang",
+     "tweet_id": "2098044730391093651",
+     "url": "https://x.com/wliang/status/2098044730391093651",
+     "stance": "neutral",
+     "summary": "作者指QQQ仍守住週線黃金區，避免全面避險。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "wliang",
+     "tweet_id": "2098426717656219945",
+     "url": "https://x.com/wliang/status/2098426717656219945",
+     "stance": "bullish",
+     "summary": "作者認為QQQ面對多項利空仍能守住關鍵水平，因此看漲。",
      "r7": null,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 0.7,
-   "ai_summary": "根據歷史紀錄，最新立場多位於偏多與中性之間，wliang在9月3日轉為看好回升，認為若買壓持續本週偏多，且守住關鍵位無需恐慌；而9月1日曾因利率升、戰爭緊張及殖利率飆升而轉為中性，但強調守住關鍵水準避免全面避險。sunxliao在8月3日明確指出底部已到，高時間框架支撐受機構關注，即使跌破需多次測試，立場偏多；但8月31日aleabitoredit僅觀察特朗普利率評論帶動上漲，未表態多空。整體論述圍繞黃金區間與關鍵支撐位，多次強調守住約680水平或黃金分割位作為風險依據，未見明顯轉軚，但多次提及利率、美元指數及戰爭等外部風險，並以守住關鍵價位作為風險提示。",
+   "gain": 0.5,
+   "ai_summary": "最新立場係wliang喺9月11日轉為看漲，認為QQQ面對多項利空仍能守住關鍵水平。整體論述圍繞週線黃金分割位同高時間框架支撐，wliang多次強調只要守住約680黃金區間就冇問題，並曾提及美元指數下跌形成順風、週線出現買入信號。wliang喺9月1日同9月10日曾短暫轉為中性，但隨後均重新看漲，風險提示主要係若跌破該關鍵水平則需警惕。",
    "theme": "AI晶片"
   },
   "SLNH": {
@@ -17166,7 +17486,7 @@
      "stance": "bullish",
      "summary": "作者看好SLNH，期待在更好的價位進場。",
      "r7": 10.8,
-     "r30": null
+     "r30": 3.3
     },
     {
      "date": "2026-08-11",
@@ -17176,7 +17496,7 @@
      "stance": "bullish",
      "summary": "作者認為SLNH股價應該更高。",
      "r7": -7.9,
-     "r30": null
+     "r30": -8.7
     },
     {
      "date": "2026-08-17",
@@ -17200,7 +17520,7 @@
     }
    ],
    "yellow": null,
-   "gain": -27.8,
+   "gain": -31.2,
    "ai_summary": "綜合近期多位大V觀點，對SLNH整體維持強烈看多立場，核心論述圍繞其受惠於開放權重模型帶動的算力需求、與NBIS同屬新創雲端賽道，以及技術面月線轉多後的上漲潛力，並多次提及分析師目標價4美元作為支撐。立場未見轉軚，但部分意見如sunxliao在8月10日提及期待更好價位進場，顯示對短期追高有保留，而wliang則在7月31日於支撐位加碼，反映對短期反彈有信心。整體風險提示較少，主要集中於市場反彈能否持續及個股波動性，未見明確看空或減持建議。",
    "theme": "AI雲"
   },
@@ -17624,7 +17944,7 @@
      "stance": "bullish",
      "summary": "作者認為閃迪與美光同屬一個情況，是穩健的買入機會。",
      "r7": 44.3,
-     "r30": null
+     "r30": 42.5
     },
     {
      "date": "2026-08-13",
@@ -17823,7 +18143,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者認為Sandisk是記憶體領域的持倉，具有低前瞻本益比和高能見度。",
-     "r7": null,
+     "r7": 13.6,
      "r30": null
     },
     {
@@ -17833,7 +18153,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095580088620449880",
      "stance": "bullish",
      "summary": "作者將Sandisk納入記憶體貿易討論，認為舊世代記憶體短缺對其有正面影響。",
-     "r7": null,
+     "r7": 8.8,
      "r30": null
     },
     {
@@ -17843,7 +18163,7 @@
      "url": "https://x.com/sunxliao/status/2095875556718018786",
      "stance": "bullish",
      "summary": "作者認為Sandisk在4小時圖出現三重藍色訊號，突破紫色線後將上漲。",
-     "r7": null,
+     "r7": -5.6,
      "r30": null
     },
     {
@@ -17925,11 +18245,51 @@
      "summary": "作者分享SNDK的投資想法，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097711322272317763",
+     "url": "https://x.com/sunxliao/status/2097711322272317763",
+     "stance": "bullish",
+     "summary": "作者注意到 SNDK 再次出現週線藍鑽訊號，對上一次出現係 2025 年 8 月約 45 美元水平，暗示睇好後市。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "wliang",
+     "tweet_id": "2098044730391093651",
+     "url": "https://x.com/wliang/status/2098044730391093651",
+     "stance": "bullish",
+     "summary": "作者認為SNDK正回測突破位，會趁低吸納。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098430387693433144",
+     "url": "https://x.com/aleabitoreddit/status/2098430387693433144",
+     "stance": "bullish",
+     "summary": "作者指 Leopold 活躍於 SNDK，屬看好訊號。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者看好記憶體需求，認為SNDK等記憶體公司受惠於超大規模資本開支，利潤率高且不受短期宏觀影響。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -23.6,
-   "ai_summary": "根據歷史紀錄，大V對SNDK立場全程一致看漲，無轉軚跡象。核心論述集中於NAND結構性需求強勁、DDR2/DDR3價格上漲帶動盈利，以及預期80%毛利率可持續至2030年，並可能納入標普100指數。技術面分析亦多次提及突破訊號，如週線藍鑽及4小時三重藍色訊號，看好股價續升。風險提示方面，紀錄中未見明確警示，僅有將舊世代記憶體短缺視為正面因素，整體觀點高度樂觀。",
+   "gain": -27.7,
+   "ai_summary": "截至2026年9月11日，全部提及SNDK的大V都維持看好，冇人轉軚或提出風險提示。主要論點包括：記憶體（尤其NAND）供應緊張同價格上漲帶動盈利，預期80%毛利率可持續至2030年，低前瞻本益比、高能見度，可能納入標普100指數，並受惠於超大規模資本開支。技術面上，sunxliao同wliang多次提到週線或4小時圖出現藍鑽、三重藍色等買入訊號，wliang指股價一週內升25%後正回測突破位，會趁低吸納。",
    "theme": "半導體記憶體"
   },
   "WGMI": {
@@ -18152,7 +18512,7 @@
      "stance": "bearish",
      "summary": "作者認為WGMI在週線黃金位遭到拒絕，暗示看跌。",
      "r7": 10.1,
-     "r30": null
+     "r30": 5.1
     },
     {
      "date": "2026-08-11",
@@ -18162,7 +18522,7 @@
      "stance": "neutral",
      "summary": "作者認為WGMI今日表現良好，但整個板塊交易仍顯異常。",
      "r7": -1.8,
-     "r30": null
+     "r30": -2.3
     },
     {
      "date": "2026-08-19",
@@ -18186,7 +18546,7 @@
     }
    ],
    "yellow": null,
-   "gain": -28.2,
+   "gain": -30.6,
    "ai_summary": "根據歷史記錄，最新立場偏向中性至謹慎。wliang在8月19日認為WGMI接近40美元支撐位並預期反彈，而sunxliao同日指出該ETF仍在拒絕每週黃金位，導致波動，顯示雙方對短期方向未有明確共識。整體論述圍繞週線黃金分割位作為關鍵技術指標，多頭需收盤於其上以確認強勢，但8月10日遭拒絕後轉為看跌，隨後未見明確轉軚訊號。風險提示主要集中在該位置的反覆測試及板塊交易異常，反映市場情緒不穩。",
    "theme": "比特幣挖礦"
   },
@@ -18305,7 +18665,7 @@
     }
    ],
    "yellow": null,
-   "gain": 25.1,
+   "gain": 26.1,
    "theme": "機器人"
   },
   "SPCX": {
@@ -18563,7 +18923,7 @@
     }
    ],
    "yellow": null,
-   "gain": -27.4,
+   "gain": -30.2,
    "ai_summary": "根據歷史記錄，wliang對SPCX的立場多次轉變，從最初看好（7月13日、17日）到7月20日轉為看淡，稱其為散戶陷阱但長期持有者無礙，隨後在8月6日因股價轉綠轉為看好，但8月14日及20日又因IPO後表現不佳及拖累板塊而看淡，最新8月30日則中性提及波動並推薦SpaceX作為投資標的，顯示其立場反覆且未穩定。aleabitoreddit整體偏中性至看淡，7月14日僅提及協議未表態，8月13日質疑Anthropic估值並暗示可能超過SpaceX但持懷疑態度，8月20日對Anthropic上市保留態度，未對SPCX明確看好。sunxliao則長期看好，認為下跌後在太空復甦時會反彈更強。整體而言，主要分歧在於短期波動風險（財報、解禁、IPO拖累）與長期復甦潛力，wliang多次提示風險但最終未持續看淡，而aleabitoreddit對高估值持懷疑，未有轉軚跡象。",
    "theme": "太空"
   },
@@ -18591,7 +18951,7 @@
     }
    ],
    "yellow": null,
-   "gain": 11.2,
+   "gain": 11.5,
    "theme": "機器人"
   },
   "POET": {
@@ -18694,7 +19054,7 @@
      "stance": "bullish",
      "summary": "POET 執行長所言「三大廠未來兩年全數售罄」獲 Coherent 訂單能見度印證，強化其觀點。",
      "r7": -4.8,
-     "r30": null
+     "r30": -9.8
     },
     {
      "date": "2026-08-13",
@@ -18759,7 +19119,7 @@
     }
    ],
    "yellow": null,
-   "gain": -22.0,
+   "gain": -25.0,
    "ai_summary": "根據歷史記錄，該作者最新立場為中性偏謹慎，因8月21日及24日曾轉為看空，擔憂Marvell垂直整合可能邊緣化POET，並質疑其缺乏產能受限與高需求能見度，且對融資方式有疑慮。此前8月7日至13日曾強烈看多，基於Lumilens合約確認供應商地位、執行長「三大廠未來兩年全數售罄」獲Coherent訂單印證，以及現金充裕與產能擴張。整體立場由看多轉為看空後再趨中性，風險提示集中在客戶集中度、垂直整合威脅及財務結構。",
    "theme": "光通訊"
   },
@@ -19154,7 +19514,7 @@
      "stance": "bullish",
      "summary": "作者對AAOI持樂觀態度，認為其受惠於光通訊需求。",
      "r7": 16.6,
-     "r30": null
+     "r30": -18.7
     },
     {
      "date": "2026-08-10",
@@ -19164,7 +19524,7 @@
      "stance": "neutral",
      "summary": "作者批評Barron's對光學供應鏈的報導不專業，但未明確表達對AAOI的看好或看壞立場。",
      "r7": 16.6,
-     "r30": null
+     "r30": -18.7
     },
     {
      "date": "2026-08-10",
@@ -19174,7 +19534,7 @@
      "stance": "bullish",
      "summary": "作者認為AAOI出現光電大反彈，若能突破週線黃金阻力位，將有更多上漲空間，目前處於關鍵的成敗點。",
      "r7": 16.6,
-     "r30": null
+     "r30": -18.7
     },
     {
      "date": "2026-08-11",
@@ -19184,7 +19544,7 @@
      "stance": "bullish",
      "summary": "作者認為AAOI的ELSFP產能將帶來額外營收，且光學產業多個週期疊加，成長可持續，非一次性週期。",
      "r7": -2.2,
-     "r30": null
+     "r30": -23.1
     },
     {
      "date": "2026-08-11",
@@ -19194,7 +19554,7 @@
      "stance": "bullish",
      "summary": "作者推薦AAOI，認為2026年有潛力。",
      "r7": -2.2,
-     "r30": null
+     "r30": -23.1
     },
     {
      "date": "2026-08-12",
@@ -19204,7 +19564,7 @@
      "stance": "bullish",
      "summary": "AAOI因收發器需求過高而缺乏CW雷射產能，確認雷射是瓶頸，且中國競爭者落後多年，作者看好其地位。",
      "r7": -11.5,
-     "r30": null
+     "r30": -23.1
     },
     {
      "date": "2026-08-12",
@@ -19214,7 +19574,7 @@
      "stance": "bullish",
      "summary": "Lumentum 指出中國雷射供應商實際出貨落後，呼應 AAOI 先前觀點，顯示市場對其競爭壓力擔憂過度。",
      "r7": -11.5,
-     "r30": null
+     "r30": -23.1
     },
     {
      "date": "2026-08-12",
@@ -19224,7 +19584,7 @@
      "stance": "bullish",
      "summary": "AAOI 內部供應 InP 雷射，因 Coherent 不外售，使其成為少數外部供應來源，價值提升。",
      "r7": -11.5,
-     "r30": null
+     "r30": -23.1
     },
     {
      "date": "2026-08-12",
@@ -19234,7 +19594,7 @@
      "stance": "bullish",
      "summary": "受光電類股動能帶動，股價大漲。",
      "r7": -11.5,
-     "r30": null
+     "r30": -23.1
     },
     {
      "date": "2026-08-13",
@@ -19533,7 +19893,7 @@
      "url": "https://x.com/wliang/status/2095863990605807962",
      "stance": "bullish",
      "summary": "作者提到先前分享AAOI於76美元，隨後大漲約95%。",
-     "r7": null,
+     "r7": 0.6,
      "r30": null
     },
     {
@@ -19606,11 +19966,41 @@
      "summary": "作者指出AAOI在約76美元時被點名，之後上漲了110%。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097660318369697875",
+     "url": "https://x.com/aleabitoreddit/status/2097660318369697875",
+     "stance": "bullish",
+     "summary": "作者自2025年起看好激光題材，認為供應緊張支持稀缺溢價，並預期光子超級周期來臨。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "wliang",
+     "tweet_id": "2097729340427419729",
+     "url": "https://x.com/wliang/status/2097729340427419729",
+     "stance": "bullish",
+     "summary": "作者看好AI基礎設施中的光子學領域。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者認為在光學元件短缺下，AAOI等雷射供應商將受益。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -19.5,
-   "ai_summary": "根據歷史記錄，多位大V對AAOI整體維持看多立場，其中wliang多次強調其先前於76美元買入並獲得高額回報，sunxliao則持續看好其技術面訊號，認為有機會挑戰140美元目標價。aleabitoreddit立場較為反覆，曾看好其網絡產品與選股表現，但亦提及雷射產能轉向自家收發器可能導致供應受限，以及亞馬遜持股等中性或偏空資訊，顯示其對該股並非全面樂觀。整體而言，市場觀點以看多為主，但存在對供應鏈及競爭的風險提示。",
+   "gain": -23.4,
+   "ai_summary": "最新立場整體偏看好：sunxliao 指 AAOI 週線黃金位回踩並出現藍色鑽石訊號，強勢收復啟動黃金區，若突破日線黃金阻力，目標約140美元；wliang 多次提及其早前於76美元點名後大漲約95%至110%，並看好AI基礎設施中的光子學領域。aleabitoreddit 由中性轉向審慎再轉看好，既提過雷射產能轉向自家收發器、拒絕外部客戶顯示供應受限，亦指供應緊張支持稀缺溢價、光子超級周期來臨，AAOI等雷射供應商將受益。風險提示主要來自 aleabitoreddit 的供應受限及GoPro競爭提及，但未見明確轉軚看淡。",
    "theme": "光通訊"
   },
   "EOS": {
@@ -19627,7 +20017,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.4,
+   "gain": -0.7,
    "theme": "國防"
   },
   "SHA0": {
@@ -19825,7 +20215,7 @@
     }
    ],
    "yellow": null,
-   "gain": -16.6,
+   "gain": -14.8,
    "ai_summary": "根據歷史記錄，最新立場偏向樂觀，尤其自8月25日起多次明確看好JBL，認為其作為Sivers主要營收來源及超大規模供應商，預期2027年上半年量產將帶來明確貢獻。論述重點圍繞矽光子比例上升、1.6T光收發器及與Sivers、POET等合作帶來的成長潛力。早期多為中性提及，未有明顯轉軚，但8月25日後立場轉趨正面，未見風險提示。",
    "theme": "光通訊"
   },
@@ -19889,7 +20279,7 @@
      "stance": "bullish",
      "summary": "MTSI客戶因磷化銦DFB雷射短缺而急迫，作者認為這也強化Sivers的瓶頸地位。",
      "r7": -13.1,
-     "r30": null
+     "r30": -10.2
     },
     {
      "date": "2026-08-12",
@@ -19899,7 +20289,7 @@
      "stance": "bullish",
      "summary": "MTSI 因客戶急迫需求 InP CW DFB 雷射，但產能要到 2027 年底才上線，顯示其未來重要性。",
      "r7": -13.1,
-     "r30": null
+     "r30": -10.2
     },
     {
      "date": "2026-08-13",
@@ -19960,11 +20350,21 @@
      "summary": "作者指出MTSI雖尚無大量產能，但客戶已急迫尋求其CW雷射供應，顯示需求強勁。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097660318369697875",
+     "url": "https://x.com/aleabitoreddit/status/2097660318369697875",
+     "stance": "bullish",
+     "summary": "作者將其列為激光領域較知名受惠標的之一。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -26.2,
-   "ai_summary": "根據數據，最新立場偏向樂觀，多數提及為看漲，核心論述是客戶因磷化銦DFB雷射供應短缺而急迫下單，需求強勁，但產能要到2027年底才上線，反映其市場地位重要。期間有一次短暫轉為看淡，指早期CPO參與度不高可能缺乏競爭力，但同日即被其他看漲觀點覆蓋，整體未見持續轉軚。風險提示主要隱含於產能延遲上線，以及部分中性評論僅提及尚未量產，未明確表態。",
+   "gain": -25.1,
+   "ai_summary": "最新立場係偏多頭：作者喺2026年9月9日將MTSI列為激光領域較知名嘅受惠標的之一，並多次強調客戶因磷化銦DFB雷射供應短缺而急迫上門，印證需求強勁。主要論述點係MTSI嘅CW雷射產能雖然要到2027年底先上線，但客戶已經急迫尋求供應，反映其未來市場地位同光學供應短缺下嘅受益角色。期間立場曾有反覆，2026年8月7日一度轉為看空，指MTSI早期CPO參與度唔高、可能缺乏競爭力，但之後大部分時間回復多頭；風險提示主要體現喺產能尚未大量上線同早期CPO參與度不足呢兩點。",
    "theme": "其他"
   },
   "EWY": {
@@ -20059,7 +20459,7 @@
     }
    ],
    "yellow": null,
-   "gain": 5.8,
+   "gain": 8.3,
    "theme": "其他"
   },
   "AOSL": {
@@ -20076,7 +20476,7 @@
     }
    ],
    "yellow": null,
-   "gain": -42.0,
+   "gain": -41.0,
    "theme": "功率半導體"
   },
   "POWI": {
@@ -20103,7 +20503,7 @@
     }
    ],
    "yellow": null,
-   "gain": -36.2,
+   "gain": -33.0,
    "ai_summary": "根據歷史記錄，最新立場為中性偏觀察，因2026年7月31日僅將POWI視為XFAB相關持股，未再重申看多論點。早期6月26日曾明確看多，理由是中國同業漲價及需求強勁，但後續未見更新或強化此觀點。未有明確轉軚或風險提示，僅從積極轉為低調陳述。",
    "theme": "功率半導體"
   },
@@ -20131,7 +20531,7 @@
     }
    ],
    "yellow": null,
-   "gain": 4.7,
+   "gain": 4.4,
    "theme": "其他"
   },
   "GFS": {
@@ -20248,7 +20648,7 @@
     }
    ],
    "yellow": null,
-   "gain": -47.6,
+   "gain": -45.5,
    "ai_summary": "根據歷史數據，最新立場為中性偏多。論述點集中在GFS作為矽光子及雷射合作夥伴的角色，以及美國政府入股及補助的正面消息。未有明顯轉軚，但多次提及僅為參考或未確認的合作，風險提示在於AMD MI500 CPO合作尚未正式確認。",
    "theme": "光通訊"
   },
@@ -20376,7 +20776,7 @@
     }
    ],
    "yellow": null,
-   "gain": 58.8,
+   "gain": 55.5,
    "ai_summary": "綜合大V提及歷史，最新立場明顯轉向樂觀，尤其wliang由7月起多次重申PLTR被低估及國防領域投資價值，並以股價自15美元漲至186美元、漲幅1100%佐證其看好論點。aleabitoreddit則由6月偏空轉為9月看好，因Palantir與NBIS合作及政府企業關係，認為前景正面。整體論述集中於國防需求、AI發展及合作帶動增長，未見明確轉軚或風險提示，但早期偏空觀點已隨股價反彈被多數看好聲音取代。",
    "theme": "其他"
   },
@@ -20394,7 +20794,7 @@
     }
    ],
    "yellow": null,
-   "gain": 65.9,
+   "gain": 65.3,
    "theme": "其他"
   },
   "SOI": {
@@ -20499,7 +20899,7 @@
     }
    ],
    "yellow": null,
-   "gain": 18.5,
+   "gain": 15.2,
    "theme": "AI模型"
   },
   "UBER": {
@@ -20536,7 +20936,7 @@
     }
    ],
    "yellow": null,
-   "gain": -1.0,
+   "gain": -3.3,
    "ai_summary": "根據提供的數據，最新立場為看空（2026-07-24），論述點是作者認為Uber與Waymo合作是錯誤選擇，Waymo將成為Uber的顛覆者。此前立場曾為看多（2026-06-24）和中性（2026-07-04），顯示從看多轉向看空，存在明顯轉軚。未見明確風險提示。",
    "theme": "其他"
   },
@@ -20601,7 +21001,7 @@
     }
    ],
    "yellow": null,
-   "gain": -8.9,
+   "gain": -11.2,
    "ai_summary": "根據提供的數據，最新立場（2026-07-30）為sunxliao轉為看好，認為UFO是太空主題領導者，整體看好，但同日也有中性提及。論述點包括前期（2026-06-21）曾看跌，認為日線確認下跌但希望支撐守住，以及wliang在2026-06-26轉為看好。整體有轉軚，從看跌轉為看好，但風險提示不明顯。",
    "theme": "太空"
   },
@@ -20629,7 +21029,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.3,
+   "gain": -21.6,
    "theme": "太空"
   },
   "SPCE": {
@@ -20646,7 +21046,7 @@
     }
    ],
    "yellow": null,
-   "gain": 6.1,
+   "gain": -1.7,
    "theme": "太空"
   },
   "SPY": {
@@ -20728,7 +21128,7 @@
     }
    ],
    "yellow": null,
-   "gain": 36.1,
+   "gain": 35.0,
    "theme": "AI雲"
   },
   "SKHYNIX": {
@@ -20854,12 +21254,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Applied Digital是AI/雲端相關持倉。",
-     "r7": null,
+     "r7": 9.0,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -38.8,
+   "gain": -42.2,
    "ai_summary": "綜合最新立場，作者整體維持偏多看法，最新提及APLD與NBIS同屬AI算力賽道，受惠開放權重模型需求，但近期藍鑽指標曾降至0/3，顯示短線方向不明。論述核心圍繞Ellendale項目獲融資、圖表健康及低於前高提供買點，惟期間曾兩度轉為中性，反映對價格波動的謹慎。未有明確轉軚，但多次以指標狀態提示風險，建議留意價格回調及訊號變化。",
    "theme": "AI雲"
   },
@@ -20942,12 +21342,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Bitdeer是比特幣礦業相關持倉。",
-     "r7": null,
+     "r7": 14.8,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -30.6,
+   "gain": -34.5,
    "ai_summary": "根據最新數據，sunxliao 在 2026 年 7 月 8 日將 BTDR 狀態更新為 0/3 藍鑽，立場轉為中性，未明確表達多空方向，與此前多次看好的立場有明顯轉變。其早期論述集中於 SEALMINER ASIC 設計、圖表健康及黃金區域反彈機會，並曾暗示 13.85 美元低於前高 20.64 美元為買入機會，但最新一次更新未再強調這些利好。整體而言，該大V由強烈看多轉為觀望，未有明確風險提示，但立場已不再積極。",
    "theme": "比特幣挖礦"
   },
@@ -21171,7 +21571,7 @@
      "stance": "bullish",
      "summary": "作者指出CLSK交易價格比首次AI/HPC交易時低約20%，認為應該更高。",
      "r7": 1.8,
-     "r30": null
+     "r30": 11.1
     },
     {
      "date": "2026-09-02",
@@ -21180,12 +21580,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到CleanSpark是比特幣礦業相關持倉。",
-     "r7": null,
+     "r7": 17.2,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -21.9,
+   "gain": -19.1,
    "ai_summary": "綜合近期多位大V觀點，對CLSK的立場持續強烈看漲，核心論述圍繞公司成功轉型為官方HPC（高效能運算）公司，並簽署首筆66億美元、為期20年的重大基礎設施協議，認為此交易規模巨大且未被市場合理定價，加上訂單積壓超過十億美元，前景遠比去年樂觀。所有提及者均無轉軚或看空跡象，僅有wliang在7月15日提醒紐約暫停令的頭條風險與實際風險不同，屬於風險提示而非改變立場。整體而言，最新觀點（8月11日）仍認為股價比首次AI/HPC交易時低約20%，估值應更高，顯示看漲情緒持續且未見衰退。",
    "theme": "比特幣挖礦"
   },
@@ -21308,12 +21708,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Core Scientific是AI/雲端相關持倉。",
-     "r7": null,
+     "r7": 7.6,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -33.3,
+   "gain": -35.2,
    "ai_summary": "根據最新數據，CORZ整體立場偏多，主要論點圍繞其屬AI算力與雲端主題、數十億美元訂單積壓，以及月線轉多後的上漲潛力。最新提及（2026-09-02）仍維持看好，將其列為AI/雲端持倉。期間立場未見明確轉軚，但曾於6月24日短暫轉中性，僅更新技術指標狀態，未改變整體偏多看法。風險提示方面，僅6月28日提及AMD合作消息下漲幅有限，但認為整體超賣，未有明顯看空警示。",
    "theme": "比特幣挖礦"
   },
@@ -21441,7 +21841,7 @@
     }
    ],
    "yellow": null,
-   "gain": -41.9,
+   "gain": -42.5,
    "ai_summary": "根據歷史紀錄，sunxliao 對 DGXX 整體維持看多立場，多次強調其受惠於強勢主題、Blackwell 機架及算力需求，並曾指出股價從低點上漲約295%，於價格回落時視為買入機會。期間立場曾兩度轉為中性，分別於6月24日及7月8日，因藍鑽指標降至2/3及0/3而暫無明確方向，但未有轉為看空。最新於9月8日仍看好其潛力，整體論述集中於基本面及技術面反彈機會，未見明確風險提示。",
    "theme": "比特幣挖礦"
   },
@@ -21519,7 +21919,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.5,
+   "gain": -24.4,
    "theme": "比特幣挖礦"
   },
   "HIVE": {
@@ -21621,12 +22021,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到HIVE是比特幣礦業相關持倉。",
-     "r7": null,
+     "r7": 14.0,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -22.6,
+   "gain": -23.3,
    "ai_summary": "根據數據，最新立場維持看漲，主要論述圍繞HIVE屬強勢主題、GPU子公司潛力及多次強調價格回調屬正常波動並視為買入機會。立場由6月16日至9月2日持續樂觀，未見明顯轉軚，但7月8日曾以藍鑽指標1/3表示輕微看漲，屬強度略降而非轉向。風險提示僅見於7月23日提及需觀察WGMI收盤位置以確認看漲延續，整體未見明確風險警告。",
    "theme": "比特幣挖礦"
   },
@@ -21801,7 +22201,7 @@
      "stance": "bullish",
      "summary": "作者看好HUT，期待在更好的價位進場。",
      "r7": 2.8,
-     "r30": null
+     "r30": 12.0
     },
     {
      "date": "2026-09-01",
@@ -21815,7 +22215,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.1,
+   "gain": -17.2,
    "ai_summary": "綜合近期觀點，市場對HUT整體維持看多立場，最新（2026-09-01）強調其與Lambda/GPU合作受惠於AI算力需求，前景樂觀。論述重點包括：業務擴張（簽署大型AI數據中心租約）、技術面轉強（月線轉多後可能大幅上漲）、以及產業趨勢（開放權重模型帶動算力需求）。立場未見明顯轉軚，但曾於2026-07-30轉為中性，提示可能測試支撐位，屬短期風險提醒，其後再度轉回看多。",
    "theme": "比特幣挖礦"
   },
@@ -21903,7 +22303,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.0,
+   "gain": -14.4,
    "ai_summary": "根据历史数据，sunxliao对MARA整体维持看多立场，多次强调其属于最强主题、规模最大及电力足跡优势，并认为价格下跌是正常波动，建议在黄金区域反弹或低于前高时买入。期间曾两次转为中性（6月24日蓝钻2/3、7月8日蓝钻0/3），未明确表达多空立场，但未出现明确转軚或风险提示。wliang在7月30日也明确看多，祝贺持有或抄底者。",
    "theme": "比特幣挖礦"
   },
@@ -22197,7 +22597,7 @@
      "stance": "bullish",
      "summary": "作者認為NUAI即將出現無腦入場位，看好其後市。",
      "r7": 1.5,
-     "r30": null
+     "r30": 20.4
     },
     {
      "date": "2026-08-10",
@@ -22207,7 +22607,7 @@
      "stance": "bullish",
      "summary": "作者看好NUAI，期待在更好的價位進場。",
      "r7": 1.5,
-     "r30": null
+     "r30": 20.4
     },
     {
      "date": "2026-08-11",
@@ -22217,7 +22617,7 @@
      "stance": "bullish",
      "summary": "作者認為NUAI股價應該更高。",
      "r7": -1.9,
-     "r30": null
+     "r30": 13.4
     },
     {
      "date": "2026-08-17",
@@ -22251,7 +22651,7 @@
     }
    ],
    "yellow": null,
-   "gain": 21.3,
+   "gain": 13.6,
    "ai_summary": "根據歷史記錄，大V sunxliao 對NUAI整體維持看漲立場，多次強調其受惠於開放權重模型及算力需求，並看好月線轉多後的潛在漲幅，期間曾短暫轉為中性，指出可能測試支撐位，但隨後又恢復看漲，並提及等待更好價格入場。另一位大V wliang 則持續強烈看漲，曾恭喜持有者並認為股價應該更高，甚至預告即將出現無腦入場位。整體而言，兩位大V均未出現明確轉軚，但 sunxliao 在7月30日曾提示支撐位測試風險，顯示對短期波動有所警戒。",
    "theme": "比特幣挖礦"
   },
@@ -22345,7 +22745,7 @@
      "stance": "bullish",
      "summary": "作者看好RIOT，因與Anthropic達成91億美元協議，並可能擴展至161億美元，且AMD也擴大合作。",
      "r7": -6.6,
-     "r30": null
+     "r30": 3.5
     },
     {
      "date": "2026-08-11",
@@ -22355,7 +22755,7 @@
      "stance": "bullish",
      "summary": "作者指出RIOT與Anthropic簽署約90億美元協議，但股價回吐漲幅，認為基本面良好。",
      "r7": -6.6,
-     "r30": null
+     "r30": 3.5
     },
     {
      "date": "2026-08-15",
@@ -22374,12 +22774,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Riot Platforms是比特幣礦業相關持倉。",
-     "r7": null,
+     "r7": 18.4,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -18.8,
+   "gain": -19.7,
    "ai_summary": "綜合近期大V意見，最新立場整體偏多，但短期訊號分歧。主要論述點集中於RIOT作為比特幣礦業龍頭，其德州電力資產及與Anthropic簽訂高達91億美元（可擴展至161億美元）的算力協議，被視為強勁基本面支撐，並受惠整體市場反彈。期間立場未見明顯轉軚，但多次出現中性訊號，如藍鑽指標降至0/3或2/3，顯示技術面缺乏明確方向，且股價曾回吐漲幅，提示投資者需留意短期波動風險。",
    "theme": "比特幣挖礦"
   },
@@ -22463,7 +22863,7 @@
      "stance": "neutral",
      "summary": "作者提及AVGO為西方CPO領導者之一，但未表達明確多空觀點。",
      "r7": -12.9,
-     "r30": null
+     "r30": -12.0
     },
     {
      "date": "2026-08-29",
@@ -22512,7 +22912,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095102771418845551",
      "stance": "neutral",
      "summary": "文中提及博通與 Marvell 在 Google TPU 專案上的競爭，但強調市場餅會持續擴大，並未對博通表達明確多空看法。",
-     "r7": null,
+     "r7": -0.8,
      "r30": null
     },
     {
@@ -22522,7 +22922,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095279986701951461",
      "stance": "bullish",
      "summary": "CEO表示雷射需求遠超供給，即使產能增加三倍仍供不應求，顯示產業前景樂觀。",
-     "r7": null,
+     "r7": -0.8,
      "r30": null
     },
     {
@@ -22533,7 +22933,7 @@
      "stance": "bullish",
      "summary": "作者認為博通業績指引遠超市場預期，AI需求強勁，盤後下跌屬過度反應。",
      "target": 367.0,
-     "r7": null,
+     "r7": -0.8,
      "r30": null
     },
     {
@@ -22543,7 +22943,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095453263613341938",
      "stance": "neutral",
      "summary": "作者提及AVGO財報電話會議中提到行業短缺，但未表達明確立場。",
-     "r7": null,
+     "r7": 1.0,
      "r30": null
     },
     {
@@ -22553,7 +22953,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095546138510459218",
      "stance": "neutral",
      "summary": "文中提及博通產能年增 3 倍，作為市場背景資訊。",
-     "r7": null,
+     "r7": 1.0,
      "r30": null
     },
     {
@@ -22563,12 +22963,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095882424932766163",
      "stance": "bullish",
      "summary": "作者看好博通AI收入未來兩年將大幅增長。",
-     "r7": null,
+     "r7": 2.3,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -3.0,
+   "gain": -3.7,
    "ai_summary": "根據歷史觀點，最新立場偏向樂觀，多數時間看好其AI與光學需求前景，並強調雷射供不應求及業績指引超預期。論述點集中於三星合作、CPO領導地位及與AMD的產能預訂，顯示產業競爭力強勁。期間曾出現轉軚風險，於8月31日兩度轉為看淡，認為Nvidia策略可能侵蝕其市場地位，但隨後9月又轉回正面，整體未持續看空。",
    "theme": "AI晶片"
   },
@@ -22586,7 +22986,7 @@
     }
    ],
    "yellow": null,
-   "gain": -4.8,
+   "gain": -5.5,
    "theme": "其他"
   },
   "WYF": {
@@ -22650,7 +23050,7 @@
     }
    ],
    "yellow": null,
-   "gain": -16.3,
+   "gain": -18.7,
    "ai_summary": "根據提供的數據，最新立場為看漲，論述點包括BTBT的貸款設施可從1億美元擴展至1.5億美元，以及建設里程碑的達成。sunxliao在6月17日持中性立場，但6月23日轉為看漲，認為價格下跌是正常波動；wliang則在7月9日和20日持續看漲，但7月20日指出上漲僅因板塊情緒，暗示需注意風險。整體上，兩位大V均未出現明確轉軚，但wliang在最新觀點中隱含對板塊情緒驅動的風險提示。",
    "theme": "比特幣挖礦"
   },
@@ -22718,7 +23118,7 @@
     }
    ],
    "yellow": null,
-   "gain": -57.8,
+   "gain": -58.3,
    "ai_summary": "根據歷史記錄，sunxliao在6月曾對AMPG持看跌觀點，但7月起轉為看漲，並多次提及股價從3.66美元上漲約176%，顯示立場明顯由謹慎轉為樂觀。wliang則從7月起持續看漲，強調股票回購、基本面改善、多元領域曝光被低估及高收入對比市值，並在股價下跌30%時視為買入機會，未見轉軚跡象。整體而言，最新立場偏多，但早期有風險提示，後續未再提及明顯風險。",
    "theme": "太空"
   },
@@ -22746,7 +23146,7 @@
     }
    ],
    "yellow": null,
-   "gain": -48.7,
+   "gain": -48.5,
    "ai_summary": "根據歷史數據，最新立場為2026年7月16日wliang的看多觀點，論述點是ASTI的太空光伏通過原子氧暴露測試，基本面改善，但股價已下跌約60%，值得關注。此前2026年6月21日sunxliao持看跌立場，認為太空股動盪且日線看跌確認，但希望支撐位能守住。兩位大V立場從看跌轉為看多，但wliang在看好基本面時也隱含風險提示，即股價大幅下跌的現實。",
    "theme": "太空"
   },
@@ -22764,7 +23164,7 @@
     }
    ],
    "yellow": null,
-   "gain": -22.6,
+   "gain": -26.3,
    "theme": "太空"
   },
   "FLY": {
@@ -22861,7 +23261,7 @@
     }
    ],
    "yellow": null,
-   "gain": -20.9,
+   "gain": -27.7,
    "ai_summary": "根據歷史記錄，wliang 的立場多次轉變，從7月中旬至8月初多次看漲，期間曾於7月30日轉為看跌，指出股價從高點下跌約70%，隨後在8月2日轉為中性，預期短期受板塊波動影響但之後可能出現買入機會，最終在8月4日及6日再度轉為看漲，看好太空類股並認為FLY超賣後反彈。sunxliao 在6月21日持看跌觀點，認為太空股動盪且日線看跌確認，但希望支撐位能守住。整體而言，最新立場偏向看漲，論述圍繞超賣反彈、板塊波動及買入機會，但期間多次轉軚，並有風險提示如股價大幅下跌及短期波動影響。",
    "theme": "太空"
   },
@@ -22879,7 +23279,7 @@
     }
    ],
    "yellow": null,
-   "gain": -28.7,
+   "gain": -34.2,
    "theme": "太空"
   },
   "MNTS": {
@@ -22896,7 +23296,7 @@
     }
    ],
    "yellow": null,
-   "gain": -51.5,
+   "gain": -53.7,
    "theme": "太空"
   },
   "SATL": {
@@ -22973,7 +23373,7 @@
     }
    ],
    "yellow": null,
-   "gain": -5.8,
+   "gain": -14.6,
    "ai_summary": "根據歷史記錄，最新立場偏向看漲，因作者於八月六日整體看好太空板塊並將SATL列為其中一員。論述點包括股價曾從2.40美元上漲約400%至356%的強勁表現，以及簽署地理空間合作夥伴關係等利好因素。立場曾出現轉軑，從六月看跌轉為七月看漲，但七月三十日曾因股價從高點下跌約71%而短暫轉為看跌，並提示該股屬高波動性股票，風險較高。",
    "theme": "太空"
   },
@@ -23001,7 +23401,7 @@
     }
    ],
    "yellow": null,
-   "gain": -31.9,
+   "gain": -35.5,
    "theme": "太空"
   },
   "SPIR": {
@@ -23028,7 +23428,7 @@
     }
    ],
    "yellow": null,
-   "gain": -29.7,
+   "gain": -34.2,
    "ai_summary": "根據歷史數據，截至2026年7月16日，大V wliang最新立場為看漲，論述點是SPIR基本面未變但股價下跌，認為有機會。此前sunxliao在6月21日持看跌觀點，指出太空股動盪且日線看跌確認，但希望支撐位守住。兩位大V立場有明顯轉變，從看跌轉為看漲，但均未提及具體風險提示。",
    "theme": "太空"
   },
@@ -23076,7 +23476,7 @@
     }
    ],
    "yellow": null,
-   "gain": -50.8,
+   "gain": -56.0,
    "ai_summary": "根據歷史記錄，最新立場偏向看多，因作者於八月六日整體看好太空板塊並將VELO列為其中一員。論述點主要圍繞基本面未變但股價下跌的價值機會，同時承認該股屬高波動性。立場曾多次轉變，從六月看跌、七月轉多再轉空，八月又轉多，且多次提示支撐位與高波動風險。",
    "theme": "太空"
   },
@@ -23104,7 +23504,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.4,
+   "gain": -2.1,
    "ai_summary": "根據歷史記錄，最新立場為看漲，由wliang於2026年8月6日提出，論述點為整體看好太空板塊，並將VOYG列為未具名看好股票之一。此前sunxliao於6月21日持看跌觀點，認為太空股動盪且日線確認下跌，但期望支撐位能守住。立場由看跌轉為看漲，屬明顯轉軚，且早期有支撐位風險提示，後期未再提及具體風險。",
    "theme": "太空"
   },
@@ -23265,7 +23665,7 @@
      "stance": "bullish",
      "summary": "Lumentum 的強勁業績對其他 CPO 廠商如 Coherent 是正面訊號。",
      "r7": -6.7,
-     "r30": null
+     "r30": -10.8
     },
     {
      "date": "2026-08-12",
@@ -23275,7 +23675,7 @@
      "stance": "neutral",
      "summary": "作者提及COHR為西方CPO領導者之一，但未表達明確多空觀點。",
      "r7": -19.2,
-     "r30": null
+     "r30": -14.1
     },
     {
      "date": "2026-08-12",
@@ -23285,7 +23685,7 @@
      "stance": "bullish",
      "summary": "Coherent 業績強勁，需求能見度極高，2027 財年已幾乎全數預訂，CPO 需求無推遲反而提前，營收將持續快速增長。",
      "r7": -19.2,
-     "r30": null
+     "r30": -14.1
     },
     {
      "date": "2026-08-16",
@@ -23376,11 +23776,31 @@
      "summary": "作者指出COHR退出外部雷射供應市場，轉為買家，加劇供應緊張。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097660318369697875",
+     "url": "https://x.com/aleabitoreddit/status/2097660318369697875",
+     "stance": "bullish",
+     "summary": "作者將其列為激光領域較知名受惠標的之一。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者認為在光學元件短缺下，COHR等雷射供應商將受益。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -9.4,
-   "ai_summary": "根據歷史記錄，該大V對COHR整體維持強烈看多立場，核心論點圍繞光學與CPO雷射需求強勁、產能滿載甚至售罄至2027財年，並以NVDA協議及Lumentum業績作為產業正面訊號。最新立場於2026年9月8日轉為偏空，明確指出COHR退出外部雷射供應市場並轉為買家，此舉將加劇供應緊張，屬風險提示及立場轉變。此前雖多次提及COHR為領導者或受惠股，但未見明確看空訊號，直至該日才出現轉軚。",
+   "gain": -8.4,
+   "ai_summary": "最新立場偏看好：作者喺 2026 年 9 月 11 日仍認為光學元件短缺下 COHR 等雷射供應商將受益，之前亦多次公開看好，指其雷射已售罄兩年、產能訂滿、需求能見度極高，2027 財年幾乎全數預訂，CPO 需求提前而非推遲。論述點圍繞雷射與 CPO 需求強勁、供應緊張、COHR 為西方 CPO 領導者之一，以及 Lumentum 強勁業績對其屬正面訊號。風險提示方面，作者 9 月 8 日曾指 COHR 退出外部雷射供應市場轉為買家、加劇供應緊張，屬偏淡觀察；其餘多數時間為看好或中性，未見明確轉軚。",
    "theme": "光通訊"
   },
   "AEHR": {
@@ -23443,7 +23863,7 @@
      "stance": "bullish",
      "summary": "作者看好AEHR，因收到AI處理器大客戶追加2200萬美元訂單，並讚揚公司快速成長。",
      "r7": -16.5,
-     "r30": null
+     "r30": -24.0
     },
     {
      "date": "2026-08-12",
@@ -23453,7 +23873,7 @@
      "stance": "bullish",
      "summary": "受光電類股動能帶動，股價大漲。",
      "r7": -16.5,
-     "r30": null
+     "r30": -24.0
     },
     {
      "date": "2026-08-30",
@@ -23484,11 +23904,31 @@
      "summary": "作者提到AEHR是其選股之一，且漲幅超過100%，顯示看好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "wliang",
+     "tweet_id": "2097729340427419729",
+     "url": "https://x.com/wliang/status/2097729340427419729",
+     "stance": "bullish",
+     "summary": "作者一年前約15美元分享看好觀點，至今表現出色。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097687452349862063",
+     "url": "https://x.com/sunxliao/status/2097687452349862063",
+     "stance": "bullish",
+     "summary": "作者認為AEHR嘅方形組合形態已重新準備好，值得留意。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 29.8,
-   "ai_summary": "根據歷史記錄，最新立場整體偏多。最早有作者因Bloomberg報導導致股價大跌而認為市場反應過度，其後多次因業績強勁、客戶訂單增加及股價反彈而看好。論述重點包括2027年指引高於預期、AI處理器大客戶追加訂單，以及光電類股動能帶動。未有明顯轉軚，但早期曾提示市場反應過度，後續則持續正面，未見風險警示。",
+   "gain": 40.3,
+   "ai_summary": "AEHR 最新立場係一致看好：aleabitoreddit 由 7 月初因 Bloomberg 報導大跌而認為市場反應過度，之後轉為持續 bullish，8 月因 AI 處理器大客戶追加 2200 萬美元訂單而更看好，9 月指其選股漲幅超過 100%；wliang 同 sunxliao 亦一直 bullish，分別提到等買入信號、光子學反彈帶動、藍色鑽石形態同方形組合形態。主要論述點係業績強勁、2027 年指引高於預期、客戶轉向量產、AI 訂單同技術形態利好，冇明顯轉軚或風險提示。",
    "theme": "半導體設備"
   },
   "SIVEF": {
@@ -23541,11 +23981,11 @@
      "stance": "bullish",
      "summary": "Lumentum 的強勁業績對其他 CPO 廠商如 Sivers Semiconductors 是正面訊號。",
      "r7": -13.8,
-     "r30": null
+     "r30": -33.6
     }
    ],
    "yellow": null,
-   "gain": -43.4,
+   "gain": -41.1,
    "ai_summary": "根據歷史記錄，最新立場維持看多。論述重點包括管理層公開市場買入顯示信心、市場誤解報導導致錯殺，以及同業Lumentum強勁業績對CPO廠商的正面訊號。整體觀點從未轉向看空，但早期曾提示股價下跌15.4%時的市場誤解風險，後續持續強調反彈與成長潛力。",
    "theme": "半導體設備"
   },
@@ -23573,7 +24013,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.8,
+   "gain": 4.4,
    "ai_summary": "根據最新2026年7月28日的立場，大V對TER轉為看多，強調營收年增104%及EPS增長超過300%的亮眼業績，與7月2日認為股價下跌13.8%屬市場反應過度的看空觀點形成明顯轉軚。該大V在最新論述中未提及風險提示，僅著重於業績強勁的正面數據。",
    "theme": "半導體設備"
   },
@@ -23608,11 +24048,21 @@
      "summary": "作者將Corning列為光纖/FAU及連接器領域的潛在受惠股。",
      "r7": 11.6,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2097660318369697875",
+     "url": "https://x.com/aleabitoreddit/status/2097660318369697875",
+     "stance": "bullish",
+     "summary": "作者將其列為光纖領域較知名受惠標的之一。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": -15.5,
-   "ai_summary": "根據最新立場，作者於2026年8月31日轉為看好Corning，認為其在光纖、FAU及連接器領域具潛在受惠機會。論述重點包括玻璃基板長期潛力，但短期難取代FAU，且曾指出股價下跌主因是媒體誤導。整體立場由7月的中性轉向8月的偏多，並未明確提示風險，但早期曾強調短期替代限制。",
+   "gain": -14.5,
+   "ai_summary": "作者最新立場係看好GLW，將Corning列為光纖、FAU及連接器領域嘅潛在受惠股，亦係光纖領域較知名受惠標的之一。論述重點由早前股價跌11.4%時質疑Bloomberg報導誤導市場，轉為中性觀望摩根士丹利指玻璃基板有潛力但短期難取代FAU，再轉為看好光纖受惠邏輯。立場有明顯轉軚，由看淡變中性再變看好，期間未見風險提示。",
    "theme": "光通訊"
   },
   "MELI": {
@@ -23639,7 +24089,7 @@
     }
    ],
    "yellow": null,
-   "gain": 9.2,
+   "gain": 8.4,
    "theme": "其他"
   },
   "LPK": {
@@ -23727,7 +24177,7 @@
     }
    ],
    "yellow": null,
-   "gain": 3.4,
+   "gain": 1.5,
    "theme": "機器人"
   },
   "DASH": {
@@ -23744,7 +24194,7 @@
     }
    ],
    "yellow": null,
-   "gain": 6.4,
+   "gain": 7.5,
    "theme": "機器人"
   },
   "HIMX": {
@@ -23761,7 +24211,7 @@
     }
    ],
    "yellow": null,
-   "gain": -1.3,
+   "gain": 3.6,
    "theme": "其他"
   },
   "FDX": {
@@ -23778,7 +24228,7 @@
     }
    ],
    "yellow": null,
-   "gain": 1.4,
+   "gain": 0.4,
    "theme": "其他"
   },
   "F": {
@@ -23795,7 +24245,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.3,
+   "gain": 2.4,
    "theme": "其他"
   },
   "SIMO": {
@@ -23832,7 +24282,7 @@
     }
    ],
    "yellow": null,
-   "gain": -14.5,
+   "gain": -12.0,
    "ai_summary": "根據歷史記錄，大V aleabitoreddit 對 SIMO 的立場持續看漲，從未轉軚。最新觀點（2026-09-07）強調該股為其選股之一，並指出漲幅已超過100%，顯示對其前景高度樂觀。論述核心圍繞上游NAND供應商受惠於記憶體短缺及價格上漲，但記錄中未見明確的風險提示或負面評論。",
    "theme": "BBU電池"
   },
@@ -23901,7 +24351,7 @@
     }
    ],
    "yellow": null,
-   "gain": -8.7,
+   "gain": -18.8,
    "theme": "其他"
   },
   "ETN": {
@@ -23918,7 +24368,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.4,
+   "gain": 3.2,
    "theme": "其他"
   },
   "BWA": {
@@ -23935,7 +24385,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.8,
+   "gain": 1.3,
    "theme": "其他"
   },
   "ENS": {
@@ -23952,7 +24402,7 @@
     }
    ],
    "yellow": null,
-   "gain": -15.4,
+   "gain": -15.8,
    "theme": "其他"
   },
   "SHAZ": {
@@ -23994,12 +24444,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Shazam是AI/雲端相關持倉。",
-     "r7": null,
+     "r7": 4.5,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -27.9,
+   "gain": -25.6,
    "ai_summary": "根據最新數據，大V aleabitoreddit 對SHAZ維持看多立場，認為經歷急跌後現為買入機會，並以清算後22.82%漲幅佐證其強勁表現。其論述點集中於公司涉足澳洲主權數據中心及AI/雲端相關業務，但早期提及時未明確表態，後續轉為明確看好。文中未見明顯轉軚或風險提示，僅強調短期反彈與產業關聯性。",
    "theme": "主權AI"
   },
@@ -24017,7 +24467,7 @@
     }
    ],
    "yellow": null,
-   "gain": -5.7,
+   "gain": -7.7,
    "theme": "其他"
   },
   "CRWD": {
@@ -24034,7 +24484,7 @@
     }
    ],
    "yellow": null,
-   "gain": 5.3,
+   "gain": 3.4,
    "theme": "其他"
   },
   "ZS": {
@@ -24051,7 +24501,7 @@
     }
    ],
    "yellow": null,
-   "gain": 7.7,
+   "gain": 9.1,
    "theme": "其他"
   },
   "CTSH": {
@@ -24068,7 +24518,7 @@
     }
    ],
    "yellow": null,
-   "gain": 45.7,
+   "gain": 42.8,
    "theme": "主權AI"
   },
   "SILEX": {
@@ -24204,7 +24654,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095565402223038651",
      "stance": "bullish",
      "summary": "作者提到羅賓漢作為唯一初始券商，股價上漲14.83%，顯示看好其表現。",
-     "r7": null,
+     "r7": -9.1,
      "r30": null
     },
     {
@@ -24214,7 +24664,7 @@
      "url": "https://x.com/aleabitoreddit/status/2095851749127188691",
      "stance": "bullish",
      "summary": "韓國散戶明顯支持HOOD，看好其代幣化策略。",
-     "r7": null,
+     "r7": -6.3,
      "r30": null
     },
     {
@@ -24229,7 +24679,7 @@
     }
    ],
    "yellow": null,
-   "gain": -0.2,
+   "gain": -2.7,
    "ai_summary": "根據歷史記錄，最新立場維持看漲，作者持續對Robinhood的業務擴展與市場表現抱持正面態度。論述重點包括其作為初始券商的股價上漲、韓國散戶支持代幣化策略，以及收購Crypto.com少數股權後整合鏈上業務、預測市場和信用卡服務，認為金融業未來將圍繞其發展。整體未見明顯轉軚，亦無特別風險提示，僅強調恢復與增長潛力。",
    "theme": "其他"
   },
@@ -24294,7 +24744,7 @@
     }
    ],
    "yellow": null,
-   "gain": 15.2,
+   "gain": 9.0,
    "ai_summary": "最新立場偏向樂觀，主要論點包括贏得國防部大單、Stargate數據中心業務及Meta運算協議，均被視為正面訊號。論述上未見明顯轉軚，但曾提及Michael Burry做空風險，惟作者認為其過往紀錄欠佳，故不需過度憂慮。整體而言，觀點由中性轉向積極，惟未見具體風險警示。",
    "theme": "AI雲"
   },
@@ -24327,12 +24777,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095565402223038651",
      "stance": "bullish",
      "summary": "作者認為戴爾創辦人是傳奇，並提及家族捐款計劃，整體對戴爾持正面態度。",
-     "r7": null,
+     "r7": -1.9,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 23.8,
+   "gain": 30.7,
    "ai_summary": "最新立場偏向樂觀，多位大V在近期均表達看好戴爾科技後市，認為公司表現良好且創辦人形象正面。論述點集中於公司基本面與領導人聲譽，未見明顯轉軚或風險提示，但早期提及僅為中性陳述，未深入分析。整體而言，觀點由中性轉為偏多，但缺乏對潛在風險的具體警示。",
    "theme": "其他"
   },
@@ -24350,7 +24800,7 @@
     }
    ],
    "yellow": null,
-   "gain": -10.9,
+   "gain": -7.4,
    "theme": "其他"
   },
   "SMSN": {
@@ -24384,7 +24834,7 @@
     }
    ],
    "yellow": null,
-   "gain": 68.4,
+   "gain": 63.8,
    "theme": "其他"
   },
   "SKHYV": {
@@ -24595,7 +25045,7 @@
     }
    ],
    "yellow": null,
-   "gain": -2.3,
+   "gain": -4.2,
    "theme": "其他"
   },
   "COIN": {
@@ -24637,12 +25087,12 @@
      "url": "https://x.com/sunxliao/status/2095572031400272172",
      "stance": "bullish",
      "summary": "作者認為COIN有巨大漲幅，看好其未來表現。",
-     "r7": null,
+     "r7": -10.6,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 13.7,
+   "gain": 14.8,
    "ai_summary": "根據歷史記錄，sunxliao 對 Coinbase（COIN）持續維持看多立場，從 2026 年 7 月至 9 月多次強調其受惠於比特幣上漲趨勢。最新一次（9 月 3 日）明確表示 COIN 有巨大漲幅，看好未來表現，論述核心圍繞比特幣月度指標轉多及買入時機。整體未見轉軚或風險提示，立場一致且樂觀。",
    "theme": "比特幣挖礦"
   },
@@ -24716,7 +25166,7 @@
      "stance": "bullish",
      "summary": "作者認為SK海力士與美光同屬一個情況，是穩健的買入機會。",
      "r7": 26.7,
-     "r30": null
+     "r30": 46.8
     },
     {
      "date": "2026-08-14",
@@ -24805,13 +25255,23 @@
      "url": "https://x.com/aleabitoreddit/status/2095823005595439615",
      "stance": "neutral",
      "summary": "作者提及韓國記憶體廠商SK Hynix，但未表達明確多空立場。",
+     "r7": 8.1,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "aleabitoreddit",
+     "tweet_id": "2098306366167535766",
+     "url": "https://x.com/aleabitoreddit/status/2098306366167535766",
+     "stance": "bullish",
+     "summary": "作者看好記憶體需求，認為SKHY等記憶體公司受惠於超大規模資本開支，利潤率高且不受短期宏觀影響。",
      "r7": null,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 21.8,
-   "ai_summary": "綜合近期大V觀點，整體立場偏多，但出現分歧。wliang在8月14日曾短暫轉為看空，指出IPO後表現不佳，但隨後於8月19日因公司史上最大回購計劃轉回看漲，認為市場低估其價值。aleabitoreddit持續看多，多次強調DRAM與NAND短缺將延續至2030年，並引用CEO言論支持長期需求，但8月30日後態度轉為中性，僅提及ETF交易量下降或否認特定技術傳聞，未再明確表態。整體論述核心圍繞記憶體供需緊張、估值偏低及回購利好，但需注意8月中旬的短期轉向及後續中性評論，顯示對短期波動或消息面有風險提示。",
+   "gain": 25.6,
+   "ai_summary": "最新立場偏向看好：aleabitoreddit 喺 9 月 11 日重申記憶體需求受惠於超大規模資本開支、利潤率高且不受短期宏觀影響，之前亦多次引用 CEO 同 Phison CEO 講法，指儲存短缺會持續到 2030 年，並睇好 NAND 同 CPO 供應鏈發展。wliang 就較反覆，8 月 19 日因史上最大回購計劃而樂觀，但 8 月 14 日曾指 SKHY IPO 後表現不佳，8 月底轉為中性。風險提示方面，aleabitoreddit 喺 8 月 30 日同 9 月初提到 ETF 交易量下降、否認英特爾代工 HBM4E 基底晶片傳聞，立場一度轉為中性，但整體未見明確轉軚看淡。",
    "theme": "AI晶片"
   },
   "AMKR": {
@@ -24848,7 +25308,7 @@
     }
    ],
    "yellow": null,
-   "gain": -23.1,
+   "gain": -21.8,
    "ai_summary": "根據最新立場，aleabitoreddit對AMKR維持偏多看法，認為OSAT封測產能吃緊及傳統封裝缺口將使AMKR在2027年受惠。論述點包括KYEC投資美國測試設施帶動2028年效益，以及市場偏好現有加速成長而非未來題材的風險提示。整體立場由中性轉回偏多，但未見明確轉軚，僅提醒市場對成長節奏的敏感度。",
    "theme": "半導體設備"
   },
@@ -24886,7 +25346,7 @@
     }
    ],
    "yellow": null,
-   "gain": -31.4,
+   "gain": -35.1,
    "ai_summary": "根據歷史數據，最新立場由wliang在2026-07-30轉為看空，指出PL股價從高點下跌約61%，顯示風險加劇。此前sunxliao在2026-07-12曾看多，強調股價從12.94美元上漲約300%；wliang在2026-07-18亦看多，認為市場接近底部。整體而言，立場從看多轉為看空，並無持續看多論述，且最新觀點明確提示下跌風險。",
    "theme": "其他"
   },
@@ -24924,7 +25384,7 @@
     }
    ],
    "yellow": null,
-   "gain": -5.3,
+   "gain": -8.8,
    "ai_summary": "根據歷史記錄，最新立場維持看多，主要論述點包括股價自9.50美元上漲約232%的強勁動能，以及Anthropic推薦所帶來的量子計算前景看好。未有明顯轉軚跡象，但早期觀點僅強調潛力，未見具體風險提示，後續需留意市場波動。",
    "theme": "其他"
   },
@@ -24942,7 +25402,7 @@
     }
    ],
    "yellow": null,
-   "gain": 17.1,
+   "gain": 14.4,
    "theme": "其他"
   },
   "TSEM": {
@@ -25000,7 +25460,7 @@
     }
    ],
    "yellow": null,
-   "gain": -4.3,
+   "gain": -7.9,
    "ai_summary": "根據最新資料，該作者對TSEM的立場整體偏多，最新一次（2026-08-30）明確表示看好其投資觀點正確。其論述重點圍繞公司受日本政府支持擴張，並設定2028年淨利12億美元、營收36億美元的成長目標，對應遠期本益比約23.3倍，顯示對其成長潛力有信心。此外，作者也關注公司參與矽光子晶圓代工及與IQE簽訂InP晶圓協議等產業動態，但後者未對股價表達明確方向。立場上未見明顯轉軋，但早期提及僅為中性參與者，後續轉為明確看多，並在單日反彈時重申看好，整體風險提示較少，僅在部分提及中未給出強烈多空判斷。",
    "theme": "矽光子"
   },
@@ -25038,7 +25498,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.6,
+   "gain": 8.7,
    "ai_summary": "根據歷史數據，最新立場偏向樂觀，因亞馬遜投資與合作預期帶來高達600億美元收入，論述重點在於此合作對高通更有利。此前觀點多為中性，主要提及記憶體長期協議與供應商漲價，未見明確轉軚，但早期有風險提示如成本上漲壓力。整體而言，立場由中性轉為看好，但未見對潛在風險的後續警示。",
    "theme": "其他"
   },
@@ -25056,7 +25516,7 @@
     }
    ],
    "yellow": null,
-   "gain": -51.8,
+   "gain": -57.7,
    "ai_summary": "根據2026年7月16日wliang的觀點，他對YSS持看多立場，認為公司基本面未變，但股價下跌，與其他太空股走勢相似。論述點強調股價下跌並非反映基本問題，而是市場整體情緒影響。目前未見轉軚或風險提示。",
    "theme": "其他"
   },
@@ -25081,11 +25541,21 @@
      "summary": "作者看好國防類股，AVAV在12個交易日內上漲19%",
      "r7": 16.0,
      "r30": -12.9
+    },
+    {
+     "date": "2026-09-10",
+     "author": "wliang",
+     "tweet_id": "2098080227641418023",
+     "url": "https://x.com/wliang/status/2098080227641418023",
+     "stance": "bullish",
+     "summary": "作者分享AVAV作為低信心支撐反彈兼業績炒作，若突破黃金區間可望延續升勢，但現時更受宏觀因素影響。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 4.6,
-   "ai_summary": "根據歷史數據，wliang在2026年7月17日首次提出AVAV因下跌65%而視為買入機會，立場明確看多，並於8月4日再度重申看好國防類股，且指出AVAV在12個交易日內上漲19%，驗證其先前觀點。兩次發言均無轉軚跡象，亦未提及具體風險提示，僅強調買入機會與漲幅表現。最新立場維持看多，論述核心圍繞國防板塊前景及股價反彈動能。",
+   "gain": -1.1,
+   "ai_summary": "wliang 最新立場仍偏看好 AVAV，9月10日指其屬低信心支撐反彈兼業績炒作，若突破黃金區間可望延續升勢，但提醒現時更受宏觀因素影響。此前7月17日認為股價下跌65%是買入機會，8月4日看好國防類股並指 AVAV 12個交易日內上漲19%。整體由低位買入機會轉為有條件看好，未見明確轉軚，但最新論述已加入宏觀風險提示。",
    "theme": "國防"
   },
   "RCAT": {
@@ -25132,7 +25602,7 @@
     }
    ],
    "yellow": null,
-   "gain": 13.7,
+   "gain": 5.2,
    "ai_summary": "根據最新數據，wliang在8月14日維持看多立場，認為關稅政策對RCAT構成利多，預期股價持續上揚，與先前7月及8月初的看多觀點一致，未見轉軚。 aleabitoreddit在8月14日同樣看多，強調無人機製造商將受惠於美國關稅政策，與wliang的論述互相呼應。整體而言，兩位大V均持續看好RCAT，未見風險提示或立場轉變。",
    "theme": "國防"
   },
@@ -25150,7 +25620,7 @@
     }
    ],
    "yellow": null,
-   "gain": -2.9,
+   "gain": -4.8,
    "ai_summary": "根據提供的數據，最新立場為中性，因為作者僅提及TTMI作為多層板相關公司，未表達明確看多或看空觀點。論述點集中在行業關聯性，但缺乏具體分析或風險提示。由於只有一條記錄，無法判斷有無轉軚情況。",
    "theme": "其他"
   },
@@ -25173,12 +25643,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到Vishay是持倉之一。",
-     "r7": null,
+     "r7": 3.5,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -15.8,
+   "gain": -9.0,
    "ai_summary": "根據歷史記錄，VSH最新立場偏向樂觀，因2026年9月2日作者將其列為持倉之一，顯示看多態度。論述點集中於公司作為晶片電阻和鉭電容相關供應商的業務定位，但早期2026年7月20日僅中性提及，未給出明確方向。整體未見明顯轉軚，但亦無具體風險提示，僅持倉事實反映個人看好。",
    "theme": "其他"
   },
@@ -25206,7 +25676,7 @@
     }
    ],
    "yellow": null,
-   "gain": -9.7,
+   "gain": -8.8,
    "ai_summary": "根據最新資料，Jefferies 於2026年7月提及AMD可能與ALAB合作UAL，但僅屬預期且未獲確認，立場維持中性。至9月，亞馬遜持股消息被提及，但作者未明確表達多空觀點，整體論述偏向資訊陳述。目前未見明顯轉軚，但合作與持股均屬未定或僅為背景因素，風險提示在於缺乏實質確認或明確方向性判斷。",
    "theme": "AI晶片"
   },
@@ -25293,7 +25763,7 @@
     }
    ],
    "yellow": null,
-   "gain": 8.1,
+   "gain": 10.9,
    "ai_summary": "根據最新立場，sunxliao 於2026年7月27日對IBM持看多觀點，論述點為IBM簽署支持開放權重AI模型的公開信，顯示其對AI發展的積極態度。此處未見轉軚或風險提示，僅基於該事件進行正面評價。",
    "theme": "AI雲"
   },
@@ -25358,7 +25828,7 @@
     }
    ],
    "yellow": null,
-   "gain": 4.3,
+   "gain": 9.7,
    "ai_summary": "根據最新數據，該分析師於2026年8月31日仍維持看多立場，持續將FormFactor列為CPO測試領域的潛在受惠股。其論述核心圍繞CPO業務加速增長、營收預期上調，以及管理層對矽光子早期採用的樂觀看法，並強調CPO測試營收將開始挹注，與VIAV同為受惠者。整體立場從7月底至8月底未見轉變，且無明顯風險提示，僅持續強化看多論點。",
    "theme": "矽光子"
   },
@@ -25376,7 +25846,7 @@
     }
    ],
    "yellow": null,
-   "gain": 10.5,
+   "gain": 8.1,
    "ai_summary": "根據歷史記錄，該大V於2026年7月31日僅將NVTS作為XFAB的相關持股提及，未對其股價或基本面發表明確看法，立場屬中性。文中未見任何買賣建議或風險提示，亦無後續更新或轉變立場的跡象。整體而言，最新立場維持中性，論述僅限於持股關聯性，未提供實質分析。",
    "theme": "其他"
   },
@@ -25404,7 +25874,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.6,
+   "gain": -8.8,
    "ai_summary": "根據歷史記錄，wliang 對 LMT 的最新立場為看多（bullish），於 2026-08-30 明確推薦其作為國防領域投資標的。此前在 2026-08-05 僅以中性態度提及 LMT 為 ONDS 的合作夥伴，未表達明確觀點，顯示立場由中性轉為積極。論述重點在於國防領域的投資價值，但記錄中未見對風險的具體提示或轉軚跡象。",
    "theme": "國防"
   },
@@ -25422,7 +25892,7 @@
     }
    ],
    "yellow": null,
-   "gain": -4.5,
+   "gain": -2.2,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年8月6日維持看多立場，強調CPO測試訂單已實際到手，本季開始貢獻營收，並預期12月將加速，直接反駁市場對時程延誤的擔憂。論述重點在於訂單落地與營收兌現，未見轉軚跡象，但亦未提及具體風險或下行因素，僅以公司說法為依據。整體觀點偏樂觀，無明顯風險提示。",
    "theme": "光通訊"
   },
@@ -25477,7 +25947,7 @@
     }
    ],
    "yellow": null,
-   "gain": -16.4,
+   "gain": -23.5,
    "ai_summary": "根據最新提及，作者以FLNC當日從開盤跌約10%後回升至持平為例，反駁市場風險趨避的說法，立場偏多，認為價格走勢顯示市場並非全面避險。論述重點在於股價韌性，未見明確轉軚或風險提示，但僅基於單日盤中表現，未涵蓋基本面或長期風險評估。",
    "theme": "其他"
   },
@@ -25495,7 +25965,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.7,
+   "gain": 2.4,
    "ai_summary": "根據最新提及，wliang在2026年8月6日對MAGS持看多立場，認為其轉綠反映市場上漲動能。論述點僅基於技術面訊號，未提及基本面或估值。目前未見立場轉變或風險提示，但需留意單一日期數據，缺乏後續驗證。",
    "theme": "其他"
   },
@@ -25513,7 +25983,7 @@
     }
    ],
    "yellow": null,
-   "gain": -23.4,
+   "gain": -26.0,
    "ai_summary": "根據最新數據，WWR於2026年8月7日獲大V aleabitoreddit看好，立場為bullish，主要論述點係2500萬美元投資屬重大政策利好，並對其石墨業務前景樂觀。目前未見轉軚或風險提示，立場維持正面。",
    "theme": "石墨"
   },
@@ -25531,7 +26001,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.7,
+   "gain": -3.3,
    "ai_summary": "根據最新數據，FEAM在2026年8月7日獲大V aleabitoreddit看好，立場為樂觀，論述點係800萬美元投資被視為重大政策利好，並看好其硼業務前景。目前未見轉軚或風險提示，但僅此單一觀點，需留意後續市場反應。",
    "theme": "稀土"
   },
@@ -25576,7 +26046,7 @@
     }
    ],
    "yellow": null,
-   "gain": -11.3,
+   "gain": 0.0,
    "ai_summary": "根據歷史記錄，MXL最新立場維持看漲，論述點為AAOI提及的DSP和TIA瓶頸對其屬正面行業訊號，並確認先前投資觀點正確。未有出現轉軚或風險提示，立場一致。",
    "theme": "光通訊"
   },
@@ -25624,7 +26094,7 @@
     }
    ],
    "yellow": null,
-   "gain": 16.6,
+   "gain": 21.9,
    "ai_summary": "根據歷史數據，該大V對SMTC的最新立場為中性偏多，最新一次提及（2026-08-26）僅指出產能有限，未明確表態多空。此前同日曾轉為強烈看多，強調Semtech業績強勁、光學需求旺盛，1.6T FiberEdge市佔率有望過半，且Q3指引遠超預期。整體立場有明顯轉變，從8月7日看多、8月25日轉中性，再到8月26日先看多後轉中性，期間未見明確風險提示，但產能限制或為潛在隱憂。",
    "theme": "光通訊"
   },
@@ -25642,7 +26112,7 @@
     }
    ],
    "yellow": null,
-   "gain": -19.3,
+   "gain": -23.6,
    "ai_summary": "根據最新數據，該大V於2026年8月8日提出看多立場，認為Lululemon是放空Nebius時的避險多頭選擇，論述重點在於將其作為對沖工具。目前未見立場轉變，但僅此一次提及，缺乏後續補充或風險提示，需注意其觀點可能僅限於特定交易情境。",
    "theme": "其他"
   },
@@ -25656,7 +26126,7 @@
      "stance": "bullish",
      "summary": "Supermicro 給出 650 至 720 億美元的營收指引，並新增超過 600 億美元訂單，AI 資料中心建設需求強勁。",
      "r7": 18.4,
-     "r30": null
+     "r30": 18.3
     },
     {
      "date": "2026-08-11",
@@ -25666,7 +26136,7 @@
      "stance": "bullish",
      "summary": "作者認為SMCI的2027年營收指引遠超預期，加上大量訂單，即使毛利率僅10-15%，市值仍有重估空間，因此看好。",
      "r7": 18.4,
-     "r30": null
+     "r30": 18.3
     },
     {
      "date": "2026-08-12",
@@ -25676,7 +26146,7 @@
      "stance": "bearish",
      "summary": "作者批評SMCI CEO在財報電話會議上迴避問題，對公司前景感到負面。",
      "r7": -2.7,
-     "r30": null
+     "r30": 5.2
     },
     {
      "date": "2026-08-31",
@@ -25690,7 +26160,7 @@
     }
    ],
    "yellow": null,
-   "gain": 27.4,
+   "gain": 25.3,
    "ai_summary": "根據最新數據，該分析師立場由看好轉為謹慎，最新一次發文（8月31日）重新轉為樂觀，強調超過600億美元新訂單帶動需求。論述重點圍繞營收指引遠超預期及訂單規模，但曾於8月12日批評CEO在財報會議上迴避問題，顯示對管理層透明度有疑慮。整體立場有明顯波動，先由強烈看好轉為負面，再回升至看好，期間未見明確風險提示，但對毛利率偏低及管理層溝通問題曾有隱憂。",
    "theme": "AI伺服器"
   },
@@ -25752,7 +26222,7 @@
     }
    ],
    "yellow": null,
-   "gain": -23.7,
+   "gain": -31.2,
    "ai_summary": "根據最新數據，UMAC在2026年8月14日獲得多位大V看好，立場一致偏多。論述重點集中於其作為美國無人機零件供應商，將受惠於特朗普加強無人機供應鏈的行政命令，以及關稅政策帶來的正面催化。目前未見明顯轉軚或風險提示，但需留意政策執行細節可能影響實際效益。",
    "theme": "國防"
   },
@@ -25770,7 +26240,7 @@
     }
    ],
    "yellow": null,
-   "gain": -29.1,
+   "gain": -37.0,
    "ai_summary": "最新立場維持看多，認為特朗普對外國無人機及零件加徵關稅將直接提升LPTH的市場競爭力與訂單需求。論述點聚焦於政策紅利帶動產業鏈本土化，但未提及具體業績或估值風險。目前未見轉軚跡象，惟需留意關稅執行細節及公司實際受惠程度。",
    "theme": "關稅受惠"
   },
@@ -25798,7 +26268,7 @@
     }
    ],
    "yellow": null,
-   "gain": -16.9,
+   "gain": -23.8,
    "ai_summary": "根據歷史紀錄，AMPX最新立場為看多，論述點包括關稅消息被視為重大利多，以及OpenAI推薦看好其電池技術發展。兩次提及均未見轉軚，但亦無明確風險提示，僅強調正面因素。",
    "theme": "關稅受惠"
   },
@@ -25893,7 +26363,7 @@
     }
    ],
    "yellow": null,
-   "gain": -9.8,
+   "gain": -10.7,
    "ai_summary": "根據歷史數據，最新立場仍偏多，多位作者持續看好MRAM作為獨特記憶體代理，並強調技術面反彈與記憶體超級週期帶動的投資機會。論述重點集中於其純粹記憶體標的屬性、支撐位反彈動能，以及相關小型特殊記憶體廠商如友達先進的連動表現。未有明顯轉軚，但8月24日出現一次中性提及，指出MRAM可能受影響，屬輕微風險提示，其餘時間均維持樂觀看法。",
    "theme": "記憶體"
   },
@@ -25931,7 +26401,7 @@
     }
    ],
    "yellow": null,
-   "gain": -19.5,
+   "gain": -14.9,
    "ai_summary": "根據最新數據，MRNA的立場由中性轉為偏多，最新提及（8月24日）明確看好近期反彈，並預期帶動其他生技股。論述點包括資金從AI股回流至生技股（8月20日），以及錯過跳空上漲後不建議追高但認為機會無限（8月19日）。整體未見明顯轉軚，但早期有風險提示，即不追高，後續則轉向樂觀預期。",
    "theme": "醫療"
   },
@@ -26031,13 +26501,23 @@
      "url": "https://x.com/sunxliao/status/2095595159232889222",
      "stance": "bullish",
      "summary": "作者認為ETHA是投資以太幣的現貨ETF，看好其前景。",
+     "r7": -2.4,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097700844280131689",
+     "url": "https://x.com/sunxliao/status/2097700844280131689",
+     "stance": "bullish",
+     "summary": "作者指週線藍鑽石訊號已足夠，可能很快升至3000美元水平。",
      "r7": null,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 0.3,
-   "ai_summary": "sunxliao對ETHA持續維持看多立場，最新觀點認為其作為以太幣現貨ETF具備投資優勢，並計劃納入DCA策略。論述重點圍繞技術面突破週線黃金位、回測支撐反彈，以及以太坊現貨ETF的結構性優勢。整體立場從未轉變，未見明顯風險提示，僅強調若反彈持續則短期可能大漲。",
+   "gain": 5.6,
+   "ai_summary": "最新立場：sunxliao 持續看好 ETHA，至 2026-09-09 仍維持 bullish，指週線藍鑽石訊號已足夠，可能很快升至 3000 美元水平。論述點：突破週線黃金位後回測支撐可作牛市進場點，以太幣回測完成並反彈，ETHA 強勢、是以太幣現貨 ETF 且以太坊現貨 ETF 具優勢，並計劃納入 DCA 策略。有冇轉軚或風險提示：由 2026-08-24 至 2026-09-09 立場一致，未見轉軚，亦無提及風險提示。",
    "theme": "其他"
   },
   "BMNR": {
@@ -26109,7 +26589,7 @@
      "url": "https://x.com/sunxliao/status/2095595159232889222",
      "stance": "bullish",
      "summary": "作者認為BMNR是啞鈴策略中的代理，看好其表現。",
-     "r7": null,
+     "r7": -8.5,
      "r30": null
     },
     {
@@ -26119,7 +26599,7 @@
      "url": "https://x.com/sunxliao/status/2095572031400272172",
      "stance": "bullish",
      "summary": "作者認為BMNR有巨大漲幅，看好其未來表現。",
-     "r7": null,
+     "r7": -8.5,
      "r30": null
     },
     {
@@ -26131,11 +26611,21 @@
      "summary": "作者提到BMNR，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097700844280131689",
+     "url": "https://x.com/sunxliao/status/2097700844280131689",
+     "stance": "bullish",
+     "summary": "作者指月線藍鑽石訊號已足夠，上次由約4美元升至161美元，今次或再現類似走勢。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 2.6,
-   "ai_summary": "根據歷史記錄，sunxliao 對 BMNR 的立場由最初的中性觀察迅速轉為明確看多，並在後續多次發文中持續強化樂觀態度。其論述核心圍繞以太幣（ETH）及相關資產尚未結束的上漲趨勢，認為 BMNR 作為比特幣或啞鈴策略中的代理投資，具備強勢表現與巨大漲幅潛力，且上方阻力不大。整體而言，該作者立場從未轉向看空，亦未提出明顯風險提示，僅在初期未表態後即一路維持強烈看多觀點。",
+   "gain": 8.0,
+   "ai_summary": "sunxliao 最新立場係看好 BMNR，由 2026-08-26 起持續 bullish，認為以太幣回測完成反彈會帶動 BMNR 大漲，上方阻力不大，並將其視為比特幣代理及啞鈴策略中的代理，指月線藍鑽石訊號已足夠，上次由約 4 美元升至 161 美元，今次或再現類似走勢。作者 2026-08-24 曾持中性觀望態度，之後轉為明確看好，未見轉軚或風險提示。",
    "theme": "其他"
   },
   "CELH": {
@@ -26152,7 +26642,7 @@
     }
    ],
    "yellow": null,
-   "gain": -15.6,
+   "gain": -21.8,
    "ai_summary": "根據最新數據，wliang在2026-08-24對CELH持看多立場，認為股價已突破阻力，預期回踩支撐後將延續升勢。論述點集中於技術面突破，未見明顯轉軚或風險提示，立場維持樂觀。",
    "theme": "其他"
   },
@@ -26180,7 +26670,7 @@
     }
    ],
    "yellow": null,
-   "gain": 1.0,
+   "gain": -8.1,
    "ai_summary": "根據最新數據，sunxliao在2026年8月24日至25日連續兩日維持看多立場，最新觀點認為紫色阻力位轉為支撐，且上漲10%後仍看好未來幾週生技股交易機會。論述重點在於技術面轉強與生技股主題動能，未見明顯轉軚或風險提示。整體立場穩定偏多，無警示性評論。",
    "theme": "生技"
   },
@@ -26198,7 +26688,7 @@
     }
    ],
    "yellow": null,
-   "gain": -5.6,
+   "gain": -2.5,
    "ai_summary": "根據最新數據，sunxliao 於2026年8月25日對CMPS持看漲立場，主要論點是月線圖上的方形組合失效，視為技術性看漲信號，並預期股價將迎來下一波上漲。目前未見其立場轉變或明確風險提示，僅基於圖表形態作樂觀判斷。",
    "theme": "其他"
   },
@@ -26291,7 +26781,7 @@
      "url": "https://x.com/wliang/status/2095142947343745253",
      "stance": "bullish",
      "summary": "作者預期ASST會跟隨比特幣突破阻力，走勢相似。",
-     "r7": null,
+     "r7": 9.7,
      "r30": null
     },
     {
@@ -26301,7 +26791,7 @@
      "url": "https://x.com/wliang/status/2095543117642338398",
      "stance": "bullish",
      "summary": "作者表示在ASST上獲利約120%，看好其後續表現。",
-     "r7": null,
+     "r7": 0.3,
      "r30": null
     },
     {
@@ -26311,7 +26801,7 @@
      "url": "https://x.com/wliang/status/2095500465660133562",
      "stance": "bullish",
      "summary": "作者認為比特幣在62,000美元附近形成發射台，若繼續盤整可能迎來另一波強勁上漲，ASST可作為放大曝險的選擇。",
-     "r7": null,
+     "r7": 0.3,
      "r30": null
     },
     {
@@ -26321,7 +26811,7 @@
      "url": "https://x.com/sunxliao/status/2095595159232889222",
      "stance": "bullish",
      "summary": "作者認為ASST是啞鈴策略中的代理，看好其表現。",
-     "r7": null,
+     "r7": 0.3,
      "r30": null
     },
     {
@@ -26331,7 +26821,7 @@
      "url": "https://x.com/sunxliao/status/2095512323809243303",
      "stance": "bullish",
      "summary": "作者認為ASST突破銀色阻力位後將持續看漲，並會持續更新重要週線收盤情況。",
-     "r7": null,
+     "r7": 0.3,
      "r30": null
     },
     {
@@ -26341,7 +26831,7 @@
      "url": "https://x.com/sunxliao/status/2095572031400272172",
      "stance": "bullish",
      "summary": "作者認為ASST有巨大漲幅，看好其未來表現。",
-     "r7": null,
+     "r7": 0.3,
      "r30": null
     },
     {
@@ -26373,11 +26863,41 @@
      "summary": "作者分享ASST的投資想法，認為其有潛力。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097700844280131689",
+     "url": "https://x.com/sunxliao/status/2097700844280131689",
+     "stance": "bullish",
+     "summary": "作者認為月線藍鑽石訊號已足夠，上次由約12美元升至270美元，今次或再現類似走勢。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097666838188687440",
+     "url": "https://x.com/sunxliao/status/2097666838188687440",
+     "stance": "bullish",
+     "summary": "作者指 ASST 自推介以來已升逾126%，若出現粉紅信號會視為買入機會，因高時框周期才剛開始。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "sunxliao",
+     "tweet_id": "2098061651077664970",
+     "url": "https://x.com/sunxliao/status/2098061651077664970",
+     "stance": "bullish",
+     "summary": "作者認為 ASST 今日表現強勢，暗示比特幣同 IBIT 嘅調整接近尾聲。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 37.7,
-   "ai_summary": "根據歷史數據，ASST在2026年8月底至9月初獲得兩位大V持續看多，最新立場均為強烈看漲。論述重點包括突破週線阻力、日線無賣出信號、與比特幣走勢高度相關，可作為放大曝險的代理投資工具，其中一位更已實現約120%至125%的獲利。整體而言，未有轉軚或明顯風險提示，僅提及需觀察突破22.75美元阻力及週線收盤情況，以及比特幣在62,000美元附近的盤整能否延續漲勢。",
+   "gain": 43.3,
+   "ai_summary": "最新立場係全體提及者都維持看好ASST，sunxliao同wliang都無轉軚。論述點主要係將ASST視為比特幣代理或放大曝險工具，並以突破阻力位、月線藍鑽石訊號、粉鑽買入機會等技術訊號支持長線看漲，wliang亦提到自己獲利約120%至125%。風險提示方面，數據中未見明確警告，僅sunxliao提到若出現粉鑽訊號先視為買入機會，暗示短線或有回調可能。",
    "theme": "其他"
   },
   "IAU": {
@@ -26394,7 +26914,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.3,
+   "gain": -6.0,
    "ai_summary": "根據最新立場，sunxliao 對黃金ETF IAU 持樂觀看漲態度，主張透過定期定額方式持續買入，以捕捉黃金後市上漲潛力。論述重點在於長期累積持倉，並未提及具體目標價或時間點，但強調對黃金趨勢的信心。目前未見明顯轉軚或風險提示，立場保持一致。",
    "theme": "黃金"
   },
@@ -26422,7 +26942,7 @@
     }
    ],
    "yellow": null,
-   "gain": 7.8,
+   "gain": -2.2,
    "ai_summary": "根據最新數據，ABCL的立場分歧：sunxliao在8月24日偏多，認為接近日線黃金支撐且山形圖全藍，屬進場區域；wliang在8月26日轉為中性，雖見兩個賣出信號，但強調週線趨勢仍完好。整體而言，短線觀點由樂觀轉向謹慎，未見明確轉軚，但wliang已提示風險信號，需留意後續走勢。",
    "theme": "其他"
   },
@@ -26440,7 +26960,7 @@
     }
    ],
    "yellow": null,
-   "gain": 9.1,
+   "gain": 7.8,
    "ai_summary": "根據最新數據，wliang在2026年8月26日對ZETA持樂觀立場，計劃在黃金區間建倉，並預期回報良好。論述點集中於入場時機的選擇，未見明顯轉軚或風險提示，但僅此一次提及，缺乏後續驗證。",
    "theme": "其他"
   },
@@ -26458,7 +26978,7 @@
     }
    ],
    "yellow": null,
-   "gain": 5.2,
+   "gain": 19.4,
    "ai_summary": "根據最新數據，sunxliao 在 2026-08-27 對 HPQ 持看多立場，認為股價從日線黃金支撐反彈，且技術指標轉向正面。論述重點在於技術面改善，未見明顯轉軚或風險提示，僅強調支撐位與多頭訊號。整體觀點維持樂觀，但未提及基本面或潛在風險。",
    "theme": "其他"
   },
@@ -26476,7 +26996,7 @@
     }
    ],
    "yellow": null,
-   "gain": 7.6,
+   "gain": 7.7,
    "ai_summary": "根據提供的數據，最新立場為中性，sunxliao於2026年8月27日僅列出多隻股票，未對AESI表達明確看法，亦無具體論述點。文中未見轉軚跡象，亦無風險提示，整體態度偏向觀望。",
    "theme": "其他"
   },
@@ -26514,7 +27034,7 @@
     }
    ],
    "yellow": null,
-   "gain": 5.6,
+   "gain": -0.8,
    "ai_summary": "根據歷史記錄，最新立場為看多。論述點包括在83美元附近是好的進場點，突破或回測後買入通常表現良好，且初始買入訊號在45美元，並提及股價大漲18.56%。未有明確轉軚或風險提示，但早期曾保持中性態度。",
    "theme": "其他"
   },
@@ -26542,7 +27062,7 @@
     }
    ],
    "yellow": null,
-   "gain": 7.6,
+   "gain": 2.9,
    "ai_summary": "根據歷史數據，sunxliao 對 GAP 的立場由 8 月 27 日的 neutral（未明確表態）轉為 8 月 28 日的 bullish（看好），最新立場為看漲。論述點僅基於股價單日大漲 14.56% 的表現，未提供基本面或技術面深入分析。未有提及轉軚或風險提示，但立場轉變迅速，需注意僅依賴單日漲幅的觀點可能缺乏持續性支撐。",
    "theme": "其他"
   },
@@ -26570,7 +27090,7 @@
     }
    ],
    "yellow": null,
-   "gain": 3.0,
+   "gain": 3.8,
    "ai_summary": "根據歷史記錄，sunxliao 在2026年8月27日對HP僅列出股票名稱，未表達明確立場，屬中性態度。至9月1日，作者轉為看多，指出HP三天內上漲約10%，並提醒在市場不佳時關注藍鑽標記的股票，顯示其最新立場偏多。論述重點在於短期漲幅與市場環境下的關注信號，但未見明確風險提示或立場逆轉。",
    "theme": "其他"
   },
@@ -26598,7 +27118,7 @@
     }
    ],
    "yellow": null,
-   "gain": 11.4,
+   "gain": 10.4,
    "ai_summary": "根據歷史記錄，sunxliao 對 HSHP 的立場由 2026-08-27 的中性轉為 2026-08-28 的看好，最新立場為看漲。論述點僅基於當日股價上漲 2.09%，並未提供基本面或技術面分析，亦無提及風險提示或轉軚理由。整體觀點簡單，缺乏深入論證。",
    "theme": "其他"
   },
@@ -26626,7 +27146,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.9,
+   "gain": -7.8,
    "ai_summary": "根據歷史數據，最新立場為看多，因作者在2026-08-28明確看好IMTX上漲表現。論述點僅提及股價上漲2.03%，未提供具體基本面或技術面分析。立場由前一日的中性轉為看多，屬明顯轉軚，但未見風險提示。",
    "theme": "其他"
   },
@@ -26644,7 +27164,7 @@
     }
    ],
    "yellow": null,
-   "gain": 14.2,
+   "gain": 12.7,
    "ai_summary": "根據歷史數據，sunxliao 在 2026-08-27 對 PSIX 僅持中性立場，並未明確表達看好或看淡，僅將其列入多隻股票名單中。論述點缺乏具體分析，無提及任何買賣建議或風險提示。最新立場維持中性，未見轉軚跡象，但資訊量極少，無法判斷後續觀點變化。",
    "theme": "其他"
   },
@@ -26687,7 +27207,7 @@
      "url": "https://x.com/sunxliao/status/2095595159232889222",
      "stance": "bullish",
      "summary": "作者認為PURR是啞鈴策略中的代理，看好其表現。",
-     "r7": null,
+     "r7": -13.8,
      "r30": null
     },
     {
@@ -26702,7 +27222,7 @@
     }
    ],
    "yellow": null,
-   "gain": -7.0,
+   "gain": -5.1,
    "ai_summary": "根據歷史記錄，sunxliao 對 PURR 的最新立場為看漲，最早於 8 月 27 日僅中性提及，但次日即轉為明確看好。其論述重點包括股價上漲、自藍鑽訊號以來累計漲幅約 97%，並提醒投資者勿錯過下一個粉鑽訊號，同時將 PURR 視為啞鈴策略中的代理，認為其具潛力。整體立場由中性迅速轉為持續看漲，未見明顯轉軚或風險提示，但多次強調訊號機會，帶有追漲意味。",
    "theme": "其他"
   },
@@ -26720,7 +27240,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.3,
+   "gain": -8.8,
    "ai_summary": "根據歷史記錄，sunxliao 於2026年8月27日對RVMD表達了明確的看多立場，認為該股票「非常簡單」且「全線看好」，顯示出強烈樂觀態度。論述點集中在對公司前景的整體信心，但未提供具體基本面或技術面細節。截至該日期，立場未見轉變，亦無風險提示或任何看空跡象，僅為單一樂觀觀點。",
    "theme": "其他"
   },
@@ -26738,7 +27258,7 @@
     }
    ],
    "yellow": null,
-   "gain": -10.4,
+   "gain": -19.6,
    "ai_summary": "根據最新數據，sunxliao 在 2026-08-27 對 TENB 持看多立場，主要論點為技術型態出現三重藍鑽訊號、金區突破及回測，且失效點明確，顯示上漲動能強勁。目前未見明顯轉軚或風險提示，立場維持樂觀。",
    "theme": "其他"
   },
@@ -26756,7 +27276,7 @@
     }
    ],
    "yellow": null,
-   "gain": -1.2,
+   "gain": -2.2,
    "ai_summary": "根據歷史記錄，最新立場為看好金礦股，論述重點在於暗示重大交易機會即將出現。目前未見明確轉軚或風險提示，僅以樂觀態度強調潛在獲利空間。",
    "theme": "金礦"
   },
@@ -26774,7 +27294,7 @@
     }
    ],
    "yellow": null,
-   "gain": -0.6,
+   "gain": -2.3,
    "ai_summary": "根據最新數據，sunxliao 於 2026-08-28 表達看好立場，認為銀礦股將有重大交易機會，論述點集中於行業前景。目前未見明確轉軚或風險提示，立場維持樂觀。",
    "theme": "銀礦"
   },
@@ -27073,7 +27593,7 @@
     }
    ],
    "yellow": null,
-   "gain": -3.9,
+   "gain": -4.1,
    "ai_summary": "根據最新資料，wliang 於 2026-08-30 明確看好諾斯洛普格魯曼（NOC），推薦其作為國防領域的投資標的，立場為 bullish。論述點聚焦於國防板塊的投資機會，未提及具體風險或轉變。整體立場清晰，無轉軚跡象，但缺乏對潛在風險的提示。",
    "theme": "國防"
   },
@@ -27091,7 +27611,7 @@
     }
    ],
    "yellow": null,
-   "gain": 1.8,
+   "gain": 3.7,
    "ai_summary": "根據最新數據，wliang 在 2026-08-30 明確看好雪佛龍，將其推薦為能源/石油領域的投資標的，立場偏多。論述點聚焦於該公司在油氣行業的投資價值，但未提及具體風險或轉變。整體而言，立場清晰且無明顯轉軚跡象，但缺乏風險提示。",
    "theme": "能源"
   },
@@ -27109,7 +27629,7 @@
     }
    ],
    "yellow": null,
-   "gain": 6.7,
+   "gain": 10.7,
    "ai_summary": "根據最新數據，分析師wliang於2026年8月30日對Valero Energy（VLO）持看多立場，推薦其作為能源/石油領域的投資標的。論述點聚焦於該公司在能源板塊的投資價值，未提及具體轉軚或風險警示。整體立場明確樂觀，無顯示立場變化或額外風險提示。",
    "theme": "能源"
   },
@@ -27127,7 +27647,7 @@
     }
    ],
    "yellow": null,
-   "gain": -0.2,
+   "gain": 2.5,
    "ai_summary": "根據最新資料，wliang 於2026年8月30日對埃克森美孚（XOM）持看多立場，推薦其作為能源/石油領域的投資標的。論述點僅提及該股在該板塊的投資價值，未見具體基本面或技術面分析。目前未出現轉軚跡象，亦無明確風險提示，立場維持單一看多。",
    "theme": "能源"
   },
@@ -27145,7 +27665,7 @@
     }
    ],
    "yellow": null,
-   "gain": 3.3,
+   "gain": 4.7,
    "ai_summary": "根據歷史數據，最新立場偏向樂觀，認為Keysight在CPO（共封裝光學）測試領域具備潛在受惠機會。論述重點在於其技術布局可能受惠於新興市場需求，但未見明確轉軚或風險提示。整體觀點維持正面，惟缺乏對競爭或執行層面的深入討論。",
    "theme": "CPO測試"
   },
@@ -27189,7 +27709,7 @@
      "url": "https://x.com/sunxliao/status/2095595159232889222",
      "stance": "bullish",
      "summary": "作者認為ZCSH是做多ZEC的工具，看好其表現。",
-     "r7": null,
+     "r7": 15.7,
      "r30": null
     },
     {
@@ -27199,7 +27719,7 @@
      "url": "https://x.com/sunxliao/status/2095562908377993682",
      "stance": "bullish",
      "summary": "作者恭喜跟隨者，指ZCSH創歷史新高，今日漲近20%。",
-     "r7": null,
+     "r7": 15.7,
      "r30": null
     },
     {
@@ -27209,7 +27729,7 @@
      "url": "https://x.com/sunxliao/status/2095913672254345364",
      "stance": "bullish",
      "summary": "作者認為ZCSH短期波動正常，但未來幾個月會隨Zcash大幅上漲。",
-     "r7": null,
+     "r7": 15.5,
      "r30": null
     },
     {
@@ -27263,11 +27783,51 @@
      "target": 100.0,
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "wliang",
+     "tweet_id": "2097659370389586124",
+     "url": "https://x.com/wliang/status/2097659370389586124",
+     "stance": "bullish",
+     "summary": "作者認為演算法顯示 ZCSH 出現月度買入訊號，後市值得關注。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097745175355462062",
+     "url": "https://x.com/sunxliao/status/2097745175355462062",
+     "stance": "bullish",
+     "summary": "作者指 ZCSH 表現仍然跑贏 BWET，語氣正面。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097733044631425293",
+     "url": "https://x.com/sunxliao/status/2097733044631425293",
+     "stance": "bullish",
+     "summary": "作者持續看好並更新 ZCSH 持倉，認為九月開局約兩倍回報，且相信升勢未完。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097700844280131689",
+     "url": "https://x.com/sunxliao/status/2097700844280131689",
+     "stance": "bullish",
+     "summary": "作者指月線藍鑽石訊號再次足夠，上次由50美元升至750美元，達15倍。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 33.0,
-   "ai_summary": "根據歷史數據，sunxliao對ZCSH全程維持強烈看多立場，從未轉軚，最新觀點仍預期價格可達100美元以上。其論述核心圍繞ZCSH作為做多ZEC的工具，強調本週期表現強勁、創歷史新高，並認為資產管理規模約5億美元尚未過度擁擠，具備後續上漲空間。風險提示僅出現一次，即短期波動屬正常，但作者仍看好未來幾個月隨Zcash大幅上漲，整體未見任何減持或謹慎信號。",
+   "gain": 40.3,
+   "ai_summary": "sunxliao 由頭到尾都係看好 ZCSH，最新立場係持續看好並更新持倉，認為九月開局已約兩倍回報且升勢未完，冇轉軚。論述點包括 ZCSH 係做多 ZEC 嘅工具、創歷史新高後短期波動正常但未來幾個月會隨 Zcash 大漲、價格可能升至 100 美元以上、資產管理規模僅約 5 億美元未過度擁擠，以及月線藍鑽石訊號再現，上次由 50 美元升至 750 美元達 15 倍。wliang 亦於 9 月 9 日指演算法顯示 ZCSH 出現月度買入訊號。風險提示方面，sunxliao 僅提過短期波動正常，冇其他負面警示。",
    "theme": "其他"
   },
   "ZEC": {
@@ -27371,6 +27931,26 @@
      "summary": "作者認為Zcash的漲勢尚未結束，對其前景持樂觀態度。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097733044631425293",
+     "url": "https://x.com/sunxliao/status/2097733044631425293",
+     "stance": "bullish",
+     "summary": "作者認為 ZEC 仲未升完，對後市保持樂觀。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097700844280131689",
+     "url": "https://x.com/sunxliao/status/2097700844280131689",
+     "stance": "bullish",
+     "summary": "作者指月線藍鑽石訊號再次足夠，上次由50美元升至750美元，達15倍。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -27396,7 +27976,7 @@
      "url": "https://x.com/wliang/status/2095138381428629998",
      "stance": "bullish",
      "summary": "作者認為GTLB已將前阻力轉為支撐，自買入訊號以來上漲約120%，看好後續表現。",
-     "r7": null,
+     "r7": -6.6,
      "r30": null
     },
     {
@@ -27406,7 +27986,7 @@
      "url": "https://x.com/sunxliao/status/2095143348353015857",
      "stance": "bullish",
      "summary": "作者看好GTLB，認為其漲幅超過10%，可能出現看漲收盤價高於週線紫色均線。",
-     "r7": null,
+     "r7": -6.6,
      "r30": null
     },
     {
@@ -27421,7 +28001,7 @@
     }
    ],
    "yellow": null,
-   "gain": 1.3,
+   "gain": 0.6,
    "ai_summary": "根據歷史觀點，GTLB 最新立場維持看漲，多位作者（如 sunxliao 及 wliang）均強調週線走勢強勁，並指出股價已將前阻力轉為支撐，自買入訊號以來漲幅顯著（約 103% 至 120%）。論述重點集中於技術面突破，例如收盤價高於紫色均線或阻力位，顯示多頭動能持續。然而，sunxliao 在 2026-09-06 的觀點中亦提出風險提示，提醒需留意粉色阻力位，顯示雖整體看漲，但未完全忽略潛在的上方壓力，立場未見明顯轉軚，僅在樂觀中附加技術性警戒。",
    "theme": "其他"
   },
@@ -27439,7 +28019,7 @@
     }
    ],
    "yellow": null,
-   "gain": -0.1,
+   "gain": 2.6,
    "ai_summary": "根據最新資料，CAPA在2026年9月1日被提及時，立場屬中性，論述點集中於新MLCC ETF提供曝險機會，但同時指出加速器增加可能加劇供應瓶頸風險。該觀點未見明顯轉軚，但明確提示了潛在的供應鏈壓力，屬於風險警示型評論。",
    "theme": "MLCC"
   },
@@ -27457,7 +28037,7 @@
     }
    ],
    "yellow": null,
-   "gain": 1.9,
+   "gain": -0.1,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -27480,12 +28060,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到意法半導體是新增持倉，受惠於MCU價格上漲。",
-     "r7": null,
+     "r7": 1.7,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 5.2,
+   "gain": 4.6,
    "ai_summary": "根據歷史記錄，最新立場維持看漲，論述重點為2026年功率半導體交期延長及第三次漲價，加上MCU價格上漲帶動新增持倉。未有轉軚跡象，亦未見明確風險提示，僅強調供需緊張對股價的正面影響。",
    "theme": "半導體"
   },
@@ -27503,7 +28083,7 @@
     }
    ],
    "yellow": null,
-   "gain": 1.7,
+   "gain": -4.8,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月1日表達看多立場，認為美國政府撥款支持鋁業公司生產鎵，將有利其供應鏈發展。此觀點聚焦於政策利好對公司業務的正面影響，未見明顯轉軚或風險提示。整體論述簡單直接，僅基於單一政策因素，未提及潛在市場波動或執行風險。",
    "theme": "國防"
   },
@@ -27521,7 +28101,7 @@
     }
    ],
    "yellow": null,
-   "gain": 18.7,
+   "gain": 11.4,
    "ai_summary": "根據最新數據，分析師 aleabitoreddit 於 2026-09-01 對 GoPro 持樂觀立場，主要論點係公司計劃與光子公司合併，進軍 AI 數據中心光收發器市場，帶動股價大漲。目前未見轉軚或風險提示，立場維持正面。",
    "theme": "光通訊"
   },
@@ -27544,7 +28124,7 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好BWET，認為油輪股受惠於運費上升。",
-     "r7": null,
+     "r7": 28.5,
      "r30": null
     },
     {
@@ -27554,7 +28134,7 @@
      "url": "https://x.com/sunxliao/status/2095514199514570917",
      "stance": "bullish",
      "summary": "作者看好BWET，認為股價創新高並將繼續上漲。",
-     "r7": null,
+     "r7": 30.9,
      "r30": null
     },
     {
@@ -27576,11 +28156,41 @@
      "summary": "作者看好BWET再創歷史新高，認為藍鑽石不會過期直到轉為粉紅色。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-09",
+     "author": "sunxliao",
+     "tweet_id": "2097745175355462062",
+     "url": "https://x.com/sunxliao/status/2097745175355462062",
+     "stance": "bullish",
+     "summary": "作者指 BWET 再創新高，語氣正面。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-10",
+     "author": "sunxliao",
+     "tweet_id": "2098082680734687366",
+     "url": "https://x.com/sunxliao/status/2098082680734687366",
+     "stance": "bullish",
+     "summary": "作者指 BWET 再創新高，航運主題強勢。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-11",
+     "author": "sunxliao",
+     "tweet_id": "2098304556627345894",
+     "url": "https://x.com/sunxliao/status/2098304556627345894",
+     "stance": "bullish",
+     "summary": "作者指 BWET 隔晚再創新高，自其發文以來已升約60%，態度樂觀。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
-   "gain": 22.2,
-   "ai_summary": "根據歷史記錄，作者sunxliao對BWET自始至終維持強烈看多立場，從未轉軚。其論述核心圍繞BWET持倉原油運輸期貨以受惠於運費上升，並多次強調股價創新高及月線藍鑽訊號的技術面支持，認為上漲趨勢將持續。作者亦提示投資者不必擔心錯過機會，因市場仍有其他具藍鑽訊號的股票，但未見任何風險警示或看空言論。",
+   "gain": 61.5,
+   "ai_summary": "sunxliao 對 BWET 一直維持看好立場，最新（2026-09-11）指其隔晚再創新高，自其發文以來已升約60%，態度樂觀。核心論述係 BWET 持倉原油運輸期貨，等同做多原油運輸成本，受惠於運費上升同航運主題強勢，並以月度藍鑽訊號為依據，強調高信心股票月線圖嘅重要性，認為藍鑽石唔會過期直到轉為粉紅色。成個提及歷史中未見轉軚或風險提示。",
    "theme": "原油運輸"
   },
   "TE": {
@@ -27592,12 +28202,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095087925822190023",
      "stance": "bullish",
      "summary": "作者提到TE Connectivity是持倉之一。",
-     "r7": null,
+     "r7": 15.0,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 18.5,
+   "gain": 10.1,
    "ai_summary": "根據提供的數據，僅有一條提及，時間為2026年9月2日，立場為看多（bullish），作者表示TE Connectivity是其持倉之一。論述點僅此，未見具體分析或風險提示，亦無立場轉變跡象。",
    "theme": "連接器"
   },
@@ -27610,12 +28220,12 @@
      "url": "https://x.com/wliang/status/2095140942990700720",
      "stance": "bullish",
      "summary": "作者認為DAKT在支撐位上方盤整，可能形成發射台，雖然有賣出信號但可快速交易，上次上漲約70%。",
-     "r7": null,
+     "r7": -0.4,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 2.8,
+   "gain": -1.6,
    "ai_summary": "根據最新數據，wliang於2026年9月2日對DAKT持看多立場，認為股價在支撐位上方盤整，可能形成發射台，並提及上次上漲約70%。論述點強調短期快速交易機會，但同時承認存在賣出信號，顯示其對風險有一定提示。整體立場未見明顯轉軚，仍偏向樂觀，但建議投資者留意賣出信號可能帶來的波動。",
    "theme": "其他"
   },
@@ -27628,12 +28238,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好BDRY，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": -2.9,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -1.7,
+   "gain": -3.5,
    "ai_summary": "根據最新資料，sunxliao 於2026年9月2日對BDRY持看多立場，主要論點是該股受惠於海運費率上升趨勢。目前未見其立場轉變或提出風險警示，僅基於此單一日期記錄，無其他歷史觀點可供對比。",
    "theme": "海運"
   },
@@ -27646,12 +28256,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好DHT，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 5.6,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 3.7,
+   "gain": 9.8,
    "ai_summary": "根據最新數據，sunxliao 於 2026-09-02 對 DHT 持看多立場，核心論點為公司受惠於海運費率上升。目前未見立場轉變或風險提示，僅基於此單一觀點，需留意後續是否有其他大V提及以補充資訊。",
    "theme": "海運"
   },
@@ -27664,12 +28274,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好ECO，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 3.8,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 1.3,
+   "gain": 8.5,
    "ai_summary": "根據最新資料，sunxliao於2026年9月2日對ECO持看多立場，認為公司受惠於海運費率上升。目前未見立場轉變或風險提示，論述集中於行業順風因素。",
    "theme": "海運"
   },
@@ -27682,12 +28292,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好EDRY，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 9.1,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 0.9,
+   "gain": 16.2,
    "ai_summary": "根據最新數據，sunxliao於2026年9月2日對EDRY持看多立場，主要論點為公司受惠於海運費率上升。目前未見立場轉變或風險提示，僅有單一觀點記錄，缺乏後續更新或對比資訊。",
    "theme": "海運"
   },
@@ -27700,12 +28310,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好FRO，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 3.9,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 2.6,
+   "gain": 7.1,
    "ai_summary": "根據最新資料，sunxliao於2026年9月2日對FRO持看多立場，主要論述點為公司受惠於海運費率上升。目前未見立場轉變或明顯風險提示，僅基於當前數據作出正面評價。",
    "theme": "海運"
   },
@@ -27718,7 +28328,7 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好GLBS，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": -7.1,
      "r30": null
     }
    ],
@@ -27736,12 +28346,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好HAFN，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 9.0,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 0.9,
+   "gain": 12.3,
    "ai_summary": "根據最新數據，sunxliao 於2026年9月2日對HAFN持看多立場，主要論點為公司受惠於海運費率上升。目前未見立場轉變或風險提示，僅基於此單一觀點，尚無其他大V意見可供對比。",
    "theme": "海運"
   },
@@ -27754,12 +28364,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好IMPP，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 0.9,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 0.4,
+   "gain": 7.0,
    "ai_summary": "根據提供的歷史數據，最新立場為看多（bullish）。論述點是看好IMPP受惠於海運費率上升。目前未見轉軚或風險提示，僅此單一觀點。",
    "theme": "海運"
   },
@@ -27772,12 +28382,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好INSW，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 3.4,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 2.6,
+   "gain": 6.5,
    "ai_summary": "根據最新數據，sunxliao 於2026年9月2日對INSW持看多立場，主要論點係受惠於海運費率上升。目前未見立場轉變或風險提示，僅有單一時間點記錄。",
    "theme": "海運"
   },
@@ -27790,12 +28400,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好NAT，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 2.8,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 1.0,
+   "gain": 8.8,
    "ai_summary": "根據最新數據，sunxliao 於2026年9月2日對NAT持看多立場，論述點為受惠於海運費率上升。目前未見立場轉變或風險提示，僅有單一樂觀觀點。",
    "theme": "海運"
   },
@@ -27808,12 +28418,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好PXS，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 0.5,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 2.3,
+   "gain": 8.1,
    "ai_summary": "根據最新立場，sunxliao於2026年9月2日明確看好PXS，論述重點係受惠於海運費率上升帶動盈利前景。目前未見轉軚跡象，亦無提及風險提示，立場維持樂觀。",
    "theme": "海運"
   },
@@ -27826,12 +28436,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好TNK，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 6.1,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 1.7,
+   "gain": 9.1,
    "ai_summary": "根據最新資料，sunxliao 於2026年9月2日對TNK持看多立場，核心論點為海運費率上升將帶動公司獲利。目前未見其立場轉變或提出風險警示，僅基於該單一時間點觀點，無其他大V提及歷史可供對比。",
    "theme": "海運"
   },
@@ -27844,12 +28454,12 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好TRMD，認為其受惠於海運費率上升。",
-     "r7": null,
+     "r7": 12.5,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 3.2,
+   "gain": 10.5,
    "ai_summary": "根據最新資料，sunxliao 於2026年9月2日對TRMD持看多立場，核心論點為公司受惠於海運費率上升。目前未見其立場轉變或提出風險警示，僅基於此單一時間點數據，無法判斷後續有無調整。",
    "theme": "海運"
   },
@@ -27862,13 +28472,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095460499769155944",
      "stance": "bullish",
      "summary": "量子點雷射商業化將帶動相關公司如ALMU受益。",
-     "r7": null,
+     "r7": 3.2,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 3.7,
-   "earnings": "2026-09-17",
+   "gain": 5.9,
    "ai_summary": "根據歷史記錄，最新立場為看多，論述重點在於量子點雷射商業化將帶動ALMU受益。未見明顯轉軚，但僅此一次提及，缺乏後續更新或風險提示。",
    "theme": "量子點"
   },
@@ -27932,12 +28541,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095802636876619928",
      "stance": "bullish",
      "summary": "作者認為Lynas是日本稀土供應的重要替代來源，因日本已鎖定其75%的中重稀土產量。",
-     "r7": null,
+     "r7": -6.2,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": 1.0,
+   "gain": -6.2,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -27950,12 +28559,12 @@
      "url": "https://x.com/aleabitoreddit/status/2095851749127188691",
      "stance": "bearish",
      "summary": "AMC CEO不受韓國投資者支持，立場偏空。",
-     "r7": null,
+     "r7": -6.0,
      "r30": null
     }
    ],
    "yellow": null,
-   "gain": -3.4,
+   "gain": -6.0,
    "ai_summary": "根據最新數據，aleabitoreddit 於2026年9月4日對AMC持看空立場，主要論點為其CEO未獲得韓國投資者支持，反映市場信心不足。此觀點未見明顯轉軚，但僅限於單一事件，未提及具體風險或後續影響。整體而言，立場偏空，但缺乏更廣泛的基本面分析。",
    "theme": "其他"
   },
@@ -27968,7 +28577,7 @@
      "url": "https://x.com/wliang/status/2095863990605807962",
      "stance": "bullish",
      "summary": "作者以AOUT為例，認為接近支撐位時反彈機率高。",
-     "r7": null,
+     "r7": 6.3,
      "r30": null
     },
     {
@@ -27983,7 +28592,7 @@
     }
    ],
    "yellow": null,
-   "gain": 2.0,
+   "gain": 6.3,
    "ai_summary": "截至最新提及，wliang對AOUT維持看多立場，認為接近支撐位時反彈機率高，並將其列為成功交易案例。論述重點在於技術面支撐與反彈概率，未見明顯轉軚或風險提示。",
    "theme": "其他"
   },
@@ -28019,7 +28628,7 @@
    ],
    "yellow": null,
    "gain": 0.0,
-   "earnings": "2026-09-10",
+   "earnings": "2026-09-15",
    "ai_summary": "根據最新數據，GDRZF在2026年9月7日獲得大V aleabitoreddit的看好立場，強調其為選股之一且漲幅已超過100%，顯示強烈樂觀態度。論述點集中於該股過去表現強勁，但未提及具體基本面或未來風險。目前立場未見轉軚，但缺乏風險提示，僅基於歷史漲幅作支持。",
    "theme": "其他"
   },
@@ -28037,7 +28646,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -9.5,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月6日表達看多立場，主要論述點為OpenAI推薦及看好KYTX的自體免疫CAR-T療法前景。目前未見立場轉變或風險提示，僅基於技術與外部背書支持股價。",
    "theme": "細胞療法"
   },
@@ -28055,7 +28664,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -7.3,
    "ai_summary": "根據最新提及，PRQR獲OpenAI推薦，立場偏多，主要論點係看好其人類RNA編輯數據集嘅潛在應用價值。目前未見明顯轉軚或風險提示，但需留意該推薦僅屬單一來源，且數據集商業化進展尚未明朗。",
    "theme": "基因編輯"
   },
@@ -28073,7 +28682,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -8.5,
    "ai_summary": "該股近期獲得OpenAI推薦，市場情緒偏向樂觀，主要論點聚焦於其KRAS癌症藥物的開發潛力。目前立場維持看漲，未見明顯轉向或風險警示，但需留意藥物研發進度與臨床數據的兌現時程。",
    "theme": "生技製藥"
   },
@@ -28091,7 +28700,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": 5.2,
    "ai_summary": "根據最新數據，CNTB在2026年9月6日獲OpenAI推薦，立場偏多，看好其哮喘和COPD治療市場潛力。論述點聚焦於產品市場前景，未見明顯轉軚或風險提示，但僅此單一來源，缺乏後續更新或對比觀點。",
    "theme": "生技製藥"
   },
@@ -28109,7 +28718,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -4.6,
    "ai_summary": "根據歷史記錄，RANI 股票最新立場為看漲，主要論述點係 OpenAI 推薦其口服生物製劑技術，認為具備創新潛力。記錄中未見明顯轉軚，但僅有一次提及，缺乏後續更新或風險提示，需留意技術商業化進展及市場競爭的不確定性。",
    "theme": "生技製藥"
   },
@@ -28127,7 +28736,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -15.4,
    "ai_summary": "根據歷史記錄，最新立場為看多，主要論述點是OpenAI推薦及看好其MASH治療藥物的前景。未有明顯轉軚跡象，但記錄中未提及具體風險提示，需留意藥物研發進展的不確定性。",
    "theme": "生技製藥"
   },
@@ -28145,7 +28754,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -1.3,
    "ai_summary": "根據最新數據，SILC 嘅大V立場偏向樂觀，主要論點係受惠於OpenAI推薦帶動嘅網絡與推理硬件需求增長，認為公司前景正面。目前未見明顯轉軚跡象，但提及內容集中於行業趨勢，未有具體風險提示或估值警告。整體而言，觀點維持看漲，但需留意後續市場對硬件需求兌現程度嘅驗證。",
    "theme": "半導體設備"
   },
@@ -28163,7 +28772,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -5.3,
    "ai_summary": "根據提供的歷史數據，EOSE股票在2026年9月6日獲得alearitoreddit的看多觀點，其最新立場為看好電池業務增長，主要論述點是基於OpenAI的推薦。此觀點未顯示明顯轉軚或風險提示，僅呈現單一樂觀看法。",
    "theme": "電池"
   },
@@ -28181,7 +28790,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -3.2,
    "ai_summary": "根據最新數據，alearitoreddit於2026年9月6日對ZVRA持樂觀立場，主要論點為OpenAI推薦及看好罕見病藥物增長。目前未見立場轉變或風險提示，僅強調正面因素。",
    "theme": "生技製藥"
   },
@@ -28199,7 +28808,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -11.3,
    "ai_summary": "根據最新提及，INO獲看好立場，主因獲Anthropic推薦，聚焦其呼吸道乳頭狀瘤治療前景。論述點強調技術或臨床進展具潛力，但未見明確轉軚或風險提示，僅維持正面評價。",
    "theme": "生技製藥"
   },
@@ -28217,7 +28826,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -8.5,
    "ai_summary": "根據最新數據，alearitoreddit於2026年9月6日對CAPR持看多立場，主要論點為Anthropic推薦及看好deramiocel的PDUFA審批前景。目前未見立場轉變或明顯風險提示，但需注意審批結果存在不確定性。",
    "theme": "生技製藥"
   },
@@ -28235,7 +28844,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -23.4,
    "ai_summary": "根據提供的數據，最新立場為看多（bullish），論述點是基於Anthropic推薦及對seralutinib藥物前景的看好。目前未見立場轉變或風險提示，僅有單一時間點的正面觀點。",
    "theme": "生技製藥"
   },
@@ -28253,7 +28862,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -7.6,
    "ai_summary": "截至最新提及，大V對SLS持看多立場，主要論點為Anthropic推薦及看好第三期臨床試驗結果，未見明顯轉軚或風險提示。",
    "theme": "生技製藥"
   },
@@ -28271,7 +28880,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -14.5,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月6日對OKLO持看多立場，主要論點為Anthropic推薦及看好核能產業發展。目前未見立場轉變或明顯風險提示，僅基於外部推薦與行業趨勢作正面評價。",
    "theme": "核能"
   },
@@ -28289,7 +28898,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -20.8,
    "ai_summary": "根據歷史記錄，SMR股票在2026年9月6日獲得多頭觀點，主要論述點為Anthropic推薦及看好核能發展前景。最新立場維持看多，未有轉軚跡象，但記錄中未見明確風險提示，僅強調正面因素。整體而言，觀點集中於外部背書與行業趨勢，缺乏對潛在波動或政策風險的討論。",
    "theme": "核能"
   },
@@ -28307,7 +28916,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -1.2,
    "ai_summary": "根據提供的數據，最新立場為看多（bullish），論述點是基於Anthropic的推薦以及對量子計算前景的樂觀預期。目前未見明顯轉軚或風險提示，僅有單一時間點的正面觀點，缺乏後續更新或對潛在風險的討論。",
    "theme": "量子計算"
   },
@@ -28325,7 +28934,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": 2.8,
    "ai_summary": "根據最新提及，分析師wliang於2026年9月8日維持看多立場，認為PHVS正形成更高的低點，有機會從黃金區間向上突破，看好後續走勢。論述重點在於技術面形態改善，未見明顯轉軚或風險提示，但僅此一次記錄，缺乏後續驗證。",
    "theme": "生技製藥"
   },
@@ -28343,7 +28952,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.0,
+   "gain": -5.6,
    "ai_summary": "wliang於2026年9月5日維持中性立場，認為XNDU具投機性，光子學技術可信且合作夥伴強勁，但容錯量子時間表仍不明確，屬主要風險。最新觀點未見轉軚，僅強調投資需謹慎，因技術落地時程存不確定性。",
    "theme": "量子計算"
   },
@@ -28380,17 +28989,17 @@
    "yellow": {
     "week": 85
    },
-   "gain": 0.0,
+   "gain": -4.7,
    "ai_summary": "根據最新數據，分析師wliang於2026年9月8日持看多立場，認為GRRR正處於強力支撐位，適合日內交易，並預期約45%的上漲空間。論述點集中於技術面支撐與短期交易機會，未提及轉軚或風險提示，立場明確樂觀。整體而言，觀點未見明顯轉變，但僅基於單一日期數據，缺乏後續更新或風險警示。",
    "theme": "其他"
   }
  },
  "kol_stats": {
   "wliang": {
-   "calls": 720,
-   "n7": 635,
-   "win7": 40,
-   "n30": 471,
+   "calls": 733,
+   "n7": 681,
+   "win7": 41,
+   "n30": 533,
    "win30": 34,
    "avg30": -7.4,
    "best": {
@@ -28401,12 +29010,12 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 691,
-   "n7": 472,
-   "win7": 50,
-   "n30": 312,
+   "calls": 717,
+   "n7": 515,
+   "win7": 52,
+   "n30": 347,
    "win30": 42,
-   "avg30": -1.5,
+   "avg30": -1.9,
    "best": {
     "ticker": "AXTI",
     "ret": 58.6,
@@ -28415,12 +29024,12 @@
    }
   },
   "sunxliao": {
-   "calls": 725,
-   "n7": 607,
-   "win7": 37,
-   "n30": 472,
-   "win30": 22,
-   "avg30": -13.3,
+   "calls": 746,
+   "n7": 663,
+   "win7": 38,
+   "n30": 513,
+   "win30": 23,
+   "avg30": -13.2,
    "best": {
     "ticker": "VELO",
     "ret": 53.4,
@@ -28488,7 +29097,10 @@
    "2026-09-02",
    "2026-09-03",
    "2026-09-04",
-   "2026-09-08"
+   "2026-09-08",
+   "2026-09-09",
+   "2026-09-10",
+   "2026-09-11"
   ],
   "series": {
    "aleabitoreddit": [
@@ -28514,222 +29126,234 @@
     -4.19,
     -9.41,
     -9.28,
-    -8.47,
-    -1.87,
-    -3.48,
-    -4.48,
-    -10.3,
-    -11.49,
-    -14.3,
+    -8.41,
+    -1.78,
+    -3.28,
+    -4.21,
+    -10.1,
+    -11.37,
+    -14.21,
     -18.08,
-    -10.56,
-    -8.47,
-    -4.19,
-    0.06,
-    -1.29,
-    -1.64,
-    0.75,
-    -1.56,
-    -0.96,
-    3.08,
-    2.44,
-    4.94,
-    6.0,
-    0.6,
+    -10.42,
+    -8.38,
+    -4.06,
+    0.01,
+    -1.39,
+    -1.75,
+    0.59,
+    -1.72,
+    -1.08,
+    2.95,
+    2.27,
+    4.8,
+    5.88,
+    0.45,
+    -1.85,
+    -1.23,
+    -1.48,
+    -3.62,
+    -1.96,
     -1.7,
-    -1.1,
-    -1.35,
-    -3.51,
-    -1.84,
-    -1.58,
-    -0.99,
-    -3.04,
-    -2.46,
-    -3.46,
-    -2.82,
-    -2.5,
-    -0.72,
-    0.52
+    -1.11,
+    -3.15,
+    -2.56,
+    -3.55,
+    -2.91,
+    -2.59,
+    -0.82,
+    0.43,
+    0.23,
+    -1.41,
+    -0.58
    ],
    "sunxliao": [
     0.0,
-    -0.53,
-    2.46,
-    3.88,
-    1.32,
-    -5.84,
-    -6.12,
+    -0.49,
+    2.72,
+    3.81,
+    1.29,
+    -5.78,
+    -6.08,
+    -4.56,
     -4.6,
-    -4.46,
-    -1.67,
-    -7.42,
-    -13.81,
-    -9.86,
-    -16.06,
+    -1.93,
+    -7.69,
+    -14.14,
+    -10.02,
+    -16.17,
     -12.27,
-    -9.24,
-    -10.62,
-    -13.28,
-    -13.74,
-    -15.22,
-    -21.72,
-    -22.15,
-    -18.64,
-    -13.69,
-    -13.67,
+    -9.14,
+    -10.6,
+    -13.38,
+    -13.86,
+    -15.27,
+    -21.88,
+    -22.32,
+    -18.49,
+    -13.36,
+    -13.1,
+    -13.22,
+    -18.18,
+    -17.83,
+    -19.44,
+    -23.74,
+    -16.36,
+    -17.41,
     -14.04,
-    -18.82,
-    -18.28,
-    -19.79,
-    -23.92,
-    -16.85,
-    -17.91,
-    -14.61,
-    -12.91,
-    -13.6,
-    -14.55,
-    -12.8,
+    -12.88,
+    -13.7,
+    -14.66,
+    -13.08,
+    -14.05,
+    -12.87,
+    -10.27,
+    -10.74,
+    -9.32,
+    -8.08,
+    -11.58,
+    -12.89,
+    -12.61,
+    -13.0,
+    -13.97,
+    -12.86,
+    -13.18,
+    -12.58,
+    -13.74,
+    -13.15,
     -13.79,
-    -12.64,
-    -9.98,
-    -10.39,
-    -9.0,
-    -7.76,
-    -11.25,
-    -12.6,
-    -12.38,
-    -12.72,
-    -13.72,
-    -12.6,
-    -12.93,
-    -12.33,
-    -13.5,
-    -12.93,
-    -13.57,
-    -12.76,
-    -11.25,
-    -10.62,
-    -9.6
+    -12.99,
+    -11.48,
+    -10.86,
+    -9.81,
+    -9.79,
+    -10.59,
+    -9.46
    ],
    "wliang": [
     null,
     null,
     null,
     0.0,
-    -2.24,
-    -5.82,
-    -5.08,
-    -4.87,
-    -2.47,
-    1.7,
-    -3.58,
-    -9.42,
-    -5.93,
-    -11.48,
-    -7.86,
-    -4.89,
+    -2.22,
+    -5.71,
     -5.09,
-    -8.78,
-    -10.53,
-    -12.3,
-    -17.82,
-    -16.9,
-    -12.13,
-    -5.34,
-    -5.48,
-    -5.97,
-    -12.55,
-    -13.02,
-    -15.44,
-    -21.37,
-    -11.05,
-    -11.73,
-    -7.14,
-    -3.8,
-    -5.58,
-    -7.15,
-    -5.38,
-    -6.73,
-    -5.44,
-    -1.25,
-    -1.69,
-    0.03,
-    0.67,
-    -3.19,
+    -4.78,
+    -2.61,
+    1.32,
+    -3.96,
+    -9.95,
+    -6.15,
+    -11.67,
+    -7.93,
+    -4.83,
+    -5.16,
+    -9.03,
+    -10.67,
+    -12.28,
+    -18.02,
+    -17.09,
+    -11.77,
     -4.77,
-    -4.87,
-    -4.92,
-    -6.4,
-    -5.37,
-    -5.7,
-    -5.21,
-    -6.52,
-    -6.12,
-    -6.89,
-    -6.37,
+    -4.49,
+    -4.58,
+    -11.47,
+    -12.32,
+    -14.91,
+    -21.14,
+    -10.32,
+    -11.06,
+    -6.36,
+    -3.9,
+    -5.91,
+    -7.48,
+    -5.99,
+    -7.35,
+    -5.95,
+    -1.86,
+    -2.48,
+    -0.65,
+    0.07,
+    -3.93,
     -5.45,
-    -4.56,
-    -3.72
+    -5.39,
+    -5.55,
+    -6.97,
+    -5.93,
+    -6.26,
+    -5.74,
+    -7.09,
+    -6.65,
+    -7.43,
+    -6.9,
+    -5.87,
+    -5.01,
+    -4.15,
+    -4.41,
+    -5.34,
+    -4.83
    ],
    "SPY": [
     0.0,
     -0.59,
     0.33,
     0.01,
-    -0.94,
-    -0.84,
-    -0.57,
-    -1.01,
+    -0.96,
+    -0.85,
+    -0.59,
+    -1.02,
     0.48,
     1.14,
-    0.94,
+    0.95,
     0.75,
     1.39,
     0.88,
     0.52,
     1.31,
-    1.66,
-    0.78,
+    1.65,
+    0.77,
     1.09,
-    1.47,
+    1.46,
     0.89,
-    -0.07,
-    -0.2,
-    0.52,
-    0.4,
-    -0.7,
+    -0.08,
+    -0.21,
+    0.51,
+    0.39,
+    -0.71,
     -0.61,
-    -0.56,
-    -0.37,
-    -1.47,
-    -0.31,
-    0.17,
+    -0.57,
+    -0.38,
+    -1.48,
+    -0.32,
+    0.16,
     1.04,
     2.12,
-    1.94,
-    1.8,
-    2.09,
-    2.0,
-    1.76,
-    1.87,
-    2.21,
-    2.08,
+    1.95,
+    1.81,
+    2.1,
+    2.01,
     1.77,
-    1.41,
-    1.51,
-    1.1,
-    1.27,
-    1.13,
-    1.25,
-    1.24,
-    1.47,
-    1.36,
-    1.2,
-    0.93,
-    1.07,
-    1.44,
-    1.29,
-    1.05
+    1.88,
+    2.23,
+    2.09,
+    1.78,
+    1.43,
+    1.53,
+    1.12,
+    1.28,
+    1.15,
+    1.26,
+    1.26,
+    1.48,
+    1.38,
+    1.22,
+    0.95,
+    1.08,
+    1.45,
+    1.3,
+    1.06,
+    0.89,
+    0.68,
+    1.02
    ]
   }
  }
