@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-13T20:01:50+08:00",
+ "updated_at": "2026-09-14T07:01:39+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -297,11 +297,21 @@
      "summary": "作者提到Tesla的Optimus包含在更大的公司中，但未對Tesla本身表達明確看法。",
      "r7": -1.5,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "neutral",
+     "summary": "作者提到自己持有 TSLA 股票，但無明確睇好或睇淡。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -4.2,
-   "ai_summary": "根據歷史數據，大V對TSLA最新立場整體偏多，核心論述圍繞Optimus人形機器人量產進展與市場潛力，多次強調特斯拉在美國產能領先及馬斯克看好其成為史上最大產品。最新觀點（8月16日）仍樂觀預期機器人外形設計方向正確，但8月19日轉為中性，僅提及Optimus包含於公司整體而未明確表態。期間有多次轉軚信號，如8月5日從中性轉為看好量產加速，8月7日以Michael Burry做空失敗案例暗示看漲，但8月12日僅視為題材反彈催化，未給出持續強烈看多理由。風險提示方面，7月23日有作者指出波動性高於高貝塔小型股，8月5日亦提及Optimus僅佔市值小部分，顯示對估值支撐存疑。整體而言，立場由早期中性轉向多次看多，但最新轉中性，且未見明確看空論述。",
+   "ai_summary": "aleabitoreddit 最新立場轉為中性，僅提及持有 TSLA 但無明確方向，此前一直看好 Optimus 人形機器人量產潛力，包括要求供應商9月前達每週1000台、年底翻倍，並認為特斯拉在美國產能領先。wliang 由中性轉為看好，認為 Optimus 量產加速，並以 Michael Burry 做空後股價大漲為例暗示睇好，但曾提醒特斯拉波動性高於高貝塔小型股，且 Optimus 僅佔市值一小部分。sunxliao 則持續看好，視 Optimus 為相關主題投資選項。",
    "theme": "機器人"
   },
   "CCXI": {
@@ -4098,11 +4108,31 @@
      "summary": "GPU 折舊憂慮被推翻，對 Nvidia 有利。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099229447304122410",
+     "url": "https://x.com/aleabitoreddit/status/2099229447304122410",
+     "stance": "bullish",
+     "summary": "作者認為AI發展不會放緩，NVDA供應受限且年增長70-100%以上，睇好股價。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "neutral",
+     "summary": "作者提到 X 上有人因 NVDA 瓶頸問題而聯想到買瑞典高 beta CW 激光供應商，但無明確表達自己對 NVDA 嘅立場。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 9.2,
-   "ai_summary": "aleabitoreddit 最新立場偏多，論點圍繞 Nvidia 投資聯發科擴大 ASIC 生態、鎖定 ABF 載板產能至 2028 年、受惠 Anthropic 算力大單、推論需求超過訓練、收購 Hugging Face 具戰略價值，以及高盛上調 Rubin Ultra 光模組用量預測帶動光通訊需求，期間雖有少數中性表態但無轉軚。wliang 亦偏多，指 NVDA 一週內上漲 5%，並認為資金回流半導體股將帶動其上漲。風險提示方面，僅提到 Nvidia 受供應限制，但認為增長潛力巨大。",
+   "ai_summary": "aleabitoreddit 最新立場仍偏看好 NVDA，論點包括 Anthropic 算力大單、推論需求超過訓練、收購 Hugging Face 具戰略價值、供應受限但年增長強勁，以及高盛上調 Rubin Ultra 光模組用量預測；wliang 亦看好資金回流半導體帶動 NVDA 上漲。期間 aleabitoreddit 多次轉為中性但未明確轉軚，主要係提及 NVDA 時未表態，或僅引述他人對瓶頸問題嘅聯想；風險提示方面，只提到供應限制同 GPU 折舊憂慮被推翻，並無明確負面警示。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -4546,11 +4576,21 @@
      "summary": "作者提及GOOGL的TPU v9，暗示其AI相關光學內容需求將帶動供應鏈。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "neutral",
+     "summary": "作者提到自己持有 GOOGL 股票，但無明確睇好或睇淡。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -6.9,
-   "ai_summary": "最新立場偏向看好：wliang 一直維持 bullish，強調財報後先跌後漲屬噪音、回調是買入機會，並多次以 GOOGL 先跌後漲約 20% 為例暗示類似走勢；aleabitoreddit 在 8 月中至 9 月中多數時間亦轉向 bullish，論點包括 AI 雲需求創紀錄、積壓訂單與利潤率提升、與三星簽長期記憶體供應協議、投資聯發科、資本開支利好 AI 產業鏈，以及 TPU v9 帶動光學供應鏈需求。\n\n論述點集中在 AI 雲與 AI 基礎設施需求、資本開支、供應鏈合作及財報後股價韌性。風險提示方面，aleabitoreddit 曾於 8 月 23 日轉為 bearish，指 Google 出售 Boston Dynamics 是錯誤決定，導致缺乏能後空翻的人形機器人、競爭力受損；其後於 8 月 31 日恢復 bullish。整體未見 wliang 轉軚。",
+   "ai_summary": "wliang 由頭到尾都係睇好 GOOGL，最新一次（8月28日）提醒之前建議喺財報後回調買入、之後股價大漲20%，論述主要圍繞股價先跌後漲嘅模式同資本開支帶動AI需求。aleabitoreddit 立場反覆，8月8日引用財報AI雲需求創紀錄、積壓訂單同利潤率提升而睇好，但8月23日轉為睇淡，認為出售 Boston Dynamics 係錯誤決定、令公司缺乏人形機器人競爭力，之後8月31日起再轉睇好，講三星記憶體供應協議、投資聯發科、AI運算需求、TPU v9 帶動供應鏈，最新9月13日轉為中性，只提自己持有 GOOGL 但無明確立場。整體未見 wliang 有風險提示，aleabitoreddit 就曾明確提出競爭力受損嘅風險。",
    "theme": "其他"
   },
   "CRWV": {
@@ -11858,11 +11898,21 @@
      "summary": "作者將台積電視為美國盟友的關鍵半導體製造商，但未表達明確多空立場。",
      "r7": 1.0,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099229447304122410",
+     "url": "https://x.com/aleabitoreddit/status/2099229447304122410",
+     "stance": "bullish",
+     "summary": "作者批評唱淡TSM等AI股嘅人，暗示TSM唔會崩盤。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -7.4,
-   "ai_summary": "根據歷史記錄，TSM最新立場整體偏多，論述集中於其在矽光子、先進封裝及AI晶片製造的核心地位，多次強調產能擴張與行業需求強勁。期間立場未見明顯轉軚，但多次中性提及僅作為對比或路線圖參考，未有直接看空。風險提示方面，2026年8月24日曾指出FAU可能成為未來瓶頸，反映對供應鏈限制的關注，但整體未動搖看漲基調。",
+   "ai_summary": "最新立場偏看好：aleabitoreddit 多次以台積電為 AI 與矽光子核心受惠者，認為先進封裝產能緊張反映需求強勁，並批評唱淡者。論述點集中在矽光子、CPO 路線圖、先進封裝及作為 Marvell 等 ASIC 製造核心，但亦提過光引擎規模化瓶頸在雷射、光纖等元件，FAU 可能成未來瓶頸。wliang 曾指 TSM 接近支撐位、預期短期反彈，並提及其股價從 210.32 美元上漲 127%；整體無明顯轉軚，風險提示主要來自瓶頸與 beta 較低。",
    "theme": "AI晶片"
   },
   "MU": {
@@ -12926,11 +12976,31 @@
      "summary": "作者看好記憶體需求，認為MU等記憶體公司受惠於超大規模資本開支，利潤率高且不受短期宏觀影響。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099229447304122410",
+     "url": "https://x.com/aleabitoreddit/status/2099229447304122410",
+     "stance": "bullish",
+     "summary": "作者反駁MU等AI股會暴跌嘅預測，認為記憶體需求強勁。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "bullish",
+     "summary": "作者引述 X 上有人用槓桿買 Micron 認購期權，由 100 萬美元炒到 2800 萬再回落至 400 萬。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -19.5,
-   "ai_summary": "最新立場係全體大V一致看好美光，wliang、aleabitoreddit同sunxliao都維持bullish，冇人轉軚。論述點集中喺AI基礎設施帶動記憶體需求、HBM推高價格、高階AI記憶體排擠舊世代供給導致短缺、低前瞻本益比同高能見度，以及資金回流半導體股。風險提示方面，數據中未見任何大V提出明確風險警告。",
+   "ai_summary": "綜合全部提及，大V對MU一致偏多，最新立場仍然看好：aleabitoreddit持續以記憶體供應短缺、AI及HBM需求、低前瞻本益比同高能見度為核心論述，並反駁AI股暴跌預測；wliang曾靠買入信號獲利約800%，期待再現十倍升幅；sunxliao則以技術訊號支持。未見任何人轉軚，亦無明確風險提示，唯一提及的風險相關內容是引述有人用槓桿買Micron認購期權，由100萬美元炒到2800萬再回落至400萬。",
    "theme": "記憶體"
   },
   "ONDS": {
@@ -15420,11 +15490,21 @@
      "summary": "作者看好AI基礎設施中的光子學領域。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "bullish",
+     "summary": "作者引述 X 上有人指 AXTI 一年回報 3000%，並以此為由買短年期油輪運費期貨。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -6.2,
-   "ai_summary": "最新立場整體偏看好：wliang 興奮於光子學及 AI 基礎設施，aleabitoreddit 多次公開看好並指 InP 基板短缺令公司受益，sunxliao 認為支撐位反彈後市可期。論述點集中在光電趨勢、InP 短缺與基板材料漲價，以及過去一年數千 % 的漲幅驗證投資論點。aleabitoreddit 曾於 9 月 1 日轉為看淡，指股價被大幅拋售反映九月市況疲弱，其後又回復看好；sunxliao 亦提醒需注意關鍵價位。",
+   "ai_summary": "截至最新，aleabitoreddit 整體維持看好 AXTI，論點集中喺 InP 基板短缺、砷化鎵材料漲價同光電趨勢被市場忽視，並多次引用過去一年數千百分比嘅漲幅佐證。sunxliao 同 wliang 亦偏樂觀，分別提到支撐位反彈、光子學同 AI 基礎設施需求。唯一轉變係 aleabitoreddit 喺 2026-09-01 同時發過一次看空，指股價被大幅拋售反映九月市況疲弱，屬短線風險提示，但之後又回復看好。",
    "theme": "半導體設備"
   },
   "BFLY": {
@@ -20811,11 +20891,21 @@
      "summary": "作者認為Palantir與NBIS合作，加上其政府及企業關係，前景正面。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "bullish",
+     "summary": "作者引述 X 上有人因反向 Burry 指標而長倉 PLTR。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 55.9,
-   "ai_summary": "綜合大V提及歷史，最新立場明顯轉向樂觀，尤其wliang由7月起多次重申PLTR被低估及國防領域投資價值，並以股價自15美元漲至186美元、漲幅1100%佐證其看好論點。aleabitoreddit則由6月偏空轉為9月看好，因Palantir與NBIS合作及政府企業關係，認為前景正面。整體論述集中於國防需求、AI發展及合作帶動增長，未見明確轉軚或風險提示，但早期偏空觀點已隨股價反彈被多數看好聲音取代。",
+   "ai_summary": "最新立場偏向看好：wliang 由年初唱淡後轉為持續唱好，多次強調 PLTR 係國防領域投資標的、曾被低估，並提及股價由 15 美元升至 186 美元、12 個交易日內升 25% 等表現；aleabitoreddit 亦由 6 月偏空轉為 9 月看好，理由包括與 NBIS 合作、政府及企業關係，以及反向 Burry 指標。論述點主要圍繞國防股定位、AI 發展取態、合作夥伴關係同過往升幅。風險提示方面，數據中未見有明確風險警告，僅 aleabitoreddit 早前提及年初至今下跌約 35% 屬偏空表態。",
    "theme": "其他"
   },
   "CRM": {
@@ -23005,11 +23095,21 @@
      "summary": "作者看好博通AI收入未來兩年將大幅增長。",
      "r7": 1.1,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099229447304122410",
+     "url": "https://x.com/aleabitoreddit/status/2099229447304122410",
+     "stance": "bullish",
+     "summary": "作者指AVGO同NVDA一樣供應受限、年增長強勁，睇好前景。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -4.8,
-   "ai_summary": "根據歷史觀點，最新立場偏向樂觀，多數時間看好其AI與光學需求前景，並強調雷射供不應求及業績指引超預期。論述點集中於三星合作、CPO領導地位及與AMD的產能預訂，顯示產業競爭力強勁。期間曾出現轉軚風險，於8月31日兩度轉為看淡，認為Nvidia策略可能侵蝕其市場地位，但隨後9月又轉回正面，整體未持續看空。",
+   "ai_summary": "最新立場係睇好AVGO，作者喺2026年9月13日指AVGO同NVDA一樣供應受限、年增長強勁，並喺9月4日看好博通AI收入未來兩年大幅增長，9月2日亦認為業績指引遠超預期、盤後下跌屬過度反應。論述點圍繞AI需求強勁、雷射需求遠超供給、產能年增三倍仍供不應求，以及與三星簽署至2030年、預期價值超過2000億美元嘅AI框架協議。風險提示方面，作者曾喺8月31日轉為看淡，認為Nvidia策略會侵蝕Broadcom市場地位，並可能藉投資與生態系整合防禦博通競爭，但隨後喺9月初已轉回睇好。",
    "theme": "AI晶片"
   },
   "GS": {
@@ -25081,6 +25181,16 @@
      "summary": "作者看好記憶體產業，引用三星庫存不足與供應緊張預測，認為SK海力士受惠於短缺與AI基礎設施支出佔比提升。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "bullish",
+     "summary": "作者引述 X 上有人用槓桿買 SK Hynix 認購期權，由 100 萬美元炒到 2800 萬再回落至 400 萬。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -26167,11 +26277,21 @@
      "summary": "作者認為Lululemon是放空Nebius的避險多頭選擇。",
      "r7": -9.4,
      "r30": -19.3
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "bearish",
+     "summary": "作者引述 X 上有人因反向 Burry 指標而短倉 LULU。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -22.6,
-   "ai_summary": "根據最新數據，該大V於2026年8月8日提出看多立場，認為Lululemon是放空Nebius時的避險多頭選擇，論述重點在於將其作為對沖工具。目前未見立場轉變，但僅此一次提及，缺乏後續補充或風險提示，需注意其觀點可能僅限於特定交易情境。",
+   "ai_summary": "最新立場係看空，作者喺2026年9月13日引述X上有人因反向Burry指標而短倉LULU。之前喺8月8日佢曾以LULU作為放空Nebius嘅避險多頭選擇，立場由看多轉為看空。",
    "theme": "其他"
   },
   "SMCI": {
@@ -28928,7 +29048,6 @@
    ],
    "yellow": null,
    "gain": -0.6,
-   "earnings": "2026-09-15",
    "ai_summary": "根據最新數據，GDRZF在2026年9月7日獲得大V aleabitoreddit的看好立場，強調其為選股之一且漲幅已超過100%，顯示強烈樂觀態度。論述點集中於該股過去表現強勁，但未提及具體基本面或未來風險。目前立場未見轉軚，但缺乏風險提示，僅基於歷史漲幅作支持。",
    "theme": "其他"
   },
@@ -29308,6 +29427,23 @@
    "gain": 0.0,
    "ai_summary": "ACVA 最新立場係 bullish，wliang 指股價今日大漲約 45%，技術面帶動初步進場。論述點係提醒追高需謹慎，除非收盤突破阻力位，屬風險提示。",
    "theme": "其他"
+  },
+  "EQR": {
+   "mentions": [
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099126746390139042",
+     "url": "https://x.com/aleabitoreddit/status/2099126746390139042",
+     "stance": "bullish",
+     "summary": "作者引述 X 上有人因 AI 延長資本開支周期同貿易戰而長倉 EQR，理由同鎢有關。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "theme": "其他"
   }
  },
  "kol_stats": {
@@ -29326,7 +29462,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 721,
+   "calls": 731,
    "n7": 515,
    "win7": 52,
    "n30": 347,
