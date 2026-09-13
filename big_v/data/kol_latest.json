@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-13T07:01:34+08:00",
+ "updated_at": "2026-09-13T20:01:50+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -1826,11 +1826,21 @@
      "summary": "作者認為IREN 4小時圖走勢良好，只要守住並將金色支撐位轉為支撐，就可望延續升勢。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099048356345696391",
+     "url": "https://x.com/aleabitoreddit/status/2099048356345696391",
+     "stance": "bullish",
+     "summary": "Oracle 嘅 GPU 需求消息對 IREN 等 neocloud 公司有利。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -25.9,
-   "ai_summary": "最新立場係整體看漲，sunxliao 同 wliang 都持續看好 IREN，sunxliao 指已出現週線同雙週線藍鑽訊號，認為若收復黃金區域並守住金色支撐位就可延續升勢，wliang 則以 neocloud 及 AI 基礎設施角度推薦。論述點集中在技術面築底與訊號歷史升幅，以及比特幣礦業同 Anthropic 相關業務前景。風險提示方面，aleabitoreddit 曾於 9 月 1 日指股價被大幅拋售反映九月市況疲弱，但其後已轉為看漲，未見其他大V有明顯轉軚。",
+   "ai_summary": "最新立場係整體壓倒性看好，多位大V持續唱好IREN。論述點集中在技術面出現罕見雙週線藍鑽訊號、築底完成、Neocloud及AI基礎設施需求（包括Oracle GPU需求）帶動，股價一週曾升37%。期間aleabitoreddit曾於9月1日短暫看淡指股價被大幅拋售，但9月2日起已轉為看好，未見其他轉軚或風險提示。",
    "theme": "AI雲"
   },
   "META": {
@@ -4078,11 +4088,21 @@
      "summary": "作者認為NVDA對超大規模資本開支的預測強勁，看好AI相關需求。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099048356345696391",
+     "url": "https://x.com/aleabitoreddit/status/2099048356345696391",
+     "stance": "bullish",
+     "summary": "GPU 折舊憂慮被推翻，對 Nvidia 有利。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 9.2,
-   "ai_summary": "aleabitoreddit 最新立場維持看多，論述集中喺 Nvidia 投資聯發科擴大 ASIC 生態、鎖定 ABF 載板產能、受惠 Anthropic 算力大單、推論需求超越訓練、收購 Hugging Face 具戰略價值，以及高盛上調 Rubin Ultra 光模組用量預測帶動產業鏈需求，期間雖有幾次中性表態但無轉軚。wliang 亦睇好 NVDA，指其一週內上漲 5% 且資金回流半導體股將帶動上漲。風險提示方面，僅提到 Nvidia 受供應限制，但認為增長潛力巨大。",
+   "ai_summary": "aleabitoreddit 最新立場偏多，論點圍繞 Nvidia 投資聯發科擴大 ASIC 生態、鎖定 ABF 載板產能至 2028 年、受惠 Anthropic 算力大單、推論需求超過訓練、收購 Hugging Face 具戰略價值，以及高盛上調 Rubin Ultra 光模組用量預測帶動光通訊需求，期間雖有少數中性表態但無轉軚。wliang 亦偏多，指 NVDA 一週內上漲 5%，並認為資金回流半導體股將帶動其上漲。風險提示方面，僅提到 Nvidia 受供應限制，但認為增長潛力巨大。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -6183,11 +6203,21 @@
      "summary": "作者認為AI基礎設施中的neoclouds值得看好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099048356345696391",
+     "url": "https://x.com/aleabitoreddit/status/2099048356345696391",
+     "stance": "bullish",
+     "summary": "Oracle 嘅 GPU 需求消息對 Nebius 等 neocloud 公司有利。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -15.3,
-   "ai_summary": "最新立場係一面倒看好：aleabitoreddit、sunxliao、wliang 三位作者到後期都係 bullish，其中 aleabitoreddit 視 NBIS 為投資組合核心焦點之一，sunxliao 認為月線無問題、Q4 前累積期快結束應鎖定倉位，wliang 則推薦 Nebius 作為 Neocloud 領域標的。論述點集中在率先採用 Nvidia 最新架構、Nebius token factory 高效能、AI 算力需求巨大失衡、與 Palantir 合作成為主權 AI 基礎設施夥伴，以及股價曾漲超過 100% 甚至逾 10 倍。三人立場均由早期嘅中性轉為明確看好，期間未見任何轉軚或風險提示。",
+   "ai_summary": "最新立場係一面倒看好：aleabitoreddit、wliang、sunxliao 三位作者到後期都轉為或維持 bullish，其中 sunxliao 由 8 月 25 日中性轉為 8 月 27 日起持續看好。論述點集中在 NBIS 率先採用 Nvidia 最新架構、Nebius token factory 高效能、AI 算力需求失衡、與 Palantir 合作成為主權 AI 基礎設施夥伴，以及 Oracle GPU 需求消息對 neocloud 行業有利，wliang 亦指其股價曾漲逾 10 倍、一週升 28%。數據中冇任何轉軚看淡或風險提示。",
    "theme": "AI雲"
   },
   "SIVE": {
@@ -24755,11 +24785,21 @@
      "summary": "作者提到甲骨文是Vantage Data Centers的錨定租戶，用於Stargate項目，顯示對其數據中心業務的正面看法。",
      "r7": -9.1,
      "r30": null
+    },
+    {
+     "date": "2026-09-13",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099048356345696391",
+     "url": "https://x.com/aleabitoreddit/status/2099048356345696391",
+     "stance": "bullish",
+     "summary": "Oracle 業績顯示 GPU 產能續約加價 20% 轉售，對其前景正面。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 6.5,
-   "ai_summary": "最新立場偏向樂觀，主要論點包括贏得國防部大單、Stargate數據中心業務及Meta運算協議，均被視為正面訊號。論述上未見明顯轉軚，但曾提及Michael Burry做空風險，惟作者認為其過往紀錄欠佳，故不需過度憂慮。整體而言，觀點由中性轉向積極，惟未見具體風險警示。",
+   "ai_summary": "最新立場偏看好：aleabitoreddit 由7月初中性轉為睇好，先後提及國防部70億美元合約、甲骨文作為 Vantage Data Centers 錨定租戶用於 Stargate 項目，以及業績顯示 GPU 產能續約加價20%轉售。wliang 則對 Michael Burry 做空 ORCL 不以為意，認為其過去多次做空失敗，未構成風險警示。整體論述集中喺合約、數據中心需求同 GPU 轉售定價能力，未見有分析師轉軚睇淡或提出明確風險提示。",
    "theme": "AI雲"
   },
   "DELL": {
@@ -28306,11 +28346,21 @@
      "summary": "作者看好 BWET，指其 11 日內由 436.95 升至 726.92，並會繼續發掘類似低關注度但有催化劑嘅看好標的。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，BWET 升 56.35%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 61.4,
-   "ai_summary": "sunxliao 由始至終對 BWET 維持強烈看好立場，反覆強調其屢創新高、月度藍鑽訊號後累升以倍數計，並認為藍鑽石訊號未轉粉紅色前不會過期，最新指 11 日內由 436.95 升至 726.92，會繼續發掘類似低關注度但有催化劑的標的，期間未見轉軚或風險提示。wliang 亦看好，指 BWET 過去一年升 48 倍。aleabitoreddit 則屬中性，僅將 BWET 列為另類 ETF 例子並詢問下一個類似產品，未表明確方向。",
+   "ai_summary": "sunxliao 由頭到尾都係看好 BWET，最新立場仍然係 bullish，論述重點係油輪運費上升帶動持倉原油運輸期貨，股價多次創新高，自月度藍鑽訊號以來累升4490%，發文後8至11個交易日內再升約60%至66%，並強調藍鑽石訊號未轉粉紅色前不會過期。wliang 亦以過去一年升48倍佐證ETF可以大賺，aleabitoreddit 則只作中性提及，無明確立場。全程未見任何人轉軚或提出風險提示。",
    "theme": "原油運輸"
   },
   "TE": {
@@ -28360,11 +28410,21 @@
      "summary": "作者看好BDRY，認為其受惠於海運費率上升。",
      "r7": -2.9,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bearish",
+     "summary": "作者分享航運股名單後，BDRY 跌 2.38%，表現疲弱。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -3.4,
-   "ai_summary": "根據最新資料，sunxliao 於2026年9月2日對BDRY持看多立場，主要論點是該股受惠於海運費率上升趨勢。目前未見其立場轉變或提出風險警示，僅基於此單一日期記錄，無其他歷史觀點可供對比。",
+   "ai_summary": "sunxliao 最新對 BDRY 轉為看淡，指其分享航運股名單後 BDRY 跌 2.38%、表現疲弱。此前佢看好 BDRY，理由係受惠於海運費率上升。立場由看好轉為看淡，屬轉軚。",
    "theme": "海運"
   },
   "DHT": {
@@ -28378,11 +28438,21 @@
      "summary": "作者看好DHT，認為其受惠於海運費率上升。",
      "r7": 5.6,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，DHT 升 11.28%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 9.6,
-   "ai_summary": "根據最新數據，sunxliao 於 2026-09-02 對 DHT 持看多立場，核心論點為公司受惠於海運費率上升。目前未見立場轉變或風險提示，僅基於此單一觀點，需留意後續是否有其他大V提及以補充資訊。",
+   "ai_summary": "sunxliao 最新立場仍然看好 DHT，認為佢受惠於海運費率上升。佢分享航運股名單後，DHT 升 11.28%，表現強勁，論述點主要係運費上升帶動股價。期間冇轉軚，亦冇提及風險提示。",
    "theme": "海運"
   },
   "ECO": {
@@ -28396,11 +28466,21 @@
      "summary": "作者看好ECO，認為其受惠於海運費率上升。",
      "r7": 3.8,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，ECO 升 12.33%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 10.3,
-   "ai_summary": "根據最新資料，sunxliao於2026年9月2日對ECO持看多立場，認為公司受惠於海運費率上升。目前未見立場轉變或風險提示，論述集中於行業順風因素。",
+   "ai_summary": "sunxliao 最新立場仍然看好 ECO，論述點係佢受惠於海運費率上升，並且喺分享航運股名單後股價升 12.33%，表現強勁。暫時未見有轉軚或風險提示。",
    "theme": "海運"
   },
   "EDRY": {
@@ -28414,11 +28494,21 @@
      "summary": "作者看好EDRY，認為其受惠於海運費率上升。",
      "r7": 9.1,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，EDRY 升 27.29%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 19.8,
-   "ai_summary": "根據最新數據，sunxliao於2026年9月2日對EDRY持看多立場，主要論點為公司受惠於海運費率上升。目前未見立場轉變或風險提示，僅有單一觀點記錄，缺乏後續更新或對比資訊。",
+   "ai_summary": "sunxliao 最新立場仍看好 EDRY，核心論述係公司受惠於海運費率上升。佢喺分享航運股名單後，EDRY 升 27.29%，表現強勁，期間未見轉軚或風險提示。",
    "theme": "海運"
   },
   "FRO": {
@@ -28432,11 +28522,21 @@
      "summary": "作者看好FRO，認為其受惠於海運費率上升。",
      "r7": 3.9,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，FRO 升 10.88%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 8.3,
-   "ai_summary": "根據最新資料，sunxliao於2026年9月2日對FRO持看多立場，主要論述點為公司受惠於海運費率上升。目前未見立場轉變或明顯風險提示，僅基於當前數據作出正面評價。",
+   "ai_summary": "sunxliao 最新立場仍然看好 FRO，論述點係海運費率上升帶動航運股，而 FRO 喺分享名單後升 10.88%，表現強勁。兩次發言都係 bullish，冇轉軚，亦冇提及風險提示。",
    "theme": "海運"
   },
   "GLBS": {
@@ -28450,11 +28550,21 @@
      "summary": "作者看好GLBS，認為其受惠於海運費率上升。",
      "r7": -7.1,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bearish",
+     "summary": "作者分享航運股名單後，GLBS 跌 2.87%，表現疲弱。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -2.6,
-   "ai_summary": "根據最新數據，GLBS 在 2026-09-02 獲 sunxliao 看好，立場為 bullish，主要論述點係受惠於海運費率上升。目前未見轉軚或風險提示，但僅此一次提及，缺乏後續更新或對比，立場維持正面。",
+   "ai_summary": "sunxliao 最新對 GLBS 轉為看淡，指航運股名單公布後股價跌 2.87%、表現疲弱。此前佢看好 GLBS 受惠於海運費率上升，立場由利好轉為利淡，並以股價下跌作為風險提示。",
    "theme": "海運"
   },
   "HAFN": {
@@ -28468,11 +28578,21 @@
      "summary": "作者看好HAFN，認為其受惠於海運費率上升。",
      "r7": 9.0,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，HAFN 升 8.82%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 11.7,
-   "ai_summary": "根據最新數據，sunxliao 於2026年9月2日對HAFN持看多立場，主要論點為公司受惠於海運費率上升。目前未見立場轉變或風險提示，僅基於此單一觀點，尚無其他大V意見可供對比。",
+   "ai_summary": "sunxliao 最新立場仍然看好 HAFN，核心論述係海運費率上升帶動航運股，而 HAFN 喺分享名單後單日升 8.82%，表現強勁。兩次提及都係 bullish，冇轉軚，亦冇風險提示。",
    "theme": "海運"
   },
   "IMPP": {
@@ -28486,11 +28606,21 @@
      "summary": "作者看好IMPP，認為其受惠於海運費率上升。",
      "r7": 0.9,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，IMPP 升 7.82%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 9.0,
-   "ai_summary": "根據提供的歷史數據，最新立場為看多（bullish）。論述點是看好IMPP受惠於海運費率上升。目前未見轉軚或風險提示，僅此單一觀點。",
+   "ai_summary": "sunxliao 最新立場仍然看好 IMPP，核心論述係海運費率上升帶動航運股，而 IMPP 屬受惠名單之一。9月12日佢提到分享航運股名單後 IMPP 升 7.82%，以此印證表現強勁，期間冇轉軚亦冇風險提示。",
    "theme": "海運"
   },
   "INSW": {
@@ -28504,11 +28634,21 @@
      "summary": "作者看好INSW，認為其受惠於海運費率上升。",
      "r7": 3.4,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，INSW 升 3.65%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 7.6,
-   "ai_summary": "根據最新數據，sunxliao 於2026年9月2日對INSW持看多立場，主要論點係受惠於海運費率上升。目前未見立場轉變或風險提示，僅有單一時間點記錄。",
+   "ai_summary": "sunxliao 最新立場仍看好 INSW，核心論述係公司受惠於海運費率上升，並喺分享航運股名單後股價升 3.65%，表現強勁。兩次提及都維持 bullish，冇轉軚，亦冇風險提示。",
    "theme": "海運"
   },
   "NAT": {
@@ -28522,11 +28662,21 @@
      "summary": "作者看好NAT，認為其受惠於海運費率上升。",
      "r7": 2.8,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，NAT 升 8.43%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 9.5,
-   "ai_summary": "根據最新數據，sunxliao 於2026年9月2日對NAT持看多立場，論述點為受惠於海運費率上升。目前未見立場轉變或風險提示，僅有單一樂觀觀點。",
+   "ai_summary": "sunxliao 最新立場仍然看好 NAT，核心論述係佢受惠於海運費率上升，而且喺分享航運股名單後 NAT 單日升 8.43%，表現強勁。由 9 月 2 日到 9 月 12 日，呢位作者對 NAT 嘅看法一直維持 bullish，冇轉軚，亦冇提及任何風險提示。",
    "theme": "海運"
   },
   "PXS": {
@@ -28540,11 +28690,21 @@
      "summary": "作者看好PXS，認為其受惠於海運費率上升。",
      "r7": 0.5,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，PXS 升 9.73%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 6.7,
-   "ai_summary": "根據最新立場，sunxliao於2026年9月2日明確看好PXS，論述重點係受惠於海運費率上升帶動盈利前景。目前未見轉軚跡象，亦無提及風險提示，立場維持樂觀。",
+   "ai_summary": "sunxliao 最新立場仍看好 PXS，核心論述係公司受惠於海運費率上升。佢喺分享航運股名單後，PXS 升 9.73%，表現強勁，期內未見轉軚或風險提示。",
    "theme": "海運"
   },
   "TNK": {
@@ -28558,11 +28718,21 @@
      "summary": "作者看好TNK，認為其受惠於海運費率上升。",
      "r7": 6.1,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，TNK 升 15.62%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 11.1,
-   "ai_summary": "根據最新資料，sunxliao 於2026年9月2日對TNK持看多立場，核心論點為海運費率上升將帶動公司獲利。目前未見其立場轉變或提出風險警示，僅基於該單一時間點觀點，無其他大V提及歷史可供對比。",
+   "ai_summary": "sunxliao 最新立場仍然看好 TNK，核心論述係公司受惠於海運費率上升。佢喺分享航運股名單後，TNK 升 15.62%，表現強勁，期間冇轉軚或風險提示。",
    "theme": "海運"
   },
   "TRMD": {
@@ -28576,11 +28746,21 @@
      "summary": "作者看好TRMD，認為其受惠於海運費率上升。",
      "r7": 12.5,
      "r30": null
+    },
+    {
+     "date": "2026-09-12",
+     "author": "sunxliao",
+     "tweet_id": "2098875612937281843",
+     "url": "https://x.com/sunxliao/status/2098875612937281843",
+     "stance": "bullish",
+     "summary": "作者分享航運股名單後，TRMD 升 6.63%，表現強勁。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 11.3,
-   "ai_summary": "根據最新資料，sunxliao 於2026年9月2日對TRMD持看多立場，核心論點為公司受惠於海運費率上升。目前未見其立場轉變或提出風險警示，僅基於此單一時間點數據，無法判斷後續有無調整。",
+   "ai_summary": "sunxliao 最新立場仍然看好 TRMD，論述點係海運費率上升帶動航運股，而 TRMD 喺分享名單後升 6.63%，表現強勁。兩次提及都係 bullish，冇轉軚，亦冇風險提示。",
    "theme": "海運"
   },
   "ALMU": {
@@ -29146,7 +29326,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 717,
+   "calls": 721,
    "n7": 515,
    "win7": 52,
    "n30": 347,
@@ -29160,7 +29340,7 @@
    }
   },
   "sunxliao": {
-   "calls": 753,
+   "calls": 767,
    "n7": 663,
    "win7": 38,
    "n30": 513,
