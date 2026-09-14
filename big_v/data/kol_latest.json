@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-14T07:01:39+08:00",
+ "updated_at": "2026-09-14T20:02:04+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -1846,11 +1846,21 @@
      "summary": "Oracle 嘅 GPU 需求消息對 IREN 等 neocloud 公司有利。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099458250240618861",
+     "url": "https://x.com/aleabitoreddit/status/2099458250240618861",
+     "stance": "bullish",
+     "summary": "作者引述 IREN CEO 對 AI 算力需求嘅樂觀講法，認同需求遠超供應。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -25.9,
-   "ai_summary": "最新立場係整體壓倒性看好，多位大V持續唱好IREN。論述點集中在技術面出現罕見雙週線藍鑽訊號、築底完成、Neocloud及AI基礎設施需求（包括Oracle GPU需求）帶動，股價一週曾升37%。期間aleabitoreddit曾於9月1日短暫看淡指股價被大幅拋售，但9月2日起已轉為看好，未見其他轉軚或風險提示。",
+   "ai_summary": "最新立場係整體壓倒性看好，wliang、sunxliao、aleabitoreddit 都持好倉，aleabitoreddit 曾於九月一日短暫轉淡，指股價被大幅拋售反映九月市況疲弱，但之後迅速轉回看好。論述點集中在 neocloud 同 AI 算力需求，包括獲 Anthropic 推薦、Oracle GPU 需求消息、IREN CEO 指需求遠超供應，以及技術面出現首個週線同罕見雙週線藍鑽訊號，sunxliao 認為若收復黃金區域並守住金色支撐位就可延續升勢。風險提示方面，aleabitoreddit 曾提及九月股市表現疲弱同股價被大幅拋售，但之後未再重提。",
    "theme": "AI雲"
   },
   "META": {
@@ -4128,11 +4138,21 @@
      "summary": "作者提到 X 上有人因 NVDA 瓶頸問題而聯想到買瑞典高 beta CW 激光供應商，但無明確表達自己對 NVDA 嘅立場。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099458250240618861",
+     "url": "https://x.com/aleabitoreddit/status/2099458250240618861",
+     "stance": "bullish",
+     "summary": "作者認為 NVDA 因 DeepSeek 引發嘅拋售同其他恐慌一樣，對整體 AI 建設無實質影響。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 9.2,
-   "ai_summary": "aleabitoreddit 最新立場仍偏看好 NVDA，論點包括 Anthropic 算力大單、推論需求超過訓練、收購 Hugging Face 具戰略價值、供應受限但年增長強勁，以及高盛上調 Rubin Ultra 光模組用量預測；wliang 亦看好資金回流半導體帶動 NVDA 上漲。期間 aleabitoreddit 多次轉為中性但未明確轉軚，主要係提及 NVDA 時未表態，或僅引述他人對瓶頸問題嘅聯想；風險提示方面，只提到供應限制同 GPU 折舊憂慮被推翻，並無明確負面警示。",
+   "ai_summary": "aleabitoreddit 最新立場係睇好 NVDA，認為 AI 推論需求已超越訓練、供應受限但年增長可達 70-100% 以上，甚至猜測 NVDA 可能成為首家市值 10 兆美元公司，並指 GPU 折舊憂慮已被推翻、DeepSeek 引發嘅拋售對 AI 建設無實質影響。wliang 亦持睇好立場，指 NVDA 一週內升 5%，認為資金回流半導體股將帶動其上漲。整體而言，aleabitoreddit 由 9 月 2 日中性轉向明確睇好，期間雖有數次中性表態，但無轉軚看淡，亦未見明確風險提示。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -4586,11 +4606,21 @@
      "summary": "作者提到自己持有 GOOGL 股票，但無明確睇好或睇淡。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099458250240618861",
+     "url": "https://x.com/aleabitoreddit/status/2099458250240618861",
+     "stance": "bullish",
+     "summary": "作者將 GOOGL TurboQuant 恐慌視為短暫噪音，唔會動搖 AI 建設大趨勢。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -6.9,
-   "ai_summary": "wliang 由頭到尾都係睇好 GOOGL，最新一次（8月28日）提醒之前建議喺財報後回調買入、之後股價大漲20%，論述主要圍繞股價先跌後漲嘅模式同資本開支帶動AI需求。aleabitoreddit 立場反覆，8月8日引用財報AI雲需求創紀錄、積壓訂單同利潤率提升而睇好，但8月23日轉為睇淡，認為出售 Boston Dynamics 係錯誤決定、令公司缺乏人形機器人競爭力，之後8月31日起再轉睇好，講三星記憶體供應協議、投資聯發科、AI運算需求、TPU v9 帶動供應鏈，最新9月13日轉為中性，只提自己持有 GOOGL 但無明確立場。整體未見 wliang 有風險提示，aleabitoreddit 就曾明確提出競爭力受損嘅風險。",
+   "ai_summary": "wliang 一直睇好 GOOGL，多次以財報後先跌後漲兩成嘅走勢暗示買入機會，最新立場仍然係 bullish。aleabitoreddit 立場反覆，8月8日引用財報AI雲需求創紀錄、積壓訂單與利潤率提升而睇好，8月23日則因出售 Boston Dynamics 缺乏人形機器人而轉為睇淡，之後由8月31日起連番轉軚睇好，理由包括三星記憶體供應協議、投資聯發科、AI運算需求、資本開支、TPU v9 帶動光學供應鏈，9月13日轉為中性僅提持倉，9月14日再睇好並將 TurboQuant 恐慌視為短暫噪音。風險提示方面，aleabitoreddit 曾明確指出出售 Boston Dynamics 令競爭力受損，其餘多為睇好論述。",
    "theme": "其他"
   },
   "CRWV": {
@@ -13788,11 +13818,21 @@
      "summary": "作者認為 IBIT 正處於調整階段，但接近尾聲。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "sunxliao",
+     "tweet_id": "2099292615288258690",
+     "url": "https://x.com/sunxliao/status/2099292615288258690",
+     "stance": "bullish",
+     "summary": "作者表示想趁回調買入 IBIT。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 29.3,
-   "ai_summary": "sunxliao 由 2026 年 8 月起一直看好 IBIT，核心論點係 IBIT 係參與比特幣牛市嘅簡易現貨 ETF 工具，受惠於比特幣月線藍鑽訊號及牛市週期，並計劃以定期定額同回調加碼方式持續買入，甚至納入每日更新同 DCA 策略。到 2026 年 9 月 10 日立場轉為看淡，指 IBIT 正處於調整階段，但同時認為調整接近尾聲，屬首次明確風險提示。",
+   "ai_summary": "sunxliao 最新立場係看好 IBIT，喺 9 月 14 日表示想趁回調買入。佢嘅主要論述係 IBIT 作為現貨比特幣 ETF 係參與比特幣牛市嘅簡易工具，並計劃納入定期定額策略，未來 12 至 18 個月看好。期間喺 9 月 10 日曾短暫轉為看淡，認為 IBIT 正處於調整階段但接近尾聲，隨後喺 9 月 14 日恢復看好，未見其他風險提示。",
    "theme": "比特幣"
   },
   "WULF": {
@@ -25211,7 +25251,7 @@
     }
    ],
    "yellow": null,
-   "gain": -1.3,
+   "gain": -2.1,
    "theme": "其他"
   },
   "COIN": {
@@ -27113,11 +27153,21 @@
      "summary": "作者指 ASST 已突破三角形形態，並仍持有低位以來的藍鑽石訊號，看好後市。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "sunxliao",
+     "tweet_id": "2099292615288258690",
+     "url": "https://x.com/sunxliao/status/2099292615288258690",
+     "stance": "bullish",
+     "summary": "作者認為若出現粉紅鑽石訊號，將回測黃金區，屬買入機會，並預期回調幅度有限。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 40.0,
-   "ai_summary": "ASST 獲兩位大V一致看好，最新立場全為 bullish。sunxliao 指 ASST 已突破三角形形態並維持低位藍鑽石訊號，若出現粉鑽訊號將視為買入機會，並提及月線藍鑽石訊號上次帶動股價由約12美元升至270美元；wliang 則指自首次買入信號以來已升約125%，認為比特幣在62,000美元附近形成發射台，ASST 可作放大曝險工具。兩人論述均以比特幣代理及技術訊號為核心，期間無轉軚，亦未見風險提示。",
+   "ai_summary": "wliang 同 sunxliao 對 ASST 一直維持看漲，最新立場係 wliang 指 ASST 喺比特幣整固期間表現突出、未見阻力，自首次買入信號以來升約125%；sunxliao 指 ASST 已突破三角形形態並仍持有低位藍鑽石訊號，若出現粉紅鑽石訊號會回測黃金區，屬買入機會，預期回調幅度有限。兩人論述主要圍繞比特幣走勢帶動、技術訊號（發射台、銀色阻力、藍鑽石、粉紅鑽石、三角形突破）同過往升幅（曾由約12美元升至270美元、推介以來升逾126%）。期間兩人立場一致，未見轉軚，亦無明確風險提示，僅 sunxliao 提到若出現粉紅訊號屬回測買入機會，隱含短線或有回調。",
    "theme": "其他"
   },
   "IAU": {
@@ -27557,6 +27607,16 @@
      "url": "https://x.com/aleabitoreddit/status/2097348486635368686",
      "stance": "bullish",
      "summary": "作者看好ESMT因記憶體價格上漲而獲利，認為其本益比極低且具上漲空間。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099411795131924487",
+     "url": "https://x.com/aleabitoreddit/status/2099411795131924487",
+     "stance": "bullish",
+     "summary": "作者認為 ESMT 因同時銷售高密度 NOR 與 SLC NAND，且相對規模最大，將是這波嚴重缺貨與漲價潮的最大受益者。",
      "r7": null,
      "r30": null
     }
@@ -28053,11 +28113,31 @@
      "summary": "作者認為 ZCSH 會係下一隻上升嘅 ETF，暗示月底前會有表現。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "sunxliao",
+     "tweet_id": "2099457390483829219",
+     "url": "https://x.com/sunxliao/status/2099457390483829219",
+     "stance": "bullish",
+     "summary": "作者認為唔好錯過 ZCSH，並強調只屬個人意見、非投資建議。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "sunxliao",
+     "tweet_id": "2099335287747010825",
+     "url": "https://x.com/sunxliao/status/2099335287747010825",
+     "stance": "bearish",
+     "summary": "作者考慮做空 ZCSH，但未確定，並會留意入場位。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 36.9,
-   "ai_summary": "最新立場方面，sunxliao 持續看好 ZCSH，由考慮納入第四季定期定額組合、指其創歷史新高、希望有波動以買入更多，到認為價格可能很快達到100美元以上，並指九月開局約兩倍回報且升勢未完，立場一直偏多。論述點包括 ZCSH 是做多 ZEC 的工具、資產管理規模僅約5億美元尚未過度擁擠、表現跑贏 BWET，以及月線藍鑽石訊號再現，上次由50美元升至750美元達15倍。風險提示方面，sunxliao 曾指短期波動正常，但未來幾個月會隨 Zcash 大幅上漲，並無轉軚跡象；wliang 則指演算法顯示 ZCSH 出現月度買入訊號。",
+   "ai_summary": "sunxliao 一直看好 ZCSH，視其為做多 ZEC 的工具，指其創歷史新高、短期波動正常但未來數月會隨 Zcash 大漲，並提過月線藍鑽石訊號、目標價 100 美元以上及跑贏 BWET；至 2026-09-14 最新立場轉為考慮做空 ZCSH，但未確定並會留意入場位，同時強調只屬個人意見、非投資建議。wliang 於 2026-09-09 指演算法顯示 ZCSH 出現月度買入訊號，後市值得關注。",
    "theme": "其他"
   },
   "ZEC": {
@@ -28191,6 +28271,16 @@
      "summary": "作者提及 ZEC 並以火焰表情看好，提醒紅盤日唔好恐慌，要清楚自己嘅價位。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "sunxliao",
+     "tweet_id": "2099335287747010825",
+     "url": "https://x.com/sunxliao/status/2099335287747010825",
+     "stance": "bearish",
+     "summary": "作者考慮做空 ZEC，但未確定，並會留意入場位。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -28277,7 +28367,7 @@
     }
    ],
    "yellow": null,
-   "gain": -0.4,
+   "gain": -3.0,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -28476,11 +28566,31 @@
      "summary": "作者分享航運股名單後，BWET 升 56.35%，表現強勁。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "sunxliao",
+     "tweet_id": "2099457390483829219",
+     "url": "https://x.com/sunxliao/status/2099457390483829219",
+     "stance": "bullish",
+     "summary": "作者認為 BWET 由 436.95 升至 790，散戶未準備好但自己已捕捉到升勢。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-14",
+     "author": "sunxliao",
+     "tweet_id": "2099327556403204255",
+     "url": "https://x.com/sunxliao/status/2099327556403204255",
+     "stance": "bullish",
+     "summary": "作者指 BWET 隔晚創新高，航運主題似乎唔受 AI 衝擊影響。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 61.4,
-   "ai_summary": "sunxliao 由頭到尾都係看好 BWET，最新立場仍然係 bullish，論述重點係油輪運費上升帶動持倉原油運輸期貨，股價多次創新高，自月度藍鑽訊號以來累升4490%，發文後8至11個交易日內再升約60%至66%，並強調藍鑽石訊號未轉粉紅色前不會過期。wliang 亦以過去一年升48倍佐證ETF可以大賺，aleabitoreddit 則只作中性提及，無明確立場。全程未見任何人轉軚或提出風險提示。",
+   "ai_summary": "sunxliao 由頭到尾都對 BWET 維持看好，最新立場仍然係 bullish，指股價持續創新高，自其發文以來累升約六成至六成六，並強調藍鑽訊號未轉粉紅色前唔會過期，會繼續發掘類似低關注度但有催化劑嘅標的。主要論述點係 BWET 等同做多原油運輸成本，受惠油輪運費上升，航運主題強勢且唔受 AI 衝擊影響。期內未見轉軚，亦無明確風險提示，只提到散戶未準備好。aleabitoreddit 則持中性，僅將 BWET 列為另類 ETF 例子，未表態看好或看淡；wliang 則以過去一年升 48 倍作正面舉例。",
    "theme": "原油運輸"
   },
   "TE": {
@@ -28966,7 +29076,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.2,
+   "gain": -8.8,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -29462,7 +29572,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 731,
+   "calls": 735,
    "n7": 515,
    "win7": 52,
    "n30": 347,
@@ -29476,7 +29586,7 @@
    }
   },
   "sunxliao": {
-   "calls": 767,
+   "calls": 774,
    "n7": 663,
    "win7": 38,
    "n30": 513,
