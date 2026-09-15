@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-15T07:01:51+08:00",
+ "updated_at": "2026-09-15T20:01:55+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -2754,11 +2754,21 @@
      "target": 88.0,
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099659874892386678",
+     "url": "https://x.com/aleabitoreddit/status/2099659874892386678",
+     "stance": "bullish",
+     "summary": "作者認為可以對Intel作出類似Leopold嘅睇好論點。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -31.0,
-   "ai_summary": "最新立場偏看好：aleabitoreddit 指 14A 製程量產提前一年並持續唱好，wliang 由 8 月 25 日看淡 AMD 將超越英特爾，轉為 8 月 28 日起連番看好，9 月 8 日更指日線藍鑽石訊號可能觸發週線買入、重演約 150% 升幅，sunxliao 亦指 88 美元屬高時框支撐區。論述點集中於製程進度、PC CPU 加價、技術訊號與趁低吸納。風險提示方面，aleabitoreddit 9 月 1 日轉為中性，指考慮自家代工生產 HBM4E 基底晶片但 SK 海力士否認部分內容，而 wliang 早前的看淡言論其後已被其看好立場取代。",
+   "ai_summary": "最新立場係整體偏看好，aleabitoreddit、wliang同sunxliao近期都轉向或維持樂觀，aleabitoreddit提到INTC係其選股之一且漲幅超過100%，wliang認為技術面與基本面開始吻合並預期強勁上漲，sunxliao則指88美元係值得買入嘅支撐區。論述點集中喺技術訊號（如三重藍色訊號、日線藍鑽石訊號）、調漲PC CPU價格可能獲正面回應，以及代工生產HBM4E基底晶片嘅潛在消息。風險提示方面，wliang曾喺8月25日預期AMD明年超越英特爾而偏淡，但之後轉軚看好；aleabitoreddit喺9月1日提到SK海力士否認部分代工內容，屬中性表態，其餘未見明確風險警告。",
    "theme": "AI晶片"
   },
   "AMZN": {
@@ -5087,11 +5097,21 @@
      "summary": "作者指 Leopold 買入 CRWV 期權，屬看好訊號。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099659874892386678",
+     "url": "https://x.com/aleabitoreddit/status/2099659874892386678",
+     "stance": "bearish",
+     "summary": "作者唯一唔同意Leopold嘅持倉，因債務利息侵蝕自由現金流。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -29.1,
-   "ai_summary": "wliang 由頭到尾都係看好 CRWV，最新立場仍然係 bullish，論述集中喺積壓訂單龐大、財報同展望強勁、帶動 WGMI 同 NVDA，以及股價多次大漲（12 個交易日升 33%、一週升 29%），冇轉軚亦冇風險提示。aleabitoreddit 大致看好，最新提到 Leopold 買入 CRWV 期權屬看好訊號，論述包括積壓訂單超過 1040 億美元、反駁折舊做空論點，8 月 12 日曾轉為中性但之後回復看好。sunxliao 於 8 月 19 日提到 CRWV 下跌，屬看淡表態，但冇進一步論述。",
+   "ai_summary": "最新立場方面，wliang 到 2026 年 9 月 8 日仍維持看漲，指 CRWV 一週內上漲 29%；aleabitoreddit 則由 9 月 11 日看好 Leopold 買入 CRWV 期權，到 9 月 15 日轉為看淡，唯一不同意 Leopold 此持倉，理由是債務利息侵蝕自由現金流。論述點主要圍繞逾 1000 億美元積壓訂單、AI 算力需求強勁、財報與展望理想、突破技術阻力位，以及簽訂老舊 GPU 合約反駁折舊做空論。風險提示方面，sunxliao 於 8 月 19 日提到 CRWV 下跌，aleabitoreddit 其後亦點出債務利息對自由現金流的壓力。",
    "theme": "AI雲"
   },
   "NBIS": {
@@ -7180,11 +7200,21 @@
      "target": 204.0,
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099659874892386678",
+     "url": "https://x.com/aleabitoreddit/status/2099659874892386678",
+     "stance": "bullish",
+     "summary": "作者認為可以對Bloom Energy作出類似Leopold嘅睇好論點。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -11.2,
-   "ai_summary": "最新立場係一致看好BE，冇任何大V轉軚。主要論述點包括電網瓶頸帶動Brookfield對BE燃料電池融資大增、營收年增166%兼上調指引、股價急跌後反彈兩成三至三成、對沖基金Leopold持倉表現強勁、與AI能源需求相關，以及技術面突破阻力位同204美元屬高時框支撐區。風險提示方面，只有sunxliao提到要週五前維持喺支撐區上方先算確認。",
+   "ai_summary": "最新立場係全體大V一致看好BE，冇任何轉軚或風險提示。論述點包括電網瓶頸帶動Brookfield融資大增、營收年增166%兼上調指引、股價急跌後反彈兩成三、獲對沖基金Leopold持倉且YTD表現強勁、因佩洛西跟單交易受關注，以及技術面突破阻力並確認鑽石形態。",
    "theme": "氫能"
   },
   "ASX": {
@@ -8190,11 +8220,21 @@
      "target": 452.0,
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099659874892386678",
+     "url": "https://x.com/aleabitoreddit/status/2099659874892386678",
+     "stance": "bullish",
+     "summary": "作者認為可以對AMD作出類似Leopold嘅睇好論點。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -10.6,
-   "ai_summary": "最新立場係全體受訪大V都對AMD持看好態度，wliang視其為長期高信心投資，指技術面在黃金區支撐附近盤整形成發射台，預期反彈，並提到多個新興架構選擇AMD合作、資金回流半導體股將帶動上漲；sunxliao認為週線支撐位440美元強力反彈、452美元係值得買入嘅高時框支撐區；aleabitoreddit則提及AMD積極確保CW雷射供應及Leopold買入期權。論述點集中在技術面支撐反彈、需求強勁同資金回流。冇任何大V轉軚，亦冇提及風險提示。",
+   "ai_summary": "全部提及者都係睇好AMD，冇任何轉軚或風險提示。wliang 一直維持高信心長線睇好，指技術面喺黃金區支撐附近形成發射台，預期反彈，並多次以先前買入信號帶來約180%漲幅為例，又提到多個新興架構選擇AMD合作、資金回流半導體股將帶動上漲，最新喺9月11日話會趁回測突破位低吸。sunxliao 指週線支撐位440美元強力反彈、452美元係值得買入嘅高時框支撐區。aleabitoreddit 提到AMD積極確保CW雷射供應、Leopold買入AMD期權屬看好訊號，最新9月15日認為可作出類似Leopold嘅睇好論點。",
    "theme": "其他"
   },
   "ASML": {
@@ -13164,11 +13204,21 @@
      "target": 710.0,
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099674926697545849",
+     "url": "https://x.com/aleabitoreddit/status/2099674926697545849",
+     "stance": "bullish",
+     "summary": "作者引述業界消息指記憶體價格零風險下跌、產能已預訂至2029年，對MU前景極度看好。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -23.7,
-   "ai_summary": "最新立場係全體提及者都睇好美光，冇人轉軚。主要論述點圍繞記憶體供應短缺同AI需求帶動：大廠優先生產高階AI記憶體令DDR3/DDR2等舊世代產品短缺，HBM推高AI加速卡價格，加上超大規模資本開支支持，美光受惠且利潤率高、唔受短期宏觀影響，2027年展望樂觀。風險提示方面，aleabitoreddit引述有人用槓桿買美光認購期權由100萬美元炒到2800萬再回落至400萬，係唯一提及嘅槓桿風險例子；其餘提及者冇明確風險警告。",
+   "ai_summary": "全部提及都係睇好美光，冇任何轉軚或風險提示。最新立場係極度樂觀，指記憶體價格零風險下跌、產能已預訂至2029年，並認為HBM推高AI加速卡價格、超大規模資本開支帶動需求，利潤率高且不受短期宏觀影響。論述點圍繞供應短缺、AI需求強勁同舊世代記憶體供給減少，另有作者提到4小時圖三重藍色訊號、約710美元高時框支撐區，以及持倉漲幅超過270%。",
    "theme": "記憶體"
   },
   "ONDS": {
@@ -15854,11 +15904,21 @@
      "summary": "作者指 Leopold 買入 DRAM 期權，屬看好訊號。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099659874892386678",
+     "url": "https://x.com/aleabitoreddit/status/2099659874892386678",
+     "stance": "bullish",
+     "summary": "作者看好DRAM主題，指三星同SK海力士合約有價格下限、記憶體短缺加劇，估值僅約2.8-3倍預測市盈率。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -23.8,
-   "ai_summary": "最新立場偏向看好，wliang 建議透過 DRAM ETF 參與記憶體供應短缺的投資機會，aleabitoreddit 亦指 Leopold 買入 DRAM 期權屬看好訊號。sunxliao 早前因三星和 SK 海力士看好 DRAM，但其後轉為中性，提到 DRAM 可能受影響但未明確立場，屬立場軟化。整體未見明顯風險提示。",
+   "ai_summary": "最新立場係aleabitoreddit喺9月15日轉為看好，指三星同SK海力士合約設有價格下限、記憶體短缺加劇，估值僅約2.8至3倍預測市盈率。sunxliao早前6月26日看好DRAM因三星同SK海力士，但8月24日轉為中性，提到DRAM可能受影響而未有明確立場。wliang同aleabitoreddit喺8月21日同9月11日分別建議透過DRAM ETF同指Leopold買入DRAM期權屬看好訊號，整體未見風險提示。",
    "theme": "半導體設備"
   },
   "GLD": {
@@ -18636,11 +18696,21 @@
      "target": 1240.0,
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099659874892386678",
+     "url": "https://x.com/aleabitoreddit/status/2099659874892386678",
+     "stance": "bullish",
+     "summary": "作者認為SanDisk基本面強勁，50%自由現金流利潤率同80%毛利率預測支持長倉，反駁Cramer睇淡。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -31.7,
-   "ai_summary": "全部提及者都係睇好，冇人轉軚。最新立場係 sunxliao 喺 9 月 14 日指約 1240 美元係值得買入嘅高時框支撐區，延續佢之前對週線藍鑽訊號嘅睇好。主要論述點包括舊世代記憶體同 NAND 供應緊張、價格上漲帶動需求同利潤率，aleabitoreddit 預期 80% 毛利率可持續到 2030 年並可能納入標普 100，wliang 就提到一週升 25%、週線藍鑽買入訊號同趁回測吸納。風險提示方面，數據中冇任何人提出。",
+   "ai_summary": "全部提及都係睇好，冇任何轉軚或風險提示。最新立場係 aleabitoreddit 於 9 月 15 日指 SanDisk 基本面強勁，以 50% 自由現金流利潤率同 80% 毛利率預測支持長倉，並反駁 Cramer 睇淡。主要論述點包括 NAND 供應緊張同價格上漲帶動需求、80% 毛利率可持續至 2030 年、可能進入標普 100 指數，以及 sunxliao 同 wliang 提到嘅週線藍鑽買入訊號同約 1240 美元高時框支撐區。",
    "theme": "半導體記憶體"
   },
   "WGMI": {
@@ -20831,7 +20901,7 @@
     }
    ],
    "yellow": null,
-   "gain": -6.7,
+   "gain": -6.8,
    "theme": "其他"
   },
   "AOSL": {
@@ -24642,7 +24712,7 @@
     }
    ],
    "yellow": null,
-   "gain": 0.9,
+   "gain": 1.2,
    "theme": "其他"
   },
   "F": {
@@ -24765,7 +24835,7 @@
     }
    ],
    "yellow": null,
-   "gain": -25.5,
+   "gain": -25.4,
    "theme": "其他"
   },
   "ETN": {
@@ -24895,10 +24965,21 @@
      "summary": "作者對CrowdStrike的適應能力表示理解，但認為整體風險仍高。",
      "r7": -5.8,
      "r30": 5.9
+    },
+    {
+     "date": "2026-09-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2099659874892386678",
+     "url": "https://x.com/aleabitoreddit/status/2099659874892386678",
+     "stance": "bearish",
+     "summary": "作者質疑Cramer叫買CrowdStrike，指其約145倍FY2028預測市盈率但收入僅增長26%，估值過高。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 18.1,
+   "ai_summary": "wliang 於 2026年7月5日持中性立場，理解 CrowdStrike 嘅適應能力，但認為整體風險仍高。aleabitoreddit 於 2026年9月15日轉為看淡，質疑 Cramer 叫買，指其約145倍 FY2028 預測市盈率但收入僅增長26%，認為估值過高。暫時未見有明確轉軚或額外風險提示。",
    "theme": "其他"
   },
   "ZS": {
@@ -25492,7 +25573,7 @@
     }
    ],
    "yellow": null,
-   "gain": -2.1,
+   "gain": -4.1,
    "theme": "其他"
   },
   "COIN": {
@@ -28654,7 +28735,7 @@
     }
    ],
    "yellow": null,
-   "gain": -0.4,
+   "gain": -3.9,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -29373,7 +29454,7 @@
     }
    ],
    "yellow": null,
-   "gain": -8.8,
+   "gain": -9.7,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -29905,7 +29986,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 735,
+   "calls": 743,
    "n7": 554,
    "win7": 49,
    "n30": 356,
@@ -30061,7 +30142,7 @@
     0.23,
     -1.41,
     -1.0,
-    -3.21
+    -3.22
    ],
    "sunxliao": [
     0.0,
