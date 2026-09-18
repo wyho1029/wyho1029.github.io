@@ -55,6 +55,11 @@ h2{font:600 15px/1.3 Archivo,"PingFang HK","Microsoft JhengHei",sans-serif;
    margin:0; text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
 p{margin:0; max-width:64ch; color:var(--ink-2)}
 .lede{font-size:16px}
+.note{font-size:13.5px; line-height:1.65; color:var(--muted);
+  background:var(--signal-soft); border-left:3px solid var(--signal);
+  border-radius:0 6px 6px 0; padding:11px 14px; margin:14px 0 0;
+  max-width:62ch}
+.note b{color:var(--ink)}
 code,.mono,td.n,th.n{font-family:"JetBrains Mono",ui-monospace,monospace;
   font-variant-numeric:tabular-nums}
 
@@ -153,6 +158,12 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail);
   <h1>向下九轉之後，月K轉黃</h1>
   <p class="lede">TD Setup 向下數到 9，之後 12 個月內 FCOLOR 月K 剛轉黃。
     呢一頁答一條問題：出咗呢個訊號之後，股價翻一倍嘅機會有幾大、要等幾耐。</p>
+  <p class="note">⚠️ 2026-09-18 起，每日掃描推落富途嗰個組已經收窄到
+    <b>gap 0–1</b>（數到 9 嗰支月K 本身，或者下一支）—— 因為「2025-09 數到 9、
+    2026-08 先轉黃」呢種名不副實。呢一頁仍然係 <b>gap 0–12 嘅全樣本</b>研究，
+    所以個組係呢頁嘅子集：3,603 個訊號入面得 <b>523 個（14.5%）</b>入到而家個組。
+    收窄唔係為咗表現 —— 24 個月翻倍率 gap 0 係 34.5%、gap 7–12 係 32.5%，
+    基本上打橫。</p>
   <div class="meta">
     <span><b>3,603</b> 個訊號</span><span><b>1,799</b> 隻股</span>
     <span><b>2012–2026</b></span>
@@ -289,8 +300,10 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail);
 </section>
 
 <footer>
-  訊號偵測同每日掃描行緊同一個閘（<code>scanner/nine_yellow.py</code>），
-  3,641 次逐個對數、零分歧。日線數據 2011-01 → 2026-08。
+  呢頁嘅訊號係用每日掃描同一份碼（<code>scanner/nine_yellow.py</code>）重播出嚟，
+  3,641 次逐個對數、零分歧 —— 但係以 <code>NINE_WINDOW_MONTHS = 12</code> 跑嘅。
+  生產值 2026-09-18 起係 <b>1</b>，所以呢頁係全樣本，富途個組係其中 gap 0–1 嗰批。
+  日線數據 2011-01 → 2026-08。
   呢頁係研究記錄，唔係投資建議。
 </footer>
 </div>
