@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-20T20:01:49+08:00",
+ "updated_at": "2026-09-21T07:01:46+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -9190,11 +9190,21 @@
      "summary": "作者將MSTR列為近期成功交易之一，並認為牛市仲未開始。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "wliang",
+     "tweet_id": "2101772720300011729",
+     "url": "https://x.com/wliang/status/2101772720300011729",
+     "stance": "bullish",
+     "summary": "作者認為除非出現賣出訊號，否則不建議賣出包括 MSTR 在內的槓桿標的。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 80.4,
-   "ai_summary": "wliang 最新立場仍偏看好，指 MSTR 自 82 美元入市以來已升約 87%，走勢如預期，並認為牛市仲未開始，同時將 MSTR 與 ASST 並列為強勢股；佢亦提過每日支撐位附近會反彈、週線圖完好，以及跟隨比特幣回測突破位後測試約 155 美元阻力。sunxliao 一直 bullish，認為 MSTR 將迎來 12 至 18 個月比特幣相關上漲行情，並提到上次由 20 美元升至 520 美元、回報達 2500% 的藍鑽石訊號。期內未見明確轉軚，wliang 曾於 9 月 17 日轉為 neutral，但只係回顧 149 美元唔吸引、82 美元先係更好入場位，其後亦重新偏向看好，未見有風險提示。",
+   "ai_summary": "最新立場係全線睇好，wliang 同 sunxliao 都維持 bullish，wliang 指 MSTR 自 82 美元入市後已升約 87%，週線圖完好，除非出現賣出訊號否則不建議賣出。論述點集中喺比特幣整固期間 MSTR 表現突出，可作放大曝險工具，sunxliao 更預期有 12 至 18 個月比特幣相關上漲行情，並提及藍鑽石訊號歷史回報。風險提示方面，wliang 曾於 9 月 17 日轉為 neutral，回顧 149 美元唔吸引、82 美元先係更好入場位，其後成功撈底，但之後已回復 bullish，未見其他明確轉軚或風險警告。",
    "theme": "比特幣"
   },
   "HUMN": {
@@ -15910,11 +15920,21 @@
      "summary": "作者認為生物科技主題ETF ARKG已經準備好再次上升。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101674132366885289",
+     "url": "https://x.com/sunxliao/status/2101674132366885289",
+     "stance": "bullish",
+     "summary": "作者認為ARKG出現藍鑽訊號，生物科技板塊傾向跑贏，上次藍鑽期間升逾30%。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 24.6,
-   "ai_summary": "最新立場係 sunxliao 同 wliang 都偏多，sunxliao 喺 2026-09-15 認為 ARKG 已準備好再次上升，但同時指出需先確認持久收復創業板黃金區間。論述點主要係生物科技強勢、TEM 帶動，以及 ARKG 保持強勁綠色。暫時未見有人轉軚，亦冇明確風險提示。",
+   "ai_summary": "最新立場係 sunxliao 同 wliang 都偏多，sunxliao 喺 2026-09-20 指 ARKG 出現藍鑽訊號，認為生物科技板塊傾向跑贏，並提到上次藍鑽期間升逾30%。論述點包括生物科技強勢、TEM、保持強勁綠色，以及需先確認持久收復創業板黃金區間。兩人期間均無轉軚，亦未見風險提示。",
    "theme": "其他"
   },
   "AXTI": {
@@ -28438,11 +28458,31 @@
      "summary": "作者聲稱旗下BD喺過去30日成功捕捉ASST升143%，視為睇好嘅交易。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "wliang",
+     "tweet_id": "2101772720300011729",
+     "url": "https://x.com/wliang/status/2101772720300011729",
+     "stance": "bullish",
+     "summary": "作者持有 ASST 並錄得約 150% 升幅，除非出現賣出訊號否則不建議賣出。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101653574623384021",
+     "url": "https://x.com/sunxliao/status/2101653574623384021",
+     "stance": "bullish",
+     "summary": "作者指ASST自藍鑽消息後約一個月內升逾150%，認為走勢誇張，並會持續更新。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 52.5,
-   "ai_summary": "最新立場係全體睇好，sunxliao 同 wliang 都維持 bullish，冇人轉軚。論述點集中在 ASST 突破三角形形態、仍持有低位藍鑽石訊號、屬最佳 BTC 相關股票之一，wliang 指其自首次買入信號後累升約 135% 至 143%，sunxliao 則指由 $19.73 升至 $28.93 累升 47%，並將回調視為趁低吸納機會。風險提示方面，只有 sunxliao 喺 9 月 17 日提及 ASST 時轉為中性，但僅作與 CYPH 比較，冇明確睇淡。",
+   "ai_summary": "最新立場係兩位大V sunxliao 同 wliang 都一致睇好 ASST，sunxliao 認為升勢屬早期兼會成為歷史性事件，wliang 則持有並錄得約150%升幅，表明除非出現賣出訊號否則不建議賣出。論述點主要圍繞 ASST 作為比特幣相關代理股，受惠法案通過，自買入信號後累升約135%至150%，即使比特幣回調亦無放緩跡象。期間 sunxliao 有一次提及 ASST 僅作與 CYPH 比較，無明確好淡，但整體無轉軚，亦未見風險提示。",
    "theme": "其他"
   },
   "IAU": {
@@ -28584,11 +28624,31 @@
      "summary": "作者認為 ABCL 處於強勢主題，預期將延續升勢。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101674132366885289",
+     "url": "https://x.com/sunxliao/status/2101674132366885289",
+     "stance": "bullish",
+     "summary": "作者指ABCL同樣出現藍鑽訊號，上週開始急升。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101650743589781897",
+     "url": "https://x.com/sunxliao/status/2101650743589781897",
+     "stance": "bullish",
+     "summary": "作者提到ABCL之前出現完美鑽石形態，14日內升42.49%，作為ABSI嘅參考案例。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 19.0,
-   "ai_summary": "sunxliao 最新立場偏多，認為 ABCL 處於強勢主題、預期升勢延續，並曾指其出現鑽石型態、4小時圖三重藍鑽突破紫色阻力，走勢類似 BFLY，過去類似 setup 曾帶動約兩倍升幅。wliang 則持中性，指 ABCL 處於有趣價位、出現兩個賣出信號，但週線趨勢仍完好。sunxliao 由 8 月 24 日看多、9 月 15 日一度未明確表態，之後持續轉向正面推介，未見轉軚看空，亦無明確風險提示。",
+   "ai_summary": "sunxliao 最新立場係看好，指 ABCL 出現藍鑽、三重藍鑽同鑽石型態並突破阻力，走勢類似 BFLY，屬強勢主題，之前完美鑽石形態曾帶動 14 日內升 42.49%，佢會繼續推介並待股價再轉強時更新看法。wliang 曾持中性，指 ABCL 處有趣價位、出現兩個賣出信號，但週線趨勢仍完好，係唯一風險提示。sunxliao 早前曾由中性轉為看好，之後一直維持正面，未見轉軚。",
    "theme": "其他"
   },
   "ZETA": {
@@ -29680,11 +29740,21 @@
      "summary": "作者認為 ZCSH 係最佳 ZEC 相關股票之一。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101667984666439996",
+     "url": "https://x.com/sunxliao/status/2101667984666439996",
+     "stance": "bullish",
+     "summary": "作者以 ZCSH 作為週線藍鑽石形態的正面例子，立場偏多。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 70.7,
-   "ai_summary": "sunxliao 最新立場係看好 ZCSH，認為佢係最佳 ZEC 相關股票之一，由 67.17 美元升至 112.80 美元累升 68%，並視為成功推介；佢早前曾考慮做空但未確定，之後轉為看好未來 12 至 18 個月表現，歡迎波動並趁低吸納，又暗示持有 ZCSH ETF 並期待類似 BWET 走勢。wliang 亦看好，指月線買入訊號完整，若 ZEC 升至 10000 美元，ZCSH ETF 保守可達 800 美元。整體未見最新轉軚或風險提示，僅 sunxliao 曾提及接近 110 美元時未明確表達看好或看淡。",
+   "ai_summary": "根據提及紀錄，sunxliao 同 wliang 對 ZCSH 都持續睇好，最新立場仍然偏多：sunxliao 以 ZCSH 作為週線藍鑽石形態嘅正面例子，並曾指佢由 67.17 美元升至 112.80 美元、累升 68%，視為成功推介，又認為佢係最佳 ZEC 相關股票之一，期待未來 12 至 18 個月向上，並樂意趁低吸納；wliang 就指月線買入訊號完整，甚至提出若 ZEC 升至 10000 美元，ZCSH 保守可達 800 美元。紀錄中未見有轉軚或風險提示，只有 sunxliao 一次提到 ZCSH 已接近 110 美元時立場中性、未明確表態。",
    "theme": "其他"
   },
   "ZEC": {
@@ -29906,6 +29976,16 @@
      "url": "https://x.com/wliang/status/2100976102394957826",
      "stance": "bullish",
      "summary": "作者聲稱旗下BD喺過去30日成功捕捉ZEC升204%，視為睇好嘅交易。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101667984666439996",
+     "url": "https://x.com/sunxliao/status/2101667984666439996",
+     "stance": "bullish",
+     "summary": "作者認為 Zcash 強勢上升，不應等待深度回調，立場偏多。",
      "r7": null,
      "r30": null
     }
@@ -31441,11 +31521,31 @@
      "summary": "作者聲稱旗下BD喺過去30日成功捕捉CYPH升377%，視為睇好嘅交易。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "wliang",
+     "tweet_id": "2101772720300011729",
+     "url": "https://x.com/wliang/status/2101772720300011729",
+     "stance": "bullish",
+     "summary": "作者持有 CYPH 並錄得約 400% 升幅，除非出現賣出訊號否則不建議賣出。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101667984666439996",
+     "url": "https://x.com/sunxliao/status/2101667984666439996",
+     "stance": "bullish",
+     "summary": "作者認為 CYPH 突破週線阻力，已及時買入，並希望趁回調加倉。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 47.5,
-   "ai_summary": "sunxliao 自 2026-09-16 起持續睇好 CYPH，核心論點係佢係唯一嘅 ZEC 儲備股，周線出現三重藍鑽，CYPH/ZECUSD 比率正嘗試突破，即使其他相關標的休息亦能獨立上行，最新立場仍然樂觀，認為升勢可能成為歷史性事件。wliang 亦轉為睇好，指 CYPH 單日升 13% 可能提前反映 ZEC 週末升勢，並聲稱旗下 BD 過去 30 日成功捕捉 377% 升幅。風險提示方面，sunxliao 提醒 CYPH 風險高於 ZCSH，走勢可能好嚇人，要承受波動，適合喜歡坐過山車嘅投資者，並會繼續在 2 至 3 美元區間觀察。",
+   "ai_summary": "sunxliao 由 9 月 16 日起持續看好 CYPH，核心論點係佢係唯一嘅 ZEC 相關庫存股，CYPH/ZECUSD 比率正嘗試突破，突破週線阻力後可獨立上行，最新立場仍然係趁回調加倉。wliang 亦一直睇好，指 CYPH 單日升 13% 可能提前反映 ZEC 週末升勢，聲稱旗下 BD 過去 30 日捕捉到 377% 升幅，自己持倉錄約 400% 升幅，除非出現賣出訊號否則不建議賣出。兩人雖無明確轉軚，但 sunxliao 曾提醒 CYPH 風險高於 ZCSH、要承受波動，屬投機性操作。",
    "theme": "其他"
   },
   "CIEN": {
@@ -31483,11 +31583,38 @@
    "gain": 0.1,
    "ai_summary": "根據2026年9月17日aleabitoreddit的發言，其對GNRC（Generac）持看好立場，論述點在於公司與亞馬遜簽署了價值24億美元的發電機交付協議，並獲得認股權證。這是目前唯一的提及記錄，未見任何轉軚或風險提示。",
    "theme": "電力設備"
+  },
+  "ABSI": {
+   "mentions": [
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101674132366885289",
+     "url": "https://x.com/sunxliao/status/2101674132366885289",
+     "stance": "bullish",
+     "summary": "作者指ABSI同樣出現藍鑽訊號，上週開始急升。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-09-20",
+     "author": "sunxliao",
+     "tweet_id": "2101650743589781897",
+     "url": "https://x.com/sunxliao/status/2101650743589781897",
+     "stance": "bullish",
+     "summary": "作者認為ABSI走勢與ABCL相似，有望複製其14日內42.49%嘅升幅，但需先突破紫色同銀色阻力位確認。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "theme": "其他"
   }
  },
  "kol_stats": {
   "wliang": {
-   "calls": 794,
+   "calls": 797,
    "n7": 722,
    "win7": 41,
    "n30": 581,
@@ -31515,7 +31642,7 @@
    }
   },
   "sunxliao": {
-   "calls": 849,
+   "calls": 858,
    "n7": 729,
    "win7": 39,
    "n30": 552,
