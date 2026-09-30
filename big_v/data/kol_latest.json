@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-30T07:01:35+08:00",
+ "updated_at": "2026-09-30T20:01:49+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -3312,11 +3312,21 @@
      "summary": "作者好奇 Amazon 有幾多參與 Muse 嘅運行，未表明確立場。",
      "r7": -3.3,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者認為亞馬遜透過連串投資建構半導體與AI供應鏈組合，可能比輝達自身持股更具吸引力。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 5.4,
-   "ai_summary": "最新立場方面，aleabitoreddit 喺 9 月 17 日仍持看好態度，提及亞馬遜與 Generac 簽署 24 億美元發電機交付協議並獲認股權證；wliang 亦一直看好，指資本支出增加反映 AI 基礎設施需求。論述點集中喺 AWS 雲端同 AI 需求帶動、積壓訂單與利潤率提升、多項合作協議（高通、Generac、Anthropic 租用 Mac mini）以及 Agility Robotics 投資前景。風險提示方面，aleabitoreddit 喺 8 月 19 日至 8 月 31 日期間多次轉為中性，只提及 Agility、Marvell 認股權證同出租 Mac mini 等事件而無明確表態，9 月 22 日亦對 Muse 參與程度表示好奇但未表立場，顯示其立場曾反覆。",
+   "ai_summary": "最新立場係睇好，aleabitoreddit 喺 9 月 30 日認為亞馬遜透過連串投資建構半導體與 AI 供應鏈組合，可能比輝達自身持股更具吸引力。論述點圍繞 AWS 雲端同 AI 需求創紀錄、積壓訂單與利潤率提升，以及同高通、Generac 等簽訂協議同認股權證嘅利好。期間喺 8 月中至 9 月初曾多次轉為中性，僅提及 Agility Robotics、Marvell 認股權證同出租 Mac mini 等事件而無明確多空立場，但整體由 8 月睇好、中途中性、到 9 月再度轉為睇好，未見明顯風險提示。",
    "theme": "機器人"
   },
   "NVDA": {
@@ -4511,11 +4521,21 @@
      "summary": "作者指Nvidia鎖定Lumentum激光產能並授權1500億美元回購，認為其策略令競爭對手更難擴張，具戰略價值。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "neutral",
+     "summary": "作者僅將輝達的持股組合與亞馬遜作對比，未明確表達看好或看淡。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 13.7,
-   "ai_summary": "最新立場是整體偏看好：aleabitoreddit 多次強調 NVDA 供應受限而非需求放緩、年增長70-100%以上，並指 DeepSeek 引發嘅拋售對 AI 建設無實質影響，又提到超大規模雲端資本開支2027年上升、Nvidia 鎖定 Lumentum 激光產能同授權1500億美元回購具戰略價值；wliang 亦看好資金回流半導體帶動上漲，sunxliao 認為約200美元係值得買入嘅高時框支撐區。論述點集中在供應瓶頸、AI需求持續、GPU折舊憂慮被推翻同策略性擴產融資。期間 aleabitoreddit 有幾次轉為中性，但只係提及競爭對手、融資例子或類比走勢，未明確轉軚看淡，亦未見明確風險提示。",
+   "ai_summary": "aleabitoreddit 最新立場偏向看好 NVDA，核心論點係供應（而非需求）限制增長、超大規模雲端資本開支強勁、AI 發展唔會放緩，並認為 DeepSeek 引發嘅拋售同 GPU 折舊憂慮都唔影響整體 AI 建設，長線應持有。期間喺 9 月 13、16、19、24、30 日多次轉為中性，但都只係提及周邊消息或類比，無明確轉軚看淡；sunxliao 亦曾指出約 200 美元係值得買入嘅支撐區。整體未見明確風險提示。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -7930,11 +7950,21 @@
      "summary": "作者認為價格在黃金區間之上交易時，多頭可更有信心，看好本週表現。",
      "r7": -9.3,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將CBRS列為亞馬遜供應鏈投資組合的一員。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -14.0,
-   "ai_summary": "根據歷史記錄，大V對CBRS的立場經歷了明顯轉變。早期（6月至7月）wliang與aleabitoreddit均持強烈看多觀點，主要論點包括營收年增94%、與OpenAI簽訂200億美元合約、算力稀缺性及阿聯酋大型AI園區需求，並認為財報驗證了推理需求。然而，8月中旬起wliang轉為看空，指出IPO後表現不佳及相關股票重挫，顯示對短期股價風險的擔憂。至9月5日，wliang立場轉為中性，雖認可前景強勁，但警告當前估值已反映多年完美執行，需警惕回調風險；隨後9月7日sunxliao再度轉為看多，認為價格在黃金區間之上交易可增強多頭信心，看好本週表現。整體而言，最新立場分歧，但多數後期評論已加入估值過高或執行風險的提示。",
+   "ai_summary": "wliang 最初對 CBRS 無明確立場，六月下旬轉為看好，理由包括財報驗證推理需求、Q1 營收年增94%、與 OpenAI 簽訂200億美元合約及雲服務收入增167%，其後亦提及為阿聯酋大型AI園區提供算力；但八月轉為看淡，指其IPO後表現不佳、五月上市後相關股票重挫，九月回歸中性，認為前景強勁但估值已反映多年完美執行，需警惕。aleabitoreddit 則一直看好，因 OpenAI 採用 Cerebras 技術而買入，指其快速推理容量被 OpenAI 佔用顯示稀缺性，惟同時提示估值偏高，並將 CBRS 列為亞馬遜供應鏈投資組合一員。sunxliao 亦看好，認為價格在黃金區間之上交易時多頭可更有信心。",
    "theme": "其他"
   },
   "AMD": {
@@ -18475,11 +18505,21 @@
      "summary": "作者提到Marvell在SEC文件中指大型基板是瓶頸之一，並與AT&S等公司達成擴張協議，未明確表達看好或看淡。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將MRVL（Celestial）列為亞馬遜在光學互連領域的投資標的之一。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -15.2,
-   "ai_summary": "aleabitoreddit 整體對 MRVL 立場偏看好，核心論點圍繞收購 Celestial 應以未來 CPO 機會評估、Marvell 是 Nvidia 扶持的 ASIC 贏家之一、矽光子與 CPO 技術進展明確且 NPO 預計 2027 年底至 2028 年量產，並與台積電及 GlobalFoundries 合作支持增長。不過 2026-09-19 曾提出若博通鎖定雷射供應，邁威爾等 ASIC 競爭對手可能面臨供應瓶頸的風險提示，屬唯一看淡表態；其後 9 月 21 日及 27 日分別有 ECOC 2026 帶動及股價升 47% 的正面跟進，最新 9 月 28 日則轉為中性，僅提及大型基板是瓶頸之一及與 AT&S 等達成擴張協議，未明確表態。",
+   "ai_summary": "截至2026年9月30日，aleabitoreddit 對 MRVL 整體維持看好，最新立場係將 MRVL（Celestial）列為亞馬遜光學互連領域嘅投資標的之一。主要論述點圍繞收購 Celestial 應以未來 CPO 機會評估、矽光子與 CPO 技術進展明確（NPO 預計 2027 年底至 2028 年量產）、與台積電及 GlobalFoundries 等供應鏈合作，以及受惠於 Nvidia 扶持 ASIC 策略。期間曾於9月19日提出風險提示，指若博通鎖定雷射供應，邁威爾等 ASIC 競爭對手可能面臨供應瓶頸，但之後未見轉軚，整體仍偏多。",
    "theme": "AI晶片"
   },
   "OPEN": {
@@ -21909,11 +21949,21 @@
      "summary": "作者之前已標示為容易入市嘅買入機會之一。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將AAOI列為亞馬遜在雷射領域的投資標的之一。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -27.3,
-   "ai_summary": "最新立場係整體偏看好，aleabitoreddit 由最初提及供應受限嘅審慎觀察，轉為看好激光題材同光子超級周期，wliang 同 sunxliao 亦持續唱好，sunxliao 曾給出約140美元目標價，wliang 指AAOI自約76美元已升110%。主要論述點係光學元件同雷射供應短缺支持稀缺溢價，2027年光子學增長可期，但aleabitoreddit 提醒反覆ATM融資造成賣壓，短期股價難突破，若停止發行ATM則有望大幅跑贏；sunxliao 亦曾轉為中性，等待週線快速拋售同買入訊號。",
+   "ai_summary": "最新立場係整體偏看好：sunxliao 喺 9 月 14 日指 AAOI 約 79 美元係值得買入嘅高時框支撐區，但同時轉為中性，密切留意週線走勢，等待可能出現嘅快速拋售同週線買入訊號；wliang 就一直看好，認為越接近黃金買入區越是明顯嘅買入機會；aleabitoreddit 亦持續看好，將 AAOI 列為亞馬遜在雷射領域嘅投資標的之一，並預期 2027 年光子學大幅增長、光學供應鏈短缺持續。\n\n論述點主要圍繞光子超級周期、激光題材、光學元件短缺帶動嘅稀缺溢價，以及 AAOI 曾獲亞馬遜簽署認股權證協議；sunxliao 亦提過突破日線黃金阻力位後目標價約 140 美元。\n\n風險提示方面，aleabitoreddit 喺 9 月 24 日指出，雖然業務層面 2027 年非常看好，但反覆 ATM 融資造成賣壓，短期股價難突破，若停止發行 ATM 則有望大幅跑贏；sunxliao 亦由看好轉為中性，等待週線買入訊號先再確認。",
    "theme": "光通訊"
   },
   "EOS": {
@@ -22135,11 +22185,22 @@
      "summary": "作者提及曾指出 Sivers 同 JBL 喺 OFC 嘅 1.6T LRO 合作，但未對 JBL 表達明確立場。",
      "r7": 4.4,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將JBL列為亞馬遜在組裝環節的投資標的之一。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -14.9,
-   "ai_summary": "最新立場偏向看好，作者喺2026年8月底多次以bullish評價JBL，認為佢作為超大規模供應商，2027年量產會帶來明確營收貢獻，並表示自己嘅JBL投資觀點正確。論述重點圍繞矽光子比例上升、JBL係Sivers主要營收來源兼主要量產夥伴、預期2027年上半年放量，以及1.6T LRO量產信號。作者立場由早期多數中性轉為後段偏多，但未見明確風險提示。",
+   "earnings": "2026-09-30",
+   "ai_summary": "最新立場係睇好JBL，2026年8月底至9月底多次表達bullish，包括認為JBL係Sivers主要營收來源、預期2027年上半年放量、看好其作為超大規模供應商嘅量產貢獻，以及將JBL列為亞馬遜組裝環節嘅投資標的之一。論述重點圍繞矽光子比例上升、1.6T LRO量產信號、與Sivers及Apptronik等合作，同埋2027年量產帶來嘅營收貢獻。作者由6月至7月中大多保持中性、未表明確立場，到7月13日起轉為睇好，之後雖有反覆出現中性提及，但整體方向維持正面，未見轉軚或風險提示。",
    "theme": "光通訊"
   },
   "MTSI": {
@@ -22402,7 +22463,7 @@
     }
    ],
    "yellow": null,
-   "gain": 4.0,
+   "gain": 3.8,
    "theme": "其他"
   },
   "AOSL": {
@@ -27273,7 +27334,7 @@
     }
    ],
    "yellow": null,
-   "gain": -3.8,
+   "gain": -2.9,
    "theme": "其他"
   },
   "COIN": {
@@ -27753,11 +27814,21 @@
      "summary": "作者列舉亞馬遜曾與之簽署認股權證協議的公司，包括高通。",
      "r7": 2.9,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將QCOM列為亞馬遜在ASIC合作夥伴的投資標的之一。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 8.5,
-   "ai_summary": "最新立場係中性：作者喺2026年9月17日提到亞馬遜曾與高通簽署認股權證協議，但冇再明確表態。之前喺9月8日曾因亞馬遜投資及合作、預計帶來高達600億美元收入而轉向睇好，但隨後立場轉回中性。風險提示方面，7月26日提過智慧型手機處理器因上游供應商漲價而雙位數漲價，7月16日亦提及高通與美光簽署記憶體長期協議但未明確表態。",
+   "ai_summary": "最新立場係睇好，作者將高通列為亞馬遜ASIC合作夥伴嘅投資標的之一。論述點包括高通獲亞馬遜投資及合作、預計帶來高達600億美元收入，以及手機處理器因上游漲價而雙位數漲價。作者由7月嘅中性轉為9月嘅睇好，期間未見風險提示。",
    "theme": "其他"
   },
   "YSS": {
@@ -27951,11 +28022,21 @@
      "summary": "亞馬遜持有其股權或認股權證，但作者未明確表達對Astera Labs的觀點。",
      "r7": -12.6,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將ALAB列為亞馬遜供應鏈投資組合的一員。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 11.9,
-   "ai_summary": "根據最新資料，Jefferies 於2026年7月提及AMD可能與ALAB合作UAL，但僅屬預期且未獲確認，立場維持中性。至9月，亞馬遜持股消息被提及，但作者未明確表達多空觀點，整體論述偏向資訊陳述。目前未見明顯轉軚，但合作與持股均屬未定或僅為背景因素，風險提示在於缺乏實質確認或明確方向性判斷。",
+   "ai_summary": "最新立場係睇好，作者將 ALAB 列為亞馬遜供應鏈投資組合嘅一員。之前提到 Jefferies 預期 AMD 可能同 ALAB 合作 UAL 但未確認，以及亞馬遜持有股權或認股權證，當時都未明確表態。由中性轉為睇好，但未見風險提示。",
    "theme": "AI晶片"
   },
   "KIOXIA": {
@@ -30311,6 +30392,16 @@
      "summary": "作者認為CRDO的網絡產品是AI運算建設的關鍵點，看好其前景。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將CRDO列為亞馬遜供應鏈投資組合的一員。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -31398,7 +31489,7 @@
     }
    ],
    "yellow": null,
-   "gain": -10.5,
+   "gain": -10.0,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -31423,11 +31514,21 @@
      "summary": "作者提到意法半導體是新增持倉，受惠於MCU價格上漲。",
      "r7": 1.7,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將STM列為亞馬遜供應鏈投資組合的一員。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 8.0,
-   "ai_summary": "根據歷史記錄，最新立場維持看漲，論述重點為2026年功率半導體交期延長及第三次漲價，加上MCU價格上漲帶動新增持倉。未有轉軚跡象，亦未見明確風險提示，僅強調供需緊張對股價的正面影響。",
+   "ai_summary": "aleabitoreddit 對 STM 嘅最新立場係睇好，先後指出 2026 年第三次漲價、功率半導體交期長，以及意法半導體受惠於 MCU 價格上漲，並將其列為亞馬遜供應鏈投資組合嘅一員。呢啲論述由 9 月 1 日到 9 月 30 日都維持 bullish，冇轉軚，亦冇提及風險提示。",
    "theme": "半導體"
   },
   "AA": {
@@ -32168,7 +32269,7 @@
     }
    ],
    "yellow": null,
-   "gain": -11.0,
+   "gain": -9.7,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -33131,11 +33232,21 @@
      "summary": "作者提及Generac與亞馬遜簽署24億美元發電機交付協議並獲認股權證。",
      "r7": -4.4,
      "r30": null
+    },
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將GNRC列為亞馬遜供應鏈投資組合的一員。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 2.4,
-   "ai_summary": "根據2026年9月17日aleabitoreddit的發言，其對GNRC（Generac）持看好立場，論述點在於公司與亞馬遜簽署了價值24億美元的發電機交付協議，並獲得認股權證。這是目前唯一的提及記錄，未見任何轉軚或風險提示。",
+   "ai_summary": "最新立場係睇好，aleabitoreddit 喺 9 月 30 日將 GNRC 列為亞馬遜供應鏈投資組合嘅一員。論述點建基於 9 月 17 日提到 Generac 同亞馬遜簽署 24 億美元發電機交付協議並獲認股權證。兩次表態都係睇好，冇轉軚，亦冇提及風險提示。",
    "theme": "電力設備"
   },
   "ABSI": {
@@ -33285,6 +33396,42 @@
    "gain": -1.8,
    "ai_summary": "最新立場係看好，作者指 Akamai 同 Anthropic 簽署 116 億美元運算協議，屬利好消息。論述點係公司需投入約 55 億美元資本開支配合。冇提及轉軚，亦冇風險提示。",
    "theme": "AI雲"
+  },
+  "FLEX": {
+   "mentions": [
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將FLEX列為亞馬遜供應鏈投資組合的一員。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "ai_summary": "FLEX 目前僅有一條提及記錄，係 2026 年 9 月 30 日由 aleabitoreddit 給出嘅 bullish 立場，將 FLEX 列為亞馬遜供應鏈投資組合嘅一員。由於只有單一數據點，未見後續更新、論述變化或轉軚，亦無風險提示。",
+   "theme": "亞馬遜供應鏈"
+  },
+  "FN": {
+   "mentions": [
+    {
+     "date": "2026-09-30",
+     "author": "aleabitoreddit",
+     "tweet_id": "2105151002760679706",
+     "url": "https://x.com/aleabitoreddit/status/2105151002760679706",
+     "stance": "bullish",
+     "summary": "作者將FN列為亞馬遜在組裝環節的投資標的之一。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "ai_summary": "FN 最新立場係睇好，作者喺 2026 年 9 月 30 日將佢列為亞馬遜組裝環節嘅投資標的之一。論述點只係呢個歸類，冇提及具體基本面或風險提示，亦未見有轉軚迹象。",
+   "theme": "亞馬遜供應鏈"
   }
  },
  "kol_stats": {
@@ -33303,7 +33450,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 811,
+   "calls": 823,
    "n7": 654,
    "win7": 50,
    "n30": 439,
