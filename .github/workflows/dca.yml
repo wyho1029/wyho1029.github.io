@@ -1,0 +1,39 @@
+name: Update DCA data
+on:
+  schedule:
+    - cron: '45 22 * * *'   # 每日 06:45 HKT（美股收市後；夏令時 20:00 UTC、冬令時 21:00 UTC 收市）
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test data guards
+        run: python3 dca/test_build_data.py
+      - name: Fetch Yahoo ETF data
+        run: python3 dca/build_data.py
+      # 用參考答案驗一次先 commit：Yahoo 數據走樣（例如股息唔見咗）就會對唔返數，
+      # 呢步失敗成個 job 停，網站繼續用舊數據。寧願舊一日，唔好放錯嘅數上網。
+      - name: Verify against reference results
+        run: node dca/engine.test.js
+      # 撞到其他 workflow（例如 MSTR）同時 push：rebase 之後先推。
+      # ⚠️ 但如果期間有人改咗 dca 嘅程式碼，呢份數據係用**舊**程式產生同驗證，
+      # 唔可以就咁推 —— 停低，聽日用新程式重新跑過。
+      - name: Commit if changed
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          BASE=$(git rev-parse HEAD)
+          git add dca/data.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: daily DCA data update"
+          git push && exit 0
+          git pull --rebase
+          if ! git diff --quiet "$BASE" HEAD -- dca/engine.js dca/engine.test.js dca/build_data.py \
+                 dca/test_build_data.py .github/workflows/dca.yml; then
+            echo "期間 dca 程式碼有更新，呢份數據未用新程式驗過，今日唔推"
+            exit 1
+          fi
+          git push
