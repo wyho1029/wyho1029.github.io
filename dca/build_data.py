@@ -69,16 +69,21 @@ MAX_MONTH_MOVE_LEV = 0.85  # 槓桿 ETF
 MAX_STALE_DAYS = 7  # 最新數據舊過今日呢個日數 ⇒ 疑似舊快照，唔寫
 
 
-def fetch(ticker: str) -> dict:
+def fetch(ticker: str, since: str | None = None, min_days: int = 200) -> dict:
+    """攞日線。`since`（'YYYY-MM'）＝ 由嗰個月 1 號開始；冇就攞全部歷史。"""
+    p1 = 0
+    if since:
+        p1 = int(dt.datetime(int(since[:4]), int(since[5:7]), 1,
+                             tzinfo=dt.timezone.utc).timestamp())
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
-           "?period1=0&period2=9999999999&interval=1d&events=div%2Csplit")
+           f"?period1={p1}&period2=9999999999&interval=1d&events=div%2Csplit")
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=40) as r:
                 res = json.load(r)["chart"]["result"][0]
             n = len(res.get("timestamp") or [])
-            if n < 200:
+            if n < min_days:
                 raise ValueError(f"得 {n} 日數據")
             return res
         except Exception as e:                       # noqa: BLE001
@@ -275,8 +280,10 @@ def main() -> int:
             m = d[:7]
             if m not in first_day or v.get("amount", 0) <= 0:
                 continue
-            # flag 1 ＝ 除息日正正係當月首個交易日 ⇒ 當日開市買入嘅股冇得收
-            dv.append([idx[m] - start, sig(v["amount"]), 1 if d == first_day[m] else 0])
+            # flag 1 ＝ 除息日喺實際買入日（當月首個有開市價嘅交易日）或之前
+            # ⇒ 當月新買嘅股冇得收。用 <= 唔用 ==：首個交易日冇開市價、要第二日
+            # 先買嗰陣，第一日除息都唔關新股事。
+            dv.append([idx[m] - start, sig(v["amount"]), 1 if d <= first_day[m] else 0])
         etfs[t] = {"n": name, "g": grp, "i": start,
                    "d0": int(first_day[months[0]][8:]),   # 成立月嘅首個交易日
                    "ld": last_day,                         # 最後有效收市日（XIRR 終值日）

@@ -1,7 +1,10 @@
 name: Update DCA data
 on:
   schedule:
-    - cron: '45 22 * * *'   # 每日 06:45 HKT（美股收市後；夏令時 20:00 UTC、冬令時 21:00 UTC 收市）
+    # 每日 14:30 HKT。唔可以太早：實測 Yahoo 有時要到 UTC 01:30 之後先出齊前一日收市
+    # （10/1、10/3 早上兩次都攞唔到），而 GitHub 排程慣性延遲兩三個鐘。14:30 HKT 起跑，
+    # 延遲幾個鐘都仲喺美股開市（21:30／22:30 HKT）之前，唔會攞到盤中價。
+    - cron: '30 6 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -11,29 +14,49 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Test data guards
-        run: python3 dca/test_build_data.py
+        run: |
+          python3 dca/test_build_data.py
+          python3 dca/test_build_stocks.py
       - name: Fetch Yahoo ETF data
         run: python3 dca/build_data.py
       # 用參考答案驗一次先 commit：Yahoo 數據走樣（例如股息唔見咗）就會對唔返數，
       # 呢步失敗成個 job 停，網站繼續用舊數據。寧願舊一日，唔好放錯嘅數上網。
       - name: Verify against reference results
         run: node dca/engine.test.js
+      # 個股：一隻失敗保留舊檔；超過 10% 失敗會報錯，但唔阻 ETF 數據上線
+      - name: Fetch stocks
+        id: stocks
+        continue-on-error: true
+        run: python3 dca/build_stocks.py
       # 撞到其他 workflow（例如 MSTR）同時 push：rebase 之後先推。
       # ⚠️ 但如果期間有人改咗 dca 嘅程式碼，呢份數據係用**舊**程式產生同驗證，
       # 唔可以就咁推 —— 停低，聽日用新程式重新跑過。
       - name: Commit if changed
+        env:
+          STOCKS_OK: ${{ steps.stocks.outcome == 'success' }}
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           BASE=$(git rev-parse HEAD)
-          git add dca/data.json
+          # 個股步驟失敗（包括寫到一半先出錯）⇒ 成套還原，唔好推半新半舊
+          if [ "$STOCKS_OK" != "true" ]; then
+            git checkout -- dca/stocks dca/stocks.json 2>/dev/null || true
+            git clean -fdq dca/stocks
+          fi
+          git add dca/data.json dca/stocks dca/stocks.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: daily DCA data update"
           git push && exit 0
           git pull --rebase
           if ! git diff --quiet "$BASE" HEAD -- dca/engine.js dca/engine.test.js dca/build_data.py \
-                 dca/test_build_data.py .github/workflows/dca.yml; then
+                 dca/test_build_data.py dca/build_stocks.py dca/test_build_stocks.py dca/stocks.txt                  .github/workflows/dca.yml; then
             echo "期間 dca 程式碼有更新，呢份數據未用新程式驗過，今日唔推"
             exit 1
           fi
           git push
+      # ETF 數據已經上咗；個股嗰步有失敗就喺最後令 job 紅，GitHub 會寄電郵通知
+      - name: Report stock failure
+        if: steps.stocks.outcome == 'failure'
+        run: |
+          echo "::error::個股數據今日更新失敗（ETF 數據已更新）"
+          exit 1

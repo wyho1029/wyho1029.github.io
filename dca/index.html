@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>美股 ETF 月供回測</title>
-<meta name="description" content="自己揀 ETF、金額、開始同結束月份，即時回測美股大型 ETF 月供嘅歷史回報。">
+<meta name="description" content="自己揀 ETF 或者個股、金額、開始同結束月份，即時回測美股月供嘅歷史回報。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
 <script>
 (function(){try{var t=localStorage.getItem('hub-theme');
@@ -130,11 +130,25 @@ h1 {
 fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
-input[type="number"], select {
+input[type="number"], input[type="search"], select {
   font: inherit; font-size: 15px; color: var(--ink); background: var(--surface);
   border: 1px solid var(--axis); border-radius: 8px; padding: 7px 10px; min-width: 0;
 }
 input[type="number"] { width: 100%; font-variant-numeric: tabular-nums; }
+.ac { position: relative; }
+.ac input { width: 100%; }
+.ac-list {
+  position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 4px);
+  margin: 0; padding: 4px; list-style: none; background: var(--surface);
+  border: 1px solid var(--axis); border-radius: 10px; box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+  max-height: 300px; overflow-y: auto;
+}
+.ac-list li { display: flex; gap: 8px; align-items: baseline; padding: 6px 8px; border-radius: 6px; cursor: pointer; min-width: 0; }
+.ac-list li[aria-selected="true"], .ac-list li:hover { background: var(--row-hover); }
+.ac-list li.none { cursor: default; color: var(--muted); font-size: 13.5px; }
+.ac-list b { font-weight: 700; min-width: 4.4em; }
+.ac-list span { color: var(--ink-2); font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.ac-list small { color: var(--muted); margin-left: 6px; }
 select { padding-right: 6px; }
 .amt { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
 
@@ -367,7 +381,14 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       </fieldset>
 
       <fieldset class="ctl">
-        <legend class="lab">揀 ETF（最多 8 隻）</legend>
+        <legend class="lab">揀比較對象（ETF 同個股合共最多 8 隻）</legend>
+        <div class="ac">
+          <input type="search" id="stockQ" autocomplete="off" spellcheck="false"
+                 placeholder="搜尋個股或 ETF，例如 AAPL、Tesla、英偉達"
+                 role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="acList">
+          <ul class="ac-list" id="acList" role="listbox" hidden></ul>
+        </div>
+        <p class="hint" id="stockHint">載入緊個股名單…</p>
         <details class="pick" id="pick" open>
           <summary><span id="pickCount"></span><span class="pick-edit">更改</span></summary>
           <div class="pick-head"><button type="button" id="clearTk">全部清除</button></div>
@@ -482,7 +503,9 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
           <li>除息日持有嘅股數先有息收；除息日正正係供款日嗰期，新買入嘅股冇份。股息扣稅後，以除息當月月底收市價再買入。</li>
           <li><b>年化回報（XIRR）</b>按每期供款嘅日期計，可以直接同定期存款利率比較。</li>
           <li><b>最大回撤</b>以月底市值計，期間照常供款，所以會比一筆過持有嘅跌幅細；月中嘅最低位會更深。<b>最差帳面</b>係市值相對累積本金最低嘅一個月。</li>
-          <li>開始月份早過某隻 ETF 成立日，嗰隻會由成立月先開始計，本金會少啲，排名表會標明。</li>
+          <li>開始月份早過某隻 ETF 成立日或者個股上市日，嗰隻會由嗰個月先開始計，本金會少啲，排名表會標明。</li>
+          <li><b>個股名單係今日</b>嘅標普 500、納指 100 成分股加部分熱門股。佢哋係「今日仲喺度、而且做得大」先入到名單，中途破產或者跌出指數嘅公司唔喺度，所以回測過去會偏樂觀（生存者偏差）。</li>
+          <li>個股嘅風險比 ETF 集中得多，可以大跌甚至歸零；過去升得多唔代表將來會。</li>
           <li>槓桿 ETF（TQQQ、UPRO 等）每日重新平衡，長期回報唔等於指數嘅 2 倍或 3 倍，跌市時虧損會被放大。</li>
           <li>同一份獨立計算（每月 HKD 5,000、2015 年 9 月至 2026 年 9 月）逐隻對過數，13 隻 ETF 嘅最終市值相差都喺 0.12% 以內。</li>
         </ul>
@@ -506,6 +529,9 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
   const DEFAULT_T = ['SPY', 'QQQ', 'SCHD', 'VT'];
 
   let D = null, LAST = null;
+  let IDX = null;                // 個股索引：代號 → [名, 中文別名, 起始月索引, 最後收市日]
+  const own = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+  const isStock = t => !!IDX && own(IDX, t);
   const S = { t: [], c: 'HKD', a: 10000, f: 1, s: '2020-01', e: null, l: 0, g: 0, d: 'net', x: 0, y: 'lin' };
   const slotOf = {};             // 代號 → 色位（1–8）。顏色跟住隻 ETF，唔跟排名
 
@@ -559,8 +585,8 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
     const p = new URLSearchParams(location.hash.slice(1));
     const ok = m => /^\d{4}-(0[1-9]|1[0-2])$/.test(m || '');
     // 6：own property（擋 constructor／__proto__）；7：去重、空白都要 round-trip
-    const own = t => Object.prototype.hasOwnProperty.call(D.etfs, t);
-    if (p.has('t')) S.t = [...new Set(p.get('t').split(',').filter(own))].slice(0, MAX);
+    const known = t => own(D.etfs, t) || isStock(t);   // 個股可以未載入，之後 ensureLoaded 補
+    if (p.has('t')) S.t = [...new Set(p.get('t').split(',').filter(known))].slice(0, MAX);
     if (p.get('c') === 'USD' || p.get('c') === 'HKD') S.c = p.get('c');
     const num = (k, d) => { const v = parseFloat(p.get(k)); return isFinite(v) && v >= 0 ? Math.min(v, CAP) : d; };
     S.a = num('a', S.a); S.l = num('l', S.l); S.g = Math.min(num('g', S.g), 100); S.x = num('x', S.x);
@@ -581,13 +607,128 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
     history.replaceState(null, '', '#' + p.toString());
   }
 
+  // ---------- 個股：揀咗先下載 ----------
+  // 個股數據同 ETF 用同一套月份索引；保險起見剪走超過 LAST 嘅月份（例如 ETF 更新失敗嗰日）
+  function clipToLast(e) {
+    const n = Math.max(0, monthDiff(D.m0, LAST) - e.i + 1);   // 負數會令 slice 反向保留
+    if (n < e.c.length) {
+      e.o = e.o.slice(0, n); e.c = e.c.slice(0, n);
+      e.dv = e.dv.filter(d => d[0] < n);
+    }
+    return e;
+  }
+  async function ensureLoaded(ts) {
+    const need = ts.filter(t => isStock(t) && !own(D.etfs, t));
+    const bad = [];
+    await Promise.all(need.map(t =>
+      fetch('stocks/' + encodeURIComponent(t) + '.json', { cache: 'no-cache' })
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(e => {
+          if (e.c && e.c.length) e = clipToLast(e);
+          if (e.c && e.c.length) D.etfs[t] = e; else bad.push(t);
+        })
+        .catch(() => bad.push(t))));
+    if (need.length) buildPicker();
+    return bad;
+  }
+
+  // ---------- 搜尋 ----------
+  let acItems = [], acActive = -1;
+  let gen = 0;                   // 揀股／網址每變一次 +1：下載完發現世界變咗就放棄
+  let failedT = [];              // 載入唔到嘅個股：留喺網址（下次重新整理再試），唔計
+  function search(q) {
+    q = q.trim();
+    if (!q) return [];
+    const Q = q.toUpperCase(), ql = q.toLowerCase(), out = [];
+    const consider = (t, n, al) => {
+      const nl = (n || '').toLowerCase();
+      const sc = t === Q ? 0 : t.startsWith(Q) ? 1
+        : nl.startsWith(ql) || (al && al.toLowerCase().includes(ql)) ? 2
+        : nl.includes(ql) ? 3 : -1;
+      if (sc >= 0) out.push([sc, t, n, al]);
+    };
+    Object.entries(D.etfs).forEach(([t, e]) => { if (!isStock(t)) consider(t, e.n, ''); });
+    if (IDX) Object.entries(IDX).forEach(([t, [n, al]]) => consider(t, n, al));
+    return out.sort((a, b) => a[0] - b[0] || a[1].localeCompare(b[1])).slice(0, 8);
+  }
+  function showAc() {
+    const q = $('stockQ').value, list = $('acList');
+    acItems = search(q);
+    acActive = acItems.length ? 0 : -1;
+    list.replaceChildren();
+    if (!q.trim()) { list.hidden = true; $('stockQ').setAttribute('aria-expanded', 'false'); return; }
+    if (!acItems.length) {
+      list.appendChild(el('li', 'none', '搵唔到「' + q.trim() + '」。只支援標普 500、納指 100 同部分熱門股。'));
+    }
+    acItems.forEach(([, t, n, al], i) => {
+      const li = el('li');
+      li.id = 'ac-' + i;
+      li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', i === acActive ? 'true' : 'false');
+      const sp = el('span', null, n || '');
+      if (al) sp.appendChild(el('small', null, al));
+      li.append(el('b', null, t), sp);
+      li.addEventListener('mousedown', e => { e.preventDefault(); pickTicker(t); });
+      list.appendChild(li);
+    });
+    list.hidden = false;
+    $('stockQ').setAttribute('aria-expanded', 'true');
+    $('stockQ').setAttribute('aria-activedescendant', acActive >= 0 ? 'ac-' + acActive : '');
+    revealAc();
+  }
+  // 桌面版設定欄係自己捲動嘅黏住欄：清單底部被遮就將欄捲上，但唔會捲到搜尋框走出頂部
+  function revealAc() {
+    const c = $('controls');
+    if (c.scrollHeight <= c.clientHeight + 1) return;      // 手機：唔係捲動容器
+    const box = c.getBoundingClientRect(), list = $('acList').getBoundingClientRect();
+    const bottom = Math.min(box.bottom, window.innerHeight);   // 頁面未捲落嚟時，欄底喺視窗外
+    const room = $('stockQ').getBoundingClientRect().top - Math.max(box.top, 0) - 12;
+    if (list.bottom > bottom) c.scrollTop += Math.min(list.bottom - bottom + 8, room);
+  }
+  function moveAc(d) {
+    if (!acItems.length) return;
+    acActive = (acActive + d + acItems.length) % acItems.length;
+    document.querySelectorAll('#acList li[role=option]').forEach((li, i) => {
+      li.setAttribute('aria-selected', i === acActive ? 'true' : 'false');
+      if (i === acActive) li.scrollIntoView({ block: 'nearest' });
+    });
+    $('stockQ').setAttribute('aria-activedescendant', 'ac-' + acActive);
+  }
+  function closeAc() {
+    $('acList').hidden = true;
+    $('stockQ').setAttribute('aria-expanded', 'false');
+  }
+  async function pickTicker(t) {
+    const hint = $('stockHint');
+    closeAc();
+    $('stockQ').value = '';
+    if (S.t.includes(t)) { hint.textContent = t + ' 已經喺比較入面。'; return; }
+    if (S.t.length >= MAX) { hint.textContent = '最多同時比較 ' + MAX + ' 隻，先喺下面剔走一隻。'; return; }
+    hint.textContent = '載入緊 ' + t + '…';
+    const my = ++gen;
+    const bad = await ensureLoaded([t]);
+    // 下載期間可能有人改咗選擇、開咗另一條連結：一切以而家嘅狀態重新判斷
+    if (my !== gen) return;
+    if (bad.length) { hint.textContent = t + ' 嘅數據載入唔到，遲啲再試。'; return; }
+    if (S.t.includes(t)) { hint.textContent = stockHintText(); return; }
+    if (S.t.length >= MAX) { hint.textContent = '最多同時比較 ' + MAX + ' 隻，先喺下面剔走一隻。'; return; }
+    S.t = S.t.concat(t);
+    hint.textContent = stockHintText();
+    update();
+  }
+  function stockHintText() {
+    return IDX ? '個股：標普 500、納指 100 同熱門股共 ' + Object.keys(IDX).length + ' 隻。打代號、英文名或者中文名。'
+      : '個股名單載入唔到，暫時只可以揀 ETF。';
+  }
+
   // ---------- 設定介面 ----------
   function buildPicker() {
     const groups = {};
     Object.entries(D.etfs).forEach(([t, e]) => (groups[e.g] = groups[e.g] || []).push(t));
     const box = $('tkGroups');
     box.replaceChildren();
-    Object.entries(groups).forEach(([g, ts]) => {
+    // 個股排最前：係用戶自己搵返嚟嘅
+    Object.entries(groups).sort(([a], [b]) => (b === '個股') - (a === '個股')).forEach(([g, ts]) => {
       const wrap = el('div', 'grp');
       wrap.appendChild(el('div', 'grp-t', g));
       const row = el('div', 'tks');
@@ -600,6 +741,7 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
         b.setAttribute('aria-label', t + ' ' + D.etfs[t].n);
         b.append(el('i'), document.createTextNode(t));
         b.addEventListener('click', () => {
+          gen++;                     // 作廢下載緊嘅個股：用戶已經改咗主意
           if (S.t.includes(t)) S.t = S.t.filter(x => x !== t);
           else if (S.t.length < MAX) S.t = S.t.concat(t);
           update();
@@ -668,7 +810,17 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       S.e = LAST;
       update();
     });
-    $('clearTk').addEventListener('click', () => { S.t = []; update(); });
+    $('clearTk').addEventListener('click', () => { gen++; S.t = []; update(); });
+    const q = $('stockQ');
+    q.addEventListener('input', showAc);
+    q.addEventListener('focus', () => { if (q.value.trim()) showAc(); });
+    q.addEventListener('blur', () => setTimeout(closeAc, 120));
+    q.addEventListener('keydown', e => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); if ($('acList').hidden) showAc(); else moveAc(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); moveAc(-1); }
+      else if (e.key === 'Enter') { e.preventDefault(); if (acActive >= 0) pickTicker(acItems[acActive][1]); }
+      else if (e.key === 'Escape') { closeAc(); }
+    });
     $('share').addEventListener('click', async () => {
       writeHash();
       try {
@@ -701,7 +853,9 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       : S.x > 0 && S.a > 0 && (S.c === 'HKD' ? S.a / 7.8 : S.a) <= S.x
         ? '每期金額細過手續費（每次 USD ' + S.x + '），一股都買唔到。調高金額或者調低手續費。' : null;
     const res = bad ? [] : S.t.map(t => backtest(D, t, opts())).filter(Boolean);
-    const none = !bad && !res.length ? '揀咗嘅 ETF 喺呢段時期仲未成立，試吓將結束月份推遲。' : null;
+    const none = bad || res.length ? null
+      : S.t.every(t => failedT.includes(t)) ? S.t.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。'
+      : '揀咗嘅 ETF 喺呢段時期仲未成立，試吓將結束月份推遲。';
     ['panels', 'chartCard', 'rankCard', 'yearCard'].forEach(id => ($(id).hidden = !!(bad || none)));
     $('state').hidden = !(bad || none);
     $('state').textContent = bad || none || '';
@@ -778,7 +932,9 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       const L = r.lumpRes;
       stat('如果第一期一筆過投晒', L ? fmt(L.value) : '—', L ? pct(L.ret) : '');
       p.append(h, v, g, st);
-      if (r.clipped) p.appendChild(el('p', 'flag', r.t + ' ' + mLabel(r.first) + '先成立，由嗰時開始計，本金少啲。'));
+      if (r.clipped) p.appendChild(el('p', 'flag', r.t + ' ' + mLabel(r.first) +
+        (isStock(r.t) ? '先上市' : '先成立') + '，由嗰時開始計，本金少啲。'));
+      if (E.ld && E.ld < D.asof) p.appendChild(el('p', 'flag', r.t + ' 嘅數據今日更新唔到，只係去到 ' + E.ld + '。'));
       box.appendChild(p);
     });
     layoutPanels();
@@ -799,7 +955,7 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
     const note = $('clipNote');
     if (clipped.length) {
       const latest = clipped.reduce((a, r) => r.from > a ? r.from : a, S.s);
-      note.replaceChildren(clipped.map(r => r.t).join('、') + ' 喺 ' + mLabel(S.s) + '仲未成立，條線遲啲先開始，本金亦少啲。',
+      note.replaceChildren(clipped.map(r => r.t).join('、') + ' 喺 ' + mLabel(S.s) + '仲未成立／上市，條線遲啲先開始，本金亦少啲。',
         ' ');
       const b = el('button', null, '改為由 ' + mLabel(latest) + '開始，公平比較');
       b.type = 'button';
@@ -1066,15 +1222,26 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
   } else window.addEventListener('resize', () => { drawChart(); layoutPanels(); });
 
   // ---------- 啟動 ----------
-  fetch('data.json', { cache: 'no-cache' })
-    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(data => {
+  Promise.all([
+    fetch('data.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+    // 個股索引載入唔到唔阻 ETF：搜尋框講明，其餘照用
+    fetch('stocks.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null),
+  ])
+    .then(async ([data, idx]) => {
       D = data;
+      // 月份索引要同 ETF 數據一致，唔一致就當冇個股（否則每隻股都錯位）
+      if (idx && idx.m0 === D.m0) {
+        IDX = {};
+        idx.s.forEach(([t, n, al, i, ld]) => { if (!own(D.etfs, t)) IDX[t] = [n, al, i, ld]; });
+      }
       LAST = Object.values(D.etfs).reduce((a, e) => {
         const m = monthAdd(D.m0, e.i + e.c.length - 1);
         return m > a ? m : a;
       }, D.m0);
       readHash();
+      failedT = await ensureLoaded(S.t);
+      $('stockHint').textContent = failedT.length
+        ? failedT.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。' : stockHintText();
       $('src').textContent = '數據：Yahoo Finance，價格同股息已按拆股調整，截至 ' +
         D.asof.replace(/-/g, '/') + ' 收市，每日自動更新。';
       buildPicker();
@@ -1082,7 +1249,16 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       fillYears();
       bindControls();
       update();
-      window.addEventListener('hashchange', () => { readHash(); update(); });
+      window.addEventListener('hashchange', async () => {
+        const my = ++gen;
+        readHash();
+        const bad = await ensureLoaded(S.t);
+        if (my !== gen) return;
+        failedT = bad;
+        $('stockHint').textContent = bad.length
+          ? bad.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。' : stockHintText();
+        update();
+      });
     })
     .catch(() => {
       $('state').textContent = '歷史數據載入唔到。請檢查網絡之後重新整理頁面。';
