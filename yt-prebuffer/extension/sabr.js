@@ -16,7 +16,7 @@
   'use strict';
 
   // UMP part 種類（只列用到嘅）
-  const PART = { NEXT_REQUEST_POLICY: 35, FORMAT_INITIALIZATION_METADATA: 42 };
+  const PART = { MEDIA_HEADER: 20, NEXT_REQUEST_POLICY: 35, FORMAT_INITIALIZATION_METADATA: 42, SABR_SEEK: 45 };
 
   // ---------------------------------------------------------------------------
   // UMP 變長整數（唔係 protobuf varint）：第一個 byte 開頭有幾多個 1 就代表總長度
@@ -164,7 +164,8 @@
         dur = ((first(t, 2, 0) || {}).value || 0) * 1000 / scale;
       }
     }
-    return { itag: fid ? itagOf(buf, fid) : -1, start, end: start + dur };
+    // 「唔使送呢條軌」嘅假記錄：由 0 開始、長度 2^31-1 毫秒或以上
+    return { itag: fid ? itagOf(buf, fid) : -1, start, end: start + dur, dummy: dur >= 0x7FFFFFFF };
   }
 
   // 由 t 開始一路連住嘅預載去到幾遠；t 唔喺任何一段入面就回傳 null
@@ -187,20 +188,24 @@
   // ---------------------------------------------------------------------------
   // 改請求：VideoPlaybackAbrRequest
   //   1 clientAbrState{28 playerTimeMs, 40 enabledTrackTypesBitfield}
-  //   2 selectedFormatIds、3 bufferedRanges、4 playerTimeMs（舊版位置）
+  //   2 selectedFormatIds、3 bufferedRanges（field 4 係 Onesie 開始時間，唔郁）
   // opts.maxAheadMs：最多預載幾遠（由真正播放位置計）
-  // 回傳 {body, fromMs, toMs}；唔使改就回傳 null
+  // 回傳 {body, fromMs, toMs}；唔使改就回傳 null。
+  // info（可選）會填返診斷資料：playerTime、各邊連續預載到幾遠、冇改嘅原因
   // ---------------------------------------------------------------------------
-  function rewriteAbrRequest(body, opts) {
+  function rewriteAbrRequest(body, opts, info) {
+    info = info || {};
     const top = parseFields(body);
     const cas = first(top, 1, 2);
-    if (!cas) return null;
+    if (!cas) { info.reason = 'no-abr-state'; return null; }
     const casFields = parseFields(body, cas.vStart, cas.vEnd);
     const ptField = first(casFields, 28, 0);
     const playerTime = ptField ? ptField.value : 0;
+    info.playerTime = playerTime;
 
     const ranges = top.filter(f => f.no === 3 && f.wt === 2).map(f => readBufferedRange(body, f));
-    if (!ranges.length) return null;
+    info.ranges = ranges.map(r => r.itag + ':' + Math.round(r.start / 100) / 10 + '-' + Math.round(r.end / 100) / 10);
+    if (!ranges.length) { info.reason = 'no-ranges'; return null; }
 
     // 0 = 影音都要、1 = 只要聲、2 = 只要畫面
     const tracksField = first(casFields, 40, 0);
@@ -211,23 +216,22 @@
 
     let newTime = Infinity;
     for (const audio of want) {
-      const own = ranges.filter(r => r.itag >= 0 && isAudioItag(r.itag) === audio);
+      // 假記錄唔計：當咗佢連續，伺服器會跳過中間真係未有嘅片段
+      const own = ranges.filter(r => r.itag >= 0 && !r.dummy && isAudioItag(r.itag) === audio);
       const end = contiguousEnd(own, playerTime);
-      if (end === null) return null;      // 有一邊喺播放位置都未有嘢：照原本咁問（例如啱啱跳咗去新位置）
+      info[audio ? 'audioEnd' : 'videoEnd'] = end;
+      if (end === null) { info.reason = (audio ? 'audio' : 'video') + '-not-at-player-time'; return null; }   // 有一邊喺播放位置都未有嘢：照原本咁問（例如啱啱跳咗去新位置）
       newTime = Math.min(newTime, end);
     }
     newTime = Math.floor(newTime);
     const maxAhead = opts && opts.maxAheadMs > 0 ? opts.maxAheadMs : Infinity;
-    if (!(newTime > playerTime + 1000) || newTime - playerTime >= maxAhead) return null;
+    if (!(newTime > playerTime + 1000)) { info.reason = 'nothing-ahead'; return null; }
+    if (newTime - playerTime >= maxAhead) { info.reason = 'enough'; return null; }
 
     const newCas = rebuild(body, casFields,
       f => (f === ptField ? varintField(28, newTime) : undefined),
       ptField ? null : [varintField(28, newTime)]);
-    const out = rebuild(body, top, f => {
-      if (f === cas) return lenField(1, newCas);
-      if (f.no === 4 && f.wt === 0) return varintField(4, newTime);
-      return undefined;
-    });
+    const out = rebuild(body, top, f => (f === cas ? lenField(1, newCas) : undefined));
     return { body: out, fromMs: playerTime, toMs: newTime };
   }
 
@@ -250,6 +254,20 @@
     const fields = parseFields(payload);
     const get = no => { const f = first(fields, no, 0); return f ? f.value : undefined; };
     return { targetAudioMs: get(1), targetVideoMs: get(2), backoffMs: get(4) };
+  }
+
+  // 診斷用：NEXT_REQUEST_POLICY 全部數值欄位
+  function readPolicyFull(payload) {
+    const fields = parseFields(payload);
+    const get = no => { const f = first(fields, no, 0); return f ? f.value : undefined; };
+    return { tgtA: get(1), tgtV: get(2), maxSince: get(3), backoff: get(4), minA: get(5), minV: get(6) };
+  }
+
+  // 診斷用：MEDIA_HEADER（part 20）3 itag、8 isInitSeg、9 sequenceNumber、11 startMs、12 durationMs
+  function readMediaHeader(payload) {
+    const fields = parseFields(payload);
+    const get = no => { const f = first(fields, no, 0); return f ? f.value : undefined; };
+    return { itag: get(3), init: !!get(8), seq: get(9), startMs: get(11), durMs: get(12) };
   }
 
   // ---------------------------------------------------------------------------
@@ -350,10 +368,26 @@
     return [encodeUmpVar(this.type), encodeUmpVar(next.length), next];
   };
 
+  // ---------------------------------------------------------------------------
+  // 播放器自己嘅預載上限（2026 年 8 月版播放器實測）：
+  //   每條軌最多預載 = min(預算 bytes ÷ 格式 byterate, 上限秒數)
+  //   預算：畫面 20MiB（>1080p 35MiB、>2160p 100MiB），聲音 8MiB（>1080p 5MiB）；上限秒數預設 120
+  // 呢幾個數喺壓縮咗嘅 base.js 入面，變數名每個版本都唔同，所以由原始碼搵返個名。
+  // 回傳 {video, audio, seconds}（seconds 可能係 null）；搵唔到預算就回傳 null。
+  // ---------------------------------------------------------------------------
+  function findReadaheadNames(src) {
+    const b = /this\.([\w$]+)=20971520;this\.([\w$]+)=8388608[;,]/.exec(src);
+    if (!b) return null;
+    const u = /\.([\w$]+)=[\w$]+\|\|[\w$]+\.maxReadAheadMediaTimeMs\/1E3\|\|/.exec(src) ||
+      /this\.([\w$]+)=120[;,}]/.exec(src.slice(b.index, b.index + 3000));   // 後備：同一個 constructor 入面嘅預設 120 秒
+    return { video: b[1], audio: b[2], seconds: u ? u[1] : null };
+  }
+
   const api = {
     PART, umpVarLen, decodeUmpVar, encodeUmpVar, readVarint, encodeVarint, parseFields, concat,
     varintField, lenField, isAudioItag, learnFormat, learnedKinds, contiguousEnd,
-    rewriteAbrRequest, rewriteNextRequestPolicy, readPolicy, UmpRewriter,
+    rewriteAbrRequest, rewriteNextRequestPolicy, readPolicy, readPolicyFull, readMediaHeader, UmpRewriter,
+    findReadaheadNames,
   };
 
   if (typeof window === 'undefined' && typeof module === 'object' && module.exports) module.exports = api;

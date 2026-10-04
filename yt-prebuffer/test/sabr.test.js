@@ -109,12 +109,21 @@ test('請求：只要聲（tracks=1）就唔理畫面', () => {
   assert.strictEqual(X.rewriteAbrRequest(body, {}).toMs, 95000);
 });
 
-test('請求：冇 playerTime（啱啱開始）都識加返欄位；舊版 field 4 一齊改', () => {
+test('請求：冇 playerTime（啱啱開始）都識加返欄位；field 4（Onesie 開始時間）唔郁', () => {
   const body = abrRequest({ topTime: 0, ranges: [range(251, 0, 20000, [1, 2]), range(248, 0, 15000, [1, 3])] });
   const r = X.rewriteAbrRequest(body, {});
   assert.strictEqual(getVarint(getSub(r.body, 1), 28), 15000);
-  assert.strictEqual(getVarint(r.body, 4), 15000);
+  assert.strictEqual(getVarint(r.body, 4), 0);
   assert.deepStrictEqual(stripTime(r.body), stripTime(body));
+});
+
+test('請求：「唔使送」嘅假記錄唔當係已經有', () => {
+  const MAX = 0x7FFFFFFF;
+  const body = abrRequest({ playerTime: 5000,
+    ranges: [range(251, 0, 90000, [1, 9]), range(248, 0, 30000, [1, 6]), range(999, 0, MAX, [MAX, MAX])] });
+  const info = {};
+  assert.strictEqual(X.rewriteAbrRequest(body, {}, info).toMs, 30000, '只可以推到真畫面嘅尾');
+  assert.strictEqual(info.videoEnd, 30000);
 });
 
 test('請求：只有 timeRange（ticks）都計得到', () => {
@@ -220,6 +229,15 @@ test('UMP：超過上限嘅「policy」當普通資料放行，唔會開巨型 b
   const rw = new X.UmpRewriter((t, size) => t === 35 && size <= 1 << 20, () => { throw new Error('唔應該叫到'); });
   const out = concat([...rw.push(big), ...rw.flush()]);
   assert.ok(Buffer.from(out).equals(Buffer.from(big)));
+});
+
+test('搵播放器預載上限嘅變數名（壓縮咗嘅 base.js）', () => {
+  const src = 'x.a=1;g.Pq=function(r){this.za=r;this.K=new Z;this.$a=20971520;this.b_=8388608;this.KR=2;this.Uz=120;this.kY=1};' +
+    'z.Uz=I||P.maxReadAheadMediaTimeMs/1E3||z.Uz;';
+  assert.deepStrictEqual(X.findReadaheadNames(src), { video: '$a', audio: 'b_', seconds: 'Uz' });
+  // 冇 maxReadAheadMediaTimeMs 嗰句就用 constructor 入面嘅 120 秒頂
+  assert.deepStrictEqual(X.findReadaheadNames(src.split('z.Uz=')[0]), { video: '$a', audio: 'b_', seconds: 'Uz' });
+  assert.strictEqual(X.findReadaheadNames('this.a=20971520;this.b=1'), null, '對唔上就乜都唔做');
 });
 
 console.log(`\n全部 ${passed} 個測試通過`);

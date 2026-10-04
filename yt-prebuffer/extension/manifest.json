@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "YouTube 全片預載",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "睇 YouTube 時喺背後一路預載成條片，快進、倒後都唔使再等。",
   "permissions": ["storage"],
   "icons": {
