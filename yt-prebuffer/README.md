@@ -17,7 +17,7 @@ YouTube 網頁播放器用 SABR 串流：播放器 POST 一個 protobuf 去 `*.g
 | `SourceBuffer.remove` | 播放位置 10 秒之前嘅刪除唔做（照發 `updateend`），倒後唔使重新下載 |
 | `appendBuffer` 撞 `QuotaExceededError` | 自動將預載長度收細，片上顯示「到咗記憶體上限」 |
 
-直播、唔係睇片頁（例如首頁預覽）唔郁；任何一步解唔到都原封不動放行。
+直播、唔係睇片頁（例如首頁預覽）唔郁；第三方網站入面嘅嵌入片唔解除播放器上限；任何一步解唔到都原封不動放行。
 播放器嘅邏輯係用 2026 年 8 月版 `base.js`（854a788e，取自 NewPipeExtractor 測試資料）分析同實測。
 
 Chromium 預設每條片只留 150MB 畫面 + 12MB 聲音，所以長片要用

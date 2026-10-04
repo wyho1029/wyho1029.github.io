@@ -12,7 +12,7 @@
   delete globalThis.__ytpbSabr;
   Object.defineProperty(window, '__ytpbInstalled', { value: true });
 
-  const VERSION = '1.1.0';
+  const VERSION = '1.1.1';
   const WHOLE_MS = 12 * 3600 * 1000;   // 「成條片」= 目標 12 個鐘，播放器去到片尾自然會停
   const KEEP_MARGIN_S = 10;            // 播放位置前 10 秒以內嘅刪除照做，唔好阻住播放器
   const S = { enabled: true, aheadMin: 0, keepWatched: true, overlay: true };   // aheadMin 0 = 成條片
@@ -91,9 +91,17 @@
     if (events.length > 80) events.shift();
   }
 
+  // 每 10 秒最多發過幾多個 SABR 請求（播放器自己限每 10 秒大約 20 個，超過會停一陣再發）
+  const reqTimes = [];
+  let maxReqPer10s = 0;
+
   // 改請求 body；唔使改或者改唔到就回傳 null
   function rewriteRequestBody(u8, via) {
     stats.sabrRequests++;
+    const now = performance.now();
+    reqTimes.push(now);
+    while (reqTimes.length && now - reqTimes[0] > 10000) reqTimes.shift();
+    maxReqPer10s = Math.max(maxReqPer10s, reqTimes.length);
     if (!u8) { note({ k: 'req', via, reason: 'body-not-binary' }); return null; }
     if (!shouldRewrite()) { note({ k: 'req', via, reason: 'off-or-not-watch' }); return null; }
     const info = {};
@@ -374,7 +382,7 @@
   const BIG_AUDIO_BYTES = 300 * 1048576;
   const PLAYER_JS_RE = /\/s\/player\/([\w-]+)\/[^?#]*base\.js/;
   let lastQuotaAt = -1e9;
-  const capState = { player: '', names: null, policies: 0, scope: '' };
+  const capState = { player: '', names: null, policies: 0, scope: '', error: '' };
 
   const capActive = () => {
     if (!S.enabled || !onWatchPage()) return false;
@@ -383,19 +391,24 @@
   };
 
   function defineCap(obj, name, bigFn) {
-    let orig, reduced = null, last = null;
+    const own = Object.getOwnPropertyDescriptor(obj, name);
+    let orig = own && 'value' in own ? own.value : undefined;
+    let reduced = null, last = null, lastBig = null;
     Object.defineProperty(obj, name, {
       configurable: true, enumerable: true,
       get() {
         let v;
-        if (capActive()) v = reduced !== null ? Math.min(reduced, bigFn()) : bigFn();
+        if (capActive()) { v = reduced !== null ? Math.min(reduced, bigFn()) : bigFn(); lastBig = v; }
         else v = reduced !== null && reduced < orig ? reduced : orig;
         last = v;
         return v;
       },
       set(v) {
-        // 播放器撞到記憶體上限之後會寫返「而家個數 ×0.8」：照收；其他（建立時嘅預設、高畫質調整）只記低做原本數值
+        // 播放器撞到記憶體上限之後會寫返「而家個數 ×0.8」：照收
         if (typeof v === 'number' && last !== null && v === Math.floor(last * 0.8) && performance.now() - lastQuotaAt < 10000) reduced = v;
+        // 播放器將我哋畀佢嘅大數原封寫返（例如 a = x || y || a）：唔當係原本數值，否則熄咗都還原唔到
+        else if (lastBig !== null && v === lastBig) return;
+        // 其他（建立時嘅預設、高畫質調整）記低做原本數值，熄咗就用返
         else orig = v;
       },
     });
@@ -441,6 +454,8 @@
     const m = PLAYER_JS_RE.exec(src || '');
     if (!m || capState.player) return;
     capState.player = m[1];
+    // 第三方網站入面嘅 YouTube 嵌入片唔郁：免得每個網站都要同步下載一次 base.js
+    if (window.top !== window) { capState.error = 'embedded-frame'; return; }
     const key = 'ytpb:names:' + m[1];
     let names = null;
     try { names = JSON.parse(localStorage.getItem(key)); } catch (e) { /* 冇記錄 */ }
@@ -450,11 +465,12 @@
         const x = new XMLHttpRequest();
         x.open('GET', src, false);
         x.send();
-        names = (x.status === 200 && SABR.findReadaheadNames(x.responseText)) || { miss: true };
+        names = (x.status === 200 && SABR.findReadaheadNames(x.responseText)) || { miss: true, status: x.status };
         localStorage.setItem(key, JSON.stringify(names));
-      } catch (e) { names = null; }
+      } catch (e) { names = null; capState.error = 'xhr: ' + e.message; }
     }
     if (names && names.video) installCapTraps(names);
+    else if (names && names.miss) capState.error = 'names-not-found';
   }
 
   const scriptWatcher = new MutationObserver(muts => {
@@ -514,7 +530,8 @@
   // 喺 Console 打 __ytpbStats() 睇運作情況
   Object.defineProperty(window, '__ytpbStats', {
     value: () => Object.assign({ settings: Object.assign({}, S), aheadLimitSec: aheadLimitMs() / 1000 }, stats,
-      { capPlayer: capState.player, capNames: capState.names, capPolicies: capState.policies, capScope: capState.scope }),
+      { capPlayer: capState.player, capNames: capState.names, capPolicies: capState.policies, capScope: capState.scope,
+        capError: capState.error, maxReqPer10s }),
   });
 
   // 喺 Console 打 copy(__ytpbDump()) 會將最近嘅請求／回應記錄複製去剪貼簿，貼返出嚟就睇到每一步
