@@ -532,7 +532,7 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
   let IDX = null;                // 個股索引：代號 → [名, 中文別名, 起始月索引, 最後收市日]
   const own = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
   const isStock = t => !!IDX && own(IDX, t);
-  const S = { t: [], c: 'HKD', a: 10000, f: 1, s: '2020-01', e: null, l: 0, g: 0, d: 'net', x: 0, y: 'lin' };
+  const S = { t: [], c: 'HKD', a: 10000, f: 1, s: '2020-01', e: null, l: 0, g: 0, d: 'net', x: 0, y: 'lin', p: 0 };
   const slotOf = {};             // 代號 → 色位（1–8）。顏色跟住隻 ETF，唔跟排名
 
   // ---------- 格式 ----------
@@ -576,16 +576,27 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
     });
   }
 
-  // ---------- 網址狀態（分享用） ----------
-  // 網址冇寫嘅設定一律當預設值，唔可以沿用上一次 —— 否則喺同一個分頁貼第二條
-  // 分享連結，冇寫「一筆過」嗰條會靜靜咁繼承咗上一條嘅一筆過金額。
-  function readHash() {
+  // ---------- 設定狀態 ----------
+  // 網址欄永遠保持乾淨（淨係 /dca/）：設定記喺瀏覽器（localStorage），下次直接開
+  // /dca 就係上次嘅組合；想分享先由「複製連結」攞一條帶設定嘅連結。
+  // 冇寫嘅設定一律當預設值，唔可以沿用上一次 —— 否則喺同一個分頁貼第二條分享
+  // 連結，冇寫「一筆過」嗰條會靜靜咁繼承咗上一條嘅一筆過金額。
+  const SAVE_KEY = 'dca-state';
+  const PRESETS = [3, 5, 10, 15, 20, 30];
+  // 瀏覽器唔俾儲存（私隱模式、Safari 封鎖）就退返舊做法：設定照寫喺網址，否則重新整理會打回預設
+  const CAN_STORE = (() => {
+    try { localStorage.setItem('dca-probe', '1'); localStorage.removeItem('dca-probe'); return true; }
+    catch (e) { return false; }
+  })();
+  function readState(str) {
     Object.assign(S, { t: DEFAULT_T.filter(t => D.etfs[t]), c: 'HKD', a: 10000, f: 1,
-                       s: '2020-01', e: LAST, l: 0, g: 0, d: 'net', x: 0, y: 'lin' });
-    const p = new URLSearchParams(location.hash.slice(1));
+                       s: '2020-01', e: LAST, l: 0, g: 0, d: 'net', x: 0, y: 'lin', p: 0 });
+    const p = new URLSearchParams(str || '');
     const ok = m => /^\d{4}-(0[1-9]|1[0-2])$/.test(m || '');
     // 6：own property（擋 constructor／__proto__）；7：去重、空白都要 round-trip
-    const known = t => own(D.etfs, t) || isStock(t);   // 個股可以未載入，之後 ensureLoaded 補
+    // 個股可以未載入，之後 ensureLoaded 補。個股名單（IDX）都載入唔到嗰陣，任何似代號嘅都留低：
+    // 否則一次 stocks.json 失敗，update() 一儲存，記低咗嘅個股就永久冇咗
+    const known = t => own(D.etfs, t) || isStock(t) || (!IDX && /^[A-Z0-9][A-Z0-9.\-]{0,9}$/.test(t));
     if (p.has('t')) S.t = [...new Set(p.get('t').split(',').filter(known))].slice(0, MAX);
     if (p.get('c') === 'USD' || p.get('c') === 'HKD') S.c = p.get('c');
     const num = (k, d) => { const v = parseFloat(p.get(k)); return isFinite(v) && v >= 0 ? Math.min(v, CAP) : d; };
@@ -595,16 +606,46 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
     if (ok(p.get('s'))) S.s = p.get('s');
     if (ok(p.get('e'))) S.e = p.get('e');
     if (p.get('y') === 'log') S.y = 'log';
+    const yrs = +p.get('p');
+    if (PRESETS.includes(yrs)) {                 // 近 N 年係滾動嘅：永遠係最近 N 年
+      S.p = yrs;
+      S.s = monthAdd(LAST, -(yrs * 12 - 1));
+      S.e = LAST;
+    }
     if (S.e > LAST) S.e = LAST;
     if (S.s < D.m0) S.s = D.m0;
   }
-  function writeHash() {
-    const p = new URLSearchParams({ t: S.t.join(','), c: S.c, a: S.a, f: S.f, s: S.s, e: S.e, d: S.d });
-    if (S.l) p.set('l', S.l);
-    if (S.g) p.set('g', S.g);
-    if (S.x) p.set('x', S.x);
-    if (S.y === 'log') p.set('y', 'log');
-    history.replaceState(null, '', '#' + p.toString());
+  // 精簡版：預設值唔寫、逗號唔轉 %2C；結束月份係「而家」就唔寫，下個月自動推前
+  function stateString() {
+    const q = ['t=' + S.t.join(',')];
+    if (S.c !== 'HKD') q.push('c=' + S.c);
+    if (S.a !== 10000) q.push('a=' + S.a);
+    if (S.f !== 1) q.push('f=' + S.f);
+    if (S.p) q.push('p=' + S.p);                 // 近 N 年：唔寫 s／e，等佢自己滾動
+    else {
+      if (S.s !== '2020-01') q.push('s=' + S.s);
+      if (S.e !== LAST) q.push('e=' + S.e);
+    }
+    if (S.d !== 'net') q.push('d=' + S.d);
+    if (S.l) q.push('l=' + S.l);
+    if (S.g) q.push('g=' + S.g);
+    if (S.x) q.push('x=' + S.x);
+    if (S.y === 'log') q.push('y=log');
+    return q.join('&');
+  }
+  function saveState() {
+    if (!CAN_STORE) { history.replaceState(null, '', '#' + stateString()); return; }
+    try { localStorage.setItem(SAVE_KEY, stateString()); } catch (e) { /* 爆咗容量等：唔記得就算 */ }
+  }
+  function savedState() {
+    try { return localStorage.getItem(SAVE_KEY) || ''; } catch (e) { return ''; }
+  }
+  function shareUrl() {
+    return location.origin + location.pathname + '#' + stateString();
+  }
+  // 由分享連結打開：套用完設定就將網址欄還原做 /dca/（replaceState 唔會觸發 hashchange）
+  function cleanBar() {
+    if (CAN_STORE && location.hash) history.replaceState(null, '', location.pathname + location.search);
   }
 
   // ---------- 個股：揀咗先下載 ----------
@@ -799,13 +840,14 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
     document.querySelectorAll('input[name=ccy]').forEach(r => r.addEventListener('change', () => { S.c = r.value; update(); }));
     document.querySelectorAll('input[name=freq]').forEach(r => r.addEventListener('change', () => { S.f = +r.value; update(); }));
     document.querySelectorAll('input[name=div]').forEach(r => r.addEventListener('change', () => { S.d = r.value; update(); }));
-    document.querySelectorAll('input[name=scale]').forEach(r => r.addEventListener('change', () => { S.y = r.value; writeHash(); drawChart(); }));
-    ['sy', 'sm'].forEach(id => $(id).addEventListener('change', () => { S.s = $('sy').value + '-' + $('sm').value; update(); }));
-    ['ey', 'em'].forEach(id => $(id).addEventListener('change', () => { S.e = $('ey').value + '-' + $('em').value; update(); }));
+    document.querySelectorAll('input[name=scale]').forEach(r => r.addEventListener('change', () => { S.y = r.value; saveState(); drawChart(); }));
+    ['sy', 'sm'].forEach(id => $(id).addEventListener('change', () => { S.p = 0; S.s = $('sy').value + '-' + $('sm').value; update(); }));
+    ['ey', 'em'].forEach(id => $(id).addEventListener('change', () => { S.p = 0; S.e = $('ey').value + '-' + $('em').value; update(); }));
     $('presets').addEventListener('click', e => {
       const b = e.target.closest('.chip');
       if (!b) return;
-      S.s = monthAdd(LAST, -(+b.dataset.y * 12 - 1));
+      S.p = +b.dataset.y;
+      S.s = monthAdd(LAST, -(S.p * 12 - 1));
       if (S.s < D.m0) S.s = D.m0;
       S.e = LAST;
       update();
@@ -822,12 +864,12 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       else if (e.key === 'Escape') { closeAc(); }
     });
     $('share').addEventListener('click', async () => {
-      writeHash();
+      const url = shareUrl();
       try {
-        await navigator.clipboard.writeText(location.href);
-        $('shareNote').textContent = '已複製。打開連結會見到同一個回測。';
+        await navigator.clipboard.writeText(url);
+        $('shareNote').textContent = '已複製：' + url;
       } catch (e) {
-        $('shareNote').textContent = '複製唔到，請直接複製瀏覽器網址列。';
+        $('shareNote').textContent = '自動複製唔到，請手動複製：' + url;
       }
     });
   }
@@ -841,7 +883,7 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
   function update(syncInputs = true) {
     assignSlots();
     if (syncInputs) syncControls(); else syncPicker();
-    writeHash();
+    saveState();
     $('shareNote').textContent = '';
     render();
   }
@@ -1238,8 +1280,10 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
         const m = monthAdd(D.m0, e.i + e.c.length - 1);
         return m > a ? m : a;
       }, D.m0);
-      readHash();
-      failedT = await ensureLoaded(S.t);
+      // 有分享連結就用連結；冇就用返上次記低嘅設定；都冇就預設
+      readState(location.hash.length > 1 ? location.hash.slice(1) : savedState());
+      await ensureLoaded(S.t);
+      failedT = S.t.filter(t => !own(D.etfs, t));
       $('stockHint').textContent = failedT.length
         ? failedT.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。' : stockHintText();
       $('src').textContent = '數據：Yahoo Finance，價格同股息已按拆股調整，截至 ' +
@@ -1249,15 +1293,18 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       fillYears();
       bindControls();
       update();
+      cleanBar();
       window.addEventListener('hashchange', async () => {
+        if (location.hash.length <= 1) return;      // 自己清網址欄唔算
         const my = ++gen;
-        readHash();
-        const bad = await ensureLoaded(S.t);
+        readState(location.hash.slice(1));
+        await ensureLoaded(S.t);
         if (my !== gen) return;
-        failedT = bad;
-        $('stockHint').textContent = bad.length
-          ? bad.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。' : stockHintText();
+        failedT = S.t.filter(t => !own(D.etfs, t));
+        $('stockHint').textContent = failedT.length
+          ? failedT.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。' : stockHintText();
         update();
+        cleanBar();
       });
     })
     .catch(() => {
