@@ -583,11 +583,9 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
   // 連結，冇寫「一筆過」嗰條會靜靜咁繼承咗上一條嘅一筆過金額。
   const SAVE_KEY = 'dca-state';
   const PRESETS = [3, 5, 10, 15, 20, 30];
-  // 瀏覽器唔俾儲存（私隱模式、Safari 封鎖）就退返舊做法：設定照寫喺網址，否則重新整理會打回預設
-  const CAN_STORE = (() => {
-    try { localStorage.setItem('dca-probe', '1'); localStorage.removeItem('dca-probe'); return true; }
-    catch (e) { return false; }
-  })();
+  // 最近一次 saveState 真係寫到 localStorage 先准清網址欄。唔可以靠開頭一次性 probe：
+  // 細細個 probe 寫到，唔代表完整設定寫到（例如容量就快滿）。
+  let storeOK = false;
   function readState(str) {
     Object.assign(S, { t: DEFAULT_T.filter(t => D.etfs[t]), c: 'HKD', a: 10000, f: 1,
                        s: '2020-01', e: LAST, l: 0, g: 0, d: 'net', x: 0, y: 'lin', p: 0 });
@@ -634,8 +632,10 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
     return q.join('&');
   }
   function saveState() {
-    if (!CAN_STORE) { history.replaceState(null, '', '#' + stateString()); return; }
-    try { localStorage.setItem(SAVE_KEY, stateString()); } catch (e) { /* 爆咗容量等：唔記得就算 */ }
+    const str = stateString();
+    try { localStorage.setItem(SAVE_KEY, str); storeOK = true; return; } catch (e) { storeOK = false; }
+    // 記唔到（私隱模式、Safari 封鎖、爆容量）就退返寫喺網址：否則重新整理會打回舊設定
+    history.replaceState(null, '', '#' + str);
   }
   function savedState() {
     try { return localStorage.getItem(SAVE_KEY) || ''; } catch (e) { return ''; }
@@ -645,7 +645,7 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
   }
   // 由分享連結打開：套用完設定就將網址欄還原做 /dca/（replaceState 唔會觸發 hashchange）
   function cleanBar() {
-    if (CAN_STORE && location.hash) history.replaceState(null, '', location.pathname + location.search);
+    if (storeOK && location.hash) history.replaceState(null, '', location.pathname + location.search);
   }
 
   // ---------- 個股：揀咗先下載 ----------
@@ -1001,7 +1001,7 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
         ' ');
       const b = el('button', null, '改為由 ' + mLabel(latest) + '開始，公平比較');
       b.type = 'button';
-      b.addEventListener('click', () => { S.s = latest; update(); });
+      b.addEventListener('click', () => { S.p = 0; S.s = latest; update(); });
       note.appendChild(b);
       note.hidden = false;
     } else note.hidden = true;
@@ -1281,7 +1281,8 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
         return m > a ? m : a;
       }, D.m0);
       // 有分享連結就用連結；冇就用返上次記低嘅設定；都冇就預設
-      readState(location.hash.length > 1 ? location.hash.slice(1) : savedState());
+      const firstHash = location.hash;
+      readState(firstHash.length > 1 ? firstHash.slice(1) : savedState());
       await ensureLoaded(S.t);
       failedT = S.t.filter(t => !own(D.etfs, t));
       $('stockHint').textContent = failedT.length
@@ -1293,19 +1294,25 @@ td small, th small { display: block; font-size: 12px; font-weight: 400; color: v
       fillYears();
       bindControls();
       update();
-      cleanBar();
-      window.addEventListener('hashchange', async () => {
+      async function onHashChange() {
         if (location.hash.length <= 1) return;      // 自己清網址欄唔算
         const my = ++gen;
         readState(location.hash.slice(1));
         await ensureLoaded(S.t);
-        if (my !== gen) return;
-        failedT = S.t.filter(t => !own(D.etfs, t));
-        $('stockHint').textContent = failedT.length
-          ? failedT.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。' : stockHintText();
+        if (my === gen) {                            // 下載期間冇人再改：先更新提示
+          failedT = S.t.filter(t => !own(D.etfs, t));
+          $('stockHint').textContent = failedT.length
+            ? failedT.join('、') + ' 嘅數據暫時載入唔到，重新整理再試。' : stockHintText();
+        }
+        // 就算期間有人改咗選擇，都要用「而家」嘅狀態重畫（新下載嘅數據要出現）同儲存，
+        // 之後先清網址欄 —— 否則網址留住舊連結，一重新整理就會覆蓋用戶啱啱嘅改動
         update();
         cleanBar();
-      });
+      }
+      window.addEventListener('hashchange', onHashChange);
+      // 載入期間（listener 未掛）有人貼咗另一條連結：補做，唔好當自己嘅連結清走佢
+      if (location.hash !== firstHash && location.hash.length > 1) onHashChange();
+      else cleanBar();
     })
     .catch(() => {
       $('state').textContent = '歷史數據載入唔到。請檢查網絡之後重新整理頁面。';
