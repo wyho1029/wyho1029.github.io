@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>YouTube 全片預載</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="28" height="28">
+    <h1>YouTube 全片預載</h1>
+  </header>
+
+  <label class="row">
+    <span>開啟預載</span>
+    <input type="checkbox" id="enabled">
+  </label>
+
+  <label class="row">
+    <span>預載幾遠</span>
+    <select id="aheadMin">
+      <option value="0">成條片（建議）</option>
+      <option value="60">前面 60 分鐘</option>
+      <option value="30">前面 30 分鐘</option>
+      <option value="10">前面 10 分鐘</option>
+      <option value="5">前面 5 分鐘</option>
+    </select>
+  </label>
+
+  <label class="row">
+    <span>保留已睇過嘅部分<small>倒後唔使再下載</small></span>
+    <input type="checkbox" id="keepWatched">
+  </label>
+
+  <label class="row">
+    <span>片上顯示預載進度</span>
+    <input type="checkbox" id="overlay">
+  </label>
+
+  <p class="note">
+    改完即刻生效。長片想成條留喺記憶體，要用「加大記憶體」參數開 Brave，
+    <a href="https://wyho1029.github.io/yt-prebuffer/#memory" target="_blank" rel="noopener">睇教學</a>。
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

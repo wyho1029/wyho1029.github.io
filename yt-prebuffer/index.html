@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube 全片預載</title>
+<meta name="description" content="Brave／Chrome 插件：睇 YouTube 時喺背後預載成條片，快進倒後唔使等。安裝同設定教學。">
+<link rel="icon" href="extension/icons/icon32.png">
+<style>
+  :root{
+    --bg:#0b0f17; --bg2:#131a26; --card:#161e2e; --line:#26314a;
+    --txt:#e8ecf4; --dim:#9aa7bd; --accent:#5aa9ff; --warn:#ffcf4d; --code:#0f1522;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f4f6fb; --bg2:#eaeef7; --card:#ffffff; --line:#e2e7f0;
+      --txt:#1a2233; --dim:#5c6a82; --accent:#1f6fd0; --warn:#9a6a00; --code:#f1f4fa; }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b0f17; --bg2:#131a26; --card:#161e2e; --line:#26314a;
+    --txt:#e8ecf4; --dim:#9aa7bd; --accent:#5aa9ff; --warn:#ffcf4d; --code:#0f1522;
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f6fb; --bg2:#eaeef7; --card:#ffffff; --line:#e2e7f0;
+    --txt:#1a2233; --dim:#5c6a82; --accent:#1f6fd0; --warn:#9a6a00; --code:#f1f4fa;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    min-height:100vh; font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans TC","Microsoft JhengHei",sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,var(--bg2),var(--bg)); background-color:var(--bg);
+    color:var(--txt); -webkit-font-smoothing:antialiased; line-height:1.65;
+    padding:clamp(24px,6vw,56px) 16px 48px;
+  }
+  main{max-width:760px; margin:0 auto}
+  a{color:var(--accent)}
+  .back{color:var(--dim); text-decoration:none; font-size:14px}
+  .back:hover{color:var(--accent)}
+  header{display:flex; gap:16px; align-items:center; margin:18px 0 8px}
+  header img{width:56px; height:56px; flex:none}
+  h1{margin:0; font-size:clamp(24px,5.5vw,34px)}
+  .tag{color:var(--dim); margin:4px 0 0}
+  h2{font-size:20px; margin:34px 0 10px; padding-top:6px}
+  h3{font-size:16px; margin:20px 0 6px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:12px 0}
+  .dl{
+    display:inline-flex; align-items:center; gap:8px; margin:14px 0 4px;
+    background:var(--accent); color:#fff; text-decoration:none; font-weight:650;
+    padding:11px 18px; border-radius:10px;
+  }
+  .dl:hover{filter:brightness(1.08)}
+  ol,ul{padding-left:1.3em; margin:8px 0}
+  li{margin:5px 0}
+  code{background:var(--code); border:1px solid var(--line); border-radius:5px; padding:1px 5px; font-size:.92em; word-break:break-all}
+  pre{background:var(--code); border:1px solid var(--line); border-radius:10px; padding:12px 14px; overflow-x:auto; font-size:13px; line-height:1.5; margin:8px 0}
+  pre code{background:none; border:0; padding:0; word-break:normal}
+  .warn{border-color:var(--warn)}
+  .warn b{color:var(--warn)}
+  .dim{color:var(--dim); font-size:14px}
+  table{width:100%; border-collapse:collapse; font-size:14px; margin:8px 0}
+  th,td{text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{color:var(--dim); font-weight:600}
+  .theme{
+    position:fixed; top:16px; right:16px; width:40px; height:40px;
+    border:1px solid var(--line); border-radius:50%; background:var(--card);
+    color:var(--txt); font-size:18px; cursor:pointer; line-height:1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  footer{margin-top:40px; color:var(--dim); font-size:12px; text-align:center}
+  footer a{color:var(--dim)}
+</style>
+</head>
+<body>
+<button class="theme" id="themeBtn" aria-label="切換明暗主題">🌙</button>
+<main>
+  <a class="back" href="../">← 工具台</a>
+  <header>
+    <img src="extension/icons/icon128.png" alt="">
+    <div>
+      <h1>YouTube 全片預載</h1>
+      <p class="tag">Brave 插件 · 睇片時喺背後一路預載成條片，快進、倒後都唔使等</p>
+    </div>
+  </header>
+
+  <a class="dl" href="yt-prebuffer.zip" download>⬇ 下載插件（yt-prebuffer.zip）</a>
+  <p class="dim">適用 Brave、Chrome、Edge 等 Chromium 瀏覽器（電腦版）。</p>
+
+  <h2>佢做咩</h2>
+  <div class="card">
+    <p style="margin-top:0">YouTube 平時只會預載前面一兩分鐘，你一拉去後面就要等佢再下載。呢個插件會：</p>
+    <ul>
+      <li><b>一路預載落去</b>：預設預載成條片（可以改做只預載前面 5／10／30／60 分鐘）。</li>
+      <li><b>保留已經睇過嘅部分</b>：倒後返去睇唔使重新下載。</li>
+      <li><b>喺片左下角顯示進度</b>：例如「⬇ 已預載到 12:40 / 45:00」，載晒會變「✅ 已預載到片尾」。郁滑鼠叫出控制列先會見到。</li>
+    </ul>
+    <p class="dim" style="margin-bottom:0">預載嘅片段只係放喺瀏覽器記憶體，唔會存落硬碟；閂咗分頁就冇。</p>
+  </div>
+
+  <h2>安裝（大約 1 分鐘）</h2>
+  <ol>
+    <li>撳上面個藍色掣下載 <code>yt-prebuffer.zip</code>，然後<b>解壓</b>，會得到一個 <code>yt-prebuffer</code> 資料夾（入面有 <code>manifest.json</code>）。<br>
+      <span class="dim">放喺一個唔會刪走嘅位置，例如「文件」；之後唔好搬或者刪，否則插件會失效。</span></li>
+    <li>喺 Brave 網址列輸入 <code>brave://extensions</code> 再撳 Enter。</li>
+    <li>打開右上角嘅「<b>開發人員模式</b>」（Developer mode）。</li>
+    <li>撳「<b>載入未封裝項目</b>」（Load unpacked），揀啱啱解壓出嚟嘅 <code>yt-prebuffer</code> 資料夾。</li>
+    <li>撳工具列嘅拼圖 🧩 圖示，將「YouTube 全片預載」釘選出嚟，撳佢就可以改設定。</li>
+    <li>打開（或者重新載入）任何 YouTube 片就生效。</li>
+  </ol>
+  <p class="dim">之後有新版：下載新 zip，覆蓋舊資料夾，再喺 <code>brave://extensions</code> 撳插件上面嘅 ↻ 重新載入。</p>
+
+  <h2 id="memory">⚠️ 重要：加大 Brave 嘅影片記憶體</h2>
+  <div class="card warn">
+    <p style="margin-top:0"><b>唔做呢步，插件只可以預載大約幾分鐘。</b>
+    Brave（同所有 Chromium 瀏覽器）預設每條片最多留 <b>150MB 畫面 + 12MB 聲音</b> 喺記憶體，
+    1080p 大約 8 分鐘左右（4K 只有一分鐘幾）。滿咗就會停，片上會顯示「⚠️ 到咗 Brave 記憶體上限」。</p>
+    <p style="margin-bottom:0">解決方法係用兩個啟動參數開 Brave，將上限加大：</p>
+  </div>
+
+  <table>
+    <tr><th>你部電腦嘅 RAM</th><th>建議參數</th><th>1080p 大約夠幾長</th></tr>
+    <tr><td>8GB</td><td><code>--mse-video-buffer-size-limit-mb=800 --mse-audio-buffer-size-limit-mb=100</code></td><td>約 45 分鐘</td></tr>
+    <tr><td>16GB 或以上</td><td><code>--mse-video-buffer-size-limit-mb=2000 --mse-audio-buffer-size-limit-mb=200</code></td><td>約 1.5–2 個鐘</td></tr>
+  </table>
+  <p class="dim">記憶體係播緊嘅片用幾多先佔幾多，唔會一開 Brave 就霸晒。數字唔好超過 4000，超過咗 Brave 會當冇設定。</p>
+
+  <h3>Windows</h3>
+  <ol>
+    <li>完全閂咗 Brave：右下角系統匣如果有 Brave 圖示，右撳 →「結束」。</li>
+    <li>右撳桌面上嘅 Brave 捷徑 →「內容」（Properties）。</li>
+    <li>喺「目標」（Target）一欄最尾，<code>brave.exe"</code> 後面加一個空格，再貼上參數（前面嘅路徑唔使改，你部機可能唔同），例如：
+      <pre><code>"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" --mse-video-buffer-size-limit-mb=2000 --mse-audio-buffer-size-limit-mb=200</code></pre></li>
+    <li>撳「確定」，之後<b>用呢個捷徑開 Brave</b>。如果你平時用工作列（taskbar）個圖示開：右撳工作列 Brave 圖示 → 再右撳彈出嚟嘅「Brave」→「內容」，照樣改一次。</li>
+  </ol>
+
+  <h3>Mac</h3>
+  <ol>
+    <li>完全閂咗 Brave（<code>⌘Q</code>）。</li>
+    <li>打開「終端機」（Terminal），貼入以下一行再撳 Enter，會喺「應用程式」整一個「Brave 大記憶體」：
+      <pre><code>mkdir -p ~/Applications && osacompile -o ~/Applications/"Brave 大記憶體.app" -e 'do shell script "open -a \"Brave Browser\" --args --mse-video-buffer-size-limit-mb=2000 --mse-audio-buffer-size-limit-mb=200"'</code></pre></li>
+    <li>之後用 Finder →「前往」→「個人專屬」→「應用程式」入面嘅「Brave 大記憶體」開 Brave（可以拉落 Dock）。<br>
+      <span class="dim">Brave 已經開咗嘅話參數唔會生效，要先 <code>⌘Q</code> 閂咗佢。</span></li>
+  </ol>
+
+  <h3>檢查有冇成功</h3>
+  <p>喺網址列輸入 <code>brave://version</code>，睇「命令列」（Command Line）嗰行有冇 <code>--mse-video-buffer-size-limit-mb</code>。有就得。</p>
+
+  <h2>要留意</h2>
+  <ul>
+    <li><b>用多咗流量</b>：成條片都會下載，就算你只睇一半。用手機熱點嘅時候可以喺插件熄咗，或者揀「前面 5 分鐘」。</li>
+    <li><b>直播唔會預載</b>；首頁滑鼠停喺縮圖嘅預覽都唔會。</li>
+    <li>插件係靠調整 YouTube 播放器同伺服器之間嘅溝通（SABR 串流）做到。YouTube 日後改咗做法，插件可能會冇效，到時要更新。</li>
+    <li>呢個係非官方工具，唔會下載片落電腦，亦唔會改廣告或者其他內容。</li>
+  </ul>
+
+  <h2>有問題點算</h2>
+  <ul>
+    <li><b>條片播唔到／黑畫面</b>：撳插件圖示，熄「開啟預載」再重新載入頁面。如果熄咗就正常，再開返預載、改為熄「保留已睇過嘅部分」試吓。</li>
+    <li><b>進度一直停喺一兩分鐘</b>：先睇吓有冇「⚠️ 記憶體上限」；冇嘅話可能 YouTube 改咗做法。按 <code>F12</code> → Console，輸入 <code>__ytpbStats()</code> 再撳 Enter，將結果截圖畀我睇。</li>
+    <li><b>想睇詳細記錄</b>：Console 輸入 <code>localStorage.ytpbDebug = '1'</code>，重新載入頁面，就會見到「[YT預載]」開頭嘅記錄。</li>
+  </ul>
+</main>
+<footer>wyho1029.github.io · <a href="https://github.com/wyho1029/wyho1029.github.io/tree/main/yt-prebuffer">原始碼</a></footer>
+
+<script>
+  var root = document.documentElement, btn = document.getElementById('themeBtn');
+  function cur(){ return root.getAttribute('data-theme') ||
+    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+  function apply(t){ root.setAttribute('data-theme', t);
+    try { localStorage.setItem('hub-theme', t); } catch (e) {}
+    btn.textContent = t === 'dark' ? '☀️' : '🌙'; }
+  var saved = null;
+  try { saved = localStorage.getItem('hub-theme'); } catch (e) {}
+  if (saved) apply(saved);
+  else btn.textContent = cur() === 'dark' ? '☀️' : '🌙';
+  btn.onclick = function(){ apply(cur() === 'dark' ? 'light' : 'dark'); };
+</script>
+</body>
+</html>
