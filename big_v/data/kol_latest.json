@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-09T07:01:43+08:00",
+ "updated_at": "2026-10-09T20:01:56+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -7583,6 +7583,16 @@
      "url": "https://x.com/aleabitoreddit/status/2105709782854435274",
      "stance": "bullish",
      "summary": "作者認為Sivers Semiconductors是雷射受益者的高確信度阿爾法，因即將上線的巨大產能指向美國晶圓廠。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-10-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2108412203514925165",
+     "url": "https://x.com/aleabitoreddit/status/2108412203514925165",
+     "stance": "bullish",
+     "summary": "作者認為 Lumentum 產能售罄嘅瓶頸利好包括 Sivers 在內、正增加產能嘅激光供應商。",
      "r7": null,
      "r30": null
     }
@@ -18418,11 +18428,21 @@
      "summary": "作者認為AAOI表現會優於LITE。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2108412203514925165",
+     "url": "https://x.com/aleabitoreddit/status/2108412203514925165",
+     "stance": "bullish",
+     "summary": "作者引述 CEO 指 Lumentum 產能幾乎賣清到 2029 年，需求能見度直達 2030、2031 年，對公司前景極度樂觀。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 28.4,
-   "ai_summary": "最新立場偏向看淡：作者在2026年10月5日認為AAOI表現會優於LITE，是首次明確負面表態。此前論述重點包括NPO市場大於CPO、多波長激光推高ASP、需求持續大於供應、Nvidia取得Greensboro UHP激光一半產能、CPO/NPO需求遠超供應且2027年只能滿足三成需求，以及供應緊張支持稀缺溢價並預期2027至2028年光子超級周期重演記憶體行情。作者自2025年起看好激光題材，LITE曾是其選股之一且漲幅超過100%，但期間多次轉為中性，最終於10月5日轉為看淡，惟未提及具體風險提示。",
+   "ai_summary": "最新立場係睇好，作者喺2026年10月9日引述CEO指Lumentum產能幾乎賣清到2029年，需求能見度直達2030至2031年，對前景極度樂觀。論述主線係激光供應短缺同稀缺溢價，NPO市場大於CPO、多波長激光推高ASP、Nvidia取得Greensboro UHP激光一半產能、潛在FCC規則等都令合格產能更重要，並預期2027至2028年光子超級周期重演記憶體行情。風險提示方面，10月5日曾指AAOI表現會優於LITE，9月8日亦提過價格溢價高令客戶尋找替代方案，但整體由2025年起睇好嘅立場冇變。",
    "theme": "光通訊"
   },
   "MRVL": {
@@ -22351,11 +22371,21 @@
      "summary": "作者質疑媒體將 OpenAI 收入標題同 AAOI 雷射短缺掛鉤，認為呢種講法唔成立。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-09",
+     "author": "aleabitoreddit",
+     "tweet_id": "2108412203514925165",
+     "url": "https://x.com/aleabitoreddit/status/2108412203514925165",
+     "stance": "bullish",
+     "summary": "作者認為 Lumentum 供不應求嘅情況同樣利好 Applied Optoelectronics 等光子學供應商。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -23.6,
-   "ai_summary": "最新立場偏向審慎：aleabitoreddit 於 10 月 8 日質疑媒體將 OpenAI 收入標題與 AAOI 雷射短缺掛鉤，認為該說法不成立，屬此前連串看好後的降溫表態。主要論述點圍繞 2027 年光子學增長、光學供應鏈短缺、FCC 規則有利美國供應鏈、收發器月收入 4.71 億美元及 ELSFP 產能爬坡，但反覆 ATM 融資造成賣壓，短期股價難突破，若停止發行 ATM 則有望大幅跑贏。wliang 及 sunxliao 同期持續看好，分別提及藍鑽石及三重日線藍燈訊號；aleabitoreddit 由 9 月 17 日中性轉向連番看好，至 10 月 8 日轉為質疑，屬立場轉變，並隱含對媒體炒作掛鉤的風險提示。",
+   "ai_summary": "最新立場整體仍偏看好：aleabitoreddit 雖在 10 月 8 日質疑媒體將 OpenAI 收入標題與 AAOI 雷射短缺掛鉤，但隨後重申 Lumentum 供不應求利好 AAOI 等光子學供應商，wliang 與 sunxliao 亦持續以藍鑽、藍燈等技術訊號看好。主要論述點包括 2027 年光子學大幅增長、光學供應鏈短缺、FCC 規則可能有利美國供應鏈、完成 ATM 計劃後有望跑贏 LITE，以及收發器月收入達 4.71 億美元與 ELSFP 產能爬坡。風險提示在於 aleabitoreddit 曾指反覆 ATM 融資造成賣壓、短期股價難突破，若停止發行 ATM 則有望大幅跑贏，屬唯一明確負面或保留論述。",
    "theme": "光通訊"
   },
   "EOS": {
@@ -22864,7 +22894,7 @@
     }
    ],
    "yellow": null,
-   "gain": -9.2,
+   "gain": -9.5,
    "theme": "其他"
   },
   "AOSL": {
@@ -26602,7 +26632,7 @@
     }
    ],
    "yellow": null,
-   "gain": -42.4,
+   "gain": -43.4,
    "ai_summary": "根據歷史記錄，最新立場維持看多。論述重點包括管理層公開市場買入顯示信心、市場誤解報導導致錯殺，以及同業Lumentum強勁業績對CPO廠商的正面訊號。整體觀點從未轉向看空，但早期曾提示股價下跌15.4%時的市場誤解風險，後續持續強調反彈與成長潛力。",
    "theme": "半導體設備"
   },
@@ -32100,7 +32130,7 @@
     }
    ],
    "yellow": null,
-   "gain": -13.2,
+   "gain": -16.9,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -32941,7 +32971,7 @@
     }
    ],
    "yellow": null,
-   "gain": -19.1,
+   "gain": -19.0,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -34443,7 +34473,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 836,
+   "calls": 839,
    "n7": 689,
    "win7": 51,
    "n30": 566,
