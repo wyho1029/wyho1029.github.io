@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-11T07:01:43+08:00",
+ "updated_at": "2026-10-11T20:02:00+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -23338,11 +23338,21 @@
      "summary": "作者指股價已升47%，表現強勁。",
      "r7": 1.0,
      "r30": null
+    },
+    {
+     "date": "2026-10-10",
+     "author": "sunxliao",
+     "tweet_id": "2109069229001769092",
+     "url": "https://x.com/sunxliao/status/2109069229001769092",
+     "stance": "bullish",
+     "summary": "作者認為 PLTR 雖然有時沉悶，但會靜靜地持續上升，周線藍鑽信號約在 130 美元出現且走勢仍佳。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 94.9,
-   "ai_summary": "最新立場係整體仍然看好PLTR，wliang由頭到尾維持bullish，aleabitoreddit亦偏向正面。論述點主要圍繞國防股定位、AI發展參與、與NBIS及ONDS等合作關係，以及股價由15美元升至186美元、累升約1100%嘅歷史表現，並多次提到買入訊號後升47%至55%、前方無重大阻力。唯一一次轉軚係wliang於8月5日短暫轉為neutral，僅提及PLTR係ONDS合作夥伴而未表態，其後迅速回復bullish；數據中未見有明確風險提示。",
+   "ai_summary": "最新立場係整體仍然睇好，wliang同sunxliao持續唱好，aleabitoreddit亦持正面態度。論述點主要圍繞PLTR嘅AI同國防定位、同NBIS等合作夥伴關係、政府及企業關係，以及股價自買入訊號後累積升幅（曾提及升約47%至55%，並由15美元升至186美元、漲幅約1100%），sunxliao亦提到周線藍鑽信號約130美元出現且走勢仍佳。期間wliang喺2026-08-05曾轉為中性，僅提及PLTR係ONDS合作夥伴之一而未表明確觀點，但之後回復睇好；數據中未見有明確風險提示。",
    "theme": "其他"
   },
   "CRM": {
@@ -34631,7 +34641,7 @@
    }
   },
   "sunxliao": {
-   "calls": 973,
+   "calls": 974,
    "n7": 917,
    "win7": 41,
    "n30": 719,
