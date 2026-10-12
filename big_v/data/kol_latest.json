@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-12T07:01:43+08:00",
+ "updated_at": "2026-10-12T20:01:53+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -27895,7 +27895,7 @@
     }
    ],
    "yellow": null,
-   "gain": -1.5,
+   "gain": -6.6,
    "theme": "其他"
   },
   "COIN": {
@@ -31866,11 +31866,21 @@
      "summary": "作者將 ZCSH 列入買入清單，持續分批吸納。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-12",
+     "author": "sunxliao",
+     "tweet_id": "2109505923324809277",
+     "url": "https://x.com/sunxliao/status/2109505923324809277",
+     "stance": "bullish",
+     "summary": "作者以「hello」提及 ZCSH，暗示看好或已買入。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 39.3,
-   "ai_summary": "根據提及歷史，最新立場係 sunxliao 於 2026-10-08 將 ZCSH 列入買入清單並持續分批吸納，維持看好。主要論述點包括 ZCSH 係較安全、無槓桿嘅 Zcash ETF 選擇，表現強勢凌厲，預期未來幾日大漲，且若 ZEC 反彈將利好 ZCSH。期間未見轉軚或風險提示。",
+   "ai_summary": "sunxliao 由 2026 年 9 月 22 日至 10 月 12 日持續對 ZCSH 保持看好，最新立場係將 ZCSH 列入買入清單並持續分批吸納，預期第四季及整體牛市周期向好。主要論述點包括 ZCSH 表現強勢、相對強勢凌厲、仍有上升空間，以及若 ZEC 反彈將利好 ZCSH；wliang 亦曾指出 ZCSH 係較安全、無槓桿嘅 Zcash ETF 選擇。期內未見轉軚或風險提示。",
    "theme": "其他"
   },
   "ZEC": {
@@ -32260,7 +32270,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.6,
+   "gain": -17.6,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -33101,7 +33111,7 @@
     }
    ],
    "yellow": null,
-   "gain": -19.0,
+   "gain": -21.5,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -34068,11 +34078,21 @@
      "summary": "作者將 CYPH 列入買入清單，持續分批吸納。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-12",
+     "author": "sunxliao",
+     "tweet_id": "2109505923324809277",
+     "url": "https://x.com/sunxliao/status/2109505923324809277",
+     "stance": "bullish",
+     "summary": "作者以「hello」提及 CYPH，暗示看好或已買入。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 20.5,
-   "ai_summary": "最新立場係持續看好，sunxliao 將 CYPH 列入買入清單並分批吸納，wliang 亦指其出現罕見三個 BD 對齊 setup，技術面同基本面配合。論述點主要圍繞 Startup gold zone 支撐反彈、三重藍鑽訊號、Zcash 代理投資工具，以及若 ZEC 反彈將利好 CYPH。風險提示方面，sunxliao 提到 CYPH 波動較大，但認為心臟強大嘅投資者最終會成功，未見有轉軚跡象。",
+   "ai_summary": "CYPH 最新立場仍然偏看好：sunxliao 喺 10 月 8 日將 CYPH 列入買入清單並持續分批吸納，10 月 12 日再以「hello」提及，暗示看好或已買入；wliang 亦一直視 CYPH 為 Zcash 代理投資工具。論述點主要係技術面訊號，包括兩個失效方格、罕見 3 個 BD 對齊 setup、三重藍鑽訊號，以及自首個 BD 約 $0.76 已升約 430%，同時配合 ZEC 反彈利好 CYPH 嘅基本面邏輯。風險提示方面，sunxliao 喺 10 月 1 日提過 CYPH 波動較大，但認為心臟強大嘅投資者最終會成功；整體未見轉軚。",
    "theme": "其他"
   },
   "CIEN": {
@@ -34681,7 +34701,7 @@
    }
   },
   "sunxliao": {
-   "calls": 976,
+   "calls": 978,
    "n7": 917,
    "win7": 41,
    "n30": 719,
