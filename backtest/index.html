@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="九轉後月K轉黃 · 逐月重播：揀一個歷史個案，盲住逐月推前，睇吓入咗場之後係賺定蝕。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏯</text></svg>">
+<script>
+/* 跟工具台嘅深淺色選擇 —— 同一個 origin，共用 localStorage['hub-theme']。
+   要喺 render 之前行，唔係會閃一下。 */
+(function(){try{var t=localStorage.getItem('hub-theme');
+if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}
+catch(e){}})();
+</script>
+<title>股票回測</title>
+<style>
+:root{
+  color-scheme:light dark;
+  --signal:#C98A00; --signal-soft:#FFF0C4;
+  --bg:#FAF7EF; --panel:#FFFFFF; --rail:#E4DECD; --rail-soft:#F0EBDD;
+  --ink:#1E1A10; --ink-2:#4A4334; --muted:#7D7461;
+  --shadow:0 1px 2px rgba(30,26,16,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --signal:#FFBF00; --signal-soft:#3A2E08;
+    --bg:#151209; --panel:#1D1910; --rail:#332C1B; --rail-soft:#241F13;
+    --ink:#F5F0E2; --ink-2:#C9C1AC; --muted:#8B8270;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --signal:#FFBF00; --signal-soft:#3A2E08;
+  --bg:#151209; --panel:#1D1910; --rail:#332C1B; --rail-soft:#241F13;
+  --ink:#F5F0E2; --ink-2:#C9C1AC; --muted:#8B8270;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  background:var(--bg); color:var(--ink); margin:0;
+  font:400 15px/1.6 system-ui,"PingFang HK","Microsoft JhengHei","Noto Sans TC",sans-serif;
+  padding:32px 20px 64px;
+}
+.wrap{max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:24px}
+.back{align-self:flex-start; font-size:13px; line-height:1; color:var(--muted); text-decoration:none;
+  border:1px solid var(--rail); border-radius:5px; padding:7px 12px; background:var(--panel)}
+header{display:flex; flex-direction:column; gap:12px; border-left:3px solid var(--signal); padding-left:18px}
+.hrow{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px}
+h1{font-size:30px; line-height:1.15; font-weight:700; margin:0; letter-spacing:-.02em}
+.lede{margin:6px 0 0; color:var(--ink-2)}
+.note{font-size:13.5px; line-height:1.65; color:var(--muted); margin:0;
+  background:var(--signal-soft); border-left:3px solid var(--signal);
+  border-radius:0 6px 6px 0; padding:11px 14px; max-width:62ch}
+.switch{display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:6px 14px;
+  border:1px solid var(--rail); border-radius:999px; background:var(--panel); cursor:pointer;
+  font-weight:600; user-select:none}
+.switch input{width:18px; height:18px; margin:0; accent-color:var(--signal)}
+
+.tools{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.btn{font:inherit; font-size:14px; line-height:1; min-height:44px; padding:0 16px; cursor:pointer;
+  border:1px solid var(--rail); border-radius:6px; background:var(--panel); color:var(--ink)}
+.btn:hover{border-color:var(--signal)}
+.btn.pri{background:var(--signal); border-color:var(--signal); color:#1E1A10; font-weight:600}
+.tools input{font:inherit; font-size:14px; min-height:44px; width:160px; padding:0 12px;
+  border:1px solid var(--rail); border-radius:6px; background:var(--panel); color:var(--ink)}
+.btn:focus-visible,.tools input:focus-visible,.switch:focus-within{outline:2px solid var(--signal); outline-offset:1px}
+.count{color:var(--muted); font-size:13px; margin-left:auto; font-variant-numeric:tabular-nums}
+.tbl{max-height:min(70vh,640px); overflow:auto; border:1px solid var(--rail); border-radius:6px;
+  background:var(--panel); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:14px}
+th,td{padding:10px 14px; text-align:left; white-space:nowrap}
+th{position:sticky; top:0; background:var(--rail-soft); color:var(--muted); font-weight:600;
+  font-size:11.5px; letter-spacing:.07em}
+.n{text-align:right; font-variant-numeric:tabular-nums}
+tbody tr{cursor:pointer}
+tbody tr + tr{border-top:1px solid var(--rail-soft)}
+tbody tr:hover,tbody tr:focus-visible{background:var(--rail-soft); outline:none}
+td.code{font-weight:600}
+
+/* ── 圖表區：永遠深色（富途風），唔跟工具台主題 ───────────── */
+.fu{background:#13161C; color:#C9CED6; border-radius:10px; padding:10px 12px 0; font-size:13px}
+.fu .top{display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline}
+.fu .tk{color:#FFFFFF; font-size:18px}
+.fu .mut{color:#7D8590}
+.fu .chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.fu .chip{font:inherit; font-size:12px; min-height:32px; padding:0 12px; cursor:pointer;
+  background:#1F232B; border:1px solid #2D333D; border-radius:16px; color:#7D8590}
+.fu .chip[aria-pressed="true"]{border-color:#FFBF00; color:#FFBF00}
+.fu .read{min-height:22px; margin:2px 0 8px; line-height:1.7}
+.fu .read b{color:#FFFFFF}
+.fu .read .up{color:#0FC351} .fu .read .dn{color:#FF4D5E}
+.fu .pane{border-top:1px solid #2C3340}
+.fu .pl{display:flex; flex-wrap:wrap; gap:0 10px; min-height:20px; padding:3px 0 1px;
+  font-size:11.5px; color:#7D8590; font-variant-numeric:tabular-nums}
+.fu .pl i{font-style:normal}
+.fu .pl .nm{color:#C9CED6}
+.fu svg{display:block; width:100%; height:auto;
+  font-family:system-ui,"PingFang HK","Microsoft JhengHei","Noto Sans TC",sans-serif}
+.fu svg rect{shape-rendering:crispEdges}
+.fu .ctl{position:sticky; bottom:0; display:flex; flex-wrap:wrap; align-items:center; gap:8px;
+  padding:10px 0 12px; background:#13161C; border-top:1px solid #2C3340}
+.fu .ctl button{font:inherit; font-size:16px; min-width:44px; min-height:40px; cursor:pointer;
+  background:#262B35; color:#FFFFFF; border:0; border-radius:6px}
+.fu .ctl button:hover:not(:disabled){background:#333A46}
+.fu .ctl button:disabled{opacity:.35; cursor:default}
+.fu .ctl input[type=range]{flex:1 1 140px; min-width:0; accent-color:#FFBF00}
+.fu .ctl .lbl{font-variant-numeric:tabular-nums; white-space:nowrap}
+.fu .ctl .rev{font-size:14px; font-weight:700; padding:0 16px; background:#FFBF00; color:#13161C}
+.fu .ctl .rev:hover:not(:disabled){background:#FFD24D}
+.fu button:focus-visible,.fu input:focus-visible{outline:2px solid #FFBF00; outline-offset:1px}
+@media (max-width:560px){
+  body{padding:20px 12px 48px}
+  header{padding-left:12px}
+  h1{font-size:26px}
+  .fu{padding:8px 8px 0}
+  .tools input{flex:1 1 120px; width:auto}
+}
+</style>
+<script src="ind.js"></script>
+<script src="replay.js"></script>
+<script>
+// 頁面程式放喺 head（等 DOM 準備好先行），咁 body.innerHTML 就只有真正嘅頁面內容
+document.addEventListener('DOMContentLoaded', function () {
+'use strict';
+const $ = id => document.getElementById(id);
+const fin = Number.isFinite;
+// localStorage 讀寫全部包 try/catch（私隱模式等會 throw）
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+};
+
+// ── 狀態 ─────────────────────────────────────────────
+let blind = store.get('bt-blind') !== '0';     // 預設開；讀唔到都當開
+let rows = null, sorted = null, perm = null, view = [], openSeq = 0;
+let BT = window.BT = null;                     // 目前個案：{ticker, row, bars, sig, last, revealed}
+const on = { FCOLOR: 1, MA: 1, '九轉': 1, MACD: 1, MAVOL: 1, MCDXX: 1, HDLY2: 1, CHAODI7: 1 };
+const SUBS = ['MACD', 'MAVOL', 'MCDXX', 'HDLY2', 'CHAODI7'];
+
+// ── 顏色（Global Constraints，由富途截圖實測）──────────
+const FC = { yellow: '#FFBF00', green: '#0FC351', blue: '#0099FF', red: '#E53751', none: '#888888' };
+const UP = '#00A357', DN = '#E02D48';
+const GRID = '#1C222A', AXIS = '#A0A9B8', SEP = '#2C3340';
+
+// ── 格式 ─────────────────────────────────────────────
+const f3 = v => fin(v) ? v.toFixed(3) : '—';
+const fmtP = v => !fin(v) ? '—' : Math.abs(v) >= 1 ? v.toFixed(3) : v.toPrecision(4);
+const fmtAx = v => Math.abs(v) >= 1000 ? v.toFixed(0) : Math.abs(v) >= 1 ? v.toFixed(2) : v.toPrecision(3);
+const fmtVol = (v, d = 3) => !fin(v) ? '—' : v >= 1e8 ? (v / 1e8).toFixed(d) + '億'
+  : v >= 1e4 ? (v / 1e4).toFixed(d) + '萬' : v.toFixed(0);
+
+// ── SVG 小工具（改寫自 mock-v2.html）──────────────────
+const VW = 1000, PR = 58, PW = VW - PR, FUT = 12, MID = ' text-anchor="middle"';
+const txt = (x, y, s, fill, fs, ex) =>
+  `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" fill="${fill}" font-size="${fs}"${ex || ''}>${s}</text>`;
+const hline = (yy, c, w, dash) => `<line x1="0" x2="${PW}" y1="${yy.toFixed(1)}" y2="${yy.toFixed(1)}" stroke="${c}"` +
+  ` stroke-width="${w || 1}"${dash ? ` stroke-dasharray="${dash}"` : ''}/>`;
+
+// Y 軸：只用視窗 [from, last] 入面嘅值。srcs 每項係 [陣列, 由第幾支起計] 或者數字（常數線）。
+// cLo/cHi = 硬性上下限（HDLY2 用）。冇有限數 → 0..1；全部一樣 → 上下各加 5%，唔會出 NaN/Infinity。
+function scaler(G, srcs, h, top, bot, cLo, cHi) {
+  let lo = Infinity, hi = -Infinity;
+  const add = v => { if (fin(v)) { if (v < lo) lo = v; if (v > hi) hi = v; } };
+  for (const s of srcs) {
+    if (typeof s === 'number') add(s);
+    else for (let i = Math.max(G.from, s[1] || 0); i <= G.last; i++) add(s[0][i]);
+  }
+  if (cLo !== undefined) lo = Math.max(lo, cLo);
+  if (cHi !== undefined) hi = Math.min(hi, cHi);
+  if (!(lo <= hi)) { lo = 0; hi = 1; }
+  else if (lo === hi) { const d = Math.abs(lo) * .05 || 1; lo -= d; hi += d; }
+  const k = (h - top - bot) / (hi - lo);
+  const y = v => top + (hi - Math.min(hi, Math.max(lo, v))) * k;
+  y.lo = lo; y.hi = hi;
+  return y;
+}
+// 折線：唔係有限數嘅點就斷開；k0 之前唔畫（MA 未夠 period）
+function line(G, y, a, c, w, k0, cls) {
+  let s = '', pts = [];
+  const out = () => {
+    if (pts.length > 1) s += `<polyline${cls ? ` class="${cls}"` : ''} points="${pts.join(' ')}" fill="none" stroke="${c}" stroke-width="${w}"/>`;
+    pts = [];
+  };
+  for (let i = Math.max(G.from, k0 || 0); i <= G.last; i++) {
+    if (fin(a[i])) pts.push(G.X(i).toFixed(1) + ',' + y(a[i]).toFixed(1)); else out();
+  }
+  out();
+  return s;
+}
+function grid(y, n, fmt) {
+  let s = '';
+  for (let g = 0; g < n; g++) {
+    const v = y.lo + (y.hi - y.lo) * (g + .5) / n, yy = y(v);
+    s += hline(yy, GRID) + txt(PW + 5, yy + 4, fmt(v), AXIS, 11);
+  }
+  return s;
+}
+// 柱：由 a 去 b，wf = 佔格闊比例；任何一端唔係有限數就唔畫
+function bar(G, y, i, a, b, c, wf, cls) {
+  if (!fin(a) || !fin(b)) return '';
+  const y1 = y(a), y2 = y(b), w = G.sw * wf;
+  return `<rect${cls ? ` class="${cls}"` : ''} x="${(G.X(i) - w / 2).toFixed(2)}" y="${Math.min(y1, y2).toFixed(1)}"` +
+    ` width="${w.toFixed(2)}" height="${Math.max(1, Math.abs(y1 - y2)).toFixed(1)}" fill="${c}"/>`;
+}
+const defs = id => `<defs><pattern id="hz-${id}" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">` +
+  `<line x1="0" y1="0" x2="0" y2="7" stroke="#262C36" stroke-width="3"/></pattern></defs>`;
+// 最右 12 格：斜線遮住未來
+function mask(G, h, id, main) {
+  const x0 = (G.last - G.from + 1) * G.sw, w = PW - x0;
+  let s = `<rect x="${x0.toFixed(1)}" y="0" width="${w.toFixed(1)}" height="${h}" fill="url(#hz-${id})"/>`;
+  if (main) s += txt(x0 + w / 2, h / 2, '未來 · 推前先見到', '#8B93A0', Math.min(15, w / 9).toFixed(1), MID);
+  return s;
+}
+const vgrid = (G, h) => G.ticks.map(([x]) =>
+  `<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="0" y2="${h}" stroke="${GRID}"/>`).join('');
+
+// ── 各格 ─────────────────────────────────────────────
+const panes = {
+  main(G) {
+    const { B, S } = G, h = 320, src = [[B.h], [B.l]];
+    if (on.MA) src.push([S.ma30, 29], [S.ma40, 39], [S.ma150, 149]);
+    const y = scaler(G, src, h, 24, 50);
+    let s = defs('m') + vgrid(G, h) + grid(y, 5, fmtAx);
+    for (const [x, t] of G.ticks) s += txt(x, h - 4, t, AXIS, 11, MID);
+    for (let i = G.from; i <= G.last; i++) {                     // K線：細線 L..H + 實體 O..C
+      const o = B.o[i], hh = B.h[i], l = B.l[i], c = B.c[i];
+      if (!(fin(o) && fin(hh) && fin(l) && fin(c))) continue;
+      const col = on.FCOLOR ? FC[S.color[i]] : c > o ? UP : c < o ? DN : FC.none;
+      const x = G.X(i).toFixed(1);
+      s += `<line x1="${x}" x2="${x}" y1="${y(hh).toFixed(1)}" y2="${y(l).toFixed(1)}" stroke="${col}"/>` +
+        bar(G, y, i, o, c, col, .7, 'cb');
+    }
+    if (on.MA) s += line(G, y, S.ma30, '#E02D48', 1.3, 29, 'ma30') + line(G, y, S.ma40, '#FF6060', 1.3, 39, 'ma40') +
+      line(G, y, S.ma150, '#0000FF', 1.3, 149, 'ma150');
+    if (on['九轉']) for (let i = G.from; i <= G.last; i++) {       // 向上標喺 high 上面，向下標喺 low 下面；9 大啲粗啲
+      const u = S.tdUp[i], d = S.tdDn[i];
+      if (u && fin(B.h[i])) s += txt(G.X(i), y(B.h[i]) - 3, u, u === 9 ? '#03C484' : '#FF00FF', u === 9 ? 15 : 10,
+        MID + ' class="td"' + (u === 9 ? ' font-weight="700"' : ''));
+      if (d && fin(B.l[i])) s += txt(G.X(i), y(B.l[i]) + (d === 9 ? 15 : 11), d, d === 9 ? '#FF00FF' : '#03C484', d === 9 ? 15 : 10,
+        MID + ' class="td"' + (d === 9 ? ' font-weight="700"' : ''));
+    }
+    if (G.sig >= G.from && fin(B.l[G.sig]))
+      s += txt(G.X(G.sig), y(B.l[G.sig]) + (on['九轉'] && S.tdDn[G.sig] ? 31 : 16), '▲轉黃', '#FFBF00', 12,
+        MID + ' font-weight="700" class="sigmk"');
+    if (G.R.state === 'run') {                                    // 入場價虛線 + 右邊標價
+      const e = G.R.entry, ye = y(e), x0 = Math.max(0, G.X(G.sig + 1) - G.sw / 2);
+      const off = e > y.hi ? ' ↑' : e < y.lo ? ' ↓' : '';
+      s += `<line class="entry" x1="${x0.toFixed(1)}" x2="${PW}" y1="${ye.toFixed(1)}" y2="${ye.toFixed(1)}" stroke="#FFBF00"` +
+        ` stroke-width="1.2" stroke-dasharray="5 4"/><rect x="${PW + 1}" y="${(ye - 8).toFixed(1)}" width="${PR - 2}" height="16" rx="2" fill="#FFBF00"/>` +
+        txt(PW + 4, ye + 4, fmtP(e) + off, '#13161C', 10.5, ' font-weight="700"');
+    }
+    return s + mask(G, h, 'm', true);
+  },
+  MACD(G) {
+    const { S } = G, h = 90, y = scaler(G, [[S.diff], [S.dea], [S.macd], 0], h, 6, 6);
+    let s = defs('a') + vgrid(G, h) + grid(y, 2, v => v.toFixed(2)) + hline(y(0), SEP);
+    for (let i = G.from; i <= G.last; i++) { const m = S.macd[i]; s += bar(G, y, i, 0, m, m >= 0 ? UP : DN, .25); }
+    return s + line(G, y, S.diff, '#FF8D1E', 1.3) + line(G, y, S.dea, '#0CAEE6', 1.3) + mask(G, h, 'a');
+  },
+  MAVOL(G) {
+    const { B, S } = G, h = 70, y = scaler(G, [[B.v], [S.mavol30, 29], 0], h, 6, 2);
+    let s = defs('v') + vgrid(G, h) + grid(y, 2, v => fmtVol(v, 2));
+    for (let i = G.from; i <= G.last; i++) s += bar(G, y, i, 0, B.v[i], B.c[i] >= B.o[i] ? UP : DN, .7);
+    return s + line(G, y, S.mavol30, '#C22224', 1.3, 29) + mask(G, h, 'v');
+  },
+  MCDXX(G) {                                                      // 三層柱：底 0..20、熱度、動能；5/10/15 虛線
+    const { S } = G, h = 70, y = v => 4 + (20 - v) / 20 * (h - 8);
+    let s = defs('x');
+    for (let i = G.from; i <= G.last; i++) {
+      s += bar(G, y, i, 0, 20, '#03C484', 1);
+      if (S.hot_rsi[i] > 0) s += bar(G, y, i, 0, S.hot_rsi[i], '#D8C200', 1);
+      if (S.mm_rsi[i] > 0) s += bar(G, y, i, 0, S.mm_rsi[i], '#FF0000', 1);
+    }
+    for (const g of [5, 10, 15]) s += hline(y(g), '#8A8F98', 1.2, '5 4');
+    s += txt(PW + 5, y(20) + 9, '20.00', AXIS, 11) + txt(PW + 5, y(10) + 4, '10.00', AXIS, 11) + txt(PW + 5, y(0), '0.00', AXIS, 11);
+    return s + mask(G, h, 'x');
+  },
+  HDLY2(G) {                                                      // 主力进场/洗盘（VAR5）、主力拉高/出货（VAR51）、MM、散戶
+    const { S } = G, h = 90, y = scaler(G, [[S.var5], [S.var51], [S.mm_line], [S.retail], 0], h, 8, 6, -150, 400);
+    let s = defs('h') + vgrid(G, h) + grid(y, 2, v => v.toFixed(0));
+    for (let i = Math.max(1, G.from); i <= G.last; i++) {
+      const a = S.var5[i], pa = S.var5[i - 1], b = S.var51[i], pb = S.var51[i - 1];
+      if (a > pa) s += bar(G, y, i, 0, a, '#0000BF', .8); else if (a < pa) s += bar(G, y, i, 0, a, '#7D7DFF', .8);
+      if (b < pb) s += bar(G, y, i, 0, b, '#11BBBB', .8); else if (b > pb) s += bar(G, y, i, 0, b, '#BBBBBB', .8);
+    }
+    s += line(G, y, S.mm_line, '#DD9F03', 2) + line(G, y, S.retail, '#E53751', 2);
+    for (let i = G.from; i <= G.last; i++) {                     // 富途：散戶上穿 MM（BUYMORE）出 🍏，下穿（BUYLESS）出 😁
+      if (!fin(S.mm_line[i])) continue;
+      if (S.buymore[i]) s += txt(G.X(i), y(S.mm_line[i]) + 6, '🍏', '#7CD65A', 16, MID);
+      if (S.buyless[i]) s += txt(G.X(i), y(S.mm_line[i]) + 6, '😁', '#FFBF00', 16, MID);
+    }
+    return s + mask(G, h, 'h');
+  },
+  CHAODI7(G) {
+    const { S } = G, h = 90, y = scaler(G, [[S.cci1], [S.blue], 100, -150], h, 8, 6);
+    let s = defs('c') + vgrid(G, h) + grid(y, 2, v => v.toFixed(0));
+    for (let i = G.from; i <= G.last; i++) {
+      const v = S.cci1[i];
+      if (v > 100) s += bar(G, y, i, 100, v, '#EE347E', 1); else if (v < -150) s += bar(G, y, i, -150, v, '#DD9F03', 1);
+    }
+    s += hline(y(100), '#E33651') + hline(y(-150), '#03C484') + line(G, y, S.blue, '#326AC5', 1.3) + line(G, y, S.cci1, '#9AA0A6', 1.3);
+    for (let i = G.from; i <= G.last; i++) if (S.icon[i]) s += txt(G.X(i), y(100) + 6, '▼', '#339900', 16, MID);
+    return s + mask(G, h, 'c');
+  },
+};
+
+// 每格左上角：最後一支已見K線嘅數值（好似富途咁）
+const kv = (k, v, c) => `<i style="color:${c}">${k}: ${v}</i>`;
+const nm = s => `<i class="nm">${s}</i>`;
+const labels = {
+  main({ S, last }) {
+    let s = '';
+    if (on.FCOLOR) {
+      const c = S.color[last];
+      s += nm('FCOLOR3') + kv('小XXX', c === 'yellow' ? '-1.000' : '0.000', FC.yellow) + kv('強XXX', c === 'green' ? '2.000' : '0.000', FC.green) +
+        kv('振X', c === 'blue' ? '1.000' : '0.000', FC.blue) + kv('弱XXX', c === 'red' ? '-2.000' : '0.000', FC.red);
+    }
+    if (on.MA) {
+      const ma = (a, p) => last >= p - 1 ? f3(a[last]) : '—';
+      s += nm('MA') + kv('MA30', ma(S.ma30, 30), '#E02D48') + kv('MA40', ma(S.ma40, 40), '#FF6060') + kv('MA150', ma(S.ma150, 150), '#4D6BFF');
+    }
+    if (on['九轉']) {
+      const u = S.tdUp[last], d = S.tdDn[last];
+      s += nm('神奇九轉') + (u ? kv('向上', u, '#FF00FF') : '') + (d ? kv('向下', d, '#03C484') : '');
+    }
+    return s;
+  },
+  MACD: ({ S, last }) => nm('MACD') + kv('DIF', f3(S.diff[last]), '#FF8D1E') + kv('DEA', f3(S.dea[last]), '#0CAEE6') + kv('MACD', f3(S.macd[last]), '#E970DC'),
+  MAVOL: ({ B, S, last }) => nm('MAVOL') + kv('VOL', fmtVol(B.v[last]), B.c[last] >= B.o[last] ? UP : DN) +
+    kv('MAVOL30', last >= 29 ? fmtVol(S.mavol30[last]) : '—', '#C22224'),
+  MCDXX: ({ S, last }) => nm('MCDXX') + kv('動能', f3(S.mm_rsi[last]), '#FF0000') + kv('熱度', f3(S.hot_rsi[last]), '#D8C200'),
+  HDLY2({ S, last }) {
+    const a = S.var5[last], pa = S.var5[last - 1], b = S.var51[last], pb = S.var51[last - 1];
+    return nm('HDLY2') + kv('主力进场', f3(a > pa ? a : 0), '#4D5BFF') + kv('洗盘', f3(a < pa ? a : 0), '#7D7DFF') +
+      kv('主力拉高', f3(b < pb ? b : 0), '#11BBBB') + kv('出货', f3(b > pb ? b : 0), '#BBBBBB') +
+      kv('MM', f3(S.mm_line[last]), '#DD9F03') + kv('散戶', f3(S.retail[last]), '#E53751');
+  },
+  CHAODI7: ({ S, last }) => nm('CHAODI7') + kv('CCI1', f3(S.cci1[last]), '#9AA0A6'),
+};
+
+// ── 畫成個個案（每推一步都只用已見K線重新計）──────────
+function render() {
+  const bars = BT.bars, n = bars.t.length, sig = BT.sig, last = BT.last, rev = BT.revealed;
+  const B = Ind.head(bars, last + 1), S = Ind.compute(B);
+  const from = Replay.windowRange(last).from, sw = PW / (last - from + 1 + FUT);
+  const G = { B, S, sig, last, from, sw, X: i => (i - from + .5) * sw, R: Replay.readout(bars, sig, last), ticks: [] };
+  for (let i = from; i <= last; i++) {                             // X 軸：盲測用相對月份，揭盅後喺一月標年份
+    const t = rev ? (B.t[i].endsWith('-01') ? B.t[i].slice(0, 4) : '') : (i - sig) % 12 === 0 ? Replay.relLabel(i, sig) : '';
+    if (t) G.ticks.push([G.X(i), t]);
+  }
+
+  const r = BT.row;
+  $('top').innerHTML = `<b class="tk">${rev ? BT.ticker : '???'}</b><span class="mut">月K</span>` +
+    (rev ? `<span>轉黃月 ${r[1]}</span>` : '') + `<span class="mut">九轉完成後隔 ${r[3]} 個月轉黃</span>`;
+
+  const R = G.R;
+  let rd;
+  if (R.state === 'pending') rd = '<span class="mut">停喺轉黃嗰支 · </span>下個月未開市';
+  else if (R.state === 'start') rd = '<span class="mut">停喺轉黃嗰支 · 入場價＝下個月開市（推前一支先知）</span>';
+  else {
+    const p = Math.round(R.pct * 10) / 10, dd = R.dd === null ? null : Math.round(R.dd * 10) / 10;
+    rd = `入場 ${rev ? bars.t[sig + 1] + ' ' : ''}@ <b>${fmtP(R.entry)}</b>　而家 ${rev ? bars.t[last] + ' ' : ''}@ <b>${fmtP(R.cur)}</b>　` +
+      `<b class="${p >= 0 ? 'up' : 'dn'}">${p >= 0 ? '+' : ''}${p.toFixed(1)}%</b>　揸咗 <b>${R.held}</b> 個月　期間最深 ` +
+      (dd === null ? '<b>冇跌穿入場價</b>' : `<b class="dn">${dd.toFixed(1)}%</b>`);
+  }
+  $('read').innerHTML = rd;
+
+  for (const k of ['main', ...SUBS]) {
+    const vis = k === 'main' || !!on[k];
+    $('pane-' + k).hidden = !vis;
+    if (vis) { $('sv-' + k).innerHTML = panes[k](G); $('pl-' + k).innerHTML = labels[k](G); }
+  }
+
+  const N = n - 1 - sig, k = last - sig, rg = $('rg');
+  rg.max = N; rg.value = k;
+  $('lbl').textContent = `推前 ${k} / ${N} 支`;
+  $('reveal').hidden = rev;
+  for (const b of document.querySelectorAll('#ctl [data-go]'))
+    b.disabled = (b.dataset.go === 'home' || b.dataset.go === 'prev') ? k === 0 : k === N;
+}
+
+// last 限喺 [sig, n−1]；推到最尾就自動揭盅（訊號本身就係最尾一支嗰種，推唔郁，唔算）
+function go(i) {
+  if (!BT) return;
+  const n = BT.bars.t.length;
+  BT.last = Math.max(BT.sig, Math.min(n - 1, i));
+  if (BT.last === n - 1 && BT.last > BT.sig) BT.revealed = true;
+  render();
+}
+
+// ── 清單 ─────────────────────────────────────────────
+function renderList() {
+  if (!rows) return;
+  let head, body;
+  if (blind) {                                                   // 盲測：冇 ticker、冇月份，固定 seed 洗牌
+    perm = perm || Replay.shuffle(rows.length, 20261014);
+    view = perm.map(i => rows[i]);
+    head = '<tr><th>個案</th><th class="n">九轉完成→轉黃（月）</th></tr>';
+    body = view.map((r, k) => `<tr tabindex="0" data-k="${k}"><td>個案 #${k + 1}</td><td class="n">${r[3]}</td></tr>`);
+    $('cnt').textContent = `共 ${rows.length} 個個案 · 次序已洗牌`;
+  } else {                                                       // 非盲測：按轉黃月新到舊，代號前綴篩選
+    sorted = sorted || rows.slice().sort((a, b) => a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
+    const q = $('q').value.trim().toUpperCase();
+    view = q ? sorted.filter(r => r[0].toUpperCase().startsWith(q)) : sorted;
+    head = '<tr><th>代號</th><th>轉黃月</th><th>九轉完成月</th><th class="n">相隔（月）</th></tr>';
+    body = view.map((r, k) => `<tr tabindex="0" data-k="${k}"><td class="code">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td class="n">${r[3]}</td></tr>`);
+    $('cnt').textContent = `顯示 ${view.length} / ${rows.length}`;
+  }
+  $('th').innerHTML = head;
+  $('tb').innerHTML = body.join('');
+  $('q').hidden = blind;
+  $('rand').hidden = false;
+  $('tbl').hidden = false;
+}
+
+async function scan() {
+  if (!rows) {
+    $('cnt').textContent = '讀緊…';
+    try {
+      const res = await fetch('data/signals.json');
+      if (!res.ok) throw new Error(res.status);
+      rows = await res.json();
+    } catch (e) { $('cnt').textContent = '讀唔到 data/signals.json'; return; }
+  }
+  renderList();
+}
+
+async function openCase(r) {
+  if (!r) return;
+  const my = ++openSeq;
+  let bars;
+  try {
+    const res = await fetch('data/' + encodeURIComponent(r[0]) + '.json');
+    if (!res.ok) throw new Error(res.status);
+    bars = await res.json();
+  } catch (e) { if (my === openSeq) $('cnt').textContent = '讀唔到呢個個案嘅數據'; return; }
+  if (my !== openSeq) return;                                    // 撳得快：只理最後嗰個
+  const sig = bars.t.indexOf(r[1]);
+  if (sig < 0) { $('cnt').textContent = '呢個個案嘅數據對唔上'; return; }
+  BT = window.BT = { ticker: r[0], row: r, bars, sig, last: sig, revealed: !blind };
+  $('list-view').hidden = true;
+  $('chart-view').hidden = false;
+  render();
+  if ($('chart-view').getBoundingClientRect().top < 0) $('chart-view').scrollIntoView();
+}
+
+// ── 事件 ─────────────────────────────────────────────
+$('blind').checked = blind;
+$('blind').addEventListener('change', () => {
+  blind = $('blind').checked;
+  store.set('bt-blind', blind ? '1' : '0');
+  if (!blind && BT) BT.revealed = true;                          // 重播途中熄盲測 = 即刻揭盅
+  renderList();
+  if (BT && !$('chart-view').hidden) render();
+});
+$('scan').addEventListener('click', scan);
+$('q').addEventListener('input', renderList);
+$('rand').addEventListener('click', () => { if (view.length) openCase(view[Math.floor(Math.random() * view.length)]); });
+const pick = e => { const tr = e.target.closest('tr[data-k]'); if (tr) openCase(view[+tr.dataset.k]); };
+$('tb').addEventListener('click', pick);
+$('tb').addEventListener('keydown', e => { if (e.key === 'Enter') pick(e); });
+$('back').addEventListener('click', () => {
+  $('chart-view').hidden = true;
+  $('list-view').hidden = false;
+  renderList();
+});
+
+$('chips').innerHTML = Object.keys(on).map(k => `<button type="button" class="chip" aria-pressed="true" data-k="${k}">${k}</button>`).join('');
+$('chips').addEventListener('click', e => {
+  const b = e.target.closest('.chip');
+  if (!b) return;
+  on[b.dataset.k] = on[b.dataset.k] ? 0 : 1;
+  b.setAttribute('aria-pressed', on[b.dataset.k] ? 'true' : 'false');
+  if (BT) render();
+});
+
+$('ctl').addEventListener('click', e => {
+  const b = e.target.closest('button[data-go]');
+  if (!b || !BT) return;
+  go({ home: BT.sig, prev: BT.last - 1, next: BT.last + 1, end: BT.bars.t.length - 1 }[b.dataset.go]);
+});
+$('rg').addEventListener('input', () => go(BT.sig + Number($('rg').value)));
+$('reveal').addEventListener('click', () => { if (BT) { BT.revealed = true; render(); } });
+document.addEventListener('keydown', e => {                       // ← →；focus 喺 range 上面就由佢自己處理
+  if (!BT || $('chart-view').hidden || e.target === $('rg') || e.altKey || e.ctrlKey || e.metaKey) return;
+  if (e.key === 'ArrowRight') { go(BT.last + 1); e.preventDefault(); }
+  else if (e.key === 'ArrowLeft') { go(BT.last - 1); e.preventDefault(); }
+});
+});
+</script>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../">← 工具台</a>
+<header>
+  <div class="hrow">
+    <div>
+      <h1>股票回測</h1>
+      <p class="lede">九轉後月K轉黃 · 逐月重播</p>
+    </div>
+    <label class="switch"><input type="checkbox" id="blind"> 🙈 盲測</label>
+  </div>
+  <p class="note">清單只有而家仲上市嘅股票（survivorship bias），練習見到嘅反彈會多過現實。只供練習，唔係投資建議。</p>
+</header>
+
+<section id="list-view" style="display:flex;flex-direction:column;gap:12px">
+  <div class="tools">
+    <button class="btn pri" id="scan" type="button">🔍 九轉後月K轉黃</button>
+    <button class="btn" id="rand" type="button" hidden>🎲 隨機抽一個</button>
+    <input id="q" type="search" placeholder="篩選代號…" aria-label="篩選代號（前綴）" autocomplete="off" hidden>
+    <span class="count" id="cnt"></span>
+  </div>
+  <div class="tbl" id="tbl" hidden>
+    <table><thead id="th"></thead><tbody id="tb"></tbody></table>
+  </div>
+</section>
+
+<section id="chart-view" hidden style="display:flex;flex-direction:column;gap:12px">
+  <button class="btn" id="back" type="button" style="align-self:flex-start">← 返清單</button>
+  <div class="fu">
+    <div class="top" id="top"></div>
+    <div class="chips" id="chips"></div>
+    <div class="read" id="read"></div>
+    <div class="pane" id="pane-main"><div class="pl" id="pl-main"></div><svg id="sv-main" viewBox="0 0 1000 320"></svg></div>
+    <div class="pane" id="pane-MACD"><div class="pl" id="pl-MACD"></div><svg id="sv-MACD" viewBox="0 0 1000 90"></svg></div>
+    <div class="pane" id="pane-MAVOL"><div class="pl" id="pl-MAVOL"></div><svg id="sv-MAVOL" viewBox="0 0 1000 70"></svg></div>
+    <div class="pane" id="pane-MCDXX"><div class="pl" id="pl-MCDXX"></div><svg id="sv-MCDXX" viewBox="0 0 1000 70"></svg></div>
+    <div class="pane" id="pane-HDLY2"><div class="pl" id="pl-HDLY2"></div><svg id="sv-HDLY2" viewBox="0 0 1000 90"></svg></div>
+    <div class="pane" id="pane-CHAODI7"><div class="pl" id="pl-CHAODI7"></div><svg id="sv-CHAODI7" viewBox="0 0 1000 90"></svg></div>
+    <div class="ctl" id="ctl">
+      <button type="button" data-go="home" title="返去轉黃嗰支" aria-label="返去轉黃嗰支">⏮</button>
+      <button type="button" data-go="prev" title="上個月" aria-label="上個月">◀</button>
+      <input type="range" id="rg" min="0" max="0" value="0" aria-label="推前幾多支">
+      <button type="button" data-go="next" title="下個月" aria-label="下個月">▶</button>
+      <button type="button" data-go="end" title="推到最尾" aria-label="推到最尾">⏭</button>
+      <span class="lbl" id="lbl"></span>
+      <button type="button" class="rev" id="reveal">揭盅</button>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
