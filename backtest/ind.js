@@ -165,6 +165,21 @@ var Ind = (function () {
     return out;
   }
 
+  // 九轉畫面 label（0 = 唔顯示）：count 由 1 起、逐支 +1 係一段。段尾數到 ≥9 先標，只標頭 9 支 1..9
+  // （10、11… 唔標）；停喺 8 或以下嘅段一個都唔標。標唔標只睇呢段由頭到而家，所以喺 head 截斷嘅數據度，
+  // 第 9 支未出現就冇 label —— 唔洩露未來。
+  function tdDisplay(count) {
+    const out = new Array(count.length).fill(0);
+    for (let s = 0; s < count.length; s++) {
+      if (count[s] !== 1) continue;
+      let e = s;
+      while (e + 1 < count.length && count[e + 1] === count[e] + 1) e++;
+      if (count[e] >= 9) for (let j = 0; j < 9; j++) out[s + j] = j + 1;
+      s = e;
+    }
+    return out;
+  }
+
   // 每個陣列取頭 n 個（回測：只畀指標睇到「已見」嗰段，唔洩露未來）
   function head(bars, n) {
     return { t: bars.t.slice(0, n), o: bars.o.slice(0, n), h: bars.h.slice(0, n),
@@ -240,15 +255,33 @@ var Ind = (function () {
     const buymore = CROSS(retail, mm_line);                 // 紅線上穿黃線 = 買入 icon
     const buyless = CROSS(mm_line, retail);
 
+    // 九轉：td = 向下計數（訊號用）；tdUp / tdDn = 畫面 label（數到 9 嘅段先有，其餘 0）
+    const td = tdCount(c, -1);
+
     return {
-      color, td: tdCount(c, -1),
+      color, td, tdUp: tdDisplay(tdCount(c, 1)), tdDn: tdDisplay(td),
       k, d, diff, dea, macd, cci1, mm_rsi, hot_rsi, var5, mm_line, retail,
       ma30: MA(c, 30), ma40: MA(c, 40), ma150: MA(c, 150), mavol30: MA(v, 30), var51,
       buymore, buyless, blue, icon,
     };
   }
 
-  return { head, REF, EMA, SMA, MA, LLV, HHV, AVEDEV, CROSS, safeDiv, tdCount, compute };
+  // ---------------------------------------------------------------------------
+  // 訊號：照 Stock/scanner/nine_yellow.py 嘅 _gate
+  // ---------------------------------------------------------------------------
+  // 第 i 支月K 係唔係訊號：月K 數量（i+1）≥ minMonths；i 剛轉黃（i 黃、i-1 唔黃）；而且 [i-win, i]
+  // （win+1 支，包括自己）入面有一支向下九轉計數 == 9，有幾支就取最近嗰支。
+  // S 係 compute 嘅輸出；color / td 逐支只靠過去，所以成串 compute 嘅 S 同 head 截斷後再 compute 判出嚟一樣。
+  // 命中回 {nine: 計數到 9 嗰支嘅位置, gap: i - nine}，否則 null。
+  function isSignalAt(S, i, win = 12, minMonths = 13) {
+    if (i + 1 < minMonths) return null;
+    if (!(S.color[i] === 'yellow' && S.color[i - 1] !== 'yellow')) return null;
+    for (let j = i; j >= Math.max(0, i - win); j--)
+      if (S.td[j] === 9) return { nine: j, gap: i - j };
+    return null;
+  }
+
+  return { head, REF, EMA, SMA, MA, LLV, HHV, AVEDEV, CROSS, safeDiv, tdCount, tdDisplay, compute, isSignalAt };
 })();
 
 if (typeof module !== 'undefined') module.exports = Ind;

@@ -34,3 +34,34 @@ test('short history（14 支）照計得', () => {                          // R
   assert.strictEqual(S.ma150.length, 14);
   assert.strictEqual(S.color.length, 14);
 });
+
+test('tdDisplay：數到 9 嗰段標 1..9，之後唔標', () => {
+  assert.deepStrictEqual(Ind.tdDisplay([0,1,2,3,4,5,6,7,8,9,10,11,0]), [0,1,2,3,4,5,6,7,8,9,0,0,0]);
+});
+
+test('tdDisplay：停喺 8 嗰段一個都唔標', () => {
+  assert.deepStrictEqual(Ind.tdDisplay([1,2,3,4,5,6,7,8,0]), [0,0,0,0,0,0,0,0,0]);
+});
+
+test('tdDisplay 只計前段：9 未出現就冇 label（唔洩露未來）', () => {
+  const cnt = Ind.tdCount([10,10,10,10,9,8,7,6,5,4,3,2,1], -1);
+  assert.ok(Ind.tdDisplay(cnt.slice(0, 12)).every(x => x === 0));
+  assert.strictEqual(Ind.tdDisplay(cnt)[12], 9);
+});
+
+test('compute 有齊向上同向下嘅 label', () => {
+  const S = Ind.compute(bars([1,1,1,1,2,3,4,5,6,7,8,9,10]));
+  assert.deepStrictEqual(S.tdUp.slice(4), [1,2,3,4,5,6,7,8,9]);
+  assert.ok(S.tdDn.every(x => x === 0));
+});
+
+test('isSignalAt 同 nine_yellow._gate 一樣', () => {
+  const S = { color: Array(26).fill('red'), td: Array(26).fill(0) };
+  S.td[12] = 9; S.color[13] = 'yellow';
+  assert.deepStrictEqual(Ind.isSignalAt(S, 13), { nine: 12, gap: 1 });
+  S.color[12] = 'yellow';
+  assert.strictEqual(Ind.isSignalAt(S, 13), null);                          // 唔係「剛轉黃」
+  S.color[12] = 'red'; S.color[13] = 'red'; S.color[25] = 'yellow';
+  assert.strictEqual(Ind.isSignalAt(S, 25), null);                          // gap 13 超出窗口
+  assert.strictEqual(Ind.isSignalAt({ color: ['red', 'yellow'], td: [9, 0] }, 1), null);   // 少過 13 支
+});
