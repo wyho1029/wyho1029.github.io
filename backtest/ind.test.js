@@ -65,3 +65,18 @@ test('isSignalAt 同 nine_yellow._gate 一樣', () => {
   assert.strictEqual(Ind.isSignalAt(S, 25), null);                          // gap 13 超出窗口
   assert.strictEqual(Ind.isSignalAt({ color: ['red', 'yellow'], td: [9, 0] }, 1), null);   // 少過 13 支
 });
+
+// ---- 同 Python 逐月對數（fixtures.json 由 backtest_web_export.py 匯出）----
+const fx = require('./data/fixtures.json');
+const near = (a, b) => (b === null ? Number.isNaN(a) : Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(b)));
+
+test('fixtures 有 ≥15 隻', () => assert.ok(fx.length >= 15));
+
+for (const f of fx) test(`同 Python 對數 ${f.code}`, () => {
+  const S = Ind.compute(f);
+  assert.deepStrictEqual(S.color, f.color);
+  assert.deepStrictEqual(S.td, f.td);
+  assert.deepStrictEqual(S.buymore, f.buymore);
+  for (const k of NUM) f[k].forEach((v, i) =>
+    assert.ok(near(S[k][i], v), `${f.code} ${k}[${i}] ${f.t[i]}: js=${S[k][i]} py=${v}`));
+});
