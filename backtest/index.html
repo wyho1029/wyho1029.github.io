@@ -137,6 +137,8 @@ let rows = null, sorted = null, perm = null, view = [], openSeq = 0;
 let BT = window.BT = null;                     // 目前個案：{ticker, row, bars, sig, last, revealed}
 const on = { FCOLOR: 1, MA: 1, '九轉': 1, MACD: 1, MAVOL: 1, MCDXX: 1, HDLY2: 1, CHAODI7: 1 };
 const SUBS = ['MACD', 'MAVOL', 'MCDXX', 'HDLY2', 'CHAODI7'];
+// 未揭盅時推拉 bar 嘅固定上限（≈10 年）。N（轉黃到最尾有幾多個月）會露出個案日期，揭盅之前唔准顯示（R13）
+const BLIND_MAX = 120;
 
 // ── 顏色（Global Constraints，由富途截圖實測）──────────
 const FC = { yellow: '#FFBF00', green: '#0FC351', blue: '#0099FF', red: '#E53751', none: '#888888' };
@@ -372,9 +374,10 @@ function render() {
     if (vis) { $('sv-' + k).innerHTML = panes[k](G); $('pl-' + k).innerHTML = labels[k](G); }
   }
 
-  const N = n - 1 - sig, k = last - sig, rg = $('rg');
-  rg.max = N; rg.value = k;
-  $('lbl').textContent = `推前 ${k} / ${N} 支`;
+  const N = n - 1 - sig, k = last - sig, rg = $('rg');           // 未揭盅：冇「/ N」，range 用固定上限，超過就頂住
+  rg.max = rev ? N : BLIND_MAX;
+  rg.value = rev ? k : Math.min(k, BLIND_MAX);
+  $('lbl').textContent = rev ? `推前 ${k} / ${N} 支` : `推前 ${k} 支`;
   $('reveal').hidden = rev;
   for (const b of document.querySelectorAll('#ctl [data-go]'))
     b.disabled = (b.dataset.go === 'home' || b.dataset.go === 'prev') ? k === 0 : k === N;
@@ -482,8 +485,9 @@ $('ctl').addEventListener('click', e => {
 });
 $('rg').addEventListener('input', () => go(BT.sig + Number($('rg').value)));
 $('reveal').addEventListener('click', () => { if (BT) { BT.revealed = true; render(); } });
-document.addEventListener('keydown', e => {                       // ← →；focus 喺 range 上面就由佢自己處理
-  if (!BT || $('chart-view').hidden || e.target === $('rg') || e.altKey || e.ctrlKey || e.metaKey) return;
+document.addEventListener('keydown', e => {                       // ← →；focus 喺 range 上面就由佢自己處理，
+  if (!BT || $('chart-view').hidden || e.altKey || e.ctrlKey || e.metaKey) return;  // 除非佢喺盲測上限頂住咗
+  if (e.target === $('rg') && (BT.revealed || BT.last - BT.sig < BLIND_MAX)) return;
   if (e.key === 'ArrowRight') { go(BT.last + 1); e.preventDefault(); }
   else if (e.key === 'ArrowLeft') { go(BT.last - 1); e.preventDefault(); }
 });
