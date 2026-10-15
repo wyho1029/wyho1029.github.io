@@ -70,7 +70,7 @@ test('isSignalAt 同 nine_yellow._gate 一樣', () => {
 const fx = require('./data/fixtures.json');
 const near = (a, b) => (b === null ? Number.isNaN(a) : Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(b)));
 
-test('fixtures 有 ≥15 隻', () => assert.ok(fx.length >= 15));
+test('fixtures 有 ≥15 隻，IBM 由 1970 年代開始', () => { assert.ok(fx.length >= 15); assert.strictEqual(fx.find(f => f.code === 'US.IBM').t[0].slice(0, 3), '197'); });
 
 for (const f of fx) test(`同 Python 對數 ${f.code}`, () => {
   const S = Ind.compute(f);
