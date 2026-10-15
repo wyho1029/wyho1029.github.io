@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-15T07:01:49+08:00",
+ "updated_at": "2026-10-15T20:02:02+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -317,12 +317,22 @@
      "summary": "作者提及Elon Musk預測未來十年將有10億個人形機器人，對TSLA前景樂觀。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2110615506474651804",
+     "url": "https://x.com/aleabitoreddit/status/2110615506474651804",
+     "stance": "neutral",
+     "summary": "作者認為Elon係有遠見嘅人，但佢唱淡競爭對手嘅動機可能長遠對Tesla有利。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -3.8,
    "earnings": "2026-10-22",
-   "ai_summary": "最新立場偏向看好，主要論述圍繞 Optimus 人形機器人量產進展，包括要求供應商9月前達每週1000台、年底翻倍，以及馬斯克指其將成史上最大產品、未來十年達10億台。aleabitoreddit 曾於7月中及8月中至9月多次轉為中性，僅提及持股或 Optimus 佔公司一部分，但無明確睇淡；wliang 則提醒特斯拉波動性高於高貝塔小型股，且 Optimus 僅佔市值一小部分，屬風險提示。",
+   "ai_summary": "最新立場偏樂觀：aleabitoreddit 喺 10 月 13 日提及馬斯克預測未來十年有 10 億個人形機器人，對 TSLA 前景樂觀，但 10 月 15 日轉為中性，認為馬斯克唱淡競爭對手嘅動機長遠可能對 Tesla 有利。主要論述點集中喺 Optimus 人形機器人量產進度同產能領先，包括要求供應商 9 月前達每週 1000 台、年底翻倍，以及馬斯克多次強調 Optimus 會係史上最大產品。風險提示方面，wliang 提過特斯拉波動性高於高貝塔小型股，同埋 Optimus 僅佔其市值一小部分；aleabitoreddit 立場由 7 月至 8 月嘅睇好，到 8 月中至 9 月轉為中性，10 月再現樂觀但隨即又轉中性，有反覆跡象。",
    "theme": "機器人"
   },
   "CCXI": {
@@ -5579,11 +5589,21 @@
      "summary": "作者指股價已升30%，表現強勁。",
      "r7": 2.7,
      "r30": null
+    },
+    {
+     "date": "2026-10-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2110615506474651804",
+     "url": "https://x.com/aleabitoreddit/status/2110615506474651804",
+     "stance": "bearish",
+     "summary": "作者認同市場對CoreWeave債務利息同加息嘅憂慮，並指Elon放大呢啲融資問題。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -43.8,
-   "ai_summary": "最新立場偏向看好：wliang 持續 bullish，推薦 CRWV 作為 Neocloud 投資標的，並指股價一週升 29%、累升 30% 表現強勁；aleabitoreddit 則由 bullish 轉為審慎，最新已將倉位整合到 Nebius，屬中性偏減持。論述點集中在財報強勁、積壓訂單龐大印證算力需求、老舊 GPU 合約有利、Nebius 加價對 Neoclouds 有看漲讀數，以及 Leopold 買入期權屬看好訊號。風險提示方面，aleabitoreddit 曾因債務利息侵蝕自由現金流而轉向 bearish，並最終把 CRWV 倉位整合至 Nebius，屬明顯的立場轉變。",
+   "ai_summary": "wliang 一直維持看漲立場，最新提到股價已升三成、表現強勁，論點圍繞財報展望強勁、積壓訂單龐大帶動算力需求，並推薦 CoreWeave 作為 Neocloud 領域投資標的。aleabitoreddit 立場反覆，曾反駁折舊做空論、視 Leopold 買入期權為看好訊號，但其後轉向關注債務利息侵蝕自由現金流，最新認同市場對債務利息同加息的憂慮，並已將倉位整合到 Nebius。sunxliao 於 8 月 19 日僅提到 CRWV 下跌，屬看淡。整體風險提示集中喺債務利息同融資問題。",
    "theme": "AI雲"
   },
   "NBIS": {
@@ -13327,11 +13347,22 @@
      "summary": "作者提到台積電是Marvell的單一來源依賴，未明確表達看好或看淡。",
      "r7": 7.3,
      "r30": null
+    },
+    {
+     "date": "2026-10-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2110645575469461611",
+     "url": "https://x.com/aleabitoreddit/status/2110645575469461611",
+     "stance": "bullish",
+     "summary": "台積電業績強勁，管理層指AI需求遠超供應，無放緩跡象，是AI半導體行業的健康指標。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -7.8,
-   "ai_summary": "最新立場係睇好TSM，aleabitoreddit由8月中起多次表達樂觀，理由包括先進封裝產能緊張反映需求強勁、矽光子將成主流、TSM係Marvell先進IC同ASIC製造核心兼AI架構關鍵支柱，並批評唱淡者，但同時提醒TSM beta較低。wliang亦維持睇好，指TSM接近支撐位預期短期反彈，並曾推介且表現出色。風險提示方面，aleabitoreddit提到FAU可能成為未來瓶頸、光引擎規模化瓶頸在雷射同光纖等元件，以及台積電係Marvell單一來源依賴，但呢啲多屬中性陳述，未見明確轉軚。",
+   "earnings": "2026-10-15",
+   "ai_summary": "最新立場偏看漲：wliang 一直看好，aleabitoreddit 由中性轉向多次明確唱好，認為台積電係 AI 架構關鍵支柱、先進封裝產能緊張反映需求強勁，管理層亦指 AI 需求遠超供應。論述點集中喺先進封裝、矽光子同 CPO 路線圖，以及作為 Marvell 等 ASIC 製造核心嘅地位，但同時提到 beta 較低、FAU 等元件可能成為未來瓶頸，以及 Marvell 對台積電嘅單一來源依賴。未見明確轉軚，風險提示主要係技術瓶頸同低 beta，而非看淡基本面。",
    "theme": "AI晶片"
   },
   "MU": {
@@ -23286,7 +23317,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.4,
+   "gain": -18.6,
    "theme": "其他"
   },
   "AOSL": {
@@ -25973,11 +26004,21 @@
      "summary": "作者批評博通CEO言論火上加油，令市場對AI投資信心受損。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-15",
+     "author": "aleabitoreddit",
+     "tweet_id": "2110615506474651804",
+     "url": "https://x.com/aleabitoreddit/status/2110615506474651804",
+     "stance": "neutral",
+     "summary": "作者提到AVGO CEO關於OpenAI ARR數據點嘅言論被市場忽略。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -8.8,
-   "ai_summary": "最新立場偏淡：作者喺10月13日批評博通CEO言論火上加油、令市場對AI投資信心受損，同日另一帖則認為CEO言論被西方媒體斷章取義、實際對AI基礎設施需求謹慎樂觀。論述點圍繞AI需求強勁、供應受限、雷射供不應求、產能年增三倍，以及2027/2028年收入按年增長100%。作者立場有轉變，早前由8月底睇淡Nvidia侵蝕博通地位，轉為9月起多數睇好，其後再出現睇淡言論，並提及供應不足同市場信心受損等風險。",
+   "ai_summary": "最新立場偏中性至略審慎：作者喺10月13日同時有睇好同睇淡表態，一方面認為CEO言論被西方媒體斷章取義、實際對AI基建需求謹慎樂觀，另一方面批評CEO言論火上加油、損害市場對AI投資信心，10月15日則指CEO關於OpenAI ARR數據點嘅言論被市場忽略。主要論述點圍繞供應受限帶動強勁需求，包括雷射供不應求、產能年增三倍仍不足、預期2027/2028年收入按年增長100%，以及若鎖定SIVE雷射供應可能令ASIC對手出現瓶頸。作者立場有轉變，8月31日曾睇淡Nvidia防禦博通競爭，9月起多為睇好，10月中出現睇淡及中性表態，並有風險提示指CEO言論令市場對AI投資信心受損。",
    "theme": "AI晶片"
   },
   "GS": {
@@ -27074,7 +27115,7 @@
     }
    ],
    "yellow": null,
-   "gain": -51.3,
+   "gain": -51.9,
    "ai_summary": "根據歷史記錄，最新立場維持看多。論述重點包括管理層公開市場買入顯示信心、市場誤解報導導致錯殺，以及同業Lumentum強勁業績對CPO廠商的正面訊號。整體觀點從未轉向看空，但早期曾提示股價下跌15.4%時的市場誤解風險，後續持續強調反彈與成長潛力。",
    "theme": "半導體設備"
   },
@@ -28278,7 +28319,7 @@
     }
    ],
    "yellow": null,
-   "gain": -21.9,
+   "gain": -21.0,
    "theme": "其他"
   },
   "COIN": {
@@ -32743,7 +32784,7 @@
     }
    ],
    "yellow": null,
-   "gain": -19.0,
+   "gain": -20.2,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -33594,7 +33635,7 @@
     }
    ],
    "yellow": null,
-   "gain": -24.5,
+   "gain": -29.4,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -35322,7 +35363,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 860,
+   "calls": 862,
    "n7": 692,
    "win7": 51,
    "n30": 604,
