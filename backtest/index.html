@@ -144,6 +144,21 @@ const BLIND_MAX = 120;
 const FC = { yellow: '#FFBF00', green: '#0FC351', blue: '#0099FF', red: '#E53751', none: '#888888' };
 const UP = '#00A357', DN = '#E02D48';
 const GRID = '#1C222A', AXIS = '#A0A9B8', SEP = '#2C3340';
+// 圖同左上角 label 共用嘅線色：一個地方定義，兩邊一定一樣
+const COL = { dif: '#FF8D1E', dea: '#0CAEE6', mmRsi: '#FF0000', hotRsi: '#D8C200', mm: '#DD9F03', retail: '#E53751', cci1: '#9AA0A6' };
+// 均線表：[欄位, 名, period, 顏色]。i < period−1（未夠數）嘅點唔畫、唔入 Y 軸、label 寫「—」
+const MAS = [['ma30', 'MA30', 30, '#E02D48'], ['ma40', 'MA40', 40, '#FF6060'], ['ma150', 'MA150', 150, '#0000FF']];
+const MAV = ['mavol30', 'MAVOL30', 30, '#C22224'];
+const warm = m => m[2] - 1;                                       // 呢條均線第一支夠數（可以畫）嘅位置
+// HDLY 四種柱（HDLY.md）：VAR5 比上一支高＝主力进场、低＝洗盘；VAR51 低＝主力拉高、高＝出货
+const HDK = [['主力进场', '#0000BF'], ['洗盘', '#7D7DFF'], ['主力拉高', '#11BBBB'], ['出货', '#BBBBBB']];
+function hdly(S, i) {                                             // → [[HDK 序號, 值], …]，最多兩項；i=0 冇上一支 → []
+  const a = S.var5[i], pa = S.var5[i - 1], b = S.var51[i], pb = S.var51[i - 1], out = [];
+  if (a > pa) out.push([0, a]); else if (a < pa) out.push([1, a]);
+  if (b < pb) out.push([2, b]); else if (b > pb) out.push([3, b]);
+  return out;
+}
+const tdCol = (up, n) => (n === 9) === up ? '#03C484' : '#FF00FF';   // 九轉：向上 1–8 洋紅、9 青綠；向下相反
 
 // ── 格式 ─────────────────────────────────────────────
 const f3 = v => fin(v) ? v.toFixed(3) : '—';
@@ -153,7 +168,8 @@ const fmtVol = (v, d = 3) => !fin(v) ? '—' : v >= 1e8 ? (v / 1e8).toFixed(d) +
   : v >= 1e4 ? (v / 1e4).toFixed(d) + '萬' : v.toFixed(0);
 
 // ── SVG 小工具（改寫自 mock-v2.html）──────────────────
-const VW = 1000, PR = 58, PW = VW - PR, FUT = 12, MID = ' text-anchor="middle"';
+// 固定格闊（R15）：已見最多 PAST 支 + 右邊 FUT 格未來；推前係成個視窗向右移，唔會放大縮細
+const VW = 1000, PR = 58, PW = VW - PR, PAST = 96, FUT = 12, SW = PW / (PAST + FUT), MID = ' text-anchor="middle"';
 const txt = (x, y, s, fill, fs, ex) =>
   `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" fill="${fill}" font-size="${fs}"${ex || ''}>${s}</text>`;
 const hline = (yy, c, w, dash) => `<line x1="0" x2="${PW}" y1="${yy.toFixed(1)}" y2="${yy.toFixed(1)}" stroke="${c}"` +
@@ -209,7 +225,7 @@ const defs = id => `<defs><pattern id="hz-${id}" width="7" height="7" patternUni
   `<line x1="0" y1="0" x2="0" y2="7" stroke="#262C36" stroke-width="3"/></pattern></defs>`;
 // 最右 12 格：斜線遮住未來
 function mask(G, h, id, main) {
-  const x0 = (G.last - G.from + 1) * G.sw, w = PW - x0;
+  const x0 = PAST * G.sw, w = PW - x0;
   let s = `<rect x="${x0.toFixed(1)}" y="0" width="${w.toFixed(1)}" height="${h}" fill="url(#hz-${id})"/>`;
   if (main) s += txt(x0 + w / 2, h / 2, '未來 · 推前先見到', '#8B93A0', Math.min(15, w / 9).toFixed(1), MID);
   return s;
@@ -221,7 +237,7 @@ const vgrid = (G, h) => G.ticks.map(([x]) =>
 const panes = {
   main(G) {
     const { B, S } = G, h = 320, src = [[B.h], [B.l]];
-    if (on.MA) src.push([S.ma30, 29], [S.ma40, 39], [S.ma150, 149]);
+    if (on.MA) for (const m of MAS) src.push([S[m[0]], warm(m)]);
     const y = scaler(G, src, h, 24, 50);
     let s = defs('m') + vgrid(G, h) + grid(y, 5, fmtAx);
     for (const [x, t] of G.ticks) s += txt(x, h - 4, t, AXIS, 11, MID);
@@ -233,13 +249,12 @@ const panes = {
       s += `<line x1="${x}" x2="${x}" y1="${y(hh).toFixed(1)}" y2="${y(l).toFixed(1)}" stroke="${col}"/>` +
         bar(G, y, i, o, c, col, .7, 'cb');
     }
-    if (on.MA) s += line(G, y, S.ma30, '#E02D48', 1.3, 29, 'ma30') + line(G, y, S.ma40, '#FF6060', 1.3, 39, 'ma40') +
-      line(G, y, S.ma150, '#0000FF', 1.3, 149, 'ma150');
+    if (on.MA) for (const m of MAS) s += line(G, y, S[m[0]], m[3], 1.3, warm(m), m[0]);
     if (on['九轉']) for (let i = G.from; i <= G.last; i++) {       // 向上標喺 high 上面，向下標喺 low 下面；9 大啲粗啲
       const u = S.tdUp[i], d = S.tdDn[i];
-      if (u && fin(B.h[i])) s += txt(G.X(i), y(B.h[i]) - 3, u, u === 9 ? '#03C484' : '#FF00FF', u === 9 ? 15 : 10,
+      if (u && fin(B.h[i])) s += txt(G.X(i), y(B.h[i]) - 3, u, tdCol(true, u), u === 9 ? 15 : 10,
         MID + ' class="td"' + (u === 9 ? ' font-weight="700"' : ''));
-      if (d && fin(B.l[i])) s += txt(G.X(i), y(B.l[i]) + (d === 9 ? 15 : 11), d, d === 9 ? '#FF00FF' : '#03C484', d === 9 ? 15 : 10,
+      if (d && fin(B.l[i])) s += txt(G.X(i), y(B.l[i]) + (d === 9 ? 15 : 11), d, tdCol(false, d), d === 9 ? 15 : 10,
         MID + ' class="td"' + (d === 9 ? ' font-weight="700"' : ''));
     }
     if (G.sig >= G.from && fin(B.l[G.sig]))
@@ -258,21 +273,21 @@ const panes = {
     const { S } = G, h = 90, y = scaler(G, [[S.diff], [S.dea], [S.macd], 0], h, 6, 6);
     let s = defs('a') + vgrid(G, h) + grid(y, 2, v => v.toFixed(2)) + hline(y(0), SEP);
     for (let i = G.from; i <= G.last; i++) { const m = S.macd[i]; s += bar(G, y, i, 0, m, m >= 0 ? UP : DN, .25); }
-    return s + line(G, y, S.diff, '#FF8D1E', 1.3) + line(G, y, S.dea, '#0CAEE6', 1.3) + mask(G, h, 'a');
+    return s + line(G, y, S.diff, COL.dif, 1.3) + line(G, y, S.dea, COL.dea, 1.3) + mask(G, h, 'a');
   },
   MAVOL(G) {
-    const { B, S } = G, h = 70, y = scaler(G, [[B.v], [S.mavol30, 29], 0], h, 6, 2);
+    const { B, S } = G, h = 70, y = scaler(G, [[B.v], [S[MAV[0]], warm(MAV)], 0], h, 6, 2);
     let s = defs('v') + vgrid(G, h) + grid(y, 2, v => fmtVol(v, 2));
     for (let i = G.from; i <= G.last; i++) s += bar(G, y, i, 0, B.v[i], B.c[i] >= B.o[i] ? UP : DN, .7);
-    return s + line(G, y, S.mavol30, '#C22224', 1.3, 29) + mask(G, h, 'v');
+    return s + line(G, y, S[MAV[0]], MAV[3], 1.3, warm(MAV)) + mask(G, h, 'v');
   },
   MCDXX(G) {                                                      // 三層柱：底 0..20、熱度、動能；5/10/15 虛線
     const { S } = G, h = 70, y = v => 4 + (20 - v) / 20 * (h - 8);
     let s = defs('x');
     for (let i = G.from; i <= G.last; i++) {
       s += bar(G, y, i, 0, 20, '#03C484', 1);
-      if (S.hot_rsi[i] > 0) s += bar(G, y, i, 0, S.hot_rsi[i], '#D8C200', 1);
-      if (S.mm_rsi[i] > 0) s += bar(G, y, i, 0, S.mm_rsi[i], '#FF0000', 1);
+      if (S.hot_rsi[i] > 0) s += bar(G, y, i, 0, S.hot_rsi[i], COL.hotRsi, 1);
+      if (S.mm_rsi[i] > 0) s += bar(G, y, i, 0, S.mm_rsi[i], COL.mmRsi, 1);
     }
     for (const g of [5, 10, 15]) s += hline(y(g), '#8A8F98', 1.2, '5 4');
     s += txt(PW + 5, y(20) + 9, '20.00', AXIS, 11) + txt(PW + 5, y(10) + 4, '10.00', AXIS, 11) + txt(PW + 5, y(0), '0.00', AXIS, 11);
@@ -281,12 +296,8 @@ const panes = {
   HDLY2(G) {                                                      // 主力进场/洗盘（VAR5）、主力拉高/出货（VAR51）、MM、散戶
     const { S } = G, h = 90, y = scaler(G, [[S.var5], [S.var51], [S.mm_line], [S.retail], 0], h, 8, 6, -150, 400);
     let s = defs('h') + vgrid(G, h) + grid(y, 2, v => v.toFixed(0));
-    for (let i = Math.max(1, G.from); i <= G.last; i++) {
-      const a = S.var5[i], pa = S.var5[i - 1], b = S.var51[i], pb = S.var51[i - 1];
-      if (a > pa) s += bar(G, y, i, 0, a, '#0000BF', .8); else if (a < pa) s += bar(G, y, i, 0, a, '#7D7DFF', .8);
-      if (b < pb) s += bar(G, y, i, 0, b, '#11BBBB', .8); else if (b > pb) s += bar(G, y, i, 0, b, '#BBBBBB', .8);
-    }
-    s += line(G, y, S.mm_line, '#DD9F03', 2) + line(G, y, S.retail, '#E53751', 2);
+    for (let i = G.from; i <= G.last; i++) for (const [j, v] of hdly(S, i)) s += bar(G, y, i, 0, v, HDK[j][1], .8);
+    s += line(G, y, S.mm_line, COL.mm, 2) + line(G, y, S.retail, COL.retail, 2);
     for (let i = G.from; i <= G.last; i++) {                     // 富途：散戶上穿 MM（BUYMORE）出 🍏，下穿（BUYLESS）出 😁
       if (!fin(S.mm_line[i])) continue;
       if (S.buymore[i]) s += txt(G.X(i), y(S.mm_line[i]) + 6, '🍏', '#7CD65A', 16, MID);
@@ -301,7 +312,7 @@ const panes = {
       const v = S.cci1[i];
       if (v > 100) s += bar(G, y, i, 100, v, '#EE347E', 1); else if (v < -150) s += bar(G, y, i, -150, v, '#DD9F03', 1);
     }
-    s += hline(y(100), '#E33651') + hline(y(-150), '#03C484') + line(G, y, S.blue, '#326AC5', 1.3) + line(G, y, S.cci1, '#9AA0A6', 1.3);
+    s += hline(y(100), '#E33651') + hline(y(-150), '#03C484') + line(G, y, S.blue, '#326AC5', 1.3) + line(G, y, S.cci1, COL.cci1, 1.3);
     for (let i = G.from; i <= G.last; i++) if (S.icon[i]) s += txt(G.X(i), y(100) + 6, '▼', '#339900', 16, MID);
     return s + mask(G, h, 'c');
   },
@@ -318,35 +329,31 @@ const labels = {
       s += nm('FCOLOR3') + kv('小XXX', c === 'yellow' ? '-1.000' : '0.000', FC.yellow) + kv('強XXX', c === 'green' ? '2.000' : '0.000', FC.green) +
         kv('振X', c === 'blue' ? '1.000' : '0.000', FC.blue) + kv('弱XXX', c === 'red' ? '-2.000' : '0.000', FC.red);
     }
-    if (on.MA) {
-      const ma = (a, p) => last >= p - 1 ? f3(a[last]) : '—';
-      s += nm('MA') + kv('MA30', ma(S.ma30, 30), '#E02D48') + kv('MA40', ma(S.ma40, 40), '#FF6060') + kv('MA150', ma(S.ma150, 150), '#4D6BFF');
-    }
+    if (on.MA) s += nm('MA') + MAS.map(m => kv(m[1], last >= warm(m) ? f3(S[m[0]][last]) : '—', m[3])).join('');
     if (on['九轉']) {
       const u = S.tdUp[last], d = S.tdDn[last];
-      s += nm('神奇九轉') + (u ? kv('向上', u, '#FF00FF') : '') + (d ? kv('向下', d, '#03C484') : '');
+      s += nm('神奇九轉') + (u ? kv('向上', u, tdCol(true, u)) : '') + (d ? kv('向下', d, tdCol(false, d)) : '');
     }
     return s;
   },
-  MACD: ({ S, last }) => nm('MACD') + kv('DIF', f3(S.diff[last]), '#FF8D1E') + kv('DEA', f3(S.dea[last]), '#0CAEE6') + kv('MACD', f3(S.macd[last]), '#E970DC'),
+  MACD: ({ S, last }) => nm('MACD') + kv('DIF', f3(S.diff[last]), COL.dif) + kv('DEA', f3(S.dea[last]), COL.dea) + kv('MACD', f3(S.macd[last]), '#E970DC'),
   MAVOL: ({ B, S, last }) => nm('MAVOL') + kv('VOL', fmtVol(B.v[last]), B.c[last] >= B.o[last] ? UP : DN) +
-    kv('MAVOL30', last >= 29 ? fmtVol(S.mavol30[last]) : '—', '#C22224'),
-  MCDXX: ({ S, last }) => nm('MCDXX') + kv('動能', f3(S.mm_rsi[last]), '#FF0000') + kv('熱度', f3(S.hot_rsi[last]), '#D8C200'),
-  HDLY2({ S, last }) {
-    const a = S.var5[last], pa = S.var5[last - 1], b = S.var51[last], pb = S.var51[last - 1];
-    return nm('HDLY2') + kv('主力进场', f3(a > pa ? a : 0), '#4D5BFF') + kv('洗盘', f3(a < pa ? a : 0), '#7D7DFF') +
-      kv('主力拉高', f3(b < pb ? b : 0), '#11BBBB') + kv('出货', f3(b > pb ? b : 0), '#BBBBBB') +
-      kv('MM', f3(S.mm_line[last]), '#DD9F03') + kv('散戶', f3(S.retail[last]), '#E53751');
+    kv(MAV[1], last >= warm(MAV) ? fmtVol(S[MAV[0]][last]) : '—', MAV[3]),
+  MCDXX: ({ S, last }) => nm('MCDXX') + kv('動能', f3(S.mm_rsi[last]), COL.mmRsi) + kv('熱度', f3(S.hot_rsi[last]), COL.hotRsi),
+  HDLY2({ S, last }) {                                            // 四種柱嘅值同色都由 hdly() 嚟，同圖一致
+    const now = new Map(hdly(S, last));
+    return nm('HDLY2') + HDK.map(([name, c], j) => kv(name, f3(now.has(j) ? now.get(j) : 0), c)).join('') +
+      kv('MM', f3(S.mm_line[last]), COL.mm) + kv('散戶', f3(S.retail[last]), COL.retail);
   },
-  CHAODI7: ({ S, last }) => nm('CHAODI7') + kv('CCI1', f3(S.cci1[last]), '#9AA0A6'),
+  CHAODI7: ({ S, last }) => nm('CHAODI7') + kv('CCI1', f3(S.cci1[last]), COL.cci1),
 };
 
 // ── 畫成個個案（每推一步都只用已見K線重新計）──────────
 function render() {
   const bars = BT.bars, n = bars.t.length, sig = BT.sig, last = BT.last, rev = BT.revealed;
   const B = Ind.head(bars, last + 1), S = Ind.compute(B);
-  const from = Replay.windowRange(last).from, sw = PW / (last - from + 1 + FUT);
-  const G = { B, S, sig, last, from, sw, X: i => (i - from + .5) * sw, R: Replay.readout(bars, sig, last), ticks: [] };
+  const from = Replay.windowRange(last, PAST).from;                // 靠右：最新一支永遠喺第 PAST 格，歷史唔夠就左邊留空
+  const G = { B, S, sig, last, from, sw: SW, X: i => (PAST - .5 - (last - i)) * SW, R: Replay.readout(bars, sig, last), ticks: [] };
   for (let i = from; i <= last; i++) {                             // X 軸：盲測用相對月份，揭盅後喺一月標年份
     const t = rev ? (B.t[i].endsWith('-01') ? B.t[i].slice(0, 4) : '') : (i - sig) % 12 === 0 ? Replay.relLabel(i, sig) : '';
     if (t) G.ticks.push([G.X(i), t]);
@@ -368,15 +375,17 @@ function render() {
   }
   $('read').innerHTML = rd;
 
-  for (const k of ['main', ...SUBS]) {
+  for (const k of ['main', ...SUBS]) {                             // 收埋嘅格要清空：唔可以留住之前推前／上個個案嘅內容
     const vis = k === 'main' || !!on[k];
     $('pane-' + k).hidden = !vis;
-    if (vis) { $('sv-' + k).innerHTML = panes[k](G); $('pl-' + k).innerHTML = labels[k](G); }
+    $('sv-' + k).innerHTML = vis ? panes[k](G) : '';
+    $('pl-' + k).innerHTML = vis ? labels[k](G) : '';
   }
 
-  const N = n - 1 - sig, k = last - sig, rg = $('rg');           // 未揭盅：冇「/ N」，range 用固定上限，超過就頂住
-  rg.max = rev ? N : BLIND_MAX;
-  rg.value = rev ? k : Math.min(k, BLIND_MAX);
+  // 未揭盅：冇「/ N」，range 用固定上限，超過就頂住（R13）；N=0（讀數已寫明下個月未開市）照用 max 0（R16）
+  const N = n - 1 - sig, k = last - sig, rg = $('rg'), hideN = !rev && N > 0;
+  rg.max = hideN ? BLIND_MAX : N;
+  rg.value = hideN ? Math.min(k, BLIND_MAX) : k;
   $('lbl').textContent = rev ? `推前 ${k} / ${N} 支` : `推前 ${k} 支`;
   $('reveal').hidden = rev;
   for (const b of document.querySelectorAll('#ctl [data-go]'))
