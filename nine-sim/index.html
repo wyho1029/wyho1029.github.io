@@ -23,9 +23,10 @@ catch(e){}})();
   --ink:#1E1A10; --ink-2:#4A4334; --muted:#7D7461;
   --shadow:0 1px 2px rgba(30,26,16,.06);
   /* 圖表色：dataviz validate_palette.js 驗過（對 panel #FFFFFF 同 bg #FAF7EF，--pairs all，全 PASS）。
-     A 你嘅做法＝琥珀、C 隨機入場＝藍、SPY＝綠；「蝕緊」紅同琥珀相鄰對另外驗過；止蝕版本／背景數據＝灰（降調）。 */
+     A 你嘅做法＝琥珀、C 隨機入場＝藍、SPY＝綠；「蝕緊」紅同琥珀相鄰對另外驗過；止蝕版本／背景數據＝灰（降調）。
+     灰用中性灰：同琥珀／藍／綠正常視力 ΔE ≥ 15.8、CVD ≥ 15.1；對比 2.4:1 低過 3:1，靠每個灰色 mark 都有數字標籤＋數據表。 */
   --s-a:#b97f08; --s-c:#0677cb; --s-spy:#016b2a; --s-loss:#b02a2a;
-  --deemph:#9C9381; --axis:#C9C1AC; --on-fill:#1E1A10;
+  --deemph:#A6A6A6; --axis:#C9C1AC; --on-fill:#1E1A10;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -33,18 +34,21 @@ catch(e){}})();
     --bg:#151209; --panel:#1D1910; --rail:#332C1B; --rail-soft:#241F13;
     --ink:#F5F0E2; --ink-2:#C9C1AC; --muted:#8B8270;
     --shadow:0 1px 2px rgba(0,0,0,.4);
-    /* 深色版另外揀過（對 panel #1D1910 同 bg #151209，--pairs all，全 PASS）*/
+    /* 深色版另外揀過（對 panel #1D1910 同 bg #151209，--pairs all，全 PASS）；
+       灰同琥珀／藍／綠正常視力 ΔE ≥ 15.9、CVD ≥ 10.8，對比 4.3:1 */
     --s-a:#c08a00; --s-c:#0090f0; --s-spy:#03782e; --s-loss:#d03b3b;
-    --deemph:#77705E; --axis:#4A4334;
+    --deemph:#7D7D7D; --axis:#4A4334;
   }
 }
+:root[data-theme="light"]{color-scheme:light}
 :root[data-theme="dark"]{
+  color-scheme:dark;
   --signal:#FFBF00; --signal-soft:#3A2E08;
   --bg:#151209; --panel:#1D1910; --rail:#332C1B; --rail-soft:#241F13;
   --ink:#F5F0E2; --ink-2:#C9C1AC; --muted:#8B8270;
   --shadow:0 1px 2px rgba(0,0,0,.4);
   --s-a:#c08a00; --s-c:#0090f0; --s-spy:#03782e; --s-loss:#d03b3b;
-  --deemph:#77705E; --axis:#4A4334;
+  --deemph:#7D7D7D; --axis:#4A4334;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -65,7 +69,7 @@ p b{color:var(--ink)}
 p a,.cap a{color:var(--ink); text-decoration-color:var(--signal); text-underline-offset:3px}
 p a:hover,.cap a:hover{text-decoration-thickness:2px}
 .lede{font-size:16px}
-.note{font-size:13.5px; line-height:1.65; color:var(--muted);
+.note{font-size:13.5px; line-height:1.65; color:var(--ink-2);
   background:var(--signal-soft); border-left:3px solid var(--signal);
   border-radius:0 6px 6px 0; padding:11px 14px; margin:0; max-width:62ch}
 .note b{color:var(--ink)}
@@ -90,7 +94,7 @@ figure{margin:0}
 .tile .lab{font-size:13px; line-height:1.45; color:var(--ink-2); display:flex; gap:8px;
   align-items:baseline}
 .tile .lab i{display:inline-block; width:14px; height:3px; border-radius:2px; flex:none;
-  transform:translateY(-3px)}
+  transform:translateY(-3px); forced-color-adjust:none}
 .tile .v{font:600 30px/1.15 Archivo,"PingFang HK","Microsoft JhengHei",sans-serif;
   color:var(--ink); letter-spacing:-.01em; margin-top:6px; align-self:end}
 .tile .v small{font-size:16px; font-weight:500; margin-left:4px; color:var(--ink-2)}
@@ -106,10 +110,12 @@ figure{margin:0}
   font-family:Archivo,"PingFang HK","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif}
 .cap{font-size:13.5px; line-height:1.65; color:var(--ink-2); max-width:72ch; margin:0}
 .cap b{color:var(--ink)}
+.cap p{max-width:none; color:inherit}
+.cap p + p{margin-top:8px}
 .key{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12.5px; color:var(--ink-2);
   align-items:center}
 .key span{display:inline-flex; align-items:center; gap:7px}
-.key i{display:inline-block; flex:none}
+.key i{display:inline-block; flex:none; forced-color-adjust:none}
 .key .sw{width:12px; height:10px; border-radius:2px}
 .key .ln{width:18px; height:2px; border-radius:1px}
 .key .tk{width:2px; height:14px; background:var(--ink); border-radius:1px}
@@ -118,9 +124,9 @@ figure{margin:0}
 .key + .key{margin-top:-6px}
 .k-a{background:var(--s-a)} .k-c{background:var(--s-c)} .k-spy{background:var(--s-spy)}
 .k-de{background:var(--deemph)} .k-loss{background:var(--s-loss)}
-.k-hz-a{background:repeating-linear-gradient(-45deg,var(--s-a) 0 2px,transparent 2px 5px),
+.k-hz-a{background:repeating-linear-gradient(-45deg,var(--s-a) 0 1.2px,transparent 1.2px 4.5px),
   color-mix(in srgb,var(--s-a) 16%,transparent)}
-.k-hz-loss{background:repeating-linear-gradient(-45deg,var(--s-loss) 0 2px,transparent 2px 5px),
+.k-hz-loss{background:repeating-linear-gradient(-45deg,var(--s-loss) 0 1.2px,transparent 1.2px 4.5px),
   color-mix(in srgb,var(--s-loss) 16%,transparent)}
 
 .tick{fill:var(--muted); font:500 11px "JetBrains Mono",ui-monospace,monospace;
@@ -150,7 +156,7 @@ figure{margin:0}
 .medhalo{stroke:var(--panel); stroke-width:6; stroke-linecap:round}
 .hl{fill:var(--signal-soft)}
 .wash-a{fill:var(--s-a); fill-opacity:.16} .wash-loss{fill:var(--s-loss); fill-opacity:.16}
-.hatch-a{stroke:var(--s-a); stroke-width:2.2} .hatch-loss{stroke:var(--s-loss); stroke-width:2.2}
+.hatch-a{stroke:var(--s-a); stroke-width:1.2} .hatch-loss{stroke:var(--s-loss); stroke-width:1.2}
 .mk.hot{stroke:var(--ink); stroke-width:1.5}
 .hit{fill:transparent; outline:none; cursor:crosshair}
 .hit:focus-visible{stroke:var(--ink); stroke-width:1.5}
@@ -167,7 +173,7 @@ figure{margin:0}
 .tip .t{color:var(--muted); font-size:11.5px; margin-bottom:2px}
 .tip .r{display:flex; align-items:baseline; gap:8px}
 .tip .r i{display:inline-block; width:12px; height:2px; border-radius:1px; flex:none;
-  align-self:center}
+  align-self:center; forced-color-adjust:none}
 .tip .r b{font:600 13px "JetBrains Mono",ui-monospace,monospace;
   font-variant-numeric:tabular-nums; color:var(--ink); white-space:nowrap}
 .tip .r span{color:var(--ink-2)}
@@ -196,7 +202,7 @@ details.tv[open] summary{margin-bottom:8px}
 .tbl.sh{box-shadow:var(--shadow)}
 table{border-collapse:collapse; width:100%; font-size:13px}
 th,td{padding:8px 12px; text-align:left; white-space:nowrap}
-th{background:var(--rail-soft); color:var(--muted); font-weight:600; font-size:11px;
+th{background:var(--rail-soft); color:var(--ink-2); font-weight:600; font-size:11px;
   text-transform:uppercase; letter-spacing:.07em; position:sticky; top:0}
 th.n,td.n{text-align:right}
 td.w{white-space:normal; min-width:13em}
@@ -204,6 +210,9 @@ tbody tr + tr{border-top:1px solid var(--rail-soft)}
 tr.hlr td{background:var(--signal-soft)}
 td.code{font-family:"JetBrains Mono",ui-monospace,monospace; font-weight:500}
 .tbl .x::before{content:"（"} .tbl .x::after{content:"）"}
+/* 闊表：倍數／次數落第二行（桌面都係），等成個表唔使打橫碌 */
+.tbl.stack .x{display:block; font-size:11.5px; color:var(--ink-2)}
+.tbl.stack .x::before,.tbl.stack .x::after{content:none}
 
 ul.how{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px;
   max-width:72ch; color:var(--ink-2)}
@@ -236,9 +245,9 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
 <header>
   <h1>五注滾存：double 就換股，20 年會點？</h1>
   <p class="lede">本金分做 5 注。每注隨機揀一個「九轉後月K轉黃」訊號，喺訊號月下一個月嘅開市價買入；一升到 2 倍就賣（掛定限價；開市已經跳空高過 2 倍，就照開市價走）。下個月將成注錢滾入另一個隨機訊號，冇訊號就坐住現金等。咁樣玩 20 年，會變幾多倍？</p>
-  <p class="note">⚠️ 數據只有今日仲上市嘅 2,154 隻股，中途破產、除牌嘅全部唔喺度。呢個玩法專買跌殘咗嘅股，所以被美化得最多。<b>只供參考，唔係投資建議。</b></p>
+  <p class="note">⚠️ 數據只有今日仲上市嘅 2,154 隻股，中途破產、除牌嘅全部唔喺度。呢個玩法專買跌殘咗嘅股，所以比隨機入場被美化得更多。<b>只供參考，唔係投資建議。</b></p>
   <div class="meta">
-    <span><b>6,626</b> 個訊號</span><span><b>2,152</b> 隻股</span>
+    <span><b>6,626</b> 個訊號</span><span><b>2,152</b> 隻有訊號嘅股</span>
     <span>入場月 <b>1973-08 → 2026-09</b></span>
     <span><b>262</b> 個起點 × 500 次 = <b>131,000</b> 次模擬</span>
     <span>冇計手續費同稅，現金冇利息</span>
@@ -251,17 +260,17 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
     <div class="tile">
       <div class="lab"><i class="k-a"></i>你嘅做法：double 先走</div>
       <div class="v">18.3<small>倍</small></div>
-      <div class="sub">每年 15.6%</div>
+      <div class="sub">每年 15.6% · 1993-02 起：14.2%</div>
     </div>
     <div class="tile">
       <div class="lab"><i class="k-c"></i>同一批股隨機入場</div>
       <div class="v">11.7<small>倍</small></div>
-      <div class="sub">每年 13.1%</div>
+      <div class="sub">每年 13.1% · 1993-02 起：12.0%</div>
     </div>
     <div class="tile">
       <div class="lab"><i class="k-spy"></i>SPY 買入持有</div>
-      <div class="v">5.4<small>倍</small></div>
-      <div class="sub">每年 8.8% · 1993-02 起 165 個窗口</div>
+      <div class="v">5.39<small>倍</small></div>
+      <div class="sub">每年 8.8% · 只有 1993-02 起 165 個窗口</div>
     </div>
     <div class="tile warn">
       <div class="lab">每 24 個月 double（1,024 倍）嘅機會</div>
@@ -269,7 +278,7 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
       <div class="sub">20 年 double 10 次 · 隨機入場：0%</div>
     </div>
   </div>
-  <p class="cap">中位數＝一半模擬好過佢、一半差過佢。你嘅做法同隨機入場用同一批股、同一批起點，要擺埋一齊睇 —— 兩者之差先係訊號嘅功勞。兩個都受上面嘅生存偏差影響，你嘅做法受得多啲。SPY 數據 1993-02 先有；只計 1993-02 之後開始嘅窗口：你嘅做法 <b>14.2%</b>、隨機入場 <b>12.0%</b>、SPY <b>8.8%</b>。</p>
+  <p class="cap">中位數＝一半模擬好過佢、一半差過佢。你嘅做法同隨機入場用同一批股、同一批起點，要擺埋一齊睇 —— 兩者之差先係訊號嘅功勞（最多咁多）。兩個都受上面嘅生存偏差影響，你嘅做法受得多啲。SPY 數據 1993-02 先有，大字嗰三個數唔係同一段時間；要同 SPY 比，就睇「1993-02 起」：你嘅做法 <b>14.2%</b>、隨機入場 <b>12.0%</b>、SPY <b>8.8%</b>。</p>
 </section>
 
 <section aria-labelledby="h-dbl">
@@ -277,8 +286,11 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
   <p>先睇單一個訊號。你假設大約 24 個月 double 一次 —— 實際上，24 個月內 double 到嘅只有 <b>31.1%</b>。</p>
   <figure class="card" style="max-width:760px">
     <div class="chart" id="c-dbl"></div>
-    <figcaption class="cap">有 120 個月數據嘅 3,795 個訊號，85.1% 喺 120 個月內 double 咗，中位數要 <b>35 個月</b>（一半落喺 17–61 個月之間）；<b>14.9%</b> 去到 120 個月都未 double。double 之前通常要先捱跌：120 個月內 double 咗嘅 4,692 個訊號，中途最深跌幅中位數係 <b>−22.2%</b>，四個有一個跌過 45.9% 或以上。（同隨機入場比翻倍率，睇
-      <a href="../nine/">九轉轉黃統計</a>。）</figcaption>
+    <figcaption class="cap">
+      <p>有 120 個月數據嘅 3,795 個訊號，85.1% 喺 120 個月內 double 咗；double 咗嗰 3,230 個，中位數要 <b>35 個月</b>（中間一半 17–61 個月）；<b>14.9%</b> 去到 120 個月都未 double。double 之前通常要先捱跌：120 個月內 double 咗嘅 4,692 個訊號，中途最深跌幅中位數係 <b>−22.2%</b>，四個有一個跌過 45.9% 或以上。</p>
+      <p><b>呢啲翻倍率全部喺今日仲上市嘅股入面計：</b>中途破產嘅冇機會 double，所以偏高，期限越長偏得越勁。期限越長，計到嘅訊號越舊，隻股要生存得越耐先會喺數據度 —— 240 個月嗰 1,830 個訊號，全部係 2006-10 或之前入場、撐咗 20 年以上嘅股，所以右邊幾條柱偏高得最多。</p>
+      <p>（<a href="../nine/">九轉轉黃統計</a>嗰頁用 2012–2026 年另一批 3,603 個訊號同隨機入場比過：12 個月翻倍率 16.0% 對 10.4%，到 120 個月就打和（78.1% 對 78.6%）—— 長期翻倍率高，唔係訊號嘅功勞。）</p>
+    </figcaption>
     <div id="t-dbl"></div>
   </figure>
 </section>
@@ -289,8 +301,8 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
   <figure class="card" style="max-width:860px">
     <div class="key">
       <span><i class="sw k-a"></i>你嘅做法</span>
-      <span><i class="sw k-de"></i>止蝕版本</span>
       <span><i class="sw k-c"></i>隨機入場</span>
+      <span><i class="sw k-de"></i>止蝕版本</span>
       <span><i class="sw k-spy"></i>SPY</span>
     </div>
     <div class="key">
@@ -300,7 +312,7 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
     </div>
     <div class="chart" id="c-dist"></div>
     <figcaption class="cap">止蝕冇幫到手：36 個月止蝕（中位 15.3%）同唔止蝕（15.6%）差唔多，24 個月止蝕仲差（13.1%）。你嘅做法同止蝕版本各 131,000 次，隨機入場 52,400 次；SPY 只計 1993-02 起嘅
-      165 個窗口。全部受生存偏差影響（見最頂）。</figcaption>
+      165 個窗口。除咗 SPY，全部受生存偏差影響（見最頂）。</figcaption>
     <div id="t-dist"></div>
   </figure>
 </section>
@@ -321,7 +333,7 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
 
 <section aria-labelledby="h-era">
   <h2 id="h-era">邊年開始，差好遠</h2>
-  <p>同一個玩法，起點唔同，結果可以差一大截。每一點係嗰個月開始嘅模擬中位數（你嘅做法 500 次、隨機入場 200 次；SPY 每個起點只得一個結果）。</p>
+  <p>同一個玩法，起點唔同，結果可以差一大截。每一點係嗰個月開始嘅模擬中位數（你嘅做法 500 次、隨機入場 200 次；SPY 每個起點只得一個結果）。1985–94 年每個月通常得一兩個訊號（中位數 2 個），所以嗰段條線跳得好犀利：單一個月嘅高低唔好睇，睇三段。</p>
   <figure class="card">
     <div class="key">
       <span><i class="ln k-a"></i>你嘅做法</span>
@@ -335,12 +347,12 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
         <thead><tr><th>幾時開始</th><th class="n">你嘅做法</th><th class="n">隨機入場</th>
           <th class="n">SPY</th><th class="n">36 個月<span class="brk">止蝕</span></th></tr></thead>
         <tbody>
-          <tr><td class="w">1985–94</td><td class="n">17.9%<span class="x">27.1 倍</span></td>
+          <tr><td class="w">1985–94</td><td class="n">17.9%</td>
             <td class="n">14.8%</td><td class="n">—</td><td class="n">18.3%</td></tr>
-          <tr><td class="w">1995–2000</td><td class="n">14.7%<span class="x">15.4 倍</span></td>
-            <td class="n">12.3%</td><td class="n">7.1%</td><td class="n">13.5%</td></tr>
-          <tr><td class="w">2001–06</td><td class="n">12.6%<span class="x">10.7 倍</span></td>
-            <td class="n">11.2%</td><td class="n">10.0%</td><td class="n">11.8%</td></tr>
+          <tr><td class="w">1995–2000</td><td class="n">14.7%</td>
+            <td class="n">12.2%</td><td class="n">7.1%</td><td class="n">13.5%</td></tr>
+          <tr><td class="w">2001–06</td><td class="n">12.6%</td>
+            <td class="n">11.2%</td><td class="n">10.0%</td><td class="n">11.7%</td></tr>
           <tr><td class="w">1993-02 起（可以同 SPY 比）</td><td class="n">14.2%</td>
             <td class="n">12.0%</td><td class="n">8.8%</td><td class="n">—</td></tr>
         </tbody>
@@ -354,8 +366,8 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
 <section aria-labelledby="h-smp">
   <h2 id="h-smp">隨機抽一個例子</h2>
   <p>五注、20 年、每一筆交易。揀一個起點：</p>
+  <div class="seg" id="seg" role="group" aria-label="揀起點"></div>
   <figure class="card">
-    <div class="seg" id="seg" role="group" aria-label="揀起點"></div>
     <div class="key">
       <span><i class="sw k-a"></i>✓ double 咗（×2 賣出）</span>
       <span><i class="sw k-hz-a"></i>… 去到第 20 年仲未 double，賺緊</span>
@@ -363,32 +375,34 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
     </div>
     <div class="chart" id="c-smp"></div>
     <div class="sum" id="smp-sum" aria-live="polite"></div>
-    <figcaption class="cap">每一格係一筆交易，由買入月畫到賣出月；右邊係嗰注 20 年後變咗幾多倍。最尾嗰格通常最長 —— double 唔到嗰隻會一直霸住個位。呢個只係一次抽樣，同一個起點嘅中位數喺上面；一樣只係喺今日仲上市嘅股入面揀。</figcaption>
+    <figcaption class="cap">每一格係一筆交易，由買入月畫到賣出月；右邊係嗰注 20 年後變咗幾多倍。最尾嗰格差唔多一定係未 double 嘅（斜紋）—— double 唔到嗰隻會一直霸住個位，有時一揸十幾年。呢個只係一次抽樣，同一個起點嘅中位數喺上面；一樣只係喺今日仲上市嘅股入面揀。</figcaption>
     <div id="t-smp"></div>
   </figure>
 </section>
 
 <section aria-labelledby="h-stuck">
   <h2 id="h-stuck">錢困住咗</h2>
+  <p>大字係你嘅做法；「隨機入場」係同一批股、同一套程式計嘅對照。</p>
   <div class="tiles">
     <div class="tile">
       <div class="lab">錢擺喺「要揸超過 60 個月」嘅股嘅時間</div>
       <div class="v">63.9%</div>
-      <div class="sub">五注 × 240 個月一齊計</div>
+      <div class="sub">隨機入場：70.1% · 五注 × 240 個月一齊計</div>
     </div>
     <div class="tile">
       <div class="lab">去到第 20 年，最少有一注仲低過買入價</div>
       <div class="v">96.8%</div>
-      <div class="sub">131,000 次模擬入面嘅比例</div>
+      <div class="sub">隨機入場：94.4% · 全部模擬入面嘅比例</div>
     </div>
     <div class="tile">
       <div class="lab">每注 20 年 double 嘅次數</div>
       <div class="v">≈3.6<small>次</small></div>
-      <div class="sub">每次模擬中位數 18 次，分 5 注；你假設係 10 次</div>
+      <div class="sub">隨機入場：≈3.0 次 · 每次模擬中位數 18 次（隨機入場 15 次），分 5 注；你假設係 10 次</div>
     </div>
   </div>
   <p>「double 就換股」聽落好似錢會一直轉。實際上，double 唔到嗰隻會一直霸住個位 ——
-    任何「唔 double 唔走」嘅玩法都會咁。所以 20 年 double 唔到 10 次，大部分時間錢都係等緊。</p>
+    任何「唔 double 唔走」嘅玩法都會咁，隨機入場仲困得耐啲。所以 20 年 double 唔到 10 次，大部分時間錢都係等緊。</p>
+  <p class="note">呢度一樣只計今日仲上市嘅股。現實入面，買中一隻之後破產嘅股，嗰注會一直霸住個位直至歸零 —— 困得更耐、仲要蝕晒，所以真實情況只會更差。</p>
 </section>
 
 <section aria-labelledby="h-disc">
@@ -396,7 +410,7 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
   <p>數據入面嘅 2,154 隻股，全部係 2026 年仲上市、仲有成交嘅。越早年，有數據嘅越少：</p>
   <figure class="card" style="max-width:620px">
     <div class="chart" id="c-uni"></div>
-    <figcaption class="cap">今日 2,154 隻入面，每個年頭已經有數據嘅數目。</figcaption>
+    <figcaption class="cap">今日 2,154 隻入面，每個年頭已經有數據嘅數目。只抽咗 6 個年份：2006 去到 2026 中間隔咗 20 年，所以最尾嗰條分開咗畫。</figcaption>
     <div id="t-uni"></div>
   </figure>
   <p>破產、除牌嘅公司根本唔喺數據度，所以數據入面每一隻跌殘咗嘅股，最後都生存咗。你嘅做法專買跌殘咗嘅股，所以比隨機入場被美化得更多。連隨機入場，喺可以同 SPY 比嘅模擬入面都有
@@ -409,31 +423,33 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
       <tbody>
         <tr class="hlr"><td class="w">基準（即係上面所有數）</td><td class="n">15.6%<span class="x">18.3 倍</span></td>
           <td class="n">13.1%<span class="x">11.7 倍</span></td></tr>
-        <tr><td class="w">剔走數據極端嘅股</td><td class="n">15.6%<span class="x">冇影響</span></td><td class="n">—</td></tr>
+        <tr><td class="w">剔走數據極端嘅股</td><td class="n">15.6%<span class="x">冇影響</span></td>
+          <td class="n">13.0%<span class="x">冇影響</span></td></tr>
+        <tr><td class="w">再剔走 121 隻有零成交／價格唔郁月份嘅股（連埋上一行嘅極端數據股，合共 136 隻）</td>
+          <td class="n">15.3%</td><td class="n">12.9%</td></tr>
         <tr><td class="w">月尾收市 ≥ 2 倍先賣，用收市價成交</td><td class="n">15.1%<span class="x">16.6 倍</span></td>
           <td class="n">13.3%</td></tr>
-        <tr><td class="w">剔走 136 隻有零成交／價格唔郁月份嘅股</td><td class="n">15.3%</td><td class="n">—</td></tr>
         <tr><td class="w">生存偏差壓力測試：每次買入有 5% 機會係一隻之後會歸零嘅股</td>
           <td class="n">13.2%<span class="x">11.9 倍</span></td><td class="n">11.1%</td></tr>
         <tr><td class="w">同上，10% 機會</td><td class="n">10.7%<span class="x">7.6 倍</span></td><td class="n">9.2%</td></tr>
       </tbody>
     </table>
   </div>
-  <p>扣走「同一批股隨機入場」之後，訊號本身大約每年多 <b>2–2.6 個百分點</b>；改用收市價成交只係 <b>1.8</b>；2001–06 年開始嘅只有 <b>1.35</b>。</p>
-  <p class="note">壓力測試嘅 5%、10% 係示範用嘅數，唔係估計出嚟 —— 真實有幾多隻股中途歸零，呢份數據答唔到。</p>
+  <p>扣走「同一批股隨機入場」之後，你嘅做法大約每年多 <b>2–2.6 個百分點</b> —— 呢個係上限：生存偏差美化你嘅做法多過隨機入場，真正屬於訊號嘅會再細啲；改用收市價成交只係 <b>1.8</b>；2001–06 年開始嘅只有 <b>1.35</b>。</p>
+  <p class="note">壓力測試嘅 5%、10% 係示範用嘅數，唔係估計出嚟 —— 真實有幾多隻股中途歸零，呢份數據答唔到。兩邊用同一個機會；跌殘股歸零嘅機會應該高啲，所以呢個測試仲未計晒你嘅做法被美化嘅部分。基準以外嘅幾行每個起點跑 50 次，同基準差零點一個百分點以內都當冇分別。</p>
 </section>
 
 <section aria-labelledby="h-how">
   <h2 id="h-how">點樣計</h2>
   <ul class="how">
-    <li><b>數據：</b>6,626 個可用嘅「九轉後月K轉黃」訊號（入場月 1973-08 → 2026-09），2,152 隻股，月K 已經調整拆股同派息。入場價＝訊號月下一個月嘅開市價。</li>
+    <li><b>數據：</b>6,626 個可用嘅「九轉後月K轉黃」訊號（入場月 1973-08 → 2026-09），出自 2,152 隻有訊號嘅股；揀股範圍係今日仲上市嘅 2,154 隻（包括少量基金同 ETN，例如 NUV、CRF、VXX）。月K 已經調整拆股同派息。入場價＝訊號月下一個月嘅開市價。</li>
     <li><b>double：</b>入場之後，第一個最高價 ≥ 2 倍入場價嘅月份。單一訊號統計只計有足夠數據嘅訊號（例如「24 個月內」只計有 24 個月數據嘅 6,031 個）。</li>
-    <li><b>玩法：</b>分 5 注，每注隨機揀一個訊號，下個月開市買；2 倍限價賣（開市跳空高過 2 倍就用開市價）；下個月成注錢再揀過；冇訊號就等。止蝕版本揸夠 24／36／60 個月未 double 就收市價賣。隨機入場唔理訊號，每次喺同一批股隨機揀一隻，同樣 double 先走。</li>
+    <li><b>玩法：</b>分 5 注，每注隨機揀一個訊號，下個月開市買；2 倍限價賣（開市跳空高過 2 倍就用開市價）；下個月成注錢再揀過；冇訊號就等；同一隻股唔會同時揸兩注。止蝕版本揸夠 24／36／60 個月未 double 就收市價賣。隨機入場唔理訊號，每次喺同一批股入面（之前有 13 個月或以上數據嘅）隨機揀一隻，同樣 double 先走。</li>
     <li><b>模擬：</b>20 年窗口，起點由 1985-01 到 2006-10 每個月一個（262 個）；你嘅做法同止蝕版本每個起點
-      500 次（131,000 次），隨機入場 200 次（52,400 次）。冇手續費、冇稅，現金冇利息。</li>
-    <li><b>SPY：</b>1993-02 到 2006-10 開始嘅 165 個 20 年窗口，買入持有。</li>
+      500 次（131,000 次），隨機入場 200 次（52,400 次）。冇手續費、冇稅，現金冇利息。13 萬次唔係 13 萬個獨立結果：早年好多月份得一兩個訊號，同一個起點嘅 500 次開頭通常揸住同一批股。</li>
+    <li><b>SPY：</b>1993-02 到 2006-10 開始嘅 165 個 20 年窗口，買入持有（連派息再投資）。</li>
     <li><b>「邊年開始」條線：</b>用同一套程式、同一串隨機數重跑，逐個起點攞中位數。</li>
-    <li><b>驗證：</b>Python 主程式、獨立 Node 重寫、另一個審計三方對數 —— 單一訊號統計完全一樣；模擬分位數全部喺 3 個標準誤差之內（14/14）；用同一串隨機數，兩個實作逐次一致（52,400 次，最大相對誤差 8.4e-16）；冇偷睇未來（6,630 個訊號全部可以只用訊號月或之前嘅數據重現）。</li>
+    <li><b>驗證：</b>Python 主程式、獨立 Node 重寫、另一個審計三方對數 —— 單一訊號統計完全一樣；模擬分位數全部喺 3 個標準誤差之內（14/14）；用同一串隨機數，兩個實作逐次一致（52,400 次，最大相對誤差 8.4e-16）；冇偷睇未來（6,630 個訊號，連 4 個 2026-09 未有入場價嘅，全部可以只用訊號月或之前嘅數據重現）。「錢困住咗」嗰幾個數，你嘅做法同隨機入場都用主程式同審計逐次對過（各 786 次，冇一次唔同）。</li>
   </ul>
   <div class="links">
     <a href="../nine/">🟡 九轉轉黃統計 →</a>
@@ -442,7 +458,7 @@ footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); pad
   </div>
 </section>
 
-<footer>呢頁係研究記錄，唔係投資建議。數據只包括今日仲上市嘅股，所有數字都偏樂觀。</footer>
+<footer>呢頁係研究記錄，唔係投資建議。個股數據只包括今日仲上市嘅股，除咗 SPY，所有數字都偏樂觀。</footer>
 </div>
 
 <div class="tip" id="tip" role="tooltip" hidden></div>
@@ -528,56 +544,66 @@ function mount(id,draw){const host=$(id);let w0=0;
   const f=()=>go(true);redraws.push(f);return f;}
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>redraws.forEach(f=>f()));
 
-/* ── 數據表（每個圖都有）；num[i]：1＝數字欄（靠右），'w'＝長文字欄（可以摺行） ── */
-function tview(id,head,rows,num,tall){
+/* ── 數據表（每個圖都有）；num[i]：1＝數字欄（靠右），'w'＝長文字欄（可以摺行）；
+   格嘅值可以係 [主, 副]：副行用 .x（cls 有 'stack' 就落第二行）；cls：'tall'／'stack' ── */
+function tview(id,head,rows,num,cls){
   const host=$(id),old=host.querySelector('details'),open=!!(old&&old.open);
   const d=document.createElement('details');d.className='tv';d.open=open;
   const s=document.createElement('summary');s.textContent='睇數據表';d.appendChild(s);
-  const box=document.createElement('div');box.className='tbl'+(tall?' tall':'');
+  const box=document.createElement('div');box.className='tbl'+(cls?' '+cls:'');
   const t=document.createElement('table'),hr=t.createTHead().insertRow();
   head.forEach((h,i)=>{const c=document.createElement('th');c.textContent=h;if(num[i]===1)c.className='n';hr.appendChild(c);});
   const tb=t.createTBody();
-  rows.forEach(r=>{const tr=tb.insertRow();r.forEach((v,i)=>{const c=tr.insertCell();c.textContent=v;if(num[i])c.className=num[i]==='w'?'w':'n';});});
+  rows.forEach(r=>{const tr=tb.insertRow();r.forEach((v,i)=>{const c=tr.insertCell();
+    if(Array.isArray(v)){c.textContent=v[0];const x=document.createElement('span');x.className='x';x.textContent=v[1];c.appendChild(x);}
+    else c.textContent=v;
+    if(num[i])c.className=num[i]==='w'?'w':'n';});});
   box.appendChild(t);d.appendChild(box);host.replaceChildren(d);}
 
 /* ═══ c. 單一訊號：幾耐 double ═══════════════════════════════ */
 const DBL=[[12,977,6292,'15.5'],[24,1874,6031,'31.1'],[36,2506,5773,'43.4'],
   [60,2943,4726,'62.3'],[120,3230,3795,'85.1'],[240,1783,1830,'97.4']];
+/* 每條柱計嘅訊號：入場月 1973-08 起，到最遲仲有 H 個月數據嗰個月（2026-09 往前推） */
+const dblRange=H=>`1973-08 → ${mstr(idx('2026-09')-H+1)}`;
 mount('c-dbl',(host,w)=>{
-  const H=272,m={l:42,r:6,t:30,b:46},iw=w-m.l-m.r,ih=H-m.t-m.b,Y=v=>m.t+ih*(1-v/100);
+  const ml=42,mr=6,band=(w-ml-mr)/DBL.length;
+  /* 窄屏：「你嘅假設」會撞到隔籬 36 個月條柱個數 → 搬去 x 軸「24」下面 */
+  const under=tw('你嘅假設',12.5,600)/2+tw(DBL[2][3]+'%',12,600,true)/2+6>band;
+  const H=under?286:272,m={l:ml,r:mr,t:30,b:under?60:46},iw=w-m.l-m.r,ih=H-m.t-m.b,Y=v=>m.t+ih*(1-v/100);
   const svg=root(host,w,H,'單一訊號買入之後 12 至 240 個月內 double 咗嘅比率：24 個月內 31.1%，120 個月內 85.1%');
   for(const v of [0,25,50,75,100]){
     S('line',{x1:m.l,x2:w-m.r,y1:Y(v),y2:Y(v),class:v?'grid':'base'},svg);
     T(svg,m.l-8,Y(v)+4,v+'%','tick',{'text-anchor':'end'});}
-  const band=iw/DBL.length,bw=Math.min(24,band*.5);
+  const bw=Math.min(24,band*.5);
   DBL.forEach((d,i)=>{
     const c=m.l+band*(i+.5),you=d[0]===24,top=Y(+d[3]);
     const mk=S('path',{d:colPath(c-bw/2,top,bw,Y(0)-top,4),class:'mk '+(you?'f-a':'f-de')},svg);
     T(svg,c,top-8,d[3]+'%','val',{'text-anchor':'middle'});
-    if(you)T(svg,c,top-27,'你嘅假設','lbl b',{'text-anchor':'middle'});
+    if(you)T(svg,c,under?m.t+ih+36:top-27,'你嘅假設','lbl b',{'text-anchor':'middle'});
     T(svg,c,m.t+ih+18,String(d[0]),'tick',{'text-anchor':'middle'});
     const hit=S('rect',{x:r1(m.l+band*i),y:m.t-26,width:r1(band),height:ih+26,class:'hit',tabindex:0,
-      'aria-label':`買入後 ${d[0]} 個月內 double 咗 ${d[3]}%，${nf(d[1])} / ${nf(d[2])} 個訊號`},svg);
+      'aria-label':`買入後 ${d[0]} 個月內 double 咗 ${d[3]}%，${nf(d[1])} / ${nf(d[2])} 個訊號，入場月 ${dblRange(d[0])}`},svg);
     bind(hit,mk,()=>[`買入後 ${d[0]} 個月內`,[
       {k:you?'a':'de',v:d[3]+'%',l:'double 咗'},
-      {v:`${nf(d[1])} / ${nf(d[2])}`,l:'個訊號（有咁耐數據嘅）'}]
+      {v:`${nf(d[1])} / ${nf(d[2])}`,l:'個訊號（有咁耐數據嘅）'},
+      {v:dblRange(d[0]),l:'入場月'}]
       .concat(you?[{v:'24 個月',l:'你假設 double 一次要嘅時間'}]:[])]);});
-  T(svg,m.l+iw/2,H-6,'買入之後幾多個月內','axt',{'text-anchor':'middle'});});
-tview('t-dbl',['買入後','double 咗','有咁耐數據嘅訊號','比率'],
-  DBL.map(d=>[d[0]+' 個月內',nf(d[1]),nf(d[2]),d[3]+'%']),[0,1,1,1]);
+  T(svg,m.l+iw/2,H-6,'買入之後幾多個月內（期限唔係等距）','axt',{'text-anchor':'middle'});});
+tview('t-dbl',['買入後','入場月','double 咗','有咁耐數據嘅訊號','比率'],
+  DBL.map(d=>[d[0]+' 個月內',dblRange(d[0]),nf(d[1]),nf(d[2]),d[3]+'%']),[0,0,1,1,1]);
 
 /* ═══ d. 20 年分佈（每年回報；倍數放標籤同 tooltip） ═══════════ */
-const DIST=[
+const DIST=[   // 隨機入場緊貼你嘅做法，一眼睇到兩者之差
   {id:'A',k:'a',name:'你嘅做法：double 先走',short:'你嘅做法',n:'131,000 次',
-    g:[9.6,12.4,15.6,19.1,22.5],m:[6.29,10.3,18.3,33.0,57.9]},
+    g:[9.6,12.4,15.6,19.1,22.5],m:[6.28,10.3,18.3,33.0,57.9]},
+  {id:'C',k:'c',name:'同一批股隨機入場（唔理訊號）',short:'隨機入場',n:'52,400 次',
+    g:[8.2,10.4,13.1,16.0,18.8],m:[4.83,7.26,11.7,19.3,31.4]},
   {id:'B24',k:'de',name:'24 個月未 double 就止蝕',short:'24 個月止蝕',n:'131,000 次',
     g:[6.5,9.6,13.1,16.9,20.6],m:[3.53,6.24,11.8,22.7,42.5]},
   {id:'B36',k:'de',name:'36 個月止蝕',short:'36 個月止蝕',n:'131,000 次',
     g:[7.7,11.3,15.3,19.4,23.2],m:[4.44,8.45,17.2,34.8,64.9]},
   {id:'B60',k:'de',name:'60 個月止蝕',short:'60 個月止蝕',n:'131,000 次',
     g:[8.2,11.3,14.9,18.7,22.3],m:[4.84,8.52,16.2,30.7,56.3]},
-  {id:'C',k:'c',name:'同一批股隨機入場（唔理訊號）',short:'隨機入場',n:'52,400 次',
-    g:[8.2,10.4,13.1,16.0,18.8],m:[4.83,7.26,11.7,19.3,31.4]},
   {id:'SPY',k:'spy',name:'SPY 買入持有',short:'SPY',n:'165 個窗口（1993-02 起）',
     g:[6.1,7.2,8.8,9.8,10.5],m:[3.29,4.05,5.39,6.43,7.41]}];
 const QN=['10 分位','25 分位','中位','75 分位','90 分位'];
@@ -605,8 +631,8 @@ mount('c-dist',(host,w)=>{
       'aria-label':`${d.name}：中位每年 ${g[2].toFixed(1)}%（${FX(mm[2])} 倍），10 至 90 分位 ${g[0].toFixed(1)}% 至 ${g[4].toFixed(1)}%`},svg);
     bind(hit,mk,()=>[`${d.name} · ${d.n}`,
       [4,3,2,1,0].map(q=>({k:q===2?d.k:null,v:`${g[q].toFixed(1)}% · ${FX(mm[q])} 倍`,l:QN[q]}))]);});});
-tview('t-dist',['玩法','模擬','10 分位','25 分位','中位','75 分位','90 分位'],
-  DIST.map(d=>[d.name,d.n].concat(d.g.map((v,q)=>`${v.toFixed(1)}%（${FX(d.m[q])} 倍）`))),['w',0,1,1,1,1,1]);
+tview('t-dist',['玩法（模擬次數）','10 分位','25 分位','中位','75 分位','90 分位'],
+  DIST.map(d=>[[d.name,d.n]].concat(d.g.map((v,q)=>[v.toFixed(1)+'%',FX(d.m[q])+' 倍']))),['w',1,1,1,1,1],'stack');
 
 /* ═══ e. 目標 vs 現實 ══════════════════════════════════════ */
 const GOAL=[
@@ -632,16 +658,18 @@ mount('c-goal',(host,w)=>{
     S('tspan',{class:'b'},t).textContent=g.x;
     if(two)T(svg,m.l+4,y0+35,g.mean,'lbl '+mc+' halo'+hh);   // 黃底嗰行唔用 muted（對比唔夠）
     else S('tspan',{dx:10,class:mc||null},t).textContent=g.mean;
+    const mk=S('g',{class:'mk'},svg);   // 兩條柱一齊 hover 加框
     ['a','c'].forEach((k,j)=>{
       const y=y0+head+j*(bh+gap),wv=X(+g[k])-m.l;
-      const mk=wv>=.5?S('path',{d:rowPath(m.l,y,Math.max(wv,1),bh,Math.min(4,wv/2)),class:'mk f-'+k},svg):null;
+      if(wv>=.5)S('path',{d:rowPath(m.l,y,Math.max(wv,1),bh,Math.min(4,wv/2)),class:'f-'+k},mk);
       const lx=m.l+Math.max(wv,0)+6;let s=g[k]+'%';
       if(i===0&&lx+tw(s+' · '+NM[k],12,600,true)<=w-2)s+=' · '+NM[k];   // 第一組直接寫名（夠位先寫）
-      T(svg,lx,y+bh/2+4,s,'val halo'+hh);
-      const hit=S('rect',{x:0,y:y-gap/2,width:w,height:bh+gap,class:'hit',tabindex:0,
-        'aria-label':`${NM[k]}：20 年後 ${g.x}（${g.mean}）嘅機會 ${g[k]}%`},svg);
-      bind(hit,mk,()=>[`20 年後 ${g.x} · ${g.mean}`,
-        [{k:'a',v:g.a+'%',l:'你嘅做法'},{k:'c',v:g.c+'%',l:'同一批股隨機入場'}]]);});});});
+      T(svg,lx,y+bh/2+4,s,'val halo'+hh);});
+    /* 一組一個 hit 區（連標題行），tooltip 本身已經列晒兩個玩法 */
+    const hit=S('rect',{x:0,y:y0,width:w,height:grpH,class:'hit',tabindex:0,
+      'aria-label':`20 年後 ${g.x}（${g.mean}）嘅機會：你嘅做法 ${g.a}%，隨機入場 ${g.c}%`},svg);
+    bind(hit,mk,()=>[`20 年後 ${g.x} · ${g.mean}`,
+      [{k:'a',v:g.a+'%',l:'你嘅做法'},{k:'c',v:g.c+'%',l:'同一批股隨機入場'}]]);});});
 tview('t-goal',['20 年後','即係','你嘅做法','隨機入場'],
   GOAL.map(g=>[g.x,g.mean,g.a+'%',g.c+'%']),[0,'w',1,1]);
 
@@ -659,9 +687,13 @@ mount('c-era',(host,w)=>{
     T(svg,X(i),m.t+ih+18,String(yr),'tick',{'text-anchor':i===0?'start':'middle'});}
   const E=[['1985–94',0,idx('1994-12')-I0],['1995–2000',idx('1995-01')-I0,idx('2000-12')-I0],
     ['2001–06',idx('2001-01')-I0,NP-1]];
+  /* 好窄嘅時候（約 340px 以下）置中會撞：頭尾兩個標籤貼返外邊，分隔線唔再伸上標籤嗰行 */
+  const ec=E.map(([lab,a,b])=>[(X(a)+X(b))/2,tw(lab,11.5,600)/2]);
+  const tight=ec.some((e,k)=>k&&e[0]-e[1]-(ec[k-1][0]+ec[k-1][1])<6);
   E.forEach(([lab,a,b],k)=>{
-    if(k){const xs=r1((X(a-1)+X(a))/2);S('line',{x1:xs,x2:xs,y1:m.t-22,y2:m.t+ih,class:'sep'},svg);}
-    T(svg,(X(a)+X(b))/2,m.t-12,lab,'era',{'text-anchor':'middle'});});
+    if(k){const xs=r1((X(a-1)+X(a))/2);S('line',{x1:xs,x2:xs,y1:tight?m.t:m.t-22,y2:m.t+ih,class:'sep'},svg);}
+    const edge=tight&&k!==1;
+    T(svg,edge?(k?X(b):X(a)):(X(a)+X(b))/2,m.t-12,lab,'era',{'text-anchor':edge?(k?'end':'start'):'middle'});});
   const path=arr=>{let d='',pen=false;arr.forEach((v,i)=>{if(v==null){pen=false;return;}
     d+=(pen?'L':'M')+r1(X(i))+','+r1(Y(v));pen=true;});return d;};
   S('path',{d:path(P.s),class:'ln st-spy'},svg);
@@ -718,7 +750,7 @@ mount('c-era',(host,w)=>{
 tview('t-era',['起點','你嘅做法','隨機入場','SPY'],
   P.a.map((v,i)=>[mstr(I0+i),`${v.toFixed(1)}%（${FX(P.am[i])} 倍）`,
     `${P.c[i].toFixed(1)}%（${FX(P.cm[i])} 倍）`,P.s[i]==null?'—':`${P.s[i].toFixed(1)}%（${FX(P.sm[i])} 倍）`]),
-  [0,1,1,1],true);
+  [0,1,1,1],'tall');
 
 /* ═══ g. 抽樣例子：五注時間線 ══════════════════════════════ */
 let pick=0;
@@ -746,15 +778,17 @@ const drawSmp=mount('c-smp',(host,w)=>{
   const H=m.t+5*rowH+m.b,iw=w-m.l-m.r,X=mi=>m.l+iw*(mi-S0)/N;
   const svg=root(host,w,H,`${s.start} 開始嘅一次模擬：五注 20 年嘅每一筆交易，最後 ${FX(s.m)} 倍`);
   const defs=S('defs',null,svg);
-  for(const k of ['a','loss']){
-    const p=S('pattern',{id:'hz-'+k,width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},defs);
-    S('rect',{width:6,height:6,class:'wash-'+k},p);
-    S('line',{x1:1.5,y1:0,x2:1.5,y2:6,class:'hatch-'+k},p);}
+  for(const k of ['a','loss']){   // 斜紋：幼線、疏啲（1.2px／8px），大片都唔會太嘈
+    const p=S('pattern',{id:'hz-'+k,width:8,height:8,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},defs);
+    S('rect',{width:8,height:8,class:'wash-'+k},p);
+    S('line',{x1:2,y1:0,x2:2,y2:8,class:'hatch-'+k},p);}
   T(svg,m.l-8,12,'每注','axt',{'text-anchor':'end'});
   T(svg,w-2,12,'20 年後','axt',{'text-anchor':'end'});
+  const tl=tw('2000',11,500,true),thin=X(S0+60)-X(S0)<1.5*tl+6;   // 好窄：年份隔一個先寫
   for(let y=0;y<=20;y+=5){const x=r1(X(S0+y*12));
     S('line',{x1:x,x2:x,y1:m.t,y2:m.t+5*rowH,class:y%20?'grid':'base'},svg);
-    T(svg,x,m.t+5*rowH+18,String(+s.start.slice(0,4)+y),'tick',{'text-anchor':y===0?'start':y===20?'end':'middle'});}
+    if(!thin||y%10===0)
+      T(svg,x,m.t+5*rowH+18,String(+s.start.slice(0,4)+y),'tick',{'text-anchor':y===0?'start':y===20?'end':'middle'});}
   TR.forEach((row,j)=>{
     const y0=m.t+j*rowH,yb=y0+(rowH-bh)/2,marks=[];
     T(svg,m.l-8,yb+bh/2+4,`第 ${j+1} 注`,'lbl',{'text-anchor':'end'});
@@ -787,14 +821,14 @@ const drawSmp=mount('c-smp',(host,w)=>{
       mk.el.addEventListener('focus',()=>{f();byFocus=f;});
       mk.el.addEventListener('blur',()=>{if(owner===me)tipHide();});});});});
 function smpText(){
-  const s=SIM.samples[pick],box=$('smp-sum');box.replaceChildren();
+  const s=SIM.samples[pick],box=$('smp-sum'),i=idx(s.start)-I0;box.replaceChildren();   // i：同「邊年開始」條線同一點
   const line=(parts)=>{const d=document.createElement('div');
     parts.forEach(p=>{if(typeof p==='string')d.appendChild(document.createTextNode(p));
       else{const b=document.createElement('b');b.textContent=p.b;d.appendChild(b);}});box.appendChild(d);};
   line([`呢一次（${s.start} → ${s.end}）：20 年後 `,{b:FX(s.m)+' 倍'},`（每年 ${s.g.toFixed(1)}%）`]);
   line(['同一串隨機數，改做 36 個月未 double 就止蝕：',{b:FX(s.bm)+' 倍'},`（每年 ${s.bg.toFixed(1)}%）`]);
-  line([`同一個起點嘅中位數：你嘅做法 `,{b:s.medA[0].toFixed(1)+' 倍'},`（${s.medA[1].toFixed(1)}%，500 次）· 隨機入場 `,
-    {b:s.medC[0].toFixed(1)+' 倍'},`（${s.medC[1].toFixed(1)}%，200 次）`]);}
+  line([`同一個起點嘅中位數：你嘅做法 `,{b:FX(P.am[i])+' 倍'},`（${P.a[i].toFixed(1)}%，500 次）· 隨機入場 `,
+    {b:FX(P.cm[i])+' 倍'},`（${P.c[i].toFixed(1)}%，200 次）`]);}
 function smpTable(){
   const s=SIM.samples[pick],rows=[];
   trades(s).forEach((row,j)=>row.forEach(r=>rows.push([`第 ${j+1} 注`,r.tk,r.in,r.open?'仲揸住':r.out,
@@ -810,8 +844,13 @@ mount('c-uni',(host,w)=>{
   for(const v of [0,1000,2000]){
     S('line',{x1:m.l,x2:w-m.r,y1:r1(Y(v)),y2:r1(Y(v)),class:v?'grid':'base'},svg);
     T(svg,m.l-6,Y(v)+4,v?(v/1000)+'K':'0','tick',{'text-anchor':'end'});}
-  const band=iw/UNI.length,bw=Math.min(24,band*.5);
-  UNI.forEach((d,i)=>{const c=m.l+band*(i+.5),top=Y(d[1]);
+  /* 2006 → 2026 隔咗 20 年：最尾嗰條隔開啲，baseline 加斷開記號 */
+  const GAP=.8,n=UNI.length,band=iw/(n+GAP),bw=Math.min(24,band*.5);
+  const cx=i=>m.l+band*(i+.5+(i===n-1?GAP:0));
+  {const xg=r1((cx(n-2)+cx(n-1))/2),y0=r1(Y(0));
+    S('rect',{x:xg-6,y:y0-2,width:12,height:4,class:'gapmask'},svg);
+    for(const dx of [-3,3])S('line',{x1:xg+dx-3,y1:y0+5,x2:xg+dx+3,y2:y0-5,class:'base'},svg);}
+  UNI.forEach((d,i)=>{const c=cx(i),top=Y(d[1]);
     const mk=S('path',{d:colPath(c-bw/2,top,bw,Y(0)-top,4),class:'mk f-de'},svg);
     T(svg,c,top-7,nf(d[1]),'val',{'text-anchor':'middle'});
     T(svg,c,m.t+ih+18,d[0].slice(0,4),'tick',{'text-anchor':'middle'});
