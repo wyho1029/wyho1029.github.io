@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="本金分 5 注買「九轉後月K轉黃」訊號，double 就換股：131,000 次 20 年模擬，同隨機入場、SPY 對照，連生存偏差同敏感度測試。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
+<script>
+/* 跟工具台嘅深淺色選擇 —— 同一個 origin，共用 localStorage['hub-theme']。
+   要喺 render 之前行，唔係會閃一下。 */
+(function(){try{var t=localStorage.getItem('hub-theme');
+if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}
+catch(e){}})();
+</script>
+<title>九轉五注模擬</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  /* 主題色同 /nine/ 一樣（FCOLOR 轉黃）*/
+  --signal:#C98A00; --signal-soft:#FFF0C4;
+  --bg:#FAF7EF; --panel:#FFFFFF; --rail:#E4DECD; --rail-soft:#F0EBDD;
+  --ink:#1E1A10; --ink-2:#4A4334; --muted:#7D7461;
+  --shadow:0 1px 2px rgba(30,26,16,.06);
+  /* 圖表色：dataviz validate_palette.js 驗過（對 panel #FFFFFF 同 bg #FAF7EF，--pairs all，全 PASS）。
+     A 你嘅做法＝琥珀、C 隨機入場＝藍、SPY＝綠；「蝕緊」紅同琥珀相鄰對另外驗過；止蝕版本／背景數據＝灰（降調）。 */
+  --s-a:#b97f08; --s-c:#0677cb; --s-spy:#016b2a; --s-loss:#b02a2a;
+  --deemph:#9C9381; --axis:#C9C1AC; --on-fill:#1E1A10;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --signal:#FFBF00; --signal-soft:#3A2E08;
+    --bg:#151209; --panel:#1D1910; --rail:#332C1B; --rail-soft:#241F13;
+    --ink:#F5F0E2; --ink-2:#C9C1AC; --muted:#8B8270;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+    /* 深色版另外揀過（對 panel #1D1910 同 bg #151209，--pairs all，全 PASS）*/
+    --s-a:#c08a00; --s-c:#0090f0; --s-spy:#03782e; --s-loss:#d03b3b;
+    --deemph:#77705E; --axis:#4A4334;
+  }
+}
+:root[data-theme="dark"]{
+  --signal:#FFBF00; --signal-soft:#3A2E08;
+  --bg:#151209; --panel:#1D1910; --rail:#332C1B; --rail-soft:#241F13;
+  --ink:#F5F0E2; --ink-2:#C9C1AC; --muted:#8B8270;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+  --s-a:#c08a00; --s-c:#0090f0; --s-spy:#03782e; --s-loss:#d03b3b;
+  --deemph:#77705E; --axis:#4A4334;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  background:var(--bg); color:var(--ink); margin:0;
+  font:400 15px/1.6 Archivo,"PingFang HK","Microsoft JhengHei","Noto Sans TC",
+       system-ui,sans-serif;
+  padding-inline:20px; padding-block:40px 64px;
+}
+.wrap{max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:40px}
+h1{font:700 30px/1.15 Archivo,"PingFang HK","Microsoft JhengHei",sans-serif;
+   margin:0; letter-spacing:-.02em; text-wrap:balance}
+h2{font:600 15px/1.3 Archivo,"PingFang HK","Microsoft JhengHei",sans-serif;
+   margin:0; letter-spacing:.09em; color:var(--muted)}
+h3{font:600 15px/1.35 Archivo,"PingFang HK","Microsoft JhengHei",sans-serif; margin:0; color:var(--ink)}
+p{margin:0; max-width:64ch; color:var(--ink-2)}
+p b{color:var(--ink)}
+p a,.cap a{color:var(--ink); text-decoration-color:var(--signal); text-underline-offset:3px}
+p a:hover,.cap a:hover{text-decoration-thickness:2px}
+.lede{font-size:16px}
+.note{font-size:13.5px; line-height:1.65; color:var(--muted);
+  background:var(--signal-soft); border-left:3px solid var(--signal);
+  border-radius:0 6px 6px 0; padding:11px 14px; margin:0; max-width:62ch}
+.note b{color:var(--ink)}
+code,.mono,td.n,th.n{font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums}
+.back{align-self:flex-start; font:500 13px/1 Archivo,sans-serif; color:var(--muted);
+  text-decoration:none; border:1px solid var(--rail); border-radius:5px;
+  padding:7px 12px; background:var(--panel)}
+.back:hover{border-color:var(--signal); color:var(--ink)}
+header{display:flex; flex-direction:column; gap:14px;
+  border-left:3px solid var(--signal); padding-left:18px}
+.meta{display:flex; flex-wrap:wrap; gap:8px 20px; color:var(--muted); font-size:13px}
+.meta b{color:var(--ink); font-weight:600}
+section{display:flex; flex-direction:column; gap:16px; min-width:0}
+figure{margin:0}
+
+/* ── 數字格 ─────────────────────────────── */
+.tiles{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.tile{background:var(--panel); border:1px solid var(--rail); border-radius:6px;
+  box-shadow:var(--shadow); padding:14px 16px 13px; display:grid; grid-row:span 3;
+  grid-template-rows:subgrid; row-gap:2px; align-content:start; min-width:0}
+.tile .lab{font-size:13px; line-height:1.45; color:var(--ink-2); display:flex; gap:8px;
+  align-items:baseline}
+.tile .lab i{display:inline-block; width:14px; height:3px; border-radius:2px; flex:none;
+  transform:translateY(-3px)}
+.tile .v{font:600 30px/1.15 Archivo,"PingFang HK","Microsoft JhengHei",sans-serif;
+  color:var(--ink); letter-spacing:-.01em; margin-top:6px; align-self:end}
+.tile .v small{font-size:16px; font-weight:500; margin-left:4px; color:var(--ink-2)}
+.tile .sub{font-size:12.5px; line-height:1.5; color:var(--muted)}
+.tile.warn{border-left:3px solid var(--signal)}
+
+/* ── 圖 ─────────────────────────────────── */
+.card{background:var(--panel); border:1px solid var(--rail); border-radius:6px;
+  box-shadow:var(--shadow); padding:16px 18px 14px; display:flex; flex-direction:column;
+  gap:12px; min-width:0; width:100%}
+.chart{width:100%; min-width:0; position:relative}
+.chart svg{display:block; overflow:visible;
+  font-family:Archivo,"PingFang HK","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif}
+.cap{font-size:13.5px; line-height:1.65; color:var(--ink-2); max-width:72ch; margin:0}
+.cap b{color:var(--ink)}
+.key{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12.5px; color:var(--ink-2);
+  align-items:center}
+.key span{display:inline-flex; align-items:center; gap:7px}
+.key i{display:inline-block; flex:none}
+.key .sw{width:12px; height:10px; border-radius:2px}
+.key .ln{width:18px; height:2px; border-radius:1px}
+.key .tk{width:2px; height:14px; background:var(--ink); border-radius:1px}
+.key .wk{width:18px; height:2px; background:var(--muted); border-radius:1px}
+.key .bx{width:16px; height:10px; border-radius:3px; background:var(--muted)}
+.key + .key{margin-top:-6px}
+.k-a{background:var(--s-a)} .k-c{background:var(--s-c)} .k-spy{background:var(--s-spy)}
+.k-de{background:var(--deemph)} .k-loss{background:var(--s-loss)}
+.k-hz-a{background:repeating-linear-gradient(-45deg,var(--s-a) 0 2px,transparent 2px 5px),
+  color-mix(in srgb,var(--s-a) 16%,transparent)}
+.k-hz-loss{background:repeating-linear-gradient(-45deg,var(--s-loss) 0 2px,transparent 2px 5px),
+  color-mix(in srgb,var(--s-loss) 16%,transparent)}
+
+.tick{fill:var(--muted); font:500 11px "JetBrains Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums}
+.axt{fill:var(--muted); font-size:11.5px}
+.lbl{fill:var(--ink-2); font-size:12.5px}
+.lbl.b,.lbl .b{fill:var(--ink); font-weight:600}
+.lbl .mut,.mut{fill:var(--muted)}
+.val{fill:var(--ink); font:600 12px "JetBrains Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums}
+.val2{fill:var(--ink-2); font:500 12px "JetBrains Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums}
+.era{fill:var(--muted); font-size:11.5px; font-weight:600}
+.tkr{fill:var(--ink); font:500 10.5px "JetBrains Mono",ui-monospace,monospace}
+.onfill{fill:var(--on-fill); font:600 10.5px "JetBrains Mono",ui-monospace,monospace}
+.halo{paint-order:stroke; stroke:var(--panel); stroke-width:4px; stroke-linejoin:round}
+.halo.hlh{stroke:var(--signal-soft)}
+.grid{stroke:var(--rail); stroke-width:1; shape-rendering:crispEdges}
+.base,.sep{stroke:var(--axis); stroke-width:1; shape-rendering:crispEdges}
+.f-a{fill:var(--s-a)} .f-c{fill:var(--s-c)} .f-spy{fill:var(--s-spy)}
+.f-de{fill:var(--deemph)} .f-loss{fill:var(--s-loss)}
+.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+.st-a{stroke:var(--s-a)} .st-c{stroke:var(--s-c)} .st-spy{stroke:var(--s-spy)}
+.st-de{stroke:var(--deemph)}
+.wh{stroke-width:2; stroke-linecap:round}
+.med{stroke:var(--ink); stroke-width:2; stroke-linecap:round}
+.medhalo{stroke:var(--panel); stroke-width:6; stroke-linecap:round}
+.hl{fill:var(--signal-soft)}
+.wash-a{fill:var(--s-a); fill-opacity:.16} .wash-loss{fill:var(--s-loss); fill-opacity:.16}
+.hatch-a{stroke:var(--s-a); stroke-width:2.2} .hatch-loss{stroke:var(--s-loss); stroke-width:2.2}
+.mk.hot{stroke:var(--ink); stroke-width:1.5}
+.hit{fill:transparent; outline:none; cursor:crosshair}
+.hit:focus-visible{stroke:var(--ink); stroke-width:1.5}
+[tabindex].mk:focus{outline:none}
+[tabindex].mk:focus-visible{stroke:var(--ink); stroke-width:2}
+.cross{stroke:var(--ink-2); stroke-width:1; pointer-events:none}
+.dot{stroke:var(--panel); stroke-width:2; pointer-events:none}
+
+/* ── tooltip ─────────────────────────────── */
+.tip{position:fixed; z-index:20; left:0; top:0; pointer-events:none;
+  max-width:min(290px,calc(100vw - 16px)); background:var(--panel); color:var(--ink);
+  border:1px solid var(--rail); border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,.16);
+  padding:8px 11px; font-size:12.5px; line-height:1.5}
+.tip .t{color:var(--muted); font-size:11.5px; margin-bottom:2px}
+.tip .r{display:flex; align-items:baseline; gap:8px}
+.tip .r i{display:inline-block; width:12px; height:2px; border-radius:1px; flex:none;
+  align-self:center}
+.tip .r b{font:600 13px "JetBrains Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums; color:var(--ink); white-space:nowrap}
+.tip .r span{color:var(--ink-2)}
+
+/* ── 揀例子 ─────────────────────────────── */
+.seg{display:flex; flex-wrap:wrap; gap:6px}
+.seg button{font:500 13px/1 "JetBrains Mono",ui-monospace,monospace; min-height:36px;
+  padding:0 13px; cursor:pointer; border:1px solid var(--rail); border-radius:999px;
+  background:var(--panel); color:var(--ink-2)}
+.seg button:hover{border-color:var(--signal)}
+.seg button[aria-pressed="true"]{border-color:var(--signal); background:var(--signal-soft);
+  color:var(--ink); font-weight:700}
+.seg button:focus-visible{outline:2px solid var(--signal); outline-offset:1px}
+.sum{display:flex; flex-direction:column; gap:4px; font-size:13.5px; color:var(--ink-2)}
+.sum b{color:var(--ink); font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums}
+
+/* ── 表 ─────────────────────────────────── */
+details.tv{font-size:13px}
+details.tv summary{cursor:pointer; color:var(--muted); width:fit-content; padding:2px 0}
+details.tv summary:hover{color:var(--ink)}
+details.tv summary:focus-visible{outline:2px solid var(--signal); outline-offset:2px}
+details.tv[open] summary{margin-bottom:8px}
+.tbl{overflow-x:auto; border:1px solid var(--rail); border-radius:6px; background:var(--panel)}
+.tbl.tall{max-height:360px; overflow:auto}
+.tbl.sh{box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:13px}
+th,td{padding:8px 12px; text-align:left; white-space:nowrap}
+th{background:var(--rail-soft); color:var(--muted); font-weight:600; font-size:11px;
+  text-transform:uppercase; letter-spacing:.07em; position:sticky; top:0}
+th.n,td.n{text-align:right}
+td.w{white-space:normal; min-width:13em}
+tbody tr + tr{border-top:1px solid var(--rail-soft)}
+tr.hlr td{background:var(--signal-soft)}
+td.code{font-family:"JetBrains Mono",ui-monospace,monospace; font-weight:500}
+.tbl .x::before{content:"（"} .tbl .x::after{content:"）"}
+
+ul.how{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px;
+  max-width:72ch; color:var(--ink-2)}
+ul.how b{color:var(--ink)}
+.links{display:flex; flex-wrap:wrap; gap:10px}
+.links a{font-size:13.5px; color:var(--ink); text-decoration:none; border:1px solid var(--rail);
+  border-radius:5px; padding:8px 12px; background:var(--panel)}
+.links a:hover{border-color:var(--signal)}
+footer{color:var(--muted); font-size:12px; border-top:1px solid var(--rail); padding-top:16px}
+@media (max-width:560px){
+  body{padding-inline:16px; padding-block:28px 48px}
+  header{padding-left:14px}
+  h1{font-size:26px}
+  .card{padding:14px 12px 12px}
+  .tile .v{font-size:26px}
+  /* 窄屏：表收細啲，倍數落第二行，等「你嘅做法」同「隨機入場」並排睇得到 */
+  th,td{padding:8px 6px}
+  td.w{min-width:5.5em}
+  .tbl .x,.tbl .brk{display:block}
+  .tbl .x{font-size:11.5px}
+  .tbl .x::before,.tbl .x::after{content:none}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<a class="back" href="../">← 工具台</a>
+
+<header>
+  <h1>五注滾存：double 就換股，20 年會點？</h1>
+  <p class="lede">本金分做 5 注。每注隨機揀一個「九轉後月K轉黃」訊號，喺訊號月下一個月嘅開市價買入；一升到 2 倍就賣（掛定限價；開市已經跳空高過 2 倍，就照開市價走）。下個月將成注錢滾入另一個隨機訊號，冇訊號就坐住現金等。咁樣玩 20 年，會變幾多倍？</p>
+  <p class="note">⚠️ 數據只有今日仲上市嘅 2,154 隻股，中途破產、除牌嘅全部唔喺度。呢個玩法專買跌殘咗嘅股，所以被美化得最多。<b>只供參考，唔係投資建議。</b></p>
+  <div class="meta">
+    <span><b>6,626</b> 個訊號</span><span><b>2,152</b> 隻股</span>
+    <span>入場月 <b>1973-08 → 2026-09</b></span>
+    <span><b>262</b> 個起點 × 500 次 = <b>131,000</b> 次模擬</span>
+    <span>冇計手續費同稅，現金冇利息</span>
+  </div>
+</header>
+
+<section aria-labelledby="h-hero">
+  <h2 id="h-hero">20 年後，中位數</h2>
+  <div class="tiles">
+    <div class="tile">
+      <div class="lab"><i class="k-a"></i>你嘅做法：double 先走</div>
+      <div class="v">18.3<small>倍</small></div>
+      <div class="sub">每年 15.6%</div>
+    </div>
+    <div class="tile">
+      <div class="lab"><i class="k-c"></i>同一批股隨機入場</div>
+      <div class="v">11.7<small>倍</small></div>
+      <div class="sub">每年 13.1%</div>
+    </div>
+    <div class="tile">
+      <div class="lab"><i class="k-spy"></i>SPY 買入持有</div>
+      <div class="v">5.4<small>倍</small></div>
+      <div class="sub">每年 8.8% · 1993-02 起 165 個窗口</div>
+    </div>
+    <div class="tile warn">
+      <div class="lab">每 24 個月 double（1,024 倍）嘅機會</div>
+      <div class="v">0.015%</div>
+      <div class="sub">20 年 double 10 次 · 隨機入場：0%</div>
+    </div>
+  </div>
+  <p class="cap">中位數＝一半模擬好過佢、一半差過佢。你嘅做法同隨機入場用同一批股、同一批起點，要擺埋一齊睇 —— 兩者之差先係訊號嘅功勞。兩個都受上面嘅生存偏差影響，你嘅做法受得多啲。SPY 數據 1993-02 先有；只計 1993-02 之後開始嘅窗口：你嘅做法 <b>14.2%</b>、隨機入場 <b>12.0%</b>、SPY <b>8.8%</b>。</p>
+</section>
+
+<section aria-labelledby="h-dbl">
+  <h2 id="h-dbl">買入之後，要幾耐先 double？</h2>
+  <p>先睇單一個訊號。你假設大約 24 個月 double 一次 —— 實際上，24 個月內 double 到嘅只有 <b>31.1%</b>。</p>
+  <figure class="card" style="max-width:760px">
+    <div class="chart" id="c-dbl"></div>
+    <figcaption class="cap">有 120 個月數據嘅 3,795 個訊號，85.1% 喺 120 個月內 double 咗，中位數要 <b>35 個月</b>（一半落喺 17–61 個月之間）；<b>14.9%</b> 去到 120 個月都未 double。double 之前通常要先捱跌：120 個月內 double 咗嘅 4,692 個訊號，中途最深跌幅中位數係 <b>−22.2%</b>，四個有一個跌過 45.9% 或以上。（同隨機入場比翻倍率，睇
+      <a href="../nine/">九轉轉黃統計</a>。）</figcaption>
+    <div id="t-dbl"></div>
+  </figure>
+</section>
+
+<section aria-labelledby="h-dist">
+  <h2 id="h-dist">20 年後變幾多倍？</h2>
+  <p>每行一個玩法。三個「止蝕」版本：揸夠 24／36／60 個月都未 double，就喺嗰個月收市價賣出，換另一個訊號。</p>
+  <figure class="card" style="max-width:860px">
+    <div class="key">
+      <span><i class="sw k-a"></i>你嘅做法</span>
+      <span><i class="sw k-de"></i>止蝕版本</span>
+      <span><i class="sw k-c"></i>隨機入場</span>
+      <span><i class="sw k-spy"></i>SPY</span>
+    </div>
+    <div class="key">
+      <span><i class="bx"></i>中間一半（25–75 分位）</span>
+      <span><i class="wk"></i>10–90 分位</span>
+      <span><i class="tk"></i>中位數</span>
+    </div>
+    <div class="chart" id="c-dist"></div>
+    <figcaption class="cap">止蝕冇幫到手：36 個月止蝕（中位 15.3%）同唔止蝕（15.6%）差唔多，24 個月止蝕仲差（13.1%）。你嘅做法同止蝕版本各 131,000 次，隨機入場 52,400 次；SPY 只計 1993-02 起嘅
+      165 個窗口。全部受生存偏差影響（見最頂）。</figcaption>
+    <div id="t-dist"></div>
+  </figure>
+</section>
+
+<section aria-labelledby="h-goal">
+  <h2 id="h-goal">你嘅目標 vs 現實</h2>
+  <p>每 24 個月 double 一次，20 年就係 double 10 次，即係 <b>1,024 倍</b>。下面係 20 年後去到每一級嘅機會：</p>
+  <figure class="card" style="max-width:760px">
+    <div class="key">
+      <span><i class="sw k-a"></i>你嘅做法</span>
+      <span><i class="sw k-c"></i>同一批股隨機入場</span>
+    </div>
+    <div class="chart" id="c-goal"></div>
+    <figcaption class="cap">1,024 倍嘅機會係 <b>0.015%</b>（萬分之 1.5），隨機入場一次都冇。SPY 165 個窗口最好嗰個係 8.55 倍，連 10 倍都未去過。兩個玩法都係喺「今日仲生存」嘅股入面揀，現實會低啲。</figcaption>
+    <div id="t-goal"></div>
+  </figure>
+</section>
+
+<section aria-labelledby="h-era">
+  <h2 id="h-era">邊年開始，差好遠</h2>
+  <p>同一個玩法，起點唔同，結果可以差一大截。每一點係嗰個月開始嘅模擬中位數（你嘅做法 500 次、隨機入場 200 次；SPY 每個起點只得一個結果）。</p>
+  <figure class="card">
+    <div class="key">
+      <span><i class="ln k-a"></i>你嘅做法</span>
+      <span><i class="ln k-c"></i>同一批股隨機入場</span>
+      <span><i class="ln k-spy"></i>SPY（1993-02 起）</span>
+    </div>
+    <div class="chart" id="c-era"></div>
+    <h3 style="margin-top:6px">三段起點嘅中位年回報</h3>
+    <div class="tbl" style="max-width:760px">
+      <table>
+        <thead><tr><th>幾時開始</th><th class="n">你嘅做法</th><th class="n">隨機入場</th>
+          <th class="n">SPY</th><th class="n">36 個月<span class="brk">止蝕</span></th></tr></thead>
+        <tbody>
+          <tr><td class="w">1985–94</td><td class="n">17.9%<span class="x">27.1 倍</span></td>
+            <td class="n">14.8%</td><td class="n">—</td><td class="n">18.3%</td></tr>
+          <tr><td class="w">1995–2000</td><td class="n">14.7%<span class="x">15.4 倍</span></td>
+            <td class="n">12.3%</td><td class="n">7.1%</td><td class="n">13.5%</td></tr>
+          <tr><td class="w">2001–06</td><td class="n">12.6%<span class="x">10.7 倍</span></td>
+            <td class="n">11.2%</td><td class="n">10.0%</td><td class="n">11.8%</td></tr>
+          <tr><td class="w">1993-02 起（可以同 SPY 比）</td><td class="n">14.2%</td>
+            <td class="n">12.0%</td><td class="n">8.8%</td><td class="n">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption class="cap">262 個起點入面，有 <b>237 個</b>你嘅做法中位數贏隨機入場。越遲開始，差距越細：2001–06 年開始只差 <b>1.35 個百分點</b>。SPY 1993-02 先有數據，所以 1985–94 嗰格留空。越早嘅起點，數據入面嘅股要生存得越耐先會喺度（1985-01 只得 432 隻），生存偏差可能越大。</figcaption>
+    <div id="t-era"></div>
+  </figure>
+</section>
+
+<section aria-labelledby="h-smp">
+  <h2 id="h-smp">隨機抽一個例子</h2>
+  <p>五注、20 年、每一筆交易。揀一個起點：</p>
+  <figure class="card">
+    <div class="seg" id="seg" role="group" aria-label="揀起點"></div>
+    <div class="key">
+      <span><i class="sw k-a"></i>✓ double 咗（×2 賣出）</span>
+      <span><i class="sw k-hz-a"></i>… 去到第 20 年仲未 double，賺緊</span>
+      <span><i class="sw k-hz-loss"></i>✗ 去到第 20 年仲未 double，蝕緊</span>
+    </div>
+    <div class="chart" id="c-smp"></div>
+    <div class="sum" id="smp-sum" aria-live="polite"></div>
+    <figcaption class="cap">每一格係一筆交易，由買入月畫到賣出月；右邊係嗰注 20 年後變咗幾多倍。最尾嗰格通常最長 —— double 唔到嗰隻會一直霸住個位。呢個只係一次抽樣，同一個起點嘅中位數喺上面；一樣只係喺今日仲上市嘅股入面揀。</figcaption>
+    <div id="t-smp"></div>
+  </figure>
+</section>
+
+<section aria-labelledby="h-stuck">
+  <h2 id="h-stuck">錢困住咗</h2>
+  <div class="tiles">
+    <div class="tile">
+      <div class="lab">錢擺喺「要揸超過 60 個月」嘅股嘅時間</div>
+      <div class="v">63.9%</div>
+      <div class="sub">五注 × 240 個月一齊計</div>
+    </div>
+    <div class="tile">
+      <div class="lab">去到第 20 年，最少有一注仲低過買入價</div>
+      <div class="v">96.8%</div>
+      <div class="sub">131,000 次模擬入面嘅比例</div>
+    </div>
+    <div class="tile">
+      <div class="lab">每注 20 年 double 嘅次數</div>
+      <div class="v">≈3.6<small>次</small></div>
+      <div class="sub">每次模擬中位數 18 次，分 5 注；你假設係 10 次</div>
+    </div>
+  </div>
+  <p>「double 就換股」聽落好似錢會一直轉。實際上，double 唔到嗰隻會一直霸住個位 ——
+    任何「唔 double 唔走」嘅玩法都會咁。所以 20 年 double 唔到 10 次，大部分時間錢都係等緊。</p>
+</section>
+
+<section aria-labelledby="h-disc">
+  <h2 id="h-disc">要打折嘅地方</h2>
+  <p>數據入面嘅 2,154 隻股，全部係 2026 年仲上市、仲有成交嘅。越早年，有數據嘅越少：</p>
+  <figure class="card" style="max-width:620px">
+    <div class="chart" id="c-uni"></div>
+    <figcaption class="cap">今日 2,154 隻入面，每個年頭已經有數據嘅數目。</figcaption>
+    <div id="t-uni"></div>
+  </figure>
+  <p>破產、除牌嘅公司根本唔喺數據度，所以數據入面每一隻跌殘咗嘅股，最後都生存咗。你嘅做法專買跌殘咗嘅股，所以比隨機入場被美化得更多。連隨機入場，喺可以同 SPY 比嘅模擬入面都有
+    <b>81%</b> 贏 SPY —— 呢個係揀股範圍帶嚟嘅，唔係訊號。</p>
+
+  <h3>換個假設再計（20 年每年回報中位數）</h3>
+  <div class="tbl sh" style="max-width:760px">
+    <table>
+      <thead><tr><th>假設</th><th class="n">你嘅做法</th><th class="n">隨機入場</th></tr></thead>
+      <tbody>
+        <tr class="hlr"><td class="w">基準（即係上面所有數）</td><td class="n">15.6%<span class="x">18.3 倍</span></td>
+          <td class="n">13.1%<span class="x">11.7 倍</span></td></tr>
+        <tr><td class="w">剔走數據極端嘅股</td><td class="n">15.6%<span class="x">冇影響</span></td><td class="n">—</td></tr>
+        <tr><td class="w">月尾收市 ≥ 2 倍先賣，用收市價成交</td><td class="n">15.1%<span class="x">16.6 倍</span></td>
+          <td class="n">13.3%</td></tr>
+        <tr><td class="w">剔走 136 隻有零成交／價格唔郁月份嘅股</td><td class="n">15.3%</td><td class="n">—</td></tr>
+        <tr><td class="w">生存偏差壓力測試：每次買入有 5% 機會係一隻之後會歸零嘅股</td>
+          <td class="n">13.2%<span class="x">11.9 倍</span></td><td class="n">11.1%</td></tr>
+        <tr><td class="w">同上，10% 機會</td><td class="n">10.7%<span class="x">7.6 倍</span></td><td class="n">9.2%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>扣走「同一批股隨機入場」之後，訊號本身大約每年多 <b>2–2.6 個百分點</b>；改用收市價成交只係 <b>1.8</b>；2001–06 年開始嘅只有 <b>1.35</b>。</p>
+  <p class="note">壓力測試嘅 5%、10% 係示範用嘅數，唔係估計出嚟 —— 真實有幾多隻股中途歸零，呢份數據答唔到。</p>
+</section>
+
+<section aria-labelledby="h-how">
+  <h2 id="h-how">點樣計</h2>
+  <ul class="how">
+    <li><b>數據：</b>6,626 個可用嘅「九轉後月K轉黃」訊號（入場月 1973-08 → 2026-09），2,152 隻股，月K 已經調整拆股同派息。入場價＝訊號月下一個月嘅開市價。</li>
+    <li><b>double：</b>入場之後，第一個最高價 ≥ 2 倍入場價嘅月份。單一訊號統計只計有足夠數據嘅訊號（例如「24 個月內」只計有 24 個月數據嘅 6,031 個）。</li>
+    <li><b>玩法：</b>分 5 注，每注隨機揀一個訊號，下個月開市買；2 倍限價賣（開市跳空高過 2 倍就用開市價）；下個月成注錢再揀過；冇訊號就等。止蝕版本揸夠 24／36／60 個月未 double 就收市價賣。隨機入場唔理訊號，每次喺同一批股隨機揀一隻，同樣 double 先走。</li>
+    <li><b>模擬：</b>20 年窗口，起點由 1985-01 到 2006-10 每個月一個（262 個）；你嘅做法同止蝕版本每個起點
+      500 次（131,000 次），隨機入場 200 次（52,400 次）。冇手續費、冇稅，現金冇利息。</li>
+    <li><b>SPY：</b>1993-02 到 2006-10 開始嘅 165 個 20 年窗口，買入持有。</li>
+    <li><b>「邊年開始」條線：</b>用同一套程式、同一串隨機數重跑，逐個起點攞中位數。</li>
+    <li><b>驗證：</b>Python 主程式、獨立 Node 重寫、另一個審計三方對數 —— 單一訊號統計完全一樣；模擬分位數全部喺 3 個標準誤差之內（14/14）；用同一串隨機數，兩個實作逐次一致（52,400 次，最大相對誤差 8.4e-16）；冇偷睇未來（6,630 個訊號全部可以只用訊號月或之前嘅數據重現）。</li>
+  </ul>
+  <div class="links">
+    <a href="../nine/">🟡 九轉轉黃統計 →</a>
+    <a href="../backtest/">⏯ 股票回測 →</a>
+    <a href="../">← 工具台</a>
+  </div>
+</section>
+
+<footer>呢頁係研究記錄，唔係投資建議。數據只包括今日仲上市嘅股，所有數字都偏樂觀。</footer>
+</div>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+
+<script>
+(function(){
+'use strict';
+/* 逐個起點嘅中位數（per_start.py：重用 builder/sim.py 同一套程式同隨機數）＋ 5 個抽樣例子（results.json） */
+const SIM={"per":{"first":"1985-01","a":[22.5189,20.3059,21.172,21.9071,21.7617,21.5236,18.4793,19.233,20.7143,20.1585,20.7063,17.5795,20.5588,21.4247,20.0464,16.9947,17.9639,16.3008,16.5463,15.3734,15.4434,14.5018,14.5918,14.9976,14.8884,17.3464,22.006,19.7381,16.3129,16.3564,16.1459,18.7905,19.744,19.4895,18.0408,19.761,19.1233,19.3167,21.2798,18.828,19.5677,19.668,18.6232,18.7606,15.4425,17.0815,15.0507,10.0081,12.8905,16.8528,16.8131,16.178,15.2512,16.1042,16.5851,17.4328,17.327,14.3765,17.6452,19.4589,21.0331,19.1504,16.4793,18.7502,20.5479,18.0058,16.7676,21.7577,18.7077,18.9898,18.9414,18.8328,19.4387,18.0911,18.5304,19.3614,19.3148,16.9044,16.9451,17.233,16.1443,16.3399,17.0746,15.9509,15.7983,16.6491,17.3567,17.866,17.6875,17.4021,17.3433,15.9577,16.3905,16.5436,18.4805,18.8039,17.2516,16.6876,17.3371,18.3615,18.2721,16.5549,16.4307,18.3172,19.3707,20.2432,15.9279,16.251,17.6949,17.1239,18.3583,19.6729,18.1373,18.0328,19.6048,17.7915,16.0733,14.8815,15.3481,15.4641,16.8937,17.0348,15.7649,14.5692,16.2971,16.1194,15.2907,15.9715,17.4522,15.8321,14.5646,13.8307,13.347,15.6821,12.9542,15.1503,14.9581,15.0964,15.1702,15.8798,16.1964,16.8209,16.3853,17.4842,14.476,16.8017,13.9099,14.2524,13.9616,13.8797,14.0564,14.6778,13.818,10.8827,14.8434,15.2783,15.5866,15.2321,11.9092,13.2601,13.4527,15.0697,14.6339,14.6664,15.6072,14.3421,15.1464,16.5088,15.5744,15.4387,15.7887,15.445,13.6483,12.8445,13.9651,12.4597,13.2133,15.4041,13.2336,14.9214,14.511,15.2103,14.1667,11.6482,11.3554,11.6846,13.4605,13.4994,12.8855,13.0676,12.9325,13.9121,13.7203,14.3002,15.2428,13.9905,15.002,14.3432,10.8691,13.7108,12.4349,11.9343,12.7619,10.6381,11.2943,13.8877,12.9997,14.9926,10.3107,12.8281,16.0508,13.2336,13.6329,13.73,13.6344,12.8004,11.7453,12.7868,15.8918,12.6992,12.1066,11.7828,13.4716,12.8205,11.1019,9.9364,11.453,10.6978,11.1167,11.6033,11.2846,13.2839,13.1245,13.1902,13.4854,13.5903,13.3814,14.2256,13.4561,13.1316,11.5347,13.377,13.0129,10.9715,10.892,10.9041,10.9125,8.8697,11.7963,13.0245,12.0747,9.9069,13.105,12.4246,12.2919,10.3607,11.1128,13.705,12.2775,12.1691,10.8175,12.9779],"c":[17.2652,16.1199,17.1535,17.2721,16.4705,16.8975,17.1739,16.8879,17.2896,17.1913,17.1888,17.1112,16.1445,17.3013,15.9743,16.561,16.4681,15.8973,15.7057,16.4567,16.3154,16.7064,16.2259,16.4983,16.3493,16.739,15.6276,15.9661,16.0773,16.4549,15.4357,15.2113,15.2624,15.7338,17.0782,16.9724,16.8661,15.8187,15.7824,15.1806,15.7895,16.211,14.6345,15.7489,15.6254,15.1886,13.2438,13.6043,13.345,12.0854,11.9691,12.3331,13.0789,12.5286,12.5089,13.2216,13.0365,13.2914,13.0345,13.0773,13.6918,13.1895,14.1458,13.8445,14.7851,13.8325,13.6123,14.5007,13.7664,15.5052,15.9101,14.4596,15.9212,15.2421,14.3874,14.3448,15.3209,14.7427,14.027,14.518,13.9588,12.8854,13.6803,13.1503,13.394,13.7236,13.6652,14.1442,13.5562,12.8528,13.4595,13.4868,13.1265,14.3636,13.592,13.2966,13.6722,13.166,13.1986,13.0904,13.5119,13.5575,13.4627,13.4378,13.1776,13.7071,13.5554,13.8841,14.0071,13.5414,14.0874,14.6629,14.37,14.2358,14.6637,13.9691,14.4267,14.3609,14.2137,14.2775,14.3711,14.5112,14.6471,14.5398,14.399,14.0876,13.609,13.8155,13.1265,13.0851,13.0518,12.3948,13.0496,11.9223,12.2419,12.0456,12.451,12.2986,12.6399,12.839,13.0772,12.576,12.34,12.5002,12.3038,12.5128,12.8378,12.6514,12.6671,12.5592,12.849,11.9631,11.9228,11.867,11.6541,11.7745,12.0341,12.0454,11.5249,11.3733,12.0409,11.8667,11.8117,11.9495,13.2571,13.3722,12.0298,11.5388,10.7521,11.6492,12.4732,12.7453,12.2828,11.24,11.1353,11.4154,12.5112,12.5848,11.636,12.2038,12.1654,12.0337,11.4028,9.3502,9.9717,11.0109,10.6091,10.4913,10.9872,10.2097,10.5688,10.9841,11.7333,11.4507,11.5841,12.35,12.5141,12.3301,11.8493,11.5581,11.988,13.0908,12.4629,11.9918,12.2618,12.1503,12.2581,10.9113,11.3124,10.7331,11.343,11.4094,12.1244,11.9827,12.1556,11.7871,11.9923,12.6252,13.0505,12.7418,11.9397,11.4958,11.32,11.8051,11.4059,10.9863,9.9993,10.3728,10.5923,10.2687,10.4337,11.0301,10.2456,10.5716,10.1299,11.1374,11.1576,11.4283,10.4248,10.7011,10.7148,10.4592,10.429,10.6084,9.5881,10.086,10.9867,10.8019,11.0143,11.2948,11.0555,10.3082,10.2709,10.5882,10.8398,10.4528,10.0945,10.7957,10.5506,11.0364,10.9258,10.7081],"s":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,8.2999,8.2704,8.3893,8.633,8.5658,8.5229,8.8231,8.4455,8.6771,8.8168,8.9606,9.1001,8.7251,9.0902,9.5562,9.3775,9.3935,9.6285,9.4033,9.3989,9.4744,9.4755,9.7741,9.7527,9.4164,9.4797,9.2689,9.1662,9.0106,8.7916,8.7396,8.3543,8.0173,8.478,8.2188,8.0872,7.6217,7.5069,7.8276,7.8177,7.7567,7.744,8.1941,8.1465,7.8034,7.5334,7.3402,7.5586,7.3489,7.5333,7.7847,7.4938,7.2157,7.0552,6.7571,7.0294,6.8736,7.1153,7.0839,7.0879,7.2407,6.7485,6.3502,6.3087,6.5538,6.3411,6.6424,7.6035,7.4177,6.4874,6.3184,5.5096,5.6937,6.0609,5.9036,5.9647,5.733,5.8165,6.0629,5.9511,6.2567,6.0289,6.0963,5.9185,6.2296,5.86,4.7003,5.4545,5.7926,5.8215,6.1913,6.1918,6.3094,6.2506,7.1363,7.3794,7.1212,7.7915,8.3801,8.2656,8.2369,8.5051,8.6729,9.1874,9.4264,9.6573,9.2439,9.4213,9.2219,9.1093,9.1894,8.9957,9.0336,8.9828,9.9432,9.699,9.6932,9.7414,9.5861,9.6547,10.1601,10.0543,10.2554,9.928,9.6083,9.9688,10.0373,9.7921,9.6016,9.1889,9.5846,9.584,9.5753,9.7523,10.0426,9.8996,10.0974,10.2013,10.4674,10.534,10.5841,10.4546,10.5292,10.2382,10.5368,10.3259,10.1108,10.183,10.3353,10.6153,10.5421,10.6898,10.8638,11.103,10.8396,10.8806,10.8465,10.7427,10.3999,10.8933,11.3293,11.2696,11.2754,11.2346,11.1154],"am":[58.0854,40.3402,46.5633,52.5513,51.3119,49.3413,29.7063,33.7241,43.1692,39.3632,43.1118,25.5055,42.0703,48.5445,38.6353,23.0847,27.2259,20.4952,21.3782,17.4628,17.676,15.0054,15.243,16.3597,16.0519,24.5128,53.4098,36.6985,20.5381,20.6921,19.9562,31.3065,36.7348,35.2041,27.5832,36.8392,33.108,34.1996,47.3988,31.5047,35.6678,36.271,30.4364,31.1492,17.6733,23.4297,16.5115,6.7374,11.3017,22.5312,22.3784,20.0667,17.0965,19.8135,21.5208,24.8764,24.4318,14.6803,25.7923,35.0243,45.5073,33.2592,21.1337,31.0948,41.995,27.4205,22.2049,51.2776,30.8727,32.374,32.1116,31.5301,34.9059,27.8197,29.9635,34.4569,34.1891,22.7308,22.8896,24.0436,19.9508,20.6336,23.4019,19.2969,18.7951,21.7585,24.5559,26.7777,25.9782,24.747,24.5,19.3192,20.814,21.3682,29.7123,31.3774,24.1198,21.9028,24.4743,29.1214,28.6846,21.4099,20.9579,28.9038,34.5108,39.922,19.2201,20.3208,26.0106,23.6006,29.1055,36.3009,28.0375,27.5456,35.89,26.4414,19.7082,16.0325,17.3866,17.7395,22.6895,23.2433,18.6868,15.183,20.4822,19.8654,17.214,19.3656,24.9586,18.9052,15.1708,13.3409,12.252,18.4214,11.4301,16.7997,16.2478,16.6431,16.858,19.0615,20.1304,22.4083,20.7952,25.0951,14.9382,22.335,13.5278,14.3651,13.6512,13.4564,13.8802,15.4734,13.3115,7.8936,15.9267,17.1771,18.1198,17.04,9.491,12.0654,12.4825,16.5661,15.3553,15.4429,18.1842,14.5925,16.7883,21.2409,18.0815,17.6615,18.764,17.681,12.9199,11.21,13.6596,10.4699,11.9659,17.556,12.0091,16.1443,15.0295,16.9758,14.151,9.0581,8.5946,9.1173,12.4996,12.5856,11.2917,11.6617,11.3862,13.5331,13.0845,14.4858,17.0718,13.7207,16.3722,14.595,7.8742,13.0628,10.4238,9.5337,11.0472,7.5527,8.5008,13.4754,11.5225,16.3457,7.118,11.1777,19.6318,12.009,12.8849,13.1075,12.8884,11.123,9.217,11.096,19.1009,10.9248,9.8315,9.2791,12.5241,11.1625,8.2117,6.6502,8.7465,7.6345,8.2335,8.9855,8.486,12.1163,11.7798,11.9172,12.5545,12.7886,12.3263,14.298,12.49,11.7945,8.8757,12.3169,11.5495,8.021,7.9069,7.9242,7.9361,5.472,9.3013,11.5732,9.7758,6.6145,11.7391,10.4047,10.1618,7.1827,8.2277,13.0496,10.1358,9.9418,7.8013,11.4781],"cm":[24.176,19.867,23.7201,24.2043,21.1022,22.7085,23.8022,22.667,24.2767,23.8731,23.8628,23.5489,19.9513,24.3252,19.3748,21.4323,21.0934,19.1193,18.4966,21.0518,20.5467,21.9738,20.2333,21.2027,20.6675,22.0964,18.2497,19.3485,19.7218,21.0468,17.6525,16.9791,17.1298,18.5869,23.4165,22.9969,22.5823,18.8614,18.7438,16.8886,18.7668,20.1815,15.3569,18.6367,18.2417,16.9118,12.0307,12.8203,12.2475,9.7945,9.5932,10.2365,11.6851,10.5988,10.5624,11.9836,11.5979,12.1322,11.5944,11.6817,13.0192,11.916,14.0997,13.3735,15.7658,13.3452,12.8383,15.0025,13.1917,17.8663,19.1613,14.8951,19.1982,17.07,14.7087,14.5998,17.3045,15.6496,13.8097,15.048,13.6447,11.2918,12.9927,11.8335,12.3546,13.0922,12.9585,14.0955,12.7123,11.2266,12.4975,12.5581,11.7847,14.6475,12.7925,12.1436,12.9744,11.8666,11.9349,11.7088,12.6133,12.7152,12.5054,12.4496,11.8908,13.0542,12.7104,13.4668,13.7606,12.6791,13.9561,15.4334,14.6644,14.3235,15.4362,13.6702,14.8103,14.6406,14.2688,14.4291,14.6665,15.03,15.3909,15.1053,14.739,13.9563,12.831,13.3055,11.7838,11.6981,11.6299,10.3496,11.6251,9.5134,10.0717,9.7251,10.455,10.1738,10.8105,11.1993,11.6815,10.6887,10.2492,10.5454,10.1834,10.5692,11.1968,10.8326,10.8641,10.6566,11.219,9.5833,9.5145,9.42,9.0676,9.2652,9.7052,9.7248,8.86,8.6233,9.717,9.4192,9.327,9.5597,12.0593,12.3063,9.6978,8.8821,7.7097,9.0598,10.4951,11.0147,10.1454,8.4182,8.2612,8.6879,10.5663,10.7054,9.0383,10.0035,9.9356,9.7046,8.6683,5.9757,6.6929,8.0782,7.513,7.3546,8.0437,6.9889,7.4586,8.0393,9.1971,8.7429,8.9546,10.2676,10.5715,10.2314,9.3901,8.913,9.6257,11.7099,10.4758,9.6321,10.1075,9.9086,10.1008,7.9345,8.5285,7.6836,8.5755,8.6784,9.8628,9.6171,9.9179,9.2862,9.6333,10.7823,11.6266,11.0078,9.5436,8.8141,8.5401,9.3161,8.6731,8.0432,6.7266,7.1985,7.4905,7.0639,7.2784,8.1061,7.0344,7.4623,6.8882,8.2643,8.2944,8.7079,7.2666,7.639,7.658,7.3121,7.2722,7.5122,6.2413,6.834,8.0431,7.7793,8.0831,8.5017,8.1435,7.1147,7.0668,7.4848,7.8329,7.3035,6.8442,7.7706,7.434,8.1156,7.9552,7.6487],"sm":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,4.9267,4.8999,5.0087,5.2388,5.1744,5.1337,5.4253,5.0609,5.2815,5.419,5.564,5.7083,5.3284,5.6979,6.205,6.0056,6.0233,6.2873,6.0341,6.0292,6.1129,6.1142,6.4565,6.4313,6.0485,6.1188,5.8875,5.7778,5.6153,5.394,5.3426,4.9765,4.6759,5.0913,4.8535,4.7368,4.3451,4.2533,4.5144,4.5061,4.4554,4.4449,4.8314,4.7891,4.4942,4.2743,4.1233,4.2944,4.13,4.2742,4.4786,4.2429,4.0287,3.9098,3.6977,3.891,3.7793,3.954,3.9308,3.9338,4.0476,3.6918,3.4258,3.3992,3.5594,3.42,3.6191,4.3304,4.1833,3.5153,3.4054,2.9231,3.0268,3.2442,3.1493,3.1858,3.0494,3.0979,3.2454,3.1776,3.3661,3.2247,3.2659,3.1582,3.3489,3.1235,2.5059,2.8927,3.0839,3.1008,3.3249,3.3252,3.3997,3.3622,3.9694,4.1535,3.9583,4.4843,5.0002,4.8956,4.8698,5.1169,5.2774,5.8003,6.0596,6.3205,5.8606,6.0539,5.837,5.7178,5.8024,5.6,5.6391,5.5867,6.6584,6.3687,6.362,6.4181,6.239,6.3175,6.926,6.7942,7.0469,6.64,6.2643,6.6894,6.7733,6.4777,6.2566,5.8019,6.2372,6.2365,6.2267,6.4309,6.7798,6.6057,6.8476,6.9781,7.3228,7.4118,7.4791,7.3059,7.4052,7.0249,7.4155,7.1376,6.8643,6.9549,7.1497,7.5215,7.4226,7.6234,7.8667,8.2132,7.8325,7.8907,7.8422,7.6967,7.2339,7.9088,8.5545,8.4631,8.472,8.41,8.2317]},"samples":[{"start":"1990-01","end":"2009-12","m":22.0475,"g":16.7261,"bm":18.9675,"bg":15.8512,"medA":[45.5,21.0],"medC":[13.0,13.7],"slots":[{"x":6.49786,"t":[["DX","1990-01","1990-12",2.0],["FMC","1991-01","1994-10",2.0],["EIX","1994-11","1997-06",2.0],["EXC","1997-07","1998-10",2.0],["NEU","1998-11","2006-04",2.0],["ADAM","2006-05",null,0.203058]]},{"x":19.2619,"t":[["ARW","1990-01","1991-04",2.0],["FBP","1991-05","1992-10",2.0],["CVBF","1992-11","1996-07",2.0],["WINA","1996-09","1997-09",2.0],["AGX","1997-10",null,1.20387]]},{"x":11.9398,"t":[["ADI","1990-01","1993-03",2.0],["MGRC","1993-04","1996-08",2.0],["AAPL","1996-09","1999-05",2.0],["PEBO","1999-06","2004-01",2.0],["GPK","2004-02",null,0.746238]]},{"x":38.2464,"t":[["PNW","1990-01","1993-04",2.0],["LLY","1993-05","1995-09",2.0],["SF","1995-10","1997-06",2.0],["ASYS","1997-07","2000-08",2.0],["NRIM","2000-09","2001-11",2.0],["CSCO","2001-12",null,1.1952]]},{"x":34.2913,"t":[["REX","1990-02","1991-04",2.0],["MUX","1991-05","1992-02",2.0],["ERIC","1992-03","1993-05",2.0],["CLDX","1993-06","2000-03",2.0],["NUV","2000-04","2009-11",2.0],["ASTE","2009-12",null,1.0716]]}]},{"start":"1995-01","end":"2014-12","m":22.9716,"g":16.966,"bm":26.9165,"bg":17.8965,"medA":[22.7,16.9],"medC":[14.7,14.4],"slots":[{"x":7.07942,"t":[["NPK","1995-01","2006-03",2.0],["WPC","2006-04","2011-03",2.0],["SPB","2011-05","2014-03",2.0],["TDC","2014-04",null,0.884927]]},{"x":22.4458,"t":[["CRF","1995-01","2003-07",2.0],["EMN","2003-08","2007-03",2.0],["ADTN","2007-04","2011-02",2.0],["HRB","2011-03","2013-03",2.0],["MKSI","2013-04",null,1.40286]]},{"x":46.7393,"t":[["IDA","1995-01","2000-01",2.0],["MEOH","2000-02","2000-12",2.0],["WGO","2001-01","2001-12",2.0],["SLB","2002-01","2006-01",2.0],["IOSP","2006-02","2006-11",2.0],["ADSK","2006-12",null,1.4606]]},{"x":1.99343,"t":[["UGI","1995-01","2001-05",2.0],["TYL","2001-06","2002-03",2.0],["GATX","2002-04","2012-01",2.0],["PBR","2012-02",null,0.249179]]},{"x":36.6001,"t":[["PEG","1995-01","1998-10",2.0],["TEVA","1998-11","2000-01",2.0],["WDC","2000-02","2003-03",2.0],["CWST","2003-04","2006-05",2.0],["MATV","2006-06","2009-08",2.0],["LNN","2009-09","2011-03",2.0],["NAT","2011-06",null,0.571876]]}]},{"start":"2000-01","end":"2019-12","m":5.0742,"g":8.4597,"bm":39.0991,"bg":20.1181,"medA":[15.0,14.5],"medC":[9.9,12.2],"slots":[{"x":3.37125,"t":[["OSIS","2000-01","2000-01",2.0],["HR","2000-02","2002-02",2.0],["WFC","2002-03","2008-09",2.0],["C","2008-10",null,0.421406]]},{"x":1.22639,"t":[["TGS","2000-01","2016-11",2.0],["GSL","2016-12",null,0.613195]]},{"x":5.39574,"t":[["DCO","2000-01","2002-06",2.0],["RGEN","2002-07","2003-03",2.0],["ARW","2003-04","2005-07",2.0],["BELFA","2005-08",null,0.674468]]},{"x":0.780927,"t":[["NRIM","2000-01","2002-04",2.0],["AEG","2002-05",null,0.390464]]},{"x":14.5968,"t":[["TILE","2000-01","2006-02",2.0],["HELE","2006-03","2013-05",2.0],["MRCY","2013-06","2015-10",2.0],["AFL","2015-11",null,1.8246]]}]},{"start":"2003-01","end":"2022-12","m":4.9134,"g":8.2852,"bm":3.2243,"bg":6.0283,"medA":[9.2,11.7],"medC":[9.6,12.0],"slots":[{"x":5.42896,"t":[["CVSA","2003-01","2007-04",2.0],["PGR","2007-05","2015-10",2.0],["CASS","2015-11",null,1.35724]]},{"x":6.00121,"t":[["XEL","2003-01","2005-07",2.0],["HCKT","2005-08","2014-11",2.0],["ATLC","2014-12","2019-08",2.0],["NEXA","2019-09",null,0.750151]]},{"x":3.255,"t":[["MRSH","2003-01","2016-05",2.0],["ET","2016-06",null,1.6275]]},{"x":0.320995,"t":[["TRN","2003-01","2005-07",2.0],["KTOS","2005-08",null,0.160498]]},{"x":9.56073,"t":[["TIMB","2003-01","2004-01",2.0],["GPK","2004-02","2013-12",2.0],["NTGR","2014-01","2018-01",2.0],["AAP","2018-02","2021-10",2.0],["VXX","2021-12",null,0.597545]]}]},{"start":"2006-01","end":"2025-12","m":3.9915,"g":7.166,"bm":5.1384,"bg":8.5279,"medA":[11.7,13.1],"medC":[7.1,10.3],"slots":[{"x":3.38722,"t":[["STGW","2006-01","2010-04",2.0],["SHBI","2010-05",null,1.69361]]},{"x":3.15447,"t":[["HL","2006-01","2007-02",2.0],["PFIS","2007-03","2014-04",2.0],["DOC","2014-05",null,0.788618]]},{"x":7.18572,"t":[["DAR","2006-01","2007-04",2.0],["OPCH","2007-05","2007-10",2.0],["MUFG","2007-11",null,1.79643]]},{"x":1.53914e-05,"t":[["FOSL","2006-01","2007-11",2.0],["NKTR","2007-12","2010-03",2.0],["TENX","2010-04",null,3.84785e-06]]},{"x":6.23019,"t":[["MPB","2006-01","2017-02",2.0],["QURE","2017-03","2017-10",2.0],["HURN","2017-11","2022-10",2.0],["ENR","2022-11",null,0.778774]]}]}]};
+
+const NS='http://www.w3.org/2000/svg';
+const $=id=>document.getElementById(id);
+const nf=n=>n.toLocaleString('en-US');
+const r1=v=>Math.round(v*10)/10;
+const idx=s=>{const p=s.split('-');return (+p[0])*12+(+(p[1]||1))-1;};
+const mstr=i=>Math.floor(i/12)+'-'+String(i%12+1).padStart(2,'0');
+const FX=v=>v>=10?v.toFixed(1):v.toFixed(2);          // 倍數：三位有效數字（同 FACTS 一樣）
+
+function S(tag,a,parent){const e=document.createElementNS(NS,tag);
+  if(a)for(const k in a){if(a[k]!=null)e.setAttribute(k,a[k]);}
+  if(parent)parent.appendChild(e);return e;}
+function T(parent,x,y,s,cls,a){
+  const t=S('text',Object.assign({x:r1(x),y:r1(y)},cls?{class:cls}:{},a||{}),parent);
+  t.textContent=s;return t;}
+function root(host,w,h,label){
+  return S('svg',{width:w,height:h,viewBox:`0 0 ${w} ${h}`,role:'group','aria-label':label},host);}
+
+/* 量字闊（canvas，同 SVG 用同一套字型；字型載完之後會成頁重畫一次） */
+const c2d=document.createElement('canvas').getContext('2d');
+const SANS='Archivo,"PingFang HK","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif';
+const MONO='"JetBrains Mono",ui-monospace,monospace';
+function tw(s,px,wt,mono){c2d.font=`${wt||400} ${px}px ${mono?MONO:SANS}`;return c2d.measureText(s).width;}
+
+/* 柱：數據端 4px 圓角，baseline 嗰邊方角 */
+function colPath(x,y,w,h,r){r=Math.max(0,Math.min(r,w/2,h));
+  return `M${r1(x)},${r1(y+h)}V${r1(y+r)}Q${r1(x)},${r1(y)} ${r1(x+r)},${r1(y)}`+
+    `H${r1(x+w-r)}Q${r1(x+w)},${r1(y)} ${r1(x+w)},${r1(y+r)}V${r1(y+h)}Z`;}
+function rowPath(x,y,w,h,r){r=Math.max(0,Math.min(r,h/2,w));
+  return `M${r1(x)},${r1(y)}H${r1(x+w-r)}Q${r1(x+w)},${r1(y)} ${r1(x+w)},${r1(y+r)}`+
+    `V${r1(y+h-r)}Q${r1(x+w)},${r1(y+h)} ${r1(x+w-r)},${r1(y+h)}H${r1(x)}Z`;}
+
+/* ── tooltip：一個共用；文字一律用 textContent ───────────────── */
+const tip=$('tip');
+let owner=null, byFocus=null;
+function claim(o){if(owner&&owner!==o)owner.release();owner=o;}
+function tipSet(title,rows){
+  tip.replaceChildren();
+  if(title){const d=document.createElement('div');d.className='t';d.textContent=title;tip.appendChild(d);}
+  for(const r of rows){const d=document.createElement('div');d.className='r';
+    if(r.k){const i=document.createElement('i');i.className='k-'+r.k;d.appendChild(i);}
+    const b=document.createElement('b');b.textContent=r.v;d.appendChild(b);
+    if(r.l){const s=document.createElement('span');s.textContent=r.l;d.appendChild(s);}
+    tip.appendChild(d);}
+  tip.hidden=false;}
+function tipAt(x,y){const w=tip.offsetWidth,h=tip.offsetHeight,p=8;
+  let L=x+14,Tp=y+16;
+  if(L+w>innerWidth-p)L=x-w-14; if(L<p)L=p;
+  if(Tp+h>innerHeight-p)Tp=y-h-14; if(Tp<p)Tp=p;
+  tip.style.transform=`translate(${Math.round(L)}px,${Math.round(Tp)}px)`;}
+function tipHide(){tip.hidden=true;byFocus=null;if(owner){const o=owner;owner=null;o.release();}}
+/* el＝hit 區（大過個 mark）；mark＝hover 時加框嗰個；get() → [標題, 行] */
+function bind(el,mark,get){
+  const me={release(){if(mark)mark.classList.remove('hot');}};
+  const show=(x,y)=>{claim(me);if(mark)mark.classList.add('hot');const g=get();tipSet(g[0],g[1]);tipAt(x,y);};
+  el.addEventListener('pointerenter',e=>{byFocus=null;show(e.clientX,e.clientY);});
+  el.addEventListener('pointerdown',e=>{byFocus=null;show(e.clientX,e.clientY);});
+  el.addEventListener('pointermove',e=>{if(owner===me)tipAt(e.clientX,e.clientY);
+    else{byFocus=null;show(e.clientX,e.clientY);}});
+  el.addEventListener('pointerleave',e=>{if(e.pointerType!=='touch'&&owner===me)tipHide();});
+  const fshow=()=>{const b=el.getBoundingClientRect();show(b.left+Math.min(b.width/2,160),b.top+6);};
+  el.addEventListener('focus',()=>{fshow();byFocus=fshow;});
+  el.addEventListener('blur',()=>{if(owner===me)tipHide();});}
+document.addEventListener('pointerdown',e=>{
+  if(!(e.target&&e.target.closest&&e.target.closest('.hit,[tabindex].mk')))tipHide();},{passive:true});
+addEventListener('scroll',()=>{if(tip.hidden)return;if(byFocus)byFocus();else tipHide();},{passive:true});
+
+/* ── 圖跟住容器闊度畫；闊度變就重畫 ──────────────────────────── */
+const redraws=[];
+function mount(id,draw){const host=$(id);let w0=0;
+  const go=force=>{const w=Math.floor(host.clientWidth);if(!w||(w===w0&&!force))return;
+    w0=w;if(owner)tipHide();host.replaceChildren();draw(host,w);};
+  new ResizeObserver(()=>go(false)).observe(host);
+  const f=()=>go(true);redraws.push(f);return f;}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>redraws.forEach(f=>f()));
+
+/* ── 數據表（每個圖都有）；num[i]：1＝數字欄（靠右），'w'＝長文字欄（可以摺行） ── */
+function tview(id,head,rows,num,tall){
+  const host=$(id),old=host.querySelector('details'),open=!!(old&&old.open);
+  const d=document.createElement('details');d.className='tv';d.open=open;
+  const s=document.createElement('summary');s.textContent='睇數據表';d.appendChild(s);
+  const box=document.createElement('div');box.className='tbl'+(tall?' tall':'');
+  const t=document.createElement('table'),hr=t.createTHead().insertRow();
+  head.forEach((h,i)=>{const c=document.createElement('th');c.textContent=h;if(num[i]===1)c.className='n';hr.appendChild(c);});
+  const tb=t.createTBody();
+  rows.forEach(r=>{const tr=tb.insertRow();r.forEach((v,i)=>{const c=tr.insertCell();c.textContent=v;if(num[i])c.className=num[i]==='w'?'w':'n';});});
+  box.appendChild(t);d.appendChild(box);host.replaceChildren(d);}
+
+/* ═══ c. 單一訊號：幾耐 double ═══════════════════════════════ */
+const DBL=[[12,977,6292,'15.5'],[24,1874,6031,'31.1'],[36,2506,5773,'43.4'],
+  [60,2943,4726,'62.3'],[120,3230,3795,'85.1'],[240,1783,1830,'97.4']];
+mount('c-dbl',(host,w)=>{
+  const H=272,m={l:42,r:6,t:30,b:46},iw=w-m.l-m.r,ih=H-m.t-m.b,Y=v=>m.t+ih*(1-v/100);
+  const svg=root(host,w,H,'單一訊號買入之後 12 至 240 個月內 double 咗嘅比率：24 個月內 31.1%，120 個月內 85.1%');
+  for(const v of [0,25,50,75,100]){
+    S('line',{x1:m.l,x2:w-m.r,y1:Y(v),y2:Y(v),class:v?'grid':'base'},svg);
+    T(svg,m.l-8,Y(v)+4,v+'%','tick',{'text-anchor':'end'});}
+  const band=iw/DBL.length,bw=Math.min(24,band*.5);
+  DBL.forEach((d,i)=>{
+    const c=m.l+band*(i+.5),you=d[0]===24,top=Y(+d[3]);
+    const mk=S('path',{d:colPath(c-bw/2,top,bw,Y(0)-top,4),class:'mk '+(you?'f-a':'f-de')},svg);
+    T(svg,c,top-8,d[3]+'%','val',{'text-anchor':'middle'});
+    if(you)T(svg,c,top-27,'你嘅假設','lbl b',{'text-anchor':'middle'});
+    T(svg,c,m.t+ih+18,String(d[0]),'tick',{'text-anchor':'middle'});
+    const hit=S('rect',{x:r1(m.l+band*i),y:m.t-26,width:r1(band),height:ih+26,class:'hit',tabindex:0,
+      'aria-label':`買入後 ${d[0]} 個月內 double 咗 ${d[3]}%，${nf(d[1])} / ${nf(d[2])} 個訊號`},svg);
+    bind(hit,mk,()=>[`買入後 ${d[0]} 個月內`,[
+      {k:you?'a':'de',v:d[3]+'%',l:'double 咗'},
+      {v:`${nf(d[1])} / ${nf(d[2])}`,l:'個訊號（有咁耐數據嘅）'}]
+      .concat(you?[{v:'24 個月',l:'你假設 double 一次要嘅時間'}]:[])]);});
+  T(svg,m.l+iw/2,H-6,'買入之後幾多個月內','axt',{'text-anchor':'middle'});});
+tview('t-dbl',['買入後','double 咗','有咁耐數據嘅訊號','比率'],
+  DBL.map(d=>[d[0]+' 個月內',nf(d[1]),nf(d[2]),d[3]+'%']),[0,1,1,1]);
+
+/* ═══ d. 20 年分佈（每年回報；倍數放標籤同 tooltip） ═══════════ */
+const DIST=[
+  {id:'A',k:'a',name:'你嘅做法：double 先走',short:'你嘅做法',n:'131,000 次',
+    g:[9.6,12.4,15.6,19.1,22.5],m:[6.29,10.3,18.3,33.0,57.9]},
+  {id:'B24',k:'de',name:'24 個月未 double 就止蝕',short:'24 個月止蝕',n:'131,000 次',
+    g:[6.5,9.6,13.1,16.9,20.6],m:[3.53,6.24,11.8,22.7,42.5]},
+  {id:'B36',k:'de',name:'36 個月止蝕',short:'36 個月止蝕',n:'131,000 次',
+    g:[7.7,11.3,15.3,19.4,23.2],m:[4.44,8.45,17.2,34.8,64.9]},
+  {id:'B60',k:'de',name:'60 個月止蝕',short:'60 個月止蝕',n:'131,000 次',
+    g:[8.2,11.3,14.9,18.7,22.3],m:[4.84,8.52,16.2,30.7,56.3]},
+  {id:'C',k:'c',name:'同一批股隨機入場（唔理訊號）',short:'隨機入場',n:'52,400 次',
+    g:[8.2,10.4,13.1,16.0,18.8],m:[4.83,7.26,11.7,19.3,31.4]},
+  {id:'SPY',k:'spy',name:'SPY 買入持有',short:'SPY',n:'165 個窗口（1993-02 起）',
+    g:[6.1,7.2,8.8,9.8,10.5],m:[3.29,4.05,5.39,6.43,7.41]}];
+const QN=['10 分位','25 分位','中位','75 分位','90 分位'];
+mount('c-dist',(host,w)=>{
+  const lo=5,hi=25,rowH=56,m={l:6,r:12,t:4,b:42};
+  const H=m.t+DIST.length*rowH+m.b,iw=w-m.l-m.r,X=v=>m.l+iw*(v-lo)/(hi-lo),yb=H-m.b;
+  const svg=root(host,w,H,'六個玩法 20 年每年回報嘅分佈：你嘅做法中位 15.6%，隨機入場 13.1%，SPY 8.8%');
+  S('rect',{x:0,y:m.t+1,width:w,height:rowH-2,rx:6,class:'hl'},svg);
+  for(let v=lo;v<=hi;v+=5){
+    S('line',{x1:r1(X(v)),x2:r1(X(v)),y1:m.t,y2:yb,class:'grid'},svg);
+    T(svg,X(v),yb+17,v+'%','tick',{'text-anchor':v===lo?'start':v===hi?'end':'middle'});}
+  S('line',{x1:m.l,x2:w-m.r,y1:yb,y2:yb,class:'base'},svg);
+  T(svg,m.l+iw/2,H-6,'每年回報（20 年複利）','axt',{'text-anchor':'middle'});
+  DIST.forEach((d,i)=>{
+    const y0=m.t+i*rowH,cy=y0+38,g=d.g,mm=d.m,A=d.id==='A';
+    const med=`中位 ${g[2].toFixed(1)}% · ${FX(mm[2])} 倍`;
+    const fits=s=>tw(s,12.5,A?600:400)+tw(med,12,500,true)+28<=w;
+    T(svg,m.l+4,y0+19,fits(d.name)?d.name:d.short,'lbl halo'+(A?' b hlh':''));
+    T(svg,w-m.r,y0+19,med,'val2 halo'+(A?' hlh':''),{'text-anchor':'end'});
+    S('line',{x1:r1(X(g[0])),x2:r1(X(g[4])),y1:cy,y2:cy,class:'wh st-'+d.k},svg);
+    const mk=S('rect',{x:r1(X(g[1])),y:cy-7,width:r1(X(g[3])-X(g[1])),height:14,rx:4,class:'mk f-'+d.k},svg);
+    S('line',{x1:r1(X(g[2])),x2:r1(X(g[2])),y1:cy-10,y2:cy+10,class:'medhalo'},svg);
+    S('line',{x1:r1(X(g[2])),x2:r1(X(g[2])),y1:cy-10,y2:cy+10,class:'med'},svg);
+    const hit=S('rect',{x:0,y:y0,width:w,height:rowH,class:'hit',tabindex:0,
+      'aria-label':`${d.name}：中位每年 ${g[2].toFixed(1)}%（${FX(mm[2])} 倍），10 至 90 分位 ${g[0].toFixed(1)}% 至 ${g[4].toFixed(1)}%`},svg);
+    bind(hit,mk,()=>[`${d.name} · ${d.n}`,
+      [4,3,2,1,0].map(q=>({k:q===2?d.k:null,v:`${g[q].toFixed(1)}% · ${FX(mm[q])} 倍`,l:QN[q]}))]);});});
+tview('t-dist',['玩法','模擬','10 分位','25 分位','中位','75 分位','90 分位'],
+  DIST.map(d=>[d.name,d.n].concat(d.g.map((v,q)=>`${v.toFixed(1)}%（${FX(d.m[q])} 倍）`))),['w',0,1,1,1,1,1]);
+
+/* ═══ e. 目標 vs 現實 ══════════════════════════════════════ */
+const GOAL=[
+  {x:'≥ 10 倍',mean:'約每 6 年 double 一次',a:'76.2',c:'58.5'},
+  {x:'≥ 32 倍',mean:'約每 4 年 double 一次',a:'26.1',c:'9.6'},
+  {x:'≥ 101.6 倍',mean:'每 36 個月 double 一次',a:'3.33',c:'0.68'},
+  {x:'≥ 1,024 倍',mean:'每 24 個月 double 一次（你嘅假設）',a:'0.015',c:'0',you:true}];
+const NM={a:'你嘅做法',c:'隨機入場'};
+mount('c-goal',(host,w)=>{
+  const bh=14,gap=2,m={l:6,r:6,t:4,b:42};
+  const two=GOAL.some(g=>tw(g.x,12.5,600)+tw(g.mean,12.5)+30>w);   // 窄嘅時候，意思放第二行
+  const head=two?42:26,grpH=head+bh*2+gap+20;
+  const H=m.t+GOAL.length*grpH+m.b,valW=tw('76.2%',12,600,true)+12;
+  const iw=w-m.l-m.r-valW,X=v=>m.l+iw*v/100,yb=H-m.b;
+  const svg=root(host,w,H,'20 年後去到 10 倍、32 倍、101.6 倍、1,024 倍嘅機會：你嘅做法 76.2%、26.1%、3.33%、0.015%；隨機入場 58.5%、9.6%、0.68%、0%');
+  GOAL.forEach((g,i)=>{if(g.you)S('rect',{x:0,y:m.t+i*grpH,width:w,height:grpH-8,rx:6,class:'hl'},svg);});
+  for(const v of [0,25,50,75,100]){
+    S('line',{x1:r1(X(v)),x2:r1(X(v)),y1:m.t,y2:yb,class:v?'grid':'base'},svg);
+    T(svg,X(v),yb+17,v+'%','tick',{'text-anchor':v?'middle':'start'});}
+  T(svg,m.l+iw/2,H-6,'20 年後去到呢個倍數嘅機會','axt',{'text-anchor':'middle'});
+  GOAL.forEach((g,i)=>{
+    const y0=m.t+i*grpH,hh=g.you?' hlh':'',mc=g.you?'':'mut',t=T(svg,m.l+4,y0+18,'','lbl halo'+hh);
+    S('tspan',{class:'b'},t).textContent=g.x;
+    if(two)T(svg,m.l+4,y0+35,g.mean,'lbl '+mc+' halo'+hh);   // 黃底嗰行唔用 muted（對比唔夠）
+    else S('tspan',{dx:10,class:mc||null},t).textContent=g.mean;
+    ['a','c'].forEach((k,j)=>{
+      const y=y0+head+j*(bh+gap),wv=X(+g[k])-m.l;
+      const mk=wv>=.5?S('path',{d:rowPath(m.l,y,Math.max(wv,1),bh,Math.min(4,wv/2)),class:'mk f-'+k},svg):null;
+      const lx=m.l+Math.max(wv,0)+6;let s=g[k]+'%';
+      if(i===0&&lx+tw(s+' · '+NM[k],12,600,true)<=w-2)s+=' · '+NM[k];   // 第一組直接寫名（夠位先寫）
+      T(svg,lx,y+bh/2+4,s,'val halo'+hh);
+      const hit=S('rect',{x:0,y:y-gap/2,width:w,height:bh+gap,class:'hit',tabindex:0,
+        'aria-label':`${NM[k]}：20 年後 ${g.x}（${g.mean}）嘅機會 ${g[k]}%`},svg);
+      bind(hit,mk,()=>[`20 年後 ${g.x} · ${g.mean}`,
+        [{k:'a',v:g.a+'%',l:'你嘅做法'},{k:'c',v:g.c+'%',l:'同一批股隨機入場'}]]);});});});
+tview('t-goal',['20 年後','即係','你嘅做法','隨機入場'],
+  GOAL.map(g=>[g.x,g.mean,g.a+'%',g.c+'%']),[0,'w',1,1]);
+
+/* ═══ f. 逐個起點：中位年回報 ════════════════════════════════ */
+const P=SIM.per,NP=P.a.length,I0=idx(P.first);
+mount('c-era',(host,w)=>{
+  const narrow=w<560,H=narrow?280:340,m={l:40,r:14,t:30,b:32},iw=w-m.l-m.r,ih=H-m.t-m.b;
+  const X=i=>m.l+iw*i/(NP-1),Y=v=>m.t+ih*(1-v/25);
+  const svg=root(host,w,H,'1985-01 至 2006-10 每個起點嘅 20 年每年回報中位數：你嘅做法、同一批股隨機入場、SPY');
+  for(const v of [0,5,10,15,20,25]){
+    S('line',{x1:m.l,x2:w-m.r,y1:r1(Y(v)),y2:r1(Y(v)),class:v?'grid':'base'},svg);
+    T(svg,m.l-6,Y(v)+4,v+'%','tick',{'text-anchor':'end'});}
+  for(const yr of [1985,1990,1995,2000,2005]){const i=yr*12-I0;
+    S('line',{x1:r1(X(i)),x2:r1(X(i)),y1:m.t+ih,y2:m.t+ih+4,class:'base'},svg);
+    T(svg,X(i),m.t+ih+18,String(yr),'tick',{'text-anchor':i===0?'start':'middle'});}
+  const E=[['1985–94',0,idx('1994-12')-I0],['1995–2000',idx('1995-01')-I0,idx('2000-12')-I0],
+    ['2001–06',idx('2001-01')-I0,NP-1]];
+  E.forEach(([lab,a,b],k)=>{
+    if(k){const xs=r1((X(a-1)+X(a))/2);S('line',{x1:xs,x2:xs,y1:m.t-22,y2:m.t+ih,class:'sep'},svg);}
+    T(svg,(X(a)+X(b))/2,m.t-12,lab,'era',{'text-anchor':'middle'});});
+  const path=arr=>{let d='',pen=false;arr.forEach((v,i)=>{if(v==null){pen=false;return;}
+    d+=(pen?'L':'M')+r1(X(i))+','+r1(Y(v));pen=true;});return d;};
+  S('path',{d:path(P.s),class:'ln st-spy'},svg);
+  S('path',{d:path(P.c),class:'ln st-c'},svg);
+  S('path',{d:path(P.a),class:'ln st-a'},svg);
+  /* 直接標籤：標籤闊度範圍內，A 喺 C 上面而且隔得最開嗰度 —— A 標喺 A 線上面、C 標喺 C 線下面，
+     咁兩個標籤都唔會壓住任何一條線（SPY 1993 先有，唔會喺嗰度）；SPY 標喺佢最低嗰段下面 */
+  const dx=iw/(NP-1),span=(i,px)=>[Math.max(0,Math.floor(i-px/2/dx)),Math.min(NP-1,Math.ceil(i+px/2/dx))];
+  const ext=(arr,a,b,f)=>{let y=null;for(let j=a;j<=b;j++)if(arr[j]!=null){const v=Y(arr[j]);y=y==null?v:f(y,v);}return y;};
+  const wA=tw('你嘅做法',12.5,600)+8,wC=tw('隨機入場',12.5)+8,wL=Math.max(wA,wC);
+  let bi=-1,bg=-1e9;
+  for(let i=0;i<idx('1993-01')-I0;i++){const [a,b]=span(i,wL);if(X(a)<m.l||X(b)>w-m.r)continue;
+    let g=1e9;for(let j=a;j<=b;j++)g=Math.min(g,P.a[j]-P.c[j]);if(g>bg){bg=g;bi=i;}}
+  if(bi>=0){const [a,b]=span(bi,wL);
+    T(svg,X(bi),ext(P.a,a,b,Math.min)-7,'你嘅做法','lbl b halo',{'text-anchor':'middle'});
+    T(svg,X(bi),ext(P.c,a,b,Math.max)+16,'隨機入場','lbl halo',{'text-anchor':'middle'});}
+  let si=0,sv=1e9;P.s.forEach((v,i)=>{if(v!=null&&v<sv){sv=v;si=i;}});
+  {const [a,b]=span(si,tw('SPY',12.5)+8);
+    T(svg,X(si),ext(P.s,a,b,Math.max)+16,'SPY','lbl halo',{'text-anchor':'middle'});}
+  /* crosshair：跟住指標 snap 去最近嗰個月；tooltip 列晒三條線 */
+  const cross=S('line',{y1:m.t,y2:m.t+ih,class:'cross',visibility:'hidden'},svg);
+  const dots=[['a',P.a],['c',P.c],['spy',P.s]].map(([k,arr])=>
+    [arr,S('circle',{r:4,class:'dot f-'+k,visibility:'hidden'},svg)]);
+  const ov=S('rect',{x:m.l,y:m.t,width:iw,height:ih,class:'hit',tabindex:0,
+    'aria-label':'逐個起點睇數：用左右鍵移動，Page Up／Down 跳一年'},svg);
+  let cur=NP-1;
+  const me={release(){cross.setAttribute('visibility','hidden');
+    dots.forEach(([,d])=>d.setAttribute('visibility','hidden'));}};
+  function show(i,cx,cy){
+    cur=i;claim(me);const x=r1(X(i));
+    cross.setAttribute('x1',x);cross.setAttribute('x2',x);cross.setAttribute('visibility','visible');
+    dots.forEach(([arr,d])=>{const v=arr[i];if(v==null){d.setAttribute('visibility','hidden');return;}
+      d.setAttribute('cx',x);d.setAttribute('cy',r1(Y(v)));d.setAttribute('visibility','visible');});
+    tipSet(`${mstr(I0+i)} 開始，玩 20 年`,[
+      {k:'a',v:P.a[i].toFixed(1)+'%',l:`你嘅做法（${FX(P.am[i])} 倍）`},
+      {k:'c',v:P.c[i].toFixed(1)+'%',l:`隨機入場（${FX(P.cm[i])} 倍）`},
+      P.s[i]==null?{k:'spy',v:'—',l:'SPY（1993-02 先有數據）'}
+        :{k:'spy',v:P.s[i].toFixed(1)+'%',l:`SPY（${FX(P.sm[i])} 倍）`}]);
+    tipAt(cx,cy);}
+  const toI=cx=>{const b=svg.getBoundingClientRect();
+    return Math.max(0,Math.min(NP-1,Math.round((cx-b.left-m.l)/iw*(NP-1))));};
+  ov.addEventListener('pointermove',e=>{byFocus=null;show(toI(e.clientX),e.clientX,e.clientY);});
+  ov.addEventListener('pointerdown',e=>{byFocus=null;show(toI(e.clientX),e.clientX,e.clientY);});
+  ov.addEventListener('pointerleave',e=>{if(e.pointerType!=='touch'&&owner===me)tipHide();});
+  const kshow=()=>{const b=svg.getBoundingClientRect();
+    show(cur,b.left+X(cur),b.top+Y(Math.max(P.a[cur],P.c[cur]))-12);};
+  ov.addEventListener('focus',()=>{kshow();byFocus=kshow;});
+  ov.addEventListener('blur',()=>{if(owner===me)tipHide();});
+  ov.addEventListener('keydown',e=>{
+    const st={ArrowLeft:-1,ArrowRight:1,PageUp:-12,PageDown:12}[e.key];
+    if(st){cur=Math.max(0,Math.min(NP-1,cur+st));}
+    else if(e.key==='Home')cur=0; else if(e.key==='End')cur=NP-1; else return;
+    e.preventDefault();kshow();byFocus=kshow;});});
+tview('t-era',['起點','你嘅做法','隨機入場','SPY'],
+  P.a.map((v,i)=>[mstr(I0+i),`${v.toFixed(1)}%（${FX(P.am[i])} 倍）`,
+    `${P.c[i].toFixed(1)}%（${FX(P.cm[i])} 倍）`,P.s[i]==null?'—':`${P.s[i].toFixed(1)}%（${FX(P.sm[i])} 倍）`]),
+  [0,1,1,1],true);
+
+/* ═══ g. 抽樣例子：五注時間線 ══════════════════════════════ */
+let pick=0;
+const seg=$('seg');
+SIM.samples.forEach((s,i)=>{const b=document.createElement('button');b.type='button';
+  b.textContent=s.start+' 起';b.setAttribute('aria-pressed',String(i===pick));
+  b.addEventListener('click',()=>{pick=i;
+    [...seg.children].forEach((x,j)=>x.setAttribute('aria-pressed',String(j===i)));
+    drawSmp();smpText();smpTable();});
+  seg.appendChild(b);});
+const fmtX=x=>x>=10?'×'+x.toFixed(1):x>=.01?'×'+x.toFixed(2):'×'+x.toFixed(1-Math.floor(Math.log10(x)));  // 細過 0.01：兩位有效數字，唔用 e 記數
+const fmtSlot=x=>x>=10?x.toFixed(1)+' 倍':x>=.01?x.toFixed(2)+' 倍':'≈0 倍';
+function trades(s){const S0=idx(s.start),N=240;
+  return s.slots.map(sl=>sl.t.map(t=>{const open=t[2]==null;
+    return {tk:t[0],e:idx(t[1]),k:open?S0+N-1:idx(t[2]),open,loss:open&&t[3]<1,x:t[3],in:t[1],out:t[2]};}));}
+function trTip(j,r){
+  const st=!r.open?'double 咗，賣出':(r.loss?'第 20 年仲未 double：蝕緊':'第 20 年仲未 double：賺緊');
+  const pct=Math.round((r.x-1)*100),ch=r.open?`（${pct>0?'+':pct<0?'−':''}${Math.abs(pct)}%）`:'';
+  return [`第 ${j+1} 注 · ${r.tk}`,[
+    {k:r.loss?'loss':'a',v:fmtX(r.x),l:st+ch},
+    {v:`${r.k-r.e+1} 個月`,l:`${r.in} → ${r.open?mstr(r.k)+'（仲揸住）':r.out}`}]];}
+const drawSmp=mount('c-smp',(host,w)=>{
+  const s=SIM.samples[pick],S0=idx(s.start),N=240,TR=trades(s),narrow=w<560;
+  const lw0=tw('第 5 注',12.5)+12,rowH=34,bh=20,m={l:Math.ceil(lw0)+2,r:narrow?58:70,t:22,b:30};
+  const H=m.t+5*rowH+m.b,iw=w-m.l-m.r,X=mi=>m.l+iw*(mi-S0)/N;
+  const svg=root(host,w,H,`${s.start} 開始嘅一次模擬：五注 20 年嘅每一筆交易，最後 ${FX(s.m)} 倍`);
+  const defs=S('defs',null,svg);
+  for(const k of ['a','loss']){
+    const p=S('pattern',{id:'hz-'+k,width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},defs);
+    S('rect',{width:6,height:6,class:'wash-'+k},p);
+    S('line',{x1:1.5,y1:0,x2:1.5,y2:6,class:'hatch-'+k},p);}
+  T(svg,m.l-8,12,'每注','axt',{'text-anchor':'end'});
+  T(svg,w-2,12,'20 年後','axt',{'text-anchor':'end'});
+  for(let y=0;y<=20;y+=5){const x=r1(X(S0+y*12));
+    S('line',{x1:x,x2:x,y1:m.t,y2:m.t+5*rowH,class:y%20?'grid':'base'},svg);
+    T(svg,x,m.t+5*rowH+18,String(+s.start.slice(0,4)+y),'tick',{'text-anchor':y===0?'start':y===20?'end':'middle'});}
+  TR.forEach((row,j)=>{
+    const y0=m.t+j*rowH,yb=y0+(rowH-bh)/2,marks=[];
+    T(svg,m.l-8,yb+bh/2+4,`第 ${j+1} 注`,'lbl',{'text-anchor':'end'});
+    row.forEach(r=>{
+      const x0=X(r.e),x1=X(r.k+1),wv=Math.max(1.5,x1-x0-(r.open?0:2));
+      const el=S('rect',{x:r1(x0),y:yb,width:r1(wv),height:bh,rx:Math.min(3,wv/2),
+        class:'mk'+(r.open?'':' f-a'),tabindex:0,
+        'aria-label':`第 ${j+1} 注 ${r.tk}：${r.in} 至 ${r.open?mstr(r.k)+' 仲揸住':r.out}，${fmtX(r.x)}`},svg);
+      if(r.open)el.setAttribute('fill',`url(#hz-${r.loss?'loss':'a'})`);
+      const lw=tw(r.tk,10.5,r.open?500:600,true);
+      if(wv>=lw+10)T(svg,x0+wv/2,yb+bh/2+4,r.tk,r.open?'tkr halo':'onfill',{'text-anchor':'middle'});
+      marks.push(Object.assign({el},r));});
+    T(svg,w-2,yb+bh/2+4,fmtSlot(s.slots[j].x),'val',{'text-anchor':'end'});
+    /* 成行都係 hit 區：搵指標下面（或者最近）嗰筆交易，細到 1 個月嘅都揀得到 */
+    const hit=S('rect',{x:m.l,y:y0,width:iw,height:rowH,class:'hit'},svg);
+    let hot=null;
+    const me={release(){if(hot){hot.el.classList.remove('hot');hot=null;}}};
+    const showMk=(mk,cx,cy)=>{claim(me);if(hot!==mk){if(hot)hot.el.classList.remove('hot');hot=mk;mk.el.classList.add('hot');}
+      const g=trTip(j,mk);tipSet(g[0],g[1]);tipAt(cx,cy);};
+    const near=cx=>{const b=svg.getBoundingClientRect();
+      const mi=Math.max(S0,Math.min(S0+N-1,S0+Math.floor((cx-b.left-m.l)/iw*N)));
+      let best=marks[0],bd=1e9;
+      for(const mk of marks){const d=mi<mk.e?mk.e-mi:mi>mk.k?mi-mk.k:0;if(d<bd){bd=d;best=mk;}}
+      return best;};
+    hit.addEventListener('pointermove',e=>{byFocus=null;showMk(near(e.clientX),e.clientX,e.clientY);});
+    hit.addEventListener('pointerdown',e=>{byFocus=null;showMk(near(e.clientX),e.clientX,e.clientY);});
+    hit.addEventListener('pointerleave',e=>{if(e.pointerType!=='touch'&&owner===me)tipHide();});
+    marks.forEach(mk=>{
+      const f=()=>{const b=mk.el.getBoundingClientRect();showMk(mk,b.left+Math.min(b.width/2,120),b.top+4);};
+      mk.el.addEventListener('focus',()=>{f();byFocus=f;});
+      mk.el.addEventListener('blur',()=>{if(owner===me)tipHide();});});});});
+function smpText(){
+  const s=SIM.samples[pick],box=$('smp-sum');box.replaceChildren();
+  const line=(parts)=>{const d=document.createElement('div');
+    parts.forEach(p=>{if(typeof p==='string')d.appendChild(document.createTextNode(p));
+      else{const b=document.createElement('b');b.textContent=p.b;d.appendChild(b);}});box.appendChild(d);};
+  line([`呢一次（${s.start} → ${s.end}）：20 年後 `,{b:FX(s.m)+' 倍'},`（每年 ${s.g.toFixed(1)}%）`]);
+  line(['同一串隨機數，改做 36 個月未 double 就止蝕：',{b:FX(s.bm)+' 倍'},`（每年 ${s.bg.toFixed(1)}%）`]);
+  line([`同一個起點嘅中位數：你嘅做法 `,{b:s.medA[0].toFixed(1)+' 倍'},`（${s.medA[1].toFixed(1)}%，500 次）· 隨機入場 `,
+    {b:s.medC[0].toFixed(1)+' 倍'},`（${s.medC[1].toFixed(1)}%，200 次）`]);}
+function smpTable(){
+  const s=SIM.samples[pick],rows=[];
+  trades(s).forEach((row,j)=>row.forEach(r=>rows.push([`第 ${j+1} 注`,r.tk,r.in,r.open?'仲揸住':r.out,
+    String(r.k-r.e+1),fmtX(r.x),!r.open?'double 咗':(r.loss?'未 double，蝕緊':'未 double，賺緊')])));
+  tview('t-smp',['注','代號','買入月','賣出月','個月','倍數','結果'],rows,[0,0,0,0,1,1,0]);}
+smpText();smpTable();
+
+/* ═══ i. 生存偏差：每年有幾多隻股有數據 ══════════════════════ */
+const UNI=[['1985-01',432],['1990-01',557],['1995-01',797],['2000-01',1066],['2006-01',1316],['2026',2154]];
+mount('c-uni',(host,w)=>{
+  const H=230,m={l:40,r:6,t:28,b:30},iw=w-m.l-m.r,ih=H-m.t-m.b,Y=v=>m.t+ih*(1-v/2500);
+  const svg=root(host,w,H,'今日 2,154 隻股入面，每個年頭已經有數據嘅數目：1985 年 432 隻，2026 年 2,154 隻');
+  for(const v of [0,1000,2000]){
+    S('line',{x1:m.l,x2:w-m.r,y1:r1(Y(v)),y2:r1(Y(v)),class:v?'grid':'base'},svg);
+    T(svg,m.l-6,Y(v)+4,v?(v/1000)+'K':'0','tick',{'text-anchor':'end'});}
+  const band=iw/UNI.length,bw=Math.min(24,band*.5);
+  UNI.forEach((d,i)=>{const c=m.l+band*(i+.5),top=Y(d[1]);
+    const mk=S('path',{d:colPath(c-bw/2,top,bw,Y(0)-top,4),class:'mk f-de'},svg);
+    T(svg,c,top-7,nf(d[1]),'val',{'text-anchor':'middle'});
+    T(svg,c,m.t+ih+18,d[0].slice(0,4),'tick',{'text-anchor':'middle'});
+    const hit=S('rect',{x:r1(m.l+band*i),y:m.t-26,width:r1(band),height:ih+26,class:'hit',tabindex:0,
+      'aria-label':`${d[0]}：${nf(d[1])} 隻有數據`},svg);
+    bind(hit,mk,()=>[d[0]==='2026'?'2026（今日）':d[0]+' 已經有數據',
+      [{k:'de',v:nf(d[1])+' 隻',l:d[0]==='2026'?'全部（今日仲上市、仲有成交）':'（今日 2,154 隻入面）'}]]);});});
+tview('t-uni',['時間','有數據嘅股'],UNI.map(d=>[d[0],nf(d[1])]),[0,1]);
+})();
+</script>
+</body>
+</html>
