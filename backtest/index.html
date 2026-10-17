@@ -88,6 +88,7 @@ tbody tr{cursor:pointer}
 tbody tr + tr{border-top:1px solid var(--rail-soft)}
 tbody tr:hover,tbody tr:focus-visible{background:var(--rail-soft); outline:none}
 td.code{font-weight:600}
+td.rough{color:var(--muted)}
 
 /* ── 圖表區：永遠深色（富途風），唔跟工具台主題 ───────────── */
 .fu{background:#13161C; color:#C9CED6; border-radius:10px; padding:10px 12px 0; font-size:13px}
@@ -126,6 +127,8 @@ td.code{font-weight:600}
   h1{font-size:26px}
   .fu{padding:8px 8px 0}
   .tools input{flex:1 1 120px; width:auto}
+  .seg button{padding:0 10px}
+  th,td{padding:10px 8px}
 }
 </style>
 <script src="ind.js"></script>
@@ -178,7 +181,8 @@ const fmtP = v => !fin(v) ? '—' : Math.abs(v) >= 1 ? v.toFixed(3) : v.toPrecis
 const fmtAx = v => Math.abs(v) >= 1000 ? v.toFixed(0) : Math.abs(v) >= 1 ? v.toFixed(2) : v.toPrecision(3);
 const fmtVol = (v, d = 3) => !fin(v) ? '—' : v >= 1e8 ? (v / 1e8).toFixed(d) + '億'
   : v >= 1e4 ? (v / 1e4).toFixed(d) + '萬' : v.toFixed(0);
-const fmtCap = v => v === null ? '—' : v < 1 ? '< 1 億' : v.toLocaleString('en-US') + ' 億';   // 3550 → 3,550 億
+const nf = new Intl.NumberFormat('en-US');                        // 共用一個：逐個 toLocaleString 6,630 行慢 20 幾倍
+const fmtCap = (v, rough) => v === null ? '—' : v < 1 ? '< 1 億' : (rough ? '≈ ' : '') + nf.format(v) + ' 億';   // 3550 → 3,550 億
 
 // ── SVG 小工具（改寫自 mock-v2.html）──────────────────
 // 固定格闊（R15）：已見最多 PAST 支 + 右邊 FUT 格未來；推前係成個視窗向右移，唔會放大縮細
@@ -418,6 +422,9 @@ function go(i) {
 // 訊號當時市值（億美元，整數）；冇數 → null。分頁係嚴格大過門檻，null 唔入任何市值分頁
 const capOf = r => { const v = caps && caps[r[0]] && caps[r[0]][r[1]]; return fin(v) ? v : null; };
 const inTab = r => !tab || (capOf(r) ?? 0) > tab;
+// 轉黃月早過呢個月嘅市值誤差大好多（今日股數同當時差得遠，核對過可以差 2–7 倍）→ 灰字加「≈」
+const ROUGH_BEFORE = '2015-12';
+const capTd = r => { const rough = r[1] < ROUGH_BEFORE; return `<td class="n${rough ? ' rough' : ''}">${fmtCap(capOf(r), rough)}</td>`; };
 function renderList() {
   if (!rows) return;
   let head, body;
@@ -433,14 +440,16 @@ function renderList() {
     sorted = sorted || rows.slice().sort((a, b) => a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
     const q = $('q').value.trim().toUpperCase(), all = tab ? sorted.filter(inTab) : sorted;
     view = q ? all.filter(r => r[0].toUpperCase().startsWith(q)) : all;
-    head = '<tr><th>代號</th><th>轉黃月</th><th>九轉完成月</th><th class="n">相隔（月）</th>' +
-      (caps ? '<th class="n">市值</th>' : '') + '</tr>';
-    body = view.map((r, k) => `<tr tabindex="0" data-k="${k}"><td class="code">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td class="n">${r[3]}</td>` +
-      (caps ? `<td class="n">${fmtCap(capOf(r))}</td>` : '') + '</tr>');
+    // 市值緊跟轉黃月（係嗰個月嘅市值）；窄屏放唔晒時，橫向溢出嘅係後面兩欄
+    head = '<tr><th>代號</th><th>轉黃月</th>' + (caps ? '<th class="n" title="訊號當時市值（億美元）嘅估算，睇上面備註">市值（估）</th>' : '') +
+      '<th>九轉完成月</th><th class="n">相隔（月）</th></tr>';
+    body = view.map((r, k) => `<tr tabindex="0" data-k="${k}"><td class="code">${r[0]}</td><td>${r[1]}</td>` +
+      (caps ? capTd(r) : '') + `<td>${r[2]}</td><td class="n">${r[3]}</td></tr>`);
     $('cnt').textContent = `顯示 ${view.length} / ${all.length}`;
   }
   $('th').innerHTML = head;
   $('tb').innerHTML = body.join('');
+  $('caplegend').hidden = blind || !caps;
   $('q').hidden = blind;
   $('rand').hidden = false;
   $('caps').hidden = false;
@@ -498,13 +507,15 @@ $('blind').addEventListener('change', () => {
   if (BT && !$('chart-view').hidden) render();
 });
 $('scan').addEventListener('click', scan);
-$('q').addEventListener('input', renderList);
+// 換咗清單內容（篩選／換分頁）就由頂睇起；「返清單」唔經呢度，所以照保留原本捲到嘅位置
+$('q').addEventListener('input', () => { renderList(); $('tbl').scrollTop = 0; });
 $('seg').addEventListener('click', e => {
   const b = e.target.closest('button[data-cap]');
   if (!b || b.disabled) return;
   tab = Number(b.dataset.cap);
   for (const x of $('seg').querySelectorAll('button')) x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
   renderList();
+  $('tbl').scrollTop = 0;
 });
 $('rand').addEventListener('click', () => { if (view.length) openCase(view[Math.floor(Math.random() * view.length)]); });
 const pick = e => { const tr = e.target.closest('tr[data-k]'); if (tr) openCase(view[+tr.dataset.k]); };
@@ -568,7 +579,8 @@ document.addEventListener('keydown', e => {                       // ← →；f
       <button type="button" data-cap="500" aria-pressed="false">市值 &gt; 500 億</button>
       <button type="button" data-cap="1000" aria-pressed="false">市值 &gt; 1,000 億</button>
     </div>
-    <p class="capnote" id="capnote">市值＝轉黃嗰個月收市價 × 今日股數（美元）；多年回購嘅公司會被低估、大手增發嘅會被高估。</p>
+    <p class="capnote" id="capnote">市值（億美元）只係估算＝轉黃嗰個月收市價 × 今日股數，股數變咗就有偏差：回購多、做過分拆會低估，增發／併購多會高估。2015-12 之後嘅大公司大多差 25% 以內；更早嘅可以差 2–7 倍（金融、電訊、能源、公用股常見高估，回購／分拆大戶常見低估一半），所以市值分頁只當粗篩。冇可靠數字嘅（細價股之後大跌／合股／大手增發、ETN）唔入分頁。</p>
+    <p class="capnote" id="caplegend" hidden>市值欄：「≈」＝ 2015-12 前、誤差大；「—」＝ 冇可靠數字</p>
   </div>
   <div class="tbl" id="tbl" hidden>
     <table><thead id="th"></thead><tbody id="tb"></tbody></table>
