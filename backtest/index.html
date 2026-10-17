@@ -130,6 +130,10 @@ td.rough{color:var(--muted)}
   .seg button{padding:0 10px}
   th,td{padding:10px 8px}
 }
+/* 非盲測清單 ≤ 410px 放唔晒要打橫捲（2026-10 用手機模擬量過），收埋「相隔」欄：個數由兩個月份推得返；
+   320px 收埋之後仲差 11px，再收窄啲格 */
+@media (max-width:420px){ .gap{display:none} }
+@media (max-width:340px){ th,td{padding:10px 6px} }
 </style>
 <script src="ind.js"></script>
 <script src="replay.js"></script>
@@ -440,11 +444,11 @@ function renderList() {
     sorted = sorted || rows.slice().sort((a, b) => a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
     const q = $('q').value.trim().toUpperCase(), all = tab ? sorted.filter(inTab) : sorted;
     view = q ? all.filter(r => r[0].toUpperCase().startsWith(q)) : all;
-    // 市值緊跟轉黃月（係嗰個月嘅市值）；窄屏放唔晒時，橫向溢出嘅係後面兩欄
+    // 市值緊跟轉黃月（係嗰個月嘅市值）；窄屏收埋「相隔」（.gap），唔使打橫捲
     head = '<tr><th>代號</th><th>轉黃月</th>' + (caps ? '<th class="n" title="訊號當時市值（億美元）嘅估算，睇上面備註">市值（估）</th>' : '') +
-      '<th>九轉完成月</th><th class="n">相隔（月）</th></tr>';
+      '<th>九轉完成月</th><th class="n gap">相隔（月）</th></tr>';
     body = view.map((r, k) => `<tr tabindex="0" data-k="${k}"><td class="code">${r[0]}</td><td>${r[1]}</td>` +
-      (caps ? capTd(r) : '') + `<td>${r[2]}</td><td class="n">${r[3]}</td></tr>`);
+      (caps ? capTd(r) : '') + `<td>${r[2]}</td><td class="n gap">${r[3]}</td></tr>`);
     $('cnt').textContent = `顯示 ${view.length} / ${all.length}`;
   }
   $('th').innerHTML = head;
@@ -579,8 +583,8 @@ document.addEventListener('keydown', e => {                       // ← →；f
       <button type="button" data-cap="500" aria-pressed="false">市值 &gt; 500 億</button>
       <button type="button" data-cap="1000" aria-pressed="false">市值 &gt; 1,000 億</button>
     </div>
-    <p class="capnote" id="capnote">市值（億美元）只係估算＝轉黃嗰個月收市價 × 今日股數，股數變咗就有偏差：回購多、做過分拆會低估，增發／併購多會高估。2015-12 之後嘅大公司大多差 25% 以內；更早嘅可以差 2–7 倍（金融、電訊、能源、公用股常見高估，回購／分拆大戶常見低估一半），所以市值分頁只當粗篩。冇可靠數字嘅（細價股之後大跌／合股／大手增發、ETN）唔入分頁。</p>
-    <p class="capnote" id="caplegend" hidden>市值欄：「≈」＝ 2015-12 前、誤差大；「—」＝ 冇可靠數字</p>
+    <p class="capnote" id="capnote">市值（億美元）只係估算：轉黃嗰個月收市價 × 股數，股數盡量用當時嘅。大公司（初估 ≥ 250 億）2015-12 之後大多用 Yahoo 披露嘅當時股數；2015-12 前有 39 間大公司用公佈年底市值推返。其餘只能用今日股數：回購多會低估，增發／併購多會高估，2015-12 前嘅可以差 2–7 倍，所以市值分頁只當粗篩。冇可靠數字嘅（細價股之後大跌／合股／大手增發、ETN，同埋幾個已知錯又冇公佈數嘅）唔入分頁。</p>
+    <p class="capnote" id="caplegend" hidden>市值欄：「≈」＝ 2015-12 前（多數冇當時股數，誤差可以好大）；「—」＝ 冇可靠數字</p>
   </div>
   <div class="tbl" id="tbl" hidden>
     <table><thead id="th"></thead><tbody id="tb"></tbody></table>
