@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-20T07:01:50+08:00",
+ "updated_at": "2026-10-20T20:02:02+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -7845,6 +7845,16 @@
      "url": "https://x.com/aleabitoreddit/status/2112102623721505098",
      "stance": "bullish",
      "summary": "作者認為Sivers有多項資格認證進行中，供應緊張下成功機會較高，等待業績披露更多合作夥伴與進展。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-10-20",
+     "author": "aleabitoreddit",
+     "tweet_id": "2112429644033245666",
+     "url": "https://x.com/aleabitoreddit/status/2112429644033245666",
+     "stance": "bullish",
+     "summary": "作者認為首張CW DFB激光器量產訂單係技術同執行力嘅商業驗證，並預期仲有更多客戶陸續轉化。",
      "r7": null,
      "r30": null
     }
@@ -16573,11 +16583,21 @@
      "summary": "列為次要廠商，若成功放量則屬利好情境之一。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-20",
+     "author": "aleabitoreddit",
+     "tweet_id": "2112429644033245666",
+     "url": "https://x.com/aleabitoreddit/status/2112429644033245666",
+     "stance": "bullish",
+     "summary": "作者推測呢個客戶正進軍超大規模資料中心嘅CPO/NPO光源，並利用現有技術，帶來擴張機會。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -61.4,
-   "ai_summary": "最新立場偏多：sunxliao 喺8月14日仍看好AEVA等機器人主題股票表現良好，aleabitoreddit 8月25日亦預期AEVA下半年貢獻營收，規模雖小但正面。主要論述點係FMCW LiDAR喺機器人領域嘅應用、4D AI/世界模型趨勢，以及AEVA成為CPO/NPO光源供應商、簽JDA並獲超大規模客戶部署。風險與轉軚方面，aleabitoreddit 10月19日已將AEVA降為次要廠商，只視放量成功為利好情境之一，語氣較8月審慎，但未明確轉淡。",
+   "ai_summary": "最新立場偏多：sunxliao 喺 8 月中仍看好 AEVA 等機器人主題股票表現，aleabitoreddit 喺 10 月 20 日推測 AEVA 正進軍超大規模資料中心 CPO/NPO 光源，帶來擴張機會。主要論述點包括機器人同 4D AI/世界模型主題、2026 下半年開始 HVM 並貢獻營收、競爭對手受監管排除利好西方雷達公司，以及 8 月 6 日成為 CPO/NPO 光源供應商、簽 JDA 並獲超大規模客戶部署後盤後大漲 18.26%。兩人立場多次喺 bullish 同 neutral 之間擺動，aleabitoreddit 10 月 19 日曾將 AEVA 列為次要廠商，放量成功只屬利好情境之一，屬風險提示。",
    "theme": "其他"
   },
   "BB": {
@@ -23382,11 +23402,21 @@
      "summary": "預期Jabil上半年2027年收入來自1.6T LRO激光器放量。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-20",
+     "author": "aleabitoreddit",
+     "tweet_id": "2112429644033245666",
+     "url": "https://x.com/aleabitoreddit/status/2112429644033245666",
+     "stance": "bullish",
+     "summary": "作者預期AI資料中心相關訂單會陸續由設計導入轉為量產。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -24.7,
-   "ai_summary": "最新立場係睇好：作者喺2026年10月19日預期Jabil喺2027年上半年受惠1.6T LRO激光器放量帶動收入，之前亦多次提到佢係Sivers主要量產夥伴同營收來源，並將佢列為亞馬遜組裝環節嘅投資標的之一。論述重點圍繞矽光子比例上升、Sivers合作放量同超大規模供應商定位。期間立場由中性轉向睇好，未見明確轉軚或風險提示。",
+   "ai_summary": "最新立場係看好JBL，作者喺2026年10月連續兩次表達bullish，預期2027年上半年1.6T LRO激光器放量帶動收入，AI資料中心訂單亦會由設計導入轉為量產。論述主線圍繞JBL作為Sivers主要量產夥伴同超大規模供應商，矽光子比例上升同可插拔市場參與對佢有利。期間多次neutral只屬提及合作或比較基準，未見轉軚，亦冇明確風險提示。",
    "theme": "光通訊"
   },
   "MTSI": {
@@ -23669,7 +23699,7 @@
     }
    ],
    "yellow": null,
-   "gain": -24.0,
+   "gain": -24.2,
    "theme": "其他"
   },
   "AOSL": {
@@ -23875,11 +23905,21 @@
      "summary": "GlobalFoundries為其CPO/NPO平台參考設計激光器供應商。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-20",
+     "author": "aleabitoreddit",
+     "tweet_id": "2112429644033245666",
+     "url": "https://x.com/aleabitoreddit/status/2112429644033245666",
+     "stance": "bullish",
+     "summary": "作者預期AI資料中心相關訂單會陸續由設計導入轉為量產。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -46.3,
-   "ai_summary": "最新立場係偏多：2026年7月29日因美國政府將持股1%並提供3億美元補助而轉為看好，9月17日再因與Marvell延長SiGe產能協議及美日討論在美建廠而維持正面。主要論述點係GFS作為矽光子晶圓代工同CPO/NPO參考雷射供應商嘅角色，以及政策同產能合作帶來嘅利好。此前多次僅屬中性提及，未見明確轉淡或風險提示。",
+   "ai_summary": "最新立場係偏多：作者喺2026年9月17日同10月19至20日都明確睇好GFS，焦點放喺同Marvell延長SiGe產能協議、日本同美國討論喺美國建廠，以及GFS作為CPO/NPO平台參考設計激光器供應商，並預期AI資料中心相關訂單會由設計導入逐步轉為量產。之前7月29日亦因為美國政府將持有GFS 1%股份並提供3億美元補助而轉為正面。整體論述由早期多次中性提及（Sivers合作、SCALE雷射、矽光子代工產能、AMD MI500 CPO未經正式確認）逐步轉向睇好，未見轉軚或風險提示。",
    "theme": "光通訊"
   },
   "PLTR": {
@@ -26471,7 +26511,7 @@
     }
    ],
    "yellow": null,
-   "gain": -55.2,
+   "gain": -55.7,
    "ai_summary": "根據提供的數據，最新立場為看漲，論述點包括BTBT的貸款設施可從1億美元擴展至1.5億美元，以及建設里程碑的達成。sunxliao在6月17日持中性立場，但6月23日轉為看漲，認為價格下跌是正常波動；wliang則在7月9日和20日持續看漲，但7月20日指出上漲僅因板塊情緒，暗示需注意風險。整體上，兩位大V均未出現明確轉軚，但wliang在最新觀點中隱含對板塊情緒驅動的風險提示。",
    "theme": "比特幣挖礦"
   },
@@ -28741,7 +28781,7 @@
     }
    ],
    "yellow": null,
-   "gain": -12.1,
+   "gain": -17.8,
    "theme": "其他"
   },
   "COIN": {
@@ -33236,7 +33276,7 @@
     }
    ],
    "yellow": null,
-   "gain": -19.3,
+   "gain": -19.9,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -35865,7 +35905,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 879,
+   "calls": 883,
    "n7": 709,
    "win7": 50,
    "n30": 635,
