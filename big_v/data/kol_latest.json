@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-26T07:01:56+08:00",
+ "updated_at": "2026-10-26T20:02:00+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -2077,12 +2077,22 @@
      "summary": "作者認為 IREN 與 CIFR 情況相似，同樣被過度拋售。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-26",
+     "author": "sunxliao",
+     "tweet_id": "2114629056587243788",
+     "url": "https://x.com/sunxliao/status/2114629056587243788",
+     "stance": "bullish",
+     "summary": "作者認為IREN同neocloud板塊走勢同2022年中期年一樣，之後會連升三年，回調係更好嘅入場機會。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -57.9,
    "earnings": "2026-11-06",
-   "ai_summary": "最新立場偏看好：wliang 認為 IREN 被嚴重超賣、本周撈底有回報，並指它與 CIFR 同樣被過度拋售；sunxliao 亦指股價自首次粉紅鑽訊號以來累跌約五成，跌幅夠深，開始重新留意買入機會。主要論述點包括 AI/HPC 及 neoclouds 強勢、已通電容量可受惠於微軟轉向其他 Neocloud 採購、Nebius 加價帶來看漲讀數，以及與 Anthropic 達成協議後基本面改善。風險與轉軚方面，aleabitoreddit 曾批評 IREN 的 60 億美元 ATM 融資是股價半年來區間橫行的原因，並已將 Neocloud 倉位由 IREN 整合到 Nebius；sunxliao 早前亦設下燭台收低於 4 小時黃金區則失效的條件。",
+   "ai_summary": "最新立場偏看好：wliang 認為 IREN 被嚴重超賣、接近吸引支撐區，值得趁折讓吸納；sunxliao 指跌幅夠深並以 2022 年中期作類比，視回調為入場機會；aleabitoreddit 亦由批評轉為看好，指與 Anthropic 達成協議後基本面改善，加上已通電容量可受惠微軟轉向其他 Neocloud 採購。主要論述點包括 neocloud 板塊強勢、算力需求帶動，以及超賣後的反彈空間。風險提示方面，aleabitoreddit 曾批評 60 億美元 ATM 融資是股價半年區間橫行的原因，並提過已將倉位整合到 Nebius；wliang 亦明言約 6 美元推介屬高風險成功例子。",
    "theme": "AI雲"
   },
   "META": {
@@ -4813,11 +4823,21 @@
      "summary": "以假設情境提及黃仁勳若持有META作類比，並非表達對NVDA嘅睇法",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-26",
+     "author": "aleabitoreddit",
+     "tweet_id": "2114519097526686033",
+     "url": "https://x.com/aleabitoreddit/status/2114519097526686033",
+     "stance": "bullish",
+     "summary": "Elon 的 400 億美元融資主要用於採購 NVDA GPU，間接帶動記憶體與網路需求。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 5.6,
-   "ai_summary": "aleabitoreddit 最新立場偏向看好，核心論點係超大規模雲端資本開支上升帶動記憶體同光學組件需求，NVDA 鎖定 Lumentum 激光產能並授權 1500 億美元回購，令對手更難擴張，加上 FY2028 前瞻收入增長 70%、供應受限而需求能見度高，黃仁勳亦指記憶體到 2029 年都唔會供過於求。期間多次轉為中性，只提及與 Nebius 的 20 億美元私募融資、持股組合與亞馬遜對比等，未明確表態。另一位大V wliang 於 10 月 22 日指 NVDA 出現沽出訊號後已跌約 10%，屬風險提示。",
+   "ai_summary": "最新立場係偏看好：aleabitoreddit 喺 10 月下旬多次唱好，指 AI 半導體需求未見頂，NVDA GPU 連同 HBM、電力、網絡光學組件需求強勁，並引黃仁勳講法指產能係限制、記憶體到 2029 年都唔會供過於求。主要論述點包括 FY2028 前瞻收入增長 70%、供應受限下需求能見度高、鎖定 Lumentum 激光產能兼授權 1500 億美元回購令對手更難擴張，以及光子技術帶動光學需求等。期間立場有反覆，9 月中至 10 月中多次只屬中性提及，而 wliang 於 10 月 22 日指 NVDA 出現沽出訊號後已跌約一成，屬唯一明確風險提示。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -17601,11 +17621,21 @@
      "summary": "作者指 ARKG 喺黃金區支撐位完美反彈，後市偏樂觀。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-25",
+     "author": "wliang",
+     "tweet_id": "2114493138710798648",
+     "url": "https://x.com/wliang/status/2114493138710798648",
+     "stance": "bullish",
+     "summary": "作者看好生物科技板塊第四季表現，指 ARKG 呈階梯式上升趨勢，認為逢低買入高 Beta 股份會有利。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 16.2,
-   "ai_summary": "最新立場係偏多：sunxliao 同 wliang 喺 10 月中都維持看好，wliang 指 ARKG 喺黃金區支撐位完美反彈、後市樂觀，sunxliao 就話月度回測完成、預期升勢強勁延續。論述點主要圍繞生物科技板塊強勢、藍鑽訊號（上次期間升逾30%）、守住支撐區反彈，以及預期未來數月跑贏多數 ETF。風險提示方面，wliang 喺 10 月 6 日曾因單日跌約 8% 轉為中性，但同時預計數日內可能反彈，之後已回復看好，整體冇出現明確轉軚。",
+   "ai_summary": "最新立場係偏多：sunxliao 同 wliang 喺 10 月中下旬都維持看好，wliang 指 ARKG 喺黃金區支撐位反彈、呈階梯式上升，並預期生物科技板塊第四季跑贏。主要論述點包括生物科技強勢、藍鑽訊號後上次升逾三成、月度回測完成後延續升勢，以及逢低買入高 Beta 股份有利。wliang 喺 10 月 6 日曾因單日跌約 8% 轉為中性，但當時已預計數日內可能反彈，之後喺 10 月 10 日回復看好，屬短暫轉軚而非持續看淡；數據中未見明確風險提示。",
    "theme": "其他"
   },
   "AXTI": {
@@ -18020,11 +18050,22 @@
      "summary": "作者認為光通訊股AXTI被嚴重超賣，本周撈底會有回報。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-26",
+     "author": "aleabitoreddit",
+     "tweet_id": "2114519097526686033",
+     "url": "https://x.com/aleabitoreddit/status/2114519097526686033",
+     "stance": "bullish",
+     "summary": "InP 基板嚴重短缺，供應商如 AXTI 可望受惠，掌握原料者議價能力更強。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -24.6,
-   "ai_summary": "最新立場係普遍看好：aleabitoreddit 由九月一日短暫轉淡（指股價被大幅拋售反映九月市況疲弱）之後，自九月七日起持續唱好，到十月一日仍視 AXT 為 InP 基板供應嘅關鍵變量；sunxliao 指 47 美元係值得買入嘅高時框支撐區，並提過 19.40 美元推介後大升 637%；wliang 到十月十九日認為 AXTI 被嚴重超賣、本周撈底有回報。論述點集中喺砷化鎵基板材料漲價同 InP 短缺、光子學同 AI 基礎設施需求、LTA 預付款融資擴產，以及支撐位反彈同超賣撈底。風險提示方面，sunxliao 提過需注意關鍵價位，aleabitoreddit 九月一日亦曾因股價被大幅拋售而短暫轉淡。",
+   "earnings": "2026-10-30",
+   "ai_summary": "最新立場係一致看好：aleabitoreddit由9月1日睇淡轉為9月7日起持續唱好，sunxliao同wliang亦一直睇好。主要論述點包括股價喺支撐位反彈、光子學同InP基板需求帶動、LTA預付款融資擴產優於ATM，以及10月中認為超賣可撈底。風險提示方面，sunxliao喺9月6日提過需注意關鍵價位，其餘多為看好表態，未見明顯轉軚。",
    "theme": "半導體設備"
   },
   "BFLY": {
@@ -29362,7 +29403,7 @@
     }
    ],
    "yellow": null,
-   "gain": -24.5,
+   "gain": -25.2,
    "theme": "其他"
   },
   "COIN": {
@@ -33999,7 +34040,7 @@
     }
    ],
    "yellow": null,
-   "gain": -25.3,
+   "gain": -22.2,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -34850,7 +34891,7 @@
     }
    ],
    "yellow": null,
-   "gain": -30.1,
+   "gain": -26.4,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -36402,12 +36443,22 @@
      "summary": "作者指 NAUT 已到 3 美元獲利區，會觀察走勢再講下一個目標。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-26",
+     "author": "sunxliao",
+     "tweet_id": "2114655423467037077",
+     "url": "https://x.com/sunxliao/status/2114655423467037077",
+     "stance": "bullish",
+     "summary": "作者指NAUT已到其利潤區，若今日突破紫銀色阻力就會公布下一個目標。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 65.3,
    "earnings": "2026-10-27",
-   "ai_summary": "兩位大V對NAUT立場一致偏多：wliang指自買入訊號以來累升約133%至170%，視為負beta強勢股，認為動能持續則高beta生物科技股會急升；sunxliao祝賀早期跟隨者，指升近3倍，突破約3美元週線阻力後進入無阻力區，收報3.24美元處於藍天區，對後市樂觀。全部提及均為看好，未見轉軚；sunxliao提到3美元為獲利區並會觀察走勢再定下一目標，屬階段性提示而非風險警告。",
+   "ai_summary": "最新立場係一致睇好：sunxliao 同 wliang 都維持 bullish，冇轉軚。主要論述係 NAUT 自買入訊號以來已升約170%至近3倍，屬負beta、高beta生物科技股，動能持續就會急升；股價喺3美元週線阻力突破後進入藍天區、上方阻力唔大，3.24美元收市後仍感樂觀。風險提示方面，sunxliao 提到3美元係獲利區、會觀察走勢先公布下一個目標，並以突破紫銀色阻力作為後續條件，屬有條件式睇好而非無保留。",
    "theme": "其他"
   },
   "IBRX": {
@@ -36693,7 +36744,7 @@
  },
  "kol_stats": {
   "wliang": {
-   "calls": 920,
+   "calls": 921,
    "n7": 870,
    "win7": 41,
    "n30": 797,
@@ -36707,7 +36758,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 913,
+   "calls": 915,
    "n7": 724,
    "win7": 50,
    "n30": 658,
@@ -36721,7 +36772,7 @@
    }
   },
   "sunxliao": {
-   "calls": 1012,
+   "calls": 1014,
    "n7": 959,
    "win7": 40,
    "n30": 877,
