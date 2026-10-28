@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T07:01:51+08:00",
+ "updated_at": "2026-10-28T20:02:11+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -9566,7 +9566,7 @@
     }
    ],
    "yellow": null,
-   "gain": -17.7,
+   "gain": -17.6,
    "ai_summary": "最新立場方面，wliang 喺 2026 年 7 月底連續三次睇好 ASML，認為中國自產 DUV 對 ASML 嘅影響有限，僅佔營收約 2.4%，而且中國喺 EUV 領域仍無法取代 ASML 嘅護城河，股價屬超跌。aleabitoreddit 則一直保持中性，只提及 ASML 喺 EUV 光刻機嘅歐洲壟斷地位同埋 Win Semi 嘅 DUV 設備開支來自 ASML，未表達明確多空立場。整體而言，wliang 立場由始至終都係睇好，冇轉軚，亦冇提出風險提示。",
    "theme": "半導體設備"
   },
@@ -24428,7 +24428,7 @@
     }
    ],
    "yellow": null,
-   "gain": -26.4,
+   "gain": -26.2,
    "theme": "其他"
   },
   "AOSL": {
@@ -29176,7 +29176,7 @@
     }
    ],
    "yellow": null,
-   "gain": -20.0,
+   "gain": -40.0,
    "theme": "AI雲"
   },
   "ORCL": {
@@ -29595,6 +29595,16 @@
      "summary": "作者認為記憶體供應短缺持續多年，對 SK Hynix 屬利好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-10-28",
+     "author": "aleabitoreddit",
+     "tweet_id": "2115265167919653233",
+     "url": "https://x.com/aleabitoreddit/status/2115265167919653233",
+     "stance": "bullish",
+     "summary": "SK海力士業績遠超預期，記憶體供不應求至2030年，DRAM同HBM產能已售罄，加上75億美元股東回報，作者極度看好。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -29615,7 +29625,7 @@
     }
    ],
    "yellow": null,
-   "gain": -26.3,
+   "gain": -23.3,
    "theme": "其他"
   },
   "COIN": {
@@ -34254,7 +34264,7 @@
     }
    ],
    "yellow": null,
-   "gain": -21.2,
+   "gain": -17.7,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -34310,7 +34320,7 @@
     }
    ],
    "yellow": null,
-   "gain": -21.6,
+   "gain": -21.4,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月1日表達看多立場，認為美國政府撥款支持鋁業公司生產鎵，將有利其供應鏈發展。此觀點聚焦於政策利好對公司業務的正面影響，未見明顯轉軚或風險提示。整體論述簡單直接，僅基於單一政策因素，未提及潛在市場波動或執行風險。",
    "theme": "國防"
   },
@@ -35125,7 +35135,7 @@
     }
    ],
    "yellow": null,
-   "gain": -23.9,
+   "gain": -18.3,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -37118,7 +37128,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 925,
+   "calls": 926,
    "n7": 737,
    "win7": 50,
    "n30": 669,
