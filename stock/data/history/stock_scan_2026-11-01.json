@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-01 08:58",
-  "run_type": "daily",
-  "scanned": 2851,
+  "generated": "2026-11-01 09:25",
+  "run_type": "weekly",
+  "scanned": 2898,
   "thresholds": {
     "day": 80,
     "week": 80,
@@ -572,6 +572,39 @@
         "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.53x、MACD 水上（零軸之上）。"
       },
       {
+        "code": "US.BWFG",
+        "name": "Bankwell Financial Group, Inc.",
+        "sector": "Financial Services",
+        "close": 71.2300033569336,
+        "score": 80,
+        "trend": 50,
+        "hdly": 0,
+        "vol": 20,
+        "vol_ratio": 1.65,
+        "vol_ratio_prev5": 1.94,
+        "hc": true,
+        "bar_complete": true,
+        "stop_ref": 64.24,
+        "risk_pct": 9.82,
+        "risk_atr": 4.58,
+        "target_2r": 85.21,
+        "mcdxx": 0,
+        "macd": 10,
+        "second_yellow": 0,
+        "sy_pattern": false,
+        "sy_above_ma": "True/True",
+        "sy_ma_slope": "True/True",
+        "futu": null,
+        "mktcap": 567843584,
+        "pe": 12.540494,
+        "rating": "hold · 2位分析師",
+        "target": 69.5,
+        "earnings": "2026-10-29",
+        "summary": "Bankwell Financial Group, Inc. operates as the bank holding company for Bankwell Bank that provides various banking services for individual and commercial customers. It provides various traditional depository products, including checking, savings, money market, and certificates of deposit. The company also offers first mortgage loans secured by one-to-four family owner occupied residential properties for personal use; home equity loans and home equity lines of credit secured by owner occupied one-to-four family residential properties; loans secured by commercial real estate, multi-family dwell",
+        "news": [],
+        "why": "周K 轉黃 80分：站穩上升 MA30/MA40（趨勢回調）、放量 1.65x、MACD 水上（零軸之上）。"
+      },
+      {
         "code": "US.CAKE",
         "name": "The Cheesecake Factory Incorporated",
         "sector": "Consumer Cyclical",
@@ -783,7 +816,7 @@
         "vol_ratio": 1.15,
         "vol_ratio_prev5": 1.16,
         "hc": null,
-        "bar_complete": false,
+        "bar_complete": true,
         "stop_ref": null,
         "risk_pct": null,
         "risk_atr": null,
@@ -816,7 +849,7 @@
         "vol_ratio": 1.41,
         "vol_ratio_prev5": 1.55,
         "hc": null,
-        "bar_complete": false,
+        "bar_complete": true,
         "stop_ref": null,
         "risk_pct": null,
         "risk_atr": null,
@@ -840,6 +873,24 @@
     ]
   },
   "volume_watch": [
+    {
+      "code": "US.RCBC",
+      "close": 57.9900016784668,
+      "spike_mult": 44.9,
+      "spike_date": "2026-10-30"
+    },
+    {
+      "code": "US.WCCB",
+      "close": 63.29999923706055,
+      "spike_mult": 22.9,
+      "spike_date": "2026-10-30"
+    },
+    {
+      "code": "US.KRSA",
+      "close": 30.139999389648438,
+      "spike_mult": 22.1,
+      "spike_date": "2026-10-30"
+    },
     {
       "code": "US.SGRY",
       "close": 23.209999084472656,
@@ -1058,32 +1109,7 @@
   },
   "cycle_bottom": {
     "stocks": {
-      "candidates": [
-        {
-          "month": "2026-10",
-          "close": 11.41,
-          "high24": 25.67,
-          "trough": 7.98,
-          "drawdown": 68.9,
-          "red_count": 12,
-          "code": "US.ADMA",
-          "kind": "stock",
-          "name": "ADMA Biologics Inc",
-          "sector": ""
-        },
-        {
-          "month": "2026-10",
-          "close": 73.47,
-          "high24": 100.0,
-          "trough": 45.82,
-          "drawdown": 54.2,
-          "red_count": 4,
-          "code": "US.AFRM",
-          "kind": "stock",
-          "name": "Affirm Holdings, Inc.",
-          "sector": "Financial Services"
-        }
-      ],
+      "candidates": [],
       "confirmed": [
         {
           "month": "2026-10",
@@ -1239,6 +1265,30 @@
           "code": "US.ARES",
           "kind": "stock",
           "name": "Ares Management Corporation",
+          "sector": ""
+        },
+        {
+          "month": "2026-10",
+          "close": 73.47,
+          "high24": 100.0,
+          "trough": 45.82,
+          "drawdown": 54.2,
+          "red_count": 4,
+          "code": "US.AFRM",
+          "kind": "stock",
+          "name": "Affirm Holdings, Inc.",
+          "sector": "Financial Services"
+        },
+        {
+          "month": "2026-10",
+          "close": 11.41,
+          "high24": 25.67,
+          "trough": 7.98,
+          "drawdown": 68.9,
+          "red_count": 12,
+          "code": "US.ADMA",
+          "kind": "stock",
+          "name": "ADMA Biologics Inc",
           "sector": ""
         },
         {
@@ -2185,9 +2235,9 @@
     }
   },
   "x_buzz": {
-    "updated": "2026-11-01 08:58",
+    "updated": "2026-11-01 09:25",
     "stale": false,
-    "quota_left": 224,
+    "quota_left": 222,
     "rows": [
       {
         "rank": 1,
@@ -2364,6 +2414,15 @@
       "first_week": "2026-08-07"
     },
     {
+      "code": "US.WCCB",
+      "name": "West Coast Community Bancorp",
+      "sector": "",
+      "close": 63.3,
+      "mm_streak": 47,
+      "hot_streak": 51,
+      "first_week": "2026-10-30"
+    },
+    {
       "code": "US.PBAM",
       "name": "Private Bancorp of America, Inc.",
       "sector": "",
@@ -2416,6 +2475,15 @@
       "mm_streak": 24,
       "hot_streak": 68,
       "first_week": "2026-08-14"
+    },
+    {
+      "code": "US.BWFG",
+      "name": "Bankwell Financial Group, Inc.",
+      "sector": "Financial Services",
+      "close": 71.23,
+      "mm_streak": 21,
+      "hot_streak": 71,
+      "first_week": "2026-09-11"
     },
     {
       "code": "US.UFCS",
@@ -2490,6 +2558,15 @@
       "first_week": "2026-10-16"
     },
     {
+      "code": "US.RCBC",
+      "name": "River City Bank",
+      "sector": "",
+      "close": 57.99,
+      "mm_streak": 15,
+      "hot_streak": 24,
+      "first_week": "2026-10-16"
+    },
+    {
       "code": "US.SAFT",
       "name": "Safety Insurance Group, Inc.",
       "sector": "Financial Services",
@@ -2537,11 +2614,11 @@
   ],
   "momentum_peg_errors": 0,
   "ledger_errors": 0,
-  "ledger_skipped": "codes 2851 隻 ≠ universe 檔 2898 隻（唔完整 universe）",
+  "ledger_skipped": "",
   "ledger_degraded": 0,
   "ledger_probe_errors": 0,
-  "ledger_probe_attempted": 0,
-  "ledger_probed": 0,
-  "nine_yellow": 4,
+  "ledger_probe_attempted": 200,
+  "ledger_probed": 187,
+  "nine_yellow": 32,
   "nine_yellow_blocked": false
 }
