@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-02T07:01:41+08:00",
+ "updated_at": "2026-11-02T20:01:59+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -3215,11 +3215,21 @@
      "summary": "作者認為英特爾喺黃金支撐區完美回測，月線收盤前睇好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "指其業績表現不及其他AI資本開支受惠股。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -53.3,
-   "ai_summary": "最新立場偏向審慎樂觀：sunxliao 喺10月31日指英特爾喺黃金支撐區完美回測、月線收盤前睇好，wliang 亦曾指約100美元有支撐同買入訊號。論述點主要係CPU需求強勁、供應只能滿足一半客戶，加上AI帶動芯片投資需求至少再維持兩年。但要留意 wliang 喺10月30日曾轉軚偏淡，指業績數據差、股價跌約30%並拖累大市，同之前約25美元推介嘅睇好立場有明顯反覆，係主要風險提示。",
+   "ai_summary": "最新立場偏向審慎：aleabitoreddit 後期轉為中性，指英特爾業績表現不及其他AI資本開支受惠股；wliang 亦由睇好轉為看淡，指業績數據差、拖累大市，並提及其股價下跌約30%。主要論述點係CPU需求強勁、供應只能滿足一半客戶，以及AI突破帶動芯片投資需求至少再維持兩年；sunxliao 則維持睇好，認為股價喺黃金支撐區完美回測。風險提示在於業績差過預期同股價大幅回落，部分作者立場有明顯轉變。",
    "theme": "AI晶片"
   },
   "AMZN": {
@@ -3593,11 +3603,21 @@
      "summary": "亞馬遜業績數據差，係當日被拋售嘅原因之一。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "bullish",
+     "summary": "未見大幅削減資本開支，利好AI資本開支主題。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 2.7,
-   "ai_summary": "最新立場偏向審慎：aleabitoreddit 到 10 月 24 日仍看好，理由係 Jassy 稱需求殷切、產能到 2027 年售罄、資本開支回報正面，並認為亞馬遜透過連串投資建構半導體與 AI 供應鏈組合，可能比輝達自身持股更具吸引力；但 wliang 於 10 月 30 日轉為看淡，指業績數據差，係當日被拋售原因之一。論述點主要圍繞 AI 需求帶動資本開支、Agility Robotics 投資、與高通及 Generac 嘅認股權證協議，以及出租 Mac mini 予 Anthropic 等。aleabitoreddit 喺 8 月中至 9 月初多次轉為中性、只提及事件而無明確立場，之後才重新看多；風險提示方面，wliang 明確指出業績數據差，係唯一具體負面訊號。",
+   "ai_summary": "最新立場偏向看好：aleabitoreddit 由九月起多次唱好，認為亞馬遜透過連串投資建構半導體與AI供應鏈組合，可能比輝達自身持股更具吸引力，並引述 Jassy 稱需求殷切、產能至2027年售罄、資本開支回報正面。主要論述點包括與高通的新協議（認股權證可購約40億美元股份、里程碑收入高達600億美元）、與 Generac 的24億美元發電機協議、Anthropic 租用 Mac mini 及 AI 需求帶動。期間立場有變：aleabitoreddit 早段多屬中性提及，九月起轉為明確看好；wliang 則於10月30日因業績數據差而轉為看淡，與 aleabitoreddit 的樂觀取態相反，構成明顯分歧。",
    "theme": "機器人"
   },
   "NVDA": {
@@ -5928,11 +5948,22 @@
      "summary": "作者對 CRWV 相對 NBIS 等同行並不樂觀，只視黃仁勳言論為安撫市場情緒。",
      "r7": -20.2,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉上升，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -53.1,
-   "ai_summary": "wliang 一直看好 CRWV，最新提到股價一週升 29%、累升 30%，並推薦 CoreWeave 作為 Neocloud 投資標的，論點圍繞財報、龐大積壓訂單同算力需求。aleabitoreddit 立場反覆，曾反駁折舊做空論、視 Leopold 買期權為看好訊號，但 9 月中起轉向關注債務利息侵蝕自由現金流，最新對 CRWV 相對 NBIS 等同行並不樂觀，並指 Elon 放大融資問題，同時已將倉位整合到 Nebius。sunxliao 則僅提及 CRWV 下跌，屬看淡。",
+   "earnings": "2026-11-11",
+   "ai_summary": "wliang 一直看好 CRWV，最新提到股價已升三成、表現強勁，並曾推薦它作為 Neocloud 投資標的。aleabitoreddit 立場反覆：早段看好，曾反駁折舊做空論、視 Leopold 買期權為利好；但其後轉淡，憂慮債務利息侵蝕自由現金流，認同市場對債務同加息嘅憂慮，對 CRWV 相對同業並不樂觀，並已將倉位整合到 Nebius，最新只列出空頭持倉上升、未明確表態。sunxliao 則僅提及 CRWV 下跌，屬看淡。",
    "theme": "AI雲"
   },
   "NBIS": {
@@ -12720,12 +12751,22 @@
      "summary": "作者指出CIFR日線圖出現藍鑽形態，正留意第二個同類形態，語氣偏看好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉上升，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -72.2,
    "earnings": "2026-11-02",
-   "ai_summary": "wliang 一直維持看好 CIFR，最新立場係約8美元出現新買入訊號，並認為股價已過度超賣、再跌空間有限，之前亦提過月線支撐位或下個藍鑽訊號係入市機會，基本因素無變。sunxliao 早前看好下週藍鑽石形態係入場時機，但最新轉為中性，認為目前重點係生存先。aleabitoreddit 就將 CIFR 列入組合，看好由8美元水平反彈。",
+   "ai_summary": "wliang 最新立場仍偏看好，指 CIFR 約8美元出現新買入訊號，並認為 neocloud 股再跌空間有限、接近見底；sunxliao 亦由10月中嘅中性轉為10月28日偏看好，指日線圖出現藍鑽形態。主要論述圍繞支撐位回踩、藍鑽石買入訊號同超賣反彈機會，wliang 曾以約3美元推介作高風險成功例子。風險提示方面，sunxliao 10月16日曾強調目前重點係生存，aleabitoreddit 11月2日則列出空頭持倉上升但未明確表態。",
    "theme": "AI雲"
   },
   "WYFI": {
@@ -16023,11 +16064,21 @@
      "summary": "作者認為微軟取消 NScale 合約反映其急需算力，會轉向其他供應商。",
      "r7": -0.2,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "bullish",
+     "summary": "未見大幅削減資本開支，利好AI資本開支主題。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 39.8,
-   "ai_summary": "最新立場係偏多：aleabitoreddit 喺9月初仍看好微軟AI前景，指運算需求失衡、需求遠超供給，資本開支上調至1750億美元，Maia 300晶片擴產同三星長約確保記憶體供應都係利好。主要論述圍繞AI同雲端需求強勁、資本支出持續增加；10月中後轉趨中性，提到OpenAI同微軟有合約積壓，以及微軟取消NScale合約反映急需算力、會轉向其他供應商，未見明確轉軚，但算力供應安排係潛在變數。",
+   "ai_summary": "最新立場係 aleabitoreddit 喺 2026-11-02 維持睇好，認為微軟未見大幅削減資本開支，利好 AI 資本開支主題。主要論述點係運算需求遠超供給、資本開支上調至 1750 億美元、Maia 300 晶片擴大產能，以及同三星簽長期協議確保記憶體供應。期間立場有反覆，8 月 30 日、9 月 3 日、10 月 12 日同 10 月 19 日轉為中性，其中 10 月 19 日提到微軟取消 NScale 合約反映急需算力、會轉向其他供應商，屬風險提示。",
    "theme": "AI"
   },
   "IBIT": {
@@ -17224,11 +17275,22 @@
      "summary": "作者指AEVA是SIVE四家光達客戶之一，本週終於出現轉化。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉上升，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -63.9,
-   "ai_summary": "最新立場偏看好：sunxliao 認為 AEVA 已準備好上漲，aleabitoreddit 則聚焦其作為 CPO/NPO 光源供應商的角色，指其簽署 JDA 並獲超大規模客戶部署，盤後大漲 18.26%，並預期 2026 下半年開始貢獻營收，規模雖小但正面。主要論述點包括機器人與 4D AI/世界模型主題、競爭對手受監管排除利好西方雷達公司，以及 AEVA 作為 SIVE 光達客戶之一本週終於出現轉化。風險與保留在於 aleabitoreddit 曾將 AEVA 列為次要廠商，稱放量成功僅屬利好情境之一，且多次在提及 SIVE 供貨關係時未表明確立場；sunxliao 亦曾只列其為機器人主題相關股票而未明確多空，整體未見明確轉軚。",
+   "earnings": "2026-11-05",
+   "ai_summary": "最新立場偏向審慎樂觀：sunxliao 持續看好 AEVA 喺機器人同人形機器人主題嘅表現，aleabitoreddit 就多次提到佢成為 CPO/NPO 光源供應商、簽 JDA 同獲超大規模客戶部署，預期 2026 下半年開始貢獻營收。主要論述點係 4D AI/世界模型趨勢、競爭對手受監管排除利好西方雷達公司，以及 SIVE 雷射供應同光達客戶轉化。風險提示方面，aleabitoreddit 曾指缺乏純粹投資機會、AEVA 屬次要廠商要成功放量先利好，最新 11 月 2 日亦提到空頭持倉上升；整體立場喺中性同看好之間反覆，未見明確轉軚。",
    "theme": "其他"
   },
   "BB": {
@@ -18425,11 +18487,21 @@
      "summary": "作者認為AXTI均值回歸已完成，正觀察日線黃金區反應，希望突破並收復，偏向看升。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "bullish",
+     "summary": "Q4年化市盈率約23.7倍，InP基板加價及擴產可望壓低至單位數。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -20.3,
-   "ai_summary": "全部提及都係看好，冇人轉軚。最新立場偏樂觀：sunxliao 指均值回歸已完成，正觀察日線黃金區能否突破收復；wliang 認為即將啟動升勢；aleabitoreddit 就聚焦 InP 基板短缺同 LTA 預付款融資擴產。主要論述包括約47美元支撐區、80美元粉紅鑽石訊號、超賣撈底同供應短缺帶動議價能力，但冇明確風險提示。",
+   "ai_summary": "最新立場係全體大V一致睇好AXTI，冇人轉軚。主要論述點包括：光子學同InP基板嚴重短缺下AXTI作為關鍵供應商議價能力強，LTA預付款融資擴產優於ATM，估值上Q4年化市盈率約23.7倍，加價擴產後可望壓至單位數；技術面上47美元被視為高時框支撐，80美元出現首個粉紅鑽石訊號，均值回歸已完成並觀察日線黃金區反應。風險提示方面，只有wliang提過超賣同再跌空間有限，其餘屬看好表態，未見明確負面警示。",
    "theme": "半導體設備"
   },
   "BFLY": {
@@ -24165,12 +24237,22 @@
      "summary": "作者認為AAOI即將啟動升勢",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉由9月至10月上升，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -50.2,
    "earnings": "2026-11-06",
-   "ai_summary": "Aleabitoreddit 最新立場係睇好，認為 AAOI 等 AI 基建股跌得過頭、資金最終會回流相關供應鏈，並以 AAOI 作為高 Beta 反彈基準；佢之前亦提過雷射技術護城河被低估、產能擴張令前瞻市盈率壓縮至單位數，但要留意佢 10 月 20 日曾指股價崩跌同加速採購基本面背離，10 月 24 日亦提到 AAOI 將雷射轉向自家收發器項目並因短缺拒絕客戶。Wliang 就一直睇好，指 AAOI 嚴重超賣、週線支撐同月線買入訊號後有望反彈，最新認為升勢即將啟動；風險提示主要係超賣後仍可能再跌，但兩人後期都傾向認為下跌空間有限。",
+   "ai_summary": "最新立場偏向審慎樂觀：aleabitoreddit 喺 10 月 20 日一度轉為看淡，指股價崩跌同加速採購嘅基本面背離，但 10 月 26 至 27 日又轉回看好，認為 AI 基建股跌得過頭、資金最終會回流，並以 AAOI 作為高 Beta 反彈基準；wliang 就一直看好，指 AAOI 嚴重超賣、接近見底，預期即將啟動升勢。主要論述點包括雷射技術護城河同盈利能力被低估、產能擴張令前瞻市盈率壓縮至單位數、2027 年第二季業績先見真章，以及中國高功率 CPO/DWDM 雷射產能短期不構成威脅。風險提示方面，aleabitoreddit 提到空頭持倉由 9 月至 10 月上升，亦指 AAOI 將雷射轉向自家收發器項目並因短缺拒絕客戶，立場有過反覆。",
    "theme": "光通訊"
   },
   "EOS": {
@@ -28618,12 +28700,22 @@
      "summary": "作者認為AEHR即將啟動升勢",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉上升，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -21.5,
    "earnings": "2026-11-03",
-   "ai_summary": "最新立場係整體偏看好：aleabitoreddit 喺10月19日轉為中性，指出風險回報取決於認證能否轉化為訂單，係唯一風險提示；其餘大V如 sunxliao 同 wliang 到10月底仍維持看好。論述點集中喺技術形態（藍鑽、黃金區、支撐位反彈）、AI大客戶追加2200萬美元訂單帶動成長，以及光電類股動能。",
+   "ai_summary": "最新立場方面，aleabitoreddit 由8月至9月多次看好，到10月19日轉為中性，指風險回報取決於認證能否轉化訂單，11月2日再提空頭持倉上升但未明確表態；wliang 同 sunxliao 則一直維持看好。論述點主要係AI處理器大客戶追加2200萬美元訂單、光電類股動能、多個技術形態訊號（藍鑽、方形組合、三重藍鑽、黃金區突破）同約80美元支撐區。風險提示方面，aleabitoreddit 後期轉趨審慎，提到認證轉化訂單嘅不確定性同空頭持倉上升，係唯一明顯嘅轉軚或風險訊號。",
    "theme": "半導體設備"
   },
   "SIVEF": {
@@ -29258,11 +29350,21 @@
      "summary": "作者認為 CrowdStrike 估值達到荒謬水平。",
      "r7": -13.3,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "bearish",
+     "summary": "認為網絡安全股被推至數百倍前瞻市盈率的泡沫估值。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": 25.6,
-   "ai_summary": "最新立場係 aleabitoreddit 喺 2026-10-12 維持看淡，認為 CrowdStrike 估值已達荒謬水平，佢之前喺 9 月 15 日已質疑 Cramer 叫買，指其約 145 倍 FY2028 預測市盈率但收入僅增長 26%，估值過高。另一邊廂 wliang 由 7 月 5 日中性轉向睇好，9 月 15 日指 CRWD 自首個買入訊號以來已升約 150% 且似乎無意停步，9 月 23 日再預期網絡安全股將持續走強，未見風險提示。",
+   "ai_summary": "wliang 最新立場偏多，指 CRWD 自首個買入訊號以來已升約150%且似乎無意停步，並預期網絡安全股將持續走強；佢早前雖對適應能力表示理解但認為整體風險仍高，之後轉為睇好。aleabitoreddit 則一直看淡，質疑 Cramer 叫買，指約145倍 FY2028 預測市盈率而收入僅增長26%，估值過高甚至荒謬，並認為網絡安全股被推至數百倍前瞻市盈率的泡沫估值。",
    "theme": "其他"
   },
   "ZS": {
@@ -29474,11 +29576,21 @@
      "summary": "回顧Robinhood曾被分析師下調評級後仍回升，暗示長線睇好。",
      "r7": -5.2,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "引用其做空數據作分析，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -27.7,
-   "ai_summary": "最新立場係持續看好HOOD，冇轉軚。論述重點包括股價曾升14.83%、韓國散戶支持代幣化策略、收購Crypto.com少數股權並擴展鏈上業務、預測市場同信用卡銀行服務，以及受惠加密貨幣復甦同鏈上股票交易監管豁免。風險提示方面，只提到曾被分析師下調評級但之後回升，冇其他明確風險警示。",
+   "ai_summary": "最新立場係中性偏審慎：2026年11月2日作者只引用做空數據作分析，未明確表態，同之前一路睇好嘅態度有明顯分別。之前嘅論述主要圍繞HOOD獲韓國散戶支持、收購Crypto.com少數股權、擴展鏈上業務同預測市場、受惠加密貨幣復甦同監管豁免，以及被下調評級後仍回升，顯示長線睇好。作者由持續睇好轉為中性，但冇明確提出風險提示。",
    "theme": "其他"
   },
   "CRVW": {
@@ -29924,6 +30036,16 @@
      "summary": "SK海力士業績遠超預期，記憶體供不應求至2030年，DRAM同HBM產能已售罄，加上75億美元股東回報，作者極度看好。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "bullish",
+     "summary": "營運利潤約590億美元，並有5年長期協議支持。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
@@ -29944,7 +30066,7 @@
     }
    ],
    "yellow": null,
-   "gain": -30.8,
+   "gain": -30.1,
    "theme": "其他"
   },
   "COIN": {
@@ -30386,11 +30508,22 @@
      "summary": "作者提及Tower Semiconductor與NewPhotonics開始量產出貨激光整合光引擎。",
      "r7": -0.9,
      "r30": -8.6
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉上升，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -27.5,
-   "ai_summary": "最新立場是看好TSEM，作者於2026年8月30日公開表示其投資觀點正確，並在9月17日提及Tower Semiconductor與NewPhotonics開始量產出貨激光整合光引擎。論述點包括日本政府支持下擴張、目標2028年淨利12億美元與營收36億美元、對應遠期本益比約23.3倍，以及與IQE簽訂InP晶圓協議。立場由7月13日中性轉為7月14日起多為看好，期間8月13日曾中性提及但未明確表態，數據中未見風險提示。",
+   "earnings": "2026-11-02",
+   "ai_summary": "最新立場係中性偏觀望：11月2日提到空頭持倉上升但未明確表態，之前8月底至9月中則多次公開看好。論述點包括日本政府支持下嘅擴張計劃（目標2028年淨利12億美元、營收36億美元，遠期本益比約23.3倍）、與IQE簽InP晶圓協議，以及同NewPhotonics量產激光整合光引擎。立場由7月中中性轉向看好、8月中一度中性、之後再看好，最新一則轉為中性並帶出空頭持倉上升嘅風險提示。",
    "theme": "矽光子"
   },
   "QCOM": {
@@ -34621,7 +34754,7 @@
     }
    ],
    "yellow": null,
-   "gain": -19.5,
+   "gain": -19.3,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -35494,7 +35627,7 @@
     }
    ],
    "yellow": null,
-   "gain": -21.0,
+   "gain": -20.9,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -35834,11 +35967,22 @@
      "summary": "Anthropic推薦，看好核能發展。",
      "r7": -16.4,
      "r30": -11.0
+    },
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉上升，未明確表態。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -41.7,
-   "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月6日對OKLO持看多立場，主要論點為Anthropic推薦及看好核能產業發展。目前未見立場轉變或明顯風險提示，僅基於外部推薦與行業趨勢作正面評價。",
+   "earnings": "2026-11-06",
+   "ai_summary": "最新立場係中性，未明確表態。論述點包括早前看好核能發展同獲Anthropic推薦，其後列出空頭持倉上升。由9月嘅看淡轉為11月嘅中性，有轉軚跡象，並提及空頭持倉上升嘅風險提示。",
    "theme": "核能"
   },
   "SMR": {
@@ -37725,6 +37869,23 @@
    "yellow": null,
    "gain": null,
    "theme": "醫療"
+  },
+  "LWLG": {
+   "mentions": [
+    {
+     "date": "2026-11-02",
+     "author": "aleabitoreddit",
+     "tweet_id": "2117220957622255727",
+     "url": "https://x.com/aleabitoreddit/status/2117220957622255727",
+     "stance": "neutral",
+     "summary": "列出空頭持倉上升，未明確表態。",
+     "r7": null,
+     "r30": null
+    }
+   ],
+   "yellow": null,
+   "gain": null,
+   "theme": "其他"
   }
  },
  "kol_stats": {
@@ -37743,7 +37904,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 928,
+   "calls": 933,
    "n7": 748,
    "win7": 49,
    "n30": 683,
