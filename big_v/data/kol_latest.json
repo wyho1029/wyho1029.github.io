@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T07:02:03+08:00",
+ "updated_at": "2026-11-24T20:02:10+08:00",
  "handles": [
   "aleabitoreddit",
   "wliang",
@@ -5621,11 +5621,21 @@
      "summary": "作者認為最壞情況已過，Jensen 回歸係重要敘事轉折，走勢似2018年，睇好後市。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-24",
+     "author": "aleabitoreddit",
+     "tweet_id": "2125058643154632845",
+     "url": "https://x.com/aleabitoreddit/status/2125058643154632845",
+     "stance": "bullish",
+     "summary": "Jensen 回歸令作者上調 AI 資本開支預測，Nvidia 鎖定上游產能，睇好前景。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -17.4,
-   "ai_summary": "最新立場係一面倒睇好：wliang 由 11 月 20 日提及黑天鵝同內外調查嘅謹慎，轉為 11 月 23 日連環唱好，視黃仁勳回歸為 AI 交易回歸同見底訊號；aleabitoreddit 就聚焦企業自建 GPU 環境、開放權重模型帶動額外需求，以及財長貝森特指晶片需求近乎無限、黃仁勳或重返白宮等利好。sunxliao 認為大型股下跌只係中期年度波動，最壞情況已過，敘事轉向似 2018 年，籲睇長線。風險提示方面，只有 wliang 喺 11 月 20 日提過黑天鵝事件引發內外調查，之後冇再重提。",
+   "ai_summary": "最新立場係一面倒看好：wliang 由 11 月 20 日先後提出標題可能扭轉跌勢、其後提到黑天鵝事件同內外調查拖累大市，到 11 月 23 日轉為連番唱好，認為 NVIDIA 帶動 AI 交易回歸、完成最後一波恐慌性拋售，並以黃仁勳回歸作為見底訊號。aleabitoreddit 同 sunxliao 亦持續看好，論述集中喺黃仁勳重新獲任命為 CEO、或重返白宮改善 AI 氣氛、財長貝森特指晶片需求近乎無限、上調 AI 資本開支預測同鎖定上游產能，sunxliao 就話大型股下跌只係中期年度波動、最壞情況已過。風險提示方面，只有 wliang 喺 11 月 20 日提過黑天鵝事件同內外調查，之後冇再重提，其餘都係利好論述。",
    "theme": "AI晶片"
   },
   "GOOGL": {
@@ -6189,11 +6199,21 @@
      "summary": "作者提到 Google 發布 Gemini 4 Neon 基準測試，屬中性資訊分享。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-24",
+     "author": "aleabitoreddit",
+     "tweet_id": "2125058643154632845",
+     "url": "https://x.com/aleabitoreddit/status/2125058643154632845",
+     "stance": "neutral",
+     "summary": "作者指 Nvidia 搶佔 Google 等超大規模企業所需產能，對 Google 屬中性提及。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -22.4,
-   "ai_summary": "最新立場係偏睇好：aleabitoreddit 喺 11 月中仍以 Gemini 同前沿模型帶動推理需求、雲端商考慮採用 TPU 作為利好，之前亦多次強調 AI 資本開支同記憶體長約延至 2035 年反映需求強勁。主要論述圍繞 AI 運算需求、TPU 同光學供應鏈、Gemini 4 表現，以及將 TurboQuant 恐慌視為短暫噪音。期間立場有搖擺，9 月 13 日、10 月 15 日、10 月 27 日同 11 月 18 日轉為中性，只提及持股或資訊分享；另外 wliang 喺 10 月 30 日唱淡，指 Alphabet 業績數據差、加劇拋售壓力，係唯一明確風險提示。",
+   "ai_summary": "最新立場係偏睇好：aleabitoreddit 喺 11 月中仍以 Google TPU 獲雲端商考慮採用、Gemini 同前沿模型帶動推理需求為由睇好，之前亦多次強調資本開支、TPU v9 光學需求同記憶體長約延至 2035 年反映需求強勁。主要論述點係 AI 建設大趨勢不變，TurboQuant 恐慌只屬短暫噪音，Gemini 4 表現強勁有利 Google 回歸。風險提示方面，10 月 30 日 wliang 曾指 Alphabet 業績數據差、加劇拋售壓力；aleabitoreddit 本身喺 9 月 13 日、10 月 15 日、10 月 27 日、11 月 18 日及 11 月 24 日多次轉為中性，只提及持股或資訊分享，未明確表態。",
    "theme": "其他"
   },
   "CRWV": {
@@ -8347,11 +8367,21 @@
      "summary": "只列入觀察名單，未表達明確立場。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-24",
+     "author": "aleabitoreddit",
+     "tweet_id": "2125115492935549060",
+     "url": "https://x.com/aleabitoreddit/status/2125115492935549060",
+     "stance": "bullish",
+     "summary": "作者認為 Nebius 獲 Databricks 選用，證明 neocloud 有技術護城河，對 NBIS 前景有信心。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -63.1,
-   "ai_summary": "最新立場偏向看好：sunxliao 將 NBIS 列入 neocloud 觀察名單並指走勢好好，wliang 視之為超賣 AI 基建及 neocloud 瓶頸受惠股、預期資金流入。論述主要圍繞 neocloud 板塊復甦、底部已到、超賣反彈部署，以及 neocloud 收取 100% capex 預付款屬正面。風險提示方面，sunxliao 曾於 11 月 19 日指 NBIS 出現真正動盪，aleabitoreddit 亦指增長股已大幅下挫；sunxliao 其後立場由動盪轉為底部已到，最新一則則轉為中性、只列觀察名單而未表明確立場。",
+   "ai_summary": "最新立場係睇好：sunxliao 喺 11 月 23 日將 NBIS 列入 neocloud 觀察名單並話走勢好好，wliang 同日視佢為 neocloud 瓶頸受惠股、預期資金流入，aleabitoreddit 喺 11 月 24 日就以 Databricks 選用 Nebius 證明 neocloud 有技術護城河為由表達信心。論述點主要圍繞 neocloud 板塊復甦、NBIS 超賣反彈同 AI 基建資金流入。風險提示方面，sunxliao 喺 11 月 19 日曾指 NBIS 出現真正嘅動盪，aleabitoreddit 喺 11 月 20 日亦指 NBIS 等增長股已大幅下挫，但 sunxliao 同日已轉返睇好話底部已到，之後立場維持正面。",
    "theme": "AI雲"
   },
   "SIVE": {
@@ -9133,6 +9163,16 @@
      "url": "https://x.com/aleabitoreddit/status/2113950041207607453",
      "stance": "bullish",
      "summary": "作者看好SIVE，認為其雷射產能相對市值極具優勢，瓶頸嚴重下多條商業化路徑有望轉化為量產，但批評管理層訊息傳遞與短期執行。",
+     "r7": null,
+     "r30": null
+    },
+    {
+     "date": "2026-11-24",
+     "author": "aleabitoreddit",
+     "tweet_id": "2125056333045219562",
+     "url": "https://x.com/aleabitoreddit/status/2125056333045219562",
+     "stance": "neutral",
+     "summary": "作者批評SIVE嘅經濟披露唔夠SMTC透明，應學習對方。",
      "r7": null,
      "r30": null
     }
@@ -19114,7 +19154,7 @@
     }
    ],
    "yellow": null,
-   "gain": -42.2,
+   "gain": -42.0,
    "theme": "機器人"
   },
   "XPEV": {
@@ -26160,11 +26200,21 @@
      "summary": "作者將AAOI列為光子學瓶頸受惠股，預期隨AI交易回升而上升。",
      "r7": null,
      "r30": null
+    },
+    {
+     "date": "2026-11-24",
+     "author": "aleabitoreddit",
+     "tweet_id": "2125056333045219562",
+     "url": "https://x.com/aleabitoreddit/status/2125056333045219562",
+     "stance": "bullish",
+     "summary": "作者指AAOI喺激光器資格認證方面領先SMTC。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -72.1,
-   "ai_summary": "wliang 一直看好 AAOI，最新在 11 月 23 日仍將其列為光子學瓶頸受惠股，預期隨 AI 交易回升而上升；此前多次以超賣、週線支撐及歷史反彈幅度為由建議撈底。aleabitoreddit 立場反覆，10 月 26 至 27 日轉為看好反彈，但 11 月 17 至 18 日轉軚看淡，批評管理層再推 5.5 億美元 ATM 增發、誠信盡失，表明無法支持持續稀釋股份的公司，並指其因融資問題受壓。風險提示方面，aleabitoreddit 曾指股價崩跌與加速採購的基本面背離，並提及空頭持倉上升。",
+   "ai_summary": "最新立場分歧：wliang 持續看好，認為AAOI超賣見底、將啟動升勢，並列為光子學瓶頸受惠股；aleabitoreddit 則由10月底看好轉為11月中看淡，批評管理層再推5.5億美元ATM增發、誠信盡失，表明無法支持持續稀釋股份的公司，惟11月24日又指AAOI在激光器資格認證方面領先SMTC。論述點包括超賣反彈、AI基建資金回流、產品明細與產能目標可供建模，以及管理層將雷射轉向自家收發器項目並因短缺拒絕客戶。風險提示主要來自aleabitoreddit對持續稀釋股份及融資問題的批評，以及空頭持倉9月至10月上升。",
    "theme": "光通訊"
   },
   "EOS": {
@@ -26733,7 +26783,7 @@
     }
    ],
    "yellow": null,
-   "gain": -46.9,
+   "gain": -47.2,
    "theme": "其他"
   },
   "AOSL": {
@@ -32497,7 +32547,7 @@
     }
    ],
    "yellow": null,
-   "gain": -31.8,
+   "gain": -30.1,
    "theme": "其他"
   },
   "COIN": {
@@ -33693,11 +33743,22 @@
      "summary": "作者認為Semtech可能是TIA/驅動器領域的贏家。",
      "r7": 0.5,
      "r30": -34.4
+    },
+    {
+     "date": "2026-11-24",
+     "author": "aleabitoreddit",
+     "tweet_id": "2125056333045219562",
+     "url": "https://x.com/aleabitoreddit/status/2125056333045219562",
+     "stance": "bullish",
+     "summary": "作者認為收購HieFo好抵，激光業務2027至2028年產能同收入機會大，係可信嘅新興競爭者。",
+     "r7": null,
+     "r30": null
     }
    ],
    "yellow": null,
    "gain": -25.3,
-   "ai_summary": "最新立場係看好，作者喺2026年10月1日認為Semtech可能係TIA/驅動器領域嘅贏家。論述點包括業績強勁、光學產品需求旺盛、1.6T FiberEdge市佔率可望過半、訂單能見度高、Q3指引遠超預期，以及受惠於AI帶動嘅光子學需求。作者喺8月25日曾失去興趣轉研其他標的，8月26日亦僅提及產能有限而未表明確立場，但整體由8月底起轉向樂觀，未見風險提示。",
+   "earnings": "2026-11-24",
+   "ai_summary": "最新立場係看好：作者喺2026年11月24日認為Semtech收購HieFo好抵，激光業務喺2027至2028年嘅產能同收入機會大，係可信嘅新興競爭者。主要論述點包括光學產品需求旺盛、1.6T FiberEdge市佔率可望過半、訂單能見度高、Q3指引遠超預期，以及光子學板塊2027年光學模組需求強勁。作者立場曾於2026年8月25日轉為中性並失去興趣，8月26日亦一度只提產能有限而無明確多空立場，但之後持續轉向看好，未見明確風險提示。",
    "theme": "光通訊"
   },
   "LULU": {
@@ -37252,7 +37313,7 @@
     }
    ],
    "yellow": null,
-   "gain": -33.1,
+   "gain": -30.3,
    "ai_summary": "根據歷史數據，最新立場為看多（bullish），論述重點在於行星滾柱螺桿於中國市場的國產替代率極低，具備技術護城河優勢。未有出現轉軚或風險提示，立場維持樂觀。",
    "theme": "機器人"
   },
@@ -37803,7 +37864,7 @@
      "url": "https://x.com/sunxliao/status/2095147707245719905",
      "stance": "bullish",
      "summary": "作者看好DHT，認為其受惠於海運費率上升。",
-     "r7": 5.6,
+     "r7": 5.7,
      "r30": 18.0
     },
     {
@@ -37818,7 +37879,7 @@
     }
    ],
    "yellow": null,
-   "gain": 4.2,
+   "gain": 11.7,
    "ai_summary": "sunxliao 最新立場仍然看好 DHT，認為佢受惠於海運費率上升。佢分享航運股名單後，DHT 升 11.28%，表現強勁，論述點主要係運費上升帶動股價。期間冇轉軚，亦冇提及風險提示。",
    "theme": "海運"
   },
@@ -37930,7 +37991,7 @@
     }
    ],
    "yellow": null,
-   "gain": -37.2,
+   "gain": -36.9,
    "ai_summary": "sunxliao 最新對 GLBS 轉為看淡，指航運股名單公布後股價跌 2.87%、表現疲弱。此前佢看好 GLBS 受惠於海運費率上升，立場由利好轉為利淡，並以股價下跌作為風險提示。",
    "theme": "海運"
   },
@@ -38098,7 +38159,7 @@
     }
    ],
    "yellow": null,
-   "gain": -2.9,
+   "gain": -2.7,
    "ai_summary": "sunxliao 最新立場仍然看好 TNK，核心論述係公司受惠於海運費率上升。佢喺分享航運股名單後，TNK 升 15.62%，表現強勁，期間冇轉軚或風險提示。",
    "theme": "海運"
   },
@@ -38223,7 +38284,7 @@
     }
    ],
    "yellow": null,
-   "gain": -18.3,
+   "gain": -15.1,
    "ai_summary": "根據最新數據，大V aleabitoreddit 於2026年9月4日對LYC.AX持看多立場，論述重點為Lynas作為日本稀土供應的關鍵替代來源，因日本已鎖定其75%的中重稀土產量。此觀點未見轉軚或風險提示，僅強調需求端保障。",
    "theme": "稀土"
   },
@@ -38314,7 +38375,7 @@
     }
    ],
    "yellow": null,
-   "gain": -29.4,
+   "gain": -28.6,
    "ai_summary": "根據最新數據，GDRZF在2026年9月7日獲得大V aleabitoreddit的看好立場，強調其為選股之一且漲幅已超過100%，顯示強烈樂觀態度。論述點集中於該股過去表現強勁，但未提及具體基本面或未來風險。目前立場未見轉軚，但缺乏風險提示，僅基於歷史漲幅作支持。",
    "theme": "其他"
   },
@@ -40044,7 +40105,7 @@
     }
    ],
    "yellow": null,
-   "gain": -36.0,
+   "gain": -33.6,
    "ai_summary": "根據目前資料，BRAZ 僅在 2026 年 10 月 5 日獲 sunxliao 提及，屬中性立場，作者只列出此巴西相關 ETF，未表達明確看好或看淡。暫無其他論述點、轉軚或風險提示可總結。",
    "theme": "巴西ETF"
   },
@@ -40564,7 +40625,7 @@
     }
    ],
    "yellow": null,
-   "gain": -36.9,
+   "gain": -36.7,
    "theme": "其他"
   },
   "WMT": {
@@ -40884,7 +40945,7 @@
    }
   },
   "aleabitoreddit": {
-   "calls": 1000,
+   "calls": 1004,
    "n7": 800,
    "win7": 48,
    "n30": 756,
@@ -41213,7 +41274,7 @@
     -4.71,
     -5.46,
     -4.76,
-    -5.1,
+    -5.09,
     -6.33,
     -6.32,
     -5.86,
